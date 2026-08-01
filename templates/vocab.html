@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The World of Sugar — Vocabulary & Structures</title>
+<style>
+  :root{
+    --paper:#FCFCFA; --card:#FFFFFF;
+    --ink:#17170F; --ink-2:#57564C; --ink-3:#8A897E;
+    --line:#E4E3DC; --line-2:#EFEEE8; --soft:#F4F3EC;
+    --focus:#2E5AAC; --ok:#1F5C3A; --bad:#8A2B1E; --red:#C0362C;
+    --r:14px;
+    --serif:Georgia,"Iowan Old Style","Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:680px;margin:0 auto;padding:26px 20px 90px}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+  h1{font-family:var(--serif);font-weight:600;font-size:30px;line-height:1.12;margin:6px 0 4px;letter-spacing:-.01em}
+  .lede{color:var(--ink-2);font-size:15px;margin:0}
+
+  button{font-family:inherit;cursor:pointer}
+  .btn{border:1px solid var(--ink);background:var(--ink);color:var(--paper);border-radius:999px;padding:11px 18px;font-size:14px;font-weight:500;transition:opacity .15s ease,transform .06s ease}
+  .btn:hover{opacity:.88}.btn:active{transform:translateY(1px)}
+  .btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+  .btn.ghost:hover{border-color:var(--ink)}
+  :focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+
+  .modes{display:grid;gap:14px;margin-top:26px}
+  .mode-card{border:1px solid var(--line);border-radius:var(--r);background:var(--card);padding:20px;text-align:left;width:100%;color:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:border-color .15s ease,transform .06s ease}
+  .mode-card:hover{border-color:var(--ink)}.mode-card:active{transform:translateY(1px)}
+  .mode-card h2{font-family:var(--serif);font-weight:600;font-size:20px;margin:0 0 3px}
+  .mode-card p{margin:0;font-size:13px;color:var(--ink-2)}
+  .mode-card .arrow{font-size:22px;opacity:.45}
+  .mode-card .count{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
+
+  .stats{display:flex;gap:22px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line-2);font-family:var(--mono);font-size:12px;color:var(--ink-2);flex-wrap:wrap;align-items:center}
+  .stats b{color:var(--ink);font-weight:600}
+  .reset-link{background:none;border:none;color:var(--ink-3);text-decoration:underline;font-family:var(--mono);font-size:12px;padding:0;margin-left:auto}
+
+  .top{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+  .top .back{background:none;border:none;color:var(--ink-2);font-size:14px;padding:6px 2px}
+  .top .spacer{flex:1}
+  .switch{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--card);gap:2px}
+  .switch button{border:none;background:none;border-radius:999px;padding:6px 12px;font-size:12.5px;color:var(--ink-2)}
+  .switch button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+
+  .sizebar{margin:2px 0 14px}
+  .sizelab{font-family:var(--mono);font-size:12px;color:var(--ink-2);display:block;margin-bottom:9px;letter-spacing:.02em}
+  input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:3px;background:var(--line-2);border-radius:2px;outline:none;margin:0;cursor:pointer}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:18px;height:18px;border-radius:50%;background:var(--ink);cursor:pointer;border:2px solid var(--paper);box-shadow:0 0 0 1px var(--ink)}
+  input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--ink);cursor:pointer;border:2px solid var(--paper)}
+  .progress{height:3px;background:var(--line-2);border-radius:2px;margin:16px 0 6px;overflow:hidden}
+  .progress i{display:block;height:100%;background:var(--ink);width:0;transition:width .3s ease}
+  .counter{font-family:var(--mono);font-size:12px;color:var(--ink-3);text-align:center;margin-bottom:12px}
+
+  .stage{perspective:1600px}
+  .card{position:relative;min-height:300px;transform-style:preserve-3d;transition:transform .5s cubic-bezier(.4,.1,.2,1),height .28s ease}
+  .card.flipped{transform:rotateY(180deg)}
+  .face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:1px solid var(--line);border-radius:var(--r);background:var(--card);overflow:hidden}
+  .inner{padding:30px 26px}
+  .face.front{cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+  .face.front .inner{width:100%;display:flex;flex-direction:column;align-items:center}
+  .face.back{transform:rotateY(180deg)}
+
+  .front .pos{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:14px}
+  .front .word{font-family:var(--serif);font-size:40px;font-weight:600;letter-spacing:-.01em;line-height:1.06}
+  .front .ipa{font-family:var(--mono);color:var(--ink-2);font-size:14px;margin-top:10px}
+  .front .prompt{font-family:var(--serif);font-size:23px;font-weight:600;line-height:1.32;max-width:34ch}
+  .front .hint{font-family:var(--mono);font-size:11px;color:var(--ink-3);margin-top:22px;letter-spacing:.05em}
+  .speak{margin-top:18px;border:1px solid var(--line);background:var(--card);color:var(--ink);width:42px;height:42px;border-radius:50%;font-size:16px;display:grid;place-items:center}
+  .speak:hover{border-color:var(--ink)}
+
+  .cloze{font-size:18px;line-height:1.75;max-width:100%}
+  .cloze .gap{display:inline-block;min-width:96px;border-bottom:2px solid var(--ink);margin:0 3px;text-align:center;font-weight:600}
+  .cloze .gap.g-ok{color:var(--ok);border-color:var(--ok)}
+  .cloze .gap.g-bad{color:var(--bad);border-color:var(--bad)}
+  .opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:26px;width:100%;max-width:420px}
+  .opt{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:12px;font-size:15px;font-family:var(--serif)}
+  .opt:hover:not(:disabled){border-color:var(--ink)}
+  .opt:disabled{cursor:default}
+  .opt.correct{border-color:var(--ok);background:#EEF5EF;color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:#F7ECEA;color:var(--bad)}
+
+  .back .headline{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:2px}
+  .back .headline .w{font-family:var(--serif);font-size:22px;font-weight:600}
+  .back .headline .p{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+  .flipbtn{margin-left:auto;border:1px solid var(--line);background:var(--card);color:var(--ink-2);border-radius:999px;padding:5px 12px;font-size:12px;font-family:var(--mono)}
+  .flipbtn:hover{border-color:var(--ink);color:var(--ink)}
+  .meaning{font-family:var(--serif);font-size:21px;font-weight:600;line-height:1.34;margin:12px 0 6px}
+  .uztrans{font-size:15.5px;line-height:1.4;margin:2px 0 12px;color:var(--ink)}
+  .uztrans .lab{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-right:6px}
+  .senses{font-size:13.5px;color:var(--ink-2);margin:0 0 14px}
+  .senses .lab{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-right:6px}
+  .forms{font-family:var(--mono);font-size:12px;color:var(--ink-3);margin:0 0 12px}
+  .pattern{font-family:var(--mono);font-size:13.5px;line-height:1.6;color:var(--ink);background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:13px;margin:12px 0 14px;white-space:pre-wrap}
+
+  .acc{border-top:1px solid var(--line-2)}
+  .acc summary{list-style:none;cursor:pointer;padding:11px 0;display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-2)}
+  .acc summary::-webkit-details-marker{display:none}
+  .acc summary .plus{margin-left:auto;color:var(--ink-3);font-size:15px;transition:transform .2s}
+  .acc[open] summary .plus{transform:rotate(45deg)}
+  .acc .body{padding:0 0 14px;font-size:14.5px;line-height:1.6}
+  .acc .body em{color:var(--ink-2)}
+  .tag{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:3px 10px;font-size:12.5px;margin:3px 5px 3px 0}
+  .mark{text-decoration:underline;text-decoration-color:var(--red);text-decoration-thickness:2px;text-underline-offset:3px}
+
+  .rate{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+  .rate button{border-radius:999px;padding:14px;font-size:14px;font-weight:500;border:1px solid var(--ink)}
+  .rate .learning{background:var(--card);color:var(--ink)}
+  .rate .learning:hover{background:#faf6ef}
+  .rate .learnt{background:var(--ink);color:var(--paper)}
+  .nextwrap{margin-top:18px;text-align:center}
+  .tap-hint{text-align:center;font-family:var(--mono);font-size:11px;color:var(--ink-3);margin-top:14px;letter-spacing:.04em}
+
+  .panel{border:1px solid var(--line);border-radius:var(--r);background:var(--card);padding:28px 24px;text-align:center}
+  .panel .big{font-family:var(--serif);font-size:52px;font-weight:600;line-height:1;margin:14px 0 4px}
+  .panel p{color:var(--ink-2);margin:6px 0}
+  .panel .row{display:flex;gap:26px;justify-content:center;margin:22px 0 4px;font-family:var(--mono);font-size:13px}
+  .panel .row div span{display:block;font-family:var(--serif);font-size:30px;color:var(--ink);font-weight:600}
+  .wordlist{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin:16px 0 6px}
+  .actions{display:flex;gap:10px;justify-content:center;margin-top:24px;flex-wrap:wrap}
+
+  .hidden{display:none !important}
+  footer{margin-top:40px;font-family:var(--mono);font-size:11px;color:var(--ink-3);text-align:center}
+  @media (max-width:520px){h1{font-size:26px}.front .word{font-size:34px}.opts{max-width:100%}}
+  @media (prefers-reduced-motion:reduce){.card{transition:height .2s ease}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <section id="home">
+    <div class="eyebrow">Reading · The World of Sugar</div>
+    <h1>Words & Structures</h1>
+    <p class="lede">B2+ vocabulary and sentence patterns drawn from the book review of Ulbe Bosma's The World of Sugar.</p>
+    <div class="modes">
+      <button class="mode-card" data-open="vocab">
+        <div><h2>Vocabulary</h2><p>Words — contextual meaning, definition, synonyms &amp; antonyms</p></div>
+        <div style="text-align:right"><div class="count" id="vocabCount">—</div><div class="arrow">→</div></div>
+      </button>
+      <button class="mode-card" data-open="struct">
+        <div><h2>Structures</h2><p>Sentence structures used in the passage, with examples</p></div>
+        <div style="text-align:right"><div class="count" id="structCount">—</div><div class="arrow">→</div></div>
+      </button>
+    </div>
+    <div class="stats">
+      <span>Learnt <b id="hLearnt">0</b></span>
+      <span>Learning <b id="hLearning">0</b></span>
+      <span>New <b id="hNew">0</b></span>
+      <button class="reset-link" id="resetBtn">reset progress</button>
+    </div>
+  </section>
+
+  <section id="study" class="hidden">
+    <div class="sizebar">
+      <label class="sizelab" id="sizeLabel"></label>
+      <input type="range" id="sizeSlider" min="1" max="1" value="1" aria-label="How many to study" />
+    </div>
+    <div class="top">
+      <button class="back" id="studyBack">← Home</button>
+      <span class="spacer"></span>
+      <div class="switch" id="modeSwitch">
+        <button data-m="flip" aria-pressed="true">Flip</button>
+        <button data-m="recall">Recall</button>
+        <button data-m="cloze">Cloze</button>
+      </div>
+    </div>
+    <div class="progress"><i id="bar"></i></div>
+    <div class="counter" id="counter"></div>
+    <div class="stage">
+      <div class="card" id="card">
+        <div class="face front" id="front"><div class="inner"></div></div>
+        <div class="face back" id="back"><div class="inner"></div></div>
+      </div>
+    </div>
+    <div id="rate" class="rate hidden">
+      <button class="learning" id="btnLearning">Still learning</button>
+      <button class="learnt" id="btnLearnt">Learnt</button>
+    </div>
+    <div id="nextwrap" class="nextwrap hidden"><button class="btn" id="btnNext">Next →</button></div>
+    <div class="tap-hint" id="tapHint">Tap the card, or press Space</div>
+  </section>
+
+  <section id="summary" class="hidden">
+    <div class="panel">
+      <div class="eyebrow" id="sumEyebrow">Deck complete</div>
+      <div class="big" id="sumBig">0%</div>
+      <p id="sumSub"></p>
+      <div class="row">
+        <div>Learnt<span id="sumLearnt">0</span></div>
+        <div>Learning<span id="sumLearning">0</span></div>
+      </div>
+      <div id="reviewBlock">
+        <p style="margin-top:20px">Would you learn these words again?</p>
+        <div class="wordlist" id="sumWords"></div>
+      </div>
+      <div class="actions">
+        <button class="btn" id="reviewBtn">Review learning words</button>
+        <button class="btn ghost" id="restartBtn">Start over</button>
+        <button class="btn ghost" id="homeBtn">Home</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>Space — flip · 1 — learning · 2 — learnt · → next</footer>
+</div>
+
+<script>
+/* ============================ DATA ============================ */
+const VOCAB = [{"w": "genuinely", "pos": "adverb", "ipa": "/ˈdʒenjuɪnli/", "forms": "genuine · genuinely", "def": "truly; in a real and honest way, not just in appearance", "uz": "chindan, haqiqatan", "senses": ["sincerely, without pretending (of feelings)"], "ex": "Ulbe Bosma's The World of Sugar is a genuinely global history.", "syn": ["truly", "really", "authentically"], "ant": ["superficially", "falsely"]}, {"w": "cane sugar", "pos": "noun", "ipa": "/ˌkeɪn ˈʃʊɡə/", "forms": "cane sugar", "def": "sugar produced from the tall tropical grass called sugar cane", "uz": "qamish shakari", "senses": [], "ex": "The sweet-toothed British first bought cane sugar from their own colonial plantations.", "syn": ["sugarcane sugar"], "ant": ["beet sugar"]}, {"w": "beet sugar", "pos": "noun", "ipa": "/ˌbiːt ˈʃʊɡə/", "forms": "beet sugar", "def": "sugar produced from sugar beet, a root crop grown mainly in Europe and the US", "uz": "lavlagi shakari", "senses": [], "ex": "Towards the end of the 19th century, the British started to import beet sugar from continental Europe.", "syn": ["sugar-beet sugar"], "ant": ["cane sugar"]}, {"w": "subsidise", "pos": "verb", "ipa": "/ˈsʌbsɪdaɪz/", "forms": "subsidise · subsidised · subsidising · subsidy", "def": "to pay part of the cost of something so it can be sold more cheaply", "uz": "subsidiya bermoq, davlat yordami bermoq", "senses": ["to financially support an activity that could not survive alone"], "ex": "It has also been massively subsidised and sold at artificially low prices on world markets.", "syn": ["fund", "support", "underwrite"], "ant": ["tax", "penalise"]}, {"w": "livelihood", "pos": "noun", "ipa": "/ˈlaɪvlihʊd/", "forms": "livelihood · livelihoods", "def": "the way someone earns the money they need to live", "uz": "tirikchilik, kun kechirish manbai", "senses": [], "ex": "Cheap beet sugar threatened the livelihood of producers of cane sugar.", "syn": ["living", "income", "means of support"], "ant": []}, {"w": "superior", "pos": "adjective", "ipa": "/suːˈpɪəriə/", "forms": "superior · superiority", "def": "better in quality than something else", "uz": "ustun, yuqori sifatli", "senses": ["higher in rank or position (noun/adjective)", "arrogant, looking down on others"], "ex": "Some markets treated cane sugar as superior to beet sugar.", "syn": ["better", "finer", "higher-grade"], "ant": ["inferior", "worse"]}, {"w": "stress", "pos": "verb", "ipa": "/stres/", "forms": "stress · stresses · stressed · stressing", "def": "to give special importance or emphasis to a point", "uz": "urg'u bermoq, ta'kidlamoq", "senses": ["mental or physical strain (noun)"], "ex": "The reviewer stresses how the sources of sugar changed over time.", "syn": ["emphasise", "highlight", "underline"], "ant": ["downplay", "understate"]}, {"w": "sweet-toothed", "pos": "adjective", "ipa": "/ˌswiːt ˈtuːθt/", "forms": "sweet-toothed · sweet tooth", "def": "fond of eating sweet food", "uz": "shirinlikni yaxshi ko'radigan", "senses": [], "ex": "The sweet-toothed British first bought sugar from their colonial plantations.", "syn": ["sugar-loving"], "ant": []}, {"w": "slavery-dependent", "pos": "adjective", "ipa": "/ˈsleɪvəri dɪˌpendənt/", "forms": "slavery-dependent", "def": "relying on enslaved people to function", "uz": "qullikka tayangan", "senses": [], "ex": "The British first bought sugar from their own slavery-dependent colonial plantations.", "syn": ["slave-based"], "ant": ["free-labour"]}, {"w": "abolition", "pos": "noun", "ipa": "/ˌæbəˈlɪʃn/", "forms": "abolition · abolish · abolished", "def": "the official ending of a system, practice or institution such as slavery", "uz": "bekor qilish, tugatish", "senses": [], "ex": "Following the abolition of slavery in the British Empire, sugar was imported from elsewhere.", "syn": ["ending", "elimination", "repeal"], "ant": ["introduction", "establishment"]}, {"w": "labour-intensive", "pos": "adjective", "ipa": "/ˌleɪbər ɪnˈtensɪv/", "forms": "labour-intensive", "def": "needing a lot of workers or physical effort rather than machines", "uz": "ko'p mehnat talab qiladigan", "senses": [], "ex": "Sugar cane was grown together with rice in an extraordinarily labour-intensive way.", "syn": ["hands-on", "effort-heavy"], "ant": ["automated", "mechanised"]}, {"w": "misconception", "pos": "noun", "ipa": "/ˌmɪskənˈsepʃn/", "forms": "misconception · misconceptions", "def": "a belief that is wrong because it is based on faulty understanding", "uz": "noto'g'ri tushuncha", "senses": [], "ex": "The reviewer addresses a common misconception about how sugar cane is grown.", "syn": ["false belief", "fallacy", "misunderstanding"], "ant": ["fact", "truth"]}, {"w": "outburst", "pos": "noun", "ipa": "/ˈaʊtbɜːst/", "forms": "outburst · outbursts", "def": "a sudden strong expression of feeling", "uz": "his portlashi, to'satdan otilib chiqish", "senses": [], "ex": "Bosma avoids outbursts of emotion, celebratory or critical.", "syn": ["eruption", "explosion", "surge"], "ant": ["restraint", "calm"]}, {"w": "celebratory", "pos": "adjective", "ipa": "/ˌseləˈbreɪtəri/", "forms": "celebrate · celebratory", "def": "expressing praise, joy or approval", "uz": "tantanali, maqtovli", "senses": [], "ex": "Bosma avoids outbursts of emotion, celebratory or critical.", "syn": ["approving", "laudatory", "joyful"], "ant": ["critical", "disapproving"]}, {"w": "critical", "pos": "adjective", "ipa": "/ˈkrɪtɪkl/", "forms": "critical · criticise · criticism", "def": "expressing disapproval or pointing out faults", "uz": "tanqidiy", "senses": ["extremely important, decisive", "relating to careful analysis"], "ex": "Bosma avoids outbursts of emotion, celebratory or critical.", "syn": ["disapproving", "negative", "fault-finding"], "ant": ["celebratory", "approving"]}, {"w": "beet field", "pos": "noun", "ipa": "/ˈbiːt fiːld/", "forms": "beet field · beet fields", "def": "a field where sugar beet is grown", "uz": "lavlagi dalasi", "senses": [], "ex": "German beet fields employed Polish workers.", "syn": ["beet plantation"], "ant": []}, {"w": "beet", "pos": "noun", "ipa": "/biːt/", "forms": "beet · beets · sugar beet", "def": "a root plant; the sugar-producing kind is called sugar beet", "uz": "(qand) lavlagi", "senses": ["the red variety used as a vegetable (beetroot)"], "ex": "Only in the 20th century was there a move to develop a national beet industry.", "syn": ["sugar beet", "beetroot"], "ant": []}, {"w": "eager", "pos": "adjective", "ipa": "/ˈiːɡə/", "forms": "eager · eagerly · eagerness", "def": "wanting to do or have something very much", "uz": "ishtiyoqli, intiluvchan", "senses": [], "ex": "Sugar producers were eager to protect their markets.", "syn": ["keen", "enthusiastic", "anxious"], "ant": ["reluctant", "indifferent"]}, {"w": "dynasty", "pos": "noun", "ipa": "/ˈdɪnəsti/", "forms": "dynasty · dynasties · dynastic", "def": "a powerful family that keeps control of a business or country over generations", "uz": "sulola", "senses": [], "ex": "A powerful sugar dynasty held influence over politics for a very long period.", "syn": ["line", "house", "succession"], "ant": []}, {"w": "profound", "pos": "adjective", "ipa": "/prəˈfaʊnd/", "forms": "profound · profoundly", "def": "very great; felt or experienced very strongly", "uz": "chuqur, teran", "senses": ["showing deep understanding or insight"], "ex": "Great firms and interests have had profound influence on the policies of states.", "syn": ["deep", "far-reaching", "significant"], "ant": ["superficial", "slight"]}, {"w": "penalise", "pos": "verb", "ipa": "/ˈpiːnəlaɪz/", "forms": "penalise · penalised · penalty", "def": "to put someone at a disadvantage or punish them", "uz": "jazolamoq, ziyon ko'rmoq", "senses": [], "ex": "As a result of these barriers, poorer countries were penalised.", "syn": ["punish", "disadvantage", "handicap"], "ant": ["reward", "favour"]}, {"w": "came off worse", "pos": "verb", "ipa": "/ˌkeɪm ɒf ˈwɜːs/", "forms": "come off worse · came off worse", "def": "to end up in a worse position after a struggle or competition", "uz": "yutqazmoq, yomon ahvolda qolmoq", "senses": [], "ex": "In the battle for control of the industry, it was the poor countries which came off worse.", "syn": ["lost out", "fared worse", "suffered"], "ant": ["came off better", "won out"]}, {"w": "subtlety", "pos": "noun", "ipa": "/ˈsʌtlti/", "forms": "subtle · subtlety · subtly", "def": "the quality of being delicate, precise and not obvious", "uz": "nozik farq, nozik yondashuv", "senses": ["a fine or small distinction"], "ex": "All this is explored by Bosma with wonderful subtlety and control.", "syn": ["delicacy", "nuance", "finesse"], "ant": ["crudeness", "bluntness"]}, {"w": "sucrose", "pos": "noun", "ipa": "/ˈsuːkrəʊs/", "forms": "sucrose", "def": "the chemical name for common table sugar, found in cane and beet", "uz": "saxaroza", "senses": [], "ex": "Production involved the extraction of sucrose from the sugar plant.", "syn": ["table sugar", "saccharose"], "ant": []}, {"w": "energy-intensive", "pos": "adjective", "ipa": "/ˈenədʒi ɪnˌtensɪv/", "forms": "energy-intensive", "def": "needing a large amount of energy to carry out", "uz": "ko'p energiya talab qiladigan", "senses": [], "ex": "From very early on, sugar production was an energy-intensive industrial process.", "syn": ["power-hungry", "fuel-heavy"], "ant": ["energy-efficient", "low-energy"]}, {"w": "refinery", "pos": "noun", "ipa": "/rɪˈfaɪnəri/", "forms": "refine · refinery · refinement", "def": "a factory where a raw material is purified, e.g. sugar or oil", "uz": "tozalash zavodi", "senses": [], "ex": "Much of the work took place in a refinery near a centre of consumption.", "syn": ["processing plant", "purification plant"], "ant": []}, {"w": "entail", "pos": "verb", "ipa": "/ɪnˈteɪl/", "forms": "entail · entailed · entails", "def": "to involve something as a necessary part or result", "uz": "talab qilmoq, o'z ichiga olmoq", "senses": [], "ex": "The growth of the industry entailed a very rapid diffusion of ideas and techniques.", "syn": ["involve", "require", "necessitate"], "ant": ["exclude", "preclude"]}, {"w": "diffusion", "pos": "noun", "ipa": "/dɪˈfjuːʒn/", "forms": "diffuse · diffusion", "def": "the process of something spreading widely from one place to others", "uz": "tarqalish, yoyilish", "senses": ["in science, the spreading of particles from high to low concentration"], "ex": "The growth of the industry entailed a very rapid diffusion of ideas and techniques.", "syn": ["spread", "dissemination", "propagation"], "ant": ["concentration", "containment"]}, {"w": "accordance", "pos": "noun", "ipa": "/əˈkɔːdns/", "forms": "accord · accordance", "def": "agreement or conformity; used in the phrase 'in accordance with'", "uz": "muvofiqlik ('ga muvofiq')", "senses": [], "ex": "Varieties spread across the world, in accordance with local needs and demands.", "syn": ["conformity", "agreement", "compliance"], "ant": ["conflict", "violation"]}, {"w": "gleaming", "pos": "adjective", "ipa": "/ˈɡliːmɪŋ/", "forms": "gleam · gleaming · gleamed", "def": "shining brightly, especially because it is clean or polished", "uz": "yaltiroq, tovlanuvchi", "senses": [], "ex": "New techniques have turned gleaming white sugar into a ubiquitous chemical.", "syn": ["shining", "glistening", "sparkling"], "ant": ["dull", "dingy"]}, {"w": "ubiquitous", "pos": "adjective", "ipa": "/juːˈbɪkwɪtəs/", "forms": "ubiquitous · ubiquity", "def": "seeming to be present everywhere at the same time", "uz": "hamma joyda mavjud, keng tarqalgan", "senses": [], "ex": "New techniques have turned white sugar into a ubiquitous chemical.", "syn": ["omnipresent", "pervasive", "everywhere"], "ant": ["rare", "scarce"]}, {"w": "obstruction", "pos": "noun", "ipa": "/əbˈstrʌkʃn/", "forms": "obstruct · obstruction", "def": "the act of deliberately getting in the way of or blocking something", "uz": "to'sqinlik, qarshilik", "senses": ["a physical thing that blocks a passage"], "ex": "There was appalling obstruction from the sugar industry to attempts to reduce consumption.", "syn": ["hindrance", "blocking", "resistance"], "ant": ["assistance", "cooperation"]}, {"w": "high-fructose", "pos": "adjective", "ipa": "/ˌhaɪ ˈfrʌktəʊs/", "forms": "high-fructose", "def": "containing a large amount of fructose, a very sweet sugar", "uz": "yuqori fruktozali", "senses": [], "ex": "High-fructose corn syrup is regarded as a leading cause of obesity.", "syn": ["fructose-rich"], "ant": ["low-sugar"]}, {"w": "ingredient", "pos": "noun", "ipa": "/ɪnˈɡriːdiənt/", "forms": "ingredient · ingredients", "def": "one of the substances that is combined to make something, especially food", "uz": "tarkibiy qism, masalliq", "senses": ["one of the elements that make something successful"], "ex": "High-fructose corn syrup is an ingredient in many processed foods.", "syn": ["component", "element", "constituent"], "ant": []}, {"w": "soft drinks", "pos": "noun", "ipa": "/ˌsɒft ˈdrɪŋks/", "forms": "soft drink · soft drinks", "def": "cold non-alcoholic drinks, usually sweet and fizzy", "uz": "alkogolsiz ichimliklar", "senses": [], "ex": "Corn syrup was adopted in the making of soft drinks and many processed foods.", "syn": ["fizzy drinks", "sodas"], "ant": ["alcoholic drinks"]}];
+
+const STRUCTURES = [{"name": "Contrary to popular belief, ...", "pattern": "Contrary to popular belief, + [surprising true statement]", "use": "Signals that you are about to correct a common but mistaken idea. Use it to introduce a fact that goes against what most people assume.", "ex": "Contrary to popular belief, cane sugar production was never just restricted to large, dedicated plantations owned by rich men.", "mark": ["Contrary to popular belief"], "extra": "Contrary to popular belief, spicy food does not cause stomach ulcers."}, {"name": "not just X but (also) Y", "pattern": "not just + [X] + but (also) + [Y]", "use": "Widens the scope of a claim: it stresses that something covers more than the obvious first case. 'also' can be added for emphasis.", "ex": "But this is a history not just of cane sugar but also of beet sugar, an equally important form of traded sugar over the last hundred years.", "mark": ["not just", "but also"], "extra": "The course teaches not just grammar but also academic writing."}, {"name": "Following + noun, ...", "pattern": "Following + [noun / event], + [main clause]", "use": "A formal way to say 'after' an event. It is followed by a noun phrase, not a full clause, and sets the time frame for what comes next.", "ex": "Following the abolition of slavery in the British Empire, cane sugar was imported to Britain from places which retained the practice.", "mark": ["Following the abolition of slavery in the British Empire"], "extra": "Following the merger, the company doubled its staff."}, {"name": "Only in X was there ... (inversion)", "pattern": "Only + [time/condition] + [auxiliary + subject + verb]", "use": "Fronting 'Only ...' for emphasis forces inversion: the auxiliary comes before the subject. It stresses how late or exceptional something was.", "ex": "Only in the 20th century was there a move to develop a national beet sugar industry.", "mark": ["Only in the 20th century was there"], "extra": "Only after the results came in did they realise their mistake."}, {"name": "such as + examples", "pattern": "[general noun], such as + [example 1] and [example 2]", "use": "Introduces specific examples of a broader category. Useful for supporting a general claim with concrete cases.", "ex": "Cane sugar was imported to Britain from places which retained the practice, such as Cuba and Brazil.", "mark": ["such as Cuba and Brazil"], "extra": "Root crops, such as carrots and potatoes, store well over winter."}, {"name": "passive + by + agent", "pattern": "[thing] + was/were + [past participle] + by + [agent]", "use": "The passive keeps the focus on the process or product, while 'by + agent' still tells us who did it. Common in describing methods and history.", "ex": "Sugar cane was grown together with rice in an extraordinarily labour-intensive way by small farmers.", "mark": ["was grown", "by small farmers"], "extra": "The report was reviewed and approved by an independent committee."}, {"name": "it was X which ... (cleft)", "pattern": "it was + [X] + which/that + [rest]", "use": "A cleft sentence that puts strong emphasis on one element (here, 'the poor countries'). Use it to single out who or what really mattered.", "ex": "In the battle for control of the industry, it was inevitably the poor countries which came off worse.", "mark": ["it was inevitably the poor countries which"], "extra": "It was the small farmers who suffered most from the price collapse."}, {"name": "In the face of + noun, ...", "pattern": "In the face of + [difficulty], + [what happened anyway]", "use": "Introduces a strong obstacle or opposition, then shows the action taken despite it. Adds a sense of struggle or determination.", "ex": "In the face of appalling obstruction from the sugar industry to attempts to reduce consumption, some countries have been forced to tax sugar.", "mark": ["In the face of appalling obstruction"], "extra": "In the face of rising costs, the charity kept every clinic open."}, {"name": "in accordance with + noun", "pattern": "..., in accordance with + [rules / needs / principles]", "use": "A formal phrase meaning 'following' or 'matching'. It links an action to the standard, need or rule that shapes it.", "ex": "Particular varieties spread very rapidly across the world, in accordance with local needs and demands.", "mark": ["in accordance with local needs and demands"], "extra": "All data was handled in accordance with privacy law."}, {"name": "As X has increased, so has Y", "pattern": "As + [X clause], so + [auxiliary + Y]", "use": "Expresses that two things rise (or fall) together. The 'so has ...' part mirrors the first clause and often inverts.", "ex": "But as the consumption of sugar has increased, so has the harm it does, whether to people's teeth or weight.", "mark": ["as the consumption of sugar has increased", "so has the harm it does"], "extra": "As demand has grown, so has the pressure on suppliers."}, {"name": "Once regarded as X, ... (reduced clause)", "pattern": "Once + [past participle] + as [X], + [subject] + [new state]", "use": "A compact participle clause describing a former status, then contrasting it with a later one. Good for showing change over time.", "ex": "Once regarded as a luxury, sugar came to be promoted as a valuable source of energy.", "mark": ["Once regarded as a luxury"], "extra": "Once dismissed as a fad, remote work is now standard."}, {"name": "Where once X, now Y", "pattern": "Where once + [old situation], now + [new situation]", "use": "Draws a sharp then-and-now contrast. It highlights how dramatically a situation has changed.", "ex": "Where once only tiny quantities of sugar could be produced, now new techniques and much more have turned gleaming white sugar into a ubiquitous chemical.", "mark": ["Where once", "now"], "extra": "Where once letters took weeks, now a message arrives in seconds."}, {"name": "even if + clause", "pattern": "[main clause], even if + [hypothetical / concession]", "use": "Concedes a possibility while showing the main point still holds. It admits a point without letting it change the conclusion.", "ex": "Bosma avoids outbursts of emotion, celebratory or critical, even if they might have made his analysis all the more powerful.", "mark": ["even if they might have made"], "extra": "I will finish the project, even if it takes all weekend."}, {"name": "For example, ...", "pattern": "For example, + [specific illustrating case]", "use": "A clear, common connector that introduces one instance to support a general statement. Best placed at the start of the illustrating sentence.", "ex": "For example, in Java, a huge exporter of sugar in the early 20th century, sugar cane was grown together with rice.", "mark": ["For example"], "extra": "Some crops need very little water. For example, sorghum survives long dry spells."}];
+
+/* ============================ STATE ============================ */
+const S = {mode:"vocab", present:"flip", pool:[], size:0, deck:[], i:0, flipped:false, reviewing:false, answered:false};
+const store = (()=>{ try{localStorage.setItem("_t","1");localStorage.removeItem("_t");return localStorage;}catch(e){const m={};return{getItem:k=>m[k]??null,setItem:(k,v)=>m[k]=v,removeItem:k=>{delete m[k]}};}})();
+const KEY="study_world_of_sugar_v1";
+let STATUS = (()=>{ try{return JSON.parse(store.getItem(KEY))||{};}catch(e){return {};} })();
+function saveStatus(){ store.setItem(KEY, JSON.stringify(STATUS)); }
+
+/* ============================ HELPERS ============================ */
+const $=s=>document.querySelector(s);
+const cardEl=$("#card"), frontEl=$("#front"), backEl=$("#back");
+const frontInner=frontEl.querySelector(".inner"), backInner=backEl.querySelector(".inner");
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function speak(t){try{if(!("speechSynthesis"in window))return;speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang="en-US";u.rate=.92;speechSynthesis.speak(u);}catch(e){}}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+function acc(label,html){return `<details class="acc"><summary>${label}<span class="plus">+</span></summary><div class="body">${html}</div></details>`;}
+function tags(a){return a&&a.length?a.map(x=>`<span class="tag">${esc(x)}</span>`).join(""):`<em>—</em>`;}
+function highlightEx(ex,marks){let h=esc(ex);(marks||[]).forEach(m=>{const em=esc(m);h=h.split(em).join('<span class="mark">'+em+'</span>');});return h;}
+function speakBtn(w){return `<button class="speak" onclick="event.stopPropagation();speak('${w.replace(/'/g,"\\'")}')" aria-label="pronounce">▶</button>`;}
+const flipBtn = `<button class="flipbtn" onclick="event.stopPropagation();flipToFront()">↩&nbsp;Flip</button>`;
+
+/* ============================ CARD SIZING ============================ */
+function fitCard(){
+  requestAnimationFrame(()=>{
+    const face=S.flipped?backEl:frontEl;
+    const inner=face.querySelector(".inner");
+    if(!inner)return;
+    const contentH=Math.ceil(inner.getBoundingClientRect().height);
+    const cardTop=cardEl.getBoundingClientRect().top;
+    const reserve=150; // space for buttons + hint below the card
+    const avail=Math.max(240, window.innerHeight-cardTop-reserve);
+    const minH=S.flipped?240:300;
+    const target=Math.max(contentH,minH);
+    if(target<=avail){ cardEl.style.height=target+"px"; face.style.overflowY="hidden"; }
+    else { cardEl.style.height=avail+"px"; face.style.overflowY="auto"; }
+    (S.flipped?frontEl:backEl).style.overflowY="hidden";
+  });
+}
+window.addEventListener("resize",()=>{ if(!$("#study").classList.contains("hidden")) fitCard(); });
+
+/* ============================ HOME ============================ */
+function refreshHome(){
+  $("#vocabCount").textContent=VOCAB.length+" words";
+  $("#structCount").textContent=STRUCTURES.length+" patterns";
+  const v=Object.values(STATUS);
+  const learnt=v.filter(x=>x==="learnt").length, learning=v.filter(x=>x==="learning").length;
+  $("#hLearnt").textContent=learnt; $("#hLearning").textContent=learning;
+  $("#hNew").textContent=VOCAB.length-learnt-learning;
+}
+function show(id){["home","study","summary"].forEach(x=>$("#"+x).classList.toggle("hidden",x!==id));window.scrollTo(0,0);}
+document.querySelectorAll("[data-open]").forEach(b=>b.addEventListener("click",()=>{S.mode=b.dataset.open;startDeck(S.mode==="vocab"?VOCAB:STRUCTURES,false);}));
+$("#resetBtn").addEventListener("click",()=>{if(confirm("Reset all progress?")){STATUS={};saveStatus();refreshHome();}});
+
+/* ============================ STUDY ============================ */
+function startDeck(pool,reviewing){
+  S.pool=pool; S.flipped=false; S.reviewing=reviewing;
+  const isStruct=(S.mode==="struct");
+  $("#modeSwitch").style.visibility=isStruct?"hidden":"visible";
+  if(isStruct)S.present="flip";
+  document.querySelectorAll("#modeSwitch button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.m===S.present));
+  sizeSlider.min=1; sizeSlider.max=pool.length; sizeSlider.value=pool.length; S.size=pool.length;
+  updateSizeLabel(); buildDeck();
+  show("study"); render();
+}
+document.querySelectorAll("#modeSwitch button").forEach(b=>b.addEventListener("click",()=>{
+  S.present=b.dataset.m;
+  document.querySelectorAll("#modeSwitch button").forEach(x=>x.setAttribute("aria-pressed",x===b));
+  render();
+}));
+$("#studyBack").addEventListener("click",()=>{show("home");refreshHome();});
+const sizeSlider=$("#sizeSlider"), sizeLabel=$("#sizeLabel");
+function studyNoun(){return S.mode==="struct"?"Patterns":"Words";}
+function updateSizeLabel(){const n=+sizeSlider.value,total=S.pool.length;sizeLabel.textContent=`${studyNoun()}: ${n} / ${total} · ${Math.round(n/total*100)}%`;}
+function buildDeck(){S.deck=shuffle(S.pool).slice(0,S.size);S.i=0;}
+sizeSlider.addEventListener("input",updateSizeLabel);
+sizeSlider.addEventListener("change",()=>{S.size=+sizeSlider.value;buildDeck();render();});
+
+cardEl.addEventListener("click",()=>{
+  if(S.flipped) return;
+  if(S.mode==="vocab" && S.present==="cloze") return;
+  flipToBack();
+});
+window.flipToBack=function(){
+  S.flipped=true;
+  cardEl.classList.add("flipped");
+  $("#tapHint").classList.add("hidden");
+  $("#rate").classList.toggle("hidden", S.mode!=="vocab");
+  $("#nextwrap").classList.toggle("hidden", S.mode!=="struct");
+  fitCard();
+};
+window.flipToFront=function(){
+  S.flipped=false;
+  cardEl.classList.remove("flipped");
+  $("#rate").classList.add("hidden");
+  $("#nextwrap").classList.add("hidden");
+  $("#tapHint").classList.remove("hidden");
+  fitCard();
+};
+
+function render(){
+  const total=S.deck.length;
+  $("#bar").style.width=(S.i/total*100)+"%";
+  $("#counter").textContent=`${S.i+1} / ${total}`;
+  S.answered=false;
+  const item=S.deck[S.i];
+  if(S.mode==="struct") renderStructure(item); else renderVocab(item);
+  // reset to front
+  S.flipped=false; cardEl.classList.remove("flipped");
+  $("#rate").classList.add("hidden"); $("#nextwrap").classList.add("hidden"); $("#tapHint").classList.remove("hidden");
+  backEl.querySelectorAll("details").forEach(d=>d.addEventListener("toggle",fitCard));
+  fitCard();
+}
+
+function renderVocab(v){
+  let front="";
+  if(S.present==="flip"){
+    front=`<div class="pos">${v.pos}</div><div class="word">${esc(v.w)}</div>${v.ipa?`<div class="ipa">${esc(v.ipa)}</div>`:""}${speakBtn(v.w)}<div class="hint">tap to reveal the meaning</div>`;
+  } else if(S.present==="recall"){
+    front=`<div class="pos">definition → word (${v.pos})</div><div class="prompt">${esc(v.def)}</div><div class="hint">recall the English word, then tap</div>`;
+  } else {
+    front=`<div class="pos">choose the missing word</div><div class="cloze">${clozeSentence(v)}</div><div class="opts">${optionButtons(v)}</div>`;
+  }
+  frontInner.innerHTML=front;
+  backInner.innerHTML=`
+    <div class="headline"><span class="w">${esc(v.w)}</span><span class="p">${v.pos}</span>${flipBtn}</div>
+    <div class="meaning">${esc(v.def)}</div>
+    ${v.uz?`<p class="uztrans"><span class="lab">o'zbekcha</span>${esc(v.uz)}</p>`:""}
+    ${v.senses&&v.senses.length?`<p class="senses"><span class="lab">also means</span>${v.senses.map(esc).join("; ")}</p>`:""}
+    <p class="forms">${esc(v.forms)}</p>
+    ${acc("Example — from the passage",`<em>${esc(v.ex)}</em>`)}
+    ${acc("Synonyms — in this context",tags(v.syn))}
+    ${acc("Antonyms",tags(v.ant))}
+  `;
+}
+
+function clozeSentence(v){
+  const base=v.w.split(/[ -]/)[0];
+  const re=new RegExp("\\b"+base.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+"[a-z]*\\b","i");
+  if(re.test(v.ex)) return esc(v.ex).replace(re,'<span class="gap"></span>');
+  return esc(v.ex)+' <span class="gap"></span>';
+}
+function optionButtons(v){
+  const same=VOCAB.filter(x=>x.pos===v.pos && x.w!==v.w);
+  let pool=shuffle(same).slice(0,3);
+  if(pool.length<3){const rest=shuffle(VOCAB.filter(x=>x.w!==v.w && !pool.includes(x)));pool=pool.concat(rest.slice(0,3-pool.length));}
+  const opts=shuffle(pool.map(x=>x.w).concat(v.w));
+  return opts.map(w=>`<button class="opt" data-word="${esc(w)}" onclick="event.stopPropagation();selectOption(this)">${esc(w)}</button>`).join("");
+}
+window.selectOption=function(btn){
+  if(S.answered)return; S.answered=true;
+  const v=S.deck[S.i], chosen=btn.dataset.word;
+  document.querySelectorAll(".opt").forEach(b=>{
+    b.disabled=true;
+    if(b.dataset.word===v.w)b.classList.add("correct");
+    else if(b===btn)b.classList.add("wrong");
+  });
+  const gap=document.querySelector(".gap");
+  if(gap){gap.textContent=v.w;gap.classList.add(chosen===v.w?"g-ok":"g-bad");}
+  setTimeout(flipToBack,850);
+};
+
+function renderStructure(st){
+  frontInner.innerHTML=`<div class="pos">Structure</div><div class="word" style="font-size:26px;line-height:1.2">${esc(st.name)}</div><div class="hint">tap to open</div>`;
+  backInner.innerHTML=`
+    <div class="headline"><span class="w">${esc(st.name)}</span>${flipBtn}</div>
+    <div class="pattern">${esc(st.pattern)}</div>
+    <div class="meaning" style="font-size:16px">When to use it</div>
+    <p style="margin:6px 0 8px;font-size:14.5px;line-height:1.6">${esc(st.use)}</p>
+    ${acc("Example — from the passage",`<em>${highlightEx(st.ex,st.mark)}</em>`)}
+    ${acc("Another example",esc(st.extra))}
+  `;
+}
+
+/* rating / next */
+function rate(status){STATUS[S.deck[S.i].w]=status;saveStatus();next();}
+$("#btnLearning").addEventListener("click",()=>rate("learning"));
+$("#btnLearnt").addEventListener("click",()=>rate("learnt"));
+$("#btnNext").addEventListener("click",next);
+function next(){ if(S.i<S.deck.length-1){S.i++;render();} else finishDeck(); }
+
+/* summary */
+function finishDeck(){
+  if(S.mode==="struct"){show("home");refreshHome();return;}
+  const trained=S.deck;
+  const learningWords=trained.filter(v=>STATUS[v.w]==="learning");
+  const learntCount=trained.filter(v=>STATUS[v.w]==="learnt").length;
+  const pct=trained.length?Math.round(learntCount/trained.length*100):0;
+  $("#sumEyebrow").textContent=S.reviewing?"Review complete":"Deck complete";
+  $("#sumBig").textContent=pct+"%";
+  $("#sumSub").textContent=`You knew ${learntCount} of ${trained.length} words this round.`;
+  $("#sumLearnt").textContent=learntCount;
+  $("#sumLearning").textContent=learningWords.length;
+  const rb=$("#reviewBlock"), rbtn=$("#reviewBtn");
+  if(learningWords.length){
+    rb.classList.remove("hidden"); rbtn.classList.remove("hidden");
+    $("#sumWords").innerHTML=learningWords.map(v=>`<span class="tag">${esc(v.w)}</span>`).join("");
+    rbtn.textContent=`Review learning words (${learningWords.length})`;
+    rbtn.onclick=()=>{S.mode="vocab";startDeck(learningWords,true);};
+  } else {
+    rb.innerHTML='<p style="margin-top:20px">All words learnt. Great work.</p>';
+    rbtn.classList.add("hidden");
+  }
+  show("summary");
+}
+$("#restartBtn").addEventListener("click",()=>{S.mode="vocab";startDeck(VOCAB,false);});
+$("#homeBtn").addEventListener("click",()=>{show("home");refreshHome();});
+
+/* keyboard */
+document.addEventListener("keydown",e=>{
+  if($("#study").classList.contains("hidden"))return;
+  if(e.target&&e.target.tagName==="INPUT")return;
+  if(e.code==="Space"){e.preventDefault(); S.flipped?flipToFront():flipToBack();}
+  else if(e.key==="ArrowRight"){e.preventDefault();next();}
+  else if(S.flipped&&S.mode==="vocab"&&e.key==="1"){rate("learning");}
+  else if(S.flipped&&S.mode==="vocab"&&e.key==="2"){rate("learnt");}
+});
+
+refreshHome();
+</script>
+</body>
+</html>
