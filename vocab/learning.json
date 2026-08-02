@@ -1,3 +1,2977 @@
 {
-    
+  "cambridge-21-reading-3": [
+    {
+      "w": "evenly",
+      "form": "evenly",
+      "pos": "adverb",
+      "ipa": "/ˈiːvənli/",
+      "forms": "even · evenly · evenness",
+      "def": "in equal amounts, or spread the same across every part",
+      "uz": "teng, bir tekis",
+      "senses": [
+        "smoothly, without bumps",
+        "calmly, steadily"
+      ],
+      "ex": "Today, numbers of saiga are distributed evenly across four nations in Central Asia.",
+      "syn": [
+        "equally",
+        "uniformly",
+        "in equal parts"
+      ],
+      "ant": [
+        "unevenly",
+        "unequally"
+      ],
+      "related": [
+        "distributed evenly",
+        "spread evenly",
+        "evenly matched"
+      ]
+    },
+    {
+      "w": "fluctuation",
+      "form": "fluctuations (unpredictable fluctuations)",
+      "pos": "noun",
+      "ipa": "/ˌflʌktʃuˈeɪʃn/",
+      "forms": "fluctuate · fluctuation · fluctuations",
+      "def": "a change that keeps happening — an irregular rise and fall in level or amount",
+      "uz": "o'zgarib turish, tebranish",
+      "senses": [
+        "irregular variation over time"
+      ],
+      "ex": "saiga struggle to cope with temperature extremes and unpredictable fluctuations in climate.",
+      "syn": [
+        "variation",
+        "swing",
+        "instability"
+      ],
+      "ant": [
+        "stability",
+        "constancy"
+      ],
+      "related": [
+        "unpredictable fluctuations",
+        "fluctuations in climate",
+        "price fluctuations"
+      ]
+    },
+    {
+      "w": "initiative",
+      "form": "Conservation Initiative",
+      "pos": "noun",
+      "ipa": "/ɪˈnɪʃətɪv/",
+      "forms": "initiative · initiatives",
+      "def": "a new organised plan or effort made to solve a problem or reach a goal",
+      "uz": "tashabbus, tashabbuskor loyiha",
+      "senses": [
+        "the ability to act on your own without being told",
+        "the power to act first (take the initiative)"
+      ],
+      "ex": "Recent efforts to save the saiga have been spearheaded by the Altyn Dala Conservation Initiative.",
+      "syn": [
+        "scheme",
+        "project",
+        "programme"
+      ],
+      "ant": [
+        "inaction"
+      ],
+      "related": [
+        "Conservation Initiative",
+        "take the initiative",
+        "launch an initiative"
+      ]
+    },
+    {
+      "w": "form",
+      "form": "formed for",
+      "pos": "verb",
+      "ipa": "/fɔːm/",
+      "forms": "form · formed · forming",
+      "def": "to be created or set up (here: set up for a particular purpose)",
+      "uz": "tuzilmoq, tashkil etilmoq",
+      "senses": [
+        "to make or shape something",
+        "to develop gradually (form an opinion / a habit)"
+      ],
+      "ex": "The Altyn Dala Conservation Initiative was formed for the benefit of a number of different animals.",
+      "syn": [
+        "set up",
+        "establish",
+        "create"
+      ],
+      "ant": [
+        "dissolve",
+        "disband"
+      ],
+      "related": [
+        "formed for (a purpose)",
+        "form an opinion",
+        "form a habit"
+      ]
+    },
+    {
+      "w": "recognition",
+      "form": "recognition / recognise",
+      "pos": "noun",
+      "ipa": "/ˌrekəɡˈnɪʃn/",
+      "forms": "recognise · recognition · recognised",
+      "def": "public acknowledgement that something is good, important or valuable",
+      "uz": "e'tirof, tan olinish",
+      "senses": [
+        "knowing someone/something again because you have seen it before",
+        "formal acceptance that something is valid"
+      ],
+      "ex": "The Altyn Dala Conservation Initiative's recognition as a World Restoration Flagship project attracted attention.",
+      "syn": [
+        "acknowledgement",
+        "acclaim",
+        "credit"
+      ],
+      "ant": [
+        "neglect",
+        "disregard"
+      ],
+      "related": [
+        "gain recognition",
+        "in recognition of",
+        "recognise as"
+      ]
+    },
+    {
+      "w": "consult",
+      "form": "have been consulted about",
+      "pos": "verb",
+      "ipa": "/kənˈsʌlt/",
+      "forms": "consult · consulted · consultation",
+      "def": "to ask someone for their opinion or advice before deciding something",
+      "uz": "maslahatlashmoq, fikrini so'ramoq",
+      "senses": [
+        "to look at a source for information (consult a map/dictionary)",
+        "to see an expert (consult a doctor)"
+      ],
+      "ex": "Residents have been consulted about their views on the suburban rail line in Dar es Salaam.",
+      "syn": [
+        "ask",
+        "confer with",
+        "seek advice from"
+      ],
+      "ant": [
+        "ignore",
+        "overlook"
+      ],
+      "related": [
+        "be consulted about",
+        "consult a doctor",
+        "in consultation with"
+      ]
+    },
+    {
+      "w": "pinpoint",
+      "form": "pinpointing",
+      "pos": "verb",
+      "ipa": "/ˈpɪnpɔɪnt/",
+      "forms": "pinpoint · pinpointed · pinpointing",
+      "def": "to identify or locate something exactly",
+      "uz": "aniq belgilamoq, aniqlamoq",
+      "senses": [
+        "to find the exact position of something"
+      ],
+      "ex": "pinpointing some key changes in our understanding of prehistory",
+      "syn": [
+        "identify",
+        "locate",
+        "specify"
+      ],
+      "ant": [
+        "generalise",
+        "obscure"
+      ],
+      "related": [
+        "pinpoint the cause",
+        "pinpoint a location"
+      ]
+    },
+    {
+      "w": "outline",
+      "form": "outlining",
+      "pos": "verb",
+      "ipa": "/ˈaʊtlaɪn/",
+      "forms": "outline · outlined · outlining",
+      "def": "to give the main facts or ideas about something, without the details",
+      "uz": "qisqacha bayon qilmoq, umumiy tasvirlamoq",
+      "senses": [
+        "the outer line or shape of something (noun)",
+        "a plan or summary (noun)"
+      ],
+      "ex": "outlining some aspects of prehistory which are still poorly understood",
+      "syn": [
+        "summarise",
+        "sketch out",
+        "describe"
+      ],
+      "ant": [
+        "detail"
+      ],
+      "related": [
+        "outline a plan",
+        "a broad outline",
+        "in outline"
+      ]
+    },
+    {
+      "w": "revelation",
+      "form": "revelations",
+      "pos": "noun",
+      "ipa": "/ˌrevəˈleɪʃn/",
+      "forms": "reveal · revelation · revelations",
+      "def": "a surprising fact that is made known, often something previously secret",
+      "uz": "oshkor bo'lish, kutilmagan yangilik",
+      "senses": [
+        "the act of making something known",
+        "a sudden striking realisation"
+      ],
+      "ex": "summarising some attitudes towards recent archaeological revelations",
+      "syn": [
+        "disclosure",
+        "discovery",
+        "surprise"
+      ],
+      "ant": [
+        "secret",
+        "concealment"
+      ],
+      "related": [
+        "archaeological revelations",
+        "a shocking revelation"
+      ]
+    },
+    {
+      "w": "gradual",
+      "form": "gradual (way)",
+      "pos": "adjective",
+      "ipa": "/ˈɡrædʒuəl/",
+      "forms": "gradual · gradually · gradualness",
+      "def": "happening slowly over a long time, in small steps",
+      "uz": "asta-sekin, bosqichma-bosqich",
+      "senses": [],
+      "ex": "most developments happen in a gradual way",
+      "syn": [
+        "slow",
+        "step-by-step",
+        "incremental"
+      ],
+      "ant": [
+        "sudden",
+        "abrupt"
+      ],
+      "related": [
+        "in a gradual way",
+        "gradual change",
+        "gradually increase"
+      ]
+    },
+    {
+      "w": "unpick",
+      "form": "unpick this stuff",
+      "pos": "verb",
+      "ipa": "/ˌʌnˈpɪk/",
+      "forms": "unpick · unpicked · unpicking",
+      "def": "to carefully examine and take apart an idea or argument to understand or undo it",
+      "uz": "chuqur tahlil qilib chigalini yozmoq",
+      "senses": [
+        "to undo the stitches of sewing"
+      ],
+      "ex": "Today's researchers are trying to unpick this stuff.",
+      "syn": [
+        "disentangle",
+        "analyse",
+        "unravel"
+      ],
+      "ant": [
+        "accept",
+        "leave intact"
+      ],
+      "related": [
+        "unpick this stuff",
+        "unpick an argument"
+      ]
+    },
+    {
+      "w": "assess",
+      "form": "assessing",
+      "pos": "verb",
+      "ipa": "/əˈses/",
+      "forms": "assess · assessed · assessment",
+      "def": "to carefully judge the quality, amount or importance of something",
+      "uz": "baholamoq, aniqlamoq",
+      "senses": [
+        "to calculate the amount or value of something (assess tax)"
+      ],
+      "ex": "assessing the impact of certain recent research findings",
+      "syn": [
+        "evaluate",
+        "judge",
+        "appraise"
+      ],
+      "ant": [
+        "ignore",
+        "guess"
+      ],
+      "related": [
+        "assess the impact",
+        "risk assessment"
+      ]
+    },
+    {
+      "w": "reevaluate",
+      "form": "reevaluating",
+      "pos": "verb",
+      "ipa": "/ˌriːɪˈvæljueɪt/",
+      "forms": "re-evaluate · re-evaluated · re-evaluation",
+      "def": "to think about or judge something again, especially to change a previous opinion",
+      "uz": "qayta baholamoq",
+      "senses": [],
+      "ex": "reevaluating research influenced by outdated beliefs about society",
+      "syn": [
+        "reassess",
+        "rethink",
+        "reconsider"
+      ],
+      "ant": [
+        "accept unquestioningly"
+      ],
+      "related": [
+        "reevaluate research",
+        "re-evaluate a decision"
+      ]
+    },
+    {
+      "w": "fair",
+      "form": "fairer (society)",
+      "pos": "adjective",
+      "ipa": "/feə/",
+      "forms": "fair · fairer · fairest · fairness",
+      "def": "treating everyone equally and in a reasonable, just way",
+      "uz": "adolatli, halol",
+      "senses": [
+        "quite good but not excellent (a fair amount)",
+        "light in colour (fair hair/skin)"
+      ],
+      "ex": "Studying past societies could help us create a fairer society today.",
+      "syn": [
+        "just",
+        "equitable",
+        "even-handed"
+      ],
+      "ant": [
+        "unfair",
+        "unjust"
+      ],
+      "related": [
+        "a fairer society",
+        "fair treatment",
+        "fair play"
+      ]
+    },
+    {
+      "w": "emerge",
+      "form": "emerged",
+      "pos": "verb",
+      "ipa": "/ɪˈmɜːdʒ/",
+      "forms": "emerge · emerged · emergence",
+      "def": "to come into existence; to appear or come out from somewhere",
+      "uz": "paydo bo'lmoq, yuzaga chiqmoq",
+      "senses": [
+        "(of facts) to become known — 'it emerged that ...'"
+      ],
+      "ex": "Homo sapiens emerged at an earlier point in time than experts previously believed.",
+      "syn": [
+        "appear",
+        "arise",
+        "come out"
+      ],
+      "ant": [
+        "disappear",
+        "vanish"
+      ],
+      "related": [
+        "emerge from",
+        "it emerged that",
+        "newly emerged"
+      ]
+    },
+    {
+      "w": "sophisticated",
+      "form": "sophisticated",
+      "pos": "adjective",
+      "ipa": "/səˈfɪstɪkeɪtɪd/",
+      "forms": "sophisticate · sophisticated · sophistication",
+      "def": "highly developed, complex and advanced",
+      "uz": "murakkab, yuksak darajada rivojlangan",
+      "senses": [
+        "having refined, cultured tastes (a sophisticated person)"
+      ],
+      "ex": "Homo sapiens was probably not the only species capable of sophisticated workmanship.",
+      "syn": [
+        "advanced",
+        "complex",
+        "refined"
+      ],
+      "ant": [
+        "primitive",
+        "crude",
+        "simple"
+      ],
+      "related": [
+        "sophisticated workmanship",
+        "sophisticated technology"
+      ]
+    },
+    {
+      "w": "workmanship",
+      "form": "workmanship",
+      "pos": "noun",
+      "ipa": "/ˈwɜːkmənʃɪp/",
+      "forms": "workmanship",
+      "def": "the skill with which something is made, or the quality that skill produces",
+      "uz": "ustalik, hunar, sifatli ishlanish",
+      "senses": [],
+      "ex": "Homo sapiens was probably not the only species capable of sophisticated workmanship.",
+      "syn": [
+        "craftsmanship",
+        "skill",
+        "artistry"
+      ],
+      "ant": [
+        "shoddiness"
+      ],
+      "related": [
+        "sophisticated workmanship",
+        "fine workmanship"
+      ]
+    },
+    {
+      "w": "unconventional",
+      "form": "unconventional",
+      "pos": "adjective",
+      "ipa": "/ˌʌnkənˈvenʃənl/",
+      "forms": "conventional · unconventional · unconventionally",
+      "def": "not following what is usual or traditional; unusual",
+      "uz": "noan'anaviy, g'ayrioddiy",
+      "senses": [],
+      "ex": "The methods which the researchers used to examine the Rising Star cave system were rather unconventional.",
+      "syn": [
+        "unusual",
+        "unorthodox",
+        "atypical"
+      ],
+      "ant": [
+        "conventional",
+        "traditional",
+        "orthodox"
+      ],
+      "related": [
+        "unconventional methods",
+        "an unconventional approach"
+      ]
+    },
+    {
+      "w": "publicise",
+      "form": "publicise",
+      "pos": "verb",
+      "ipa": "/ˈpʌblɪsaɪz/",
+      "forms": "publicise · publicised · publicity",
+      "def": "to make something widely known to the public",
+      "uz": "ommaga e'lon qilmoq, targ'ib qilmoq",
+      "senses": [],
+      "ex": "The means used to publicise the findings from the Rising Star cave system added to the controversy.",
+      "syn": [
+        "advertise",
+        "promote",
+        "broadcast"
+      ],
+      "ant": [
+        "conceal",
+        "suppress"
+      ],
+      "related": [
+        "publicise the findings",
+        "widely publicised"
+      ]
+    },
+    {
+      "w": "roam",
+      "form": "roamed",
+      "pos": "verb",
+      "ipa": "/rəʊm/",
+      "forms": "roam · roamed · roaming",
+      "def": "to move or travel around a wide area freely, with no fixed direction",
+      "uz": "erkin kezmoq, sayr qilmoq",
+      "senses": [],
+      "ex": "The saiga once roamed the vast grasslands of this region in enormous herds.",
+      "syn": [
+        "wander",
+        "range",
+        "rove"
+      ],
+      "ant": [
+        "stay put",
+        "be confined"
+      ],
+      "related": [
+        "roam freely",
+        "roamed the grasslands"
+      ]
+    },
+    {
+      "w": "herd",
+      "form": "enormous herds",
+      "pos": "noun",
+      "ipa": "/hɜːd/",
+      "forms": "herd · herds · herding",
+      "def": "a large group of animals of one kind that live and move together",
+      "uz": "poda, suruv",
+      "senses": [
+        "to drive or gather animals/people together (verb)"
+      ],
+      "ex": "The saiga once roamed the grasslands in enormous herds, many millions strong.",
+      "syn": [
+        "flock",
+        "drove",
+        "pack"
+      ],
+      "ant": [],
+      "related": [
+        "enormous herds",
+        "a herd of cattle",
+        "herd together"
+      ]
+    },
+    {
+      "w": "regrettably",
+      "form": "Regrettably",
+      "pos": "adverb",
+      "ipa": "/rɪˈɡretəbli/",
+      "forms": "regret · regrettable · regrettably",
+      "def": "used to say you are sorry about something or wish it were not true; unfortunately",
+      "uz": "afsuski, taassufki",
+      "senses": [],
+      "ex": "Regrettably, such spectacular sights are a thing of the past.",
+      "syn": [
+        "unfortunately",
+        "sadly",
+        "regretfully"
+      ],
+      "ant": [
+        "fortunately",
+        "happily"
+      ],
+      "related": [
+        "Regrettably, ...",
+        "a regrettable mistake"
+      ]
+    },
+    {
+      "w": "confine",
+      "form": "confined to",
+      "pos": "verb",
+      "ipa": "/kənˈfaɪn/",
+      "forms": "confine · confined · confinement",
+      "def": "to keep something within limits; to restrict it to one particular place",
+      "uz": "cheklamoq, faqat bir joyda qolib ketmoq",
+      "senses": [
+        "to keep someone shut in a place (confined to bed)"
+      ],
+      "ex": "Today, the saiga is largely confined to a single country: Kazakhstan.",
+      "syn": [
+        "restrict",
+        "limit",
+        "contain"
+      ],
+      "ant": [
+        "free",
+        "release",
+        "spread"
+      ],
+      "related": [
+        "confined to",
+        "a confined space"
+      ]
+    },
+    {
+      "w": "wilderness",
+      "form": "wilderness",
+      "pos": "noun",
+      "ipa": "/ˈwɪldənəs/",
+      "forms": "wilderness",
+      "def": "a large area of wild, natural land where few or no people live",
+      "uz": "bepoyon tabiat, sahroyi hudud",
+      "senses": [
+        "a neglected or forgotten position (in the political wilderness)"
+      ],
+      "ex": "The saiga is perfectly adapted to the remote wilderness of the steppes of Central Asia.",
+      "syn": [
+        "the wild",
+        "wasteland",
+        "wilds"
+      ],
+      "ant": [
+        "civilisation",
+        "settlement"
+      ],
+      "related": [
+        "remote wilderness",
+        "a wilderness area"
+      ]
+    },
+    {
+      "w": "steppe",
+      "form": "steppes / steppe",
+      "pos": "noun",
+      "ipa": "/step/",
+      "forms": "steppe · steppes",
+      "def": "a large area of flat grassland without trees, especially in Central Asia",
+      "uz": "dasht, cho'l-dasht",
+      "senses": [],
+      "ex": "the remote wilderness of the steppes of Central Asia",
+      "syn": [
+        "grassland",
+        "prairie",
+        "plain"
+      ],
+      "ant": [],
+      "related": [
+        "the steppes of Central Asia",
+        "the steppe region"
+      ]
+    },
+    {
+      "w": "bizarre",
+      "form": "bizarre",
+      "pos": "adjective",
+      "ipa": "/bɪˈzɑː/",
+      "forms": "bizarre · bizarrely",
+      "def": "very strange and unusual in a surprising way",
+      "uz": "g'alati, ajabtovur",
+      "senses": [],
+      "ex": "One such adaptation is its bizarre bulbous nose.",
+      "syn": [
+        "strange",
+        "weird",
+        "peculiar"
+      ],
+      "ant": [
+        "ordinary",
+        "normal"
+      ],
+      "related": [
+        "a bizarre nose",
+        "a bizarre situation"
+      ]
+    },
+    {
+      "w": "bulbous",
+      "form": "bulbous (nose)",
+      "pos": "adjective",
+      "ipa": "/ˈbʌlbəs/",
+      "forms": "bulb · bulbous",
+      "def": "round, fat and bulging in shape, like a bulb",
+      "uz": "shishgan, dumaloq-bo'rtgan",
+      "senses": [],
+      "ex": "One such adaptation is its bizarre bulbous nose, which enables the animal to survive.",
+      "syn": [
+        "bulging",
+        "swollen",
+        "rounded"
+      ],
+      "ant": [
+        "flat",
+        "slender"
+      ],
+      "related": [
+        "a bulbous nose",
+        "a bulbous shape"
+      ]
+    },
+    {
+      "w": "swell",
+      "form": "swollen (nostrils) · swells",
+      "pos": "verb",
+      "ipa": "/swel/",
+      "forms": "swell · swelled · swollen · swelling",
+      "def": "to become larger or rounder than normal; also to increase in number or amount",
+      "uz": "shishmoq; ko'paymoq, kengaymoq",
+      "senses": [
+        "to increase in number (a population swells)",
+        "a slow rolling movement of the sea (noun)"
+      ],
+      "ex": "The swollen nostrils of the nose serve several purposes.",
+      "syn": [
+        "expand",
+        "bulge",
+        "grow"
+      ],
+      "ant": [
+        "shrink",
+        "contract"
+      ],
+      "related": [
+        "swollen nostrils",
+        "swells by half a million",
+        "swell in number"
+      ]
+    },
+    {
+      "w": "nostril",
+      "form": "nostrils",
+      "pos": "noun",
+      "ipa": "/ˈnɒstrəl/",
+      "forms": "nostril · nostrils",
+      "def": "either of the two openings at the end of the nose through which you breathe",
+      "uz": "burun teshigi, katak",
+      "senses": [],
+      "ex": "The swollen nostrils of the nose serve several purposes.",
+      "syn": [
+        "nasal opening"
+      ],
+      "ant": [],
+      "related": [
+        "swollen nostrils",
+        "flared nostrils"
+      ]
+    },
+    {
+      "w": "swing",
+      "form": "swings (temperature swings)",
+      "pos": "noun",
+      "ipa": "/swɪŋ/",
+      "forms": "swing · swings · swung",
+      "def": "a large and sudden change from one level or condition to another",
+      "uz": "keskin o'zgarish, tebranish",
+      "senses": [
+        "to move back and forth from a fixed point (verb)",
+        "a hanging seat for children (noun)"
+      ],
+      "ex": "to survive the extreme seasonal temperature swings of the region",
+      "syn": [
+        "shift",
+        "fluctuation",
+        "variation"
+      ],
+      "ant": [
+        "stability"
+      ],
+      "related": [
+        "temperature swings",
+        "mood swings",
+        "swing back and forth"
+      ]
+    },
+    {
+      "w": "shed",
+      "form": "sheds",
+      "pos": "verb",
+      "ipa": "/ʃed/",
+      "forms": "shed · shed · shedding",
+      "def": "to lose or drop something naturally, such as hair, skin or leaves",
+      "uz": "to'kmoq, tashlamoq (jun/teri)",
+      "senses": [
+        "to get rid of something you no longer need (shed jobs)",
+        "to give off (shed light / shed tears)",
+        "a small storage building (noun)"
+      ],
+      "ex": "Other seasonal adaptations include a heavy winter coat that the saiga sheds when the weather warms up.",
+      "syn": [
+        "cast off",
+        "drop",
+        "moult"
+      ],
+      "ant": [
+        "grow",
+        "keep",
+        "retain"
+      ],
+      "related": [
+        "shed its coat",
+        "shed light on",
+        "shed tears"
+      ]
+    },
+    {
+      "w": "superb",
+      "form": "superb",
+      "pos": "adjective",
+      "ipa": "/suːˈpɜːb/",
+      "forms": "superb · superbly",
+      "def": "extremely good; excellent",
+      "uz": "ajoyib, zo'r, a'lo",
+      "senses": [],
+      "ex": "Despite these superb adaptations to harsh conditions, the saiga has no defence against humans.",
+      "syn": [
+        "excellent",
+        "magnificent",
+        "outstanding"
+      ],
+      "ant": [
+        "poor",
+        "terrible"
+      ],
+      "related": [
+        "superb adaptations",
+        "in superb condition"
+      ]
+    },
+    {
+      "w": "pose",
+      "form": "posed by · poses",
+      "pos": "verb",
+      "ipa": "/pəʊz/",
+      "forms": "pose · posed · posing",
+      "def": "to be the cause of a problem, danger or threat",
+      "uz": "keltirib chiqarmoq, tug'dirmoq (xavf/muammo)",
+      "senses": [
+        "to hold a position for a photo or painting",
+        "to pretend to be someone (pose as)",
+        "to ask a question formally (pose a question)"
+      ],
+      "ex": "The saiga has no defence against the threats posed by humans.",
+      "syn": [
+        "present",
+        "create",
+        "constitute"
+      ],
+      "ant": [
+        "remove",
+        "solve"
+      ],
+      "related": [
+        "threats posed by",
+        "pose a threat",
+        "pose a question",
+        "pose as"
+      ]
+    },
+    {
+      "w": "ensure",
+      "form": "ensured",
+      "pos": "verb",
+      "ipa": "/ɪnˈʃʊə/",
+      "forms": "ensure · ensured · ensuring",
+      "def": "to make certain that something happens or is the case",
+      "uz": "ta'minlamoq, kafolatlamoq",
+      "senses": [],
+      "ex": "Legal protection ensured its survival for a while.",
+      "syn": [
+        "guarantee",
+        "secure",
+        "make certain"
+      ],
+      "ant": [
+        "jeopardise",
+        "risk"
+      ],
+      "related": [
+        "ensure survival",
+        "ensure that"
+      ]
+    },
+    {
+      "w": "respite",
+      "form": "respite",
+      "pos": "noun",
+      "ipa": "/ˈrespaɪt/",
+      "forms": "respite",
+      "def": "a short period of rest or relief from something difficult or unpleasant",
+      "uz": "tanaffus, vaqtincha yengillik",
+      "senses": [],
+      "ex": "But the respite was only temporary.",
+      "syn": [
+        "break",
+        "relief",
+        "pause"
+      ],
+      "ant": [
+        "continuation",
+        "ordeal"
+      ],
+      "related": [
+        "a temporary respite",
+        "respite from"
+      ]
+    },
+    {
+      "w": "poach",
+      "form": "poaching",
+      "pos": "verb",
+      "ipa": "/pəʊtʃ/",
+      "forms": "poach · poaching · poacher",
+      "def": "to hunt or catch animals illegally, especially on someone else's land",
+      "uz": "brakonerlik qilmoq, noqonuniy ov qilmoq",
+      "senses": [
+        "to cook (an egg or fish) gently in liquid",
+        "to take staff or ideas from a rival unfairly"
+      ],
+      "ex": "The dramatic decline during this decade was due to illegal poaching on an industrial scale.",
+      "syn": [
+        "illegal hunting",
+        "trapping"
+      ],
+      "ant": [
+        "conservation",
+        "protection"
+      ],
+      "related": [
+        "illegal poaching",
+        "poaching on an industrial scale",
+        "a poached egg"
+      ]
+    },
+    {
+      "w": "industrial scale",
+      "form": "on an industrial scale",
+      "pos": "phrase",
+      "ipa": "/ɪnˌdʌstriəl ˈskeɪl/",
+      "forms": "industrial scale",
+      "def": "done in very large amounts, like the mass production of a factory",
+      "uz": "sanoat miqyosida, juda katta hajmda",
+      "senses": [],
+      "ex": "illegal poaching on an industrial scale",
+      "syn": [
+        "large-scale",
+        "mass",
+        "wholesale"
+      ],
+      "ant": [
+        "small-scale",
+        "limited"
+      ],
+      "related": [
+        "on an industrial scale",
+        "industrial-scale farming"
+      ]
+    },
+    {
+      "w": "practitioner",
+      "form": "practitioners",
+      "pos": "noun",
+      "ipa": "/prækˈtɪʃənə/",
+      "forms": "practise · practitioner · practitioners",
+      "def": "someone who works in a skilled profession, especially medicine or law",
+      "uz": "amaliyotchi, mutaxassis (shifokor/huquqshunos)",
+      "senses": [],
+      "ex": "Their horns are highly prized by traditional medicine practitioners.",
+      "syn": [
+        "professional",
+        "specialist",
+        "expert"
+      ],
+      "ant": [],
+      "related": [
+        "medicine practitioners",
+        "general practitioner (GP)",
+        "a practitioner of"
+      ]
+    },
+    {
+      "w": "epidemic",
+      "form": "epidemic levels",
+      "pos": "noun",
+      "ipa": "/ˌepɪˈdemɪk/",
+      "forms": "epidemic · epidemics",
+      "def": "a situation in which something bad spreads very quickly to affect many (originally: a fast-spreading disease)",
+      "uz": "epidemiya darajasi, keng tarqalgan holat",
+      "senses": [
+        "a widespread outbreak of disease",
+        "(adjective) spreading rapidly among many people"
+      ],
+      "ex": "Poaching reached epidemic levels after misguided conservationists encouraged the use of saiga horns.",
+      "syn": [
+        "outbreak",
+        "plague",
+        "wave"
+      ],
+      "ant": [
+        "rarity"
+      ],
+      "related": [
+        "epidemic levels",
+        "reach epidemic levels",
+        "a flu epidemic"
+      ]
+    },
+    {
+      "w": "misguided",
+      "form": "misguided",
+      "pos": "adjective",
+      "ipa": "/ˌmɪsˈɡaɪdɪd/",
+      "forms": "misguide · misguided",
+      "def": "based on wrong ideas or poor judgement, even if well-intentioned",
+      "uz": "adashgan, xato yo'ldan ketgan, noto'g'ri",
+      "senses": [],
+      "ex": "Poaching reached epidemic levels after misguided conservationists tried to relieve the pressure on rhinos.",
+      "syn": [
+        "mistaken",
+        "ill-advised",
+        "wrong-headed"
+      ],
+      "ant": [
+        "sensible",
+        "well-judged"
+      ],
+      "related": [
+        "misguided conservationists",
+        "a misguided attempt"
+      ]
+    },
+    {
+      "w": "rhino",
+      "form": "rhinos",
+      "pos": "noun",
+      "ipa": "/ˈraɪnəʊ/",
+      "forms": "rhino · rhinos · rhinoceros",
+      "def": "a large, heavy plant-eating animal with one or two horns on its nose (short for rhinoceros)",
+      "uz": "karkidon",
+      "senses": [],
+      "ex": "misguided conservationists tried to relieve the pressure on threatened African rhinos",
+      "syn": [
+        "rhinoceros"
+      ],
+      "ant": [],
+      "related": [
+        "African rhinos",
+        "rhino horn"
+      ]
+    },
+    {
+      "w": "settlement",
+      "form": "settlement / settlements",
+      "pos": "noun",
+      "ipa": "/ˈsetlmənt/",
+      "forms": "settle · settlement · settlements",
+      "def": "a place where people come to live and build homes; the process of settling there",
+      "uz": "aholi punkti, joylashuv, o'rnashish",
+      "senses": [
+        "an official agreement that ends a dispute",
+        "payment of money owed"
+      ],
+      "ex": "Another threat is loss of habitat, as a result of agricultural expansion and human settlement.",
+      "syn": [
+        "colony",
+        "community",
+        "habitation"
+      ],
+      "ant": [],
+      "related": [
+        "human settlement",
+        "informal settlements",
+        "reach a settlement"
+      ]
+    },
+    {
+      "w": "transboundary",
+      "form": "transboundary",
+      "pos": "adjective",
+      "ipa": "/trænzˈbaʊndri/",
+      "forms": "transboundary",
+      "def": "existing or moving across national borders",
+      "uz": "chegaralararo, davlat chegaralarini kesib o'tuvchi",
+      "senses": [],
+      "ex": "Physical barriers can block the seasonal migration routes of this transboundary species.",
+      "syn": [
+        "cross-border",
+        "international"
+      ],
+      "ant": [
+        "domestic",
+        "local"
+      ],
+      "related": [
+        "transboundary species",
+        "transboundary pollution"
+      ]
+    },
+    {
+      "w": "haemorrhagic septicaemia",
+      "form": "haemorrhagic septicaemia",
+      "pos": "noun",
+      "ipa": "/ˌheməˈrædʒɪk ˌseptɪˈsiːmiə/",
+      "forms": "haemorrhagic septicaemia",
+      "def": "a severe bacterial blood infection that causes bleeding; a deadly disease of saiga and livestock",
+      "uz": "qon ketishli sepsis (qon zaharlanishi kasalligi)",
+      "senses": [
+        "septicaemia = blood poisoning; haemorrhagic = involving bleeding"
+      ],
+      "ex": "In 2015, an outbreak of haemorrhagic septicaemia killed over 75% of the global adult saiga population.",
+      "syn": [
+        "blood poisoning",
+        "sepsis"
+      ],
+      "ant": [],
+      "related": [
+        "an outbreak of haemorrhagic septicaemia",
+        "a bacterial infection"
+      ]
+    },
+    {
+      "w": "Pasteurella multocida",
+      "form": "Pasteurella multocida (bacterium)",
+      "pos": "noun",
+      "ipa": "/ˌpæstəˈrelə mʌlˈtɒsɪdə/",
+      "forms": "Pasteurella multocida",
+      "def": "a normally harmless bacterium that can sometimes cause deadly disease in animals",
+      "uz": "Pasteurella multocida bakteriyasi",
+      "senses": [],
+      "ex": "caused by the normally harmless bacterium Pasteurella multocida",
+      "syn": [
+        "bacterium"
+      ],
+      "ant": [],
+      "related": [
+        "a harmless bacterium",
+        "Pasteurella multocida"
+      ]
+    },
+    {
+      "w": "subspecies",
+      "form": "subspecies",
+      "pos": "noun",
+      "ipa": "/ˈsʌbspiːʃiːz/",
+      "forms": "species · subspecies",
+      "def": "a subdivision of a species; a group within a species with its own distinct features",
+      "uz": "kichik tur, tur osti",
+      "senses": [],
+      "ex": "the Mongolian saiga population — a subspecies found nowhere else in the world",
+      "syn": [
+        "variety",
+        "breed",
+        "race"
+      ],
+      "ant": [],
+      "related": [
+        "a subspecies of",
+        "a distinct subspecies"
+      ]
+    },
+    {
+      "w": "livestock",
+      "form": "livestock",
+      "pos": "noun",
+      "ipa": "/ˈlaɪvstɒk/",
+      "forms": "livestock",
+      "def": "animals kept on a farm, such as cattle, sheep and goats",
+      "uz": "chorva mollari",
+      "senses": [],
+      "ex": "60% of the Mongolian saiga population was killed by a virus that spilled over from livestock.",
+      "syn": [
+        "farm animals",
+        "cattle",
+        "stock"
+      ],
+      "ant": [],
+      "related": [
+        "spilled over from livestock",
+        "livestock farming"
+      ]
+    },
+    {
+      "w": "mass mortality event",
+      "form": "mass mortality events",
+      "pos": "noun",
+      "ipa": "/ˌmæs mɔːˈtæləti ɪˌvent/",
+      "forms": "mass mortality event",
+      "def": "an occasion when a very large number of a species die within a short time",
+      "uz": "ommaviy nobud bo'lish hodisasi",
+      "senses": [
+        "mortality = death, or the rate of death in a group"
+      ],
+      "ex": "These so-called mass mortality events represent an unpredictable and serious threat to the species.",
+      "syn": [
+        "mass die-off",
+        "population crash"
+      ],
+      "ant": [],
+      "related": [
+        "mass mortality events",
+        "a mass die-off",
+        "mortality rate"
+      ]
+    },
+    {
+      "w": "arid",
+      "form": "arid",
+      "pos": "adjective",
+      "ipa": "/ˈærɪd/",
+      "forms": "arid · aridity",
+      "def": "having very little rain; extremely dry",
+      "uz": "qurg'oqchil, quruq",
+      "senses": [
+        "dull and lacking interest (an arid discussion)"
+      ],
+      "ex": "The steppe region has also become increasingly arid in recent years.",
+      "syn": [
+        "dry",
+        "parched",
+        "barren"
+      ],
+      "ant": [
+        "wet",
+        "humid",
+        "fertile"
+      ],
+      "related": [
+        "an arid region",
+        "increasingly arid",
+        "an arid climate"
+      ]
+    },
+    {
+      "w": "vanish",
+      "form": "vanished",
+      "pos": "verb",
+      "ipa": "/ˈvænɪʃ/",
+      "forms": "vanish · vanished · vanishing",
+      "def": "to disappear suddenly and completely",
+      "uz": "yo'q bo'lib ketmoq, g'oyib bo'lmoq",
+      "senses": [],
+      "ex": "many of the smaller streams that the species depended on have dried up and vanished.",
+      "syn": [
+        "disappear",
+        "fade away",
+        "evaporate"
+      ],
+      "ant": [
+        "appear",
+        "emerge"
+      ],
+      "related": [
+        "dried up and vanished",
+        "vanish without trace"
+      ]
+    },
+    {
+      "w": "spearhead",
+      "form": "spearheaded",
+      "pos": "verb",
+      "ipa": "/ˈspɪəhed/",
+      "forms": "spearhead · spearheaded · spearheading",
+      "def": "to lead an important activity, effort or attack",
+      "uz": "boshchilik qilmoq, yetakchilik qilmoq",
+      "senses": [
+        "the leading part of an attack or campaign (noun)"
+      ],
+      "ex": "Recent efforts to save the saiga have been spearheaded by the Altyn Dala Conservation Initiative.",
+      "syn": [
+        "lead",
+        "head",
+        "drive"
+      ],
+      "ant": [
+        "follow"
+      ],
+      "related": [
+        "spearheaded by",
+        "spearhead a campaign"
+      ]
+    },
+    {
+      "w": "endangered",
+      "form": "endangered (critically endangered)",
+      "pos": "adjective",
+      "ipa": "/ɪnˈdeɪndʒəd/",
+      "forms": "endanger · endangered",
+      "def": "(of a species) at serious risk of dying out completely",
+      "uz": "yo'qolib ketish xavfi ostidagi",
+      "senses": [],
+      "ex": "the many species they support, including the critically endangered saiga",
+      "syn": [
+        "threatened",
+        "at risk",
+        "dying out"
+      ],
+      "ant": [
+        "thriving",
+        "secure",
+        "abundant"
+      ],
+      "related": [
+        "critically endangered",
+        "an endangered species"
+      ]
+    },
+    {
+      "w": "accolade",
+      "form": "accolade reserved for",
+      "pos": "noun",
+      "ipa": "/ˈækəleɪd/",
+      "forms": "accolade · accolades",
+      "def": "an award or public honour given as praise for an achievement",
+      "uz": "yuksak mukofot, sharafli e'tirof",
+      "senses": [
+        "reserved for = kept only for; set aside for"
+      ],
+      "ex": "an accolade reserved for the ten best examples of large-scale ecosystem restoration",
+      "syn": [
+        "honour",
+        "award",
+        "tribute"
+      ],
+      "ant": [
+        "criticism",
+        "condemnation"
+      ],
+      "related": [
+        "an accolade reserved for",
+        "receive an accolade"
+      ]
+    },
+    {
+      "w": "devastating",
+      "form": "devastating",
+      "pos": "adjective",
+      "ipa": "/ˈdevəsteɪtɪŋ/",
+      "forms": "devastate · devastating · devastation",
+      "def": "causing severe damage or destruction; extremely harmful",
+      "uz": "vayronkor, halokatli, dahshatli",
+      "senses": [
+        "emotionally shocking or very upsetting"
+      ],
+      "ex": "this was then crushed by devastating mass mortality events.",
+      "syn": [
+        "destructive",
+        "catastrophic",
+        "ruinous"
+      ],
+      "ant": [
+        "harmless",
+        "beneficial"
+      ],
+      "related": [
+        "devastating events",
+        "a devastating blow"
+      ]
+    },
+    {
+      "w": "uplifting",
+      "form": "relatively uplifting",
+      "pos": "adjective",
+      "ipa": "/ʌpˈlɪftɪŋ/",
+      "forms": "uplift · uplifting · uplifted",
+      "def": "making you feel more hopeful, happy or positive",
+      "uz": "ruhni ko'taradigan, ilhomlantiradigan",
+      "senses": [
+        "relatively = comparatively, to some degree"
+      ],
+      "ex": "the most recent episodes in the ongoing story of the saiga have been relatively uplifting.",
+      "syn": [
+        "encouraging",
+        "heartening",
+        "inspiring"
+      ],
+      "ant": [
+        "depressing",
+        "disheartening"
+      ],
+      "related": [
+        "relatively uplifting",
+        "an uplifting story"
+      ]
+    },
+    {
+      "w": "calf",
+      "form": "calves",
+      "pos": "noun",
+      "ipa": "/kɑːf/",
+      "forms": "calf · calves",
+      "def": "a young cow, or the young of some other large animals (here, of the saiga)",
+      "uz": "buzoq; yirik hayvon bolasi",
+      "senses": [
+        "the fleshy back part of the lower leg (also 'calves')"
+      ],
+      "ex": "the Ustyurt Plateau population experienced its largest mass birth of saiga calves in many years.",
+      "syn": [
+        "young",
+        "offspring"
+      ],
+      "ant": [],
+      "related": [
+        "saiga calves",
+        "a herd of calves"
+      ]
+    },
+    {
+      "w": "aerial census",
+      "form": "aerial census",
+      "pos": "noun",
+      "ipa": "/ˌeəriəl ˈsensəs/",
+      "forms": "aerial · census",
+      "def": "an official count of a population made by observing from an aircraft",
+      "uz": "havodan (samolyotdan) sanoq o'tkazish",
+      "senses": [
+        "aerial = from the air (adj)",
+        "census = an official population count (noun)"
+      ],
+      "ex": "An aerial census two years ago recorded an estimated 842,000 saiga across Kazakhstan.",
+      "syn": [
+        "aerial survey",
+        "population count"
+      ],
+      "ant": [],
+      "related": [
+        "an aerial census",
+        "an aerial survey",
+        "conduct a census"
+      ]
+    },
+    {
+      "w": "exceed",
+      "form": "exceeds",
+      "pos": "verb",
+      "ipa": "/ɪkˈsiːd/",
+      "forms": "exceed · exceeded · excess",
+      "def": "to be greater than a particular number or amount; to go beyond a limit",
+      "uz": "oshib ketmoq, oshmoq",
+      "senses": [
+        "to do more than is allowed (exceed the speed limit)"
+      ],
+      "ex": "the saiga population in Kazakhstan now exceeds 1.9 million.",
+      "syn": [
+        "surpass",
+        "top",
+        "go beyond"
+      ],
+      "ant": [
+        "fall short of",
+        "be below"
+      ],
+      "related": [
+        "exceeds 1.9 million",
+        "exceed expectations",
+        "exceed the limit"
+      ]
+    },
+    {
+      "w": "eightfold",
+      "form": "eightfold",
+      "pos": "adverb",
+      "ipa": "/ˈeɪtfəʊld/",
+      "forms": "twofold · tenfold · eightfold",
+      "def": "eight times as great or as many",
+      "uz": "sakkiz barobar",
+      "senses": [
+        "'-fold' shows how many times something multiplies: twofold = 2×, tenfold = 10×"
+      ],
+      "ex": "Its population has increased eightfold since 1980.",
+      "syn": [
+        "eight times over"
+      ],
+      "ant": [],
+      "related": [
+        "increased eightfold",
+        "a tenfold rise",
+        "twofold / threefold"
+      ]
+    },
+    {
+      "w": "projection",
+      "form": "projections anticipate",
+      "pos": "noun",
+      "ipa": "/prəˈdʒekʃn/",
+      "forms": "project · projection · projections",
+      "def": "an estimate or forecast of a future amount, based on current trends",
+      "uz": "prognoz, bashorat (kelajakdagi hisob-kitob)",
+      "senses": [
+        "anticipate = to expect or predict",
+        "an image shown on a screen"
+      ],
+      "ex": "United Nations projections anticipate it will become a megacity within seven years.",
+      "syn": [
+        "forecast",
+        "estimate",
+        "prediction"
+      ],
+      "ant": [],
+      "related": [
+        "projections anticipate",
+        "population projections",
+        "anticipate = kutmoq"
+      ]
+    },
+    {
+      "w": "intersection",
+      "form": "intersection",
+      "pos": "noun",
+      "ipa": "/ˌɪntəˈsekʃn/",
+      "forms": "intersect · intersection",
+      "def": "a place where two or more roads meet and cross each other",
+      "uz": "chorraha, kesishma",
+      "senses": [
+        "the point where lines or sets cross (maths)"
+      ],
+      "ex": "It is not unusual for cars and minibuses to queue for 20 minutes at a key intersection.",
+      "syn": [
+        "junction",
+        "crossroads",
+        "crossing"
+      ],
+      "ant": [],
+      "related": [
+        "a key intersection",
+        "a busy intersection"
+      ]
+    },
+    {
+      "w": "potholed",
+      "form": "potholed mud roads",
+      "pos": "adjective",
+      "ipa": "/ˈpɒthəʊld/",
+      "forms": "pothole · potholed",
+      "def": "(of a road) full of holes in the surface caused by wear and weather",
+      "uz": "chuqur-chuqur, o'ydim-chuqur (yo'l)",
+      "senses": [
+        "pothole (noun) = a hole in a road surface"
+      ],
+      "ex": "the narrow side streets and potholed mud roads that make up much of the metropolis",
+      "syn": [
+        "rutted",
+        "bumpy",
+        "cratered"
+      ],
+      "ant": [
+        "smooth",
+        "paved"
+      ],
+      "related": [
+        "potholed mud roads",
+        "full of potholes"
+      ]
+    },
+    {
+      "w": "scandalous",
+      "form": "scandalous",
+      "pos": "adjective",
+      "ipa": "/ˈskændələs/",
+      "forms": "scandal · scandalous · scandalously",
+      "def": "shockingly bad or morally wrong in a way that causes public outrage",
+      "uz": "sharmandali, jirkanch darajada yomon",
+      "senses": [
+        "involving gossip about immoral behaviour"
+      ],
+      "ex": "Their safety record is scandalous.",
+      "syn": [
+        "shocking",
+        "disgraceful",
+        "outrageous"
+      ],
+      "ant": [
+        "admirable",
+        "respectable"
+      ],
+      "related": [
+        "a scandalous record",
+        "scandalous behaviour"
+      ]
+    },
+    {
+      "w": "arterial road",
+      "form": "arterial roads",
+      "pos": "noun",
+      "ipa": "/ɑːˌtɪəriəl ˈrəʊd/",
+      "forms": "artery · arterial",
+      "def": "a major main road that carries traffic into and through a city, like a main artery",
+      "uz": "asosiy (magistral) yo'l",
+      "senses": [
+        "arterial (adj) = relating to arteries or to main routes"
+      ],
+      "ex": "Dar es Salaam's reliance on four arterial roads into the city is a legacy of the colonial government.",
+      "syn": [
+        "main road",
+        "highway",
+        "trunk road"
+      ],
+      "ant": [
+        "side street",
+        "back road"
+      ],
+      "related": [
+        "arterial roads",
+        "an arterial route"
+      ]
+    },
+    {
+      "w": "legacy",
+      "form": "legacy of the colonial government",
+      "pos": "noun",
+      "ipa": "/ˈleɡəsi/",
+      "forms": "legacy · legacies",
+      "def": "something passed down from the past that still affects the present",
+      "uz": "meros, o'tmishdan qolgan asorat",
+      "senses": [
+        "money or property left to someone in a will"
+      ],
+      "ex": "Dar es Salaam's reliance on four arterial roads is a legacy of the colonial government.",
+      "syn": [
+        "inheritance",
+        "heritage",
+        "aftermath"
+      ],
+      "ant": [],
+      "related": [
+        "legacy of the colonial government",
+        "a lasting legacy",
+        "colonial legacy"
+      ]
+    },
+    {
+      "w": "cater",
+      "form": "cater for",
+      "pos": "verb",
+      "ipa": "/ˈkeɪtə/",
+      "forms": "cater · catered · catering",
+      "def": "to provide what is needed or wanted by a particular group of people",
+      "uz": "ehtiyojni qondirmoq, xizmat ko'rsatmoq",
+      "senses": [
+        "to provide food and drink for an event (catering)"
+      ],
+      "ex": "the colonial government planned the city to cater for a population of 35,000.",
+      "syn": [
+        "provide for",
+        "serve",
+        "accommodate"
+      ],
+      "ant": [
+        "neglect"
+      ],
+      "related": [
+        "cater for",
+        "cater to demand",
+        "a catering service"
+      ]
+    },
+    {
+      "w": "periphery",
+      "form": "periphery",
+      "pos": "noun",
+      "ipa": "/pəˈrɪfəri/",
+      "forms": "periphery · peripheral",
+      "def": "the outer edge or outer area of something, away from the centre",
+      "uz": "chekka, atrof, chetki qism",
+      "senses": [
+        "a less important position (on the periphery of a debate)"
+      ],
+      "ex": "Nearly all the expansion is happening on the periphery.",
+      "syn": [
+        "edge",
+        "outskirts",
+        "fringe"
+      ],
+      "ant": [
+        "centre",
+        "core"
+      ],
+      "related": [
+        "on the periphery",
+        "the city's periphery",
+        "peripheral areas"
+      ]
+    },
+    {
+      "w": "bus rapid transit",
+      "form": "The DART bus rapid transit (BRT)",
+      "pos": "noun",
+      "ipa": "/ˌbʌs ˌræpɪd ˈtrænzɪt/",
+      "forms": "bus rapid transit · BRT",
+      "def": "a fast bus-based public transport system using dedicated lanes to move many passengers quickly",
+      "uz": "tezkor avtobus tizimi (maxsus yo'laklarda)",
+      "senses": [
+        "transit = the movement of people or goods from place to place"
+      ],
+      "ex": "The DART bus rapid transit (BRT) system runs on bus lanes separated from other traffic.",
+      "syn": [
+        "BRT",
+        "an express bus system"
+      ],
+      "ant": [],
+      "related": [
+        "bus rapid transit (BRT)",
+        "rapid transit",
+        "public transit"
+      ]
+    },
+    {
+      "w": "stoppage",
+      "form": "stoppages",
+      "pos": "noun",
+      "ipa": "/ˈstɒpɪdʒ/",
+      "forms": "stop · stoppage · stoppages",
+      "def": "an occasion when movement or activity is stopped or interrupted",
+      "uz": "to'xtash, uzilish, to'xtab qolish",
+      "senses": [
+        "a stopping of work as a protest (a work stoppage / strike)"
+      ],
+      "ex": "the buses run mostly in the middle of the road to reduce stoppages.",
+      "syn": [
+        "halt",
+        "interruption",
+        "delay"
+      ],
+      "ant": [
+        "flow",
+        "continuation"
+      ],
+      "related": [
+        "reduce stoppages",
+        "a work stoppage"
+      ]
+    },
+    {
+      "w": "prior to",
+      "form": "prior to",
+      "pos": "preposition",
+      "ipa": "/ˈpraɪə tə/",
+      "forms": "prior · prior to",
+      "def": "before (a particular time or event) — a formal way of saying 'before'",
+      "uz": "...dan oldin, avval",
+      "senses": [
+        "prior (adj) = earlier, previous (a prior engagement)"
+      ],
+      "ex": "Ticket purchase and control takes place at stations prior to boarding.",
+      "syn": [
+        "before",
+        "ahead of",
+        "in advance of"
+      ],
+      "ant": [
+        "after",
+        "following"
+      ],
+      "related": [
+        "prior to boarding",
+        "prior notice",
+        "prior experience"
+      ]
+    },
+    {
+      "w": "step-free",
+      "form": "step-free",
+      "pos": "adjective",
+      "ipa": "/ˌstepˈfriː/",
+      "forms": "step-free",
+      "def": "having no steps, so it can be used by wheelchairs and prams; fully accessible on one level",
+      "uz": "zinasiz, pog'onasiz (nogironlar aravachasi uchun qulay)",
+      "senses": [],
+      "ex": "the buses are step-free, which means the entire route is accessible to people using wheelchairs.",
+      "syn": [
+        "level-access",
+        "barrier-free",
+        "accessible"
+      ],
+      "ant": [
+        "stepped"
+      ],
+      "related": [
+        "step-free access",
+        "a step-free route"
+      ]
+    },
+    {
+      "w": "baby buggy",
+      "form": "baby buggies",
+      "pos": "noun",
+      "ipa": "/ˈbeɪbi ˌbʌɡi/",
+      "forms": "buggy · buggies",
+      "def": "a light folding chair on wheels for pushing a small child; a pushchair or stroller",
+      "uz": "bolalar aravachasi",
+      "senses": [],
+      "ex": "accessible to people using wheelchairs or who are travelling with baby buggies",
+      "syn": [
+        "pushchair",
+        "stroller",
+        "pram"
+      ],
+      "ant": [],
+      "related": [
+        "baby buggies",
+        "push a buggy"
+      ]
+    },
+    {
+      "w": "depot",
+      "form": "depot",
+      "pos": "noun",
+      "ipa": "/ˈdepəʊ/",
+      "forms": "depot · depots",
+      "def": "a place where vehicles, goods or supplies are kept, stored or repaired",
+      "uz": "baza, ombor, avtobus parki",
+      "senses": [
+        "a bus or train station (US)"
+      ],
+      "ex": "a serious flood at the main depot during the rainy season",
+      "syn": [
+        "garage",
+        "warehouse",
+        "yard"
+      ],
+      "ant": [],
+      "related": [
+        "the main depot",
+        "a bus depot"
+      ]
+    },
+    {
+      "w": "phase",
+      "form": "phase / phases",
+      "pos": "noun",
+      "ipa": "/feɪz/",
+      "forms": "phase · phases · phased",
+      "def": "one stage in a process of development or change",
+      "uz": "bosqich, faza",
+      "senses": [
+        "to introduce or remove something gradually (phase in / phase out — verb)",
+        "a period in someone's behaviour (just a phase)"
+      ],
+      "ex": "Morogoro Road to the north-west of the city was phase I of the BRT project.",
+      "syn": [
+        "stage",
+        "step",
+        "period"
+      ],
+      "ant": [],
+      "related": [
+        "phase I / phase II",
+        "phase in",
+        "phase out"
+      ]
+    },
+    {
+      "w": "regret",
+      "form": "regrets",
+      "pos": "verb",
+      "ipa": "/rɪˈɡret/",
+      "forms": "regret · regretted · regret (n)",
+      "def": "to feel sorry or disappointed about something",
+      "uz": "afsuslanmoq, achinmoq",
+      "senses": [
+        "a feeling of sadness about something (noun)",
+        "used to give bad news politely (we regret to inform you)"
+      ],
+      "ex": "The ITDP regrets Africa's obsession with metros.",
+      "syn": [
+        "lament",
+        "be sorry about",
+        "rue"
+      ],
+      "ant": [
+        "welcome",
+        "celebrate"
+      ],
+      "related": [
+        "regret a decision",
+        "much to my regret",
+        "regret to inform you"
+      ]
+    },
+    {
+      "w": "obsession",
+      "form": "obsession with",
+      "pos": "noun",
+      "ipa": "/əbˈseʃn/",
+      "forms": "obsess · obsession · obsessive",
+      "def": "a state in which someone thinks about something too much and cannot stop",
+      "uz": "o'ta berilib ketish, hirs",
+      "senses": [],
+      "ex": "The ITDP regrets Africa's obsession with metros.",
+      "syn": [
+        "fixation",
+        "preoccupation",
+        "fascination"
+      ],
+      "ant": [
+        "indifference"
+      ],
+      "related": [
+        "obsession with",
+        "an unhealthy obsession"
+      ]
+    },
+    {
+      "w": "fare",
+      "form": "fare collection / fares",
+      "pos": "noun",
+      "ipa": "/feə/",
+      "forms": "fare · fares",
+      "def": "the money you pay to travel on a bus, train or plane",
+      "uz": "yo'lkira, chipta puli, transport haqi",
+      "senses": [
+        "to get on or manage in a situation (how did you fare?)"
+      ],
+      "ex": "local operators will look after tickets, fare collection and IT.",
+      "syn": [
+        "ticket price",
+        "charge",
+        "fee"
+      ],
+      "ant": [],
+      "related": [
+        "fare collection",
+        "a bus fare",
+        "how did you fare?"
+      ]
+    },
+    {
+      "w": "designate",
+      "form": "designated",
+      "pos": "verb",
+      "ipa": "/ˈdezɪɡneɪt/",
+      "forms": "designate · designated · designation",
+      "def": "to officially choose or set apart something for a particular purpose",
+      "uz": "belgilamoq, ajratmoq, tayinlamoq",
+      "senses": [
+        "(adjective) chosen but not yet in the role (president designate)",
+        "in the passage the bus lanes are 'separated from other traffic' = designated for buses"
+      ],
+      "ex": "The BRT buses run in designated lanes, separated from other traffic.",
+      "syn": [
+        "assign",
+        "allocate",
+        "earmark"
+      ],
+      "ant": [],
+      "related": [
+        "designated lanes",
+        "a designated area",
+        "a designated driver"
+      ]
+    },
+    {
+      "w": "severe",
+      "form": "severe",
+      "pos": "adjective",
+      "ipa": "/sɪˈvɪə/",
+      "forms": "severe · severely · severity",
+      "def": "very bad, serious or extreme",
+      "uz": "og'ir, jiddiy, qattiq, kuchli",
+      "senses": [
+        "strict or harsh (a severe punishment)",
+        "in the passage the flood is called a 'serious' flood — a close synonym of severe"
+      ],
+      "ex": "A shortage of buses after a severe flood at the main depot left the system overstretched.",
+      "syn": [
+        "serious",
+        "extreme",
+        "acute"
+      ],
+      "ant": [
+        "mild",
+        "slight",
+        "minor"
+      ],
+      "related": [
+        "a severe flood",
+        "severe weather",
+        "a severe shortage"
+      ]
+    },
+    {
+      "w": "prehistory",
+      "form": "prehistory / prehistoric",
+      "pos": "noun",
+      "ipa": "/ˌpriːˈhɪstri/",
+      "forms": "prehistory · prehistoric",
+      "def": "the period of human history before written records existed",
+      "uz": "tarixdan oldingi davr, ibtidoiy davr",
+      "senses": [
+        "prehistoric (adj) = belonging to that period"
+      ],
+      "ex": "prehistory shows us that we can choose differently.",
+      "syn": [
+        "the ancient past",
+        "early history"
+      ],
+      "ant": [
+        "recorded history",
+        "the modern era"
+      ],
+      "related": [
+        "gender in prehistory",
+        "prehistoric societies"
+      ]
+    },
+    {
+      "w": "discern",
+      "form": "discern",
+      "pos": "verb",
+      "ipa": "/dɪˈsɜːn/",
+      "forms": "discern · discerned · discernible",
+      "def": "to recognise or understand something that is not obvious",
+      "uz": "ilg'amoq, farqlab olmoq, payqamoq",
+      "senses": [
+        "to see something faintly (discern a shape in the dark)"
+      ],
+      "ex": "it's hard to discern the common threads linking them.",
+      "syn": [
+        "detect",
+        "make out",
+        "perceive"
+      ],
+      "ant": [
+        "overlook",
+        "miss"
+      ],
+      "related": [
+        "discern a pattern",
+        "hard to discern"
+      ]
+    },
+    {
+      "w": "thread",
+      "form": "threads (common threads)",
+      "pos": "noun",
+      "ipa": "/θred/",
+      "forms": "thread · threads",
+      "def": "a connecting theme or idea that links different things together",
+      "uz": "bog'lovchi mavzu, umumiy nuqta; ip",
+      "senses": [
+        "a thin strand of cotton or fibre",
+        "a connected series of messages online"
+      ],
+      "ex": "it's hard to discern the common threads linking them.",
+      "syn": [
+        "theme",
+        "strand",
+        "link"
+      ],
+      "ant": [],
+      "related": [
+        "common threads",
+        "the thread of an argument",
+        "lose the thread"
+      ]
+    },
+    {
+      "w": "blizzard",
+      "form": "blizzard (of finds)",
+      "pos": "noun",
+      "ipa": "/ˈblɪzəd/",
+      "forms": "blizzard · blizzards",
+      "def": "a huge, overwhelming quantity of things arriving at once (literally: a severe snowstorm)",
+      "uz": "ummon, ko'chki (juda ko'p narsa); qattiq qor bo'roni",
+      "senses": [
+        "a severe snowstorm with strong wind"
+      ],
+      "ex": "some overall messages from the blizzard of archaeological finds in recent years",
+      "syn": [
+        "flood",
+        "deluge",
+        "avalanche"
+      ],
+      "ant": [
+        "trickle"
+      ],
+      "related": [
+        "a blizzard of finds",
+        "a snow blizzard"
+      ]
+    },
+    {
+      "w": "supposedly",
+      "form": "supposedly",
+      "pos": "adverb",
+      "ipa": "/səˈpəʊzɪdli/",
+      "forms": "suppose · supposed · supposedly",
+      "def": "according to what is generally believed or claimed, though it may not be true",
+      "uz": "go'yoki, aytishlaricha",
+      "senses": [],
+      "ex": "many supposedly 'advanced' behaviours, such as architecture and art",
+      "syn": [
+        "allegedly",
+        "reportedly",
+        "apparently"
+      ],
+      "ant": [
+        "definitely",
+        "certainly"
+      ],
+      "related": [
+        "supposedly advanced",
+        "supposedly safe"
+      ]
+    },
+    {
+      "w": "trace",
+      "form": "traced (back)",
+      "pos": "verb",
+      "ipa": "/treɪs/",
+      "forms": "trace · traced · tracing",
+      "def": "to find the origin or history of something by following it back in time",
+      "uz": "kelib chiqishini aniqlamoq, izidan borib topmoq",
+      "senses": [
+        "a very small amount of something (a trace of poison — noun)",
+        "to copy a drawing through thin paper"
+      ],
+      "ex": "such behaviours can be traced much further back in time than we thought.",
+      "syn": [
+        "track down",
+        "follow back",
+        "date back"
+      ],
+      "ant": [],
+      "related": [
+        "traced back to",
+        "trace the origin",
+        "without trace"
+      ]
+    },
+    {
+      "w": "impose",
+      "form": "imposing (patriarchal values)",
+      "pos": "verb",
+      "ipa": "/ɪmˈpəʊz/",
+      "forms": "impose · imposed · imposition",
+      "def": "to force something (rules, beliefs, ideas) on someone who may not want it",
+      "uz": "majburan yuklamoq, zo'rlab o'rnatmoq",
+      "senses": [
+        "to take advantage of someone (impose on someone)"
+      ],
+      "ex": "we have misunderstood gender roles, imposing patriarchal values onto cultures that had very different ideas.",
+      "syn": [
+        "force",
+        "inflict",
+        "foist"
+      ],
+      "ant": [
+        "remove",
+        "withdraw"
+      ],
+      "related": [
+        "impose values on",
+        "impose a rule",
+        "imposing patriarchal views"
+      ]
+    },
+    {
+      "w": "patriarchal",
+      "form": "patriarchal / patriarchy",
+      "pos": "adjective",
+      "ipa": "/ˌpeɪtriˈɑːkl/",
+      "forms": "patriarch · patriarchal · patriarchy",
+      "def": "controlled or dominated by men, with power passing through the male line",
+      "uz": "patriarxal, erkaklar hukmronligiga asoslangan",
+      "senses": [
+        "patriarchy (noun) = a male-dominated social system"
+      ],
+      "ex": "imposing patriarchal values onto cultures that had very different ideas about how women should behave.",
+      "syn": [
+        "male-dominated",
+        "male-led"
+      ],
+      "ant": [
+        "matriarchal",
+        "egalitarian"
+      ],
+      "related": [
+        "patriarchal values",
+        "unfashionably patriarchal",
+        "patriarchy isn't inevitable"
+      ]
+    },
+    {
+      "w": "interlock",
+      "form": "interlocked",
+      "pos": "verb",
+      "ipa": "/ˌɪntəˈlɒk/",
+      "forms": "interlock · interlocked · interlocking",
+      "def": "to fit or join firmly together, especially by parts fitting into each other",
+      "uz": "bir-biriga kirishib bog'lanmoq, tishlashmoq",
+      "senses": [],
+      "ex": "researchers found buried logs that had been shaped with stone tools so that they interlocked.",
+      "syn": [
+        "interconnect",
+        "mesh",
+        "link"
+      ],
+      "ant": [
+        "separate",
+        "detach"
+      ],
+      "related": [
+        "interlocked logs",
+        "interlocking parts"
+      ]
+    },
+    {
+      "w": "evolve",
+      "form": "evolved",
+      "pos": "verb",
+      "ipa": "/ɪˈvɒlv/",
+      "forms": "evolve · evolved · evolution",
+      "def": "to develop gradually over a long time, especially of living things over generations",
+      "uz": "rivojlanib bormoq, evolyutsiyaga uchramoq",
+      "senses": [
+        "(of ideas or plans) to develop and change gradually"
+      ],
+      "ex": "That's almost 200,000 years before our species, Homo sapiens, evolved.",
+      "syn": [
+        "develop",
+        "emerge",
+        "progress"
+      ],
+      "ant": [
+        "stagnate"
+      ],
+      "related": [
+        "evolved from",
+        "human evolution",
+        "gradually evolve"
+      ]
+    },
+    {
+      "w": "extinct",
+      "form": "extinct (extinct hominins)",
+      "pos": "adjective",
+      "ipa": "/ɪkˈstɪŋkt/",
+      "forms": "extinct · extinction",
+      "def": "(of a species) no longer existing; having died out completely",
+      "uz": "yo'q bo'lib ketgan, qirilib bitgan",
+      "senses": [
+        "(of a volcano) no longer active",
+        "(of a feeling or idea) no longer present"
+      ],
+      "ex": "what extinct hominins, such as our cousins the Neanderthals, were really like",
+      "syn": [
+        "died out",
+        "vanished",
+        "defunct"
+      ],
+      "ant": [
+        "living",
+        "extant",
+        "surviving"
+      ],
+      "related": [
+        "extinct hominins",
+        "become extinct",
+        "an extinct species"
+      ]
+    },
+    {
+      "w": "hominin",
+      "form": "hominins",
+      "pos": "noun",
+      "ipa": "/ˈhɒmɪnɪn/",
+      "forms": "hominin · hominins",
+      "def": "a member of the human family, including modern humans and our extinct close relatives",
+      "uz": "gominin (odam va uning yaqin qarindoshlari)",
+      "senses": [],
+      "ex": "what extinct hominins, such as our cousins the Neanderthals, were really like",
+      "syn": [
+        "early human",
+        "human ancestor"
+      ],
+      "ant": [],
+      "related": [
+        "extinct hominins",
+        "older hominins",
+        "hominin species"
+      ]
+    },
+    {
+      "w": "cousin",
+      "form": "cousins",
+      "pos": "noun",
+      "ipa": "/ˈkʌzn/",
+      "forms": "cousin · cousins",
+      "def": "here: a closely related species (figuratively 'relatives'); literally a child of your aunt or uncle",
+      "uz": "amakivachcha/xolavachcha; (majozan) yaqin qarindosh tur",
+      "senses": [
+        "a child of one's aunt or uncle",
+        "something related or similar"
+      ],
+      "ex": "what extinct hominins, such as our cousins the Neanderthals, were really like",
+      "syn": [
+        "relative",
+        "relation",
+        "kin"
+      ],
+      "ant": [],
+      "related": [
+        "our cousins the Neanderthals",
+        "a distant cousin"
+      ]
+    },
+    {
+      "w": "engrave",
+      "form": "engraving",
+      "pos": "verb",
+      "ipa": "/ɪnˈɡreɪv/",
+      "forms": "engrave · engraving · engraved",
+      "def": "to cut lines, words or patterns into a hard surface",
+      "uz": "o'ymoq, naqsh o'ymoq, gravyura qilmoq",
+      "senses": [
+        "to fix something firmly in the mind (engraved in memory)"
+      ],
+      "ex": "Homo erectus may also have made art, for example by engraving patterns on shells.",
+      "syn": [
+        "carve",
+        "etch",
+        "inscribe"
+      ],
+      "ant": [],
+      "related": [
+        "engraving patterns",
+        "engraved on shells"
+      ]
+    },
+    {
+      "w": "shell",
+      "form": "shells",
+      "pos": "noun",
+      "ipa": "/ʃel/",
+      "forms": "shell · shells",
+      "def": "the hard outer covering of an animal such as a snail, egg or shellfish",
+      "uz": "chig'anoq, po'choq, qobiq",
+      "senses": [
+        "a metal case filled with explosive (military)",
+        "to remove the shell from nuts or peas (verb)"
+      ],
+      "ex": "for example by engraving patterns on shells",
+      "syn": [
+        "casing",
+        "husk",
+        "carapace"
+      ],
+      "ant": [],
+      "related": [
+        "patterns on shells",
+        "a seashell",
+        "an eggshell"
+      ]
+    },
+    {
+      "w": "contentious",
+      "form": "contentious",
+      "pos": "adjective",
+      "ipa": "/kənˈtenʃəs/",
+      "forms": "contend · contention · contentious",
+      "def": "likely to cause disagreement or argument",
+      "uz": "bahsli, munozarali",
+      "senses": [],
+      "ex": "By far the most contentious claim in this area is that Homo naledi made art.",
+      "syn": [
+        "controversial",
+        "disputed",
+        "divisive"
+      ],
+      "ant": [
+        "uncontroversial",
+        "agreed"
+      ],
+      "related": [
+        "a contentious claim",
+        "a contentious issue"
+      ]
+    },
+    {
+      "w": "contemporary",
+      "form": "contemporary (of)",
+      "pos": "noun",
+      "ipa": "/kənˈtemprəri/",
+      "forms": "contemporary · contemporaries",
+      "def": "a person or thing living or existing at the same time as another",
+      "uz": "zamondosh, bir davrda yashagan",
+      "senses": [
+        "(adjective) belonging to the present time; modern"
+      ],
+      "ex": "H. naledi lived around 250,000 years ago, making it a contemporary of our species.",
+      "syn": [
+        "peer",
+        "coeval"
+      ],
+      "ant": [
+        "forerunner",
+        "successor"
+      ],
+      "related": [
+        "a contemporary of",
+        "contemporary art"
+      ]
+    },
+    {
+      "w": "dogma",
+      "form": "palaeoanthropological dogma",
+      "pos": "noun",
+      "ipa": "/ˈdɒɡmə/",
+      "forms": "dogma · dogmas · dogmatic",
+      "def": "a belief firmly held as true, which people are expected to accept without question",
+      "uz": "aqida, so'zsiz qabul qilinadigan e'tiqod",
+      "senses": [
+        "palaeoanthropology = the study of ancient human origins from fossils"
+      ],
+      "ex": "according to palaeoanthropological dogma, H. naledi was incapable of complex behaviours.",
+      "syn": [
+        "doctrine",
+        "orthodoxy",
+        "accepted belief"
+      ],
+      "ant": [
+        "scepticism",
+        "open inquiry"
+      ],
+      "related": [
+        "palaeoanthropological dogma",
+        "religious dogma"
+      ]
+    },
+    {
+      "w": "rudimentary",
+      "form": "rudimentary",
+      "pos": "adjective",
+      "ipa": "/ˌruːdɪˈmentri/",
+      "forms": "rudiment · rudimentary",
+      "def": "very basic or simple; not developed or advanced",
+      "uz": "boshlang'ich, oddiy, ibtidoiy",
+      "senses": [],
+      "ex": "researchers have found what seem to be etchings — resembling rudimentary artwork — on the cave walls.",
+      "syn": [
+        "basic",
+        "primitive",
+        "crude"
+      ],
+      "ant": [
+        "advanced",
+        "sophisticated"
+      ],
+      "related": [
+        "rudimentary artwork",
+        "rudimentary skills"
+      ]
+    },
+    {
+      "w": "etching",
+      "form": "etchings",
+      "pos": "noun",
+      "ipa": "/ˈetʃɪŋ/",
+      "forms": "etch · etching · etchings",
+      "def": "a design or mark made by cutting lines into a surface",
+      "uz": "o'yma naqsh, chizilgan tasvir",
+      "senses": [
+        "etch (verb) = to cut a design into a hard surface",
+        "to fix firmly (etched in memory)"
+      ],
+      "ex": "researchers have found what seem to be etchings on the cave walls, though these have yet to be firmly dated.",
+      "syn": [
+        "engraving",
+        "carving",
+        "inscription"
+      ],
+      "ant": [],
+      "related": [
+        "the etchings",
+        "etched into the wall",
+        "etched in memory"
+      ]
+    },
+    {
+      "w": "date",
+      "form": "firmly dated",
+      "pos": "verb",
+      "ipa": "/deɪt/",
+      "forms": "date · dated · dating",
+      "def": "to establish the age or time of origin of something (here: with certainty)",
+      "uz": "aniq sanasini belgilamoq, yoshini aniqlamoq",
+      "senses": [
+        "firmly = in a strong, definite way",
+        "dated (adj) = old-fashioned"
+      ],
+      "ex": "these etchings have yet to be firmly dated.",
+      "syn": [
+        "age",
+        "assign a date to"
+      ],
+      "ant": [
+        "leave undated"
+      ],
+      "related": [
+        "firmly dated",
+        "yet to be dated",
+        "carbon dating"
+      ]
+    },
+    {
+      "w": "dispute",
+      "form": "dispute",
+      "pos": "noun",
+      "ipa": "/dɪˈspjuːt/",
+      "forms": "dispute · disputed · disputes",
+      "def": "a serious argument or disagreement",
+      "uz": "bahs, nizo, kelishmovchilik",
+      "senses": [
+        "(verb) to argue about or question the truth of something"
+      ],
+      "ex": "The dispute has only been heightened by the way the results were released.",
+      "syn": [
+        "argument",
+        "controversy",
+        "disagreement"
+      ],
+      "ant": [
+        "agreement",
+        "consensus"
+      ],
+      "related": [
+        "the dispute",
+        "in dispute",
+        "dispute a claim"
+      ]
+    },
+    {
+      "w": "heighten",
+      "form": "heightened",
+      "pos": "verb",
+      "ipa": "/ˈhaɪtn/",
+      "forms": "heighten · heightened · heightening",
+      "def": "to make something stronger or more intense; to increase",
+      "uz": "kuchaytirmoq, oshirmoq, avj oldirmoq",
+      "senses": [],
+      "ex": "The dispute has only been heightened by the way the results were released.",
+      "syn": [
+        "intensify",
+        "increase",
+        "sharpen"
+      ],
+      "ant": [
+        "lessen",
+        "reduce",
+        "ease"
+      ],
+      "related": [
+        "heightened tension",
+        "heighten awareness"
+      ]
+    },
+    {
+      "w": "peer review",
+      "form": "peer reviews",
+      "pos": "noun",
+      "ipa": "/ˌpɪə rɪˈvjuː/",
+      "forms": "peer · peer review · peer-reviewed",
+      "def": "evaluation of a scientist's work by other experts in the same field before it is published",
+      "uz": "mutaxassislar (tengdoshlar) tomonidan baholash/taqriz",
+      "senses": [
+        "peer (noun) = a person of equal standing",
+        "peer (verb) = to look closely with difficulty"
+      ],
+      "ex": "in a non-traditional journal that publishes peer reviews publicly alongside the paper",
+      "syn": [
+        "expert review",
+        "refereeing"
+      ],
+      "ant": [],
+      "related": [
+        "peer review",
+        "a peer-reviewed journal",
+        "a peer (an equal)"
+      ]
+    },
+    {
+      "w": "distraction",
+      "form": "distraction",
+      "pos": "noun",
+      "ipa": "/dɪˈstrækʃn/",
+      "forms": "distract · distraction · distracted",
+      "def": "something that takes your attention away from what is important",
+      "uz": "chalg'ituvchi narsa, e'tiborni chalg'itish",
+      "senses": [
+        "an amusement or entertainment"
+      ],
+      "ex": "I think the species' small brains are a distraction.",
+      "syn": [
+        "diversion",
+        "red herring",
+        "sidetrack"
+      ],
+      "ant": [
+        "focus",
+        "the main issue"
+      ],
+      "related": [
+        "a distraction",
+        "distract attention from"
+      ]
+    },
+    {
+      "w": "fixate",
+      "form": "fixated (on)",
+      "pos": "verb",
+      "ipa": "/fɪkˈseɪt/",
+      "forms": "fixate · fixated · fixation",
+      "def": "to focus your attention on one thing so much that you ignore others",
+      "uz": "bir narsaga o'ta berilib qolmoq, fikri qadalib qolmoq",
+      "senses": [],
+      "ex": "Palaeoanthropologists got fixated on brain size because it was what they could see.",
+      "syn": [
+        "obsess over",
+        "focus narrowly on",
+        "dwell on"
+      ],
+      "ant": [
+        "ignore",
+        "overlook"
+      ],
+      "related": [
+        "fixated on brain size",
+        "become fixated"
+      ]
+    },
+    {
+      "w": "property",
+      "form": "properties",
+      "pos": "noun",
+      "ipa": "/ˈprɒpəti/",
+      "forms": "property · properties",
+      "def": "a quality or characteristic that something has",
+      "uz": "xususiyat, xossa",
+      "senses": [
+        "a building or land that someone owns",
+        "the things someone owns (belongings)"
+      ],
+      "ex": "other properties, such as the brain's internal wiring, are surely equally important.",
+      "syn": [
+        "characteristic",
+        "quality",
+        "attribute",
+        "feature"
+      ],
+      "ant": [],
+      "related": [
+        "properties of the brain",
+        "chemical properties",
+        "own property"
+      ]
+    },
+    {
+      "w": "internal wiring",
+      "form": "internal wiring",
+      "pos": "noun",
+      "ipa": "/ɪnˌtɜːnl ˈwaɪərɪŋ/",
+      "forms": "internal · wiring",
+      "def": "the internal connections of a system (here, how the brain's parts are connected)",
+      "uz": "ichki tuzilma/ulanishlar (miyaning ichki 'simlari')",
+      "senses": [
+        "internal = inside (adj)",
+        "wiring = the system of wires or connections"
+      ],
+      "ex": "other properties, such as the brain's internal wiring, are surely equally important.",
+      "syn": [
+        "internal structure",
+        "circuitry",
+        "connections"
+      ],
+      "ant": [
+        "external features"
+      ],
+      "related": [
+        "the brain's internal wiring",
+        "electrical wiring"
+      ]
+    },
+    {
+      "w": "incremental",
+      "form": "incremental (steps)",
+      "pos": "adjective",
+      "ipa": "/ˌɪŋkrəˈmentl/",
+      "forms": "increment · incremental",
+      "def": "happening gradually in a series of small amounts or steps",
+      "uz": "bosqichma-bosqich, kichik qadamlar bilan",
+      "senses": [
+        "increment (noun) = a small increase"
+      ],
+      "ex": "Evolution usually works by incremental steps and so does technology.",
+      "syn": [
+        "gradual",
+        "step-by-step",
+        "progressive"
+      ],
+      "ant": [
+        "sudden",
+        "radical"
+      ],
+      "related": [
+        "incremental steps",
+        "incremental change",
+        "steps and so does technology"
+      ]
+    },
+    {
+      "w": "runaway",
+      "form": "runaway (change)",
+      "pos": "adjective",
+      "ipa": "/ˈrʌnəweɪ/",
+      "forms": "runaway",
+      "def": "happening or increasing quickly and out of control",
+      "uz": "jilovsiz, tez va nazoratsiz (o'sish/o'zgarish)",
+      "senses": [
+        "a person or animal that has run away (noun)",
+        "a tipping point = the moment when a small change tips into a big one"
+      ],
+      "ex": "sometimes a system hits a tipping point and undergoes runaway change.",
+      "syn": [
+        "uncontrolled",
+        "rapid",
+        "spiralling"
+      ],
+      "ant": [
+        "controlled",
+        "steady"
+      ],
+      "related": [
+        "runaway change",
+        "a tipping point",
+        "runaway success",
+        "runaway inflation"
+      ]
+    },
+    {
+      "w": "preconception",
+      "form": "preconceptions",
+      "pos": "noun",
+      "ipa": "/ˌpriːkənˈsepʃn/",
+      "forms": "preconceive · preconception · preconceived",
+      "def": "an opinion or idea formed before you have real knowledge or evidence",
+      "uz": "oldindan shakllangan fikr, xolis bo'lmagan tasavvur",
+      "senses": [],
+      "ex": "an example of letting our preconceptions get in the way of the evidence.",
+      "syn": [
+        "prejudice",
+        "assumption",
+        "bias"
+      ],
+      "ant": [
+        "an open mind",
+        "objectivity"
+      ],
+      "related": [
+        "preconceptions get in the way",
+        "preconceived ideas"
+      ]
+    },
+    {
+      "w": "unfashionable",
+      "form": "unfashionably (patriarchal)",
+      "pos": "adjective",
+      "ipa": "/ʌnˈfæʃnəbl/",
+      "forms": "fashionable · unfashionable · unfashionably",
+      "def": "not popular or accepted at the present time; out of style",
+      "uz": "urfdan qolgan, moda emas, ma'qullanmaydigan",
+      "senses": [],
+      "ex": "Archaeology was invented by individuals with now unfashionably patriarchal views about gender.",
+      "syn": [
+        "outdated",
+        "out of style",
+        "unpopular"
+      ],
+      "ant": [
+        "fashionable",
+        "trendy",
+        "in vogue"
+      ],
+      "related": [
+        "unfashionably patriarchal",
+        "unfashionable views"
+      ]
+    },
+    {
+      "w": "demolition",
+      "form": "demolition (of)",
+      "pos": "noun",
+      "ipa": "/ˌdeməˈlɪʃn/",
+      "forms": "demolish · demolition",
+      "def": "the act of completely destroying something (here: proving an idea totally wrong)",
+      "uz": "buzib tashlash, tag-tomiri bilan rad etish",
+      "senses": [
+        "the physical tearing down of a building"
+      ],
+      "ex": "Perhaps the most dramatic was the demolition of 'Man the Hunter'.",
+      "syn": [
+        "destruction",
+        "dismantling",
+        "overthrow"
+      ],
+      "ant": [
+        "construction",
+        "confirmation"
+      ],
+      "related": [
+        "the demolition of an idea",
+        "the demolition of a building"
+      ]
+    },
+    {
+      "w": "foraging",
+      "form": "foraging (societies)",
+      "pos": "adjective",
+      "ipa": "/ˈfɒrɪdʒɪŋ/",
+      "forms": "forage · foraging · forager",
+      "def": "(of a society) living by searching for wild food rather than by farming",
+      "uz": "termachilik/ovchilik bilan kun kechiruvchi",
+      "senses": [
+        "forage (verb) = to search widely for food"
+      ],
+      "ex": "a meta-analysis compiled data on several dozen foraging societies and found women hunted in 80 per cent of them.",
+      "syn": [
+        "hunter-gatherer",
+        "food-gathering"
+      ],
+      "ant": [
+        "farming",
+        "agricultural"
+      ],
+      "related": [
+        "foraging societies",
+        "forage for food"
+      ]
+    },
+    {
+      "w": "dozen",
+      "form": "several dozen",
+      "pos": "noun",
+      "ipa": "/ˈdʌzn/",
+      "forms": "dozen · dozens",
+      "def": "a group of twelve; in the plural, a large number",
+      "uz": "o'n ikkita; (ko'plikda) o'nlab",
+      "senses": [
+        "dozens of = very many"
+      ],
+      "ex": "a meta-analysis compiled data on several dozen foraging societies.",
+      "syn": [
+        "twelve",
+        "dozens (many)"
+      ],
+      "ant": [],
+      "related": [
+        "several dozen",
+        "dozens of",
+        "a dozen eggs"
+      ]
+    },
+    {
+      "w": "spear-throwing tool",
+      "form": "spear-throwing tool (atlatl)",
+      "pos": "noun",
+      "ipa": "/ˈspɪə ˌθrəʊɪŋ tuːl/",
+      "forms": "spear · spear-throwing",
+      "def": "a device used to launch a spear with greater force and speed (an atlatl)",
+      "uz": "nayza uloqtirgich (atlatl asbobi)",
+      "senses": [
+        "spear (noun) = a long pole with a sharp point used as a weapon"
+      ],
+      "ex": "an ancient spear-throwing tool called an atlatl enables women to launch projectiles at the same speed as men.",
+      "syn": [
+        "atlatl",
+        "a spear-thrower"
+      ],
+      "ant": [],
+      "related": [
+        "a spear-throwing tool",
+        "throw a spear"
+      ]
+    },
+    {
+      "w": "projectile",
+      "form": "projectiles",
+      "pos": "noun",
+      "ipa": "/prəˈdʒektaɪl/",
+      "forms": "project · projectile · projectiles",
+      "def": "an object that is thrown or fired forwards through the air, especially as a weapon",
+      "uz": "otiladigan jism, snaryad, uloqtirilgan narsa",
+      "senses": [],
+      "ex": "an atlatl enables women to launch projectiles at the same speed as men.",
+      "syn": [
+        "missile",
+        "shot",
+        "round"
+      ],
+      "ant": [],
+      "related": [
+        "launch projectiles",
+        "a projectile weapon"
+      ]
+    },
+    {
+      "w": "authoritarianism",
+      "form": "authoritarianism ... aren't inevitable",
+      "pos": "noun",
+      "ipa": "/ɔːˌθɒrɪˈteəriənɪzm/",
+      "forms": "authority · authoritarian · authoritarianism",
+      "def": "a system in which people must obey a powerful leader or state and have little freedom",
+      "uz": "avtoritarizm, zo'ravon (yakka) hokimlik",
+      "senses": [
+        "authoritarian (adj) = demanding strict obedience"
+      ],
+      "ex": "Inequality, authoritarianism and patriarchy aren't inevitable.",
+      "syn": [
+        "autocracy",
+        "despotism",
+        "dictatorship"
+      ],
+      "ant": [
+        "democracy",
+        "freedom"
+      ],
+      "related": [
+        "authoritarianism isn't inevitable",
+        "authoritarian rule"
+      ]
+    },
+    {
+      "w": "inevitable",
+      "form": "(aren't) inevitable",
+      "pos": "adjective",
+      "ipa": "/ɪnˈevɪtəbl/",
+      "forms": "inevitable · inevitably · inevitability",
+      "def": "certain to happen and impossible to avoid or prevent",
+      "uz": "muqarrar, oldini olib bo'lmaydigan",
+      "senses": [],
+      "ex": "Inequality, authoritarianism and patriarchy aren't inevitable. They're choices.",
+      "syn": [
+        "unavoidable",
+        "certain",
+        "inescapable"
+      ],
+      "ant": [
+        "avoidable",
+        "preventable",
+        "optional"
+      ],
+      "related": [
+        "aren't inevitable",
+        "the inevitable outcome",
+        "inevitably"
+      ]
+    },
+    {
+      "w": "opposed",
+      "form": "as opposed to",
+      "pos": "phrase",
+      "ipa": "/əˈpəʊzd/",
+      "forms": "oppose · opposed · opposition",
+      "def": "used to compare or contrast two things — 'rather than', 'in contrast to'",
+      "uz": "...ga qarama-qarshi, ...o'rniga, ...dan farqli",
+      "senses": [
+        "opposed to = against something (opposed to a plan)"
+      ],
+      "ex": "how old our species is — about 300,000 years old as opposed to 200,000.",
+      "syn": [
+        "in contrast to",
+        "rather than",
+        "as against"
+      ],
+      "ant": [],
+      "related": [
+        "as opposed to",
+        "opposed to the idea",
+        "strongly opposed"
+      ]
+    }
+  ]
 }
