@@ -52,7 +52,10 @@ def build_html(tpl, deck, title, eyebrow, lede, key):
     css_add = (".front .form-front{font-family:var(--serif);font-style:italic;font-size:16.5px;color:var(--ink-2);margin-top:9px;line-height:1.3;max-width:30ch}\n"
                "  .related{font-size:13.5px;color:var(--ink-2);margin:2px 0 14px}\n"
                "  .related .lab{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:7px}\n"
-               "  .related .tag{font-family:var(--serif)}\n  ")
+               "  .related .tag{font-family:var(--serif)}\n"
+               "  .mnem .kw{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:6px}\n"
+               "  .mnem .kw b{color:var(--ink);text-transform:none;font-size:14px;letter-spacing:0}\n"
+               "  .mnem .story{font-family:var(--serif);font-style:italic;font-size:15px;line-height:1.55;margin:0}\n  ")
     tpl = rep(tpl, "  .acc{border-top:1px solid var(--line-2)}",
               "  " + css_add + ".acc{border-top:1px solid var(--line-2)}")
 
@@ -73,6 +76,16 @@ def build_html(tpl, deck, title, eyebrow, lede, key):
                   '    ${v.related&&v.related.length?`<p class="related"><span class="lab">related expressions</span>${tags(v.related)}</p>`:""}\n'
                   '    <p class="forms">${esc(v.forms)}</p>')
     tpl = rep(tpl, old_senses, new_senses)
+
+    # Inject an optional mnemonic accordion as the FIRST accordion on the card back
+    # (keyword-mnemonic memory aid). Only renders when the card has a `mnem` field,
+    # so decks built without mnemonics are unaffected.
+    old_ex_acc = '    ${acc("Example — from the passage",`<em>${esc(v.ex)}</em>`)}'
+    new_ex_acc = ('    ${v.mnem?acc("Yodlash uchun \\u2014 keyword",'
+                  '`<div class="mnem"><span class="kw">Keyword: <b>${esc(v.mnem.kw)}</b></span>'
+                  '<p class="story">${esc(v.mnem.story)}</p></div>`):""}\n'
+                  '    ${acc("Example — from the passage",`<em>${esc(v.ex)}</em>`)}')
+    tpl = rep(tpl, old_ex_acc, new_ex_acc)
     return tpl
 
 

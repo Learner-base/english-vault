@@ -44,6 +44,11 @@ HTML (flip / recall / cloze + sentence structures), and keep `learning.json` and
    word twice, keep one. `build.py` aborts if two cards share a base `w`.
 7. If a listed word is **not** in the passage text, still include it (user asked), use a
    faithful paraphrase example, and note the passage's actual wording in `senses[]`.
+8. **Mnemonics are opt-in — ALWAYS ASK.** Before building, if the user hasn't said
+   whether they want keyword-mnemonic memory aids, ASK. Only if they confirm, add a
+   `mnem` object to every card (see the [[keyword-mnemonics]] skill for the method) —
+   `build.py` renders it as the first accordion ("Yodlash uchun — keyword") on the card
+   back. If they decline, omit `mnem` entirely and the accordion never appears.
 
 ## Card schema (`deck.json` → `vocab[]`)
 ```
@@ -59,6 +64,9 @@ ex       the EXACT sentence from the passage (from readable.txt)
 syn      [ 2–3 context synonyms ]
 ant      [ antonyms ]  (empty [] if none)
 related  [ collocations / phrase chunks to learn alongside ]
+mnem     { kw, story }  OPTIONAL keyword-mnemonic (only if user confirmed; see [[keyword-mnemonics]])
+           kw     the phonetic keyword, e.g. "Mayiz (Raisin)" or "Mashina + Eri"
+           story  ONE absurd Uzbek sentence tying the keyword to the meaning
 ```
 
 ## Structures (`deck.json` → `structures[]`)
