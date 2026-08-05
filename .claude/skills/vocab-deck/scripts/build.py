@@ -21,7 +21,7 @@ Usage:
 deck.json shape: {"vocab": [ {card}, ... ], "structures": [ {structure}, ... ]}
   card fields: w, form, pos, ipa, forms, def, uz, senses[], ex, syn[], ant[], related[]
 """
-import argparse, json, os
+import argparse, json, os, re
 
 
 def rep(s, old, new, n=1):
@@ -86,23 +86,28 @@ def update_learning(path, set_name, cards):
     json.dump(data, open(path, "w"), ensure_ascii=False, indent=2)
 
 
-def update_known(path, set_name, words, heading_note=""):
-    header = ("# Known words\n\n"
-              "Words already seen in processed reading passages & questions. "
-              "Do NOT regenerate vocab cards for these.\n\n")
-    body = open(path).read() if os.path.exists(path) else header
-    if not body.startswith("# Known words"):
-        body = header + body
-    marker = "## %s" % set_name
-    block = "%s%s\n\n%s\n" % (marker, (" " + heading_note if heading_note else ""), " ".join(words))
-    if marker in body:
-        start = body.index(marker)
-        nxt = body.find("\n## ", start + 1)
-        end = nxt if nxt != -1 else len(body)
-        body = body[:start] + block + ("\n" + body[end:].lstrip("\n") if nxt != -1 else "")
-    else:
-        body = body.rstrip() + "\n\n" + block
-    open(path, "w").write(body)
+def update_known(path, words):
+    """known.md holds words only, grouped A–Z under `## <LETTER>` headings, each
+    group a sorted space-separated line. Easy to look a word up by its first letter.
+    Merge new words in, dedupe, rewrite."""
+    existing = []
+    if os.path.exists(path):
+        for line in open(path).read().splitlines():
+            if line.startswith("#"):   # drop title + `## <LETTER>` headings
+                continue
+            existing += line.split()
+    clean = set()
+    for w in existing + list(words):
+        w = w.lower().strip(".,;:!?()[]\"'")   # strip surrounding punctuation
+        if re.fullmatch(r"[a-z][a-z'-]*", w):  # keep only real word tokens
+            clean.add(w)
+    groups = {}
+    for w in sorted(clean):
+        groups.setdefault(w[0].upper(), []).append(w)
+    out = "# Known words\n"
+    for letter in sorted(groups):
+        out += "\n## %s\n%s\n" % (letter, " ".join(groups[letter]))
+    open(path, "w").write(out)
 
 
 def main():
@@ -138,11 +143,11 @@ def main():
 
     known = [w for w in open(a.known_words).read().replace("\n", " ").split(" ") if w]
     update_learning(os.path.join(root, "vocab/learning.json"), a.set_name, deck["vocab"])
-    update_known(os.path.join(root, "vocab/known.md"), a.set_name, known, a.heading_note)
+    update_known(os.path.join(root, "vocab/known.md"), known)
 
     print("HTML       :", out, "(%d cards, %d structures)" % (len(deck["vocab"]), len(deck["structures"])))
     print("learning.json: key '%s' updated" % a.set_name)
-    print("known.md   : section '%s' updated (%d words)" % (a.set_name, len(known)))
+    print("known.md   : flat word list updated (+%d words this run)" % len(known))
 
 
 if __name__ == "__main__":
