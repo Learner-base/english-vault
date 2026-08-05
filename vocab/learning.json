@@ -3000,7 +3000,11 @@
         "vivid dreams",
         "less vivid",
         "a vivid memory"
-      ]
+      ],
+      "mnem": {
+        "kw": "Vivo (telefon)",
+        "story": "Yangi Vivo telefonimning ekrani shu qadar yorqin (vivid) tasvir chiqaradiki, tushlarim ham aniq-tiniq bo'lib qoldi."
+      }
     },
     {
       "w": "influential",
@@ -3024,7 +3028,11 @@
       "related": [
         "an influential figure",
         "influential on/in something"
-      ]
+      ],
+      "mnem": {
+        "kw": "Influencer",
+        "story": "Instagramdagi influencer shunchalik ta'sirli (nufuzli) bo'ldiki, bitta so'zi bilan millionlarning fikrini o'zgartirdi."
+      }
     },
     {
       "w": "sleep pattern",
@@ -3044,7 +3052,11 @@
       "related": [
         "unusual sleep patterns",
         "disrupt your sleep pattern"
-      ]
+      ],
+      "mnem": {
+        "kw": "Sleep + Patnis (tray)",
+        "story": "Har kechasi patnisda ovqat yeb uxlaganim uchun uyqu tartibim (sleep pattern) butunlay buzilib ketdi."
+      }
     },
     {
       "w": "electrode",
@@ -3064,7 +3076,11 @@
       "related": [
         "attach electrodes to",
         "electrodes attached to the head"
-      ]
+      ],
+      "mnem": {
+        "kw": "Elektr (electricity)",
+        "story": "Doktor boshimga elektr simli elektrodlarni ulab, miyamdagi tokni o'lchay boshladi."
+      }
     },
     {
       "w": "eyelid",
@@ -3083,7 +3099,11 @@
       "related": [
         "close your eyelids",
         "under closed eyelids"
-      ]
+      ],
+      "mnem": {
+        "kw": "Eye + Lid (qopqoq)",
+        "story": "Ko'zimning qopqog'i (lid) shu qadar og'irlashdiki, ko'z qovog'im o'z-o'zidan yopilib ketdi."
+      }
     },
     {
       "w": "though",
@@ -3106,7 +3126,11 @@
       "related": [
         "even though",
         "as though (= as if)"
-      ]
+      ],
+      "mnem": {
+        "kw": "Zo'r (great)",
+        "story": "Ishlar juda qiyin bo'lsa ham (though), men baribir zo'r natija ko'rsatdim."
+      }
     },
     {
       "w": "twitch",
@@ -3129,7 +3153,11 @@
       "related": [
         "twitching limbs",
         "muscles twitch"
-      ]
+      ],
+      "mnem": {
+        "kw": "Twitch (striming platforma)",
+        "story": "Twitch'da qo'rqinchli o'yin ko'rayotib, hayajondan qo'llarim beixtiyor uchib-uchib qo'ydi (twitch)."
+      }
     },
     {
       "w": "paralyse",
@@ -3154,7 +3182,11 @@
       "related": [
         "largely paralysed",
         "paralysed with fear"
-      ]
+      ],
+      "mnem": {
+        "kw": "Para (pul)",
+        "story": "Yutuqdan bir qop para (pul) olgan odam hayajondan falaj bo'lib (paralysed), joyidan qimirlolmay qoldi."
+      }
     },
     {
       "w": "in contrast",
@@ -3178,7 +3210,11 @@
       "related": [
         "in contrast to/with",
         "in sharp contrast"
-      ]
+      ],
+      "mnem": {
+        "kw": "Kontrast (screen contrast)",
+        "story": "Telefon ekranidagi kontrastni ko'targanimda, oq va qora aksincha (in contrast) bo'lib ajralib ko'rindi."
+      }
     },
     {
       "w": "maze",
@@ -3200,7 +3236,11 @@
       "related": [
         "run through a maze",
         "a maze of streets"
-      ]
+      ],
+      "mnem": {
+        "kw": "Mayiz (raisin)",
+        "story": "Labirint (maze) ichida adashib qolmaslik uchun yerga mayizlarni terib ketyapman."
+      }
     },
     {
       "w": "intriguing",
@@ -3226,7 +3266,11 @@
       "related": [
         "Intriguingly, ... (sentence starter)",
         "an intriguing question"
-      ]
+      ],
+      "mnem": {
+        "kw": "Intriga (intrigue)",
+        "story": "Serialning intrigasi shu qadar qiziqarli (intriguing) ediki, tong otguncha uxlay olmadim."
+      }
     },
     {
       "w": "universal",
@@ -3251,7 +3295,11 @@
       "related": [
         "universal in",
         "a universal truth"
-      ]
+      ],
+      "mnem": {
+        "kw": "Universal Studios",
+        "story": "Universal Studios kinolarini butun dunyoda, hamma joyda ko'rishadi — bu umumiy (universal) qiziqish."
+      }
     },
     {
       "w": "sponge",
@@ -3270,7 +3318,11 @@
       "related": [
         "sea sponges",
         "sponges lack brains"
-      ]
+      ],
+      "mnem": {
+        "kw": "SpongeBob",
+        "story": "SpongeBob aslida miyasi yo'q oddiy dengiz gubkasi (sponge), shuning uchun u tush ham ko'ra olmaydi."
+      }
     },
     {
       "w": "machinery",
@@ -3294,7 +3346,11 @@
       "related": [
         "the machinery for/of something",
         "the machinery of the brain"
-      ]
+      ],
+      "mnem": {
+        "kw": "Mashina + Eri (machine melts)",
+        "story": "Zavoddagi eski mashina-uskunalar (machinery) issiqdan erib, mashina eriyapti."
+      }
     },
     {
       "w": "think",
@@ -3316,7 +3372,11 @@
       "related": [
         "it's thought that + clause",
         "widely thought to be"
-      ]
+      ],
+      "mnem": {
+        "kw": "Tort (cake)",
+        "story": "Hamma bu tortni eng mazali deb hisoblaydi (it's thought that), lekin aslida hech kim tatib ko'rmagan."
+      }
     },
     {
       "w": "moderately",
@@ -3340,7 +3400,11 @@
       "related": [
         "moderately complex",
         "moderately successful"
-      ]
+      ],
+      "mnem": {
+        "kw": "Model",
+        "story": "Bu model o'rtacha (moderately) chiroyli — na juda go'zal, na xunuk, o'rtachadan."
+      }
     },
     {
       "w": "outward",
@@ -3366,7 +3430,11 @@
       "related": [
         "outward behaviour",
         "outward appearance"
-      ]
+      ],
+      "mnem": {
+        "kw": "Out (tashqari)",
+        "story": "Uyning tashqi (outward) ko'rinishi juda hashamatli, lekin ichkarisi butunlay bo'sh ekan."
+      }
     },
     {
       "w": "dreamscape",
@@ -3386,7 +3454,11 @@
       "related": [
         "imagine their dreamscapes",
         "a strange dreamscape"
-      ]
+      ],
+      "mnem": {
+        "kw": "Dream + Escape",
+        "story": "Har kechasi tushimdagi go'zal manzaraga (dreamscape) qochib (escape), zerikarli hayotdan uzoqlashaman."
+      }
     },
     {
       "w": "interpret",
@@ -3412,7 +3484,11 @@
       "related": [
         "quick to interpret",
         "interpret something as"
-      ]
+      ],
+      "mnem": {
+        "kw": "Internet",
+        "story": "Internet o'chib qolsa, chet ellikning gapini qanday tarjima qilishni (interpret) bilmay qolaman."
+      }
     },
     {
       "w": "limb",
@@ -3435,7 +3511,11 @@
       "related": [
         "twitching limbs",
         "her limbs and head moved"
-      ]
+      ],
+      "mnem": {
+        "kw": "Limon (lemon)",
+        "story": "Sakkizoyoq har bir a'zosi (limb) bilan bittadan limonni mahkam ushlab oldi."
+      }
     },
     {
       "w": "pursue",
@@ -3461,7 +3541,11 @@
       "related": [
         "pursuing a crab",
         "pursue a goal"
-      ]
+      ],
+      "mnem": {
+        "kw": "(Van) Persie",
+        "story": "Van Persie to'pni maqsad sari quvib (pursue), darvoza tomon shiddat bilan yugurdi."
+      }
     },
     {
       "w": "thrash",
@@ -3484,7 +3568,11 @@
       "related": [
         "thrash around",
         "thrash about"
-      ]
+      ],
+      "mnem": {
+        "kw": "Trash (axlat)",
+        "story": "Ko'chaga axlat (trash) sochgan bezorini tutib olib, yaxshilab kaltaklashdi (thrashed)."
+      }
     },
     {
       "w": "mantle",
@@ -3507,7 +3595,11 @@
       "related": [
         "extended his mantle",
         "take on the mantle of"
-      ]
+      ],
+      "mnem": {
+        "kw": "Manti (Uzbek food)",
+        "story": "Sakkizoyoq o'z tanasini (mantle) shishirib, xuddi kattakon bir mantidek ko'rinib ketdi."
+      }
     },
     {
       "w": "squirt",
@@ -3530,7 +3622,11 @@
       "related": [
         "squirted ink",
         "squirt water at"
-      ]
+      ],
+      "mnem": {
+        "kw": "Squirtle (Pokemon)",
+        "story": "Squirtle degan Pokemon dushmaniga suvni kuch bilan purkab (squirt) yubordi."
+      }
     },
     {
       "w": "sequence",
@@ -3553,7 +3649,11 @@
       "related": [
         "a sequence of activities",
         "in sequence"
-      ]
+      ],
+      "mnem": {
+        "kw": "Sekund (second)",
+        "story": "Soatdagi sekundlar bir-birining ketidan ketma-ketlikda (sequence) tinmay o'tib turadi."
+      }
     },
     {
       "w": "shed light on",
@@ -3577,7 +3677,11 @@
       "related": [
         "shed light on something",
         "throw/cast light on"
-      ]
+      ],
+      "mnem": {
+        "kw": "LED light (chiroq)",
+        "story": "Qorong'i xonada LED chiroqni yoqib, sirli masalani oydinlashtirdim (shed light on)."
+      }
     }
   ]
 }
