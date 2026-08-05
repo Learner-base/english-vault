@@ -2973,5 +2973,611 @@
         "strongly opposed"
       ]
     }
+  ],
+  "cambridge-21-reading-2-p1": [
+    {
+      "w": "vivid",
+      "form": "vivid",
+      "pos": "adjective",
+      "ipa": "/ˈvɪv.ɪd/",
+      "forms": "vivid · vividly · vividness",
+      "def": "producing very clear, strong and detailed pictures in the mind",
+      "uz": "yorqin, aniq (tasavvurda)",
+      "senses": [
+        "(of colour) very bright and strong"
+      ],
+      "ex": "Most dream states, and certainly those with the most vivid dreams, happen during REM sleep.",
+      "syn": [
+        "clear",
+        "intense",
+        "lifelike"
+      ],
+      "ant": [
+        "vague",
+        "faint"
+      ],
+      "related": [
+        "vivid dreams",
+        "less vivid",
+        "a vivid memory"
+      ]
+    },
+    {
+      "w": "influential",
+      "form": "influential",
+      "pos": "adjective",
+      "ipa": "/ˌɪn.fluˈen.ʃəl/",
+      "forms": "influence · influential · influentially",
+      "def": "having the power to affect or change the way people think or act",
+      "uz": "ta'sirli, nufuzli",
+      "senses": [],
+      "ex": "David Scheel's documentary was influential on other research into the sleeping patterns of octopuses.",
+      "syn": [
+        "important",
+        "significant",
+        "powerful"
+      ],
+      "ant": [
+        "insignificant",
+        "unimportant"
+      ],
+      "related": [
+        "an influential figure",
+        "influential on/in something"
+      ]
+    },
+    {
+      "w": "sleep pattern",
+      "form": "sleeping patterns · sleep patterns",
+      "pos": "phrase",
+      "ipa": "/ˈsliːp ˌpæt.ən/",
+      "forms": "sleep pattern · sleep patterns",
+      "def": "the regular way in which a person or animal sleeps (times, stages and habits)",
+      "uz": "uyqu tartibi / uyqu namunasi",
+      "senses": [],
+      "ex": "David Scheel's documentary was influential on other research into the sleeping patterns of octopuses.",
+      "syn": [
+        "sleep habits",
+        "sleep cycle"
+      ],
+      "ant": [],
+      "related": [
+        "unusual sleep patterns",
+        "disrupt your sleep pattern"
+      ]
+    },
+    {
+      "w": "electrode",
+      "form": "electrodes",
+      "pos": "noun",
+      "ipa": "/ɪˈlek.trəʊd/",
+      "forms": "electrode · electrodes",
+      "def": "a small metal part that carries electricity into or out of the body to measure or send signals",
+      "uz": "elektrod",
+      "senses": [],
+      "ex": "Studies using electrodes attached to the heads of sleepers have shown that when we sleep, we do so in two ways that alternate throughout the night.",
+      "syn": [
+        "sensor",
+        "contact"
+      ],
+      "ant": [],
+      "related": [
+        "attach electrodes to",
+        "electrodes attached to the head"
+      ]
+    },
+    {
+      "w": "eyelid",
+      "form": "eyelids",
+      "pos": "noun",
+      "ipa": "/ˈaɪ.lɪd/",
+      "forms": "eyelid · eyelids",
+      "def": "the piece of skin that can close over the front of each eye",
+      "uz": "ko'z qovog'i",
+      "senses": [],
+      "ex": "During this stage our eyes move, even though our eyelids are closed.",
+      "syn": [
+        "lid"
+      ],
+      "ant": [],
+      "related": [
+        "close your eyelids",
+        "under closed eyelids"
+      ]
+    },
+    {
+      "w": "though",
+      "form": "even though",
+      "pos": "conjunction",
+      "ipa": "/ðəʊ/",
+      "forms": "though · although · even though",
+      "def": "despite the fact that; used to introduce a surprising or contrasting fact",
+      "uz": "-sa ham, garchi",
+      "senses": [
+        "(adverb, at end) however: 'It's hard. I'll try, though.'"
+      ],
+      "ex": "During this stage our eyes move, even though our eyelids are closed.",
+      "syn": [
+        "although",
+        "even if",
+        "despite the fact that"
+      ],
+      "ant": [],
+      "related": [
+        "even though",
+        "as though (= as if)"
+      ]
+    },
+    {
+      "w": "twitch",
+      "form": "twitch · twitching",
+      "pos": "verb",
+      "ipa": "/twɪtʃ/",
+      "forms": "twitch · twitched · twitching",
+      "def": "to make a sudden small movement with a part of the body, often without meaning to",
+      "uz": "beixtiyor uchib-uchib qo'yish, tebranish",
+      "senses": [
+        "(noun) a sudden small uncontrolled movement"
+      ],
+      "ex": "Our muscles also twitch slightly, though they are largely paralysed so we don't hurt ourselves.",
+      "syn": [
+        "jerk",
+        "flicker",
+        "spasm"
+      ],
+      "ant": [],
+      "related": [
+        "twitching limbs",
+        "muscles twitch"
+      ]
+    },
+    {
+      "w": "paralyse",
+      "form": "paralysed",
+      "pos": "verb",
+      "ipa": "/ˈpær.ə.laɪz/",
+      "forms": "paralyse · paralysed · paralysing (US paralyze)",
+      "def": "to make a person or body part unable to move",
+      "uz": "harakatsiz qilib qo'ymoq, falaj qilmoq",
+      "senses": [
+        "to make something unable to work or act: 'The strike paralysed the city.'"
+      ],
+      "ex": "Our muscles also twitch slightly, though they are largely paralysed so we don't hurt ourselves.",
+      "syn": [
+        "immobilise",
+        "freeze"
+      ],
+      "ant": [
+        "free",
+        "mobilise"
+      ],
+      "related": [
+        "largely paralysed",
+        "paralysed with fear"
+      ]
+    },
+    {
+      "w": "in contrast",
+      "form": "In contrast",
+      "pos": "phrase",
+      "ipa": "/ɪn ˈkɒn.trɑːst/",
+      "forms": "contrast · in contrast · by contrast",
+      "def": "used to show that the next thing is very different from what was just mentioned",
+      "uz": "aksincha, farqli o'laroq",
+      "senses": [],
+      "ex": "In contrast, we also engage in non-REM sleep, during which we barely move at all.",
+      "syn": [
+        "by contrast",
+        "on the other hand",
+        "conversely"
+      ],
+      "ant": [
+        "similarly",
+        "likewise"
+      ],
+      "related": [
+        "in contrast to/with",
+        "in sharp contrast"
+      ]
+    },
+    {
+      "w": "maze",
+      "form": "maze",
+      "pos": "noun",
+      "ipa": "/meɪz/",
+      "forms": "maze · mazes",
+      "def": "a complicated system of paths, used in experiments to test how animals find their way",
+      "uz": "labirint",
+      "senses": [
+        "a confusing set of rules or information: 'a maze of regulations'"
+      ],
+      "ex": "Researchers compared the brain patterns of rats running through a maze when awake with their brain patterns during REM sleep.",
+      "syn": [
+        "labyrinth",
+        "network"
+      ],
+      "ant": [],
+      "related": [
+        "run through a maze",
+        "a maze of streets"
+      ]
+    },
+    {
+      "w": "intriguing",
+      "form": "Intriguingly · intriguing",
+      "pos": "adjective",
+      "ipa": "/ɪnˈtriː.ɡɪŋ/",
+      "forms": "intrigue · intriguing · intriguingly",
+      "def": "very interesting because it is unusual or not fully explained",
+      "uz": "qiziqarli, e'tiborni tortadigan",
+      "senses": [
+        "(intriguingly, adverb) in a way that makes you curious"
+      ],
+      "ex": "The nightmare study is intriguing, says Scheel, but is only based on one animal.",
+      "syn": [
+        "fascinating",
+        "curious",
+        "interesting"
+      ],
+      "ant": [
+        "boring",
+        "dull"
+      ],
+      "related": [
+        "Intriguingly, ... (sentence starter)",
+        "an intriguing question"
+      ]
+    },
+    {
+      "w": "universal",
+      "form": "universal",
+      "pos": "adjective",
+      "ipa": "/ˌjuː.nɪˈvɜː.səl/",
+      "forms": "universe · universal · universally",
+      "def": "existing everywhere or shared by everyone in a group",
+      "uz": "umumiy, hamma joyda mavjud",
+      "senses": [],
+      "ex": "That said, dreaming and REM sleep are unlikely to be universal in the animal kingdom.",
+      "syn": [
+        "worldwide",
+        "general",
+        "widespread"
+      ],
+      "ant": [
+        "rare",
+        "limited",
+        "particular"
+      ],
+      "related": [
+        "universal in",
+        "a universal truth"
+      ]
+    },
+    {
+      "w": "sponge",
+      "form": "sponges",
+      "pos": "noun",
+      "ipa": "/spʌndʒ/",
+      "forms": "sponge · sponges",
+      "def": "a very simple sea animal with a soft body full of holes and no brain",
+      "uz": "gubka (dengiz jonivori)",
+      "senses": [
+        "a soft material full of holes used for washing"
+      ],
+      "ex": "For example, sponges don't have brains, so they lack the machinery for dreaming.",
+      "syn": [],
+      "ant": [],
+      "related": [
+        "sea sponges",
+        "sponges lack brains"
+      ]
+    },
+    {
+      "w": "machinery",
+      "form": "machinery",
+      "pos": "noun",
+      "ipa": "/məˈʃiː.nər.i/",
+      "forms": "machine · machinery",
+      "def": "here: the internal parts or system that make something work (the brain 'machinery')",
+      "uz": "mexanizm, ishlash tizimi",
+      "senses": [
+        "machines as a group: 'farm machinery'",
+        "the organised system that runs something: 'the machinery of government'"
+      ],
+      "ex": "For example, sponges don't have brains, so they lack the machinery for dreaming.",
+      "syn": [
+        "mechanism",
+        "apparatus",
+        "system"
+      ],
+      "ant": [],
+      "related": [
+        "the machinery for/of something",
+        "the machinery of the brain"
+      ]
+    },
+    {
+      "w": "think",
+      "form": "it's thought that · thought",
+      "pos": "verb",
+      "ipa": "/θɔːt/",
+      "forms": "think · thought · thought",
+      "def": "'it's thought that…' = many people believe/consider that…",
+      "uz": "deb hisoblanadi, deb o'ylanadi",
+      "senses": [
+        "(noun) an idea or opinion: 'a sudden thought'"
+      ],
+      "ex": "It's thought that they don't experience REM sleep because during REM sleep animals are more vulnerable to extremes of temperature.",
+      "syn": [
+        "it is believed that",
+        "it is considered that"
+      ],
+      "ant": [],
+      "related": [
+        "it's thought that + clause",
+        "widely thought to be"
+      ]
+    },
+    {
+      "w": "moderately",
+      "form": "moderately",
+      "pos": "adverb",
+      "ipa": "/ˈmɒd.ər.ət.li/",
+      "forms": "moderate · moderately · moderation",
+      "def": "to a medium degree; neither very much nor very little",
+      "uz": "o'rtacha darajada",
+      "senses": [],
+      "ex": "As soon as animals evolved moderately complex lifestyles, they would have needed to dream in order to manage these lifestyles.",
+      "syn": [
+        "fairly",
+        "reasonably",
+        "somewhat"
+      ],
+      "ant": [
+        "extremely",
+        "highly"
+      ],
+      "related": [
+        "moderately complex",
+        "moderately successful"
+      ]
+    },
+    {
+      "w": "outward",
+      "form": "outward",
+      "pos": "adjective",
+      "ipa": "/ˈaʊt.wəd/",
+      "forms": "outward · outwardly · outwards",
+      "def": "relating to how things seem or appear on the outside, not the inner experience",
+      "uz": "tashqi, ko'rinishdagi",
+      "senses": [
+        "(adverb, outwards) towards the outside"
+      ],
+      "ex": "However, we still don't understand how this outward behaviour relates to internal experience.",
+      "syn": [
+        "external",
+        "visible",
+        "outer"
+      ],
+      "ant": [
+        "inward",
+        "internal"
+      ],
+      "related": [
+        "outward behaviour",
+        "outward appearance"
+      ]
+    },
+    {
+      "w": "dreamscape",
+      "form": "dreamscapes",
+      "pos": "noun",
+      "ipa": "/ˈdriːm.skeɪp/",
+      "forms": "dreamscape · dreamscapes",
+      "def": "the imagined scene or world that appears in a dream",
+      "uz": "tush manzarasi, tush olami",
+      "senses": [],
+      "ex": "It seems impossible to know what it is like to be a rat or a pigeon, let alone imagine their dreamscapes.",
+      "syn": [
+        "dream world",
+        "dream imagery"
+      ],
+      "ant": [],
+      "related": [
+        "imagine their dreamscapes",
+        "a strange dreamscape"
+      ]
+    },
+    {
+      "w": "interpret",
+      "form": "interpret",
+      "pos": "verb",
+      "ipa": "/ɪnˈtɜː.prɪt/",
+      "forms": "interpret · interpreted · interpretation",
+      "def": "to decide what something means or what has caused it",
+      "uz": "izohlamoq, ma'nosini tushunmoq",
+      "senses": [
+        "to translate speech from one language to another"
+      ],
+      "ex": "We are quick to interpret the twitching limbs and quiet barks of sleeping dogs.",
+      "syn": [
+        "read",
+        "understand",
+        "explain"
+      ],
+      "ant": [
+        "misinterpret",
+        "misread"
+      ],
+      "related": [
+        "quick to interpret",
+        "interpret something as"
+      ]
+    },
+    {
+      "w": "limb",
+      "form": "limbs",
+      "pos": "noun",
+      "ipa": "/lɪm/",
+      "forms": "limb · limbs",
+      "def": "an arm or a leg of a person or animal (of an octopus, one of its arms)",
+      "uz": "a'zo (qo'l yoki oyoq)",
+      "senses": [
+        "a large branch of a tree"
+      ],
+      "ex": "We are quick to interpret the twitching limbs and quiet barks of sleeping dogs.",
+      "syn": [
+        "arm",
+        "leg",
+        "appendage"
+      ],
+      "ant": [],
+      "related": [
+        "twitching limbs",
+        "her limbs and head moved"
+      ]
+    },
+    {
+      "w": "pursue",
+      "form": "pursuing",
+      "pos": "verb",
+      "ipa": "/pəˈsjuː/",
+      "forms": "pursue · pursued · pursuing · pursuit",
+      "def": "to follow or chase someone or something in order to catch it",
+      "uz": "quvmoq, ta'qib qilmoq",
+      "senses": [
+        "to continue with a plan or activity: 'pursue a career'"
+      ],
+      "ex": "Her limbs and head moved, and her skin rapidly changed colour, as though she was pursuing a crab.",
+      "syn": [
+        "chase",
+        "follow",
+        "hunt"
+      ],
+      "ant": [
+        "flee",
+        "abandon"
+      ],
+      "related": [
+        "pursuing a crab",
+        "pursue a goal"
+      ]
+    },
+    {
+      "w": "thrash",
+      "form": "thrashed",
+      "pos": "verb",
+      "ipa": "/θræʃ/",
+      "forms": "thrash · thrashed · thrashing",
+      "def": "to move the body or limbs violently and without control",
+      "uz": "tipirchilamoq, silkinmoq",
+      "senses": [
+        "to defeat someone easily in a game or contest"
+      ],
+      "ex": "Costello, as the octopus was called, thrashed around, extended his mantle as if trying to make himself look bigger, and squirted ink.",
+      "syn": [
+        "flail",
+        "writhe",
+        "toss"
+      ],
+      "ant": [],
+      "related": [
+        "thrash around",
+        "thrash about"
+      ]
+    },
+    {
+      "w": "mantle",
+      "form": "mantle",
+      "pos": "noun",
+      "ipa": "/ˈmæn.təl/",
+      "forms": "mantle · mantles",
+      "def": "the soft muscular body part of an octopus or squid behind the head",
+      "uz": "mantiya (sakkizoyoqning tanasi)",
+      "senses": [
+        "a role or responsibility passed on: 'take on the mantle of leader'",
+        "the hot layer of the Earth below the crust"
+      ],
+      "ex": "Costello ... extended his mantle as if trying to make himself look bigger, and squirted ink.",
+      "syn": [
+        "body",
+        "cloak (literal sense)"
+      ],
+      "ant": [],
+      "related": [
+        "extended his mantle",
+        "take on the mantle of"
+      ]
+    },
+    {
+      "w": "squirt",
+      "form": "squirted",
+      "pos": "verb",
+      "ipa": "/skwɜːt/",
+      "forms": "squirt · squirted · squirting",
+      "def": "to force liquid out quickly through a narrow opening",
+      "uz": "purkamoq, otib chiqarmoq (suyuqlik)",
+      "senses": [
+        "(noun) a thin fast stream of liquid"
+      ],
+      "ex": "Costello ... squirted ink as though he were being attacked by a predator.",
+      "syn": [
+        "spray",
+        "shoot",
+        "spurt"
+      ],
+      "ant": [],
+      "related": [
+        "squirted ink",
+        "squirt water at"
+      ]
+    },
+    {
+      "w": "sequence",
+      "form": "sequences",
+      "pos": "noun",
+      "ipa": "/ˈsiː.kwəns/",
+      "forms": "sequence · sequences · sequential",
+      "def": "a set of related events or actions that follow each other in a particular order",
+      "uz": "ketma-ketlik",
+      "senses": [
+        "(verb) to arrange things in an order"
+      ],
+      "ex": "Brain imaging is needed to show that the octopuses are replaying sequences of activities from their waking lives in dreams.",
+      "syn": [
+        "series",
+        "succession",
+        "chain"
+      ],
+      "ant": [],
+      "related": [
+        "a sequence of activities",
+        "in sequence"
+      ]
+    },
+    {
+      "w": "shed light on",
+      "form": "shed light",
+      "pos": "phrase",
+      "ipa": "/ʃed laɪt ɒn/",
+      "forms": "shed · shed · shedding light on",
+      "def": "to make something easier to understand by giving new information",
+      "uz": "oydinlashtirmoq, tushuntirishga yordam bermoq",
+      "senses": [],
+      "ex": "Better understanding of these purposes might shed light on the true purpose of our own dreams.",
+      "syn": [
+        "clarify",
+        "explain",
+        "illuminate"
+      ],
+      "ant": [
+        "obscure",
+        "confuse"
+      ],
+      "related": [
+        "shed light on something",
+        "throw/cast light on"
+      ]
+    }
   ]
 }
