@@ -129,6 +129,11 @@ def main():
 
     html = build_html(tpl, deck, a.title, a.eyebrow, a.lede, a.key)
     out = a.out if os.path.isabs(a.out) else os.path.join(root, a.out)
+    # Generated HTML belongs under generated/, not in the data folder vocab/.
+    parts = os.path.normpath(out).split(os.sep)
+    if "vocab" in parts and "generated" not in parts:
+        raise SystemExit("Refusing to write generated HTML into vocab/. Use --out generated/vocab/<name>.html")
+    os.makedirs(os.path.dirname(out), exist_ok=True)
     open(out, "w").write(html)
 
     known = [w for w in open(a.known_words).read().replace("\n", " ").split(" ") if w]

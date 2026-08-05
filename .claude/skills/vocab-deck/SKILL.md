@@ -1,6 +1,6 @@
 ---
 name: vocab-deck
-description: Generate an IELTS vocabulary study deck (interactive HTML flashcards) from a reading-test HTML plus a user-pasted list of unknown words, then update vocab/learning.json and vocab/known.md. Use when the user shares a reading passage file and a list of unknown vocab/phrases and wants a vocab learning HTML built from templates/vocab.html.
+description: Generate an IELTS vocabulary study deck (interactive HTML flashcards) into generated/vocab/ from a reading-test HTML plus a user-pasted list of unknown words, then update vocab/learning.json and vocab/known.md. Use when the user shares a reading passage file and a list of unknown vocab/phrases and wants a vocab learning HTML built from templates/vocab.html.
 ---
 
 # Vocab deck generator
@@ -17,6 +17,14 @@ HTML (flip / recall / cloze + sentence structures), and keep `learning.json` and
   words in it too.
 - **Output file name** — e.g. `cambridge-21-reading-3-vocabs`. Derive a **set name**
   from it by dropping `-vocabs` (→ `cambridge-21-reading-3`).
+
+## Where files go
+- **Generated study HTML → `generated/vocab/<name>.html`.** All generated artifacts live
+  under `generated/`, mirroring the source type (vocab decks → `generated/vocab/`). Do NOT
+  put the HTML in `vocab/` — a watcher relocates stray files and it only causes confusion.
+- **Data stays in `vocab/`**: `vocab/learning.json` (cards, keyed by set name) and
+  `vocab/known.md` (seen-words index). These are the only two files in `vocab/`.
+- Scratch files (readable.txt, deck.json, known_words.txt, build_cards.py) → session scratchpad, never the repo.
 
 ## Hard rules (from the user)
 1. **The user pastes the unknown list.** Do not auto-invent the vocab set. But **every
@@ -83,14 +91,14 @@ extra    one fresh example of your own
      --deck <scratch>/deck.json --set-name <set> \
      --title "<Human Title>" --eyebrow "<Eyebrow line>" \
      --lede "<one-sentence intro>" --key study_<slug>_v1 \
-     --out vocab/<name>-vocabs.html --known-words <scratch>/known_words.txt --repo-root .
+     --out generated/vocab/<name>-vocabs.html --known-words <scratch>/known_words.txt --repo-root .
    ```
-   This writes the HTML, keys `learning.json` by `<set>`, and adds a `## <set>` section to `known.md`.
+   This writes the HTML to `generated/vocab/`, keys `learning.json` by `<set>`, and adds a `## <set>` section to `known.md`.
 5. **Verify** (no browser needed): the script's `<script>` must parse.
    ```
-   node -e "const fs=require('fs');const h=fs.readFileSync('vocab/<name>-vocabs.html','utf8');new Function(h.match(/<script>([\s\S]*)<\/script>/)[1]);console.log('OK')"
+   node -e "const fs=require('fs');const h=fs.readFileSync('generated/vocab/<name>-vocabs.html','utf8');new Function(h.match(/<script>([\s\S]*)<\/script>/)[1]);console.log('OK')"
    ```
-   Optionally serve `vocab/` on `127.0.0.1` (not `localhost` — the browser may use IPv6)
+   Optionally serve `generated/vocab/` on `127.0.0.1` (not `localhost` — the browser may use IPv6)
    and screenshot to eyeball the front `form` line, flip, and related chips.
 6. **Report**: counts, the three files touched, and note words that weren't in the passage.
 
