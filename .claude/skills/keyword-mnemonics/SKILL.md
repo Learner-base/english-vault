@@ -9,22 +9,41 @@ Make an English word stick by hooking its **sound** to something the learner alr
 knows, then wrapping both in a vivid, funny, slightly absurd mini-scene in Uzbek.
 
 ## Output shape (per word)
-- **Translation** — exact Uzbek meaning (same as the card's `uz`).
 - **Keyword** — an Uzbek word OR a globally-known term (brand/tech/name) that sounds
   like the English word or a chunk of it. Show the gloss in ( ) if helpful.
-- **Story** — ONE Uzbek sentence, absurd/funny/vivid, that connects the **Keyword**
-  to the **Translation** so recalling one pulls the other.
+- **Translation** — exact Uzbek meaning (comes from the card's `uz`; the deck shows it
+  inside the mnemonic accordion right under the keyword — ALWAYS present).
+- **Story** — ONE Uzbek sentence, absurd/funny/vivid, that connects the **Keyword** to
+  the **Translation** so recalling one pulls the other.
 
-## Rules
-1. **Sound first.** The keyword must be phonetically close to the English word (whole
-   or a clear syllable): maze→*mayiz*, thrash→*trash*, interpret→*internet*.
-2. **Easy to picture.** The story must be instantly imaginable and easy to remember —
-   concrete objects and actions, no abstractions. Short. One sentence.
-3. **Both halves present.** The sentence must contain the keyword idea AND the meaning,
-   so the link is forced (not just a sentence using the word).
-4. **Uzbek story, natural.** Write the story in natural Uzbek (apostrophes ok: o', g').
-5. **Every card** gets one when mnemonics are enabled.
-6. Keyword can be a combo: machinery → "Mashina + Eri" ("mashina eriyapti").
+The card back renders all three together (Keyword → Tarjima → Story). Showing the
+translation next to the keyword is deliberate: Atkinson & Raugh (1975) found learners
+given the keyword **together with** the translation learned and retained more than
+keyword alone.
+
+## Best practices (research-backed — apply to EVERY card)
+1. **Phonetic overlap, front-loaded.** The keyword should echo the START or the whole
+   English word, not a buried syllable (maze→*mayiz*, sponge→*SpongeBob*, twitch→*Twitch*).
+2. **Picturable + familiar keyword.** Pick something the learner can instantly see and
+   already knows — a concrete object, a brand, a famous name. Never an abstract keyword.
+3. **Interactive image.** Keyword and meaning must *do something to each other* in the
+   sentence, not merely co-occur. The link is the memory, so force the interaction.
+4. **Bizarre beats bland.** The more absurd/funny the scene, the better it sticks —
+   exaggerate, break physics, make it silly. Keep it to ONE vivid sentence.
+5. **Abstract words need extra work.** Verbs/adjectives/abstract nouns are harder to
+   image — anchor them to a concrete mini-scene (an action someone performs) rather than
+   a static picture.
+6. **Bidirectional cue.** Put BOTH the keyword idea and the meaning in the sentence so it
+   works seeing the word (→meaning) and, as far as possible, recalling the word.
+7. **Professional, natural Uzbek.** Clean, natural phrasing (apostrophes ok: o', g').
+   No broken grammar, no filler. One tight sentence.
+
+## Operational
+- **Every card** gets a mnemonic when mnemonics are enabled for the deck.
+- Keyword may be a **combo** when one word can't carry the whole sound:
+  machinery → "Mashina + Eri" ("mashina eriyapti").
+- If no clean phonetic match exists (rare, e.g. *though*), pick the closest picturable
+  sound and lean harder on a bizarre story — note it's an approximate hook.
 
 ## Examples (exact style/format)
 - Word: Maze — Labirint / Chalg'ituvchi yo'laklar

@@ -103,9 +103,9 @@
   .related{font-size:13.5px;color:var(--ink-2);margin:2px 0 14px}
   .related .lab{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:7px}
   .related .tag{font-family:var(--serif)}
-  .mnem .kw{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:6px}
-  .mnem .kw b{color:var(--ink);text-transform:none;font-size:14px;letter-spacing:0}
-  .mnem .story{font-family:var(--serif);font-style:italic;font-size:15px;line-height:1.55;margin:0}
+  .mnem .kw,.mnem .tr{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:5px}
+  .mnem .kw b,.mnem .tr b{color:var(--ink);text-transform:none;font-size:14px;letter-spacing:0}
+  .mnem .story{font-family:var(--serif);font-style:italic;font-size:15px;line-height:1.55;margin:8px 0 0;padding-top:8px;border-top:1px dashed var(--line)}
   .acc{border-top:1px solid var(--line-2)}
   .acc summary{list-style:none;cursor:pointer;padding:11px 0;display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-2)}
   .acc summary::-webkit-details-marker{display:none}
@@ -352,7 +352,7 @@ function renderVocab(v){
     ${v.senses&&v.senses.length?`<p class="senses"><span class="lab">also means</span>${v.senses.map(esc).join("; ")}</p>`:""}
     ${v.related&&v.related.length?`<p class="related"><span class="lab">related expressions</span>${tags(v.related)}</p>`:""}
     <p class="forms">${esc(v.forms)}</p>
-    ${v.mnem?acc("Yodlash uchun \u2014 keyword",`<div class="mnem"><span class="kw">Keyword: <b>${esc(v.mnem.kw)}</b></span><p class="story">${esc(v.mnem.story)}</p></div>`):""}
+    ${v.mnem?acc("Yodlash uchun \u2014 keyword",`<div class="mnem"><span class="kw">Keyword: <b>${esc(v.mnem.kw)}</b></span>${v.uz?`<span class="tr">Tarjima: <b>${esc(v.uz)}</b></span>`:""}<p class="story">${esc(v.mnem.story)}</p></div>`):""}
     ${acc("Example — from the passage",`<em>${esc(v.ex)}</em>`)}
     ${acc("Synonyms — in this context",tags(v.syn))}
     ${acc("Antonyms",tags(v.ant))}
