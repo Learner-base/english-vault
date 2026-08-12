@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Academic 18 - Test 1 Listening (Computer-Delivered)</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; }
+        body { background-color: #f4f6f8; color: #222; display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+        header { background-color: #2b303a; color: #fff; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; height: 50px; font-size: 14px; }
+        .header-left { display: flex; align-items: center; gap: 15px; }
+        .brand { font-weight: bold; font-size: 16px; color: #ffcc00; letter-spacing: 0.5px; }
+        .candidate-info { color: #d0d5dd; font-size: 13px; }
+        .header-right { display: flex; align-items: center; gap: 15px; }
+        .timer-box { background-color: #1e222a; padding: 5px 12px; border-radius: 4px; border: 1px solid #444; font-family: monospace; font-size: 16px; font-weight: bold; color: #00ffcc; display: flex; align-items: center; gap: 8px; }
+        .btn-header { background: #3a414f; border: none; color: #fff; padding: 5px 10px; border-radius: 3px; cursor: pointer; font-size: 12px; }
+        .btn-header:hover { background: #4f586b; }
+        .audio-bar { background-color: #e9ecef; border-bottom: 1px solid #ccc; padding: 8px 20px; display: flex; align-items: center; justify-content: space-between; font-size: 13px; }
+        audio { height: 32px; outline: none; width: 350px; }
+        main { flex: 1; display: flex; overflow: hidden; position: relative; }
+        .part-container { width: 100%; height: 100%; padding: 25px 40px; overflow-y: auto; display: none; }
+        .part-container.active { display: block; }
+        h2 { font-size: 18px; margin-bottom: 10px; color: #111; border-bottom: 2px solid #0056b3; padding-bottom: 5px; display: inline-block; }
+        .instruction-box { background-color: #e8f4fd; border-left: 4px solid #0056b3; padding: 10px 15px; margin: 15px 0; font-size: 13.5px; font-weight: bold; color: #003366; }
+        .question-block { margin-bottom: 20px; background: #fff; padding: 15px 20px; border-radius: 6px; border: 1px solid #e2e8f0; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .q-text { font-size: 14px; margin-bottom: 10px; line-height: 1.5; font-weight: 500; }
+        .q-number { font-weight: bold; color: #0056b3; margin-right: 5px; }
+        input[type="text"] { padding: 6px 10px; border: 1px solid #aaa; border-radius: 3px; font-size: 14px; width: 180px; transition: border 0.2s; }
+        input[type="text"]:focus { border-color: #0056b3; outline: none; background-color: #f0f7ff; }
+        .mcq-options { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+        .mcq-option { display: flex; align-items: center; gap: 10px; font-size: 14px; cursor: pointer; padding: 5px 8px; border-radius: 4px; }
+        .mcq-option:hover { background-color: #f1f5f9; }
+        .notes-card { background: #fff; border: 1px solid #cbd5e1; padding: 20px; border-radius: 6px; margin-top: 10px; }
+        .notes-card h3 { font-size: 16px; margin-bottom: 12px; text-align: center; color: #334155; }
+        .notes-list { list-style: none; line-height: 2; font-size: 14px; }
+        .indent { margin-left: 20px; }
+        .matching-box { display: flex; gap: 30px; margin-top: 15px; }
+        .options-panel { background: #f8fafc; border: 1px solid #cbd5e1; padding: 15px; border-radius: 6px; width: 280px; flex-shrink: 0; font-size: 13.5px; }
+        .options-panel h4 { font-size: 14px; margin-bottom: 10px; color: #1e293b; }
+        .options-panel ul { list-style: none; line-height: 1.8; }
+        .questions-panel { flex: 1; }
+        footer { background-color: #1e222a; color: #fff; height: 60px; display: flex; align-items: center; justify-content: space-between; padding: 0 15px; border-top: 1px solid #333; }
+        .nav-parts { display: flex; gap: 8px; }
+        .part-tab { background: #2d3748; color: #cbd5e1; border: none; padding: 8px 14px; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: bold; }
+        .part-tab.active { background: #0056b3; color: #fff; }
+        .q-nav-grid { display: flex; gap: 3px; overflow-x: auto; max-width: 600px; padding: 2px 0; }
+        .q-btn { width: 28px; height: 28px; background: #3a414f; color: #fff; border: none; border-radius: 3px; font-size: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+        .q-btn.answered { background: #22c55e; color: #fff; }
+        .btn-submit { background-color: #16a34a; color: white; border: none; padding: 8px 18px; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 14px; }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: none; justify-content: center; align-items: center; z-index: 1000; }
+        .modal-content { background: #fff; width: 85%; max-width: 800px; max-height: 85vh; border-radius: 8px; padding: 25px; overflow-y: auto; }
+        .score-summary { display: flex; justify-content: space-around; background: #f0f9ff; border: 1px solid #bae6fd; padding: 15px; border-radius: 6px; margin: 15px 0; text-align: center; }
+        .score-box { font-size: 24px; font-weight: bold; color: #0284c7; }
+        .result-table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 13px; }
+        .result-table th, .result-table td { border: 1px solid #e2e8f0; padding: 8px 12px; text-align: left; }
+        .res-correct { background-color: #dcfce7; color: #166534; font-weight: bold; }
+        .res-incorrect { background-color: #fee2e2; color: #991b1b; }
+        .close-btn { background: #64748b; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; float: right; margin-top: 15px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <span class="brand">IELTS CD EXAM</span>
+            <span class="candidate-info">Candidate: <strong>Academic Practice</strong> | ID: 819203</span>
+        </div>
+        <div class="header-right">
+            <button class="btn-header" onclick="toggleTimer()">Hide Timer</button>
+            <div class="timer-box" id="timerBox">⏱️ <span id="timer">30:00</span></div>
+            <button class="btn-header">Help</button>
+        </div>
+    </header>
+
+    <div class="audio-bar">
+        <span>🎧 <strong>Listening Test 1 Audio</strong></span>
+        <audio controls id="audioPlayer">
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+        </audio>
+    </div>
+
+    <main>
+        <!-- PART 1 -->
+        <div class="part-container active" id="part1">
+            <h2>PART 1 - Questions 1-10</h2>
+            <div class="instruction-box">Complete the notes below.<br>Write <strong>ONE WORD AND/OR A NUMBER</strong> for each answer.</div>
+            <div class="notes-card">
+                <h3>Transport survey</h3>
+                <ul class="notes-list">
+                    <li><strong>Name:</strong> Sadie Jones</li>
+                    <li><strong>Year of birth:</strong> 1991</li>
+                    <li><strong>Postcode:</strong> <span class="q-number">1</span> <input type="text" id="q1" oninput="updateNav(1)"></li>
+                    <br>
+                    <li><strong>Travelling by bus</strong></li>
+                    <li class="indent">• Date of bus journey: <span class="q-number">2</span> <input type="text" id="q2" oninput="updateNav(2)"></li>
+                    <li class="indent">• Reason for trip: shopping and visit to the <span class="q-number">3</span> <input type="text" id="q3" oninput="updateNav(3)"></li>
+                    <li class="indent">• Travelled by bus because cost of <span class="q-number">4</span> <input type="text" id="q4" oninput="updateNav(4)"> too high</li>
+                    <li class="indent">• Got on bus at <span class="q-number">5</span> <input type="text" id="q5" oninput="updateNav(5)"> Street</li>
+                    <li class="indent">• Complaints about bus service:</li>
+                    <li class="indent" style="margin-left: 40px;">- bus today was <span class="q-number">6</span> <input type="text" id="q6" oninput="updateNav(6)"></li>
+                    <li class="indent" style="margin-left: 40px;">- frequency of buses in the <span class="q-number">7</span> <input type="text" id="q7" oninput="updateNav(7)"></li>
+                    <br>
+                    <li><strong>Travelling by car</strong></li>
+                    <li class="indent">• Goes to the <span class="q-number">8</span> <input type="text" id="q8" oninput="updateNav(8)"> by car</li>
+                    <br>
+                    <li><strong>Travelling by bicycle</strong></li>
+                    <li class="indent">• Dislikes travelling by bike in the city centre because of the <span class="q-number">9</span> <input type="text" id="q9" oninput="updateNav(9)"></li>
+                    <li class="indent">• Doesn't own a bike because of a lack of <span class="q-number">10</span> <input type="text" id="q10" oninput="updateNav(10)"></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- PART 2 -->
+        <div class="part-container" id="part2">
+            <h2>PART 2 - Questions 11-20</h2>
+            <div class="instruction-box">Questions 11-13: Choose the correct letter, <strong>A, B or C</strong>.</div>
+            <div class="question-block">
+                <div class="q-text"><span class="q-number">11</span> Why does the speaker apologise about the seats?</div>
+                <div class="mcq-options">
+                    <label class="mcq-option"><input type="radio" name="q11" value="A" onclick="updateNav(11)"> A) They are too small.</label>
+                    <label class="mcq-option"><input type="radio" name="q11" value="B" onclick="updateNav(11)"> B) There are not enough of them.</label>
+                    <label class="mcq-option"><input type="radio" name="q11" value="C" onclick="updateNav(11)"> C) Some of them are very close together.</label>
+                </div>
+            </div>
+            <div class="question-block">
+                <div class="q-text"><span class="q-number">12</span> What does the speaker say about the age of volunteers?</div>
+                <div class="mcq-options">
+                    <label class="mcq-option"><input type="radio" name="q12" value="A" onclick="updateNav(12)"> A) The age of volunteers is less important than other factors.</label>
+                    <label class="mcq-option"><input type="radio" name="q12" value="B" onclick="updateNav(12)"> B) Young volunteers are less reliable than older ones.</label>
+                    <label class="mcq-option"><input type="radio" name="q12" value="C" onclick="updateNav(12)"> C) Most volunteers are about 60 years old.</label>
+                </div>
+            </div>
+            <div class="question-block">
+                <div class="q-text"><span class="q-number">13</span> What does the speaker say about training?</div>
+                <div class="mcq-options">
+                    <label class="mcq-option"><input type="radio" name="q13" value="A" onclick="updateNav(13)"> A) It is continuous.</label>
+                    <label class="mcq-option"><input type="radio" name="q13" value="B" onclick="updateNav(13)"> B) It is conducted by a manager.</label>
+                    <label class="mcq-option"><input type="radio" name="q13" value="C" onclick="updateNav(13)"> C) It takes place online.</label>
+                </div>
+            </div>
+            <div class="instruction-box">Questions 14 and 15: Choose <strong>TWO</strong> letters, <strong>A-E</strong>.</div>
+            <div class="question-block">
+                <div class="q-text"><span class="q-number">14 & 15</span> Select two options:</div>
+                <div class="mcq-options">
+                    <label class="mcq-option"><input type="checkbox" name="q14_15" value="A" onclick="updateMultiNav([14, 15], 'q14_15')"> A) their financial situation</label>
+                    <label class="mcq-option"><input type="checkbox" name="q14_15" value="B" onclick="updateMultiNav([14, 15], 'q14_15')"> B) their level of commitment</label>
+                    <label class="mcq-option"><input type="checkbox" name="q14_15" value="C" onclick="updateMultiNav([14, 15], 'q14_15')"> C) their work experience</label>
+                    <label class="mcq-option"><input type="checkbox" name="q14_15" value="D" onclick="updateMultiNav([14, 15], 'q14_15')"> D) their ambition</label>
+                    <label class="mcq-option"><input type="checkbox" name="q14_15" value="E" onclick="updateMultiNav([14, 15], 'q14_15')"> E) their availability</label>
+                </div>
+            </div>
+            <div class="instruction-box">Questions 16-20: Choose <strong>FIVE</strong> answers from the box (A-G).</div>
+            <div class="matching-box">
+                <div class="options-panel">
+                    <h4>Helpful things volunteers might offer</h4>
+                    <ul>
+                        <li><strong>A</strong> experience on stage</li>
+                        <li><strong>B</strong> original, new ideas</li>
+                        <li><strong>C</strong> parenting skills</li>
+                        <li><strong>D</strong> an understanding of food and diet</li>
+                        <li><strong>E</strong> retail experience</li>
+                        <li><strong>F</strong> a good memory</li>
+                        <li><strong>G</strong> a good level of fitness</li>
+                    </ul>
+                </div>
+                <div class="questions-panel">
+                    <div class="question-block"><span class="q-number">16</span> Fundraising <input type="text" id="q16" style="width: 60px;" maxlength="1" oninput="updateNav(16)"></div>
+                    <div class="question-block"><span class="q-number">17</span> Litter collection <input type="text" id="q17" style="width: 60px;" maxlength="1" oninput="updateNav(17)"></div>
+                    <div class="question-block"><span class="q-number">18</span> 'Playmates' <input type="text" id="q18" style="width: 60px;" maxlength="1" oninput="updateNav(18)"></div>
+                    <div class="question-block"><span class="q-number">19</span> Story club <input type="text" id="q19" style="width: 60px;" maxlength="1" oninput="updateNav(19)"></div>
+                    <div class="question-block"><span class="q-number">20</span> First aid <input type="text" id="q20" style="width: 60px;" maxlength="1" oninput="updateNav(20)"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PART 3 -->
+        <div class="part-container" id="part3">
+            <h2>PART 3 - Questions 21-30</h2>
+            <div class="instruction-box">Questions 21-26: Choose the correct letter, <strong>A, B or C</strong>.</div>
+            <div class="question-block">
+                <div class="q-text"><span class="q-number">21</span> What problem did Chantal have at the start of the talk?</div>
+                <div class="mcq-options">
+                    <label class="mcq-option"><input type="radio" name="q21" value="A" onclick="updateNav(21)"> A) Her view of the speaker was blocked.</label>
+                    <label class="mcq-option"><input type="radio" name="q21" value="B" onclick="updateNav(21)"> B) She was unable to find an empty seat.</label>
+                    <label class="mcq-option"><input type="radio" name="q21" value="C" onclick="updateNav(21)"> C) The students next to her were talking.</label>
+                </div>
+            </div>
+            <div class="question-block">
+                <div class="q-text"><span class="q-number">22</span> What were Hugo and Chantal surprised to hear about the job market?</div>
+                <div class="mcq-options">
+                    <label class="mcq-option"><input type="radio" name="q22" value="A" onclick="updateNav(22)"> A) It has become more competitive than it used to be.</label>
+                    <label class="mcq-option"><input type="radio" name="q22" value="B" onclick="updateNav(22)"> B) There is more variety in it than they had realised.</label>
+                    <label class="mcq-option"><input type="radio" name="q22" value="C" onclick="updateNav(22)"> C) Some areas of it are more exciting than others.</label>
+                </div>
+            </div>
+            <div class="question-block">
+                <div class="q-text"><span class="q-number">23</span> Hugo and Chantal agree that the speaker's message was</div>
+                <div class="mcq-options">
+                    <label class="mcq-option"><input type="radio" name="q23" value="A" onclick="updateNav(23)"> A) unfair to them at times.</label>
+                    <label class="mcq-option"><input type="radio" name="q23" value="B" onclick="updateNav(23)"> B) hard for them to follow.</label>
+                    <label class="mcq-option"><input type="radio" name="q23" value="C" onclick="updateNav(23)"> C) critical of the industry.</label>
+                </div>
+            </div>
+            <div class="question-block">
+                <div class="q-text"><span class="q-number">24</span> What do Hugo and Chantal criticise about their school careers advice?</div>
+                <div class="mcq-options">
+                    <label class="mcq-option"><input type="radio" name="q24" value="A" onclick="updateNav(24)"> A) when they received the advice</label>
+                    <label class="mcq-option"><input type="radio" name="q24" value="B" onclick="updateNav(24)"> B) how much advice was given</label>
+                    <label class="mcq-option"><input type="radio" name="q24" value="C" onclick="updateNav(24)"> C) who gave the advice</label>
+                </div>
+            </div>
+            <div class="question-block">
+                <div class="q-text"><span class="q-number">25</span> When discussing their future, Hugo and Chantal disagree on</div>
+                <div class="mcq-options">
+                    <label class="mcq-option"><input type="radio" name="q25" value="A" onclick="updateNav(25)"> A) which is the best career in fashion.</label>
+                    <label class="mcq-option"><input type="radio" name="q25" value="B" onclick="updateNav(25)"> B) when to choose a career in fashion.</label>
+                    <label class="mcq-option"><input type="radio" name="q25" value="C" onclick="updateNav(25)"> C) why they would like a career in fashion.</label>
+                </div>
+            </div>
+            <div class="question-block">
+                <div class="q-text"><span class="q-number">26</span> How does Hugo feel about being an unpaid assistant?</div>
+                <div class="mcq-options">
+                    <label class="mcq-option"><input type="radio" name="q26" value="A" onclick="updateNav(26)"> A) He is realistic about the practice.</label>
+                    <label class="mcq-option"><input type="radio" name="q26" value="B" onclick="updateNav(26)"> B) He feels the practice is dishonest.</label>
+                    <label class="mcq-option"><input type="radio" name="q26" value="C" onclick="updateNav(26)"> C) He thinks others want to change the practice.</label>
+                </div>
+            </div>
+            <div class="instruction-box">Questions 27 and 28: Choose <strong>TWO</strong> letters, <strong>A-E</strong>.</div>
+            <div class="question-block">
+                <div class="q-text"><span class="q-number">27 & 28</span> Select two options:</div>
+                <div class="mcq-options">
+                    <label class="mcq-option"><input type="checkbox" name="q27_28" value="A" onclick="updateMultiNav([27, 28], 'q27_28')"> A) being dishonest to her employer</label>
+                    <label class="mcq-option"><input type="checkbox" name="q27_28" value="B" onclick="updateMultiNav([27, 28], 'q27_28')"> B) paying too much attention to how she looked</label>
+                    <label class="mcq-option"><input type="checkbox" name="q27_28" value="C" onclick="updateMultiNav([27, 28], 'q27_28')"> C) expecting to become well known</label>
+                    <label class="mcq-option"><input type="checkbox" name="q27_28" value="D" onclick="updateMultiNav([27, 28], 'q27_28')"> D) trying to earn a lot of money</label>
+                    <label class="mcq-option"><input type="checkbox" name="q27_28" value="E" onclick="updateMultiNav([27, 28], 'q27_28')"> E) openly disliking her client</label>
+                </div>
+            </div>
+            <div class="instruction-box">Questions 29 and 30: Choose <strong>TWO</strong> letters, <strong>A-E</strong>.</div>
+            <div class="question-block">
+                <div class="q-text"><span class="q-number">29 & 30</span> Select two options:</div>
+                <div class="mcq-options">
+                    <label class="mcq-option"><input type="checkbox" name="q29_30" value="A" onclick="updateMultiNav([29, 30], 'q29_30')"> A) the reasons people return fashion items</label>
+                    <label class="mcq-option"><input type="checkbox" name="q29_30" value="B" onclick="updateMultiNav([29, 30], 'q29_30')"> B) how much time people have to shop for clothes</label>
+                    <label class="mcq-option"><input type="checkbox" name="q29_30" value="C" onclick="updateMultiNav([29, 30], 'q29_30')"> C) fashion designs people want but can't find</label>
+                    <label class="mcq-option"><input type="checkbox" name="q29_30" value="D" onclick="updateMultiNav([29, 30], 'q29_30')"> D) the best time of year for fashion buying</label>
+                    <label class="mcq-option"><input type="checkbox" name="q29_30" value="E" onclick="updateMultiNav([29, 30], 'q29_30')"> E) the most popular fashion sizes</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- PART 4 -->
+        <div class="part-container" id="part4">
+            <h2>PART 4 - Questions 31-40</h2>
+            <div class="instruction-box">Complete the notes below.<br>Write <strong>ONE WORD ONLY</strong> for each answer.</div>
+            <div class="notes-card">
+                <h3>Elephant translocation</h3>
+                <ul class="notes-list">
+                    <li><strong>Reasons for overpopulation at Majete National Park</strong></li>
+                    <li class="indent">• strict enforcement of anti-poaching laws</li>
+                    <li class="indent">• successful breeding</li>
+                    <br>
+                    <li><strong>Problems caused by elephant overpopulation</strong></li>
+                    <li class="indent">• greater competition, causing hunger for elephants</li>
+                    <li class="indent">• damage to <span class="q-number">31</span> <input type="text" id="q31" oninput="updateNav(31)"> in the park</li>
+                    <br>
+                    <li><strong>The translocation process</strong></li>
+                    <li class="indent">• a suitable group of elephants from the same <span class="q-number">32</span> <input type="text" id="q32" oninput="updateNav(32)"> was selected</li>
+                    <li class="indent">• vets and park staff made use of <span class="q-number">33</span> <input type="text" id="q33" oninput="updateNav(33)"> to help guide the elephants into an open plain</li>
+                    <li class="indent">• elephants were immobilised with tranquilisers</li>
+                    <li class="indent">• this process had to be completed quickly to reduce <span class="q-number">34</span> <input type="text" id="q34" oninput="updateNav(34)"></li>
+                    <li class="indent">• elephants had to be turned on their <span class="q-number">35</span> <input type="text" id="q35" oninput="updateNav(35)"> to avoid damage to their lungs</li>
+                    <li class="indent">• elephants' <span class="q-number">36</span> <input type="text" id="q36" oninput="updateNav(36)"> had to be monitored constantly</li>
+                    <li class="indent">• tracking devices were fitted to the matriarchs</li>
+                    <li class="indent">• data including the size of their tusks and <span class="q-number">37</span> <input type="text" id="q37" oninput="updateNav(37)"> was taken</li>
+                    <li class="indent">• elephants were taken by truck to their new reserve</li>
+                    <br>
+                    <li><strong>Advantages of translocation at Nkhotakota Wildlife Park</strong></li>
+                    <li class="indent">• <span class="q-number">38</span> <input type="text" id="q38" oninput="updateNav(38)"> opportunities</li>
+                    <li class="indent">• a reduction in the number of poachers and <span class="q-number">39</span> <input type="text" id="q39" oninput="updateNav(39)"></li>
+                    <li class="indent">• an example of conservation that other parks can follow</li>
+                    <li class="indent">• an increase in <span class="q-number">40</span> <input type="text" id="q40" oninput="updateNav(40)"> as a contributor to GDP</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="nav-parts">
+            <button class="part-tab active" onclick="switchPart(1)">Part 1</button>
+            <button class="part-tab" onclick="switchPart(2)">Part 2</button>
+            <button class="part-tab" onclick="switchPart(3)">Part 3</button>
+            <button class="part-tab" onclick="switchPart(4)">Part 4</button>
+        </div>
+        <div class="q-nav-grid" id="qNavGrid"></div>
+        <div class="action-btns"><button class="btn-submit" onclick="submitTest()">Submit Test</button></div>
+    </footer>
+
+    <div class="modal-overlay" id="resultModal">
+        <div class="modal-content">
+            <h2>Listening Test Results</h2>
+            <div class="score-summary">
+                <div><div class="score-box" id="rawScore">0 / 40</div><div>Raw Score</div></div>
+                <div><div class="score-box" id="bandScore">0.0</div><div>Band Score</div></div>
+            </div>
+            <table class="result-table">
+                <thead><tr><th>Q#</th><th>Your Answer</th><th>Correct Answer</th><th>Status</th></tr></thead>
+                <tbody id="resultTableBody"></tbody>
+            </table>
+            <button class="close-btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        const answerKey = {
+            1: ["dw30 7yz"], 2: ["24 april", "24th april", "april 24", "24th of april"], 3: ["dentist"],
+            4: ["parking"], 5: ["claxby"], 6: ["late"], 7: ["evening"], 8: ["supermarket"],
+            9: ["pollution"], 10: ["storage"], 11: ["C"], 12: ["A"], 13: ["A"], 14: ["B", "E"],
+            15: ["B", "E"], 16: ["B"], 17: ["G"], 18: ["D"], 19: ["A"], 20: ["F"], 21: ["A"],
+            22: ["B"], 23: ["A"], 24: ["C"], 25: ["B"], 26: ["A"], 27: ["B", "E"], 28: ["B", "E"],
+            29: ["A", "C"], 30: ["A", "C"], 31: ["fences"], 32: ["family"], 33: ["helicopters"],
+            34: ["stress"], 35: ["sides"], 36: ["breathing"], 37: ["feet"], 38: ["employment"],
+            39: ["weapons"], 40: ["tourism"]
+        };
+
+        const qNavGrid = document.getElementById('qNavGrid');
+        for(let i=1; i<=40; i++) {
+            const btn = document.createElement('button');
+            btn.className = 'q-btn'; btn.id = `qbtn-${i}`; btn.innerText = i;
+            btn.onclick = () => jumpToQuestion(i);
+            qNavGrid.appendChild(btn);
+        }
+
+        function switchPart(partNum) {
+            document.querySelectorAll('.part-container').forEach((el, idx) => el.classList.toggle('active', idx === partNum - 1));
+            document.querySelectorAll('.part-tab').forEach((el, idx) => el.classList.toggle('active', idx === partNum - 1));
+        }
+
+        function jumpToQuestion(qNum) {
+            let part = qNum <= 10 ? 1 : qNum <= 20 ? 2 : qNum <= 30 ? 3 : 4;
+            switchPart(part);
+            const elem = document.getElementById(`q${qNum}`) || document.getElementsByName(`q${qNum}`)[0] || document.getElementsByName(`q14_15`)[0] || document.getElementsByName(`q27_28`)[0] || document.getElementsByName(`q29_30`)[0];
+            if(elem) elem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function updateNav(qNum) {
+            const btn = document.getElementById(`qbtn-${qNum}`);
+            const input = document.getElementById(`q${qNum}`) || document.querySelector(`input[name="q${qNum}"]:checked`);
+            if(input && input.value.trim() !== '') btn.classList.add('answered'); else btn.classList.remove('answered');
+        }
+
+        function updateMultiNav(qNums, groupName) {
+            const checked = Array.from(document.querySelectorAll(`input[name="${groupName}"]:checked`));
+            qNums.forEach((qNum, idx) => {
+                const btn = document.getElementById(`qbtn-${qNum}`);
+                if(idx < checked.length) btn.classList.add('answered'); else btn.classList.remove('answered');
+            });
+        }
+
+        let secondsLeft = 1800;
+        setInterval(() => {
+            let m = Math.floor(secondsLeft / 60), s = secondsLeft % 60;
+            document.getElementById('timer').innerText = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+            if(secondsLeft > 0) secondsLeft--;
+        }, 1000);
+
+        function toggleTimer() { const tb = document.getElementById('timerBox'); tb.style.display = tb.style.display === 'none' ? 'flex' : 'none'; }
+
+        function submitTest() {
+            let score = 0; const tableBody = document.getElementById('resultTableBody'); tableBody.innerHTML = '';
+            for(let i=1; i<=40; i++) {
+                let uAns = "";
+                if([14,15,27,28,29,30].includes(i)) {
+                    let grp = [14,15].includes(i) ? 'q14_15' : [27,28].includes(i) ? 'q27_28' : 'q29_30';
+                    let checked = Array.from(document.querySelectorAll(`input[name="${grp}"]:checked`)).map(e => e.value.toUpperCase());
+                    uAns = checked[[14,27,29].includes(i) ? 0 : 1] || "";
+                } else {
+                    const txt = document.getElementById(`q${i}`);
+                    if(txt) uAns = txt.value.trim().toLowerCase();
+                    else { const rad = document.querySelector(`input[name="q${i}"]:checked`); uAns = rad ? rad.value.toUpperCase() : ""; }
+                }
+
+                let isCorrect = answerKey[i].some(a => a.toLowerCase() === uAns.toLowerCase());
+                if(isCorrect) score++;
+
+                const tr = document.createElement('tr');
+                tr.className = isCorrect ? 'res-correct' : 'res-incorrect';
+                tr.innerHTML = `<td>Q${i}</td><td>${uAns || '<i>No Answer</i>'}</td><td>${answerKey[i].join(' / ')}</td><td>${isCorrect ? '✅ Correct' : '❌ Incorrect'}</td>`;
+                tableBody.appendChild(tr);
+            }
+            document.getElementById('rawScore').innerText = `${score} / 40`;
+            document.getElementById('bandScore').innerText = calculateBand(score);
+            document.getElementById('resultModal').style.display = 'flex';
+        }
+
+        function calculateBand(r) { return r>=39?"9.0":r>=37?"8.5":r>=35?"8.0":r>=32?"7.5":r>=30?"7.0":r>=26?"6.5":r>=23?"6.0":r>=18?"5.5":r>=16?"5.0":r>=13?"4.5":"4.0"; }
+        function closeModal() { document.getElementById('resultModal').style.display = 'none'; }
+    </script>
+</body>
+</html>
