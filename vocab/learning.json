@@ -3683,5 +3683,1256 @@
         "story": "Qorong'i xonada LED chiroqni yoqib, sirli masalani oydinlashtirdim (shed light on)."
       }
     }
+  ],
+  "cambridge-18-test-1-reading-1": [
+    {
+      "w": "as much as",
+      "form": "as much as 10%",
+      "pos": "phrase",
+      "ipa": "/əz ˈmʌtʃ əz/",
+      "forms": "as much as",
+      "def": "used before an amount to show it is surprisingly large; up to.",
+      "uz": "…gacha; hatto …cha (ko'plikni ta'kidlaydi)",
+      "senses": [
+        "as much as = 'shuncha ham' – tenglikni bildiradi: I earn as much as you do."
+      ],
+      "ex": "It may be possible that the farm's produce will account for as much as 10% of the city's consumption overall.",
+      "syn": [
+        "up to",
+        "as many as"
+      ],
+      "ant": [
+        "as little as"
+      ],
+      "related": [
+        "account for as much as 10%",
+        "up to 1,000 kg"
+      ],
+      "mnem": {
+        "kw": "'as much' → 'os-much' (osh + much)",
+        "story": "Osh shuncha ko'p bo'ldiki, 'as much as' 10 kishiga yetdi – 'gacha, shuncha ham' degani."
+      }
+    },
+    {
+      "w": "produce",
+      "form": "farm's produce",
+      "pos": "noun",
+      "ipa": "/ˈprɒdjuːs/",
+      "forms": "produce (n.) · produce (v.) /prəˈdjuːs/",
+      "def": "fresh fruit and vegetables that a farm grows and sells.",
+      "uz": "(fermer) mahsuloti – meva-sabzavot",
+      "senses": [
+        "verb /prəˈdjuːs/ = ishlab chiqarmoq",
+        "noun stress old on the FIRST syllable, verb on the SECOND"
+      ],
+      "ex": "It may be possible that the farm's produce will account for as much as 10% of the city's consumption overall.",
+      "syn": [
+        "crops",
+        "harvest",
+        "fruit and vegetables"
+      ],
+      "ant": [],
+      "related": [
+        "farm's produce",
+        "fresh produce",
+        "much of the produce is suited to the summer months"
+      ],
+      "mnem": {
+        "kw": "'produce' → 'pro + dush' (professional dush)",
+        "story": "Professional dehqon dushanba kuni bog'idan yig'gan barcha 'produce' (meva-sabzavot)ni bozorga chiqardi."
+      }
+    },
+    {
+      "w": "striking",
+      "form": "a striking new hall",
+      "pos": "adjective",
+      "ipa": "/ˈstraɪkɪŋ/",
+      "forms": "strike · struck · striking",
+      "def": "very noticeable or impressive because it is unusual or attractive.",
+      "uz": "ko'zga tashlanadigan, hayratlanarli, e'tiborni tortadigan",
+      "senses": [
+        "strike (v.) = urmoq; strike (v.) = xayolga kelmoq (it struck me that…)"
+      ],
+      "ex": "On top of a striking new exhibition hall in southern Paris, the world's largest urban rooftop farm has started to bear fruit.",
+      "syn": [
+        "impressive",
+        "eye-catching",
+        "remarkable"
+      ],
+      "ant": [
+        "ordinary",
+        "unremarkable"
+      ],
+      "related": [
+        "a striking difference",
+        "a striking resemblance"
+      ],
+      "mnem": {
+        "kw": "'striking' → 'strike' (futbolda zarba)",
+        "story": "Messining 'striking' (hayratlanarli) zarbasi shu qadar ko'zga tashlanardiki, butun stadion o'rnidan turdi."
+      }
+    },
+    {
+      "w": "rooftop",
+      "form": "urban rooftop farm",
+      "pos": "noun / adjective",
+      "ipa": "/ˈruːftɒp/",
+      "forms": "roof · rooftop",
+      "def": "the top outer surface of a building, used here as a place to farm.",
+      "uz": "tom usti, bino tomi",
+      "senses": [],
+      "ex": "On top of a striking new exhibition hall in southern Paris, the world's largest urban rooftop farm has started to bear fruit.",
+      "syn": [
+        "roof",
+        "top of a building"
+      ],
+      "ant": [
+        "basement",
+        "underground"
+      ],
+      "related": [
+        "rooftop farm",
+        "rooftop garden",
+        "rooftop space"
+      ],
+      "mnem": {
+        "kw": "'rooftop' → 'ruf + top' (top = to'p)",
+        "story": "Bolalar 'rooftop' (tom usti)da to'p o'ynashdi va to'p pastga tushib ketdi."
+      }
+    },
+    {
+      "w": "bear fruit",
+      "form": "has started to bear fruit",
+      "pos": "phrase (verb)",
+      "ipa": "/beə fruːt/",
+      "forms": "bear · bore · borne",
+      "def": "to produce fruit; (figurative) to give good results at last.",
+      "uz": "meva bermoq; (ko'chma) natija bermoq, samara bermoq",
+      "senses": [
+        "bear (v.) = ko'tarmoq, chidamoq (bear the weight, bear the pain)"
+      ],
+      "ex": "...the world's largest urban rooftop farm has started to bear fruit.",
+      "syn": [
+        "produce fruit",
+        "pay off",
+        "yield results"
+      ],
+      "ant": [
+        "fail",
+        "come to nothing"
+      ],
+      "related": [
+        "his efforts finally bore fruit",
+        "bear the cost"
+      ],
+      "mnem": {
+        "kw": "'bear' → 'ayiq' (bear = ayiq)",
+        "story": "Ayiq daraxtni silkitdi va daraxt nihoyat 'bear fruit' qildi – meva/samara berdi."
+      }
+    },
+    {
+      "w": "flavoured",
+      "form": "intensely flavoured",
+      "pos": "adjective",
+      "ipa": "/ˈfleɪvəd/",
+      "forms": "flavour · flavoured · flavouring",
+      "def": "having a strong, particular taste.",
+      "uz": "ta'mli, kuchli mazali (intensely flavoured = juda mazali)",
+      "senses": [
+        "intensely (adv.) = kuchli, jadal; flavour (n.) = ta'm, maza"
+      ],
+      "ex": "Strawberries that are small, intensely flavoured and resplendently red sprout abundantly from large plastic tubes.",
+      "syn": [
+        "tasty",
+        "full-flavoured",
+        "richly flavoured"
+      ],
+      "ant": [
+        "bland",
+        "tasteless"
+      ],
+      "related": [
+        "intensely flavoured",
+        "strong flavour",
+        "add flavour"
+      ],
+      "mnem": {
+        "kw": "'flavoured' → 'flayver' (Lay's chips flavour)",
+        "story": "Lay's chipsining 'intensely flavoured' ta'mi shunchalik kuchliki, bir dona yegach og'zing achishadi."
+      }
+    },
+    {
+      "w": "resplendently",
+      "form": "resplendently red",
+      "pos": "adverb",
+      "ipa": "/rɪˈsplendəntli/",
+      "forms": "resplendent · resplendently",
+      "def": "in a brilliant, richly colourful, dazzling way.",
+      "uz": "yorqin, ko'zni qamashtiruvchi darajada chiroyli",
+      "senses": [
+        "resplendent (adj.) = yaltiroq, hashamatli, ko'zni qamashtiruvchi"
+      ],
+      "ex": "Strawberries that are small, intensely flavoured and resplendently red sprout abundantly from large plastic tubes.",
+      "syn": [
+        "brilliantly",
+        "dazzlingly",
+        "gloriously"
+      ],
+      "ant": [
+        "dully",
+        "drably"
+      ],
+      "related": [
+        "resplendent in gold",
+        "resplendently red"
+      ],
+      "mnem": {
+        "kw": "'resplendent' → 're + splendid' (splendid = ajoyib)",
+        "story": "Qirol 'resplendently' (yaltirab) kiyingan – splendid, ya'ni ko'zni qamashtiradigan darajada hashamatli."
+      }
+    },
+    {
+      "w": "sprout",
+      "form": "sprout abundantly",
+      "pos": "verb",
+      "ipa": "/spraʊt/",
+      "forms": "sprout · sprouted · sprouting",
+      "def": "to grow or appear, especially quickly and in large numbers.",
+      "uz": "unib chiqmoq, o'sib chiqmoq, kurtak yozmoq",
+      "senses": [
+        "sprout (n.) = nihol, kurtak; Brussels sprouts = bir turdagi karam"
+      ],
+      "ex": "Strawberries that are small, intensely flavoured and resplendently red sprout abundantly from large plastic tubes.",
+      "syn": [
+        "grow",
+        "spring up",
+        "shoot up"
+      ],
+      "ant": [
+        "wither",
+        "die back"
+      ],
+      "related": [
+        "sprout abundantly",
+        "new shoots sprout",
+        "sprout up everywhere"
+      ],
+      "mnem": {
+        "kw": "'sprout' → 'sport' (sport)",
+        "story": "Sport bilan shug'ullansang, kuching 'sprout' qiladi – nihol kabi tez o'sib chiqadi."
+      }
+    },
+    {
+      "w": "abundant",
+      "form": "abundantly",
+      "pos": "adjective",
+      "ipa": "/əˈbʌndənt/",
+      "forms": "abundant · abundantly · abundance",
+      "def": "existing in very large amounts; plentiful.",
+      "uz": "mo'l-ko'l, serob, ko'p miqdorda",
+      "senses": [
+        "abundantly (adv.) = mo'l-ko'l; abundance (n.) = mo'l-ko'lchilik"
+      ],
+      "ex": "Strawberries ... resplendently red sprout abundantly from large plastic tubes.",
+      "syn": [
+        "plentiful",
+        "ample",
+        "copious"
+      ],
+      "ant": [
+        "scarce",
+        "sparse"
+      ],
+      "related": [
+        "abundantly clear",
+        "in abundance",
+        "abundant supply"
+      ],
+      "mnem": {
+        "kw": "'abundant' → 'a + banda + ko'p' (banda = odam)",
+        "story": "Bozorda bandalar (odamlar) 'abundant' – shunchalik ko'p va mo'l-ko'lki, yurishga joy yo'q."
+      }
+    },
+    {
+      "w": "peer",
+      "form": "peer inside",
+      "pos": "verb",
+      "ipa": "/pɪə/",
+      "forms": "peer · peered · peering",
+      "def": "to look carefully or with difficulty, especially at something hard to see.",
+      "uz": "sinchiklab / zo'rg'a qaramoq, tikilmoq, mo'ralamoq",
+      "senses": [
+        "peer (n.) = tengdosh, teng maqomdagi kishi (peer pressure)"
+      ],
+      "ex": "Peer inside and you see the tubes are completely hollow, the roots of dozens of strawberry plants dangling down inside them.",
+      "syn": [
+        "gaze",
+        "peep",
+        "look closely"
+      ],
+      "ant": [
+        "glance",
+        "ignore"
+      ],
+      "related": [
+        "peer inside",
+        "peer at something",
+        "peer through the fog"
+      ],
+      "mnem": {
+        "kw": "'peer' → 'pir' (pir – murshid)",
+        "story": "Murid pir (peer)ning uyiga 'peer inside' qildi – sinchiklab ichkariga mo'raladi."
+      }
+    },
+    {
+      "w": "hollow",
+      "form": "completely hollow",
+      "pos": "adjective",
+      "ipa": "/ˈhɒləʊ/",
+      "forms": "hollow · hollowed · hollowing",
+      "def": "having an empty space inside; not solid.",
+      "uz": "ichi bo'sh, kovak",
+      "senses": [
+        "hollow (adj., ko'chma) = quruq, ma'nosiz (a hollow promise = quruq va'da)"
+      ],
+      "ex": "Peer inside and you see the tubes are completely hollow, the roots of dozens of strawberry plants dangling down inside them.",
+      "syn": [
+        "empty",
+        "hollowed-out"
+      ],
+      "ant": [
+        "solid",
+        "full"
+      ],
+      "related": [
+        "hollow tube",
+        "a hollow victory",
+        "hollow out"
+      ],
+      "mnem": {
+        "kw": "'hollow' → 'Halloween' (Halloween qovog'i)",
+        "story": "Halloween qovog'ini kovaklab, 'hollow' – ichi bo'sh qilib fonus yasashdi."
+      }
+    },
+    {
+      "w": "dozen",
+      "form": "dozens of plants",
+      "pos": "noun",
+      "ipa": "/ˈdʌzn/",
+      "forms": "dozen · dozens",
+      "def": "a group of twelve; (plural) a large number.",
+      "uz": "o'n ikkita; (dozens of) o'nlab, juda ko'p",
+      "senses": [
+        "a dozen eggs = 12 ta tuxum; dozens of = o'nlab"
+      ],
+      "ex": "...the roots of dozens of strawberry plants dangling down inside them.",
+      "syn": [
+        "twelve",
+        "scores of",
+        "lots of"
+      ],
+      "ant": [
+        "a couple",
+        "a few"
+      ],
+      "related": [
+        "dozens of",
+        "half a dozen",
+        "a baker's dozen"
+      ],
+      "mnem": {
+        "kw": "'dozen' → 'do'zaxda son' (do'zax + son)",
+        "story": "Do'zaxda gunohlarni sanaganda 'dozen' – har safar o'n ikkitadan, o'nlab qilib sanashardi."
+      }
+    },
+    {
+      "w": "dangle",
+      "form": "dangling down",
+      "pos": "verb",
+      "ipa": "/ˈdæŋɡl/",
+      "forms": "dangle · dangled · dangling",
+      "def": "to hang loosely and swing freely.",
+      "uz": "osilib turmoq, osilib tebranib turmoq",
+      "senses": [
+        "dangle sth = biror narsani osiltirmoq (dangle a reward = mukofot ko'z-ko'z qilmoq)"
+      ],
+      "ex": "...the roots of dozens of strawberry plants dangling down inside them.",
+      "syn": [
+        "hang",
+        "swing",
+        "suspend"
+      ],
+      "ant": [
+        "fix",
+        "fasten"
+      ],
+      "related": [
+        "dangling down",
+        "dangle from a rope",
+        "legs dangling"
+      ],
+      "mnem": {
+        "kw": "'dangle' → 'dang + gul' (dang qotgan gul)",
+        "story": "Gul poyasi shipdan 'dangle' bo'lib – osilib, dang qotib tebranib turardi."
+      }
+    },
+    {
+      "w": "lettuce",
+      "form": "row upon row of lettuces",
+      "pos": "noun",
+      "ipa": "/ˈletɪs/",
+      "forms": "lettuce · lettuces",
+      "def": "a green leafy vegetable eaten raw in salads.",
+      "uz": "salat bargi (sabzavot)",
+      "senses": [],
+      "ex": "From identical vertical tubes nearby burst row upon row of lettuces...",
+      "syn": [
+        "salad leaves",
+        "greens"
+      ],
+      "ant": [],
+      "related": [
+        "a head of lettuce",
+        "crisp lettuce",
+        "3,000 lettuces"
+      ],
+      "mnem": {
+        "kw": "'lettuce' → 'let us' (keling)",
+        "story": "'Let us' salat yeymiz! – deb do'stlar bir bosh 'lettuce'ni bo'lishib yeyishdi."
+      }
+    },
+    {
+      "w": "aromatic",
+      "form": "aromatic herbs",
+      "pos": "adjective",
+      "ipa": "/ˌærəˈmætɪk/",
+      "forms": "aroma · aromatic",
+      "def": "having a pleasant, noticeable smell.",
+      "uz": "xushbo'y, muattar",
+      "senses": [
+        "aroma (n.) = xushbo'y hid, atir hid"
+      ],
+      "ex": "...near those are aromatic herbs, such as basil, sage and peppermint.",
+      "syn": [
+        "fragrant",
+        "scented",
+        "perfumed"
+      ],
+      "ant": [
+        "odourless",
+        "smelly"
+      ],
+      "related": [
+        "aromatic herbs",
+        "aromatic spices",
+        "a rich aroma"
+      ],
+      "mnem": {
+        "kw": "'aromatic' → 'aroma' (aroma)",
+        "story": "Choyxonadagi 'aromatic' o'tlarning aromasi shunchalik xushbo'yki, ko'chadan o'tganlar to'xtab qoladi."
+      }
+    },
+    {
+      "w": "basil",
+      "form": "basil",
+      "pos": "noun",
+      "ipa": "/ˈbæzl/",
+      "forms": "basil",
+      "def": "a sweet-smelling herb used in cooking.",
+      "uz": "rayhon (ziravor o't)",
+      "senses": [],
+      "ex": "...aromatic herbs, such as basil, sage and peppermint.",
+      "syn": [
+        "herb"
+      ],
+      "ant": [],
+      "related": [
+        "fresh basil",
+        "basil leaves"
+      ],
+      "mnem": {
+        "kw": "'basil' → 'bazil' (Bazil ismi)",
+        "story": "Bazil ismli oshpaz har taomga bir barg 'basil' (rayhon) solib, xushbo'y qilardi."
+      }
+    },
+    {
+      "w": "sage",
+      "form": "sage",
+      "pos": "noun",
+      "ipa": "/seɪdʒ/",
+      "forms": "sage",
+      "def": "a grey-green herb with a strong smell, used in cooking.",
+      "uz": "mavrak (shalfey) – ziravor o't",
+      "senses": [
+        "sage (adj./n.) = dono, oqil (a sage old man)"
+      ],
+      "ex": "...aromatic herbs, such as basil, sage and peppermint.",
+      "syn": [
+        "herb"
+      ],
+      "ant": [],
+      "related": [
+        "dried sage",
+        "a wise sage"
+      ],
+      "mnem": {
+        "kw": "'sage' → 'sajda' (sajda)",
+        "story": "Dono chol (sage) sajdadan so'ng bir hovuch 'sage' o'tini choyga solib ichardi."
+      }
+    },
+    {
+      "w": "peppermint",
+      "form": "peppermint",
+      "pos": "noun",
+      "ipa": "/ˈpepəmɪnt/",
+      "forms": "pepper · mint · peppermint",
+      "def": "a type of mint with a strong, fresh taste.",
+      "uz": "yalpiz (achchiq/yalpizli na'na)",
+      "senses": [],
+      "ex": "...aromatic herbs, such as basil, sage and peppermint.",
+      "syn": [
+        "mint"
+      ],
+      "ant": [],
+      "related": [
+        "peppermint tea",
+        "peppermint flavour"
+      ],
+      "mnem": {
+        "kw": "'peppermint' → 'pepper + mint' (qalampir + yalpiz)",
+        "story": "Qalampirdek achchiq va yalpizdek salqin 'peppermint' saqichi tilni muzlatib yubordi."
+      }
+    },
+    {
+      "w": "narrow",
+      "form": "in narrow, horizontal trays",
+      "pos": "adjective",
+      "ipa": "/ˈnærəʊ/",
+      "forms": "narrow · narrower · narrowest",
+      "def": "small in width; not wide.",
+      "uz": "tor, ensiz",
+      "senses": [
+        "narrow (v.) = toraymoq; a narrow escape = zo'rg'a qutulish"
+      ],
+      "ex": "Opposite, in narrow, horizontal trays packed not with soil but with coconut fibre, grow cherry tomatoes, shiny aubergines and brightly coloured chards.",
+      "syn": [
+        "thin",
+        "slim",
+        "tight"
+      ],
+      "ant": [
+        "wide",
+        "broad"
+      ],
+      "related": [
+        "a narrow street",
+        "narrow trays",
+        "narrow down the options"
+      ],
+      "mnem": {
+        "kw": "'narrow' → 'na + arrow' (arrow = o'q)",
+        "story": "O'q (arrow) shunchalik 'narrow' – tor yo'lakdan o'tdiki, devorlarga tegmadi."
+      }
+    },
+    {
+      "w": "tray",
+      "form": "horizontal trays",
+      "pos": "noun",
+      "ipa": "/treɪ/",
+      "forms": "tray · trays",
+      "def": "a flat, shallow container for carrying or holding things.",
+      "uz": "lagancha, patnis, tekis idish",
+      "senses": [],
+      "ex": "...in narrow, horizontal trays packed not with soil but with coconut fibre...",
+      "syn": [
+        "platter",
+        "dish"
+      ],
+      "ant": [],
+      "related": [
+        "a tray of food",
+        "seed tray",
+        "planting tray"
+      ],
+      "mnem": {
+        "kw": "'tray' → 'trey' (three – uch)",
+        "story": "Ofitsiant uchta (three) choynakni bitta 'tray' – patnisga qo'yib olib keldi."
+      }
+    },
+    {
+      "w": "aubergine",
+      "form": "shiny aubergines",
+      "pos": "noun",
+      "ipa": "/ˈəʊbəʒiːn/",
+      "forms": "aubergine · aubergines",
+      "def": "a purple vegetable (US: eggplant).",
+      "uz": "baqlajon",
+      "senses": [
+        "AmE'da eggplant deyiladi"
+      ],
+      "ex": "...grow cherry tomatoes, shiny aubergines and brightly coloured chards.",
+      "syn": [
+        "eggplant"
+      ],
+      "ant": [],
+      "related": [
+        "shiny aubergine",
+        "grilled aubergine"
+      ],
+      "mnem": {
+        "kw": "'aubergine' → 'o'ba + jin' (o'ba – tepalik, jin)",
+        "story": "O'badagi jin qo'lida yaltiroq 'aubergine' – baqlajon ushlab olib qo'rqitib yurardi."
+      }
+    },
+    {
+      "w": "chard",
+      "form": "brightly coloured chards",
+      "pos": "noun",
+      "ipa": "/tʃɑːd/",
+      "forms": "chard · chards",
+      "def": "a leafy vegetable with thick, often colourful stalks.",
+      "uz": "mangold (bargli sabzavot, qizil/rangli poyali)",
+      "senses": [],
+      "ex": "...grow cherry tomatoes, shiny aubergines and brightly coloured chards.",
+      "syn": [
+        "leafy greens"
+      ],
+      "ant": [],
+      "related": [
+        "Swiss chard",
+        "rainbow chard"
+      ],
+      "mnem": {
+        "kw": "'chard' → 'chala + yer' → 'chard'",
+        "story": "Rangli poyali 'chard' sabzavoti chala pishgan yerdayam yorqin bo'lib o'saverardi."
+      }
+    },
+    {
+      "w": "sustainable",
+      "form": "sustainable development",
+      "pos": "adjective",
+      "ipa": "/səˈsteɪnəbl/",
+      "forms": "sustain · sustainable · sustainability",
+      "def": "able to continue for a long time without harming the environment or running out.",
+      "uz": "barqaror, uzoq muddat davom eta oladigan (atrof-muhitga zararsiz)",
+      "senses": [
+        "sustain (v.) = qo'llab-quvvatlamoq, saqlab turmoq; sustainability (n.) = barqarorlik"
+      ],
+      "ex": "Pascal Hardy, an engineer and sustainable development consultant, began experimenting with vertical farming...",
+      "syn": [
+        "eco-friendly",
+        "viable",
+        "enduring"
+      ],
+      "ant": [
+        "unsustainable",
+        "wasteful"
+      ],
+      "related": [
+        "sustainable development",
+        "sustainable farming",
+        "environmentally sustainable"
+      ],
+      "mnem": {
+        "kw": "'sustainable' → 'sust + able' (sust = sekin)",
+        "story": "Sekin (sust) ishlagani uchun bu tizim 'sustainable' – uzoq, barqaror ishlab, hech tugamasdi."
+      }
+    },
+    {
+      "w": "somewhat",
+      "form": "somewhat bigger",
+      "pos": "adverb",
+      "ipa": "/ˈsʌmwɒt/",
+      "forms": "somewhat",
+      "def": "to some degree; a little; rather.",
+      "uz": "biroz, sal, ancha (to'liq emas)",
+      "senses": [
+        "Some- oilasi ↓ related'da: somehow, somewhere, sometime(s), someday, somebody/someone, something"
+      ],
+      "ex": "The urban rooftop space above the exhibition hall is somewhat bigger: 14,000 square metres...",
+      "syn": [
+        "slightly",
+        "rather",
+        "a bit"
+      ],
+      "ant": [
+        "greatly",
+        "completely"
+      ],
+      "related": [
+        "somehow = negadir / qandaydir yo'l bilan",
+        "somewhere = qayerdadir",
+        "sometime = qachondir",
+        "sometimes = ba'zan",
+        "someday = kunlarning birida",
+        "someone/somebody = kimdir",
+        "something = nimadir"
+      ],
+      "mnem": {
+        "kw": "'somewhat' → 'som + what' (som + nima)",
+        "story": "— Necha som? — 'Somewhat' qimmatroq, ya'ni biroz ko'proq, dedi sotuvchi noaniq."
+      }
+    },
+    {
+      "w": "punnet",
+      "form": "punnets of strawberries",
+      "pos": "noun",
+      "ipa": "/ˈpʌnɪt/",
+      "forms": "punnet · punnets",
+      "def": "a small light basket or box for soft fruit like strawberries.",
+      "uz": "(qulupnay uchun) kichik quti/savatcha",
+      "senses": [],
+      "ex": "...have picked, in one day, 3,000 lettuces and 150 punnets of strawberries.",
+      "syn": [
+        "basket",
+        "container",
+        "box"
+      ],
+      "ant": [],
+      "related": [
+        "a punnet of strawberries",
+        "150 punnets"
+      ],
+      "mnem": {
+        "kw": "'punnet' → 'pun + savat' (pun ≈ puxta)",
+        "story": "Puxta yasalgan 'punnet' savatchaga aynan bir kilo qulupnay sig'ardi."
+      }
+    },
+    {
+      "w": "constraint",
+      "form": "practical constraints",
+      "pos": "noun",
+      "ipa": "/kənˈstreɪnt/",
+      "forms": "constrain · constraint · constraints",
+      "def": "a thing that limits or restricts what you can do.",
+      "uz": "cheklov, to'siq, chegara",
+      "senses": [
+        "constrain (v.) = cheklamoq, majbur qilmoq"
+      ],
+      "ex": "In the urban environment you're working with very significant practical constraints, clearly, on what you can do and where.",
+      "syn": [
+        "limitation",
+        "restriction",
+        "limit"
+      ],
+      "ant": [
+        "freedom",
+        "flexibility"
+      ],
+      "related": [
+        "practical constraints",
+        "time constraints",
+        "budget constraints"
+      ],
+      "mnem": {
+        "kw": "'constraint' → 'kon + straight' (straight = to'g'ri)",
+        "story": "Qonun (kon) seni faqat 'straight' – to'g'ri yo'ldan yurishga majburlaydi: bu 'constraint', ya'ni cheklov."
+      }
+    },
+    {
+      "w": "flourish",
+      "form": "flourishing consultancy",
+      "pos": "verb",
+      "ipa": "/ˈflʌrɪʃ/",
+      "forms": "flourish · flourished · flourishing",
+      "def": "to grow or develop very well; to be very successful.",
+      "uz": "gullab-yashnamoq, ravnaq topmoq, rivojlanmoq",
+      "senses": [
+        "flourish (n.) = dabdabali harakat/imo-ishora"
+      ],
+      "ex": "...this is a real-life showcase for the work of Hardy's flourishing urban agriculture consultancy, Agripolis...",
+      "syn": [
+        "thrive",
+        "prosper",
+        "boom"
+      ],
+      "ant": [
+        "decline",
+        "wither",
+        "fail"
+      ],
+      "related": [
+        "a flourishing business",
+        "the arts flourished",
+        "flourishing economy"
+      ],
+      "mnem": {
+        "kw": "'flourish' → 'flower + ish' (flower = gul)",
+        "story": "Bu biznes xuddi 'flower' – gul kabi 'flourish' qildi, ya'ni gullab-yashnadi."
+      }
+    },
+    {
+      "w": "field",
+      "form": "fielding enquiries",
+      "pos": "verb",
+      "ipa": "/fiːld/",
+      "forms": "field · fielded · fielding",
+      "def": "to receive and deal with questions, calls or requests.",
+      "uz": "(savol/so'rovlarni) qabul qilib javob bermoq, uddalab bermoq",
+      "senses": [
+        "field (n.) = dala, maydon, soha"
+      ],
+      "ex": "...which is currently fielding enquiries from around the world to design, build and equip a new breed of soil-free inner-city farm.",
+      "syn": [
+        "handle",
+        "deal with",
+        "answer"
+      ],
+      "ant": [
+        "ignore",
+        "dodge"
+      ],
+      "related": [
+        "field enquiries",
+        "field questions",
+        "field a call"
+      ],
+      "mnem": {
+        "kw": "'field' → 'dala' (field = dala)",
+        "story": "Dala (field)dagi dehqon telefon jiringlaganda barcha 'enquiries' – savollarni birma-bir qabul qilib, 'field' qildi."
+      }
+    },
+    {
+      "w": "enquiry",
+      "form": "fielding enquiries",
+      "pos": "noun",
+      "ipa": "/ɪnˈkwaɪəri/",
+      "forms": "enquire · enquiry · enquiries",
+      "def": "a request for information; a question.",
+      "uz": "so'rov, so'rab-surishtirish, murojaat",
+      "senses": [
+        "'inquiry' (AmE) bilan bir xil; inquiry = rasmiy tekshiruv ma'nosida ham"
+      ],
+      "ex": "...which is currently fielding enquiries from around the world...",
+      "syn": [
+        "question",
+        "query",
+        "request"
+      ],
+      "ant": [
+        "answer",
+        "reply"
+      ],
+      "related": [
+        "fielding enquiries",
+        "make an enquiry",
+        "enquiries from around the world"
+      ],
+      "mnem": {
+        "kw": "'enquiry' → 'in + kvartira' (kvartira haqida)",
+        "story": "Kvartira (kvartira ≈ kwiry) haqida shuncha 'enquiry' – so'rov keldiki, telefon jim bo'lmadi."
+      }
+    },
+    {
+      "w": "substantial",
+      "form": "substantial journeys",
+      "pos": "adjective",
+      "ipa": "/səbˈstænʃl/",
+      "forms": "substance · substantial · substantially",
+      "def": "large in amount, size or importance.",
+      "uz": "katta, salmoqli, ancha (uzun/muhim)",
+      "senses": [
+        "substantially (adv.) = ancha, sezilarli darajada; substance (n.) = modda; mohiyat"
+      ],
+      "ex": "...the varieties are selected for their capacity to withstand such substantial journeys...",
+      "syn": [
+        "considerable",
+        "significant",
+        "sizeable"
+      ],
+      "ant": [
+        "minor",
+        "slight",
+        "small"
+      ],
+      "related": [
+        "substantial journeys",
+        "a substantial amount",
+        "substantial evidence"
+      ],
+      "mnem": {
+        "kw": "'substantial' → 'sub + stantsiya' (stantsiya)",
+        "story": "Poyezd yer osti (sub) stantsiyasidan 'substantial' – juda uzoq va salmoqli yo'l bosib o'tdi."
+      }
+    },
+    {
+      "w": "wholesaler",
+      "form": "wholesalers",
+      "pos": "noun",
+      "ipa": "/ˈhəʊlseɪlə/",
+      "forms": "wholesale · wholesaler",
+      "def": "a company that buys goods in large amounts and sells them to shops, not to the public.",
+      "uz": "ulgurji sotuvchi, optom savdogar",
+      "senses": [
+        "wholesale (adj.) = ulgurji; retailer = chakana sotuvchi"
+      ],
+      "ex": "...80% of the price I pay goes to wholesalers and transport companies, not the producers.",
+      "syn": [
+        "distributor",
+        "supplier",
+        "middleman"
+      ],
+      "ant": [
+        "retailer",
+        "producer"
+      ],
+      "related": [
+        "wholesalers and transport companies",
+        "buy wholesale",
+        "wholesale price"
+      ],
+      "mnem": {
+        "kw": "'wholesaler' → 'whole + sale' (butun sotuv)",
+        "story": "Ulgurji 'wholesaler' butun (whole) omborni bir 'sale'da, ya'ni ulgurji sotib yubordi."
+      }
+    },
+    {
+      "w": "solely",
+      "form": "relies solely on",
+      "pos": "adverb",
+      "ipa": "/ˈsəʊlli/",
+      "forms": "sole · solely",
+      "def": "only; not involving anyone or anything else.",
+      "uz": "faqat, yolg'iz, mutlaqo (boshqa hech narsasiz)",
+      "senses": [
+        "sole (adj.) = yagona, bittagina (the sole survivor)"
+      ],
+      "ex": "Produce grown using this soil-free method ... relies solely on a small quantity of water, enriched with organic nutrients...",
+      "syn": [
+        "only",
+        "exclusively",
+        "purely"
+      ],
+      "ant": [
+        "partly",
+        "jointly"
+      ],
+      "related": [
+        "rely solely on",
+        "solely responsible",
+        "focus solely on"
+      ],
+      "mnem": {
+        "kw": "'solely' → 'sof + ol' (sof, yolg'iz)",
+        "story": "U 'solely' – faqat sof suvga tayanib, boshqa hech narsasiz o'simlikni o'stirdi."
+      }
+    },
+    {
+      "w": "exhaust",
+      "form": "no soil is exhausted",
+      "pos": "verb",
+      "ipa": "/ɪɡˈzɔːst/",
+      "forms": "exhaust · exhausted · exhausting",
+      "def": "to use something up completely so nothing is left.",
+      "uz": "tamomila sarflab tugatmoq, holdan toydirmoq",
+      "senses": [
+        "exhausted (adj.) = charchagan, holdan toygan; exhaust (n.) = mashina tutuni/quvuri"
+      ],
+      "ex": "No soil is exhausted, and the water that gently showers the plants' roots every 12 minutes is recycled...",
+      "syn": [
+        "use up",
+        "deplete",
+        "drain"
+      ],
+      "ant": [
+        "replenish",
+        "conserve"
+      ],
+      "related": [
+        "exhaust resources",
+        "exhaust the soil",
+        "exhausted after work"
+      ],
+      "mnem": {
+        "kw": "'exhaust' → 'eski + ust' (mashina eksguzi)",
+        "story": "Mashina 'exhaust' (eksguzi) benzinni to'liq yoqib 'exhaust' qildi – tugatib, zaxirani holdan toydirdi."
+      }
+    },
+    {
+      "w": "yield",
+      "form": "the same yield",
+      "pos": "noun",
+      "ipa": "/jiːld/",
+      "forms": "yield · yielded · yielding",
+      "def": "the amount of a crop that is produced.",
+      "uz": "hosil, mahsuldorlik (yig'ib olingan miqdor)",
+      "senses": [
+        "yield (v.) = hosil bermoq; yon bermoq, taslim bo'lmoq (yield to pressure)"
+      ],
+      "ex": "...the method uses 90% less water than a classic intensive farm for the same yield.",
+      "syn": [
+        "harvest",
+        "output",
+        "crop"
+      ],
+      "ant": [],
+      "related": [
+        "the same yield",
+        "high yield",
+        "yield to pressure"
+      ],
+      "mnem": {
+        "kw": "'yield' → 'yeld' (yer + hosil)",
+        "story": "Yer (yeld ≈ yield) dehqonga har yili katta 'yield' – mo'l hosil berardi."
+      }
+    },
+    {
+      "w": "phenomenon",
+      "form": "a new phenomenon",
+      "pos": "noun",
+      "ipa": "/fəˈnɒmɪnən/",
+      "forms": "phenomenon · phenomena (pl.)",
+      "def": "a fact or event that exists or happens, especially one that is noticed or studied.",
+      "uz": "hodisa, voqea, holat",
+      "senses": [
+        "ko'pligi phenomena; ko'chma: g'ayrioddiy inson/narsa"
+      ],
+      "ex": "Urban farming is not, of course, a new phenomenon.",
+      "syn": [
+        "occurrence",
+        "event",
+        "trend"
+      ],
+      "ant": [],
+      "related": [
+        "a new phenomenon",
+        "natural phenomenon",
+        "a global phenomenon"
+      ],
+      "mnem": {
+        "kw": "'phenomenon' → 'fen + omon' (fen + omon)",
+        "story": "Fen (soch quritgich) o'zi omon qolgani – kamdan-kam uchraydigan 'phenomenon' (hodisa) edi."
+      }
+    },
+    {
+      "w": "virtuous",
+      "form": "is 'virtuous'",
+      "pos": "adjective",
+      "ipa": "/ˈvɜːtʃuəs/",
+      "forms": "virtue · virtuous",
+      "def": "morally good; (here) beneficial and creating a positive cycle.",
+      "uz": "fazilatli, ezgu, foydali (ijobiy aylanma hosil qiladigan)",
+      "senses": [
+        "a virtuous circle = ijobiy zanjir (yaxshilik yana yaxshilik keltiradi) – vicious circle'ning teskarisi"
+      ],
+      "ex": "Aeroponic farming, he says, is 'virtuous'.",
+      "syn": [
+        "righteous",
+        "beneficial",
+        "moral"
+      ],
+      "ant": [
+        "vicious",
+        "wicked"
+      ],
+      "related": [
+        "a virtuous circle",
+        "virtuous behaviour"
+      ],
+      "mnem": {
+        "kw": "'virtuous' → 'virtues' (fazilatlar)",
+        "story": "Fazilatli (virtues egasi) odam har doim 'virtuous' – ezgu ishlar qilib, atrofga yaxshilik tarqatardi."
+      }
+    },
+    {
+      "w": "vicious",
+      "form": "vicious circle",
+      "pos": "adjective",
+      "ipa": "/ˈvɪʃəs/",
+      "forms": "vicious · viciously",
+      "def": "cruel and violent; (a vicious circle) a bad situation that keeps making itself worse.",
+      "uz": "shafqatsiz, yovuz; (vicious circle) salbiy/yopiq aylanma",
+      "senses": [
+        "Passажда yo'q – 'virtuous'ning aksi sifatida esda tuting: virtuous circle ↔ vicious circle"
+      ],
+      "ex": "Cutting down forests causes floods, which destroy more land — a vicious circle.",
+      "syn": [
+        "brutal",
+        "savage",
+        "ferocious"
+      ],
+      "ant": [
+        "virtuous",
+        "gentle",
+        "kind"
+      ],
+      "related": [
+        "a vicious circle",
+        "a vicious attack",
+        "vicious dog"
+      ],
+      "mnem": {
+        "kw": "'vicious' → 'vahshiy + us' ",
+        "story": "Vahshiy (vicious) it 'vicious circle' – aylanib-aylanib egasini quvib, holdan toydirdi."
+      }
+    },
+    {
+      "w": "fraction",
+      "form": "a tiny fraction",
+      "pos": "noun",
+      "ipa": "/ˈfrækʃn/",
+      "forms": "fraction · fractional",
+      "def": "a very small part or amount of something.",
+      "uz": "juda kichik qism, ozgina ulush; (matematikada) kasr",
+      "senses": [
+        "a fraction of the cost = narxining ozgina qismi"
+      ],
+      "ex": "It is cheap to run, too, consuming a tiny fraction of the electricity used by some techniques.",
+      "syn": [
+        "a small part",
+        "a bit",
+        "a small proportion"
+      ],
+      "ant": [
+        "the whole",
+        "the majority"
+      ],
+      "related": [
+        "a tiny fraction",
+        "a fraction of the cost",
+        "for a fraction of the price"
+      ],
+      "mnem": {
+        "kw": "'fraction' → 'freksiya' (freksiya/parcha)",
+        "story": "Butun tortdan faqat bir 'fraction' – juda kichik parcha qoldi, qolganini yeb bo'lishgan."
+      }
+    },
+    {
+      "w": "grower",
+      "form": "organic growers",
+      "pos": "noun",
+      "ipa": "/ˈɡrəʊə/",
+      "forms": "grow · grower · growers",
+      "def": "a person or company that grows crops to sell.",
+      "uz": "yetishtiruvchi, o'stiruvchi (fermer)",
+      "senses": [
+        "grow (v.) = o'stirmoq, o'smoq"
+      ],
+      "ex": "...are lower than soil-based organic growers.",
+      "syn": [
+        "farmer",
+        "cultivator",
+        "producer"
+      ],
+      "ant": [],
+      "related": [
+        "organic growers",
+        "fruit growers",
+        "commercial grower"
+      ],
+      "mnem": {
+        "kw": "'grower' → 'grow + er' (o'stiruvchi)",
+        "story": "Eng mohir 'grower' – o'stiruvchi hatto toshdan ham gul undirardi."
+      }
+    },
+    {
+      "w": "root vegetable",
+      "form": "root vegetables",
+      "pos": "noun",
+      "ipa": "/ruːt ˈvedʒtəbl/",
+      "forms": "root vegetable · root vegetables",
+      "def": "a vegetable that grows underground as a root, e.g. carrots or potatoes.",
+      "uz": "ildizmevali sabzavot (sabzi, kartoshka kabi)",
+      "senses": [
+        "root (n.) = ildiz"
+      ],
+      "ex": "'Root vegetables we cannot do, at least not yet,' he says.",
+      "syn": [
+        "tuber",
+        "underground crop"
+      ],
+      "ant": [
+        "leafy vegetable"
+      ],
+      "related": [
+        "root vegetables",
+        "carrots and potatoes",
+        "the roots are too long"
+      ],
+      "mnem": {
+        "kw": "'root' → 'ruda' (ruda – yer ostidan)",
+        "story": "Ruda kabi yer ostidan qazib olinadigan 'root vegetable' – sabzi va kartoshka."
+      }
+    },
+    {
+      "w": "at least",
+      "form": "at least not yet",
+      "pos": "phrase",
+      "ipa": "/ət liːst/",
+      "forms": "at least",
+      "def": "used to add that something is true up to now, even if it may change; not less than.",
+      "uz": "hech bo'lmaganda, kamida; (at least not yet) hozircha … emas",
+      "senses": [
+        "at least = kamida, aqalli (at least 5 people)"
+      ],
+      "ex": "'Root vegetables we cannot do, at least not yet,' he says.",
+      "syn": [
+        "at any rate",
+        "for now (not yet)",
+        "not less than"
+      ],
+      "ant": [
+        "at most"
+      ],
+      "related": [
+        "at least not yet",
+        "at least once",
+        "at the very least"
+      ],
+      "mnem": {
+        "kw": "'at least' → 'et + list' (et ro'yxati)",
+        "story": "— Nechta? — 'At least' beshta, ya'ni kamida beshta et 'list' (ro'yxat)da bor, dedi qassob."
+      }
+    },
+    {
+      "w": "radish",
+      "form": "radishes",
+      "pos": "noun",
+      "ipa": "/ˈrædɪʃ/",
+      "forms": "radish · radishes",
+      "def": "a small, round, red-and-white root vegetable with a hot taste, eaten raw.",
+      "uz": "turp (kichik, achchiqroq rediska)",
+      "senses": [],
+      "ex": "'Radishes are OK, but carrots, potatoes, that kind of thing - the roots are simply too long.'",
+      "syn": [
+        "root vegetable"
+      ],
+      "ant": [],
+      "related": [
+        "radishes are OK",
+        "a bunch of radishes"
+      ],
+      "mnem": {
+        "kw": "'radish' → 'radio + dish' ",
+        "story": "Radio (radish) tovushi ostida bog'bon bir tovoq (dish) 'radish' – turp tozalab o'tirardi."
+      }
+    },
+    {
+      "w": "bean",
+      "form": "beans",
+      "pos": "noun",
+      "ipa": "/biːn/",
+      "forms": "bean · beans",
+      "def": "a seed or pod of certain plants, eaten as a vegetable.",
+      "uz": "loviya, dukkak",
+      "senses": [
+        "ko'chma: not worth a bean = arzimas; full of beans = g'ayratli"
+      ],
+      "ex": "And beans tend to take up a lot of space for not much return.",
+      "syn": [
+        "legume",
+        "pulse"
+      ],
+      "ant": [],
+      "related": [
+        "beans take up a lot of space",
+        "for not much return",
+        "full of beans"
+      ],
+      "mnem": {
+        "kw": "'bean' → 'Mr. Bean' (Mister Bin)",
+        "story": "Mister Bean butun bog'ini 'beans' – loviyaga to'ldirdi, lekin hosil ('return') juda oz chiqdi."
+      }
+    }
   ]
 }
