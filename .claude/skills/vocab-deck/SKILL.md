@@ -22,20 +22,25 @@ HTML (flip / recall / cloze + sentence structures), and keep `learning.json` and
 - **Generated study HTML → `generated/vocab/<name>.html`.** All generated artifacts live
   under `generated/`, mirroring the source type (vocab decks → `generated/vocab/`). Do NOT
   put the HTML in `vocab/` — a watcher relocates stray files and it only causes confusion.
-- **Data stays in `vocab/`**: `vocab/learning.json` (cards, keyed by set name) and
-  `vocab/known.md` (a flat, deduplicated word list — words only, no headings/prose). These are the only two files in `vocab/`.
+- **Data stays in `vocab/`**: `vocab/learning.json` (cards, keyed by set name),
+  `vocab/known.md` (a flat, deduplicated word list — words only, no headings/prose), and
+  `vocab/general-unknown.md` (a running `- word => example sentence` list of every card
+  word, deduped by word). `build.py` writes all three on every run.
 - Scratch files (readable.txt, deck.json, known_words.txt, build_cards.py) → session scratchpad, never the repo.
 
 ## Hard rules (from the user)
 1. **The user pastes the unknown list.** Do not auto-invent the vocab set. But **every
    other word** from the passages + questions must go into `known.md` (via `known_words.txt`)
    so it is never re-flagged in future runs.
-2. **learning.json and known.md are updated on EVERY run** (both, always). `build.py` does this.
+2. **learning.json, known.md AND general-unknown.md are updated on EVERY run** (all three, always). `build.py` does this. `general-unknown.md` gets one `- <w> => <ex>` line per card (its exact example sentence), deduped by word so re-runs add only new words.
 3. **Order:** question words first (in question order across all parts), then passage
    words (in passage order). Get each meaning from the **exact sentence** it appears in.
 4. **Base words only.** The card's `w` is the base/lemma (e.g. `pose`, not "posed by").
-   Put the inflected form(s)/phrase actually used in the passage in `form` — it renders
-   in italics under the word on the card front.
+   Put the inflected form(s)/phrase actually used in the passage in `form`. On the card
+   front it is **hidden behind a "Show hint" button** (build.py patches this in); clicking
+   reveals the italic form text. The word is pronounceable via the ▶ speaker on **both**
+   card faces (front and back headline), and pressing **`3`** speaks the current word from
+   either side.
 5. **Related expressions inside the card.** Collocations/chunks the user cares about
    (e.g. "legacy of the colonial government", "relatively uplifting", "on an industrial
    scale", "as opposed to") go in `related[]`.
@@ -101,7 +106,7 @@ extra    one fresh example of your own
      --lede "<one-sentence intro>" --key study_<slug>_v1 \
      --out generated/vocab/<name>-vocabs.html --known-words <scratch>/known_words.txt --repo-root .
    ```
-   This writes the HTML to `generated/vocab/`, keys `learning.json` by `<set>`, and merges the run's words into `known.md` (a single flat, deduplicated, alphabetically-sorted word list — no per-set headings, no prose, words only).
+   This writes the HTML to `generated/vocab/`, keys `learning.json` by `<set>`, merges the run's words into `known.md` (a single flat, deduplicated, alphabetically-sorted word list — no per-set headings, no prose, words only), and appends each card to `general-unknown.md` as `- <w> => <ex>` (deduped by word).
 5. **Verify** (no browser needed): the script's `<script>` must parse.
    ```
    node -e "const fs=require('fs');const h=fs.readFileSync('generated/vocab/<name>-vocabs.html','utf8');new Function(h.match(/<script>([\s\S]*)<\/script>/)[1]);console.log('OK')"

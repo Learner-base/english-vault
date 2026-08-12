@@ -91,6 +91,8 @@
   .back .headline .p{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
   .flipbtn{margin-left:auto;border:1px solid var(--line);background:var(--card);color:var(--ink-2);border-radius:999px;padding:5px 12px;font-size:12px;font-family:var(--mono)}
   .flipbtn:hover{border-color:var(--ink);color:var(--ink)}
+  .saybtn{border:1px solid var(--line);background:var(--card);color:var(--ink-2);border-radius:999px;padding:5px 11px;font-size:12px;font-family:var(--mono)}
+  .saybtn:hover{border-color:var(--ink);color:var(--ink)}
   .meaning{font-family:var(--serif);font-size:21px;font-weight:600;line-height:1.34;margin:12px 0 6px}
   .uztrans{font-size:15.5px;line-height:1.4;margin:2px 0 12px;color:var(--ink)}
   .uztrans .lab{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-right:6px}
@@ -207,7 +209,7 @@
     </div>
   </section>
 
-  <footer>Space — flip · 1 — learning · 2 — learnt · → next</footer>
+  <footer>Space — flip · 1 — learning · 2 — learnt · 3 — hear word · → next</footer>
 </div>
 
 <script>
@@ -234,6 +236,8 @@ function acc(label,html){return `<details class="acc"><summary>${label}<span cla
 function tags(a){return a&&a.length?a.map(x=>`<span class="tag">${esc(x)}</span>`).join(""):`<em>—</em>`;}
 function highlightEx(ex,marks){let h=esc(ex);(marks||[]).forEach(m=>{const em=esc(m);h=h.split(em).join('<span class="mark">'+em+'</span>');});return h;}
 function speakBtn(w){return `<button class="speak" onclick="event.stopPropagation();speak('${w.replace(/'/g,"\\'")}')" aria-label="pronounce">▶</button>`;}
+function sayBtn(w){return `<button class="saybtn" onclick="event.stopPropagation();speak('${w.replace(/'/g,"\\'")}')" aria-label="pronounce">▶ Say</button>`;}
+function speakCurrent(){const it=S.deck[S.i];if(!it)return;speak(S.mode==="struct"?it.name:it.w);}
 const flipBtn = `<button class="flipbtn" onclick="event.stopPropagation();flipToFront()">↩&nbsp;Flip</button>`;
 
 /* ============================ CARD SIZING ============================ */
@@ -339,7 +343,7 @@ function renderVocab(v){
   }
   frontInner.innerHTML=front;
   backInner.innerHTML=`
-    <div class="headline"><span class="w">${esc(v.w)}</span><span class="p">${v.pos}</span>${flipBtn}</div>
+    <div class="headline"><span class="w">${esc(v.w)}</span><span class="p">${v.pos}</span>${sayBtn(v.w)}${flipBtn}</div>
     <div class="meaning">${esc(v.def)}</div>
     ${v.uz?`<p class="uztrans"><span class="lab">o'zbekcha</span>${esc(v.uz)}</p>`:""}
     ${v.senses&&v.senses.length?`<p class="senses"><span class="lab">also means</span>${v.senses.map(esc).join("; ")}</p>`:""}
@@ -428,6 +432,7 @@ document.addEventListener("keydown",e=>{
   if(e.target&&e.target.tagName==="INPUT")return;
   if(e.code==="Space"){e.preventDefault(); S.flipped?flipToFront():flipToBack();}
   else if(e.key==="ArrowRight"){e.preventDefault();next();}
+  else if(e.key==="3"){e.preventDefault();speakCurrent();}
   else if(S.flipped&&S.mode==="vocab"&&e.key==="1"){rate("learning");}
   else if(S.flipped&&S.mode==="vocab"&&e.key==="2"){rate("learnt");}
 });
