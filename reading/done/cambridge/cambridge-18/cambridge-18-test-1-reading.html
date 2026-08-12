@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Academic 18 - Test 1 Reading (Computer-Delivered)</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; }
+        body { background-color: #f4f6f8; color: #222; display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+        header { background-color: #2b303a; color: #fff; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; height: 50px; font-size: 14px; flex-shrink: 0; }
+        .brand { font-weight: bold; font-size: 16px; color: #ffcc00; }
+        .timer-box { background-color: #1e222a; padding: 5px 12px; border-radius: 4px; border: 1px solid #444; font-family: monospace; font-size: 16px; font-weight: bold; color: #00ffcc; }
+        .btn-header { background: #3a414f; border: none; color: #fff; padding: 5px 10px; border-radius: 3px; cursor: pointer; font-size: 12px; }
+        main { flex: 1; display: flex; overflow: hidden; position: relative; }
+        .passage-side { width: 50%; height: 100%; border-right: 2px solid #cbd5e1; overflow-y: auto; padding: 25px 30px; background-color: #ffffff; }
+        .question-side { width: 50%; height: 100%; overflow-y: auto; padding: 25px 30px; background-color: #f8fafc; }
+        .passage-content { display: none; line-height: 1.7; font-size: 14.5px; color: #1e293b; }
+        .passage-content.active { display: block; }
+        .passage-content h2 { font-size: 20px; color: #0f172a; margin-bottom: 5px; }
+        .passage-content h3 { font-size: 15px; font-weight: normal; font-style: italic; color: #475569; margin-bottom: 15px; }
+        .passage-content p { margin-bottom: 14px; text-align: justify; }
+        .p-block { margin-bottom: 15px; line-height: 1.7; text-align: justify; }
+        .p-tag { font-weight: bold; color: #0056b3; margin-right: 5px; }
+        .part-questions { display: none; }
+        .part-questions.active { display: block; }
+        .instruction-box { background-color: #e8f4fd; border-left: 4px solid #0056b3; padding: 10px 15px; margin: 15px 0; font-size: 13.5px; font-weight: bold; color: #003366; }
+        .question-block { margin-bottom: 18px; background: #fff; padding: 12px 16px; border-radius: 6px; border: 1px solid #e2e8f0; }
+        .q-text { font-size: 14px; margin-bottom: 8px; line-height: 1.5; }
+        .q-number { font-weight: bold; color: #0056b3; margin-right: 5px; }
+        input[type="text"] { padding: 5px 8px; border: 1px solid #aaa; border-radius: 3px; font-size: 13.5px; width: 160px; }
+        select { padding: 5px 8px; border: 1px solid #aaa; border-radius: 3px; font-size: 13.5px; background: #fff; }
+        .q-table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 13px; }
+        .q-table th, .q-table td { border: 1px solid #cbd5e1; padding: 8px; text-align: left; }
+        .q-table th { background-color: #f1f5f9; }
+        footer { background-color: #1e222a; color: #fff; height: 60px; display: flex; align-items: center; justify-content: space-between; padding: 0 15px; border-top: 1px solid #333; flex-shrink: 0; }
+        .nav-parts { display: flex; gap: 8px; }
+        .part-tab { background: #2d3748; color: #cbd5e1; border: none; padding: 8px 14px; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: bold; }
+        .part-tab.active { background: #0056b3; color: #fff; }
+        .q-nav-grid { display: flex; gap: 3px; overflow-x: auto; max-width: 600px; padding: 2px 0; }
+        .q-btn { width: 28px; height: 28px; background: #3a414f; color: #fff; border: none; border-radius: 3px; font-size: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+        .q-btn.answered { background: #22c55e; color: #fff; }
+        .btn-submit { background-color: #16a34a; color: white; border: none; padding: 8px 18px; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 14px; }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: none; justify-content: center; align-items: center; z-index: 1000; }
+        .modal-content { background: #fff; width: 85%; max-width: 800px; max-height: 85vh; border-radius: 8px; padding: 25px; overflow-y: auto; }
+        .score-summary { display: flex; justify-content: space-around; background: #f0f9ff; border: 1px solid #bae6fd; padding: 15px; border-radius: 6px; margin: 15px 0; text-align: center; }
+        .score-box { font-size: 24px; font-weight: bold; color: #0284c7; }
+        .result-table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 13px; }
+        .result-table th, .result-table td { border: 1px solid #e2e8f0; padding: 8px 12px; text-align: left; }
+        .res-correct { background-color: #dcfce7; color: #166534; font-weight: bold; }
+        .res-incorrect { background-color: #fee2e2; color: #991b1b; }
+        .close-btn { background: #64748b; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; float: right; margin-top: 15px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-left"><span class="brand">IELTS CD EXAM</span> | Candidate: Academic Practice</div>
+        <div class="header-right">
+            <button class="btn-header" onclick="toggleTimer()">Hide Timer</button>
+            <div class="timer-box" id="timerBox">⏱️ <span id="timer">60:00</span></div>
+        </div>
+    </header>
+
+    <main>
+        <!-- LEFT PANEL: FULL PASSAGES -->
+        <div class="passage-side">
+            <!-- PASSAGE 1 -->
+            <div class="passage-content active" id="pass1">
+                <h2>READING PASSAGE 1</h2>
+                <h3>Urban farming</h3>
+                <p><strong>In Paris, urban farmers are trying a soil-free approach to agriculture that uses less space and fewer resources. Could it help cities face the threats to our food supplies?</strong></p>
+                <p>On top of a striking new exhibition hall in southern Paris, the world's largest urban rooftop farm has started to bear fruit. Strawberries that are small, intensely flavoured and resplendently red sprout abundantly from large plastic tubes. Peer inside and you see the tubes are completely hollow, the roots of dozens of strawberry plants dangling down inside them. From identical vertical tubes nearby burst row upon row of lettuces; near those are aromatic herbs, such as basil, sage and peppermint. Opposite, in narrow, horizontal trays packed not with soil but with coconut fibre, grow cherry tomatoes, shiny aubergines and brightly coloured chards.</p>
+                <p>Pascal Hardy, an engineer and sustainable development consultant, began experimenting with vertical farming and aeroponic growing towers - as the soil-free plastic tubes are known - on his Paris apartment block roof five years ago. The urban rooftop space above the exhibition hall is somewhat bigger: 14,000 square metres and almost exactly the size of a couple of football pitches. Already, the team of young urban farmers who tend it have picked, in one day, 3,000 lettuces and 150 punnets of strawberries. When the remaining two thirds of the vast open area are in production, 20 staff will harvest up to 1,000 kg of perhaps 35 different varieties of fruit and vegetables, every day. 'We're not ever, obviously, going to feed the whole city this way,' cautions Hardy. 'In the urban environment you're working with very significant practical constraints, clearly, on what you can do and where. But if enough unused space can be developed like this, there's no reason why you shouldn't eventually target maybe between 5% and 10% of consumption.'</p>
+                <p>Perhaps most significantly, however, this is a real-life showcase for the work of Hardy's flourishing urban agriculture consultancy, Agripolis, which is currently fielding enquiries from around the world to design, build and equip a new breed of soil-free inner-city farm. 'The method's advantages are many,' he says. 'First, I don't much like the fact that most of the fruit and vegetables we eat have been treated with something like 17 different pesticides, or that the intensive farming techniques that produced them are such huge generators of greenhouse gases. I don't much like the fact, either, that they've travelled an average of 2,000 refrigerated kilometres to my plate, that their quality is so poor, because the varieties are selected for their capacity to withstand such substantial journeys, or that 80% of the price I pay goes to wholesalers and transport companies, not the producers.'</p>
+                <p>Produce grown using this soil-free method, on the other hand - which relies solely on a small quantity of water, enriched with organic nutrients, pumped around a closed circuit of pipes, towers and trays - is 'produced up here, and sold locally, just down there. It barely travels at all,' Hardy says. 'You can select crop varieties for their flavour, not their resistance to the transport and storage chain, and you can pick them when they're really at their best, and not before.' No soil is exhausted, and the water that gently showers the plants' roots every 12 minutes is recycled, so the method uses 90% less water than a classic intensive farm for the same yield.</p>
+                <p>Urban farming is not, of course, a new phenomenon. Inner-city agriculture is booming from Shanghai to Detroit and Tokyo to Bangkok. Strawberries are being grown in disused shipping containers, mushrooms in underground carparks. Aeroponic farming, he says, is 'virtuous'. The equipment weighs little, can be installed on almost any flat surface and is cheap to buy: roughly €100 to €150 per square metre. It is cheap to run, too, consuming a tiny fraction of the electricity used by some techniques.</p>
+                <p>Produce grown this way typically sells at prices that, while generally higher than those of classic intensive agriculture, are lower than soil-based organic growers. There are limits to what farmers can grow this way, of course, and much of the produce is suited to the summer months. 'Root vegetables we cannot do, at least not yet,' he says. 'Radishes are OK, but carrots, potatoes, that kind of thing - the roots are simply too long. Fruit trees are obviously not an option. And beans tend to take up a lot of space for not much return.' Nevertheless, urban farming of the kind being practised in Paris is one part of a bigger and fast-changing picture that is bringing food production closer to our lives.</p>
+            </div>
+
+            <!-- PASSAGE 2 -->
+            <div class="passage-content" id="pass2">
+                <h2>READING PASSAGE 2</h2>
+                <h3>Forest management in Pennsylvania, USA</h3>
+                <h3>How managing low-quality wood (also known as low-use wood) for bioenergy can encourage sustainable forest management</h3>
+                
+                <div class="p-block"><span class="p-tag">A</span> A tree's 'value' depends on several factors including its species, size, form, condition, quality, function, and accessibility, and depends on the management goals for a given forest. The same tree can be valued very differently by each person who looks at it. A large, straight black cherry tree has high value as timber to be cut into logs or made into furniture, but for a landowner more interested in wildlife habitat, the real value of that stem (or trunk) may be the food it provides to animals. Likewise, if the tree suffers from black knot disease, its value for timber decreases, but to a woodworker interested in making bowls, it brings an opportunity for a unique and beautiful piece of art.</div>
+                
+                <div class="p-block"><span class="p-tag">B</span> In the past, Pennsylvania landowners were solely interested in the value of their trees as high-quality timber. The norm was to remove the stems of highest quality and leave behind poorly formed trees that were not as well suited to the site where they grew. This practice, called 'high-grading', has left a legacy of 'low-use wood' in the forests. Some people even call these 'junk trees', and they are abundant in Pennsylvania. These trees have lower economic value for traditional timber markets, compete for growth with higher-value trees, shade out desirable regeneration and decrease the health of a stand leaving it more vulnerable to poor weather and disease. Management that specifically targets low-use wood can help landowners manage these forest health issues, and wood energy markets help promote this.</div>
+                
+                <div class="p-block"><span class="p-tag">C</span> Wood energy markets can accept less expensive wood material of lower quality than would be suitable for traditional timber markets. Most wood used for energy in Pennsylvania is used to produce heat or electricity through combustion. Many schools and hospitals use wood boiler systems to heat and power their facilities, many homes are primarily heated with wood, and some coal plants incorporate wood into their coal streams to produce electricity. Wood can also be gasified for electrical generation and can even be made into liquid fuels like ethanol and gasoline for lorries and cars. All these products are made primarily from low-use wood. Several tree- and plant-cutting approaches, which could greatly improve the long-term quality of a forest, focus strongly or solely on the use of wood for those markets.</div>
+                
+                <div class="p-block"><span class="p-tag">D</span> One such approach is called a Timber Stand Improvement (TSI) Cut. In a TSI Cut, really poor-quality tree and plant material is cut down to allow more space, light, and other resources to the highest-valued stems that remain. Removing invasive plants might be another primary goal of a TSI Cut. The stems that are left behind might then grow in size and develop more foliage and larger crowns or tops that produce more coverage for wildlife; they have a better chance to regenerate in a less crowded environment. TSI Cuts can be tailored to one farmer's specific management goals for his or her land.</div>
+                
+                <div class="p-block"><span class="p-tag">E</span> Another approach that might yield a high amount of low-use wood is a Salvage Cut. With the many pests and pathogens visiting forests including hemlock wooly adelgid, Asian longhorned beetle, emerald ash borer, and gypsy moth, to name just a few, it is important to remember that those working in the forests can help ease these issues through cutting procedures. These types of cut reduce the number of sick trees and seek to manage the future spread of a pest problem. They leave vigorous trees that have stayed healthy enough to survive the outbreak.</div>
+                
+                <div class="p-block"><span class="p-tag">F</span> A Shelterwood Cut, which only takes place in a mature forest that has already been thinned several times, involves removing all the mature trees when other seedlings have become established. This then allows the forester to decide which tree species are regenerated. It leaves a young forest where all trees are at a similar point in their growth. It can also be used to develop a two-tier forest so that there are two harvests and the money that comes in is spread out over a decade or more.</div>
+                
+                <div class="p-block"><span class="p-tag">G</span> Thinnings and dense and dead wood removal for fire prevention also center on the production of low-use wood. However, it is important to remember that some retention of what many would classify as low-use wood is very important. The tops of trees that have been cut down should be left on the site so that their nutrients cycle back into the soil. In addition, trees with many cavities are extremely important habitats for insect predators like woodpeckers, bats and small mammals. They help control problem insects and increase the health and resilience of the forest. It is also important to remember that not all small trees are low-use. For example, many species like hawthorn provide food for wildlife. Finally, rare species of trees in a forest should also stay behind as they add to its structural diversity.</div>
+            </div>
+
+            <!-- PASSAGE 3 -->
+            <div class="passage-content" id="pass3">
+                <h2>READING PASSAGE 3</h2>
+                <h3>Conquering Earth's space junk problem</h3>
+                <h3>Satellites, rocket shards and collision debris are creating major traffic risks in orbit around the planet. Researchers are working to reduce these threats</h3>
+
+                <div class="p-block"><span class="p-tag">A</span> Last year, commercial companies, military and civil departments and amateurs sent more than 400 satellites into orbit, over four times the yearly average in the previous decade. Numbers could rise even more sharply if leading space companies follow through on plans to deploy hundreds to thousands of large constellations of satellites to space in the next few years.</div>
+
+                <div class="p-block"><span class="p-tag">B</span> All that traffic can lead to disaster. Ten years ago, a US commercial Iridium satellite smashed into an inactive Russian communications satellite called Cosmos-2251, creating thousands of new pieces of space shrapnel that now threaten other satellites in low Earth orbit - the zone stretching up to 2,000 kilometres in altitude. Altogether, there are roughly 20,000 human-made objects in orbit, from working satellites to small rocket pieces. And satellite operators can't steer away from every potential crash, because each move consumes time and fuel that could otherwise be used for the spacecraft's main job.<br><br>Concern about space junk goes back to the beginning of the satellite era, but the number of objects in orbit is rising so rapidly that researchers are investigating new ways of attacking the problem. Several teams are trying to improve methods for assessing what is in orbit, so that satellite operators can work more efficiently in ever-more-crowded space. Some researchers are now starting to compile a massive data set that includes the best possible information on where everything is in orbit. Others are developing taxonomies of space debris - working on measuring properties such as the shape and size of an object, so that satellite operators know how much to worry about what's coming their way.<br><br>The alternative, many say, is unthinkable. Just a few uncontrolled space crashes could generate enough debris to set off a runaway cascade of fragments, rendering near-Earth space unusable. 'If we go on like this, we will reach a point of no return,' says Carolin Frueh, an astrodynamical researcher at Purdue University in West Lafayette, Indiana.</div>
+
+                <div class="p-block"><span class="p-tag">C</span> Even as our ability to monitor space objects increases, so too does the total number of items in orbit. That means companies, governments and other players in space are collaborating in new ways to avoid a shared threat. International groups such as the Inter-Agency Space Debris Coordination Committee have developed guidelines on space sustainability. Those include inactivating satellites at the end of their useful life by venting pressurised materials or leftover fuel that might lead to explosions. The intergovernmental groups also advise lowering satellites deep enough into the atmosphere that they will burn up or disintegrate within 25 years. But so far, only about half of all missions have abided by this 25-year goal, says Holger Krag, head of the European Space Agency's space-debris office in Darmstadt, Germany. Operators of the planned large constellations of satellites say they will be responsible stewards in their enterprises in space, but Krag worries that problems could increase, despite their best intentions. 'What happens to those that fail or go bankrupt?' he asks. 'They are probably not going to spend money to remove their satellites from space.'</div>
+
+                <div class="p-block"><span class="p-tag">D</span> In theory, given the vastness of space, satellite operators should have plenty of room for all these missions to fly safely without ever nearing another object. So some scientists are tackling the problem of space junk by trying to find out where all the debris is to a high degree of precision. That would alleviate the need for many of the unnecessary manoeuvres that are carried out to avoid potential collisions. 'If you knew precisely where everything was, you would almost never have a problem,' says Marlon Sorge, a space-debris specialist at the Aerospace Corporation in El Segundo, California.</div>
+
+                <div class="p-block"><span class="p-tag">E</span> The field is called space traffic management, because it's similar to managing traffic on the roads or in the air. Think about a busy day at an airport, says Moriba Jah, an astrodynamicist at the University of Texas at Austin: planes line up in the sky, landing and taking off close to one another in a carefully choreographed routine. Air-traffic controllers know the location of the planes down to one metre in accuracy. The same can't be said for space debris. Not all objects in orbit are known, and even those included in databases are not tracked consistently.</div>
+
+                <div class="p-block"><span class="p-tag">F</span> An additional problem is that there is no authoritative catalogue that accurately lists the orbits of all known space debris. Jah illustrates this with a web-based database that he has developed. It draws on several sources, such as catalogues maintained by the US and Russian governments, to visualise where objects are in space. When he types in an identifier for a particular space object, the database draws a purple line to designate its orbit. Only this doesn't quite work for a number of objects, such as a Russian rocket body designated in the database as object number 32280. When Jah enters that number, the database draws two purple lines: the US and Russian sources contain two completely different orbits for the same object. Jah says that it is almost impossible to tell which is correct, unless a third source of information made it possible to cross-correlate.<br><br>Jah describes himself as a space environmentalist: 'I want to make space a place that is safe to operate, that is free and useful for generations to come.' Until that happens, he argues, the space community will continue devolving into a tragedy in which all spaceflight operators are polluting a common resource.</div>
+            </div>
+        </div>
+
+        <!-- RIGHT PANEL: QUESTIONS -->
+        <div class="question-side">
+            <!-- PART 1 QUESTIONS -->
+            <div class="part-questions active" id="qpart1">
+                <div class="instruction-box">Questions 1-3: Choose NO MORE THAN TWO WORDS AND/OR A NUMBER from the passage for each answer.</div>
+                <div class="question-block">
+                    <div class="q-text"><strong>Urban farming in Paris</strong></div>
+                    <div class="q-text">1. Vertical tubes are used to grow strawberries, <span class="q-number">1</span> <input type="text" id="rq1" oninput="updateNav(1)"> and herbs.</div>
+                </div>
+                <div class="question-block"><div class="q-text">2. There will eventually be a daily harvest of as much as <span class="q-number">2</span> <input type="text" id="rq2" oninput="updateNav(2)"> weight of fruit and vegetables.</div></div>
+                <div class="question-block"><div class="q-text">3. It may be possible that the farm's produce will account for as much as 10% of the city's <span class="q-number">3</span> <input type="text" id="rq3" oninput="updateNav(3)"> overall.</div></div>
+
+                <div class="instruction-box">Questions 4-7: Choose ONE WORD ONLY from the passage for each answer.</div>
+                <table class="q-table">
+                    <thead><tr><th colspan="4" style="text-align:center;">Intensive farming versus aeroponic urban farming</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Intensive farming</strong></td>
+                            <td>• wide range of <span class="q-number">4</span> <input type="text" id="rq4" style="width:100px" oninput="updateNav(4)"> used<br>• techniques pollute air</td>
+                            <td>• quality not good<br>• varieties chosen that can survive long <span class="q-number">5</span> <input type="text" id="rq5" style="width:100px" oninput="updateNav(5)"></td>
+                            <td>• <span class="q-number">6</span> <input type="text" id="rq6" style="width:100px" oninput="updateNav(6)"> receive very little of overall income</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Aeroponic urban farming</strong></td>
+                            <td>• no soil used<br>• nutrients added to water</td>
+                            <td>• produce chosen because of its <span class="q-number">7</span> <input type="text" id="rq7" style="width:100px" oninput="updateNav(7)"></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="instruction-box">Questions 8-13: Do the following statements agree with the information given in Reading Passage 1?<br>TRUE / FALSE / NOT GIVEN</div>
+                <div class="question-block"><div class="q-text"><span class="q-number">8</span> Urban farming can take place above or below ground.</div><select id="rq8" onchange="updateNav(8)"><option value="">-- Select --</option><option value="TRUE">TRUE</option><option value="FALSE">FALSE</option><option value="NOT GIVEN">NOT GIVEN</option></select></div>
+                <div class="question-block"><div class="q-text"><span class="q-number">9</span> Some of the equipment used in aeroponic farming can be made by hand.</div><select id="rq9" onchange="updateNav(9)"><option value="">-- Select --</option><option value="TRUE">TRUE</option><option value="FALSE">FALSE</option><option value="NOT GIVEN">NOT GIVEN</option></select></div>
+                <div class="question-block"><div class="q-text"><span class="q-number">10</span> Urban farming relies more on electricity than some other types of farming.</div><select id="rq10" onchange="updateNav(10)"><option value="">-- Select --</option><option value="TRUE">TRUE</option><option value="FALSE">FALSE</option><option value="NOT GIVEN">NOT GIVEN</option></select></div>
+                <div class="question-block"><div class="q-text"><span class="q-number">11</span> Fruit and vegetables grown on an aeroponic urban farm are cheaper than traditionally grown organic produce.</div><select id="rq11" onchange="updateNav(11)"><option value="">-- Select --</option><option value="TRUE">TRUE</option><option value="FALSE">FALSE</option><option value="NOT GIVEN">NOT GIVEN</option></select></div>
+                <div class="question-block"><div class="q-text"><span class="q-number">12</span> Most produce can be grown on an aeroponic urban farm at any time of the year.</div><select id="rq12" onchange="updateNav(12)"><option value="">-- Select --</option><option value="TRUE">TRUE</option><option value="FALSE">FALSE</option><option value="NOT GIVEN">NOT GIVEN</option></select></div>
+                <div class="question-block"><div class="q-text"><span class="q-number">13</span> Beans take longer to grow on an urban farm than other vegetables.</div><select id="rq13" onchange="updateNav(13)"><option value="">-- Select --</option><option value="TRUE">TRUE</option><option value="FALSE">FALSE</option><option value="NOT GIVEN">NOT GIVEN</option></select></div>
+            </div>
+
+            <!-- PART 2 QUESTIONS -->
+            <div class="part-questions" id="qpart2">
+                <div class="instruction-box">Questions 14-18: Which paragraph contains the following information? (A-G)</div>
+                <div class="question-block"><div class="q-text"><span class="q-number">14</span> bad outcomes for a forest when people focus only on its financial reward</div><input type="text" id="rq14" style="width:60px;" maxlength="1" oninput="updateNav(14)"></div>
+                <div class="question-block"><div class="q-text"><span class="q-number">15</span> reference to the aspects of any tree that contribute to its worth</div><input type="text" id="rq15" style="width:60px;" maxlength="1" oninput="updateNav(15)"></div>
+                <div class="question-block"><div class="q-text"><span class="q-number">16</span> mention of the potential use of wood to help run vehicles</div><input type="text" id="rq16" style="width:60px;" maxlength="1" oninput="updateNav(16)"></div>
+                <div class="question-block"><div class="q-text"><span class="q-number">17</span> examples of insects that attack trees</div><input type="text" id="rq17" style="width:60px;" maxlength="1" oninput="updateNav(17)"></div>
+                <div class="question-block"><div class="q-text"><span class="q-number">18</span> an alternative name for trees that produce low-use wood</div><input type="text" id="rq18" style="width:60px;" maxlength="1" oninput="updateNav(18)"></div>
+
+                <div class="instruction-box">Questions 19-21: Match each purpose with the correct timber cut (A: TSI Cut, B: Salvage Cut, C: Shelterwood Cut)</div>
+                <div class="question-block"><div class="q-text"><span class="q-number">19</span> to remove trees that are diseased</div><select id="rq19" onchange="updateNav(19)"><option value="">-- Select --</option><option value="A">A) TSI Cut</option><option value="B">B) Salvage Cut</option><option value="C">C) Shelterwood Cut</option></select></div>
+                <div class="question-block"><div class="q-text"><span class="q-number">20</span> to generate income across a number of years</div><select id="rq20" onchange="updateNav(20)"><option value="">-- Select --</option><option value="A">A) TSI Cut</option><option value="B">B) Salvage Cut</option><option value="C">C) Shelterwood Cut</option></select></div>
+                <div class="question-block"><div class="q-text"><span class="q-number">21</span> to create a forest whose trees are close in age</div><select id="rq21" onchange="updateNav(21)"><option value="">-- Select --</option><option value="A">A) TSI Cut</option><option value="B">B) Salvage Cut</option><option value="C">C) Shelterwood Cut</option></select></div>
+
+                <div class="instruction-box">Questions 22-26: Choose ONE WORD ONLY from the passage for each answer.</div>
+                <div class="question-block"><div class="q-text">22. Some dead wood is removed to avoid the possibility of <span class="q-number">22</span> <input type="text" id="rq22" oninput="updateNav(22)">.</div></div>
+                <div class="question-block"><div class="q-text">23. The <span class="q-number">23</span> <input type="text" id="rq23" oninput="updateNav(23)"> from the tops of cut trees can help improve soil quality.</div></div>
+                <div class="question-block"><div class="q-text">24. Some damaged trees should be left, as their <span class="q-number">24</span> <input type="text" id="rq24" oninput="updateNav(24)"> provide habitats for a range of creatures.</div></div>
+                <div class="question-block"><div class="q-text">25. Some trees that are small, such as <span class="q-number">25</span> <input type="text" id="rq25" oninput="updateNav(25)">, are a source of food for animals and insects.</div></div>
+                <div class="question-block"><div class="q-text">26. Any trees that are <span class="q-number">26</span> <input type="text" id="rq26" oninput="updateNav(26)"> should be left to grow, as they add to the variety of species in the forest.</div></div>
+            </div>
+
+            <!-- PART 3 QUESTIONS -->
+            <div class="part-questions" id="qpart3">
+                <div class="instruction-box">Questions 27-31: Which section contains the following information? (A-F)</div>
+                <div class="question-block"><div class="q-text"><span class="q-number">27</span> a reference to the cooperation that takes place to try and minimise risk</div><input type="text" id="rq27" style="width:60px;" maxlength="1" oninput="updateNav(27)"></div>
+                <div class="question-block"><div class="q-text"><span class="q-number">28</span> an explanation of a person's aims</div><input type="text" id="rq28" style="width:60px;" maxlength="1" oninput="updateNav(28)"></div>
+                <div class="question-block"><div class="q-text"><span class="q-number">29</span> a description of a major collision that occurred in space</div><input type="text" id="rq29" style="width:60px;" maxlength="1" oninput="updateNav(29)"></div>
+                <div class="question-block"><div class="q-text"><span class="q-number">30</span> a comparison between tracking objects in space and the efficiency of a transportation system</div><input type="text" id="rq30" style="width:60px;" maxlength="1" oninput="updateNav(30)"></div>
+                <div class="question-block"><div class="q-text"><span class="q-number">31</span> a reference to efforts to classify space junk</div><input type="text" id="rq31" style="width:60px;" maxlength="1" oninput="updateNav(31)"></div>
+
+                <div class="instruction-box">Questions 32-35: Complete the summary below. Choose ONE WORD ONLY from the passage.</div>
+                <div class="question-block">
+                    <div class="q-text"><strong>The Inter-Agency Space Debris Coordination Committee</strong></div>
+                    <div class="q-text">The committee gives advice on how the <span class="q-number">32</span> <input type="text" id="rq32" oninput="updateNav(32)"> of space can be achieved. The committee advises that when satellites are no longer active, any unused <span class="q-number">33</span> <input type="text" id="rq33" oninput="updateNav(33)"> or pressurised material that could cause <span class="q-number">34</span> <input type="text" id="rq34" oninput="updateNav(34)"> should be removed.<br><br>Although operators of large satellite constellations accept that they have obligations as stewards of space, Holger Krag points out that the operators that become <span class="q-number">35</span> <input type="text" id="rq35" oninput="updateNav(35)"> are unlikely to prioritise removing their satellites from space.</div>
+                </div>
+
+                <div class="instruction-box">Questions 36-40: Match each statement with the correct person (A: Carolin Frueh, B: Holger Krag, C: Marlon Sorge, D: Moriba Jah)</div>
+                <div class="question-block"><div class="q-text"><span class="q-number">36</span> Knowing the exact location of space junk would help prevent any possible danger.</div><select id="rq36" onchange="updateNav(36)"><option value="">-- Select --</option><option value="A">A) Carolin Frueh</option><option value="B">B) Holger Krag</option><option value="C">C) Marlon Sorge</option><option value="D">D) Moriba Jah</option></select></div>
+                <div class="question-block"><div class="q-text"><span class="q-number">37</span> Space should be available to everyone and should be preserved for the future.</div><select id="rq37" onchange="updateNav(37)"><option value="">-- Select --</option><option value="A">A) Carolin Frueh</option><option value="B">B) Holger Krag</option><option value="C">C) Marlon Sorge</option><option value="D">D) Moriba Jah</option></select></div>
+                <div class="question-block"><div class="q-text"><span class="q-number">38</span> A recommendation regarding satellites is widely ignored.</div><select id="rq38" onchange="updateNav(38)"><option value="">-- Select --</option><option value="A">A) Carolin Frueh</option><option value="B">B) Holger Krag</option><option value="C">C) Marlon Sorge</option><option value="D">D) Moriba Jah</option></select></div>
+                <div class="question-block"><div class="q-text"><span class="q-number">39</span> There is conflicting information about where some satellites are in space.</div><select id="rq39" onchange="updateNav(39)"><option value="">-- Select --</option><option value="A">A) Carolin Frueh</option><option value="B">B) Holger Krag</option><option value="C">C) Marlon Sorge</option><option value="D">D) Moriba Jah</option></select></div>
+                <div class="question-block"><div class="q-text"><span class="q-number">40</span> There is a risk we will not be able to undo the damage that occurs in space.</div><select id="rq40" onchange="updateNav(40)"><option value="">-- Select --</option><option value="A">A) Carolin Frueh</option><option value="B">B) Holger Krag</option><option value="C">C) Marlon Sorge</option><option value="D">D) Moriba Jah</option></select></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="nav-parts">
+            <button class="part-tab active" onclick="switchPart(1)">Passage 1</button>
+            <button class="part-tab" onclick="switchPart(2)">Passage 2</button>
+            <button class="part-tab" onclick="switchPart(3)">Passage 3</button>
+        </div>
+        <div class="q-nav-grid" id="qNavGrid"></div>
+        <button class="btn-submit" onclick="submitTest()">Submit Test</button>
+    </footer>
+
+    <div class="modal-overlay" id="resultModal">
+        <div class="modal-content">
+            <h2>Reading Test Results</h2>
+            <div class="score-summary">
+                <div><div class="score-box" id="rawScore">0 / 40</div><div>Raw Score</div></div>
+                <div><div class="score-box" id="bandScore">0.0</div><div>Band Score</div></div>
+            </div>
+            <table class="result-table">
+                <thead><tr><th>Q#</th><th>Your Answer</th><th>Correct Answer</th><th>Status</th></tr></thead>
+                <tbody id="resultTableBody"></tbody>
+            </table>
+            <button class="close-btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        const answerKey = {
+            1: ["lettuces"], 2: ["1000 kg", "1,000 kg", "1000kg"], 3: ["consumption", "food consumption"],
+            4: ["pesticides"], 5: ["journeys"], 6: ["producers"], 7: ["flavour", "flavor"],
+            8: ["TRUE"], 9: ["NOT GIVEN"], 10: ["FALSE"], 11: ["TRUE"], 12: ["FALSE"], 13: ["NOT GIVEN"],
+            14: ["B"], 15: ["A"], 16: ["C"], 17: ["E"], 18: ["B"], 19: ["B"], 20: ["C"], 21: ["C"],
+            22: ["fire"], 23: ["nutrients"], 24: ["cavities"], 25: ["hawthorn"], 26: ["rare"],
+            27: ["C"], 28: ["F"], 29: ["A"], 30: ["E"], 31: ["B"], 32: ["sustainability"],
+            33: ["fuel"], 34: ["explosions"], 35: ["bankrupt"], 36: ["C"], 37: ["D"], 38: ["B"],
+            39: ["D"], 40: ["A"]
+        };
+
+        const qNavGrid = document.getElementById('qNavGrid');
+        for(let i=1; i<=40; i++) {
+            const btn = document.createElement('button');
+            btn.className = 'q-btn'; btn.id = `qbtn-${i}`; btn.innerText = i;
+            btn.onclick = () => jumpToQuestion(i);
+            qNavGrid.appendChild(btn);
+        }
+
+        function switchPart(p) {
+            document.querySelectorAll('.passage-content').forEach((e, idx) => e.classList.toggle('active', idx === p - 1));
+            document.querySelectorAll('.part-questions').forEach((e, idx) => e.classList.toggle('active', idx === p - 1));
+            document.querySelectorAll('.part-tab').forEach((e, idx) => e.classList.toggle('active', idx === p - 1));
+        }
+
+        function jumpToQuestion(q) {
+            let p = q <= 13 ? 1 : q <= 26 ? 2 : 3; switchPart(p);
+            const elem = document.getElementById(`rq${q}`);
+            if(elem) elem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function updateNav(q) {
+            const btn = document.getElementById(`qbtn-${q}`);
+            const input = document.getElementById(`rq${q}`);
+            if(input && input.value.trim() !== '') btn.classList.add('answered'); else btn.classList.remove('answered');
+        }
+
+        let secondsLeft = 3600;
+        setInterval(() => {
+            let m = Math.floor(secondsLeft / 60), s = secondsLeft % 60;
+            document.getElementById('timer').innerText = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+            if(secondsLeft > 0) secondsLeft--;
+        }, 1000);
+
+        function toggleTimer() { const tb = document.getElementById('timerBox'); tb.style.display = tb.style.display === 'none' ? 'flex' : 'none'; }
+
+        function submitTest() {
+            let score = 0; const tableBody = document.getElementById('resultTableBody'); tableBody.innerHTML = '';
+            for(let i=1; i<=40; i++) {
+                const elem = document.getElementById(`rq${i}`);
+                const uAns = elem ? elem.value.trim() : "";
+                let isCorrect = answerKey[i].some(a => a.toLowerCase() === uAns.toLowerCase());
+                if(isCorrect) score++;
+
+                const tr = document.createElement('tr');
+                tr.className = isCorrect ? 'res-correct' : 'res-incorrect';
+                tr.innerHTML = `<td>Q${i}</td><td>${uAns || '<i>No Answer</i>'}</td><td>${answerKey[i].join(' / ')}</td><td>${isCorrect ? '✅ Correct' : '❌ Incorrect'}</td>`;
+                tableBody.appendChild(tr);
+            }
+            document.getElementById('rawScore').innerText = `${score} / 40`;
+            document.getElementById('bandScore').innerText = calculateBand(score);
+            document.getElementById('resultModal').style.display = 'flex';
+        }
+
+        function calculateBand(r) { return r>=39?"9.0":r>=37?"8.5":r>=35?"8.0":r>=33?"7.5":r>=30?"7.0":r>=27?"6.5":r>=23?"6.0":r>=19?"5.5":r>=15?"5.0":"4.0"; }
+        function closeModal() { document.getElementById('resultModal').style.display = 'none'; }
+    </script>
+</body>
+</html>
