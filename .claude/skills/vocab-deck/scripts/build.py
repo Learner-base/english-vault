@@ -128,38 +128,31 @@ def update_known(path, words):
     open(path, "w").write(out)
 
 
-def update_general_unknown(path, cards):
-    """Append this deck's words to vocab/general-unknown.md as `- word => sentence`
-    lines (the file's existing format). Dedupe by word (case-insensitive), keep the
-    header and existing entries intact, and add only words not already listed."""
-    header = ("# General unknown words these I found from everywhere\n"
-              "structure: \nword => sentance that this word used.\n\n---\n")
-    lines, existing = [], set()
-    if os.path.exists(path):
-        lines = open(path).read().splitlines()
-        for ln in lines:
-            m = re.match(r"\s*-\s*(.+?)\s*=>", ln)
-            if m:
-                existing.add(m.group(1).strip().lower())
-    new_entries = []
-    for c in cards:
-        w = str(c.get("w", "")).strip()
-        if not w or w.lower() in existing:
-            continue
-        existing.add(w.lower())
-        ex = " ".join(str(c.get("ex", "")).split())
-        new_entries.append("- %s => %s" % (w, ex))
+def remove_from_general_unknown(path, cards):
+    """general-unknown.md is a SOURCE of loose unknown words (`- word => sentence`),
+    NOT a sink. Once a word has been turned into a card in a generated deck it is
+    "handled", so drop its bullet from the file. Match a bullet's leading label (the
+    text before the first `=`) against the deck's card words, by full label or first
+    token, case-insensitively. build.py never ADDS to this file."""
     if not os.path.exists(path):
-        open(path, "w").write(header + "\n" + "\n".join(new_entries) + "\n")
-        return len(new_entries)
-    # trim trailing blank / empty-bullet lines, then append the new entries
-    while lines and (lines[-1].strip() == "" or re.fullmatch(r"\s*-\s*", lines[-1] or "")):
-        lines.pop()
-    out = "\n".join(lines)
-    if new_entries:
-        out += "\n" + "\n".join(new_entries)
-    open(path, "w").write(out + "\n")
-    return len(new_entries)
+        return 0
+    words = set()
+    for c in cards:
+        w = str(c.get("w", "")).strip().lower()
+        if w:
+            words.add(w)
+    kept, removed = [], 0
+    for ln in open(path).read().splitlines():
+        m = re.match(r"\s*-\s+(.*)", ln)
+        if m and m.group(1).strip():
+            label = m.group(1).split("=")[0].strip().lower()
+            first = label.split()[0] if label.split() else ""
+            if label in words or first in words:
+                removed += 1
+                continue
+        kept.append(ln)
+    open(path, "w").write("\n".join(kept) + "\n")
+    return removed
 
 
 def main():
@@ -196,12 +189,12 @@ def main():
     known = [w for w in open(a.known_words).read().replace("\n", " ").split(" ") if w]
     update_learning(os.path.join(root, "vocab/learning.json"), a.set_name, deck["vocab"])
     update_known(os.path.join(root, "vocab/known.md"), known)
-    added_gen = update_general_unknown(os.path.join(root, "vocab/general-unknown.md"), deck["vocab"])
+    removed_gen = remove_from_general_unknown(os.path.join(root, "vocab/general-unknown.md"), deck["vocab"])
 
     print("HTML       :", out, "(%d cards, %d structures)" % (len(deck["vocab"]), len(deck["structures"])))
     print("learning.json: key '%s' updated" % a.set_name)
     print("known.md   : flat word list updated (+%d words this run)" % len(known))
-    print("general-unknown.md: +%d new word/sentence entries" % added_gen)
+    print("general-unknown.md: -%d handled words removed" % removed_gen)
 
 
 if __name__ == "__main__":

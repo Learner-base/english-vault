@@ -22,17 +22,20 @@ HTML (flip / recall / cloze + sentence structures), and keep `learning.json` and
 - **Generated study HTML → `generated/vocab/<name>.html`.** All generated artifacts live
   under `generated/`, mirroring the source type (vocab decks → `generated/vocab/`). Do NOT
   put the HTML in `vocab/` — a watcher relocates stray files and it only causes confusion.
-- **Data stays in `vocab/`**: `vocab/learning.json` (cards, keyed by set name),
-  `vocab/known.md` (a flat, deduplicated word list — words only, no headings/prose), and
-  `vocab/general-unknown.md` (a running `- word => example sentence` list of every card
-  word, deduped by word). `build.py` writes all three on every run.
+- **Data stays in `vocab/`**: `vocab/learning.json` (cards, keyed by set name) and
+  `vocab/known.md` (a flat, deduplicated word list — words only, no headings/prose).
+- **`vocab/general-unknown.md` is a SOURCE, not a sink** — a hand-curated `- word => sentence`
+  list of loose unknown words the user collects "from everywhere". When you build ANY deck,
+  **merge its words into that deck too**: author a normal card for each (meaning, uz, mnem, etc.),
+  writing your own faithful example when the file gives none. Once a word has a card, it is
+  "handled" and `build.py` **removes** its bullet from the file. `build.py` NEVER adds to it.
 - Scratch files (readable.txt, deck.json, known_words.txt, build_cards.py) → session scratchpad, never the repo.
 
 ## Hard rules (from the user)
 1. **The user pastes the unknown list.** Do not auto-invent the vocab set. But **every
    other word** from the passages + questions must go into `known.md` (via `known_words.txt`)
    so it is never re-flagged in future runs.
-2. **learning.json, known.md AND general-unknown.md are updated on EVERY run** (all three, always). `build.py` does this. `general-unknown.md` gets one `- <w> => <ex>` line per card (its exact example sentence), deduped by word so re-runs add only new words.
+2. **learning.json and known.md are updated on EVERY run** (both, always). `build.py` does this. It also **prunes** `general-unknown.md`, removing any bullet whose word now has a card (see "Where files go") — it never appends there. So every general-unknown word you carded must actually be in the deck you build, or it won't get pruned.
 3. **Order:** question words first (in question order across all parts), then passage
    words (in passage order). Get each meaning from the **exact sentence** it appears in.
 4. **Base words only.** The card's `w` is the base/lemma (e.g. `pose`, not "posed by").
@@ -106,7 +109,7 @@ extra    one fresh example of your own
      --lede "<one-sentence intro>" --key study_<slug>_v1 \
      --out generated/vocab/<name>-vocabs.html --known-words <scratch>/known_words.txt --repo-root .
    ```
-   This writes the HTML to `generated/vocab/`, keys `learning.json` by `<set>`, merges the run's words into `known.md` (a single flat, deduplicated, alphabetically-sorted word list — no per-set headings, no prose, words only), and appends each card to `general-unknown.md` as `- <w> => <ex>` (deduped by word).
+   This writes the HTML to `generated/vocab/`, keys `learning.json` by `<set>`, merges the run's words into `known.md` (a single flat, deduplicated, alphabetically-sorted word list — no per-set headings, no prose, words only), and removes from `general-unknown.md` any bullet whose word now has a card in this deck.
 5. **Verify** (no browser needed): the script's `<script>` must parse.
    ```
    node -e "const fs=require('fs');const h=fs.readFileSync('generated/vocab/<name>-vocabs.html','utf8');new Function(h.match(/<script>([\s\S]*)<\/script>/)[1]);console.log('OK')"
