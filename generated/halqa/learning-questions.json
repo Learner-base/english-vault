@@ -1,0 +1,2415 @@
+{
+  "format": "halqa.questions",
+  "version": 1,
+  "questions": [
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "evenly",
+      "answer": "in equal amounts, or spread the same across every part",
+      "hint": "teng, bir tekis",
+      "tags": [
+        "IELTS",
+        "adverb",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "fluctuation",
+      "answer": "a change that keeps happening — an irregular rise and fall in level or amount",
+      "hint": "o'zgarib turish, tebranish",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "initiative",
+      "answer": "a new organised plan or effort made to solve a problem or reach a goal",
+      "hint": "tashabbus, tashabbuskor loyiha",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "form",
+      "answer": "to be created or set up (here: set up for a particular purpose)",
+      "hint": "tuzilmoq, tashkil etilmoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "recognition",
+      "answer": "public acknowledgement that something is good, important or valuable",
+      "hint": "e'tirof, tan olinish",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "consult",
+      "answer": "to ask someone for their opinion or advice before deciding something",
+      "hint": "maslahatlashmoq, fikrini so'ramoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "pinpoint",
+      "answer": "to identify or locate something exactly",
+      "hint": "aniq belgilamoq, aniqlamoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "outline",
+      "answer": "to give the main facts or ideas about something, without the details",
+      "hint": "qisqacha bayon qilmoq, umumiy tasvirlamoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "revelation",
+      "answer": "a surprising fact that is made known, often something previously secret",
+      "hint": "oshkor bo'lish, kutilmagan yangilik",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "gradual",
+      "answer": "happening slowly over a long time, in small steps",
+      "hint": "asta-sekin, bosqichma-bosqich",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "unpick",
+      "answer": "to carefully examine and take apart an idea or argument to understand or undo it",
+      "hint": "chuqur tahlil qilib chigalini yozmoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "assess",
+      "answer": "to carefully judge the quality, amount or importance of something",
+      "hint": "baholamoq, aniqlamoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "reevaluate",
+      "answer": "to think about or judge something again, especially to change a previous opinion",
+      "hint": "qayta baholamoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "fair",
+      "answer": "treating everyone equally and in a reasonable, just way",
+      "hint": "adolatli, halol",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "emerge",
+      "answer": "to come into existence; to appear or come out from somewhere",
+      "hint": "paydo bo'lmoq, yuzaga chiqmoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "sophisticated",
+      "answer": "highly developed, complex and advanced",
+      "hint": "murakkab, yuksak darajada rivojlangan",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "workmanship",
+      "answer": "the skill with which something is made, or the quality that skill produces",
+      "hint": "ustalik, hunar, sifatli ishlanish",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "unconventional",
+      "answer": "not following what is usual or traditional; unusual",
+      "hint": "noan'anaviy, g'ayrioddiy",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "publicise",
+      "answer": "to make something widely known to the public",
+      "hint": "ommaga e'lon qilmoq, targ'ib qilmoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "roam",
+      "answer": "to move or travel around a wide area freely, with no fixed direction",
+      "hint": "erkin kezmoq, sayr qilmoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "herd",
+      "answer": "a large group of animals of one kind that live and move together",
+      "hint": "poda, suruv",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "regrettably",
+      "answer": "used to say you are sorry about something or wish it were not true; unfortunately",
+      "hint": "afsuski, taassufki",
+      "tags": [
+        "IELTS",
+        "adverb",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "confine",
+      "answer": "to keep something within limits; to restrict it to one particular place",
+      "hint": "cheklamoq, faqat bir joyda qolib ketmoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "wilderness",
+      "answer": "a large area of wild, natural land where few or no people live",
+      "hint": "bepoyon tabiat, sahroyi hudud",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "steppe",
+      "answer": "a large area of flat grassland without trees, especially in Central Asia",
+      "hint": "dasht, cho'l-dasht",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "bizarre",
+      "answer": "very strange and unusual in a surprising way",
+      "hint": "g'alati, ajabtovur",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "bulbous",
+      "answer": "round, fat and bulging in shape, like a bulb",
+      "hint": "shishgan, dumaloq-bo'rtgan",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "swell",
+      "answer": "to become larger or rounder than normal; also to increase in number or amount",
+      "hint": "shishmoq; ko'paymoq, kengaymoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "nostril",
+      "answer": "either of the two openings at the end of the nose through which you breathe",
+      "hint": "burun teshigi, katak",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "swing",
+      "answer": "a large and sudden change from one level or condition to another",
+      "hint": "keskin o'zgarish, tebranish",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "shed",
+      "answer": "to lose or drop something naturally, such as hair, skin or leaves",
+      "hint": "to'kmoq, tashlamoq (jun/teri)",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "superb",
+      "answer": "extremely good; excellent",
+      "hint": "ajoyib, zo'r, a'lo",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "pose",
+      "answer": "to be the cause of a problem, danger or threat",
+      "hint": "keltirib chiqarmoq, tug'dirmoq (xavf/muammo)",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "ensure",
+      "answer": "to make certain that something happens or is the case",
+      "hint": "ta'minlamoq, kafolatlamoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "respite",
+      "answer": "a short period of rest or relief from something difficult or unpleasant",
+      "hint": "tanaffus, vaqtincha yengillik",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "poach",
+      "answer": "to hunt or catch animals illegally, especially on someone else's land",
+      "hint": "brakonerlik qilmoq, noqonuniy ov qilmoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "industrial scale",
+      "answer": "done in very large amounts, like the mass production of a factory",
+      "hint": "sanoat miqyosida, juda katta hajmda",
+      "tags": [
+        "IELTS",
+        "phrase",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "practitioner",
+      "answer": "someone who works in a skilled profession, especially medicine or law",
+      "hint": "amaliyotchi, mutaxassis (shifokor/huquqshunos)",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "epidemic",
+      "answer": "a situation in which something bad spreads very quickly to affect many (originally: a fast-spreading disease)",
+      "hint": "epidemiya darajasi, keng tarqalgan holat",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "misguided",
+      "answer": "based on wrong ideas or poor judgement, even if well-intentioned",
+      "hint": "adashgan, xato yo'ldan ketgan, noto'g'ri",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "rhino",
+      "answer": "a large, heavy plant-eating animal with one or two horns on its nose (short for rhinoceros)",
+      "hint": "karkidon",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "settlement",
+      "answer": "a place where people come to live and build homes; the process of settling there",
+      "hint": "aholi punkti, joylashuv, o'rnashish",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "transboundary",
+      "answer": "existing or moving across national borders",
+      "hint": "chegaralararo, davlat chegaralarini kesib o'tuvchi",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "haemorrhagic septicaemia",
+      "answer": "a severe bacterial blood infection that causes bleeding; a deadly disease of saiga and livestock",
+      "hint": "qon ketishli sepsis (qon zaharlanishi kasalligi)",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "Pasteurella multocida",
+      "answer": "a normally harmless bacterium that can sometimes cause deadly disease in animals",
+      "hint": "Pasteurella multocida bakteriyasi",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "subspecies",
+      "answer": "a subdivision of a species; a group within a species with its own distinct features",
+      "hint": "kichik tur, tur osti",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "livestock",
+      "answer": "animals kept on a farm, such as cattle, sheep and goats",
+      "hint": "chorva mollari",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "mass mortality event",
+      "answer": "an occasion when a very large number of a species die within a short time",
+      "hint": "ommaviy nobud bo'lish hodisasi",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "arid",
+      "answer": "having very little rain; extremely dry",
+      "hint": "qurg'oqchil, quruq",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "vanish",
+      "answer": "to disappear suddenly and completely",
+      "hint": "yo'q bo'lib ketmoq, g'oyib bo'lmoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "spearhead",
+      "answer": "to lead an important activity, effort or attack",
+      "hint": "boshchilik qilmoq, yetakchilik qilmoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "endangered",
+      "answer": "(of a species) at serious risk of dying out completely",
+      "hint": "yo'qolib ketish xavfi ostidagi",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "accolade",
+      "answer": "an award or public honour given as praise for an achievement",
+      "hint": "yuksak mukofot, sharafli e'tirof",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "devastating",
+      "answer": "causing severe damage or destruction; extremely harmful",
+      "hint": "vayronkor, halokatli, dahshatli",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "uplifting",
+      "answer": "making you feel more hopeful, happy or positive",
+      "hint": "ruhni ko'taradigan, ilhomlantiradigan",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "calf",
+      "answer": "a young cow, or the young of some other large animals (here, of the saiga)",
+      "hint": "buzoq; yirik hayvon bolasi",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "aerial census",
+      "answer": "an official count of a population made by observing from an aircraft",
+      "hint": "havodan (samolyotdan) sanoq o'tkazish",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "exceed",
+      "answer": "to be greater than a particular number or amount; to go beyond a limit",
+      "hint": "oshib ketmoq, oshmoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "eightfold",
+      "answer": "eight times as great or as many",
+      "hint": "sakkiz barobar",
+      "tags": [
+        "IELTS",
+        "adverb",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "projection",
+      "answer": "an estimate or forecast of a future amount, based on current trends",
+      "hint": "prognoz, bashorat (kelajakdagi hisob-kitob)",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "intersection",
+      "answer": "a place where two or more roads meet and cross each other",
+      "hint": "chorraha, kesishma",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "potholed",
+      "answer": "(of a road) full of holes in the surface caused by wear and weather",
+      "hint": "chuqur-chuqur, o'ydim-chuqur (yo'l)",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "scandalous",
+      "answer": "shockingly bad or morally wrong in a way that causes public outrage",
+      "hint": "sharmandali, jirkanch darajada yomon",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "arterial road",
+      "answer": "a major main road that carries traffic into and through a city, like a main artery",
+      "hint": "asosiy (magistral) yo'l",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "legacy",
+      "answer": "something passed down from the past that still affects the present",
+      "hint": "meros, o'tmishdan qolgan asorat",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "cater",
+      "answer": "to provide what is needed or wanted by a particular group of people",
+      "hint": "ehtiyojni qondirmoq, xizmat ko'rsatmoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "periphery",
+      "answer": "the outer edge or outer area of something, away from the centre",
+      "hint": "chekka, atrof, chetki qism",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "bus rapid transit",
+      "answer": "a fast bus-based public transport system using dedicated lanes to move many passengers quickly",
+      "hint": "tezkor avtobus tizimi (maxsus yo'laklarda)",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "stoppage",
+      "answer": "an occasion when movement or activity is stopped or interrupted",
+      "hint": "to'xtash, uzilish, to'xtab qolish",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "prior to",
+      "answer": "before (a particular time or event) — a formal way of saying 'before'",
+      "hint": "...dan oldin, avval",
+      "tags": [
+        "IELTS",
+        "preposition",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "step-free",
+      "answer": "having no steps, so it can be used by wheelchairs and prams; fully accessible on one level",
+      "hint": "zinasiz, pog'onasiz (nogironlar aravachasi uchun qulay)",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "baby buggy",
+      "answer": "a light folding chair on wheels for pushing a small child; a pushchair or stroller",
+      "hint": "bolalar aravachasi",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "depot",
+      "answer": "a place where vehicles, goods or supplies are kept, stored or repaired",
+      "hint": "baza, ombor, avtobus parki",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "phase",
+      "answer": "one stage in a process of development or change",
+      "hint": "bosqich, faza",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "regret",
+      "answer": "to feel sorry or disappointed about something",
+      "hint": "afsuslanmoq, achinmoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "obsession",
+      "answer": "a state in which someone thinks about something too much and cannot stop",
+      "hint": "o'ta berilib ketish, hirs",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "fare",
+      "answer": "the money you pay to travel on a bus, train or plane",
+      "hint": "yo'lkira, chipta puli, transport haqi",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "designate",
+      "answer": "to officially choose or set apart something for a particular purpose",
+      "hint": "belgilamoq, ajratmoq, tayinlamoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "severe",
+      "answer": "very bad, serious or extreme",
+      "hint": "og'ir, jiddiy, qattiq, kuchli",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "prehistory",
+      "answer": "the period of human history before written records existed",
+      "hint": "tarixdan oldingi davr, ibtidoiy davr",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "discern",
+      "answer": "to recognise or understand something that is not obvious",
+      "hint": "ilg'amoq, farqlab olmoq, payqamoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "thread",
+      "answer": "a connecting theme or idea that links different things together",
+      "hint": "bog'lovchi mavzu, umumiy nuqta; ip",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "blizzard",
+      "answer": "a huge, overwhelming quantity of things arriving at once (literally: a severe snowstorm)",
+      "hint": "ummon, ko'chki (juda ko'p narsa); qattiq qor bo'roni",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "supposedly",
+      "answer": "according to what is generally believed or claimed, though it may not be true",
+      "hint": "go'yoki, aytishlaricha",
+      "tags": [
+        "IELTS",
+        "adverb",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "trace",
+      "answer": "to find the origin or history of something by following it back in time",
+      "hint": "kelib chiqishini aniqlamoq, izidan borib topmoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "impose",
+      "answer": "to force something (rules, beliefs, ideas) on someone who may not want it",
+      "hint": "majburan yuklamoq, zo'rlab o'rnatmoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "patriarchal",
+      "answer": "controlled or dominated by men, with power passing through the male line",
+      "hint": "patriarxal, erkaklar hukmronligiga asoslangan",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "interlock",
+      "answer": "to fit or join firmly together, especially by parts fitting into each other",
+      "hint": "bir-biriga kirishib bog'lanmoq, tishlashmoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "evolve",
+      "answer": "to develop gradually over a long time, especially of living things over generations",
+      "hint": "rivojlanib bormoq, evolyutsiyaga uchramoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "extinct",
+      "answer": "(of a species) no longer existing; having died out completely",
+      "hint": "yo'q bo'lib ketgan, qirilib bitgan",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "hominin",
+      "answer": "a member of the human family, including modern humans and our extinct close relatives",
+      "hint": "gominin (odam va uning yaqin qarindoshlari)",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "cousin",
+      "answer": "here: a closely related species (figuratively 'relatives'); literally a child of your aunt or uncle",
+      "hint": "amakivachcha/xolavachcha; (majozan) yaqin qarindosh tur",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "engrave",
+      "answer": "to cut lines, words or patterns into a hard surface",
+      "hint": "o'ymoq, naqsh o'ymoq, gravyura qilmoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "shell",
+      "answer": "the hard outer covering of an animal such as a snail, egg or shellfish",
+      "hint": "chig'anoq, po'choq, qobiq",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "contentious",
+      "answer": "likely to cause disagreement or argument",
+      "hint": "bahsli, munozarali",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "contemporary",
+      "answer": "a person or thing living or existing at the same time as another",
+      "hint": "zamondosh, bir davrda yashagan",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "dogma",
+      "answer": "a belief firmly held as true, which people are expected to accept without question",
+      "hint": "aqida, so'zsiz qabul qilinadigan e'tiqod",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "rudimentary",
+      "answer": "very basic or simple; not developed or advanced",
+      "hint": "boshlang'ich, oddiy, ibtidoiy",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "etching",
+      "answer": "a design or mark made by cutting lines into a surface",
+      "hint": "o'yma naqsh, chizilgan tasvir",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "date",
+      "answer": "to establish the age or time of origin of something (here: with certainty)",
+      "hint": "aniq sanasini belgilamoq, yoshini aniqlamoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "dispute",
+      "answer": "a serious argument or disagreement",
+      "hint": "bahs, nizo, kelishmovchilik",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "heighten",
+      "answer": "to make something stronger or more intense; to increase",
+      "hint": "kuchaytirmoq, oshirmoq, avj oldirmoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "peer review",
+      "answer": "evaluation of a scientist's work by other experts in the same field before it is published",
+      "hint": "mutaxassislar (tengdoshlar) tomonidan baholash/taqriz",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "distraction",
+      "answer": "something that takes your attention away from what is important",
+      "hint": "chalg'ituvchi narsa, e'tiborni chalg'itish",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "fixate",
+      "answer": "to focus your attention on one thing so much that you ignore others",
+      "hint": "bir narsaga o'ta berilib qolmoq, fikri qadalib qolmoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "property",
+      "answer": "a quality or characteristic that something has",
+      "hint": "xususiyat, xossa",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "internal wiring",
+      "answer": "the internal connections of a system (here, how the brain's parts are connected)",
+      "hint": "ichki tuzilma/ulanishlar (miyaning ichki 'simlari')",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "incremental",
+      "answer": "happening gradually in a series of small amounts or steps",
+      "hint": "bosqichma-bosqich, kichik qadamlar bilan",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "runaway",
+      "answer": "happening or increasing quickly and out of control",
+      "hint": "jilovsiz, tez va nazoratsiz (o'sish/o'zgarish)",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "preconception",
+      "answer": "an opinion or idea formed before you have real knowledge or evidence",
+      "hint": "oldindan shakllangan fikr, xolis bo'lmagan tasavvur",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "unfashionable",
+      "answer": "not popular or accepted at the present time; out of style",
+      "hint": "urfdan qolgan, moda emas, ma'qullanmaydigan",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "demolition",
+      "answer": "the act of completely destroying something (here: proving an idea totally wrong)",
+      "hint": "buzib tashlash, tag-tomiri bilan rad etish",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "foraging",
+      "answer": "(of a society) living by searching for wild food rather than by farming",
+      "hint": "termachilik/ovchilik bilan kun kechiruvchi",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "dozen",
+      "answer": "a group of twelve; in the plural, a large number",
+      "hint": "o'n ikkita; (ko'plikda) o'nlab",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "spear-throwing tool",
+      "answer": "a device used to launch a spear with greater force and speed (an atlatl)",
+      "hint": "nayza uloqtirgich (atlatl asbobi)",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "projectile",
+      "answer": "an object that is thrown or fired forwards through the air, especially as a weapon",
+      "hint": "otiladigan jism, snaryad, uloqtirilgan narsa",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "authoritarianism",
+      "answer": "a system in which people must obey a powerful leader or state and have little freedom",
+      "hint": "avtoritarizm, zo'ravon (yakka) hokimlik",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "inevitable",
+      "answer": "certain to happen and impossible to avoid or prevent",
+      "hint": "muqarrar, oldini olib bo'lmaydigan",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "opposed",
+      "answer": "used to compare or contrast two things — 'rather than', 'in contrast to'",
+      "hint": "...ga qarama-qarshi, ...o'rniga, ...dan farqli",
+      "tags": [
+        "IELTS",
+        "phrase",
+        "cambridge-21-reading-3"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "vivid",
+      "answer": "producing very clear, strong and detailed pictures in the mind",
+      "hint": "yorqin, aniq (tasavvurda)",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-21-reading-2-p1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "influential",
+      "answer": "having the power to affect or change the way people think or act",
+      "hint": "ta'sirli, nufuzli",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-21-reading-2-p1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "sleep pattern",
+      "answer": "the regular way in which a person or animal sleeps (times, stages and habits)",
+      "hint": "uyqu tartibi / uyqu namunasi",
+      "tags": [
+        "IELTS",
+        "phrase",
+        "cambridge-21-reading-2-p1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "electrode",
+      "answer": "a small metal part that carries electricity into or out of the body to measure or send signals",
+      "hint": "elektrod",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-2-p1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "eyelid",
+      "answer": "the piece of skin that can close over the front of each eye",
+      "hint": "ko'z qovog'i",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-2-p1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "though",
+      "answer": "despite the fact that; used to introduce a surprising or contrasting fact",
+      "hint": "-sa ham, garchi",
+      "tags": [
+        "IELTS",
+        "conjunction",
+        "cambridge-21-reading-2-p1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "twitch",
+      "answer": "to make a sudden small movement with a part of the body, often without meaning to",
+      "hint": "beixtiyor uchib-uchib qo'yish, tebranish",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-21-reading-2-p1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "paralyse",
+      "answer": "to make a person or body part unable to move",
+      "hint": "harakatsiz qilib qo'ymoq, falaj qilmoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-21-reading-2-p1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "in contrast",
+      "answer": "used to show that the next thing is very different from what was just mentioned",
+      "hint": "aksincha, farqli o'laroq",
+      "tags": [
+        "IELTS",
+        "phrase",
+        "cambridge-21-reading-2-p1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "maze",
+      "answer": "a complicated system of paths, used in experiments to test how animals find their way",
+      "hint": "labirint",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-2-p1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "intriguing",
+      "answer": "very interesting because it is unusual or not fully explained",
+      "hint": "qiziqarli, e'tiborni tortadigan",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-21-reading-2-p1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "universal",
+      "answer": "existing everywhere or shared by everyone in a group",
+      "hint": "umumiy, hamma joyda mavjud",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-21-reading-2-p1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "sponge",
+      "answer": "a very simple sea animal with a soft body full of holes and no brain",
+      "hint": "gubka (dengiz jonivori)",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-2-p1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "machinery",
+      "answer": "here: the internal parts or system that make something work (the brain 'machinery')",
+      "hint": "mexanizm, ishlash tizimi",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-2-p1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "think",
+      "answer": "'it's thought that…' = many people believe/consider that…",
+      "hint": "deb hisoblanadi, deb o'ylanadi",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-21-reading-2-p1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "moderately",
+      "answer": "to a medium degree; neither very much nor very little",
+      "hint": "o'rtacha darajada",
+      "tags": [
+        "IELTS",
+        "adverb",
+        "cambridge-21-reading-2-p1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "outward",
+      "answer": "relating to how things seem or appear on the outside, not the inner experience",
+      "hint": "tashqi, ko'rinishdagi",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-21-reading-2-p1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "dreamscape",
+      "answer": "the imagined scene or world that appears in a dream",
+      "hint": "tush manzarasi, tush olami",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-2-p1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "interpret",
+      "answer": "to decide what something means or what has caused it",
+      "hint": "izohlamoq, ma'nosini tushunmoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-21-reading-2-p1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "limb",
+      "answer": "an arm or a leg of a person or animal (of an octopus, one of its arms)",
+      "hint": "a'zo (qo'l yoki oyoq)",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-2-p1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "pursue",
+      "answer": "to follow or chase someone or something in order to catch it",
+      "hint": "quvmoq, ta'qib qilmoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-21-reading-2-p1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "thrash",
+      "answer": "to move the body or limbs violently and without control",
+      "hint": "tipirchilamoq, silkinmoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-21-reading-2-p1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "mantle",
+      "answer": "the soft muscular body part of an octopus or squid behind the head",
+      "hint": "mantiya (sakkizoyoqning tanasi)",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-2-p1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "squirt",
+      "answer": "to force liquid out quickly through a narrow opening",
+      "hint": "purkamoq, otib chiqarmoq (suyuqlik)",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-21-reading-2-p1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "sequence",
+      "answer": "a set of related events or actions that follow each other in a particular order",
+      "hint": "ketma-ketlik",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-21-reading-2-p1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "shed light on",
+      "answer": "to make something easier to understand by giving new information",
+      "hint": "oydinlashtirmoq, tushuntirishga yordam bermoq",
+      "tags": [
+        "IELTS",
+        "phrase",
+        "cambridge-21-reading-2-p1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "as much as",
+      "answer": "used before an amount to show it is surprisingly large; up to.",
+      "hint": "…gacha; hatto …cha (ko'plikni ta'kidlaydi)",
+      "tags": [
+        "IELTS",
+        "phrase",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "produce",
+      "answer": "fresh fruit and vegetables that a farm grows and sells.",
+      "hint": "(fermer) mahsuloti – meva-sabzavot",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "striking",
+      "answer": "very noticeable or impressive because it is unusual or attractive.",
+      "hint": "ko'zga tashlanadigan, hayratlanarli, e'tiborni tortadigan",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "rooftop",
+      "answer": "the top outer surface of a building, used here as a place to farm.",
+      "hint": "tom usti, bino tomi",
+      "tags": [
+        "IELTS",
+        "noun / adjective",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "bear fruit",
+      "answer": "to produce fruit; (figurative) to give good results at last.",
+      "hint": "meva bermoq; (ko'chma) natija bermoq, samara bermoq",
+      "tags": [
+        "IELTS",
+        "phrase (verb)",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "flavoured",
+      "answer": "having a strong, particular taste.",
+      "hint": "ta'mli, kuchli mazali (intensely flavoured = juda mazali)",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "resplendently",
+      "answer": "in a brilliant, richly colourful, dazzling way.",
+      "hint": "yorqin, ko'zni qamashtiruvchi darajada chiroyli",
+      "tags": [
+        "IELTS",
+        "adverb",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "sprout",
+      "answer": "to grow or appear, especially quickly and in large numbers.",
+      "hint": "unib chiqmoq, o'sib chiqmoq, kurtak yozmoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "abundant",
+      "answer": "existing in very large amounts; plentiful.",
+      "hint": "mo'l-ko'l, serob, ko'p miqdorda",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "peer",
+      "answer": "to look carefully or with difficulty, especially at something hard to see.",
+      "hint": "sinchiklab / zo'rg'a qaramoq, tikilmoq, mo'ralamoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "hollow",
+      "answer": "having an empty space inside; not solid.",
+      "hint": "ichi bo'sh, kovak",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "dozen",
+      "answer": "a group of twelve; (plural) a large number.",
+      "hint": "o'n ikkita; (dozens of) o'nlab, juda ko'p",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "dangle",
+      "answer": "to hang loosely and swing freely.",
+      "hint": "osilib turmoq, osilib tebranib turmoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "lettuce",
+      "answer": "a green leafy vegetable eaten raw in salads.",
+      "hint": "salat bargi (sabzavot)",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "aromatic",
+      "answer": "having a pleasant, noticeable smell.",
+      "hint": "xushbo'y, muattar",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "basil",
+      "answer": "a sweet-smelling herb used in cooking.",
+      "hint": "rayhon (ziravor o't)",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "sage",
+      "answer": "a grey-green herb with a strong smell, used in cooking.",
+      "hint": "mavrak (shalfey) – ziravor o't",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "peppermint",
+      "answer": "a type of mint with a strong, fresh taste.",
+      "hint": "yalpiz (achchiq/yalpizli na'na)",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "narrow",
+      "answer": "small in width; not wide.",
+      "hint": "tor, ensiz",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "tray",
+      "answer": "a flat, shallow container for carrying or holding things.",
+      "hint": "lagancha, patnis, tekis idish",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "aubergine",
+      "answer": "a purple vegetable (US: eggplant).",
+      "hint": "baqlajon",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "chard",
+      "answer": "a leafy vegetable with thick, often colourful stalks.",
+      "hint": "mangold (bargli sabzavot, qizil/rangli poyali)",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "sustainable",
+      "answer": "able to continue for a long time without harming the environment or running out.",
+      "hint": "barqaror, uzoq muddat davom eta oladigan (atrof-muhitga zararsiz)",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "somewhat",
+      "answer": "to some degree; a little; rather.",
+      "hint": "biroz, sal, ancha (to'liq emas)",
+      "tags": [
+        "IELTS",
+        "adverb",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "punnet",
+      "answer": "a small light basket or box for soft fruit like strawberries.",
+      "hint": "(qulupnay uchun) kichik quti/savatcha",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "constraint",
+      "answer": "a thing that limits or restricts what you can do.",
+      "hint": "cheklov, to'siq, chegara",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "flourish",
+      "answer": "to grow or develop very well; to be very successful.",
+      "hint": "gullab-yashnamoq, ravnaq topmoq, rivojlanmoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "field",
+      "answer": "to receive and deal with questions, calls or requests.",
+      "hint": "(savol/so'rovlarni) qabul qilib javob bermoq, uddalab bermoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "enquiry",
+      "answer": "a request for information; a question.",
+      "hint": "so'rov, so'rab-surishtirish, murojaat",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "substantial",
+      "answer": "large in amount, size or importance.",
+      "hint": "katta, salmoqli, ancha (uzun/muhim)",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "wholesaler",
+      "answer": "a company that buys goods in large amounts and sells them to shops, not to the public.",
+      "hint": "ulgurji sotuvchi, optom savdogar",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "solely",
+      "answer": "only; not involving anyone or anything else.",
+      "hint": "faqat, yolg'iz, mutlaqo (boshqa hech narsasiz)",
+      "tags": [
+        "IELTS",
+        "adverb",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "exhaust",
+      "answer": "to use something up completely so nothing is left.",
+      "hint": "tamomila sarflab tugatmoq, holdan toydirmoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "yield",
+      "answer": "the amount of a crop that is produced.",
+      "hint": "hosil, mahsuldorlik (yig'ib olingan miqdor)",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "phenomenon",
+      "answer": "a fact or event that exists or happens, especially one that is noticed or studied.",
+      "hint": "hodisa, voqea, holat",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "virtuous",
+      "answer": "morally good; (here) beneficial and creating a positive cycle.",
+      "hint": "fazilatli, ezgu, foydali (ijobiy aylanma hosil qiladigan)",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "vicious",
+      "answer": "cruel and violent; (a vicious circle) a bad situation that keeps making itself worse.",
+      "hint": "shafqatsiz, yovuz; (vicious circle) salbiy/yopiq aylanma",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "fraction",
+      "answer": "a very small part or amount of something.",
+      "hint": "juda kichik qism, ozgina ulush; (matematikada) kasr",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "grower",
+      "answer": "a person or company that grows crops to sell.",
+      "hint": "yetishtiruvchi, o'stiruvchi (fermer)",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "root vegetable",
+      "answer": "a vegetable that grows underground as a root, e.g. carrots or potatoes.",
+      "hint": "ildizmevali sabzavot (sabzi, kartoshka kabi)",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "at least",
+      "answer": "used to add that something is true up to now, even if it may change; not less than.",
+      "hint": "hech bo'lmaganda, kamida; (at least not yet) hozircha … emas",
+      "tags": [
+        "IELTS",
+        "phrase",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "radish",
+      "answer": "a small, round, red-and-white root vegetable with a hot taste, eaten raw.",
+      "hint": "turp (kichik, achchiqroq rediska)",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "bean",
+      "answer": "a seed or pod of certain plants, eaten as a vegetable.",
+      "hint": "loviya, dukkak",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "cavity",
+      "answer": "a hole or hollow space inside something, here inside a tree trunk.",
+      "hint": "bo'shliq, kovak, teshik (daraxt tanasidagi)",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "hawthorn",
+      "answer": "a small thorny tree or bush with white flowers and red berries.",
+      "hint": "do'lana (mayda tikanli daraxt)",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "timber",
+      "answer": "wood prepared for building or making things; trees grown for their wood.",
+      "hint": "yog'och, qurilish yog'ochi, xoda",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "stem",
+      "answer": "the main upright part of a tree or plant; the trunk or stalk.",
+      "hint": "tana, poya, novda (daraxtning asosiy qismi)",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "trunk",
+      "answer": "the thick main woody stem of a tree.",
+      "hint": "daraxt tanasi",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "norm",
+      "answer": "the usual or standard way of doing something; what is typical.",
+      "hint": "odat, me'yor, qoida (odatiy holat)",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "shade out",
+      "answer": "to block sunlight from smaller plants so they cannot grow.",
+      "hint": "soya solib (yorug'likni to'sib) o'stirmaslik, bo'g'ib qo'ymoq",
+      "tags": [
+        "IELTS",
+        "phrase (verb)",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "desirable",
+      "answer": "wanted or worth having because it is useful or good.",
+      "hint": "maqbul, kerakli, orzu qilingan (istagan)",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "regeneration",
+      "answer": "the natural growth of new young trees/plants to replace old ones.",
+      "hint": "qayta o'sish, yangilanish (yangi nihollarning o'sishi)",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "invasive",
+      "answer": "(of plants) spreading aggressively and harming the plants that belong there.",
+      "hint": "bosqinchi, tez tarqaluvchi (begona, zararli o'simlik)",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "foliage",
+      "answer": "the leaves of a tree or plant, considered together.",
+      "hint": "barglar, yaproqlar (daraxt bargligi)",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "crown",
+      "answer": "the top part of a tree, made of its branches and leaves.",
+      "hint": "daraxt shox-shabbasi, uchi (tepasi)",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "tailor",
+      "answer": "to change or adapt something to fit a particular need or purpose.",
+      "hint": "moslashtirmoq, maxsus moslamoq (ehtiyojga qarab)",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "salvage",
+      "answer": "to save something usable from damage or loss; (adj.) a cut that removes damaged trees.",
+      "hint": "qutqarib olmoq, yaroqli qismini saqlab qolmoq",
+      "tags": [
+        "IELTS",
+        "verb / noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "pest",
+      "answer": "an insect or animal that harms plants, crops or trees.",
+      "hint": "zararkunanda (hasharot/hayvon)",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "pathogen",
+      "answer": "a tiny organism such as a bacterium or virus that causes disease.",
+      "hint": "kasallik qo'zg'atuvchi (mikrob, virus, zamburug')",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "hemlock woolly adelgid",
+      "answer": "a tiny sap-sucking insect that attacks and kills hemlock trees.",
+      "hint": "hemlok (archasimon) daraxtiga tushadigan mayda so'ruvchi hasharot",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "longhorned beetle",
+      "answer": "a beetle with very long antennae whose larvae bore into and kill trees.",
+      "hint": "uzun mo'ylovli qo'ng'iz (daraxtni kemiruvchi zararkunanda)",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "emerald ash borer",
+      "answer": "a bright green beetle whose larvae bore under the bark of ash trees and kill them.",
+      "hint": "zumrad-yashil qo'ng'iz (shumtol/yasen daraxtini o'ldiradi)",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "gypsy moth",
+      "answer": "a moth whose caterpillars eat huge numbers of tree leaves, damaging forests.",
+      "hint": "kapalak turi (qurtlari barglarni yeb daraxtga zarar beradi)",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "procedure",
+      "answer": "an established or official way of doing something, step by step.",
+      "hint": "tartib, jarayon, muolaja (aniq usul)",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "vigorous",
+      "answer": "strong, healthy and full of energy.",
+      "hint": "baquvvat, sog'lom, kuchli (jonli)",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "outbreak",
+      "answer": "the sudden start of something bad, especially a disease or pest spreading.",
+      "hint": "(kasallik/zararkunanda) to'satdan avj olishi, epidemiya boshlanishi",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "thin",
+      "answer": "to make trees/plants less crowded by removing some of them.",
+      "hint": "siyraklashtirmoq, ba'zilarini olib tashlab bo'shatmoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "seedling",
+      "answer": "a very young plant or tree grown from a seed.",
+      "hint": "nihol, maysa (urug'dan chiqqan yosh o'simlik)",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "two-tier",
+      "answer": "having two levels or layers (here, trees of two different ages/heights).",
+      "hint": "ikki qavatli, ikki bosqichli (ikki yarusli)",
+      "tags": [
+        "IELTS",
+        "adjective",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "retention",
+      "answer": "the act of keeping something rather than removing or losing it.",
+      "hint": "saqlab qolish, ushlab turish",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "classify",
+      "answer": "to put something into a group according to its type or quality.",
+      "hint": "turkumlarga ajratmoq, tasniflamoq, deb hisoblamoq",
+      "tags": [
+        "IELTS",
+        "verb",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "woodpecker",
+      "answer": "a bird that pecks holes in trees to find insects to eat.",
+      "hint": "qizilishton (daraxtni cho'qiydigan qush)",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "resilience",
+      "answer": "the ability to recover quickly from difficulties or damage.",
+      "hint": "chidamlilik, tez tiklanish qobiliyati",
+      "tags": [
+        "IELTS",
+        "noun",
+        "cambridge-18-test-1-reading-1"
+      ]
+    },
+    {
+      "type": "VOCAB_AUTO",
+      "prompt": "structural diversity",
+      "answer": "the variety of different shapes, sizes, ages and species within a forest's structure.",
+      "hint": "tuzilmaviy xilma-xillik (turli yosh, bo'y va turdagi daraxtlar rang-barangligi)",
+      "tags": [
+        "IELTS",
+        "noun (phrase)",
+        "cambridge-18-test-1-reading-1"
+      ]
+    }
+  ]
+}
