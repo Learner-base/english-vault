@@ -5838,5 +5838,3119 @@
         "story": "O'rmondagi turli bo'y va yoshdagi daraxtlar 'structural diversity' – rang-barang tuzilishni hosil qildi."
       }
     }
+  ],
+  "cambridge-21-test-2-reading": [
+    {
+      "w": "regarding",
+      "form": "regarding the purpose",
+      "pos": "preposition",
+      "ipa": "/rɪˈɡɑːdɪŋ/",
+      "forms": "regard · regarding",
+      "def": "about; concerning (a formal way of saying 'about').",
+      "uz": "...haqida, ...ga oid, xususida",
+      "senses": [
+        "Savol matnidan: 'uncertainty regarding the purpose of certain objects'",
+        "regard (v.) = deb hisoblamoq"
+      ],
+      "ex": "There is still uncertainty regarding the purpose of certain objects.",
+      "syn": [
+        "concerning",
+        "about",
+        "with regard to"
+      ],
+      "ant": [],
+      "related": [
+        "regarding the purpose",
+        "with regard to",
+        "as regards"
+      ],
+      "mnem": {
+        "kw": "'regarding' → 'rega + ding'",
+        "story": "Rega (nazorat) haqida ding (qo'ng'iroq) bo'ldi — 'regarding', ya'ni shu mavzu xususida gap ketdi."
+      }
+    },
+    {
+      "w": "perception",
+      "form": "a public perception",
+      "pos": "noun",
+      "ipa": "/pəˈsepʃn/",
+      "forms": "perceive · perception",
+      "def": "the way people think about or understand something.",
+      "uz": "idrok, tasavvur, qarash",
+      "senses": [
+        "Savol variantidan: 'describing a public perception of AI'",
+        "perceive (v.) = idrok qilmoq, sezmoq"
+      ],
+      "ex": "The first paragraph is describing a public perception of AI.",
+      "syn": [
+        "impression",
+        "view",
+        "understanding"
+      ],
+      "ant": [
+        "reality"
+      ],
+      "related": [
+        "public perception",
+        "perception of risk",
+        "sense perception"
+      ],
+      "mnem": {
+        "kw": "'perception' → 'per + septr'",
+        "story": "Sceptr (hassa) ushlagan podshoh haqidagi 'perception' — ya'ni xalqning tasavvuri hamma joyda tarqaldi."
+      }
+    },
+    {
+      "w": "outline",
+      "form": "outlining some benefits",
+      "pos": "verb",
+      "ipa": "/ˈaʊtlaɪn/",
+      "forms": "outline · outlined · outlining",
+      "def": "to give the main facts or ideas about something, without details.",
+      "uz": "qisqacha bayon qilmoq, umumiy tasvirlamoq",
+      "senses": [
+        "Savol variantidan: 'outlining some possible benefits of AI'",
+        "outline (n.) = reja, umumiy shakl"
+      ],
+      "ex": "The writer is outlining some possible benefits of AI.",
+      "syn": [
+        "summarise",
+        "sketch out",
+        "describe"
+      ],
+      "ant": [
+        "detail"
+      ],
+      "related": [
+        "outline a plan",
+        "a broad outline",
+        "in outline"
+      ],
+      "mnem": {
+        "kw": "'outline' → 'out + line' (tashqi chiziq)",
+        "story": "Rassom avval faqat tashqi chiziqni (out-line) chizib, rasmni qisqacha 'outline' qildi."
+      }
+    },
+    {
+      "w": "breadth",
+      "form": "the breadth of the influence",
+      "pos": "noun",
+      "ipa": "/bredθ/",
+      "forms": "broad · breadth · broaden",
+      "def": "the wide range or extent of something.",
+      "uz": "kenglik, qamrov, ko'lam",
+      "senses": [
+        "Savol variantidan: 'highlighting the breadth of the influence of AI'",
+        "broad (adj.) = keng"
+      ],
+      "ex": "The writer highlights the breadth of the influence of AI.",
+      "syn": [
+        "range",
+        "scope",
+        "extent"
+      ],
+      "ant": [
+        "narrowness"
+      ],
+      "related": [
+        "breadth of influence",
+        "breadth of knowledge",
+        "length and breadth"
+      ],
+      "mnem": {
+        "kw": "'breadth' → 'bread' (non)",
+        "story": "Bir bo'lak non (bread) shunchalik keng yoyildiki, uning 'breadth' — kengligi butun stolni qopladi."
+      }
+    },
+    {
+      "w": "probable",
+      "form": "probable origins",
+      "pos": "adjective",
+      "ipa": "/ˈprɒbəbl/",
+      "forms": "probable · probably · probability",
+      "def": "likely to be true or to happen.",
+      "uz": "ehtimoliy, taxminan to'g'ri",
+      "senses": [
+        "Savol variantidan: 'specifies its probable origins'",
+        "origins = kelib chiqishi, ildizi"
+      ],
+      "ex": "The writer specifies the probable origins of AI solutionism.",
+      "syn": [
+        "likely",
+        "expected",
+        "credible"
+      ],
+      "ant": [
+        "improbable",
+        "unlikely"
+      ],
+      "related": [
+        "probable origins",
+        "probable cause",
+        "highly probable"
+      ],
+      "mnem": {
+        "kw": "'probable' → 'proba + bel'",
+        "story": "Har bir 'proba' (sinov) belini bukdi, chunki natija 'probable' — ehtimol muvaffaqiyatli edi."
+      }
+    },
+    {
+      "w": "weigh up",
+      "form": "weighs up pros and cons",
+      "pos": "phrase (verb)",
+      "ipa": "/weɪ ʌp/",
+      "forms": "weigh · weighed · weighing",
+      "def": "to think carefully about the good and bad sides before deciding.",
+      "uz": "yaxshi-yomonini o'ylab ko'rmoq, taroziga solmoq",
+      "senses": [
+        "Savol variantidan: 'weighs up some pros and cons'",
+        "weigh (v.) = tortmoq, vaznini o'lchamoq"
+      ],
+      "ex": "In this paragraph the writer weighs up some pros and cons.",
+      "syn": [
+        "assess",
+        "consider",
+        "evaluate"
+      ],
+      "ant": [
+        "ignore"
+      ],
+      "related": [
+        "weigh up the pros and cons",
+        "weigh up your options"
+      ],
+      "mnem": {
+        "kw": "'weigh' → 'vey' (tarozi 'vey' qildi)",
+        "story": "Sotuvchi mevani tarozida 'weigh up' qildi — foyda-zararini o'ylab, taroziga soldi."
+      }
+    },
+    {
+      "w": "prejudice",
+      "form": "prejudices",
+      "pos": "noun",
+      "ipa": "/ˈpredʒʊdɪs/",
+      "forms": "prejudice · prejudiced · prejudices",
+      "def": "an unfair opinion formed about someone/something without enough knowledge.",
+      "uz": "noto'g'ri qarash, xurofot, tarafkashlik",
+      "senses": [
+        "Savol/xulosa varianti: 'prejudices'",
+        "passажda 'racial discrimination' bilan bog'liq"
+      ],
+      "ex": "A neural network can carry the prejudices found in its data.",
+      "syn": [
+        "bias",
+        "preconception",
+        "unfairness"
+      ],
+      "ant": [
+        "fairness",
+        "impartiality"
+      ],
+      "related": [
+        "racial prejudice",
+        "prejudices in data",
+        "without prejudice"
+      ],
+      "mnem": {
+        "kw": "'prejudice' → 'pre + judge' (oldindan hukm)",
+        "story": "Sudya ishni ko'rmasdan oldin (pre) hukm (judge) chiqardi — bu 'prejudice', ya'ni noto'g'ri qarash."
+      }
+    },
+    {
+      "w": "proposal",
+      "form": "proposals regarding",
+      "pos": "noun",
+      "ipa": "/prəˈpəʊzl/",
+      "forms": "propose · proposal · proposals",
+      "def": "a plan or suggestion put forward for others to consider.",
+      "uz": "taklif, loyiha",
+      "senses": [
+        "Savol matnidan: 'Stuart Russell's proposals regarding the use of AI'",
+        "propose (v.) = taklif qilmoq"
+      ],
+      "ex": "Stuart Russell's proposals regarding the use of AI are practical.",
+      "syn": [
+        "suggestion",
+        "plan",
+        "scheme"
+      ],
+      "ant": [
+        "rejection"
+      ],
+      "related": [
+        "a proposal regarding",
+        "put forward a proposal",
+        "reject a proposal"
+      ],
+      "mnem": {
+        "kw": "'proposal' → 'propo + sol' (taklif sol)",
+        "story": "Muhandis yangi 'proposal' — taklifini stol ustiga sol(di), hamma ko'rib chiqsin dedi."
+      }
+    },
+    {
+      "w": "outward",
+      "form": "outward behaviour",
+      "pos": "adjective",
+      "ipa": "/ˈaʊtwəd/",
+      "forms": "outward · outwardly",
+      "def": "relating to how something appears on the outside, not inside.",
+      "uz": "tashqi (ko'rinishdagi), sirtqi",
+      "senses": [
+        "outwardly (adv.) = tashqaridan qaraganda",
+        "outward journey = boradigan yo'l (qaytishning aksi)"
+      ],
+      "ex": "we still don't understand how this outward behaviour relates to internal experience.",
+      "syn": [
+        "external",
+        "visible",
+        "surface"
+      ],
+      "ant": [
+        "inward",
+        "internal"
+      ],
+      "related": [
+        "outward behaviour",
+        "outward appearance",
+        "outwardly calm"
+      ],
+      "mnem": {
+        "kw": "'outward' → 'out + ward' (tashqariga qarab)",
+        "story": "Bemor tashqariga (out) qarab yotdi; uning 'outward' — tashqi holati tinch, ichi esa notinch edi."
+      }
+    },
+    {
+      "w": "limb",
+      "form": "twitching limbs · short limbs",
+      "pos": "noun",
+      "ipa": "/lɪm/",
+      "forms": "limb · limbs",
+      "def": "an arm, leg or wing — a large moving part of a body.",
+      "uz": "a'zo (qo'l, oyoq, qanot)",
+      "senses": [
+        "out on a limb = yolg'iz, xavfli holatda",
+        "daraxtning yo'g'on shoxi ham 'limb'"
+      ],
+      "ex": "We are quick to interpret the twitching limbs and quiet barks of sleeping dogs.",
+      "syn": [
+        "arm/leg",
+        "appendage",
+        "extremity"
+      ],
+      "ant": [],
+      "related": [
+        "twitching limbs",
+        "upper limbs",
+        "out on a limb"
+      ],
+      "mnem": {
+        "kw": "'limb' → 'lim' (limon)",
+        "story": "It uxlab, limon (lim) ushlagandek 'limbs' — qo'l-oyog'ini uchirib-uchirib qo'ydi."
+      }
+    },
+    {
+      "w": "sandstone",
+      "form": "a large sandstone plateau",
+      "pos": "noun",
+      "ipa": "/ˈsæn(d)stəʊn/",
+      "forms": "sandstone",
+      "def": "a soft rock made of pressed sand, often used for building.",
+      "uz": "qumtosh",
+      "senses": [
+        "sand (qum) + stone (tosh)"
+      ],
+      "ex": "The area controlled by the rulers of Mapungubwe had at its heart a large sandstone plateau.",
+      "syn": [
+        "rock",
+        "stone"
+      ],
+      "ant": [],
+      "related": [
+        "sandstone plateau",
+        "sandstone hill",
+        "sandstone cliff"
+      ],
+      "mnem": {
+        "kw": "'sandstone' → 'sand + stone' (qum + tosh)",
+        "story": "Cho'ldagi qum (sand) yillar davomida zichlashib, tosh (stone)ga — 'sandstone'ga aylandi."
+      }
+    },
+    {
+      "w": "plateau",
+      "form": "the Mapungubwe plateau",
+      "pos": "noun",
+      "ipa": "/ˈplætəʊ/",
+      "forms": "plateau · plateaus",
+      "def": "a large area of flat, high land.",
+      "uz": "platо, yassi tog'lik, baland tekislik",
+      "senses": [
+        "ko'chma: o'sish to'xtagan barqaror bosqich (reach a plateau)"
+      ],
+      "ex": "There are many other smaller but still impressive sites across the Mapungubwe plateau.",
+      "syn": [
+        "highland",
+        "tableland",
+        "upland"
+      ],
+      "ant": [
+        "valley",
+        "lowland"
+      ],
+      "related": [
+        "sandstone plateau",
+        "a high plateau",
+        "reach a plateau"
+      ],
+      "mnem": {
+        "kw": "'plateau' → 'plato' (Aflotun/plato)",
+        "story": "Aflotun (Plato) baland 'plateau' — yassi tog'lik ustida turib, tekis yerga qarab dars berdi."
+      }
+    },
+    {
+      "w": "herd",
+      "form": "cattle herding · cattle herds",
+      "pos": "noun / verb",
+      "ipa": "/hɜːd/",
+      "forms": "herd · herds · herding",
+      "def": "a large group of animals kept together; to keep or drive them together.",
+      "uz": "poda, suruv; chorva boqmoq",
+      "senses": [
+        "cattle = qoramol; herding = chorvachilik"
+      ],
+      "ex": "cattle herding and other types of farming brought plenty of food and a surplus.",
+      "syn": [
+        "flock",
+        "drove",
+        "livestock-keeping"
+      ],
+      "ant": [],
+      "related": [
+        "cattle herding",
+        "large cattle herds",
+        "herd together"
+      ],
+      "mnem": {
+        "kw": "'herd' → 'ho'kiz + yerda'",
+        "story": "Ho'kizlar yerda (herd) to'planib 'cattle herding' — podani boqib yurishardi."
+      }
+    },
+    {
+      "w": "surplus",
+      "form": "a surplus that could be traded",
+      "pos": "noun",
+      "ipa": "/ˈsɜːpləs/",
+      "forms": "surplus · surpluses",
+      "def": "an amount that is more than what is needed.",
+      "uz": "ortiqcha (qism), oshiqcha, izlik",
+      "senses": [
+        "budget surplus = byudjet profitsiti"
+      ],
+      "ex": "farming brought plenty of food and a surplus that could be traded for needed goods.",
+      "syn": [
+        "excess",
+        "extra",
+        "overflow"
+      ],
+      "ant": [
+        "shortage",
+        "deficit"
+      ],
+      "related": [
+        "a surplus of food",
+        "trade surplus",
+        "surplus stock"
+      ],
+      "mnem": {
+        "kw": "'surplus' → 'sur + plus' (ustiga plus)",
+        "story": "Hosil rejadan ustiga (sur) plus bo'ldi — bu 'surplus', ya'ni ortiqchani bozorga chiqarishdi."
+      }
+    },
+    {
+      "w": "manure",
+      "form": "layers of bones and manure",
+      "pos": "noun",
+      "ipa": "/məˈnjʊə/",
+      "forms": "manure",
+      "def": "animal waste used to make soil richer for growing crops.",
+      "uz": "go'ng, chirindi (o'g'it)",
+      "senses": [],
+      "ex": "Archaeology has revealed extensive layers of bones and manure.",
+      "syn": [
+        "dung",
+        "fertiliser",
+        "muck"
+      ],
+      "ant": [],
+      "related": [
+        "bones and manure",
+        "spread manure",
+        "animal manure"
+      ],
+      "mnem": {
+        "kw": "'manure' → 'ma + nur (yo'q)'",
+        "story": "Bog'da nur (yorug') emas, go'ng — 'manure' hidi kelardi, lekin hosilga foydasi katta edi."
+      }
+    },
+    {
+      "w": "weave",
+      "form": "cotton cultivation and weaving",
+      "pos": "verb",
+      "ipa": "/wiːv/",
+      "forms": "weave · wove · woven · weaving",
+      "def": "to make cloth by crossing threads over and under each other.",
+      "uz": "to'qimoq (mato)",
+      "senses": [
+        "weaving (n.) = to'quvchilik; woven = to'qilgan"
+      ],
+      "ex": "the archaeological record shows cotton cultivation and weaving.",
+      "syn": [
+        "knit",
+        "interlace",
+        "spin"
+      ],
+      "ant": [
+        "unravel"
+      ],
+      "related": [
+        "cotton weaving",
+        "weave cloth",
+        "hand-woven"
+      ],
+      "mnem": {
+        "kw": "'weave' → 'uy + iv (ip)'",
+        "story": "Uyda ip (weave)dan buvi mato 'weave' qildi — iplarni ustma-ust o'tkazib to'qidi."
+      }
+    },
+    {
+      "w": "whorl",
+      "form": "spindle whorls · whorls",
+      "pos": "noun",
+      "ipa": "/wɜːl/",
+      "forms": "whorl · whorls",
+      "def": "a small round weight/disc on a spindle used for spinning thread; a spiral shape.",
+      "uz": "urchuq halqasi (yigiruv toshi); spiral",
+      "senses": [
+        "spindle whorl = urchuqqa taqiladigan dumaloq tosh — yigiruvni og'irlashtiradi"
+      ],
+      "ex": "cotton cultivation and weaving, as indicated by abundant finds of spindle whorls.",
+      "syn": [
+        "disc",
+        "spiral",
+        "coil"
+      ],
+      "ant": [],
+      "related": [
+        "spindle whorls",
+        "a whorl of petals"
+      ],
+      "mnem": {
+        "kw": "'whorl' → 'wo'l + halqa'",
+        "story": "Urchuqning yo'lidagi (whorl) dumaloq halqa aylanib, ipni tez yigirardi."
+      }
+    },
+    {
+      "w": "precious",
+      "form": "precious materials",
+      "pos": "adjective",
+      "ipa": "/ˈpreʃəs/",
+      "forms": "precious · preciousness",
+      "def": "very valuable or greatly loved.",
+      "uz": "qimmatbaho, aziz",
+      "senses": [
+        "precious metals/stones = qimmatbaho metall/toshlar"
+      ],
+      "ex": "the king would have owned more cattle and precious materials than anyone else.",
+      "syn": [
+        "valuable",
+        "prized",
+        "treasured"
+      ],
+      "ant": [
+        "worthless",
+        "cheap"
+      ],
+      "related": [
+        "precious materials",
+        "precious metals",
+        "precious time"
+      ],
+      "mnem": {
+        "kw": "'precious' → 'pres + shohes'",
+        "story": "Shoh (shohes) presda (xazinada) 'precious' — qimmatbaho toshlarni qattiq saqlardi."
+      }
+    },
+    {
+      "w": "dwell",
+      "form": "the king and his advisers dwelt",
+      "pos": "verb",
+      "ipa": "/dwel/",
+      "forms": "dwell · dwelt · dwelling",
+      "def": "to live in a place (formal/old style).",
+      "uz": "yashamoq, istiqomat qilmoq",
+      "senses": [
+        "dwell on sth = biror narsani uzoq o'ylab yurmoq",
+        "dwelling (n.) = turar joy"
+      ],
+      "ex": "The king and his advisers dwelt in a stone enclosure composed of stone walls and housing.",
+      "syn": [
+        "live",
+        "reside",
+        "inhabit"
+      ],
+      "ant": [
+        "leave"
+      ],
+      "related": [
+        "dwelt in",
+        "dwell on the past",
+        "a dwelling place"
+      ],
+      "mnem": {
+        "kw": "'dwell' → 'dev + el'",
+        "story": "Dev (ulkan) shu yerda el bo'lib 'dwell' qildi — ya'ni shu joyda yashab qoldi."
+      }
+    },
+    {
+      "w": "enclosure",
+      "form": "a stone enclosure",
+      "pos": "noun",
+      "ipa": "/ɪnˈkləʊʒə/",
+      "forms": "enclose · enclosure",
+      "def": "an area surrounded by a wall or fence.",
+      "uz": "o'ralgan hudud, devor bilan to'silgan joy",
+      "senses": [
+        "enclose (v.) = o'ramoq, ilova qilmoq (xatga)"
+      ],
+      "ex": "dwelt in a stone enclosure composed of stone walls and housing.",
+      "syn": [
+        "compound",
+        "pen",
+        "walled area"
+      ],
+      "ant": [
+        "open space"
+      ],
+      "related": [
+        "a stone enclosure",
+        "a fenced enclosure"
+      ],
+      "mnem": {
+        "kw": "'enclosure' → 'in + closed' (ichi yopiq)",
+        "story": "Ichi (in) yopiq (closed) hovli — 'enclosure' devor bilan har tomondan o'raldi."
+      }
+    },
+    {
+      "w": "palisade",
+      "form": "a wooden palisade",
+      "pos": "noun",
+      "ipa": "/ˌpælɪˈseɪd/",
+      "forms": "palisade · palisades",
+      "def": "a fence of tall pointed wooden posts built for defence.",
+      "uz": "yog'och qoziqlardan qurilgan himoya devori (chastokol)",
+      "senses": [
+        "izohdan: yaqin joylashtirilgan baland vertikal qoziqlar qatori"
+      ],
+      "ex": "the entire complex was surrounded by a wooden palisade, as indicated by postholes.",
+      "syn": [
+        "stockade",
+        "fence",
+        "barrier"
+      ],
+      "ant": [],
+      "related": [
+        "a wooden palisade",
+        "defensive palisade"
+      ],
+      "mnem": {
+        "kw": "'palisade' → 'pol + sada'",
+        "story": "Pol (bino) atrofiga sada (qoziqlar) qadab, 'palisade' — himoya to'sig'i qurishdi."
+      }
+    },
+    {
+      "w": "posthole",
+      "form": "postholes made in the rock",
+      "pos": "noun",
+      "ipa": "/ˈpəʊsthəʊl/",
+      "forms": "posthole · postholes",
+      "def": "a hole dug in the ground to hold an upright post.",
+      "uz": "ustun (qoziq) o'rnatiladigan teshik",
+      "senses": [
+        "post (ustun) + hole (teshik) — arxeologlar bino izini shundan biladi"
+      ],
+      "ex": "surrounded by a wooden palisade, as indicated by postholes made in the rock.",
+      "syn": [
+        "post socket",
+        "stake hole"
+      ],
+      "ant": [],
+      "related": [
+        "postholes in the rock",
+        "dig a posthole"
+      ],
+      "mnem": {
+        "kw": "'posthole' → 'post + hole' (ustun + teshik)",
+        "story": "Pochta (post) ustunini o'rnatish uchun 'posthole' — teshik qazishdi."
+      }
+    },
+    {
+      "w": "thatch",
+      "form": "mud and thatch housing",
+      "pos": "noun",
+      "ipa": "/θætʃ/",
+      "forms": "thatch · thatched",
+      "def": "dried straw or reeds used to make a roof.",
+      "uz": "somon/qamish tom (yopma)",
+      "senses": [
+        "thatched roof = somondan yopilgan tom"
+      ],
+      "ex": "The rest of the community lived in mud and thatch housing spread out below the hill.",
+      "syn": [
+        "straw roof",
+        "reed"
+      ],
+      "ant": [],
+      "related": [
+        "mud and thatch",
+        "a thatched cottage"
+      ],
+      "mnem": {
+        "kw": "'thatch' → 'to'sh + katch'",
+        "story": "Tom ustiga to'sh(somon) katta qatlam qilib 'thatch' — somon yopma bostirishdi."
+      }
+    },
+    {
+      "w": "settlement",
+      "form": "this settlement, known as Babandyanalo",
+      "pos": "noun",
+      "ipa": "/ˈsetlmənt/",
+      "forms": "settle · settlement · settlements",
+      "def": "a place where people come to live and build homes.",
+      "uz": "aholi punkti, qishloq, manzilgoh",
+      "senses": [
+        "nizoni tugatuvchi kelishuv ma'nosi ham bor (reach a settlement)"
+      ],
+      "ex": "This settlement, known as Babandyanalo, covers around 5 hectares.",
+      "syn": [
+        "community",
+        "village",
+        "habitation"
+      ],
+      "ant": [],
+      "related": [
+        "an early settlement",
+        "human settlement",
+        "reach a settlement"
+      ],
+      "mnem": {
+        "kw": "'settlement' → 'settle + ment' (joylashish)",
+        "story": "Odamlar bir joyga settle bo'lib (joylashib), 'settlement' — qishloq qurishdi."
+      }
+    },
+    {
+      "w": "predate",
+      "form": "predates the hilltop structures",
+      "pos": "verb",
+      "ipa": "/ˌpriːˈdeɪt/",
+      "forms": "predate · predated · predates",
+      "def": "to exist or happen earlier in time than something else.",
+      "uz": "...dan oldin mavjud bo'lmoq/paydo bo'lmoq",
+      "senses": [
+        "pre- = oldin; date = sana"
+      ],
+      "ex": "This settlement covers around 5 hectares and predates the hilltop structures.",
+      "syn": [
+        "precede",
+        "come before"
+      ],
+      "ant": [
+        "postdate",
+        "follow"
+      ],
+      "related": [
+        "predates the structures",
+        "predate an event"
+      ],
+      "mnem": {
+        "kw": "'predate' → 'pre + date' (oldingi sana)",
+        "story": "Bu qishloqning sanasi (date) tepalikdan oldin (pre) edi — u 'predate' qildi, ya'ni ilgariroq paydo bo'ldi."
+      }
+    },
+    {
+      "w": "hilltop",
+      "form": "the hilltop structures",
+      "pos": "noun",
+      "ipa": "/ˈhɪltɒp/",
+      "forms": "hill · hilltop",
+      "def": "the top of a hill.",
+      "uz": "tepalik cho'qqisi, tepa usti",
+      "senses": [],
+      "ex": "This settlement predates the hilltop structures.",
+      "syn": [
+        "summit",
+        "hillcrest"
+      ],
+      "ant": [
+        "foot of the hill"
+      ],
+      "related": [
+        "hilltop structures",
+        "a hilltop fort"
+      ],
+      "mnem": {
+        "kw": "'hilltop' → 'hill + top' (tepalik + ust)",
+        "story": "Tepalik (hill) ustiga (top) chiqib, 'hilltop'dagi qasrni ko'rdilar."
+      }
+    },
+    {
+      "w": "occupation",
+      "form": "Occupation on the hill dates from the 11th century",
+      "pos": "noun",
+      "ipa": "/ˌɒkjʊˈpeɪʃn/",
+      "forms": "occupy · occupation · occupied",
+      "def": "the fact of living in or using a place (here: people inhabiting the hill).",
+      "uz": "(bir joyni) egallab yashash, istiqomat davri",
+      "senses": [
+        "odatiy ma'no: kasb, ish (Savol 20: a respected occupation = hurmatli kasb)",
+        "harbiy bosib olish ma'nosi ham"
+      ],
+      "ex": "Occupation on the hill dates from the 11th century.",
+      "syn": [
+        "habitation",
+        "settlement",
+        "tenancy"
+      ],
+      "ant": [
+        "vacancy"
+      ],
+      "related": [
+        "occupation of the site",
+        "a respected occupation",
+        "military occupation"
+      ],
+      "mnem": {
+        "kw": "'occupation' → 'ok + kupa + shen'",
+        "story": "Ko'p (kupa) odam bir joyni band qilib 'occupation' — o'sha yerda yashab qoldi."
+      }
+    },
+    {
+      "w": "demarcate",
+      "form": "a demarcated area",
+      "pos": "verb",
+      "ipa": "/ˈdiːmɑːkeɪt/",
+      "forms": "demarcate · demarcated · demarcation",
+      "def": "to mark or fix the limits or boundaries of an area.",
+      "uz": "chegarasini belgilamoq, ajratib qo'ymoq",
+      "senses": [
+        "demarcation (n.) = chegaralash"
+      ],
+      "ex": "The kings were buried at the top of the hill in a demarcated area away from the dwellings.",
+      "syn": [
+        "mark off",
+        "delimit",
+        "separate"
+      ],
+      "ant": [
+        "merge"
+      ],
+      "related": [
+        "a demarcated area",
+        "clearly demarcated"
+      ],
+      "mnem": {
+        "kw": "'demarcate' → 'de + marka' (marka qo'ymoq)",
+        "story": "Yerga marka (belgi) qo'yib 'demarcate' — hududni aniq ajratib chegaraladilar."
+      }
+    },
+    {
+      "w": "socket",
+      "form": "the sockets for the steps",
+      "pos": "noun",
+      "ipa": "/ˈsɒkɪt/",
+      "forms": "socket · sockets",
+      "def": "a hollow part or hole into which something fits.",
+      "uz": "uya, o'ra, teshik (biror narsa o'rnatiladigan)",
+      "senses": [
+        "rozetka (electric socket) ma'nosi ham"
+      ],
+      "ex": "A wooden staircase connected the two levels, the sockets for the steps being clearly visible.",
+      "syn": [
+        "hole",
+        "hollow",
+        "recess"
+      ],
+      "ant": [],
+      "related": [
+        "sockets for the steps",
+        "an eye socket",
+        "a plug socket"
+      ],
+      "mnem": {
+        "kw": "'socket' → 'sok + et' (sok teshigi)",
+        "story": "Zinapoyaning har pog'onasi devordagi 'socket' — uyaga xuddi sok naychasidek o'rnatilgan edi."
+      }
+    },
+    {
+      "w": "grand",
+      "form": "some grander residences",
+      "pos": "adjective",
+      "ipa": "/ɡrænd/",
+      "forms": "grand · grander · grandest",
+      "def": "large and impressive in size or appearance.",
+      "uz": "hashamatli, ulug'vor, katta",
+      "senses": [
+        "grander = kattaroq/hashamatliroq (grand ning qiyosiy shakli)",
+        "ming (a grand = 1000$) ma'nosi ham"
+      ],
+      "ex": "There were some grander residences dotted around the outskirts of Babandyanalo.",
+      "syn": [
+        "magnificent",
+        "impressive",
+        "stately"
+      ],
+      "ant": [
+        "modest",
+        "humble"
+      ],
+      "related": [
+        "grander residences",
+        "a grand house",
+        "on a grand scale"
+      ],
+      "mnem": {
+        "kw": "'grand' → 'gra + katta'",
+        "story": "Podshohning uyi 'grand' — shunchalik katta va hashamatliki, ko'zni qamashtirardi."
+      }
+    },
+    {
+      "w": "outskirts",
+      "form": "the outskirts of Babandyanalo",
+      "pos": "noun",
+      "ipa": "/ˈaʊtskɜːts/",
+      "forms": "outskirts",
+      "def": "the outer parts of a town or area, away from the centre.",
+      "uz": "chekka, atrof, chetki qism",
+      "senses": [
+        "odatda ko'plikda ishlatiladi: on the outskirts"
+      ],
+      "ex": "There were some grander residences dotted around the outskirts of Babandyanalo.",
+      "syn": [
+        "edge",
+        "fringe",
+        "periphery"
+      ],
+      "ant": [
+        "centre",
+        "core"
+      ],
+      "related": [
+        "on the outskirts",
+        "the outskirts of the city"
+      ],
+      "mnem": {
+        "kw": "'outskirts' → 'out + skirt' (tashqi etak)",
+        "story": "Shaharning tashqi etagida (out-skirt) — 'outskirts'da uylar siyrak joylashgan edi."
+      }
+    },
+    {
+      "w": "carnivore",
+      "form": "carnivore animal remains",
+      "pos": "noun",
+      "ipa": "/ˈkɑːnɪvɔː/",
+      "forms": "carnivore · carnivorous",
+      "def": "an animal that eats meat.",
+      "uz": "yirtqich (go'sht yeyuvchi) hayvon",
+      "senses": [
+        "herbivore = o'txo'r; carnivorous (adj.) = go'shtxo'r"
+      ],
+      "ex": "The Mapungubwe plateau has a very high number of carnivore animal remains and ivory splinters.",
+      "syn": [
+        "meat-eater",
+        "predator"
+      ],
+      "ant": [
+        "herbivore"
+      ],
+      "related": [
+        "carnivore remains",
+        "a large carnivore"
+      ],
+      "mnem": {
+        "kw": "'carnivore' → 'car + no + vor' (go'sht 'vor')",
+        "story": "Yirtqich mashinaga (car) sakrab go'sht (vor!) yedi — u 'carnivore', ya'ni go'shtxo'r."
+      }
+    },
+    {
+      "w": "ivory",
+      "form": "ivory splinters · ivory tusks",
+      "pos": "noun",
+      "ipa": "/ˈaɪvəri/",
+      "forms": "ivory",
+      "def": "the hard white material of elephant tusks.",
+      "uz": "fil suyagi, pil suyagi",
+      "senses": [
+        "ivory tower = amaliy hayotdan uzoq maskan"
+      ],
+      "ex": "a very high number of carnivore animal remains and ivory splinters.",
+      "syn": [
+        "tusk material",
+        "elephant bone"
+      ],
+      "ant": [],
+      "related": [
+        "ivory splinters",
+        "ivory tusks",
+        "the ivory trade"
+      ],
+      "mnem": {
+        "kw": "'ivory' → 'ay + vori (bor)'",
+        "story": "Filning tishida oq boylik bor (vori) — 'ivory', ya'ni fil suyagi qadrli edi."
+      }
+    },
+    {
+      "w": "splinter",
+      "form": "ivory splinters",
+      "pos": "noun",
+      "ipa": "/ˈsplɪntə/",
+      "forms": "splinter · splinters · splintered",
+      "def": "a small, thin, sharp piece broken off from wood, bone, etc.",
+      "uz": "payraha, mayda o'tkir bo'lak, tikan (yog'och)",
+      "senses": [
+        "splinter group = asosiy guruhdan ajralib chiqqan bo'lak"
+      ],
+      "ex": "a very high number of carnivore animal remains and ivory splinters.",
+      "syn": [
+        "sliver",
+        "shard",
+        "fragment"
+      ],
+      "ant": [],
+      "related": [
+        "ivory splinters",
+        "a splinter of wood",
+        "splinter group"
+      ],
+      "mnem": {
+        "kw": "'splinter' → 'split + tikan'",
+        "story": "Yog'och split (yorildi) va o'tkir tikan — 'splinter' barmoqqa sanchildi."
+      }
+    },
+    {
+      "w": "tusk",
+      "form": "ivory elephant tusks",
+      "pos": "noun",
+      "ipa": "/tʌsk/",
+      "forms": "tusk · tusks",
+      "def": "a very long pointed tooth that sticks out from an animal's mouth (e.g. an elephant).",
+      "uz": "(fil, cho'chqa) qozig'i, uzun tish",
+      "senses": [],
+      "ex": "the skins of these large animals and ivory elephant tusks were accumulated.",
+      "syn": [
+        "fang",
+        "horn"
+      ],
+      "ant": [],
+      "related": [
+        "elephant tusks",
+        "a pair of tusks"
+      ],
+      "mnem": {
+        "kw": "'tusk' → 'tush + k' (tush + tishlar)",
+        "story": "Tushimda fil kelib, uzun 'tusk' — qoziq tishlarini ko'rsatdi."
+      }
+    },
+    {
+      "w": "coastal",
+      "form": "coastal areas",
+      "pos": "adjective",
+      "ipa": "/ˈkəʊstl/",
+      "forms": "coast · coastal",
+      "def": "relating to or near the coast (the land beside the sea).",
+      "uz": "qirg'oqbo'yi, sohilga oid",
+      "senses": [
+        "coast (n.) = dengiz qirg'og'i"
+      ],
+      "ex": "the skins were accumulated, probably for trade with coastal areas reached by the Limpopo River.",
+      "syn": [
+        "seaside",
+        "shore",
+        "seaboard"
+      ],
+      "ant": [
+        "inland"
+      ],
+      "related": [
+        "coastal areas",
+        "a coastal city",
+        "the coastal trade"
+      ],
+      "mnem": {
+        "kw": "'coastal' → 'coast + al' (qirg'oq)",
+        "story": "Kema qirg'oq (coast) bo'ylab yurib, 'coastal' — sohilbo'yi shaharlariga tovar tashidi."
+      }
+    },
+    {
+      "w": "merchant",
+      "form": "merchants travelling from India",
+      "pos": "noun",
+      "ipa": "/ˈmɜːtʃənt/",
+      "forms": "merchant · merchants",
+      "def": "a person who buys and sells goods, especially in large amounts or abroad.",
+      "uz": "savdogar, tojir",
+      "senses": [
+        "merchant ship = savdo kemasi"
+      ],
+      "ex": "coastal states traded with merchants travelling from India by sea.",
+      "syn": [
+        "trader",
+        "dealer",
+        "businessperson"
+      ],
+      "ant": [],
+      "related": [
+        "merchants from India",
+        "a wealthy merchant",
+        "merchant ship"
+      ],
+      "mnem": {
+        "kw": "'merchant' → 'mer + shou' (bozor shousi)",
+        "story": "Bozorda shou qilib mol sotgan odam 'merchant' — savdogar edi."
+      }
+    },
+    {
+      "w": "benefit",
+      "form": "Mapungubwe also benefitted from",
+      "pos": "verb",
+      "ipa": "/ˈbenɪfɪt/",
+      "forms": "benefit · benefitted · benefiting",
+      "def": "to gain an advantage or profit from something.",
+      "uz": "foyda ko'rmoq, manfaat olmoq",
+      "senses": [
+        "benefit (n.) = foyda, nafaqa"
+      ],
+      "ex": "Mapungubwe also benefitted from locally-sourced copper and the gold trade.",
+      "syn": [
+        "gain from",
+        "profit from",
+        "take advantage of"
+      ],
+      "ant": [
+        "lose out"
+      ],
+      "related": [
+        "benefit from",
+        "mutual benefit",
+        "health benefits"
+      ],
+      "mnem": {
+        "kw": "'benefit' → 'bene + fit' (yaxshi mos)",
+        "story": "Savdo unga yaxshi (bene) mos (fit) keldi — Mapungubwe undan 'benefit', ya'ni foyda ko'rdi."
+      }
+    },
+    {
+      "w": "authority",
+      "form": "political authority",
+      "pos": "noun",
+      "ipa": "/ɔːˈθɒrəti/",
+      "forms": "authority · authorities · authorise",
+      "def": "the power or right to control, command or make decisions.",
+      "uz": "hokimiyat, vakolat, obro'",
+      "senses": [
+        "authorities (pl.) = rasmiy idoralar, hokimiyat organlari",
+        "an authority on sth = biror sohaning bilimdoni"
+      ],
+      "ex": "trade links led to a strengthening of political authority.",
+      "syn": [
+        "power",
+        "control",
+        "command"
+      ],
+      "ant": [
+        "powerlessness"
+      ],
+      "related": [
+        "political authority",
+        "in authority",
+        "an authority on"
+      ],
+      "mnem": {
+        "kw": "'authority' → 'author + iti' (muallif)",
+        "story": "Kitob muallifi (author) o'z sohasida to'liq 'authority' — obro' va hokimiyatga ega edi."
+      }
+    },
+    {
+      "w": "potter",
+      "form": "professional potters",
+      "pos": "noun",
+      "ipa": "/ˈpɒtə/",
+      "forms": "potter · potters · pottery",
+      "def": "a person who makes pots and other objects from clay.",
+      "uz": "kulol",
+      "senses": [
+        "pottery (n.) = kulolchilik; sopol buyum"
+      ],
+      "ex": "pottery was produced on a scale large enough to suggest the presence of professional potters.",
+      "syn": [
+        "ceramicist",
+        "clay-worker"
+      ],
+      "ant": [],
+      "related": [
+        "professional potters",
+        "a potter's wheel",
+        "pottery"
+      ],
+      "mnem": {
+        "kw": "'potter' → 'pot + ter' (idish teradi)",
+        "story": "Kulol loydan pot (idish) terib yasadi — u 'potter', ya'ni kulol edi."
+      }
+    },
+    {
+      "w": "prosperity",
+      "form": "the prosperity of Mapungubwe society",
+      "pos": "noun",
+      "ipa": "/prɒˈsperəti/",
+      "forms": "prosper · prosperity · prosperous",
+      "def": "the state of being successful and wealthy.",
+      "uz": "farovonlik, ravnaq, boylik",
+      "senses": [
+        "prosper (v.) = gullab-yashnamoq; prosperous (adj.) = badavlat"
+      ],
+      "ex": "pottery is another indicator of the prosperity of Mapungubwe society.",
+      "syn": [
+        "wealth",
+        "affluence",
+        "success"
+      ],
+      "ant": [
+        "poverty",
+        "hardship"
+      ],
+      "related": [
+        "economic prosperity",
+        "a sign of prosperity"
+      ],
+      "mnem": {
+        "kw": "'prosperity' → 'pro + sport + iti'",
+        "story": "Sport (pro) rivojlanib, shahar 'prosperity' — farovonlik va boylikka erishdi."
+      }
+    },
+    {
+      "w": "spherical",
+      "form": "spherical vessels",
+      "pos": "adjective",
+      "ipa": "/ˈsferɪkl/",
+      "forms": "sphere · spherical",
+      "def": "shaped like a ball; round in three dimensions.",
+      "uz": "sharsimon, dumaloq",
+      "senses": [
+        "sphere (n.) = shar, soha"
+      ],
+      "ex": "Archaeological finds include spherical vessels with short necks, beakers, and bowls.",
+      "syn": [
+        "round",
+        "ball-shaped",
+        "globular"
+      ],
+      "ant": [
+        "flat",
+        "angular"
+      ],
+      "related": [
+        "spherical vessels",
+        "a spherical shape"
+      ],
+      "mnem": {
+        "kw": "'spherical' → 'sfera + kal'",
+        "story": "Sfera (shar)dek dumaloq kosa — 'spherical' vaza xuddi to'pga o'xshardi."
+      }
+    },
+    {
+      "w": "vessel",
+      "form": "spherical vessels",
+      "pos": "noun",
+      "ipa": "/ˈvesl/",
+      "forms": "vessel · vessels",
+      "def": "a container for holding liquids; also a ship or boat.",
+      "uz": "idish, ko'za; kema",
+      "senses": [
+        "blood vessel = qon tomiri",
+        "katta kema ma'nosi ham"
+      ],
+      "ex": "Archaeological finds include spherical vessels with short necks, beakers, and bowls.",
+      "syn": [
+        "container",
+        "pot",
+        "receptacle"
+      ],
+      "ant": [],
+      "related": [
+        "spherical vessels",
+        "a sailing vessel",
+        "blood vessels"
+      ],
+      "mnem": {
+        "kw": "'vessel' → 've + sel' (suv seli)",
+        "story": "Sel (suv) kelganda 'vessel' — idishga suv to'ldirib, ko'za qilib olishdi."
+      }
+    },
+    {
+      "w": "beaker",
+      "form": "beakers",
+      "pos": "noun",
+      "ipa": "/ˈbiːkə/",
+      "forms": "beaker · beakers",
+      "def": "a tall cup or a deep container, often used for drinking or in science.",
+      "uz": "stakan, chuqur idish (piyola/kolba)",
+      "senses": [],
+      "ex": "Archaeological finds include spherical vessels with short necks, beakers, and bowls.",
+      "syn": [
+        "cup",
+        "tumbler",
+        "container"
+      ],
+      "ant": [],
+      "related": [
+        "clay beakers",
+        "a glass beaker"
+      ],
+      "mnem": {
+        "kw": "'beaker' → 'bi + ker' (bir stakan ker)",
+        "story": "'Bir stakan (beaker) ker!' — dedi u chanqab, chuqur piyolaga suv quyib."
+      }
+    },
+    {
+      "w": "figurine",
+      "form": "goat figurines",
+      "pos": "noun",
+      "ipa": "/ˌfɪɡəˈriːn/",
+      "forms": "figure · figurine · figurines",
+      "def": "a small model of a person or animal, used as a decoration.",
+      "uz": "haykalcha, kichik figura",
+      "senses": [
+        "figure (n.) = shakl, raqam, siymo"
+      ],
+      "ex": "cattle, sheep, and goat figurines have been found.",
+      "syn": [
+        "statuette",
+        "model",
+        "carving"
+      ],
+      "ant": [],
+      "related": [
+        "clay figurines",
+        "animal figurines"
+      ],
+      "mnem": {
+        "kw": "'figurine' → 'figura + ina' (kichik figura)",
+        "story": "Javonda kichik figura — 'figurine' echki haykalchasi chiroyli turardi."
+      }
+    },
+    {
+      "w": "elongated",
+      "form": "elongated bodies",
+      "pos": "adjective",
+      "ipa": "/ˈiːlɒŋɡeɪtɪd/",
+      "forms": "elongate · elongated · elongation",
+      "def": "made longer, or unusually long and thin.",
+      "uz": "cho'zilgan, uzun, cho'zinchoq",
+      "senses": [
+        "elongate (v.) = cho'zmoq, uzaytirmoq"
+      ],
+      "ex": "small figures of highly stylised humans with elongated bodies and short limbs.",
+      "syn": [
+        "lengthened",
+        "stretched",
+        "long"
+      ],
+      "ant": [
+        "shortened",
+        "stubby"
+      ],
+      "related": [
+        "elongated bodies",
+        "an elongated shape"
+      ],
+      "mnem": {
+        "kw": "'elongated' → 'long + ated' (uzaytirilgan)",
+        "story": "Rassom odam gavdasini uzun (long) qilib 'elongated' — cho'zib chizdi."
+      }
+    },
+    {
+      "w": "offering",
+      "form": "offerings to ancestors",
+      "pos": "noun",
+      "ipa": "/ˈɒfərɪŋ/",
+      "forms": "offer · offering · offerings",
+      "def": "something given, especially as a gift to a god or spirit.",
+      "uz": "hadya, nazr, qurbonlik",
+      "senses": [
+        "offer (v.) = taklif qilmoq, bermoq"
+      ],
+      "ex": "The figures may have been used in ceremonies as offerings to ancestors.",
+      "syn": [
+        "gift",
+        "sacrifice",
+        "tribute"
+      ],
+      "ant": [],
+      "related": [
+        "offerings to ancestors",
+        "a religious offering"
+      ],
+      "mnem": {
+        "kw": "'offering' → 'offer + ing' (taqdim etish)",
+        "story": "Ular ajdodlarga sovg'a offer qilib (taklif etib), 'offering' — nazr qo'yishdi."
+      }
+    },
+    {
+      "w": "ancestor",
+      "form": "offerings to ancestors",
+      "pos": "noun",
+      "ipa": "/ˈænsestə/",
+      "forms": "ancestor · ancestors · ancestral",
+      "def": "a person in your family who lived a long time ago; a forefather.",
+      "uz": "ajdod, ota-bobo",
+      "senses": [
+        "descendant = avlod (aksi); ancestral (adj.) = ajdodlarga oid"
+      ],
+      "ex": "The figures may have been used in ceremonies as offerings to ancestors.",
+      "syn": [
+        "forefather",
+        "forebear",
+        "predecessor"
+      ],
+      "ant": [
+        "descendant"
+      ],
+      "related": [
+        "offerings to ancestors",
+        "distant ancestors"
+      ],
+      "mnem": {
+        "kw": "'ancestor' → 'an + sesta + r'",
+        "story": "Katta buvim (an-sesta) ajdodlarni sanab, har birini 'ancestor' — ota-bobo deb esladi."
+      }
+    },
+    {
+      "w": "precise",
+      "form": "their precise function is not known",
+      "pos": "adjective",
+      "ipa": "/prɪˈsaɪs/",
+      "forms": "precise · precisely · precision",
+      "def": "exact, accurate and clearly stated.",
+      "uz": "aniq, aynan, mukammal",
+      "senses": [
+        "precisely (adv.) = aynan; precision (n.) = aniqlik"
+      ],
+      "ex": "The figures may have been used in ceremonies, but their precise function is not known.",
+      "syn": [
+        "exact",
+        "accurate",
+        "specific"
+      ],
+      "ant": [
+        "vague",
+        "approximate"
+      ],
+      "related": [
+        "precise function",
+        "precise measurements",
+        "to be precise"
+      ],
+      "mnem": {
+        "kw": "'precise' → 'pres + says' (aniq ayting)",
+        "story": "O'qituvchi 'pres!' (aniq) says (ayting) dedi — javob 'precise', ya'ni aniq bo'lishi kerak edi."
+      }
+    },
+    {
+      "w": "rectangular",
+      "form": "small rectangular sheets",
+      "pos": "adjective",
+      "ipa": "/rekˈtæŋɡjələ/",
+      "forms": "rectangle · rectangular",
+      "def": "having the shape of a rectangle (four right angles, opposite sides equal).",
+      "uz": "to'rtburchak shaklidagi",
+      "senses": [
+        "rectangle (n.) = to'g'ri to'rtburchak"
+      ],
+      "ex": "the crafting of gold into small rectangular sheets and carving geometrical patterns.",
+      "syn": [
+        "oblong",
+        "four-sided"
+      ],
+      "ant": [
+        "circular",
+        "round"
+      ],
+      "related": [
+        "rectangular sheets",
+        "a rectangular box"
+      ],
+      "mnem": {
+        "kw": "'rectangular' → 'rekt + angle' (to'g'ri burchak)",
+        "story": "Zargar oltinni to'g'ri burchakli (rect-angle) qilib 'rectangular' — to'rtburchak varaqqa keltirdi."
+      }
+    },
+    {
+      "w": "tack",
+      "form": "small tacks, also made of gold",
+      "pos": "noun",
+      "ipa": "/tæk/",
+      "forms": "tack · tacks",
+      "def": "a short nail with a flat head used to fix things in place.",
+      "uz": "mayda mix, qadoq (keng boshli)",
+      "senses": [
+        "change tack = yo'nalishni o'zgartirmoq"
+      ],
+      "ex": "These sheets were then used to cover wooden objects using small tacks, also made of gold.",
+      "syn": [
+        "nail",
+        "pin",
+        "stud"
+      ],
+      "ant": [],
+      "related": [
+        "small tacks",
+        "a drawing tack",
+        "change tack"
+      ],
+      "mnem": {
+        "kw": "'tack' → 'taq' (taqilgan)",
+        "story": "Yog'ochga oltin varaqni 'tack' — mayda mix bilan taq-taq qadab mahkamladilar."
+      }
+    },
+    {
+      "w": "sceptre",
+      "form": "may have been a sceptre",
+      "pos": "noun",
+      "ipa": "/ˈseptə/",
+      "forms": "sceptre · sceptres",
+      "def": "an ornamental rod carried by a king or queen as a symbol of power.",
+      "uz": "hassa (podshohlik ramzi), asо",
+      "senses": [],
+      "ex": "One such object that has been discovered may have been a sceptre.",
+      "syn": [
+        "staff",
+        "rod",
+        "mace"
+      ],
+      "ant": [],
+      "related": [
+        "a royal sceptre",
+        "hold a sceptre"
+      ],
+      "mnem": {
+        "kw": "'sceptre' → ' september' (sentabr hassasi)",
+        "story": "Podshoh sentabrda (september) oltin 'sceptre' — hassasini ko'tarib, hokimiyatini ko'rsatdi."
+      }
+    },
+    {
+      "w": "rhinoceros",
+      "form": "a rhinoceros figurine",
+      "pos": "noun",
+      "ipa": "/raɪˈnɒsərəs/",
+      "forms": "rhinoceros · rhinoceroses · rhino",
+      "def": "a large, heavy plant-eating animal with one or two horns on its nose.",
+      "uz": "karkidon",
+      "senses": [
+        "qisqartma: rhino"
+      ],
+      "ex": "additional evidence of local gold-working is a rhinoceros figurine made from small hammered sheets.",
+      "syn": [
+        "rhino"
+      ],
+      "ant": [],
+      "related": [
+        "a rhinoceros figurine",
+        "rhino horn"
+      ],
+      "mnem": {
+        "kw": "'rhinoceros' → 'rino + soros'",
+        "story": "Katta 'rhinoceros' — karkidon burnidagi shox bilan sport zalidagi (soros) devorni teshdi."
+      }
+    },
+    {
+      "w": "bead",
+      "form": "thousands of small gold beads",
+      "pos": "noun",
+      "ipa": "/biːd/",
+      "forms": "bead · beads",
+      "def": "a small ball of glass, wood or stone with a hole, used for jewellery.",
+      "uz": "munchoq, marvarid donasi",
+      "senses": [
+        "glass beads = shisha munchoqlar"
+      ],
+      "ex": "additional evidence... and thousands of small gold beads.",
+      "syn": [
+        "pearl",
+        "ball",
+        "pellet"
+      ],
+      "ant": [],
+      "related": [
+        "gold beads",
+        "glass beads",
+        "a string of beads"
+      ],
+      "mnem": {
+        "kw": "'bead' → 'bit + dona'",
+        "story": "Ipga bitta-bitta (bit) dona 'bead' — munchoq terib, marjon yasashdi."
+      }
+    },
+    {
+      "w": "intrinsic",
+      "form": "an intrinsic value of its own",
+      "pos": "adjective",
+      "ipa": "/ɪnˈtrɪnzɪk/",
+      "forms": "intrinsic · intrinsically",
+      "def": "belonging naturally to something; part of its basic nature.",
+      "uz": "ichki, tabiiy, o'ziga xos (asl qiymat)",
+      "senses": [
+        "intrinsic value = ichki/asl qiymat (tashqi belgilangan emas)"
+      ],
+      "ex": "They are the first known indicators that gold had an intrinsic value of its own.",
+      "syn": [
+        "inherent",
+        "built-in",
+        "essential"
+      ],
+      "ant": [
+        "extrinsic",
+        "external"
+      ],
+      "related": [
+        "intrinsic value",
+        "intrinsically linked"
+      ],
+      "mnem": {
+        "kw": "'intrinsic' → 'in + trinsic (ichki)'",
+        "story": "Oltinning qiymati ichida (in) edi — 'intrinsic', ya'ni tashqaridan emas, o'zidan kelib chiqardi."
+      }
+    },
+    {
+      "w": "shift",
+      "form": "Trade routes may also have shifted",
+      "pos": "verb",
+      "ipa": "/ʃɪft/",
+      "forms": "shift · shifted · shifting",
+      "def": "to move or change from one position or direction to another.",
+      "uz": "siljimoq, o'zgarmoq, ko'chmoq",
+      "senses": [
+        "shift (n.) = ish smenasi; o'zgarish"
+      ],
+      "ex": "Trade routes may also have shifted northwards.",
+      "syn": [
+        "move",
+        "change",
+        "switch"
+      ],
+      "ant": [
+        "stay",
+        "remain"
+      ],
+      "related": [
+        "shifted northwards",
+        "a shift in policy",
+        "night shift"
+      ],
+      "mnem": {
+        "kw": "'shift' → 'shift' (klaviatura Shift)",
+        "story": "Klaviaturadagi Shift bosilib, savdo yo'llari 'shift' — shimolga siljidi."
+      }
+    },
+    {
+      "w": "hysteria",
+      "form": "hysteria about the future of AI",
+      "pos": "noun",
+      "ipa": "/hɪˈstɪəriə/",
+      "forms": "hysteria · hysterical · hysterically",
+      "def": "uncontrolled, extreme excitement, fear or panic, especially among many people.",
+      "uz": "isteriya; ommaviy vahima, nazoratsiz hayajon/qo'rquv",
+      "senses": [
+        "KENGAYTIRILGAN IZOH (uz): 'Hysteria' — bir guruh yoki jamiyatni qamrab olgan, nazorat qilib bo'lmaydigan kuchli his: qo'rquv, hayajon yoki vahima. Odam mantiqan emas, hissiyot bilan harakat qiladi.",
+        "Tibbiyotda (eskirgan): kuchli asabiy buzilish, ruhiy tang holat.",
+        "'mass hysteria' = ommaviy ruhiy vahima (bir necha odamga tez yuqadigan asossiz qo'rquv).",
+        "Bu yerda ijobiy-salbiy shov-shuv ma'nosida: AI kelajagi haqidagi haddan ortiq shov-shuv."
+      ],
+      "ex": "In many countries in the West, hysteria about the future of artificial intelligence (AI) is everywhere.",
+      "syn": [
+        "frenzy",
+        "panic",
+        "mania"
+      ],
+      "ant": [
+        "calm",
+        "composure"
+      ],
+      "related": [
+        "mass hysteria",
+        "media hysteria",
+        "hysteria about"
+      ],
+      "mnem": {
+        "kw": "'hysteria' → 'histeriya'",
+        "story": "Bozorda 'histeriya' boshlandi — hamma bir vaqtda qichqirib, 'hysteria', ya'ni ommaviy vahimaga tushdi."
+      }
+    },
+    {
+      "w": "cure",
+      "form": "AI could cure diseases",
+      "pos": "verb",
+      "ipa": "/kjʊə/",
+      "forms": "cure · cured · curing",
+      "def": "to make an illness or a sick person healthy again.",
+      "uz": "davolamoq, tuzatmoq (kasallikni)",
+      "senses": [
+        "cure (n.) = davo, chora",
+        "cure = konservalash (tuzlash/dudlash) ma'nosi ham"
+      ],
+      "ex": "There seems to be no shortage of sensationalist news about how AI could cure diseases.",
+      "syn": [
+        "heal",
+        "treat",
+        "remedy"
+      ],
+      "ant": [
+        "infect",
+        "worsen"
+      ],
+      "related": [
+        "cure diseases",
+        "find a cure",
+        "a cure for"
+      ],
+      "mnem": {
+        "kw": "'cure' → 'kur' (kurort)",
+        "story": "Kurortga (cure) borgan bemor davolanib, kasalligini 'cure' — tuzatib qaytdi."
+      }
+    },
+    {
+      "w": "headline",
+      "form": "the media headlines",
+      "pos": "noun",
+      "ipa": "/ˈhedlaɪn/",
+      "forms": "headline · headlines",
+      "def": "the title of a news story, printed in large letters at the top.",
+      "uz": "sarlavha (yangilik), bosh xabar",
+      "senses": [
+        "make headlines = katta shov-shuvga sabab bo'lmoq"
+      ],
+      "ex": "Just looking at the media headlines, you might think that we are already living in a future where AI has infiltrated every aspect of society.",
+      "syn": [
+        "title",
+        "banner",
+        "heading"
+      ],
+      "ant": [],
+      "related": [
+        "media headlines",
+        "make headlines",
+        "front-page headline"
+      ],
+      "mnem": {
+        "kw": "'headline' → 'head + line' (bosh qator)",
+        "story": "Gazetaning bosh (head) qatorida (line) katta 'headline' — sarlavha ko'zga tashlanardi."
+      }
+    },
+    {
+      "w": "infiltrate",
+      "form": "AI has infiltrated every aspect of society",
+      "pos": "verb",
+      "ipa": "/ˈɪnfɪltreɪt/",
+      "forms": "infiltrate · infiltrated · infiltration",
+      "def": "to enter or spread into something gradually and without being noticed.",
+      "uz": "sekin-asta kirib bormoq, sizib kirmoq",
+      "senses": [
+        "josuslar ma'nosida: yashirin kirib olmoq"
+      ],
+      "ex": "you might think that we are already living in a future where AI has infiltrated every aspect of society.",
+      "syn": [
+        "penetrate",
+        "seep into",
+        "permeate"
+      ],
+      "ant": [
+        "withdraw"
+      ],
+      "related": [
+        "infiltrated society",
+        "infiltrate a group"
+      ],
+      "mnem": {
+        "kw": "'infiltrate' → 'in + filter' (filtrdan o'tib)",
+        "story": "Suv filter (filtr)dan ichkariga (in) sizib kirdi — 'infiltrate', ya'ni sezdirmay kirib bordi."
+      }
+    },
+    {
+      "w": "emergence",
+      "form": "the emergence of a mindset",
+      "pos": "noun",
+      "ipa": "/ɪˈmɜːdʒəns/",
+      "forms": "emerge · emergence · emergent",
+      "def": "the process of appearing or coming into existence.",
+      "uz": "paydo bo'lish, yuzaga kelish",
+      "senses": [
+        "emerge (v.) = paydo bo'lmoq"
+      ],
+      "ex": "it has also led to the emergence of a mindset that can be best described as 'AI solutionism'.",
+      "syn": [
+        "appearance",
+        "rise",
+        "arrival"
+      ],
+      "ant": [
+        "disappearance",
+        "decline"
+      ],
+      "related": [
+        "the emergence of",
+        "emergence of a trend"
+      ],
+      "mnem": {
+        "kw": "'emergence' → 'emergency + s'",
+        "story": "Favqulodda (emergency) vaziyatda yangi fikr 'emergence' — birdan paydo bo'ldi."
+      }
+    },
+    {
+      "w": "jeopardise",
+      "form": "jeopardises the value of machine intelligence",
+      "pos": "verb",
+      "ipa": "/ˈdʒepədaɪz/",
+      "forms": "jeopardise · jeopardised · jeopardy",
+      "def": "to put something at risk of harm, loss or failure.",
+      "uz": "xavf ostiga qo'ymoq, xatarga solmoq",
+      "senses": [
+        "jeopardy (n.) = xavf, xatar (in jeopardy)"
+      ],
+      "ex": "this mindset actually jeopardises the value of machine intelligence by disregarding important AI safety principles.",
+      "syn": [
+        "endanger",
+        "threaten",
+        "risk"
+      ],
+      "ant": [
+        "safeguard",
+        "protect"
+      ],
+      "related": [
+        "jeopardise the value",
+        "put at risk",
+        "in jeopardy"
+      ],
+      "mnem": {
+        "kw": "'jeopardise' → 'jep + hardi' (jep xavf)",
+        "story": "Xato qaror butun loyihani 'jeopardise' — jep (juda) xavf ostiga qo'ydi."
+      }
+    },
+    {
+      "w": "disregard",
+      "form": "disregarding important AI safety principles",
+      "pos": "verb",
+      "ipa": "/ˌdɪsrɪˈɡɑːd/",
+      "forms": "disregard · disregarded · disregarding",
+      "def": "to ignore something or treat it as unimportant.",
+      "uz": "e'tiborsiz qoldirmoq, mensimaslik",
+      "senses": [
+        "dis- (inkor) + regard (e'tibor)"
+      ],
+      "ex": "this mindset jeopardises machine intelligence by disregarding important AI safety principles.",
+      "syn": [
+        "ignore",
+        "overlook",
+        "neglect"
+      ],
+      "ant": [
+        "heed",
+        "respect"
+      ],
+      "related": [
+        "disregard the rules",
+        "disregard safety",
+        "with disregard for"
+      ],
+      "mnem": {
+        "kw": "'disregard' → 'dis + regard' (e'tiborsiz)",
+        "story": "U regard (e'tibor)ni dis (inkor) qildi — xavfsizlik qoidalarini 'disregard', ya'ni pisand qilmadi."
+      }
+    },
+    {
+      "w": "mere",
+      "form": "a mere formality",
+      "pos": "adjective",
+      "ipa": "/mɪə/",
+      "forms": "mere · merely",
+      "def": "used to stress that something is small, simple or unimportant.",
+      "uz": "atigi, arzimas, shunchaki",
+      "senses": [
+        "passажда yo'q — ma'nosi: merely (adv.) = faqatgina",
+        "a mere child = go'dak bola xolos"
+      ],
+      "ex": "Adding a neural network is a mere first step, not a full solution.",
+      "syn": [
+        "only",
+        "simple",
+        "no more than"
+      ],
+      "ant": [
+        "significant",
+        "major"
+      ],
+      "related": [
+        "a mere formality",
+        "the mere thought",
+        "merely a start"
+      ],
+      "mnem": {
+        "kw": "'mere' → 'mira' (mira xolos)",
+        "story": "U 'mira' (atigi) bir tanga berdi — bu 'mere', ya'ni arzimas miqdor edi."
+      }
+    },
+    {
+      "w": "evangelist",
+      "form": "the technology evangelists' mouths",
+      "pos": "noun",
+      "ipa": "/ɪˈvændʒəlɪst/",
+      "forms": "evangelist · evangelists",
+      "def": "a very enthusiastic supporter who tries to persuade others to accept an idea.",
+      "uz": "otashin targ'ibotchi, kuchli tarafdor",
+      "senses": [
+        "asl ma'no: diniy voiz, xushxabarchi"
+      ],
+      "ex": "AI solutionism has made its way from the technology evangelists' mouths in Silicon Valley.",
+      "syn": [
+        "advocate",
+        "promoter",
+        "enthusiast"
+      ],
+      "ant": [
+        "critic",
+        "sceptic"
+      ],
+      "related": [
+        "technology evangelists",
+        "a tireless evangelist"
+      ],
+      "mnem": {
+        "kw": "'evangelist' → 'iven + gelist' (ivan gaplashdi)",
+        "story": "Ivan (iven) shu qadar gapirdiki, 'evangelist' — g'oyaning otashin targ'ibotchisiga aylandi."
+      }
+    },
+    {
+      "w": "policymaker",
+      "form": "government officials and policymakers",
+      "pos": "noun",
+      "ipa": "/ˈpɒləsimeɪkə/",
+      "forms": "policy · policymaker · policymakers",
+      "def": "someone who decides on official plans and rules, especially in government.",
+      "uz": "siyosat/qaror ishlab chiquvchi (mansabdor)",
+      "senses": [
+        "policy (n.) = siyosat, yo'l-yo'riq"
+      ],
+      "ex": "AI solutionism has made its way... to the minds of government officials and policymakers around the world.",
+      "syn": [
+        "decision-maker",
+        "legislator",
+        "official"
+      ],
+      "ant": [],
+      "related": [
+        "government policymakers",
+        "policy makers"
+      ],
+      "mnem": {
+        "kw": "'policymaker' → 'policy + maker' (siyosat yasovchi)",
+        "story": "Hukumatda 'policymaker' — yangi qonun (policy) yasab (make), qarorlar chiqarardi."
+      }
+    },
+    {
+      "w": "pendulum",
+      "form": "The pendulum has swung",
+      "pos": "noun",
+      "ipa": "/ˈpendjələm/",
+      "forms": "pendulum · pendulums",
+      "def": "a hanging weight that swings from side to side (as in a clock).",
+      "uz": "mayatnik (soat tebrangichi)",
+      "senses": [
+        "ko'chma: fikr/kayfiyatning bir chetdan ikkinchisiga o'tishi"
+      ],
+      "ex": "The pendulum has swung from the dystopian notion that AI will destroy humanity to the utopian belief that our algorithmic saviour is here.",
+      "syn": [
+        "swinging weight"
+      ],
+      "ant": [],
+      "related": [
+        "the pendulum has swung",
+        "pendulum swing"
+      ],
+      "mnem": {
+        "kw": "'pendulum' → 'pand + ulam'",
+        "story": "Soat 'pendulum' — mayatnigi u yoqdan bu yoqqa tebranib, pand (nasihat) bergandek chiqillardi."
+      }
+    },
+    {
+      "w": "swing",
+      "form": "The pendulum has swung",
+      "pos": "verb",
+      "ipa": "/swɪŋ/",
+      "forms": "swing · swung · swinging",
+      "def": "to move back and forth, or to change sharply from one state to another.",
+      "uz": "tebranmoq; keskin o'zgarmoq",
+      "senses": [
+        "swing (n.) = arg'imchoq; keskin o'zgarish",
+        "mood swings = kayfiyat o'zgarishlari"
+      ],
+      "ex": "The pendulum has swung from the dystopian notion... to the utopian belief.",
+      "syn": [
+        "sway",
+        "shift",
+        "veer"
+      ],
+      "ant": [
+        "stay still"
+      ],
+      "related": [
+        "swing from... to",
+        "swing back",
+        "mood swings"
+      ],
+      "mnem": {
+        "kw": "'swing' → 'swing (arg'imchoq)'",
+        "story": "Bola arg'imchoqda (swing) tebranib, u yoqdan bu yoqqa 'swung' — silkindi."
+      }
+    },
+    {
+      "w": "dystopian",
+      "form": "the dystopian notion",
+      "pos": "adjective",
+      "ipa": "/dɪsˈtəʊpiən/",
+      "forms": "dystopia · dystopian",
+      "def": "describing an imagined future that is frightening and very bad.",
+      "uz": "distopik, dahshatli kelajakka oid",
+      "senses": [
+        "dystopia (n.) = qora kelajak; utopian ning aksi"
+      ],
+      "ex": "The pendulum has swung from the dystopian notion that AI will destroy humanity.",
+      "syn": [
+        "nightmarish",
+        "bleak",
+        "grim"
+      ],
+      "ant": [
+        "utopian",
+        "idyllic"
+      ],
+      "related": [
+        "a dystopian notion",
+        "a dystopian future"
+      ],
+      "mnem": {
+        "kw": "'dystopian' → 'dis + top + yon' (yomon tomon)",
+        "story": "Kino yomon (dis) tomonni (top) ko'rsatdi — 'dystopian', ya'ni dahshatli kelajak edi."
+      }
+    },
+    {
+      "w": "saviour",
+      "form": "our algorithmic saviour is here",
+      "pos": "noun",
+      "ipa": "/ˈseɪvjə/",
+      "forms": "save · saviour · saving",
+      "def": "a person or thing that saves someone from danger or difficulty.",
+      "uz": "najotkor, qutqaruvchi",
+      "senses": [
+        "save (v.) = qutqarmoq"
+      ],
+      "ex": "the utopian belief that our algorithmic saviour is here.",
+      "syn": [
+        "rescuer",
+        "deliverer",
+        "liberator"
+      ],
+      "ant": [
+        "destroyer"
+      ],
+      "related": [
+        "algorithmic saviour",
+        "a saviour of"
+      ],
+      "mnem": {
+        "kw": "'saviour' → 'save + our' (bizni qutqar)",
+        "story": "'Save our (bizni qutqar)!' deb qichqirishdi — va 'saviour', ya'ni najotkor yetib keldi."
+      }
+    },
+    {
+      "w": "pledge",
+      "form": "governments pledge support",
+      "pos": "verb",
+      "ipa": "/pledʒ/",
+      "forms": "pledge · pledged · pledging",
+      "def": "to promise seriously and formally to do or give something.",
+      "uz": "va'da bermoq, majburiyat olmoq",
+      "senses": [
+        "pledge (n.) = va'da, majburiyat"
+      ],
+      "ex": "We are now seeing governments pledge support to national AI initiatives.",
+      "syn": [
+        "promise",
+        "vow",
+        "commit"
+      ],
+      "ant": [
+        "renege"
+      ],
+      "related": [
+        "pledge support",
+        "make a pledge",
+        "pledge to"
+      ],
+      "mnem": {
+        "kw": "'pledge' → 'plej' (plyaj va'dasi)",
+        "story": "U plyajda (plej) turib qattiq 'pledge' — va'da berdi: har kuni suzaman deb."
+      }
+    },
+    {
+      "w": "burgeoning",
+      "form": "the burgeoning machine-learning sector",
+      "pos": "adjective",
+      "ipa": "/ˈbɜːdʒənɪŋ/",
+      "forms": "burgeon · burgeoning",
+      "def": "growing or developing very quickly.",
+      "uz": "tez o'sayotgan, gullab-yashnayotgan",
+      "senses": [
+        "burgeon (v.) = tez o'smoq, kurtak yozmoq"
+      ],
+      "ex": "governments... compete in a technological race to dominate the burgeoning machine-learning sector.",
+      "syn": [
+        "thriving",
+        "booming",
+        "expanding"
+      ],
+      "ant": [
+        "shrinking",
+        "declining"
+      ],
+      "related": [
+        "a burgeoning sector",
+        "burgeoning demand"
+      ],
+      "mnem": {
+        "kw": "'burgeoning' → 'burger + jonin'",
+        "story": "Burger (burger) do'koni jonlanib, biznes 'burgeoning' — tez o'sib ketdi."
+      }
+    },
+    {
+      "w": "proclaim",
+      "form": "politicians proclaim the transformative effects",
+      "pos": "verb",
+      "ipa": "/prəˈkleɪm/",
+      "forms": "proclaim · proclaimed · proclamation",
+      "def": "to announce something publicly and with confidence.",
+      "uz": "e'lon qilmoq, baralla aytmoq",
+      "senses": [
+        "proclamation (n.) = e'lon, deklaratsiya"
+      ],
+      "ex": "many politicians proclaim the transformative effects of the coming 'AI revolution'.",
+      "syn": [
+        "announce",
+        "declare",
+        "assert"
+      ],
+      "ant": [
+        "deny",
+        "conceal"
+      ],
+      "related": [
+        "proclaim the effects",
+        "proudly proclaim"
+      ],
+      "mnem": {
+        "kw": "'proclaim' → 'pro + claim' (baland da'vo)",
+        "story": "Siyosatchi minbarda baland ovozda da'vo (claim) qildi — 'proclaim', ya'ni baralla e'lon qildi."
+      }
+    },
+    {
+      "w": "promising",
+      "form": "the most promising varieties of AI",
+      "pos": "adjective",
+      "ipa": "/ˈprɒmɪsɪŋ/",
+      "forms": "promise · promising",
+      "def": "showing signs of being successful or good in the future.",
+      "uz": "umidli, istiqbolli",
+      "senses": [
+        "a wealth of promising opportunities = ko'plab istiqbolli imkoniyatlar"
+      ],
+      "ex": "One of the most promising varieties of AI technologies are neural networks.",
+      "syn": [
+        "encouraging",
+        "hopeful",
+        "up-and-coming"
+      ],
+      "ant": [
+        "unpromising",
+        "hopeless"
+      ],
+      "related": [
+        "promising varieties",
+        "a promising start",
+        "promising opportunities"
+      ],
+      "mnem": {
+        "kw": "'promising' → 'promise + ing' (va'da beruvchi)",
+        "story": "Yosh o'yinchi shunday o'ynadiki, kelajakka va'da (promise) berardi — u 'promising', ya'ni istiqbolli edi."
+      }
+    },
+    {
+      "w": "loosely",
+      "form": "loosely modelled on the human brain",
+      "pos": "adverb",
+      "ipa": "/ˈluːsli/",
+      "forms": "loose · loosely · loosen",
+      "def": "in a general, not exact way; not tightly.",
+      "uz": "erkin, taxminan; bo'sh (mahkam emas)",
+      "senses": [
+        "loose (adj.) = bo'sh, erkin",
+        "loosely based on = taxminan asoslangan"
+      ],
+      "ex": "This form of machine learning is loosely modelled on the neuronal structure of the human brain.",
+      "syn": [
+        "roughly",
+        "approximately",
+        "broadly"
+      ],
+      "ant": [
+        "tightly",
+        "exactly"
+      ],
+      "related": [
+        "loosely modelled on",
+        "loosely based on",
+        "tie loosely"
+      ],
+      "mnem": {
+        "kw": "'loosely' → 'lo'ppi + tez'",
+        "story": "Arqon lo'ppi (bo'sh) bog'langan — 'loosely', ya'ni erkin, taxminan ushlab turardi."
+      }
+    },
+    {
+      "w": "instantaneously",
+      "form": "instantaneously more inclusive or fair",
+      "pos": "adverb",
+      "ipa": "/ˌɪnstənˈteɪniəsli/",
+      "forms": "instant · instantaneous · instantaneously",
+      "def": "immediately; happening at once with no delay.",
+      "uz": "bir zumda, darhol, ayni onda",
+      "senses": [
+        "instant (adj.) = tezkor, oniy"
+      ],
+      "ex": "adding a neural network to a system of government does not mean it will be instantaneously more inclusive or fair.",
+      "syn": [
+        "immediately",
+        "instantly",
+        "at once"
+      ],
+      "ant": [
+        "gradually",
+        "eventually"
+      ],
+      "related": [
+        "instantaneously fair",
+        "happen instantaneously"
+      ],
+      "mnem": {
+        "kw": "'instantaneously' → 'instant + kофе'",
+        "story": "Instant kofe suvga solinishi bilan 'instantaneously' — bir zumda tayyor bo'ldi."
+      }
+    },
+    {
+      "w": "hypothetical",
+      "form": "the hypothetical takeover by robots",
+      "pos": "adjective",
+      "ipa": "/ˌhaɪpəˈθetɪkl/",
+      "forms": "hypothesis · hypothetical · hypothetically",
+      "def": "based on a possible idea or situation rather than a real one.",
+      "uz": "faraziy, taxminiy",
+      "senses": [
+        "hypothesis (n.) = faraz, gipoteza"
+      ],
+      "ex": "a more sensible approach that focuses on simple everyday applications of AI instead of the hypothetical takeover by super-intelligent robots.",
+      "syn": [
+        "theoretical",
+        "imagined",
+        "supposed"
+      ],
+      "ant": [
+        "real",
+        "actual"
+      ],
+      "related": [
+        "a hypothetical takeover",
+        "a hypothetical situation"
+      ],
+      "mnem": {
+        "kw": "'hypothetical' → 'gipo + tetik'",
+        "story": "Olim 'gipotetik' holatni o'ylab, 'hypothetical' — faraziy vaziyatni muhokama qildi."
+      }
+    },
+    {
+      "w": "takeover",
+      "form": "the hypothetical takeover by robots",
+      "pos": "noun",
+      "ipa": "/ˈteɪkəʊvə/",
+      "forms": "take over · takeover",
+      "def": "the act of taking control of something (a company, a place, power).",
+      "uz": "nazoratni egallash, boshqaruvni qo'lga olish",
+      "senses": [
+        "take over (v.) = nazoratni qo'lga olmoq"
+      ],
+      "ex": "the hypothetical takeover by super-intelligent robots.",
+      "syn": [
+        "seizure",
+        "acquisition",
+        "coup"
+      ],
+      "ant": [
+        "surrender"
+      ],
+      "related": [
+        "a robot takeover",
+        "a hostile takeover",
+        "take over control"
+      ],
+      "mnem": {
+        "kw": "'takeover' → 'take + over' (tortib olish)",
+        "story": "Robotlar boshqaruvni tortib (take) oldi (over) — 'takeover', ya'ni nazoratni egalladi."
+      }
+    },
+    {
+      "w": "sensible",
+      "form": "a more sensible and realistic approach",
+      "pos": "adjective",
+      "ipa": "/ˈsensəbl/",
+      "forms": "sense · sensible · sensibly",
+      "def": "reasonable, practical and showing good judgement.",
+      "uz": "oqilona, mantiqli, aql bilan",
+      "senses": [
+        "'sensible' ≠ 'sensitive' (sezgir); realistic = real, amaliy"
+      ],
+      "ex": "Stuart Russell has long advocated a more sensible and realistic approach.",
+      "syn": [
+        "reasonable",
+        "practical",
+        "realistic"
+      ],
+      "ant": [
+        "foolish",
+        "impractical"
+      ],
+      "related": [
+        "sensible and realistic",
+        "a sensible decision",
+        "sensible advice"
+      ],
+      "mnem": {
+        "kw": "'sensible' → 'sensor + bil'",
+        "story": "Sensor (sezgich) bilan aql bilan ish qilgan odam 'sensible' — oqilona qaror qabul qildi."
+      }
+    },
+    {
+      "w": "contradict",
+      "form": "the results contradict the claim",
+      "pos": "verb",
+      "ipa": "/ˌkɒntrəˈdɪkt/",
+      "forms": "contradict · contradicted · contradiction",
+      "def": "to say or show the opposite of something; to disagree with it.",
+      "uz": "zid kelmoq, inkor etmoq, rad qilmoq",
+      "senses": [
+        "passажда yo'q — ma'nosi: to be the opposite of",
+        "contradiction (n.) = ziddiyat"
+      ],
+      "ex": "Real-world results often contradict the optimistic claims made about AI.",
+      "syn": [
+        "oppose",
+        "conflict with",
+        "deny"
+      ],
+      "ant": [
+        "confirm",
+        "support"
+      ],
+      "related": [
+        "contradict a claim",
+        "directly contradict",
+        "contradict oneself"
+      ],
+      "mnem": {
+        "kw": "'contradict' → 'contra + dict' (qarshi aytmoq)",
+        "story": "U qarshi (contra) gap aytdi (dict) — 'contradict', ya'ni birinchi fikrga zid keldi."
+      }
+    },
+    {
+      "w": "susceptible",
+      "form": "AI is extremely susceptible to adversarial attacks",
+      "pos": "adjective",
+      "ipa": "/səˈseptəbl/",
+      "forms": "susceptible · susceptibility",
+      "def": "easily affected, harmed or influenced by something.",
+      "uz": "ta'sirga beriluvchan, zaif, moyil",
+      "senses": [
+        "susceptible to = ...ga chalinuvchan/moyil"
+      ],
+      "ex": "AI is extremely susceptible to adversarial attacks.",
+      "syn": [
+        "vulnerable",
+        "prone",
+        "open to"
+      ],
+      "ant": [
+        "resistant",
+        "immune"
+      ],
+      "related": [
+        "susceptible to attacks",
+        "highly susceptible"
+      ],
+      "mnem": {
+        "kw": "'susceptible' → 'sus + sept + ibl'",
+        "story": "Kasal (sus) odam septyabrda 'susceptible' — shamollashga tez beriluvchan, zaif edi."
+      }
+    },
+    {
+      "w": "adversarial",
+      "form": "adversarial attacks",
+      "pos": "adjective",
+      "ipa": "/ˌædvəˈseəriəl/",
+      "forms": "adversary · adversarial",
+      "def": "involving conflict or opposition; acting like an enemy.",
+      "uz": "raqobatli, dushmanona, qarama-qarshi",
+      "senses": [
+        "adversary (n.) = raqib, dushman"
+      ],
+      "ex": "AI is extremely susceptible to adversarial attacks.",
+      "syn": [
+        "hostile",
+        "antagonistic",
+        "opposing"
+      ],
+      "ant": [
+        "cooperative",
+        "friendly"
+      ],
+      "related": [
+        "adversarial attacks",
+        "an adversarial system"
+      ],
+      "mnem": {
+        "kw": "'adversarial' → 'advers + serial'",
+        "story": "Serialdagi (serial) yovuz qahramon 'adversarial' — dushmanona, qarama-qarshi rolni o'ynadi."
+      }
+    },
+    {
+      "w": "malicious",
+      "form": "a malicious AI",
+      "pos": "adjective",
+      "ipa": "/məˈlɪʃəs/",
+      "forms": "malice · malicious · maliciously",
+      "def": "intended to cause harm; deliberately hurtful.",
+      "uz": "yovuz niyatli, zararli, badniyat",
+      "senses": [
+        "malice (n.) = yovuzlik; malware = zararli dastur"
+      ],
+      "ex": "a malicious AI can target another AI to make it behave in a certain way.",
+      "syn": [
+        "harmful",
+        "spiteful",
+        "hostile"
+      ],
+      "ant": [
+        "benign",
+        "kind"
+      ],
+      "related": [
+        "a malicious AI",
+        "malicious intent",
+        "malicious software"
+      ],
+      "mnem": {
+        "kw": "'malicious' → 'mal + lash'",
+        "story": "Yomon (mal) odam boshqasini lash (yiqitmoqchi) bo'ldi — 'malicious', ya'ni yovuz niyatli edi."
+      }
+    },
+    {
+      "w": "overlook",
+      "form": "an often overlooked topic",
+      "pos": "verb",
+      "ipa": "/ˌəʊvəˈlʊk/",
+      "forms": "overlook · overlooked · overlooking",
+      "def": "to fail to notice or consider something.",
+      "uz": "e'tibordan chetda qoldirmoq, sezmay o'tib ketmoq",
+      "senses": [
+        "boshqa ma'no: (deraza/uy) biror joyga qaramoq (overlook the sea)"
+      ],
+      "ex": "AI security remains an often overlooked topic when machine learning systems are installed.",
+      "syn": [
+        "ignore",
+        "miss",
+        "neglect"
+      ],
+      "ant": [
+        "notice",
+        "address"
+      ],
+      "related": [
+        "an overlooked topic",
+        "overlook a detail",
+        "overlook the sea"
+      ],
+      "mnem": {
+        "kw": "'overlook' → 'over + look' (ustidan qarab)",
+        "story": "Ko'zi narsaning ustidan (over) qarab (look) o'tdi — 'overlook', ya'ni sezmay chetlab o'tdi."
+      }
+    },
+    {
+      "w": "distrust",
+      "form": "the distrust that many people have",
+      "pos": "noun",
+      "ipa": "/dɪsˈtrʌst/",
+      "forms": "trust · distrust · distrustful",
+      "def": "a feeling that you cannot trust someone or something.",
+      "uz": "ishonchsizlik, shubha",
+      "senses": [
+        "dis- (inkor) + trust (ishonch)"
+      ],
+      "ex": "we need to have a discussion about AI ethics and the distrust that many people have towards machine learning.",
+      "syn": [
+        "suspicion",
+        "mistrust",
+        "wariness"
+      ],
+      "ant": [
+        "trust",
+        "confidence"
+      ],
+      "related": [
+        "public distrust",
+        "distrust of technology",
+        "deep distrust"
+      ],
+      "mnem": {
+        "kw": "'distrust' → 'dis + trust' (ishonch yo'q)",
+        "story": "Odamlar mashinaga trust (ishonch)ni dis (inkor) qildi — 'distrust', ya'ni ishonmadi."
+      }
+    },
+    {
+      "w": "faith",
+      "form": "hard to place faith in the machine",
+      "pos": "noun",
+      "ipa": "/feɪθ/",
+      "forms": "faith · faithful · faithfully",
+      "def": "strong trust or confidence in someone or something.",
+      "uz": "ishonch, e'tiqod",
+      "senses": [
+        "passажда yo'q — passажда 'trust' ishlatilgan (found it hard to trust the machine)",
+        "diniy e'tiqod ma'nosi ham"
+      ],
+      "ex": "Doctors found it hard to place their faith in the machine's recommendations.",
+      "syn": [
+        "trust",
+        "confidence",
+        "belief"
+      ],
+      "ant": [
+        "doubt",
+        "distrust"
+      ],
+      "related": [
+        "place faith in",
+        "lose faith",
+        "in good faith"
+      ],
+      "mnem": {
+        "kw": "'faith' → 'fe + yes'",
+        "story": "U 'yes (ha)!' deb 'faith' — chin ishonch bilan hammaga bosh irg'adi."
+      }
+    },
+    {
+      "w": "abandon",
+      "form": "the AI programme was abandoned",
+      "pos": "verb",
+      "ipa": "/əˈbændən/",
+      "forms": "abandon · abandoned · abandonment",
+      "def": "to stop doing or using something completely; to give it up.",
+      "uz": "voz kechmoq, tashlab ketmoq, to'xtatmoq",
+      "senses": [
+        "(sifat) abandoned = tashlandiq, huvillab qolgan (an abandoned building = tashlandiq bino)",
+        "⚠️ 'keng tarqalgan' (widespread) — bu abandoned'ning MA'NOSI EMAS; ehtimol 'widespread/prevalent' ko'zda tutilgan.",
+        "abandonment (n.) = tashlab ketish, voz kechish"
+      ],
+      "ex": "As a result, the AI programme was abandoned in most hospitals where it was trialled.",
+      "syn": [
+        "give up",
+        "drop",
+        "discard"
+      ],
+      "ant": [
+        "keep",
+        "continue",
+        "retain"
+      ],
+      "related": [
+        "was abandoned",
+        "abandoned building (tashlandiq)",
+        "abandon a plan"
+      ],
+      "mnem": {
+        "kw": "'abandon' → 'a + band (band emas)'",
+        "story": "Loyiha endi band (kerak) emas edi — uni 'abandon', ya'ni tashlab, voz kechishdi."
+      }
+    },
+    {
+      "w": "magnify",
+      "form": "the algorithm magnified the bias",
+      "pos": "verb",
+      "ipa": "/ˈmæɡnɪfaɪ/",
+      "forms": "magnify · magnified · magnification",
+      "def": "to make something appear larger, or to make a problem greater.",
+      "uz": "kattalashtirmoq; (muammoni) kuchaytirmoq",
+      "senses": [
+        "passажда 'amplify' ishlatilgan (amplify structural racial discrimination) — magnify unga yaqin sinonim",
+        "lupa/magnifying glass = kattalashtiruvchi oyna"
+      ],
+      "ex": "The algorithm magnified the existing bias in the data.",
+      "syn": [
+        "amplify",
+        "intensify",
+        "enlarge"
+      ],
+      "ant": [
+        "reduce",
+        "diminish"
+      ],
+      "related": [
+        "magnify a problem",
+        "magnifying glass"
+      ],
+      "mnem": {
+        "kw": "'magnify' → 'magnit + fly'",
+        "story": "Magnit (magni) pashshani (fly) katta qilib ko'rsatdi — 'magnify', ya'ni kattalashtirdi."
+      }
+    },
+    {
+      "w": "domain",
+      "form": "the legal domain",
+      "pos": "noun",
+      "ipa": "/dəˈmeɪn/",
+      "forms": "domain · domains",
+      "def": "an area of activity, knowledge or control.",
+      "uz": "soha, doira; hudud",
+      "senses": [
+        "legal domain = huquqiy soha",
+        "internet manzili (website domain) ma'nosi ham"
+      ],
+      "ex": "Similar difficulties arose in the legal domain when algorithms were used in courts.",
+      "syn": [
+        "field",
+        "area",
+        "sphere"
+      ],
+      "ant": [],
+      "related": [
+        "the legal domain",
+        "public domain",
+        "in the domain of"
+      ],
+      "mnem": {
+        "kw": "'domain' → 'dom + main'",
+        "story": "Uy (dom) egasining asosiy (main) 'domain' — huquqiy sohasi va hududi shu edi."
+      }
+    },
+    {
+      "w": "assessment",
+      "form": "risk assessment scores",
+      "pos": "noun",
+      "ipa": "/əˈsesmənt/",
+      "forms": "assess · assessment · assessments",
+      "def": "the act of judging or calculating the value, quality or level of something.",
+      "uz": "baholash, aniqlash",
+      "senses": [
+        "risk assessment = xavf-xatarni baholash",
+        "assess (v.) = baholamoq"
+      ],
+      "ex": "An algorithm calculated risk assessment scores and advised judges on the sentencing.",
+      "syn": [
+        "evaluation",
+        "appraisal",
+        "judgement"
+      ],
+      "ant": [],
+      "related": [
+        "risk assessment",
+        "a fair assessment",
+        "needs assessment"
+      ],
+      "mnem": {
+        "kw": "'assessment' → 'a + sesmyon'",
+        "story": "Imtihonda 'sessiya' (sesmyon) — o'qituvchi har bir javobni 'assessment', ya'ni baholab chiqdi."
+      }
+    },
+    {
+      "w": "discrimination",
+      "form": "structural racial discrimination",
+      "pos": "noun",
+      "ipa": "/dɪˌskrɪmɪˈneɪʃn/",
+      "forms": "discriminate · discrimination",
+      "def": "unfair treatment of people based on race, sex, age, etc.",
+      "uz": "kamsitish, ajratish (nohaq muomala)",
+      "senses": [
+        "racial discrimination = irqiy kamsitish",
+        "discriminate (v.) = farq qilmoq; kamsitmoq"
+      ],
+      "ex": "The system was found to amplify structural racial discrimination.",
+      "syn": [
+        "bias",
+        "prejudice",
+        "unfairness"
+      ],
+      "ant": [
+        "equality",
+        "fairness"
+      ],
+      "related": [
+        "racial discrimination",
+        "age discrimination",
+        "face discrimination"
+      ],
+      "mnem": {
+        "kw": "'discrimination' → 'dis + krim + neyshn'",
+        "story": "Millat (neyshn)ni jinoyat (krim) darajasida ajratish 'discrimination' — nohaq kamsitish edi."
+      }
+    },
+    {
+      "w": "sake",
+      "form": "for the sake of AI",
+      "pos": "noun",
+      "ipa": "/seɪk/",
+      "forms": "sake",
+      "def": "the purpose or reason for doing something; the benefit of someone.",
+      "uz": "xotira/manfaat uchun; deb, maqsadida",
+      "senses": [
+        "for the sake of = ... uchun, ... yo'lida",
+        "for God's sake = xudo haqi (his ta'kidi)"
+      ],
+      "ex": "Using AI simply for the sake of AI may not always be productive or useful.",
+      "syn": [
+        "purpose",
+        "benefit",
+        "account"
+      ],
+      "ant": [],
+      "related": [
+        "for the sake of",
+        "art for art's sake",
+        "for your own sake"
+      ],
+      "mnem": {
+        "kw": "'sake' → 'sabab + ke'",
+        "story": "U shunchaki 'sake' — sabab (maqsad) uchun ishladi, foyda emas."
+      }
+    },
+    {
+      "w": "tier",
+      "form": "Opus tier is built for deep reasoning",
+      "pos": "noun",
+      "ipa": "/tɪə/",
+      "forms": "tier · tiers · tiered",
+      "def": "one of several levels or layers in a system, ranked by rank or quality.",
+      "uz": "daraja, pog'ona, qatlam",
+      "senses": [
+        "general-unknown ro'yxatidan",
+        "two-tier = ikki bosqichli"
+      ],
+      "ex": "The Opus tier is built for deep reasoning.",
+      "syn": [
+        "level",
+        "rank",
+        "layer"
+      ],
+      "ant": [],
+      "related": [
+        "top tier",
+        "a tiered system",
+        "premium tier"
+      ],
+      "mnem": {
+        "kw": "'tier' → 'tir' (o'q otish tiri)",
+        "story": "Tirdagi (tier) nishonlar pog'ona-pog'ona — har biri boshqa 'tier', ya'ni darajada edi."
+      }
+    },
+    {
+      "w": "cautious",
+      "form": "more cautious on technical details",
+      "pos": "adjective",
+      "ipa": "/ˈkɔːʃəs/",
+      "forms": "caution · cautious · cautiously",
+      "def": "careful to avoid danger or mistakes.",
+      "uz": "ehtiyotkor, hushyor",
+      "senses": [
+        "general-unknown ro'yxatidan",
+        "caution (n.) = ehtiyotkorlik"
+      ],
+      "ex": "This can make it more cautious on technical implementation details.",
+      "syn": [
+        "careful",
+        "wary",
+        "prudent"
+      ],
+      "ant": [
+        "reckless",
+        "careless"
+      ],
+      "related": [
+        "a cautious approach",
+        "cautious about",
+        "overly cautious"
+      ],
+      "mnem": {
+        "kw": "'cautious' → 'ko'z + tush'",
+        "story": "Ko'zi tushgan joyga ehtiyot bo'lib qadam tashladi — 'cautious', ya'ni hushyor edi."
+      }
+    },
+    {
+      "w": "excess",
+      "form": "an excess of data",
+      "pos": "noun",
+      "ipa": "/ɪkˈses/",
+      "forms": "excess · excessive · excessively",
+      "def": "an amount that is more than necessary, allowed or usual.",
+      "uz": "ortiqcha (miqdor), haddan ziyodlik",
+      "senses": [
+        "general-unknown ro'yxatidan",
+        "in excess of = ...dan ortiq; excessive (adj.) = haddan tashqari"
+      ],
+      "ex": "An excess of low-quality data can actually harm a model.",
+      "syn": [
+        "surplus",
+        "overabundance",
+        "glut"
+      ],
+      "ant": [
+        "shortage",
+        "lack"
+      ],
+      "related": [
+        "an excess of",
+        "in excess of",
+        "to excess"
+      ],
+      "mnem": {
+        "kw": "'excess' → 'eks + ses'",
+        "story": "Eski (eks) sesiya (ses)da ish haddan 'excess' — ortiqcha bo'lib ketdi."
+      }
+    },
+    {
+      "w": "thread",
+      "form": "keep debugging on the main thread",
+      "pos": "noun",
+      "ipa": "/θred/",
+      "forms": "thread · threads · threaded",
+      "def": "a line of connected messages or tasks; a thin strand of cotton.",
+      "uz": "ip; (suhbat/jarayon) oqimi, tarmoq",
+      "senses": [
+        "general-unknown ro'yxatidan",
+        "main thread = asosiy oqim; forum ip (suhbat zanjiri)"
+      ],
+      "ex": "Keep architecture, security, and complex debugging on the main thread.",
+      "syn": [
+        "strand",
+        "line",
+        "sequence"
+      ],
+      "ant": [],
+      "related": [
+        "the main thread",
+        "a common thread",
+        "lose the thread"
+      ],
+      "mnem": {
+        "kw": "'thread' → 'ip + red'",
+        "story": "Qizil (red) ip (thread) suhbatni bir-biriga ulab, 'thread' — yagona oqim hosil qildi."
+      }
+    },
+    {
+      "w": "spot-check",
+      "form": "spot-check, don't blind-trust",
+      "pos": "verb / noun",
+      "ipa": "/ˈspɒt tʃek/",
+      "forms": "spot-check · spot-checked",
+      "def": "to examine something quickly at random to check its quality.",
+      "uz": "tanlab (nuqtali) tekshiruv o'tkazmoq",
+      "senses": [
+        "general-unknown ro'yxatidan",
+        "spot (nuqta) + check (tekshiruv)"
+      ],
+      "ex": "Review subagent output like junior-dev work — spot-check, don't blind-trust.",
+      "syn": [
+        "sample-check",
+        "random check",
+        "audit"
+      ],
+      "ant": [
+        "blind-trust"
+      ],
+      "related": [
+        "do a spot-check",
+        "spot-check the work"
+      ],
+      "mnem": {
+        "kw": "'spot-check' → 'spot + chek'",
+        "story": "Inspektor bir nuqtani (spot) tanlab chek (check) qildi — 'spot-check', ya'ni tanlab tekshirdi."
+      }
+    },
+    {
+      "w": "fatigue",
+      "form": "less fatigue-driven error",
+      "pos": "noun",
+      "ipa": "/fəˈtiːɡ/",
+      "forms": "fatigue · fatigued",
+      "def": "extreme tiredness from work or effort.",
+      "uz": "charchoq, holsizlik",
+      "senses": [
+        "general-unknown ro'yxatidan",
+        "metal fatigue = metallning charchashi (yemirilishi)"
+      ],
+      "ex": "Quality stays the same or improves, with less fatigue-driven error from overusing one model.",
+      "syn": [
+        "tiredness",
+        "exhaustion",
+        "weariness"
+      ],
+      "ant": [
+        "freshness",
+        "energy"
+      ],
+      "related": [
+        "fatigue-driven error",
+        "mental fatigue",
+        "chronic fatigue"
+      ],
+      "mnem": {
+        "kw": "'fatigue' → 'fat + tig' (semiz teg)",
+        "story": "Kun bo'yi ishlagach, 'fatigue' — charchoq semiz yukdek yelkasiga tegdi."
+      }
+    },
+    {
+      "w": "deliberate",
+      "form": "task-to-model mapping is deliberate",
+      "pos": "adjective",
+      "ipa": "/dɪˈlɪbərət/",
+      "forms": "deliberate · deliberately · deliberation",
+      "def": "done on purpose, carefully and intentionally.",
+      "uz": "atayin qilingan, o'ylangan, ongli",
+      "senses": [
+        "general-unknown ro'yxatidan",
+        "deliberately (adv.) = ataylab; /dɪˈlɪbəreɪt/ (v.) = mushohada qilmoq"
+      ],
+      "ex": "This works as long as task-to-model mapping is deliberate, not automatic-and-forgotten.",
+      "syn": [
+        "intentional",
+        "planned",
+        "considered"
+      ],
+      "ant": [
+        "accidental",
+        "random"
+      ],
+      "related": [
+        "a deliberate choice",
+        "deliberate and careful"
+      ],
+      "mnem": {
+        "kw": "'deliberate' → 'de + libe + rate'",
+        "story": "U har bir 'rate' (bahо)ni o'ylab qo'ydi — 'deliberate', ya'ni ataylab va ongli qildi."
+      }
+    },
+    {
+      "w": "moonlit",
+      "form": "a moonlit chat",
+      "pos": "adjective",
+      "ipa": "/ˈmuːnlɪt/",
+      "forms": "moon · moonlit",
+      "def": "lit by the light of the moon.",
+      "uz": "oy nuri bilan yoritilgan, oydin",
+      "senses": [
+        "general-unknown ro'yxatidan (misolsiz — o'zim yozdim)",
+        "moon (oy) + lit (yoritilgan)"
+      ],
+      "ex": "They had a long, moonlit chat on the rooftop.",
+      "syn": [
+        "moonlight-filled",
+        "silvery"
+      ],
+      "ant": [
+        "dark",
+        "sunlit"
+      ],
+      "related": [
+        "a moonlit chat",
+        "a moonlit night"
+      ],
+      "mnem": {
+        "kw": "'moonlit' → 'moon + lit' (oy + yorug')",
+        "story": "Oy (moon) yoritgan (lit) tomda 'moonlit' — oydin suhbat quyuqlashdi."
+      }
+    },
+    {
+      "w": "roaster",
+      "form": "its own coffee roaster",
+      "pos": "noun",
+      "ipa": "/ˈrəʊstə/",
+      "forms": "roast · roaster · roasters",
+      "def": "a machine or person that roasts food such as coffee beans.",
+      "uz": "qovuruvchi (mashina yoki odam), qovurgich",
+      "senses": [
+        "general-unknown ro'yxatidan (misolsiz — o'zim yozdim)",
+        "roast (v.) = qovurmoq, dimlamoq"
+      ],
+      "ex": "The café has its own coffee roaster in the back room.",
+      "syn": [
+        "oven",
+        "grill",
+        "roasting machine"
+      ],
+      "ant": [],
+      "related": [
+        "a coffee roaster",
+        "a slow roaster"
+      ],
+      "mnem": {
+        "kw": "'roaster' → 'ro'st + er' (rostdan qovuradi)",
+        "story": "Oshpaz go'shtni rost (haqiqiy) olovda qovurdi — u 'roaster', ya'ni qovurgich edi."
+      }
+    },
+    {
+      "w": "low-spec",
+      "form": "a low-spec laptop",
+      "pos": "adjective",
+      "ipa": "/ˌləʊ ˈspek/",
+      "forms": "low-spec",
+      "def": "having basic, weak or low technical specifications.",
+      "uz": "past quvvatli, oddiy texnik ko'rsatkichli",
+      "senses": [
+        "general-unknown ro'yxatidan (misolsiz — o'zim yozdim)",
+        "spec = specification (texnik ko'rsatkich)"
+      ],
+      "ex": "A low-spec laptop struggles to run heavy software.",
+      "syn": [
+        "basic",
+        "underpowered",
+        "entry-level"
+      ],
+      "ant": [
+        "high-spec",
+        "high-end"
+      ],
+      "related": [
+        "a low-spec device",
+        "low-spec hardware"
+      ],
+      "mnem": {
+        "kw": "'low-spec' → 'low + spec' (past ko'rsatkich)",
+        "story": "Past (low) ko'rsatkichli (spec) noutbuk 'low-spec' — og'ir dasturni ko'tarolmadi."
+      }
+    },
+    {
+      "w": "idle",
+      "form": "the machines sat idle",
+      "pos": "adjective",
+      "ipa": "/ˈaɪdl/",
+      "forms": "idle · idly · idleness",
+      "def": "not working, not being used, or not active.",
+      "uz": "bekor turgan, ishlamayotgan, bo'sh",
+      "senses": [
+        "general-unknown ro'yxatidan (misolsiz — o'zim yozdim)",
+        "idle (v.) = bekor o'tirmoq; (dvigatel) bo'sh yurmoq"
+      ],
+      "ex": "The machines sat idle during the power cut.",
+      "syn": [
+        "inactive",
+        "unused",
+        "dormant"
+      ],
+      "ant": [
+        "active",
+        "busy",
+        "working"
+      ],
+      "related": [
+        "sit idle",
+        "idle machinery",
+        "idle time"
+      ],
+      "mnem": {
+        "kw": "'idle' → 'ay + dial (bo'sh raqam)'",
+        "story": "Telefon dial (raqam) terilmay, apparat 'idle' — bekor, ishsiz turaverdi."
+      }
+    },
+    {
+      "w": "pricey",
+      "form": "a pricier tier",
+      "pos": "adjective",
+      "ipa": "/ˈpraɪsi/",
+      "forms": "pricey · pricier · priciest",
+      "def": "expensive; costing a lot of money.",
+      "uz": "qimmat, qimmatbaho",
+      "senses": [
+        "general-unknown ro'yxatidan",
+        "pricier = qimmatroq (pricey ning qiyosiy shakli)"
+      ],
+      "ex": "Adding a pricier tier above it just reintroduces the waste you're trying to kill.",
+      "syn": [
+        "expensive",
+        "costly",
+        "dear"
+      ],
+      "ant": [
+        "cheap",
+        "affordable"
+      ],
+      "related": [
+        "a pricier option",
+        "a bit pricey"
+      ],
+      "mnem": {
+        "kw": "'pricey' → 'price + iy' (narxi baland)",
+        "story": "Do'kondagi mol shunchalik 'pricey' — narxi (price) baland ediki, hamma hayron qoldi."
+      }
+    },
+    {
+      "w": "respite",
+      "form": "some respite from the pressure",
+      "pos": "noun",
+      "ipa": "/ˈrespaɪt/",
+      "forms": "respite",
+      "def": "a short period of rest or relief from something difficult.",
+      "uz": "tanaffus, vaqtincha yengillik",
+      "senses": [
+        "general-unknown ro'yxatidan",
+        "respite from = ...dan vaqtincha xalos bo'lish"
+      ],
+      "ex": "After weeks of exams, the weekend gave her some welcome respite.",
+      "syn": [
+        "break",
+        "relief",
+        "pause"
+      ],
+      "ant": [
+        "continuation",
+        "ordeal"
+      ],
+      "related": [
+        "a temporary respite",
+        "respite from",
+        "brief respite"
+      ],
+      "mnem": {
+        "kw": "'respite' → 'res + pit' (dam pit)",
+        "story": "Og'ir ishdan so'ng u bir 'respite' — pit (dam) olib, nafas rostladi."
+      }
+    }
   ]
 }
