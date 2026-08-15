@@ -16,7 +16,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SKIP_DIR = {".git", ".claude", "__pycache__", "scripts"}
 # CLAUDE.md is an AI instruction file and index.html is this page itself — the user
 # doesn't need either listed in the browser.
-SKIP_FILE = {".DS_Store", "CLAUDE.md", "index.html"}
+SKIP_FILE = {".DS_Store", "CLAUDE.md", "index.html", "progress.html", "vercel.json"}
 OUT = os.path.join(ROOT, "index.html")
 
 
