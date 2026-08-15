@@ -15,10 +15,21 @@ building a perfect platform.
 > A watcher relocates stray generated `.html` files into `generated/`. Always write
 > generated output directly to `generated/…` so nothing gets moved or duplicated.
 
+## Main page (`index.html`)
+`index.html` at the repo root is the site's landing page: a self-contained, searchable
+**file browser** of the whole project (everything except `.claude/` and `.git/`) — click a
+folder to expand it, a file to open it. It is **generated**, not hand-edited, by
+`scripts/build_index.py`, which embeds the current file tree.
+
+> **Keep it in sync:** after creating, renaming, moving, or deleting any file or folder,
+> run `python3 scripts/build_index.py`. The generating skills do this as their final step.
+
 ## Folders
 - **generated/** — all generated, ready-to-use study HTML. Mirrors the source type.
     - `generated/vocab/` — vocabulary flashcard decks, one HTML per reading test
       (e.g. `cambridge-21-reading-3-vocabs.html`).
+    - `generated/dictation/` — the spelling-dictation quiz (`dictation.html`): hear a word,
+      type it, get spelling checked.
 - **templates/** — reusable HTML templates that skills fill with data.
     - `vocab.html` — the flashcard study app (Flip / Recall / Cloze modes + a Structures
       section). Generic on its own; the build step patches in the front "form" line and the
@@ -35,6 +46,7 @@ building a perfect platform.
 - **listening/**, **writing/** — source material for those skills (same source → generate →
   study idea; generated output belongs under `generated/`).
 - **docs/** — documentation. `architecture.md` — this file.
+- **scripts/** — project-level scripts. `build_index.py` regenerates the root `index.html`.
 - **.claude/skills/** — project skills (see below).
 
 ## Skills
@@ -51,3 +63,8 @@ building a perfect platform.
       passage/question words go to `known.md`; base words only (inflected form shown under
       the word); related collocations included in each card; question words first, then
       passage words; `learning.json` and `known.md` updated every run.
+- **dictation** (`.claude/skills/dictation/`) — builds the spelling-dictation quiz. Its
+  `scripts/build.py` reads `vocab/known.md` + `vocab/learning.json`, dedupes them, and
+  embeds the word list into `generated/dictation/dictation.html`. The page speaks each word
+  (browser text-to-speech); the user types it; on a mistake it shows a letter diff and makes
+  them retype the correct spelling. Progress and a mistake list persist in `localStorage`.

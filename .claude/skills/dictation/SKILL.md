@@ -32,6 +32,12 @@ Re-run it any time the vocab files change — the word pool is regenerated and r
 Output goes to `generated/dictation/` (all generated artifacts live under `generated/`,
 never in `vocab/`).
 
+**Then refresh the main page** so the new/updated file shows in the root `index.html`
+file browser:
+```
+python3 scripts/build_index.py
+```
+
 ## What the page does (features)
 - **Text-to-speech** via the Web Speech API (`en-GB` voice, "Speak slowly" toggle at 0.6×).
 - **Sources**: All words / Learning-only / My mistakes (words previously misspelled).

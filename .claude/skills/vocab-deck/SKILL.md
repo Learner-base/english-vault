@@ -110,13 +110,17 @@ extra    one fresh example of your own
      --out generated/vocab/<name>-vocabs.html --known-words <scratch>/known_words.txt --repo-root .
    ```
    This writes the HTML to `generated/vocab/`, keys `learning.json` by `<set>`, merges the run's words into `known.md` (a single flat, deduplicated, alphabetically-sorted word list — no per-set headings, no prose, words only), and removes from `general-unknown.md` any bullet whose word now has a card in this deck.
-5. **Verify** (no browser needed): the script's `<script>` must parse.
+5. **Refresh the main page** so the new deck appears in the root `index.html` file browser:
+   ```
+   python3 scripts/build_index.py
+   ```
+6. **Verify** (no browser needed): the script's `<script>` must parse.
    ```
    node -e "const fs=require('fs');const h=fs.readFileSync('generated/vocab/<name>-vocabs.html','utf8');new Function(h.match(/<script>([\s\S]*)<\/script>/)[1]);console.log('OK')"
    ```
    Optionally serve `generated/vocab/` on `127.0.0.1` (not `localhost` — the browser may use IPv6)
    and screenshot to eyeball the front `form` line, flip, and related chips.
-6. **Report**: counts, the three files touched, and note words that weren't in the passage.
+7. **Report**: counts, the three files touched, and note words that weren't in the passage.
 
 ## Notes
 - The base `templates/vocab.html` intentionally lacks the front-`form` line and the
