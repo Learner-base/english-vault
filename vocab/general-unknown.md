@@ -18,3 +18,4 @@ word => sentance that this word used.
 - low-spec
 - idle
 - pricier // reintroduces => Your top tier is already covered. Opus 5 at effort: high is the ceiling this roster needs. Adding a pricier tier above it just reintroduces the waste you're trying to kill
+- respite
