@@ -32,6 +32,12 @@
   a.row .n{color:var(--ink)}
   .count{font-family:var(--mono);font-size:12px;color:var(--ink-3);margin-top:14px}
   .hide{display:none!important}
+  .latest{margin-top:34px;padding-top:22px;border-top:2px solid var(--line)}
+  .latest h2{font-family:var(--serif);font-weight:600;font-size:18px;margin:0 0 2px}
+  .latest .sub{color:var(--ink-3);font-size:12.5px;margin:0 0 12px}
+  .latest a.row{align-items:flex-start}
+  .latest .meta{display:flex;flex-direction:column;min-width:0}
+  .latest .dirp{font-family:var(--mono);font-size:11px;color:var(--ink-3);margin-top:1px}
 </style>
 </head>
 <body>
@@ -42,9 +48,11 @@
   <input class="search" id="q" type="text" placeholder="filter files…" autocomplete="off"/>
   <div id="tree"></div>
   <div class="count" id="count"></div>
+  <div class="latest" id="latest"></div>
 </div>
 <script>
 const TREE = [{"n": "docs", "t": "d", "c": [{"n": "architecture.md", "t": "f", "p": "docs/architecture.md"}]}, {"n": "generated", "t": "d", "c": [{"n": "dictation", "t": "d", "c": [{"n": "dictation.html", "t": "f", "p": "generated/dictation/dictation.html"}]}, {"n": "halqa", "t": "d", "c": [{"n": "learning-questions.json", "t": "f", "p": "generated/halqa/learning-questions.json"}]}, {"n": "vocab", "t": "d", "c": [{"n": "cambridge-18-test-1-reading-1-vocabs.html", "t": "f", "p": "generated/vocab/cambridge-18-test-1-reading-1-vocabs.html"}, {"n": "cambridge-21-reading-2-p1-vocabs.html", "t": "f", "p": "generated/vocab/cambridge-21-reading-2-p1-vocabs.html"}, {"n": "cambridge-21-reading-3-vocabs.html", "t": "f", "p": "generated/vocab/cambridge-21-reading-3-vocabs.html"}, {"n": "cambridge-21-test-2-listening-vocabs.html", "t": "f", "p": "generated/vocab/cambridge-21-test-2-listening-vocabs.html"}, {"n": "cambridge-21-test-2-reading-vocabs.html", "t": "f", "p": "generated/vocab/cambridge-21-test-2-reading-vocabs.html"}]}, {"n": "writing", "t": "d", "c": []}]}, {"n": "listening", "t": "d", "c": [{"n": "done", "t": "d", "c": [{"n": "cambridge", "t": "d", "c": [{"n": "cambridge-18", "t": "d", "c": [{"n": "cambridge-18-test-1-listening.html", "t": "f", "p": "listening/done/cambridge/cambridge-18/cambridge-18-test-1-listening.html"}]}, {"n": "cambridge-21", "t": "d", "c": [{"n": "Cambridge 21 Test 1 Listening @shohrukhposts.html", "t": "f", "p": "listening/done/cambridge/cambridge-21/Cambridge 21 Test 1 Listening @shohrukhposts.html"}, {"n": "Cambridge 21 Test 2 Listening @shohrukhposts.html", "t": "f", "p": "listening/done/cambridge/cambridge-21/Cambridge 21 Test 2 Listening @shohrukhposts.html"}, {"n": "Cambridge 21 Test 4 Listening @shohrukhposts.html", "t": "f", "p": "listening/done/cambridge/cambridge-21/Cambridge 21 Test 4 Listening @shohrukhposts.html"}]}]}]}, {"n": "undone", "t": "d", "c": [{"n": "cambridge", "t": "d", "c": [{"n": "cambridge-21", "t": "d", "c": [{"n": "Cambridge 21 Test 3 Listening @shohrukhposts.html", "t": "f", "p": "listening/undone/cambridge/cambridge-21/Cambridge 21 Test 3 Listening @shohrukhposts.html"}]}]}]}]}, {"n": "reading", "t": "d", "c": [{"n": "done", "t": "d", "c": [{"n": "cambridge", "t": "d", "c": [{"n": "cambridge-18", "t": "d", "c": [{"n": "cambridge-18-test-1-reading.html", "t": "f", "p": "reading/done/cambridge/cambridge-18/cambridge-18-test-1-reading.html"}]}, {"n": "cambridge-21", "t": "d", "c": [{"n": "Cambridge 21 Test 1 Reading @shohrukhposts.html", "t": "f", "p": "reading/done/cambridge/cambridge-21/Cambridge 21 Test 1 Reading @shohrukhposts.html"}, {"n": "Cambridge 21 Test 2 Reading @shohrukhposts.html", "t": "f", "p": "reading/done/cambridge/cambridge-21/Cambridge 21 Test 2 Reading @shohrukhposts.html"}, {"n": "Cambridge 21 Test 3 Reading @shohrukhposts.html", "t": "f", "p": "reading/done/cambridge/cambridge-21/Cambridge 21 Test 3 Reading @shohrukhposts.html"}, {"n": "Cambridge 21 Test 4 Reading @shohrukhposts.html", "t": "f", "p": "reading/done/cambridge/cambridge-21/Cambridge 21 Test 4 Reading @shohrukhposts.html"}]}]}]}, {"n": "undone", "t": "d", "c": [{"n": "cambridge", "t": "d", "c": [{"n": ".gitkeep", "t": "f", "p": "reading/undone/cambridge/.gitkeep"}]}]}]}, {"n": "templates", "t": "d", "c": [{"n": "vocab.html", "t": "f", "p": "templates/vocab.html"}]}, {"n": "vercel.json", "t": "f", "p": "vercel.json"}, {"n": "vocab", "t": "d", "c": [{"n": "general-unknown.md", "t": "f", "p": "vocab/general-unknown.md"}, {"n": "known.md", "t": "f", "p": "vocab/known.md"}, {"n": "learning.json", "t": "f", "p": "vocab/learning.json"}]}, {"n": "writing", "t": "d", "c": [{"n": ".gitkeep", "t": "f", "p": "writing/.gitkeep"}]}];
+const LATEST = [{"n": "cambridge-21-test-2-listening-vocabs.html", "p": "generated/vocab/cambridge-21-test-2-listening-vocabs.html", "d": "generated/vocab"}, {"n": "vercel.json", "p": "vercel.json", "d": "/"}, {"n": "cambridge-21-test-2-reading-vocabs.html", "p": "generated/vocab/cambridge-21-test-2-reading-vocabs.html", "d": "generated/vocab"}, {"n": "learning-questions.json", "p": "generated/halqa/learning-questions.json", "d": "generated/halqa"}, {"n": "dictation.html", "p": "generated/dictation/dictation.html", "d": "generated/dictation"}];
 let fileCount=0;
 function node(item){
   const li=document.createElement("li");
@@ -71,6 +79,20 @@ const root=document.createElement("ul");
 TREE.forEach(x=>root.appendChild(node(x)));
 document.getElementById("tree").appendChild(root);
 document.getElementById("count").textContent=fileCount+" files";
+
+if(LATEST.length){
+  const box=document.getElementById("latest");
+  box.innerHTML=`<h2>Latest added</h2><p class="sub">The ${LATEST.length} most recently added files.</p>`;
+  const ul=document.createElement("ul");
+  LATEST.forEach(f=>{
+    const li=document.createElement("li");
+    const a=document.createElement("a");
+    a.className="row"; a.href="./"+f.p.split("/").map(encodeURIComponent).join("/");
+    a.innerHTML=`<span class="ic">📄</span><span class="meta"><span class="n">${f.n}</span><span class="dirp">${f.d}</span></span>`;
+    li.appendChild(a); ul.appendChild(li);
+  });
+  box.appendChild(ul);
+}
 
 const q=document.getElementById("q");
 q.addEventListener("input",()=>{

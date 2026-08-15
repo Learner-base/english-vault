@@ -10,7 +10,7 @@ sync:
 
     python3 scripts/build_index.py
 """
-import os, json
+import os, json, subprocess
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SKIP_DIR = {".git", ".claude", "__pycache__", "scripts"}
@@ -32,6 +32,32 @@ def walk(d):
         else:
             kids.append({"n": name, "t": "f", "p": rel})
     return kids
+
+
+def latest_added(n=5):
+    """The n most recently added files, newest first, via git history."""
+    try:
+        out = subprocess.check_output(
+            ["git", "log", "--diff-filter=A", "--name-only", "--pretty=format:"],
+            cwd=ROOT, text=True, stderr=subprocess.DEVNULL)
+    except Exception:
+        return []
+    seen, latest = set(), []
+    for line in out.splitlines():
+        rel = line.strip()
+        if not rel or rel in seen:
+            continue
+        name = os.path.basename(rel)
+        top = rel.split("/")[0]
+        if top in SKIP_DIR or name in SKIP_FILE or name.endswith(".pyc"):
+            continue
+        if not os.path.exists(os.path.join(ROOT, rel)):
+            continue
+        seen.add(rel)
+        latest.append({"n": name, "p": rel, "d": os.path.dirname(rel) or "/"})
+        if len(latest) >= n:
+            break
+    return latest
 
 
 PAGE = r'''<!DOCTYPE html>
@@ -68,6 +94,12 @@ PAGE = r'''<!DOCTYPE html>
   a.row .n{color:var(--ink)}
   .count{font-family:var(--mono);font-size:12px;color:var(--ink-3);margin-top:14px}
   .hide{display:none!important}
+  .latest{margin-top:34px;padding-top:22px;border-top:2px solid var(--line)}
+  .latest h2{font-family:var(--serif);font-weight:600;font-size:18px;margin:0 0 2px}
+  .latest .sub{color:var(--ink-3);font-size:12.5px;margin:0 0 12px}
+  .latest a.row{align-items:flex-start}
+  .latest .meta{display:flex;flex-direction:column;min-width:0}
+  .latest .dirp{font-family:var(--mono);font-size:11px;color:var(--ink-3);margin-top:1px}
 </style>
 </head>
 <body>
@@ -78,9 +110,11 @@ PAGE = r'''<!DOCTYPE html>
   <input class="search" id="q" type="text" placeholder="filter files…" autocomplete="off"/>
   <div id="tree"></div>
   <div class="count" id="count"></div>
+  <div class="latest" id="latest"></div>
 </div>
 <script>
 const TREE = __TREE__;
+const LATEST = __LATEST__;
 let fileCount=0;
 function node(item){
   const li=document.createElement("li");
@@ -108,6 +142,20 @@ TREE.forEach(x=>root.appendChild(node(x)));
 document.getElementById("tree").appendChild(root);
 document.getElementById("count").textContent=fileCount+" files";
 
+if(LATEST.length){
+  const box=document.getElementById("latest");
+  box.innerHTML=`<h2>Latest added</h2><p class="sub">The ${LATEST.length} most recently added files.</p>`;
+  const ul=document.createElement("ul");
+  LATEST.forEach(f=>{
+    const li=document.createElement("li");
+    const a=document.createElement("a");
+    a.className="row"; a.href="./"+f.p.split("/").map(encodeURIComponent).join("/");
+    a.innerHTML=`<span class="ic">📄</span><span class="meta"><span class="n">${f.n}</span><span class="dirp">${f.d}</span></span>`;
+    li.appendChild(a); ul.appendChild(li);
+  });
+  box.appendChild(ul);
+}
+
 const q=document.getElementById("q");
 q.addEventListener("input",()=>{
   const t=q.value.trim().toLowerCase();
@@ -128,7 +176,8 @@ q.addEventListener("input",()=>{
 
 def main():
     tree = json.dumps(walk(ROOT), ensure_ascii=False)
-    html = PAGE.replace("__TREE__", tree)
+    latest = json.dumps(latest_added(5), ensure_ascii=False)
+    html = PAGE.replace("__TREE__", tree).replace("__LATEST__", latest)
     with open(OUT, "w", encoding="utf-8") as f:
         f.write(html)
     print(f"Wrote {OUT}")
