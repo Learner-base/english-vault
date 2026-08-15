@@ -23,6 +23,23 @@ test", or "read it and I type it" drill over the vocabulary they've collected.
 The script reads both, dedupes, drops multi-word phrases (hard to dictate letter-perfect),
 sorts, and embeds the result.
 
+### Hard-words focus (this is a spelling drill, not a vocab dump)
+The deck deliberately targets the words people actually misspell, so `build.py`:
+- **Tags each word** with the spelling trap(s) it exercises via `tag_word()` — codes
+  `sc` (S vs C), `th`, `ph`, `ough`, `silent`, `double`, `british`, `vowel`. Tags ride on
+  each word object as `tags[]` and drive the page's "focus on a pattern" tabs.
+- **Adds a `CURATED` list** of classic English spelling-demons (accommodate, rhythm,
+  conscience, queue…) plus any words the user names, so the deck isn't limited to the
+  collected vocab. Curated `tags` are merged with the auto-classifier; curated words absent
+  from the vocab are injected (`src:"curated"`).
+- **Drops easy words** (`is_easy()`): scraping junk (`JUNK`), length ≤ 3, untagged
+  4-letter words, and an `EASY` stoplist of common regular words. This is the *moderate*
+  filter — it removes the obviously-simple words but keeps the substance; tighten `is_easy`
+  if the user wants a smaller, tags-only pool.
+
+To change which patterns exist, edit `TAG_ORDER` + `tag_word()` (and the `TAG_LABELS` map
+and `#focusSwitch` buttons in the `PAGE` string must mirror them).
+
 ## How to build
 ```
 python .claude/skills/dictation/scripts/build.py --repo-root . \
@@ -40,9 +57,13 @@ python3 scripts/build_index.py
 
 ## What the page does (features)
 - **Text-to-speech** via the Web Speech API (`en-GB` voice, "Speak slowly" toggle at 0.6×).
+- **Focus on a spelling pattern**: All hard / S·C / TH / PH / -ough / Silent / Double /
+  British — filters the pool to words carrying that tag (combines with the source filter).
 - **Sources**: All words / Learning-only / My mistakes (words previously misspelled).
-- **Session length**: 15 / 30 / 50 / All, optional shuffle.
-- **On correct**: green ✓, mark word mastered, show meaning hint (learning words only).
+- **Session length**: 15 / 30 / 50 / All, optional shuffle. The pool counter updates live
+  to show how many words match the current focus + source.
+- **On correct**: green ✓, mark word mastered, show meaning hint + "Why it's tricky" chips
+  (the word's spelling-trap tags).
 - **On wrong**: red, letter diff (struck-through wrong letters + underlined correct ones),
   log to the mistake list, and require an exact **retype** to continue.
 - **Keyboard**: `Space` or `R` replays the audio, `Enter` checks the answer.

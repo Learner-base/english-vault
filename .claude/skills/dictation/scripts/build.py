@@ -53,17 +53,182 @@ def load_learning(path):
     return meta
 
 
-def build_pool(known, learning):
-    """Merge into one deduped, sorted list. learning words get meta + source flag."""
+# ---------------------------------------------------------------------------
+# Spelling-difficulty tagging. This deck is for the HARD words: the ones that
+# trip people on S vs C, TH, PH, silent letters, -ough, doubled letters and
+# British spellings. Each kept word carries a `tags` list so the page can offer
+# a "focus on one pattern" filter, and easy phonetic words are dropped.
+# ---------------------------------------------------------------------------
+
+# Obvious non-words / scraping artifacts that leaked into known.md.
+JUNK = {
+    "correctanswer", "qpart", "div", "span", "href", "http", "https", "html",
+    "css", "aria", "nbsp", "img", "src", "utf", "www", "com", "png", "jpg",
+}
+
+# Clearly easy words to drop even though they're long enough (moderate filter).
+EASY = {
+    "about", "above", "after", "again", "along", "began", "being", "below",
+    "every", "first", "great", "group", "house", "large", "learn", "leave",
+    "money", "never", "night", "often", "other", "place", "plant", "point",
+    "power", "quite", "right", "shall", "small", "sound", "start", "still",
+    "story", "their", "there", "these", "thing", "think", "third", "three",
+    "today", "under", "until", "water", "where", "which", "while", "white",
+    "whole", "world", "would", "write", "young", "plans", "shops", "stops",
+    "walks", "talks", "books", "kings", "rings", "stars", "roads", "rocks",
+    "trees", "foods", "hours", "weeks", "years", "found", "round", "count",
+    "close", "those", "since", "clean", "clear", "money", "table", "green",
+}
+
+# Friendly label per tag code (also mirrored in the page's JS).
+TAG_ORDER = ["sc", "th", "ph", "ough", "silent", "double", "british", "vowel"]
+
+
+def tag_word(w):
+    """Return the set of spelling-challenge tags a word exercises."""
+    t = set()
+    if "ph" in w:
+        t.add("ph")
+    if "th" in w:
+        t.add("th")
+    if re.search(r"ough|augh", w):
+        t.add("ough")
+    if (re.search(r"^(kn|wr|gn|ps|rh)", w)          # knot, wrist, gnome, psalm, rhythm
+            or re.search(r"(mb|bt|mn)$", w)          # thumb, doubt, autumn
+            or re.search(r"isl|aisl|stle|sten|salm|onest|oreign|nsc", w)):  # island, castle, honest, foreign, conscience
+        t.add("silent")
+    if re.search(r"(bb|cc|dd|ff|gg|ll|mm|nn|pp|rr|ss|tt|zz)", w):
+        t.add("double")
+    if (re.search(r"iour|avour|olour|arbour|abour|eighbour|avor|olor", w)
+            or re.search(r"is(e|ed|ing|ation)$", w)
+            or re.search(r"[bcdgtv]re$", w)
+            or "ae" in w or "oe" in w
+            or "jewell" in w):
+        t.add("british")
+    if re.search(r"sc|c[eiy]|ss|ce$|se$|cei|cie|cious|scious|nce$|nse$", w):
+        t.add("sc")
+    if re.search(r"eau|ieu|eig|uea|oeu|iai|eou|uou|aer|ueue|uar", w):
+        t.add("vowel")
+    return t
+
+
+# Curated hard-to-spell words: classic English spelling-demons + the ones the
+# user named. Words not already in the vocab are added; `tags` here are merged
+# with the auto-classifier so a word always lands in the right focus group.
+CURATED = [
+    # user's explicitly-confusing words
+    {"w": "spelling", "tags": ["double"]},
+    {"w": "photograph", "tags": ["ph"]},
+    {"w": "photographer", "tags": ["ph"]},
+    {"w": "behaviour", "tags": ["british"], "def": "the way someone acts (US spelling: behavior)."},
+    {"w": "unnecessary", "tags": ["double", "sc"]},
+    {"w": "sugar", "tags": ["sc"], "def": "sweet substance — the 'su' sounds like 'sh'."},
+    {"w": "disease", "tags": ["sc"], "def": "an illness — note the s/c-style trap and the 'ea'."},
+    {"w": "thought", "tags": ["th", "ough"]},
+    {"w": "though", "tags": ["th", "ough"]},
+    {"w": "through", "tags": ["th", "ough"]},
+    {"w": "thread", "tags": ["th"]},
+    # S / C confusables
+    {"w": "necessary", "tags": ["sc", "double"]}, {"w": "conscience", "tags": ["sc", "silent"]},
+    {"w": "conscious", "tags": ["sc"]}, {"w": "science", "tags": ["sc"]},
+    {"w": "discipline", "tags": ["sc"]}, {"w": "fascinate", "tags": ["sc", "silent"]},
+    {"w": "muscle", "tags": ["sc", "silent"]}, {"w": "scissors", "tags": ["sc", "silent", "double"]},
+    {"w": "ascend", "tags": ["sc"]}, {"w": "descend", "tags": ["sc"]},
+    {"w": "precise", "tags": ["sc"]}, {"w": "precious", "tags": ["sc"]},
+    {"w": "sufficient", "tags": ["sc"]}, {"w": "efficient", "tags": ["sc", "double"]},
+    {"w": "ancient", "tags": ["sc"]}, {"w": "receive", "tags": ["sc"]},
+    {"w": "deceive", "tags": ["sc"]}, {"w": "licence", "tags": ["sc"]},
+    {"w": "defence", "tags": ["sc"]}, {"w": "absence", "tags": ["sc"]},
+    {"w": "success", "tags": ["sc", "double"]}, {"w": "accessory", "tags": ["sc", "double"]},
+    # doubled letters
+    {"w": "accommodate", "tags": ["double"]}, {"w": "occurrence", "tags": ["double", "sc"]},
+    {"w": "embarrass", "tags": ["double"]}, {"w": "millennium", "tags": ["double"]},
+    {"w": "parallel", "tags": ["double"]}, {"w": "exaggerate", "tags": ["double"]},
+    {"w": "tomorrow", "tags": ["double"]}, {"w": "questionnaire", "tags": ["double", "vowel"]},
+    {"w": "committee", "tags": ["double"]}, {"w": "possession", "tags": ["double"]},
+    {"w": "beginning", "tags": ["double"]}, {"w": "recommend", "tags": ["double"]},
+    {"w": "assessment", "tags": ["double", "sc"]},
+    # silent letters
+    {"w": "knowledge", "tags": ["silent"]}, {"w": "knife", "tags": ["silent"]},
+    {"w": "wrist", "tags": ["silent"]}, {"w": "doubt", "tags": ["silent"]},
+    {"w": "debt", "tags": ["silent"]}, {"w": "subtle", "tags": ["silent"]},
+    {"w": "island", "tags": ["silent"]}, {"w": "aisle", "tags": ["silent"]},
+    {"w": "honest", "tags": ["silent"]}, {"w": "foreign", "tags": ["silent"]},
+    {"w": "campaign", "tags": ["silent"]}, {"w": "column", "tags": ["silent"]},
+    {"w": "autumn", "tags": ["silent"]}, {"w": "wednesday", "tags": ["silent"]},
+    {"w": "february", "tags": ["silent"]}, {"w": "rhythm", "tags": ["silent", "vowel"]},
+    {"w": "rhyme", "tags": ["silent"]}, {"w": "yacht", "tags": ["silent", "vowel"]},
+    # PH words
+    {"w": "physical", "tags": ["ph"]}, {"w": "philosophy", "tags": ["ph"]},
+    {"w": "phenomenon", "tags": ["ph"]}, {"w": "elephant", "tags": ["ph"]},
+    {"w": "nephew", "tags": ["ph"]}, {"w": "emphasis", "tags": ["ph"]},
+    {"w": "geography", "tags": ["ph"]}, {"w": "paragraph", "tags": ["ph"]},
+    {"w": "pharmacy", "tags": ["ph"]}, {"w": "sphere", "tags": ["ph"]},
+    {"w": "alphabet", "tags": ["ph"]}, {"w": "sympathy", "tags": ["ph", "th"]},
+    # -ough / -augh
+    {"w": "thorough", "tags": ["ough", "th"]}, {"w": "tough", "tags": ["ough"]},
+    {"w": "enough", "tags": ["ough"]}, {"w": "cough", "tags": ["ough"]},
+    {"w": "rough", "tags": ["ough"]}, {"w": "dough", "tags": ["ough"]},
+    {"w": "bought", "tags": ["ough"]}, {"w": "brought", "tags": ["ough"]},
+    {"w": "drought", "tags": ["ough"]}, {"w": "daughter", "tags": ["ough"]},
+    {"w": "caught", "tags": ["ough"]},
+    # British spellings & tricky vowels
+    {"w": "colour", "tags": ["british"]}, {"w": "favourite", "tags": ["british"]},
+    {"w": "neighbour", "tags": ["british", "vowel"]}, {"w": "jewellery", "tags": ["british", "double"]},
+    {"w": "restaurant", "tags": ["vowel"]}, {"w": "bureau", "tags": ["vowel"]},
+    {"w": "beautiful", "tags": ["vowel"]}, {"w": "queue", "tags": ["vowel"]},
+    {"w": "manoeuvre", "tags": ["vowel"]}, {"w": "liaison", "tags": ["vowel"]},
+    {"w": "guarantee", "tags": ["vowel", "double"]}, {"w": "colleague", "tags": ["vowel", "double"]},
+    {"w": "definitely", "tags": []}, {"w": "separate", "tags": []},
+    {"w": "environment", "tags": ["silent"]}, {"w": "government", "tags": ["silent"]},
+    {"w": "business", "tags": ["silent", "double"]}, {"w": "vacuum", "tags": ["vowel"]},
+    {"w": "category", "tags": []}, {"w": "calendar", "tags": []},
+    {"w": "cemetery", "tags": ["sc"]}, {"w": "mischievous", "tags": ["sc"]},
+    {"w": "pronunciation", "tags": ["sc"]}, {"w": "argument", "tags": []},
+]
+
+
+def is_easy(w, tags):
+    """Moderate filter: drop obvious/short/regular words, keep the rest."""
+    if w in JUNK:
+        return True
+    if len(w) <= 3:
+        return True
+    if w in EASY:
+        return True
+    if len(w) == 4 and not tags:
+        return True
+    return False
+
+
+def build_pool(known, learning, curated):
+    """Merge sources, tag by spelling difficulty, drop easy words, sort."""
     seen = {}
     # learning first so their metadata wins
     for w, m in learning.items():
         seen[w] = {"w": w, "src": "learning", **m}
     for w in known:
-        if w not in seen:
-            seen[w] = {"w": w, "src": "known", "def": "", "uz": "", "ex": "", "pos": ""}
-    # skip multi-word phrases for a spelling drill (hard to dictate letter-perfect)
-    pool = [v for v in seen.values() if " " not in v["w"]]
+        seen.setdefault(w, {"w": w, "src": "known", "def": "", "uz": "", "ex": "", "pos": ""})
+    # curated: may introduce words absent from the vocab, and carries forced tags
+    for c in curated:
+        w = c["w"]
+        if w in seen:
+            seen[w].setdefault("_ct", set()).update(c.get("tags", []))
+            if not seen[w].get("def") and c.get("def"):
+                seen[w]["def"] = c["def"]
+        else:
+            seen[w] = {"w": w, "src": "curated", "def": c.get("def", ""), "uz": "",
+                       "ex": "", "pos": "", "_ct": set(c.get("tags", []))}
+    pool = []
+    for v in seen.values():
+        w = v["w"]
+        if " " in w:  # phrases can't be dictated letter-perfect
+            continue
+        tags = sorted(tag_word(w) | v.pop("_ct", set()), key=lambda x: TAG_ORDER.index(x) if x in TAG_ORDER else 99)
+        if is_easy(w, tags):
+            continue
+        v["tags"] = tags
+        pool.append(v)
     pool.sort(key=lambda v: v["w"])
     return pool
 
@@ -147,6 +312,9 @@ PAGE = r"""<!DOCTYPE html>
   .meaning .d{color:var(--ink)}
   .meaning .uz{font-style:italic;margin-top:3px}
   .meaning .ex{margin-top:8px;font-family:var(--serif);color:var(--ink-2)}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+  .chips .lbl{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);width:100%;margin-bottom:2px}
+  .chip{font-family:var(--mono);font-size:11px;letter-spacing:.03em;border:1px solid var(--line);border-radius:999px;padding:3px 9px;color:var(--ink-2);background:var(--soft)}
   .cta{margin-top:22px;display:flex;gap:10px;justify-content:center}
 
   .done{text-align:center;padding:50px 20px;display:none}
@@ -161,10 +329,23 @@ PAGE = r"""<!DOCTYPE html>
   <!-- SETUP -->
   <section id="setup">
     <div class="eyebrow">English Vault · Dictation</div>
-    <h1>Spelling test</h1>
-    <p class="lede">Listen to the word, then type it. Get it wrong and you'll retype the correct spelling before moving on.</p>
+    <h1>Spelling test — hard words</h1>
+    <p class="lede">Only the tricky ones: S vs C, TH, PH, silent letters, -ough, doubled letters and British spellings. Listen, type it, and retype any you miss. Pick a pattern below to drill just that trap.</p>
 
     <div class="setup">
+      <div>
+        <div class="lab" style="margin-bottom:8px">Focus on a spelling pattern</div>
+        <div class="switch" id="focusSwitch">
+          <button data-tag="all" aria-pressed="true">All hard</button>
+          <button data-tag="sc">S / C</button>
+          <button data-tag="th">TH</button>
+          <button data-tag="ph">PH</button>
+          <button data-tag="ough">-ough</button>
+          <button data-tag="silent">Silent</button>
+          <button data-tag="double">Double</button>
+          <button data-tag="british">British</button>
+        </div>
+      </div>
       <div>
         <div class="lab" style="margin-bottom:8px">Word source</div>
         <div class="switch" id="srcSwitch">
@@ -242,16 +423,29 @@ let mastered = load(LS_MASTER);   // {word:true}
 let mistakes = load(LS_MISS);     // {word:count}
 
 // ---- setup state ----
-let src="all", sessionLen=15;
+let src="all", focus="all", sessionLen=15;
+const TAG_LABELS={sc:"S / C",th:"TH",ph:"PH",ough:"-ough",silent:"silent letter",double:"double letter",british:"British",vowel:"tricky vowels"};
+function matchPool(){
+  let p=WORDS.slice();
+  if(src==="learning") p=p.filter(w=>w.src==="learning");
+  if(src==="mistakes") p=p.filter(w=>mistakes[w.w]);
+  if(focus!=="all") p=p.filter(w=>(w.tags||[]).includes(focus));
+  return p;
+}
 function refreshStats(){
-  $("#poolCount").textContent = WORDS.length;
+  $("#poolCount").textContent = matchPool().length;
   $("#masterCount").textContent = Object.keys(mastered).length;
   $("#missCount").textContent = Object.keys(mistakes).length;
 }
 $("#srcSwitch").addEventListener("click", e=>{
   const b=e.target.closest("button"); if(!b) return;
   [...e.currentTarget.children].forEach(x=>x.setAttribute("aria-pressed", x===b));
-  src=b.dataset.src;
+  src=b.dataset.src; refreshStats();
+});
+$("#focusSwitch").addEventListener("click", e=>{
+  const b=e.target.closest("button"); if(!b) return;
+  [...e.currentTarget.children].forEach(x=>x.setAttribute("aria-pressed", x===b));
+  focus=b.dataset.tag; refreshStats();
 });
 $("#lenSwitch").addEventListener("click", e=>{
   const b=e.target.closest("button"); if(!b) return;
@@ -283,9 +477,7 @@ if("speechSynthesis" in window) speechSynthesis.onvoiceschanged=()=>{};
 // ---- session ----
 let queue=[], pos=0, retrying=false, correctThisWord=0, wrongThisWord=0, doneWords=0;
 function buildQueue(){
-  let pool = WORDS.slice();
-  if(src==="learning") pool = pool.filter(w=>w.src==="learning");
-  if(src==="mistakes") pool = pool.filter(w=>mistakes[w.w]);
+  let pool = matchPool();
   if($("#shuffle").checked){
     for(let i=pool.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [pool[i],pool[j]]=[pool[j],pool[i]]; }
   }
@@ -336,13 +528,17 @@ function renderDiff(user, correct){
   return out;
 }
 function showMeaning(w){
-  if(w.def || w.uz || w.ex){
-    let h="";
-    if(w.def) h+=`<div class="d">${w.def}</div>`;
-    if(w.uz)  h+=`<div class="uz">${w.uz}</div>`;
-    if(w.ex)  h+=`<div class="ex">“${w.ex}”</div>`;
-    $("#meaning").innerHTML=h; $("#meaning").className="meaning";
+  const tags=(w.tags||[]);
+  if(!(w.def || w.uz || w.ex || tags.length)) return;
+  let h="";
+  if(w.def) h+=`<div class="d">${w.def}</div>`;
+  if(w.uz)  h+=`<div class="uz">${w.uz}</div>`;
+  if(w.ex)  h+=`<div class="ex">“${w.ex}”</div>`;
+  if(tags.length){
+    h+=`<div class="chips"><span class="lbl">Why it's tricky</span>`
+      + tags.map(t=>`<span class="chip">${TAG_LABELS[t]||t}</span>`).join("") + `</div>`;
   }
+  $("#meaning").innerHTML=h; $("#meaning").className="meaning";
 }
 function nextBtn(label){
   const b=document.createElement("button");
@@ -442,7 +638,7 @@ def main():
     root = a.repo_root
     known = load_known(os.path.join(root, "vocab", "known.md"))
     learning = load_learning(os.path.join(root, "vocab", "learning.json"))
-    pool = build_pool(known, learning)
+    pool = build_pool(known, learning, CURATED)
 
     payload = json.dumps(pool, ensure_ascii=False)
     page = PAGE.replace("/*__WORDS__*/[]", payload)
@@ -452,9 +648,11 @@ def main():
     with open(out, "w", encoding="utf-8") as f:
         f.write(page)
 
-    n_learn = sum(1 for w in pool if w["src"] == "learning")
+    n_cur = sum(1 for w in pool if w["src"] == "curated")
+    by_tag = {t: sum(1 for w in pool if t in w["tags"]) for t in TAG_ORDER}
     print(f"Wrote {out}")
-    print(f"  {len(pool)} words  ({n_learn} from learning.json, {len(pool)-n_learn} from known.md)")
+    print(f"  {len(pool)} hard words  ({n_cur} curated classics added)")
+    print("  by pattern: " + ", ".join(f"{t}={by_tag[t]}" for t in TAG_ORDER))
 
 
 if __name__ == "__main__":
