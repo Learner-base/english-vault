@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cambridge 20 — Reading Test 4</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; }
+  .ui { font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
+  .passage p { margin: 0 0 0.85rem; line-height: 1.65; }
+  .blank-input { border: none; border-bottom: 2px solid #9ca3af; background: #fffbea; min-width: 90px;
+    padding: 1px 6px; font-family: inherit; outline: none; }
+  .blank-input:focus { border-bottom-color: #2563eb; background: #fff7cc; }
+  .blank-select { border:1px solid #9ca3af; border-radius:5px; background:#fffbea; padding:2px 4px; font-family:inherit; }
+  .opt { cursor: pointer; }
+  .opt input { accent-color: #DC2626; }
+  .num { display:inline-flex; align-items:center; justify-content:center; min-width:26px; height:26px;
+    border-radius:6px; background:#DC2626; color:#fff; font-weight:700; font-size:13px; }
+  .correct { background:#dcfce7 !important; border-color:#16a34a !important; }
+  .incorrect { background:#fee2e2 !important; border-color:#dc2626 !important; }
+  ::selection { background:#fde68a; }
+  .passage-scroll::-webkit-scrollbar, .q-scroll::-webkit-scrollbar { width:10px; }
+  .passage-scroll::-webkit-scrollbar-thumb, .q-scroll::-webkit-scrollbar-thumb { background:#d1d5db; border-radius:6px; }
+</style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+<header class="ui bg-white border-b border-gray-200 sticky top-0 z-20">
+  <div class="max-w-[1400px] mx-auto px-4 py-2 flex items-center justify-between gap-3 flex-wrap">
+    <div>
+      <div class="font-bold text-gray-900 leading-tight">Cambridge IELTS 20 — Reading Test 4</div>
+      <div class="text-xs text-gray-500">Academic Reading · 3 passages · 40 questions · 60 minutes</div>
+    </div>
+    <div class="flex items-center gap-2">
+      <div id="timer" class="text-sm font-semibold text-gray-700 tabular-nums bg-gray-100 px-3 py-1 rounded">60:00</div>
+      <button id="timerBtn" class="text-sm px-3 py-1 rounded bg-gray-200 hover:bg-gray-300">Start</button>
+      <button id="checkBtn" class="text-sm font-semibold px-4 py-1.5 rounded bg-red-600 text-white hover:bg-red-700">Check answers</button>
+      <button id="resetBtn" class="text-sm px-3 py-1 rounded bg-gray-200 hover:bg-gray-300">Reset</button>
+    </div>
+  </div>
+  <div class="max-w-[1400px] mx-auto px-4 pb-2 flex gap-2 ui">
+    <button data-part="1" class="part-tab text-sm px-4 py-1 rounded-full border">Part 1 · Q1–13</button>
+    <button data-part="2" class="part-tab text-sm px-4 py-1 rounded-full border">Part 2 · Q14–26</button>
+    <button data-part="3" class="part-tab text-sm px-4 py-1 rounded-full border">Part 3 · Q27–40</button>
+    <div id="scoreBox" class="ml-auto hidden text-sm font-bold"></div>
+  </div>
+</header>
+
+<main class="max-w-[1400px] mx-auto px-4 py-4">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+    <section class="bg-white rounded-lg border border-gray-200 p-5 lg:h-[calc(100vh-140px)] overflow-y-auto passage-scroll">
+      <div id="instructions" class="ui text-sm text-gray-600 italic mb-3"></div>
+      <div id="passage" class="passage text-[15px]"></div>
+    </section>
+    <section class="bg-white rounded-lg border border-gray-200 p-5 lg:h-[calc(100vh-140px)] overflow-y-auto q-scroll">
+      <div id="questions"></div>
+    </section>
+  </div>
+</main>
+
+<script>
+/* ---------------- TEST DATA (Cambridge 20 — Reading Test 4) ---------------- */
+const TEST = {
+  passages: [
+    { part:1, range:"1–13",
+      instructions:"You should spend about 20 minutes on Questions 1–13, which are based on Reading Passage 1 below.",
+      title:"The Life and Work of Georgia O'Keeffe",
+      subtitle:"",
+      body:[
+        "For seven decades, Georgia O'Keeffe (1887–1986) was a major figure in American art. Remarkably, she remained independent from shifting art trends and her work stayed true to her own vision, which was based on finding the essential, abstract forms in nature. With exceptionally keen powers of observation and great finesse with a paintbrush, she recorded subtle nuances of colour, shape, and light that enlivened her paintings and attracted a wide audience.",
+        "Born in 1887 near Sun Prairie, Wisconsin to cattle breeders Francis and Ida O'Keeffe, Georgia was raised on their farm along with her six siblings. By the time she graduated from high school in 1905, she had determined to make her way as an artist. She studied the techniques of traditional painting at the Art Institute of Chicago school (1905) and the Art Students League of New York (1907–8). After attending university and then training college, she became an art teacher and taught in elementary schools, high schools, and colleges in Virginia, Texas, and South Carolina from 1911 to 1918.",
+        "During this period, O'Keeffe began to experiment with creating abstract compositions in charcoal, and produced a series of innovative drawings that led her art in a new direction. She sent some of these drawings to a friend in New York, who showed them to art collector and photographer Alfred Stieglitz in January 1916. Stieglitz was impressed, and exhibited the drawings later that year at his gallery on Fifth Avenue, New York City, where the works of many avant-garde artists and photographers were introduced to the American public.",
+        "With Stieglitz's encouragement and promise of financial support, O'Keeffe arrived in New York in June 1918 to begin a career as an artist. For the next three decades, Stieglitz vigorously promoted her work in twenty-two solo exhibitions and numerous group installations. The two were married in 1924. The ups and downs of their personal and professional relationship were recorded in Stieglitz's celebrated black-and-white portraits of O'Keeffe, taken over the course of twenty years (1917–37).",
+        "By the mid-1920s, O'Keeffe was recognized as one of America's most important and successful artists, widely known for the architectural pictures that dramatically depict the soaring skyscrapers of New York. But most often, she painted botanical subjects, inspired by annual trips to the Stieglitz family summer home. In her magnified images depicting flowers, begun in 1924, O'Keeffe brings the viewer right into the picture. Enlarging the tiniest details to fill an entire metre-wide canvas emphasized their shapes and lines and made them appear abstract. Such daring compositions helped establish O'Keeffe's reputation as an innovative modernist.",
+        "In 1929, O'Keeffe made her first extended trip to the state of New Mexico. It was a visit that had a lasting impact on her life, and an immediate effect on her work. Over the next two decades she made almost annual trips to New Mexico, staying up to six months there, painting in relative solitude, then returning to New York each winter to exhibit the new work at Stieglitz's gallery. This pattern continued until she moved permanently to New Mexico in 1949.",
+        "There, O'Keeffe found new inspiration: at first, it was the numerous sun-bleached bones she came across in the state's rugged terrain that sparked her imagination. Two of her earliest and most celebrated Southwestern paintings exquisitely reproduce a cow skull's weathered surfaces, jagged edges, and irregular openings. Later, she also explored another variation on this theme in her large series of Pelvis pictures, which focused on the contrasts between convex and concave surfaces, and solid and open spaces.",
+        "However, it was the region's spectacular landscape, with its unusual geological formations, vivid colours, clarity of light, and exotic vegetation, that held the artist's imagination for more than four decades. Often, she painted the rocks, cliffs, and mountains in striking close-up, just as she had done with her botanical subjects. O'Keeffe eventually owned two homes in New Mexico – the first, her summer retreat at Ghost Ranch, was nestled beneath 200-metre cliffs, while the second, used as her winter residence, was in the small town of Abiquiú. While both locales provided a wealth of imagery for her paintings, one feature of the Abiquiú house – the large walled patio with its black door – was particularly inspirational. In more than thirty pictures between 1946 and 1960, she reinvented the patio into an abstract arrangement of geometric shapes.",
+        "From the 1950s into the 1970s, O'Keeffe travelled widely, making trips to Asia, the Middle East, and Europe. Flying in planes inspired her last two major series – aerial views of rivers and expansive paintings of the sky viewed from just above clouds. In both series, O'Keeffe increased the size of her canvases, sometimes to mural proportions, reflecting perhaps her newly expanded view of the world. When in 1965 she successfully translated one of her cloud motifs to a monumental canvas measuring 6 metres in length (with the help of assistants), it was an enormous challenge and a special feat for an artist nearing eighty years of age.",
+        "The last two decades of the artist's life were relatively unproductive as ill health and blindness hindered her ability to work. O'Keeffe died in 1986 at the age of ninety-eight, but her rich legacy of some 900 paintings has continued to attract subsequent generations of artists and art lovers who derive inspiration from these very American images."
+      ]
+    },
+    { part:2, range:"14–26",
+      instructions:"You should spend about 20 minutes on Questions 14–26, which are based on Reading Passage 2 below.",
+      title:"Adapting to the Effects of Climate Change",
+      subtitle:"",
+      body:[
+        "<strong>A</strong>&nbsp;&nbsp;All around the world, nations are already preparing for, and adapting to, climate change and its impacts. Even if we stopped all CO2 emissions tomorrow, we would continue to see the impact of the CO2 already released since industrial times, with scientists forecasting that global warming would continue for around 40 years. In the meantime, ice caps would continue to melt and sea levels rise. Some countries and regions will suffer more extreme impacts from these changes than others. It's in these places that innovation is thriving.",
+        "<strong>B</strong>&nbsp;&nbsp;In Miami Beach, Florida, USA, seawater isn't just breaching the island city's walls, it's seeping up through the ground, so the only way to save the city is to lift it up above sea level. Starting in the lowest and most vulnerable neighbourhoods, roads have been raised by as much as 61 centimetres. The elevation work was carried out as part of Miami Beach's ambitious but much-needed stormwater-management programme. In addition to the road adaptations, the city has set up new pumps that can remove up to 75,000 litres of water per minute. In the face of floods, climate-mitigation strategies have often been overlooked, says Yanira Pineda, a senior sustainability coordinator. She knows that they're essential and that the job is far from over. 'We know that in 20, 30, 40 years, we'll need to go back in there and adjust to the changing environment,' she says.",
+        "<strong>C</strong>&nbsp;&nbsp;Seawalls are a staple strategy for many coastal communities, but on the soft, muddy northern shores of Java, Indonesia, they frequently collapse, further exacerbating coastal erosion. There have been many attempts to restore the island's coastal mangroves: ecosystems of trees and shrubs that help defend coastal areas by trapping sediment in their net-like root systems, elevating the sea bed and dampening the energy of waves and tidal currents. But Susanna Tol of the not-for-profit organisation Wetlands International says that, while hugely popular, the majority of mangrove-planting projects fail. So, Wetlands International started out with a different approach, building semi-permeable dams, made from bamboo poles and brushwood, to mimic the role of mangrove roots and create favourable conditions for mangroves to grow back naturally. The programme has seen moderate success, mainly in areas with less subsidence. 'Unfortunately, traditional infrastructure is often single-solution focused,' says Tol. 'For long-term success, it's critical that we transition towards multifunctional approaches that embed natural processes and that engage and benefit communities and local decision-makers.'",
+        "<strong>D</strong>&nbsp;&nbsp;As the floodwaters rose in the rice fields of the Mekong Delta in September 2018, four small houses rose with them. Homes in this part of Vietnam are traditionally built on stilts but these ones had been built to float. The modifications were made by the Buoyant Foundation Project, a not-for-profit organisation that has been researching and retrofitting amphibious houses since 2006. 'When I started this,' explains founder Elizabeth English, 'climate change was not on the tip of everybody's tongue, but this technology is becoming necessary in places that didn't previously need it.' It's much cheaper than permanently elevating houses, English explains – about a third of what it would cost to completely replace a building's foundations. It also avoids the problem of taller houses being at greater risk from wind damage. Another plus comes from the fact that amphibious structures can be sensitively adapted to meet cultural needs and match the kind of houses that are already common in a community.",
+        "<strong>E</strong>&nbsp;&nbsp;Bangladesh is especially vulnerable to climate change. Most of the country is less than a metre above sea level and 80 per cent of its land lies on floodplains. 'Almost 35 million people living on the coastal belt of Bangladesh are currently affected by soil and water salinity,' says Raisa Chowdhury of the international development organisation ICOO Cooperation. Rather than fighting against it, one project is helping communities adapt to salt-affected soils. ICOO Cooperation has been working with 10,000 farmers in Bangladesh to start cultivating naturally salt-tolerant crops in the region. Certain varieties of carrot, potato, kohlrabi, cabbage and beetroot have been found to be better suited to salty soil than the rice and wheat that is typically grown there. Chowdhury says that the results are very visible, comparing a barren plot of land to the 'beautiful, lush green vegetable garden' sitting beside it, in which he and his team have been working with the farmers. Since the project began, farmers trained in saline agriculture have reported increases of two to three more harvests per year.",
+        "<strong>F</strong>&nbsp;&nbsp;Greg Spotts from Los Angeles (LA) in the USA is chief sustainability officer of the city's street services department. He leads the Cool Streets LA programme, a series of pilot projects, which include the planting of trees and the installation of a 'cool pavement' system, designed to help reach the city's goal of bringing down its average temperature by 1.5°C. 'Urban cooling is literally a matter of life and death for our future in LA,' says Spotts. Using a Geographic Information System data mapping tool, the programme identified streets with low tree canopy cover in three of the city's neighbourhoods and covered them with a light-grey, light-reflecting coating, which had already been shown to lower road surface temperature in Los Angeles by 6°C. Spotts says one of these streets, in the Winnetka neighbourhood of San Fernando Valley, can now be seen as a pale crescent, the only cool spot on an otherwise red thermal image, from the International Space Station."
+      ]
+    },
+    { part:3, range:"27–40",
+      instructions:"You should spend about 20 minutes on Questions 27–40, which are based on Reading Passage 3 below.",
+      title:"A New Role for Livestock Guard Dogs",
+      subtitle:"",
+      body:[
+        "<strong>A</strong>&nbsp;&nbsp;For thousands of years, livestock guard dogs worked alongside shepherds to protect their sheep, goats and cattle from predators such as wolves and bears. But in the 19th and 20th centuries, when such predators were largely exterminated, most guard dogs lost their jobs. In recent years, however, as increased efforts have been made to protect wild animals, predators have become more widespread again. As a result, farmers once more need to protect their livestock, and guard dogs are enjoying an unexpected revival.",
+        "<strong>B</strong>&nbsp;&nbsp;Today there are around 50 breeds of guard dogs on duty in various parts of the world. These dogs are raised from an early age with the animals they will be watching and eventually these animals become the dog's family. The dogs will place themselves between the livestock and any threat, barking loudly. If necessary, they will chase away predators, but often their mere presence is sufficient. 'Their initial training is to make them understand that livestock is going to be their life,' says Dan Macon, a shepherd with three guard dogs. 'A fluffy white puppy is fun to be around, but too much human affection makes it a great dog for guarding the front porch, rather than a great livestock guard dog.'",
+        "<strong>C</strong>&nbsp;&nbsp;The evidence indicates that guard dogs are highly effective. For example, in Portugal, biologist Silvia Ribeiro has found that more than 90 per cent of the farmers participating in a programme to train and use guard dogs to protect their herds against attack from wolves rate the performance of the dogs as very good or excellent. In a study carried out in Australia by Linda van Bommel and Chris Johnson at the University of Tasmania, more than 65 per cent of herders reported that predation stopped completely after they got the dogs, and almost all the rest saw a decrease in attacks. 'If they are managed and used properly, livestock guard dogs are the most efficient control method that we have in terms of the amount of livestock that they save from predation,' says van Bommel.",
+        "<strong>D</strong>&nbsp;&nbsp;But today's guard dogs also have a new role – to help preserve the predators. It is hoped that reductions in livestock losses can make farmers more tolerant of predators and less likely to kill them. In Namibia, more than 90 per cent of cheetahs live outside protected areas, close to humans raising livestock. As a result, the cheetahs are often held responsible for animal losses, and large numbers have been killed by farmers. When guard dogs were introduced, more than 90 per cent of farmers reported a dramatic reduction in livestock losses, and said that as a result they were less likely to kill predators. Julie Young, at Utah State University in the US, believes this result applies widely. 'There is common ground from the livestock perspective and from the conservation perspective,' she says. 'If ranchers don't have a dead cow, they will not make a call to apply for a permit to kill a wolf.'",
+        "<strong>E</strong>&nbsp;&nbsp;Looking at all the published evidence, Bethany Smith at Nottingham Trent University in the UK found that up to 88 per cent of farmers said they no longer killed predators after using dogs – but warned that such self-reported results must be taken with a pinch of salt. What's more, it is possible that livestock guard dogs merely displace predators to unprotected neighbouring properties, where their fate isn't recorded. 'In some regions, we work with almost every farmer, but in others only one or two have dogs,' says Ribeiro. 'If we are not working with everybody, we are transferring the wolf pressure to the neighbour's herd and he can use poison and kill an entire pack of wolves.'",
+        "<strong>F</strong>&nbsp;&nbsp;Another concern is whether there may be unintended ecological effects of using guard dogs. Studies suggest that reducing deaths of one type of predator may have a negative impact on other species. The extent of this problem isn't known, but the consequences are clear in Namibia. Cheetahs aren't the only species that cause sheep and goat losses there: other predators also attack livestock. In 2015, researchers reported that in spite of the impact farmers obtaining guard dogs had on cheetahs, the number of jackals killed by dogs and people actually increased. Guard dogs have other ecological impacts too. They have been found to spread diseases to wild animals, including endangered Ethiopian wolves. They may also compete with other carnivores for food. And by creating a 'landscape of fear', their mere presence can influence the behaviour of prey animals.",
+        "<strong>G</strong>&nbsp;&nbsp;The evidence so far, however, indicates that these consequences aren't always negative. Guard dogs can deliver unexpected benefits by protecting vulnerable wildlife from predators. For example, their presence has been found to protect birds which build their nests on the ground in fields, where foxes would normally raid them. Indeed, Australian researchers are now using dogs to enhance biodiversity and create refuges for species threatened by predation. So if we can get this right, there may be a bright future for guard dogs in promoting harmonious coexistence between humans and wildlife."
+      ]
+    }
+  ],
+  groups: [
+    { part:1, heading:"Questions 1–7",
+      rubric:"Complete the notes below. Choose <strong>ONE WORD ONLY</strong> from the passage for each answer.",
+      type:"template",
+      template:
+        "<div class='font-bold text-center mb-2'>The life and work of Georgia O'Keeffe</div>"+
+        "<ul class='list-disc ml-5 space-y-1'>"+
+        "<li>studied art, then worked as a [[1]] in various places in the USA</li>"+
+        "<li>created drawings using [[2]] which were exhibited in New York City</li>"+
+        "<li>moved to New York and became famous for her paintings of the city's [[3]]</li>"+
+        "<li>produced a series of innovative close-up paintings of [[4]]</li>"+
+        "<li>went to New Mexico and was initially inspired to paint the many [[5]] that could be found there</li>"+
+        "<li>continued to paint various features that together formed the dramatic [[6]] of New Mexico for over forty years</li>"+
+        "<li>travelled widely by plane in later years, and painted pictures of clouds and [[7]] seen from above</li></ul>",
+      questions:[{id:1,answer:["teacher"]},{id:2,answer:["charcoal"]},{id:3,answer:["skyscrapers"]},
+        {id:4,answer:["flowers"]},{id:5,answer:["bones"]},{id:6,answer:["landscape"]},{id:7,answer:["rivers"]}]
+    },
+    { part:1, heading:"Questions 8–13",
+      rubric:"Do the following statements agree with the information given in Reading Passage 1?<br>In boxes 8–13, write <strong>TRUE</strong> if the statement agrees with the information, <strong>FALSE</strong> if it contradicts the information, <strong>NOT GIVEN</strong> if there is no information on this.",
+      type:"choice", options:["TRUE","FALSE","NOT GIVEN"],
+      questions:[
+        {id:8, prompt:"Georgia O'Keeffe's style was greatly influenced by the changing fashions in art over the seven decades of her career.", answer:"FALSE"},
+        {id:9, prompt:"When O'Keeffe finished high school, she had already made her mind up about the career that she wanted.", answer:"TRUE"},
+        {id:10, prompt:"Alfred Stieglitz first discovered O'Keeffe's work when she sent some abstract drawings to his gallery in New York City.", answer:"FALSE"},
+        {id:11, prompt:"O'Keeffe was the subject of Stieglitz's photographic work for many years.", answer:"TRUE"},
+        {id:12, prompt:"O'Keeffe's paintings of the patio of her house in Abiquiú were among the artist's favourite works.", answer:"NOT GIVEN"},
+        {id:13, prompt:"O'Keeffe produced a greater quantity of work during the 1950s to 1970s than at any other time in her life.", answer:"NOT GIVEN"}
+      ]
+    },
+    { part:2, heading:"Questions 14–17",
+      rubric:"Reading Passage 2 has six paragraphs, <strong>A–F</strong>. Which paragraph contains the following information? Write the correct letter, <strong>A–F</strong>.",
+      type:"choice", options:["A","B","C","D","E","F"], inline:true,
+      questions:[
+        {id:14, prompt:"how a type of plant functions as a natural protection for coastlines", answer:"C"},
+        {id:15, prompt:"a prediction about how long it could take to stop noticing the effects of climate change", answer:"A"},
+        {id:16, prompt:"a reference to the fact that a solution is particularly cost-effective", answer:"D"},
+        {id:17, prompt:"a mention of a technology used to locate areas most in need of intervention", answer:"F"}
+      ]
+    },
+    { part:2, heading:"Questions 18–22",
+      rubric:"Complete the sentences below. Choose <strong>ONE WORD ONLY</strong> from the passage for each answer.",
+      type:"template",
+      template:
+        "<p><span class='num mr-1'>18</span> The stormwater-management programme in Miami Beach has involved the installation of efficient [[18]].</p>"+
+        "<p class='mt-2'><span class='num mr-1'>19</span> The construction of [[19]] was the first stage of a project to ensure the success of mangroves in Indonesia.</p>"+
+        "<p class='mt-2'><span class='num mr-1'>20</span> As a response to rising floodwaters in the Mekong Delta, a not-for-profit organisation has been building houses that can [[20]].</p>"+
+        "<p class='mt-2'><span class='num mr-1'>21</span> Rising sea levels in Bangladesh have made it necessary to introduce various [[21]] that are suitable for areas of high salt content.</p>"+
+        "<p class='mt-2'><span class='num mr-1'>22</span> A project in LA has increased the number of [[22]] on the city's streets.</p>",
+      questions:[{id:18,answer:["pumps"]},{id:19,answer:["dams"]},{id:20,answer:["float"]},
+        {id:21,answer:["crops"]},{id:22,answer:["trees"]}]
+    },
+    { part:2, heading:"Questions 23–26",
+      rubric:"Look at the following statements and the list of people below. Match each statement with the correct person, <strong>A–E</strong>.<br><strong>List of People</strong><br>A&nbsp;&nbsp;Yanira Pineda &nbsp;&nbsp; B&nbsp;&nbsp;Susanna Tol &nbsp;&nbsp; C&nbsp;&nbsp;Elizabeth English &nbsp;&nbsp; D&nbsp;&nbsp;Raisa Chowdhury &nbsp;&nbsp; E&nbsp;&nbsp;Greg Spotts",
+      type:"choice", options:["A","B","C","D","E"], inline:true,
+      questions:[
+        {id:23, prompt:"It is essential to adopt strategies which involve and help residents of the region.", answer:"B"},
+        {id:24, prompt:"Interventions which reduce heat are absolutely vital for our survival in this location.", answer:"E"},
+        {id:25, prompt:"More work will need to be done in future decades to deal with the impact of rising water levels.", answer:"A"},
+        {id:26, prompt:"The number of locations requiring action to adapt to flooding has grown in recent years.", answer:"C"}
+      ]
+    },
+    { part:3, heading:"Questions 27–31",
+      rubric:"Reading Passage 3 has seven paragraphs, <strong>A–G</strong>. Which paragraph contains the following information? Write the correct letter, <strong>A–G</strong>. <strong>NB</strong> You may use any letter more than once.",
+      type:"choice", options:["A","B","C","D","E","F","G"], inline:true,
+      questions:[
+        {id:27, prompt:"an example of how one predator has been protected by the introduction of livestock guard dogs", answer:"D"},
+        {id:28, prompt:"an optimistic suggestion about the possible positive developments in the use of livestock guard dogs", answer:"G"},
+        {id:29, prompt:"a description of how the methods used by livestock guard dogs help to keep predators away", answer:"B"},
+        {id:30, prompt:"claims by different academics that the use of livestock guard dogs is a successful way of protecting farmers' herds", answer:"C"},
+        {id:31, prompt:"a reference to how livestock guard dogs gain their skills", answer:"B"}
+      ]
+    },
+    { part:3, heading:"Questions 32–36",
+      rubric:"Look at the following statements and the list of people below. Match each statement with the correct person, <strong>A–E</strong>.<br><strong>List of People</strong><br>A&nbsp;&nbsp;Dan Macon &nbsp;&nbsp; B&nbsp;&nbsp;Silvia Ribeiro &nbsp;&nbsp; C&nbsp;&nbsp;Linda van Bommel &nbsp;&nbsp; D&nbsp;&nbsp;Julie Young &nbsp;&nbsp; E&nbsp;&nbsp;Bethany Smith",
+      type:"choice", options:["A","B","C","D","E"], inline:true,
+      questions:[
+        {id:32, prompt:"The use of guard dogs may save the lives of both livestock and wild animals.", answer:"D"},
+        {id:33, prompt:"Claims of a change in behaviour from those using livestock guard dogs may not be totally accurate.", answer:"E"},
+        {id:34, prompt:"There may be negative results if the use of livestock guard dogs is not sufficiently widespread.", answer:"B"},
+        {id:35, prompt:"Livestock guard dogs are the best way of protecting farm animals, as long as the dogs are appropriately handled.", answer:"C"},
+        {id:36, prompt:"Teaching a livestock guard dog how to do its work needs a different focus from teaching a house guard dog.", answer:"A"}
+      ]
+    },
+    { part:3, heading:"Questions 37–40",
+      rubric:"Complete the summary below. Choose <strong>ONE WORD ONLY</strong> from the passage for each answer.",
+      type:"template",
+      template:
+        "<div class='font-bold text-center mb-2'>Unintended ecological effects of using guard dogs</div>"+
+        "<p>In Namibia, livestock guard dogs have been used to protect domestic animals from attacks by cheetahs. This has led to a rise in the deaths of other predators, particularly [[37]]. In addition, it has been suggested that the dogs could have [[38]] which may affect other species, and that they may reduce the amount of [[39]] available to certain wild animals.</p>"+
+        "<p class='mt-2'>On the other hand, these dogs may help birds by protecting their nests. These might otherwise be threatened by predators such as [[40]].</p>",
+      questions:[{id:37,answer:["jackals"]},{id:38,answer:["diseases","disease"]},{id:39,answer:["food"]},{id:40,answer:["foxes"]}]
+    }
+  ]
+};
+/* ---------------- ENGINE (enhanced) ---------------- */
+const answers = {};
+const norm = s => (s||"").toString().trim().toLowerCase().replace(/\s+/g,' ');
+function accepts(q, val){
+  const list = Array.isArray(q.answer) ? q.answer : [q.answer];
+  return list.some(a => norm(a) === norm(val));
+}
+let currentPart = 1;
+
+function passageHtml(p){
+  let h = `<h3 class="text-xl font-bold mb-1">Reading Passage ${p.part}</h3>`;
+  h += `<div class="text-lg font-bold mt-3">${p.title}</div>`;
+  if(p.subtitle) h += `<div class="italic text-gray-600 mb-3">${p.subtitle}</div>`;
+  h += p.body.map(t=>`<p>${t}</p>`).join('');
+  return h;
+}
+function choiceControl(q, options, inline){
+  const cls = inline ? "flex flex-wrap gap-2" : "flex flex-col gap-1.5";
+  return `<div class="${cls} ui mt-2" data-qwrap="${q.id}">` + options.map(o=>`
+    <label class="opt inline-flex items-center gap-2 border rounded px-2 py-1 text-sm hover:bg-gray-50">
+      <input type="radio" name="q${q.id}" value="${o}"> <span>${o}</span></label>`).join('') + `</div>`;
+}
+function mcControl(q){
+  return `<div class="flex flex-col gap-1.5 ui mt-2" data-qwrap="${q.id}">` + q.options.map(([v,label])=>`
+    <label class="opt flex items-start gap-2 border rounded px-2 py-1.5 text-sm hover:bg-gray-50">
+      <input type="radio" name="q${q.id}" value="${v}" class="mt-0.5"> <span><strong>${v}</strong>&nbsp; ${label}</span></label>`).join('') + `</div>`;
+}
+function inputControl(q){ return `<input class="blank-input ui" data-input="${q.id}" autocomplete="off" spellcheck="false">`; }
+function selectControl(id, opts){
+  return `<select class="blank-select ui" data-input="${id}"><option value=""></option>`+
+    opts.map(([v,label])=>`<option value="${v}">${label}</option>`).join('')+`</select>`;
+}
+
+function renderQuestions(part){
+  const wrap = document.getElementById('questions');
+  wrap.innerHTML = '';
+  TEST.groups.filter(g=>g.part===part).forEach(g=>{
+    const sec = document.createElement('div');
+    sec.className = 'mb-8';
+    let html = `<h3 class="ui font-bold text-lg mb-1">${g.heading}</h3>`;
+    html += `<p class="ui text-sm text-gray-700 mb-3">${g.rubric}</p>`;
+    if(g.type==='template'){
+      let t = g.template;
+      g.questions.forEach(q=>{
+        const ctrl = g.selectOptions ? selectControl(q.id, g.selectOptions) : inputControl(q);
+        t = t.replace(`[[${q.id}]]`, `<span class="num mr-1">${q.id}</span>${ctrl}`);
+      });
+      html += `<div class="ui text-sm bg-gray-50 border rounded p-3 leading-8">${t}</div>`;
+    } else if(g.type==='multi'){
+      html += `<div class="ui text-sm font-semibold mb-2">${g.prompt}</div>`;
+      html += `<div data-multiwrap="${g.key}" class="flex flex-col gap-1.5 ui">`+ g.options.map(([v,label])=>`
+        <label class="opt flex items-start gap-2 border rounded px-2 py-1.5 text-sm hover:bg-gray-50">
+          <input type="checkbox" data-multi="${g.key}" value="${v}" class="mt-0.5"> <span><strong>${v}</strong>&nbsp; ${label}</span></label>`).join('') + `</div>`;
+    } else {
+      g.questions.forEach(q=>{
+        html += `<div class="mb-4"><div class="flex gap-2"><span class="num mt-0.5">${q.id}</span><div class="ui text-sm flex-1">${q.prompt||''}`;
+        if(g.type==='mc') html += mcControl(q);
+        else if(g.type==='choice') html += choiceControl(q, g.options, g.inline);
+        html += `</div></div></div>`;
+      });
+    }
+    sec.innerHTML = html;
+    wrap.appendChild(sec);
+  });
+  // restore
+  wrap.querySelectorAll('input[type=radio]').forEach(r=>{ if(answers[r.name.slice(1)]===r.value) r.checked=true; });
+  wrap.querySelectorAll('input[data-input], select[data-input]').forEach(i=>{
+    const id=i.getAttribute('data-input'); if(answers[id]!=null) i.value=answers[id];
+  });
+  wrap.querySelectorAll('input[data-multi]').forEach(c=>{
+    const arr=answers[c.getAttribute('data-multi')]||[]; if(arr.includes(c.value)) c.checked=true;
+  });
+  // listeners
+  wrap.querySelectorAll('input[type=radio]').forEach(r=> r.addEventListener('change', ()=>{ answers[r.name.slice(1)]=r.value; }));
+  wrap.querySelectorAll('input[data-input], select[data-input]').forEach(i=> i.addEventListener('input', ()=>{ answers[i.getAttribute('data-input')]=i.value; }));
+  wrap.querySelectorAll('input[data-multi]').forEach(c=> c.addEventListener('change', ()=>{
+    const key=c.getAttribute('data-multi');
+    const g=TEST.groups.find(x=>x.key===key);
+    let arr=answers[key]||[];
+    if(c.checked){
+      if(arr.length>=g.pick){ c.checked=false; return; }
+      arr=[...arr, c.value];
+    } else arr=arr.filter(v=>v!==c.value);
+    answers[key]=arr;
+  }));
+}
+
+function renderPart(part){
+  currentPart = part;
+  const p = TEST.passages.find(x=>x.part===part);
+  document.getElementById('instructions').innerHTML = p.instructions;
+  document.getElementById('passage').innerHTML = passageHtml(p);
+  renderQuestions(part);
+  document.querySelectorAll('.part-tab').forEach(b=>{
+    const on = +b.dataset.part===part;
+    b.classList.toggle('bg-red-600', on); b.classList.toggle('text-white', on);
+    b.classList.toggle('border-red-600', on); b.classList.toggle('bg-white', !on);
+  });
+  document.querySelector('main section:first-child').scrollTop = 0;
+  document.querySelector('main section:last-child').scrollTop = 0;
+}
+
+function scoreAll(){
+  let correct=0;
+  TEST.groups.forEach(g=>{
+    if(g.type==='multi'){
+      const sel=answers[g.key]||[];
+      correct += sel.filter(x=>g.answer.includes(x)).length;
+    } else {
+      g.questions.forEach(q=>{ const v=answers[q.id]; if(v!=null&&v!==''&&accepts(q,v)) correct++; });
+    }
+  });
+  return correct;
+}
+function check(){
+  const correct = scoreAll();
+  markCurrentPart();
+  const box=document.getElementById('scoreBox');
+  box.classList.remove('hidden');
+  box.textContent=`Score: ${correct} / 40`;
+  box.className='ml-auto text-sm font-bold '+(correct>=30?'text-green-700':correct>=20?'text-yellow-700':'text-red-700');
+}
+function markCurrentPart(){
+  const wrap=document.getElementById('questions');
+  TEST.groups.filter(g=>g.part===currentPart).forEach(g=>{
+    if(g.type==='multi'){
+      const sel=answers[g.key]||[];
+      wrap.querySelectorAll(`[data-multiwrap="${g.key}"] label`).forEach(l=>{
+        const v=l.querySelector('input').value; l.classList.remove('correct','incorrect');
+        if(g.answer.includes(v)) l.classList.add('correct');
+        else if(sel.includes(v)) l.classList.add('incorrect');
+      });
+      return;
+    }
+    g.questions.forEach(q=>{
+      const val=answers[q.id]; const ok=val!=null&&val!==''&&accepts(q,val);
+      if(g.type==='template'){
+        const inp=wrap.querySelector(`[data-input="${q.id}"]`);
+        if(inp){ inp.classList.remove('correct','incorrect'); inp.classList.add(ok?'correct':'incorrect');
+          const old=inp.parentElement.querySelector('.ans-tag'); if(old) old.remove();
+          if(!ok){ const tag=document.createElement('span'); tag.className='ans-tag ui text-xs text-green-700 font-semibold ml-1';
+            tag.textContent='✓ '+(Array.isArray(q.answer)?q.answer[0]:q.answer); inp.after(tag); } }
+      } else {
+        const box=wrap.querySelector(`[data-qwrap="${q.id}"]`);
+        if(box) box.querySelectorAll('label').forEach(l=>{
+          const v=l.querySelector('input').value; l.classList.remove('correct','incorrect');
+          if(v===String(q.answer)) l.classList.add('correct');
+          if(v===val && !ok) l.classList.add('incorrect');
+        });
+      }
+    });
+  });
+}
+function reset(){ for(const k in answers) delete answers[k]; document.getElementById('scoreBox').classList.add('hidden'); renderPart(currentPart); }
+
+let timerInt=null, remaining=3600;
+function fmt(s){ const m=Math.floor(s/60), ss=s%60; return `${String(m).padStart(2,'0')}:${String(ss).padStart(2,'0')}`; }
+document.getElementById('timerBtn').addEventListener('click', e=>{
+  if(timerInt){ clearInterval(timerInt); timerInt=null; e.target.textContent='Start'; }
+  else { e.target.textContent='Pause'; timerInt=setInterval(()=>{ if(remaining>0){remaining--; document.getElementById('timer').textContent=fmt(remaining);} },1000); }
+});
+document.querySelectorAll('.part-tab').forEach(b=> b.addEventListener('click', ()=>renderPart(+b.dataset.part)));
+document.getElementById('checkBtn').addEventListener('click', check);
+document.getElementById('resetBtn').addEventListener('click', reset);
+renderPart(1);
+</script>
+</body>
+</html>
