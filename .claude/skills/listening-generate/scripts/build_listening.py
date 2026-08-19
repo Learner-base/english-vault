@@ -22,7 +22,7 @@ The data.js must contain, between the DATA-START/DATA-END markers:
   const EXPL = { "1":"...", ... };
   const answerHighlightQuotes = { "1":"exact transcript substring", ... };
 """
-import argparse, base64, os, re, subprocess, sys
+import argparse, base64, os, re, shutil, subprocess, sys
 
 REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", ".."))
 
@@ -66,16 +66,23 @@ def main():
         sys.exit("ERROR: highlight quotes not found in transcript — trim to an exact substring")
     print(f"quotes verified: {sum(1 for v in qmap.values() if v)}")
 
-    # embed audio
+    # copy the 4 tracks into the shared /audio/cambridge-<badge>/ folder and reference them by
+    # path (so tests + /player.html share one copy; no giant embedded files, no 100 MB limit)
     files = [f.strip() for f in a.audio.split(",")]
     if len(files) != 4: sys.exit("ERROR: --audio must list exactly 4 files (Part 1-4)")
+    tm = re.search(r"test[\s\-]*?(\d+)", os.path.basename(a.out), re.I)
+    testno = tm.group(1) if tm else "x"
+    adir = os.path.join(REPO, "audio", f"cambridge-{a.badge}")
+    os.makedirs(adir, exist_ok=True)
     total = 0
     for i, f in enumerate(files):
-        raw = open(f, "rb").read(); total += len(raw)
+        total += os.path.getsize(f)
+        dest = f"test-{testno}-part-{i+1}.m4a"
+        shutil.copyfile(f, os.path.join(adir, dest))
         tok = f"__AUDIO_{i}__"
         if tok not in src: sys.exit(f"ERROR: {tok} placeholder missing (data.js AUDIO array)")
-        src = src.replace(tok, "data:audio/mp4;base64," + base64.b64encode(raw).decode("ascii"))
-    print(f"audio embedded: 4 tracks, {total/1e6:.1f} MB")
+        src = src.replace(tok, f"/audio/cambridge-{a.badge}/{dest}")
+    print(f"audio -> /audio/cambridge-{a.badge}/ (4 tracks, {total/1e6:.1f} MB, referenced by path)")
 
     # id sanity
     ids = sorted(int(x) for x in re.findall(r"\bid:(\d+)", data))

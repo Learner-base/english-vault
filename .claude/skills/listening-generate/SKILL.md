@@ -39,7 +39,9 @@ Part 1 = Q1–10, Part 2 = Q11–20, Part 3 = Q21–30, Part 4 = Q31–40 (the e
 ## Data schema — the objects in `data.js`
 
 ### `const AUDIO = ["__AUDIO_0__","__AUDIO_1__","__AUDIO_2__","__AUDIO_3__"];`
-One placeholder per section, in Part 1–4 order. The build script replaces them with base64 data URIs.
+One placeholder per section, in Part 1–4 order. The build script copies the four audio files into
+the shared `/audio/cambridge-<badge>/` folder and replaces the placeholders with their paths
+(e.g. `/audio/cambridge-20/test-1-part-1.m4a`) — so the tests and `/player.html` share one copy.
 
 ### `const TEST = { sections:[…], groups:[…], transcript:{…} }`
 `sections` — one per part: `{ part:1, head:"short label", instructions:"Questions 1–10 · …" }`.
@@ -97,10 +99,15 @@ case-insensitive) to highlight green with a `Q#` tag after submit.
 7. **Commit** — only with the user's go-ahead. Commit one test per commit; do not push unless asked.
 
 ## Notes
-- The four tracks are embedded, so each file is ~24 MB. That is expected for a self-contained,
-  offline-playable listening test.
+- Audio is stored once in `/audio/cambridge-<badge>/` and referenced by path (root-absolute
+  `/audio/…`), so each test HTML stays small (~90 KB) and `/player.html` reuses the same files.
+  The site is served from the repo root (Vercel), where `/audio/…` resolves correctly.
+- After building, `/player.html` picks up the new tracks automatically on the next
+  `python3 scripts/build_index.py` (see the `player-update` skill).
 - If the template's markup changes, `build_listening.py` fails loudly on a missing marker or
   placeholder — update the template or the script's patch targets together.
 - `templates/listening.html` ships with a short ORIGINAL placeholder sample (empty AUDIO) that
   demonstrates every group type; open it directly to see the schema working. Never overwrite that
   sample with copyrighted transcript text.
+- The engine also accepts embedded `data:` audio URIs in the AUDIO array (older self-contained
+  form); the current builder uses `/audio/…` paths instead. Both play in the same player.

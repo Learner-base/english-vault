@@ -788,7 +788,8 @@
 /* ==== DATA-START ==== */
 /* LISTENING TEST DATA — build_listening.py replaces everything between DATA-START and DATA-END.
    This placeholder sample is ORIGINAL text and demonstrates every listening question type.
-   AUDIO holds one data: URI per section (Part 1–4). The build script injects real base64 tracks;
+   AUDIO holds one src per section (Part 1–4). The build script copies the audio into
+   /audio/cambridge-<n>/ and fills these with paths like "/audio/cambridge-20/test-1-part-1.m4a";
    here it is empty so the template opens standalone (the player simply has no audio). */
 const AUDIO = ["", "", "", ""];
 
