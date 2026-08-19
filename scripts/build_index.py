@@ -16,7 +16,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SKIP_DIR = {".git", ".claude", "__pycache__", "scripts"}
 # CLAUDE.md is an AI instruction file and index.html is this page itself — the user
 # doesn't need either listed in the browser.
-SKIP_FILE = {".DS_Store", "CLAUDE.md", "index.html", "progress.html", "vercel.json"}
+SKIP_FILE = {".DS_Store", "CLAUDE.md", "index.html", "progress.html", "vercel.json", "player.html"}
 OUT = os.path.join(ROOT, "index.html")
 
 
@@ -181,6 +181,12 @@ def main():
     with open(OUT, "w", encoding="utf-8") as f:
         f.write(html)
     print(f"Wrote {OUT}")
+    # keep the road-listening player in sync with the current set of listening tracks
+    try:
+        import build_player
+        build_player.main()
+    except Exception as e:
+        print(f"WARNING: build_player failed ({e})")
 
 
 if __name__ == "__main__":
