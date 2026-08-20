@@ -1,15 +1,21 @@
 #!/usr/bin/env python3
-"""Regenerate /player.html — a self-contained listening-audio player for the road.
+"""Regenerate /player.html — a self-contained, lightweight listening-audio player.
 
 Scans every listening test HTML under listening/, and takes each test's audio FROM
 THE TEST ITSELF (no separate audio files are created):
-  * Cambridge 20 tests embed their four section tracks as base64 data: URIs — those
-    are extracted and re-used, so the player plays fully offline.
-  * Other tests (e.g. Cambridge 21/18) reference a remote audio URL — that URL is
-    reused as-is (those tracks need an internet connection).
+  * Cambridge 20 tests reference their four section tracks (Google-Drive URLs) via the
+    `const AUDIO = [...]` array — each part becomes one playlist track.
+  * Other tests (e.g. Cambridge 21/18) reference a single remote audio URL — reused as-is.
 
-The result is a single /player.html with every track in one playlist, continuous
-autoplay, and lock-screen / car controls (Media Session API).
+It also pulls each test's **audio script** out of the test HTML when present, so the
+player can show a collapsible read-along transcript per track:
+  * Cambridge 20 — full per-part transcript (`TEST.transcript = {1:[{who,text}|{sys}],…}`).
+  * Cambridge 21 — per-question answer snippets (`questionTranscripts = {n:{speaker,html}}`).
+  * Cambridge 18 (and anything without transcript data) — no script.
+
+The result is a single, light-themed /player.html: every track in one playlist,
+continuous autoplay, resume-where-you-left-off, lock-screen / car controls
+(Media Session API), and lazy-rendered transcript panels.
 
 Run after adding or moving any listening test:
     python3 scripts/build_player.py
@@ -30,22 +36,107 @@ def parse_book_test(fname):
     return book, test
 
 
-def extract_tracks(path):
+def slice_balanced(s, i):
+    """s[i] is an opening '{' or '['. Return the substring inside the balanced
+    bracket pair, string-literal aware (handles ", ', ` and backslash escapes)."""
+    open_ch = s[i]
+    close_ch = "}" if open_ch == "{" else "]"
+    depth, j, quote, n = 0, i, None, len(s)
+    while j < n:
+        c = s[j]
+        if quote:
+            if c == "\\":
+                j += 2
+                continue
+            if c == quote:
+                quote = None
+        else:
+            if c in ('"', "'", "`"):
+                quote = c
+            elif c == open_ch:
+                depth += 1
+            elif c == close_ch:
+                depth -= 1
+                if depth == 0:
+                    return s[i + 1:j]
+        j += 1
+    return s[i + 1:]
+
+
+def extract_tracks(txt):
     """Return list of (src, part_index_or_None) for one test HTML."""
-    txt = open(path, encoding="utf-8", errors="ignore").read()
-    # 1) embedded AUDIO array (Cambridge 20 engine)
     m = re.search(r"const AUDIO\s*=\s*\[(.*?)\]", txt, re.S)
     if m:
         srcs = [s for s in re.findall(r'"([^"]+)"', m.group(1))
                 if s.startswith(("data:", "http", "/", "audio/"))]
         if srcs:
             return [(s, i + 1) for i, s in enumerate(srcs)]
-    # 2) single remote source (<source src> or <audio ... src>)
     for pat in (r'<source[^>]+src="([^"]+)"', r'<audio[^>]+src="([^"]+)"'):
         m = re.search(pat, txt)
-        if m and (m.group(1).startswith("http") or m.group(1).startswith("data:")):
+        if m and m.group(1).startswith(("http", "data:")):
             return [(m.group(1), None)]
     return []
+
+
+# ---- transcript extraction ------------------------------------------------
+
+def _cam20_part_html(arr_inner):
+    """Turn one part's array body into read-along HTML."""
+    out = []
+    for em in re.finditer(
+        r'\{\s*who\s*:\s*"([^"]*)"\s*,\s*text\s*:\s*"([^"]*)"\s*\}'
+        r'|\{\s*sys\s*:\s*"([^"]*)"\s*\}', arr_inner):
+        if em.group(1) is not None:
+            out.append(f'<p class="ln"><b>{html.escape(em.group(1))}</b> '
+                       f'{html.escape(em.group(2))}</p>')
+        elif em.group(3) is not None:
+            out.append(f'<p class="sys">{html.escape(em.group(3))}</p>')
+    return "".join(out)
+
+
+def extract_cam20_transcript(txt):
+    """{part:int -> html} from `TEST.transcript = {1:[…],2:[…],…}`."""
+    m = re.search(r"\btranscript\s*:\s*\{", txt)
+    if not m:
+        return {}
+    inner = slice_balanced(txt, m.end() - 1)
+    parts = {}
+    for pm in re.finditer(r"(\d+)\s*:\s*\[", inner):
+        arr_inner = slice_balanced(inner, pm.end() - 1)
+        h = _cam20_part_html(arr_inner)
+        if h:
+            parts[int(pm.group(1))] = h
+    return parts
+
+
+def extract_cam21_transcript(txt):
+    """Answer-snippet html from `questionTranscripts = {n:{speaker?,html}}`.
+
+    `speaker` is present in some tests, absent in others — both are handled.
+    """
+    m = re.search(r"questionTranscripts\s*=\s*\{", txt)
+    if not m:
+        return ""
+    inner = slice_balanced(txt, m.end() - 1)
+    out, pos = [], 0
+    for em in re.finditer(r"(\d+)\s*:\s*\{", inner):
+        open_idx = em.end() - 1
+        if open_idx < pos:          # a brace nested inside a previous entry body
+            continue
+        body = slice_balanced(inner, open_idx)
+        pos = open_idx + 2 + len(body)
+        hm = re.search(r"html\s*:\s*'((?:\\.|[^'\\])*)'", body)
+        if not hm:
+            continue
+        snippet = hm.group(1).replace("\\'", "'").replace("\\\\", "\\")
+        sm = re.search(r"speaker\s*:\s*'((?:\\.|[^'\\])*)'", body)
+        q = em.group(1)
+        if sm and sm.group(1):
+            who = f"Q{q} · {html.escape(sm.group(1).replace(chr(92) + chr(39), chr(39)))}"
+        else:
+            who = f"Q{q}"
+        out.append(f'<p class="ln"><b>{who}</b> {snippet}</p>')
+    return "".join(out)
 
 
 def collect():
@@ -55,11 +146,13 @@ def collect():
             if not f.endswith(".html"):
                 continue
             path = os.path.join(dirpath, f)
+            txt = open(path, encoding="utf-8", errors="ignore").read()
             book, test = parse_book_test(f)
-            found = extract_tracks(path)
+            found = extract_tracks(txt)
             multi = len(found) > 1
+            cam20 = extract_cam20_transcript(txt) if multi else {}
+            cam21 = "" if multi else extract_cam21_transcript(txt)
             for src, part in found:
-                # local files (/audio/… or embedded data:) play offline; external URLs need internet
                 offline = not re.match(r"https?://", src)
                 if multi and part:
                     label = f"Test {test} · Part {part}"
@@ -67,10 +160,12 @@ def collect():
                 else:
                     label = f"Test {test}"
                     media = f"Cambridge {book} — Test {test}"
+                tr = cam20.get(part, "") if multi else cam21
+                trtype = ("full" if multi else "snippets") if tr else ""
                 tracks.append({
                     "group": f"Cambridge {book}", "book": book, "test": test,
                     "part": part or 0, "label": label, "media": media,
-                    "src": src, "offline": offline,
+                    "src": src, "offline": offline, "tr": tr, "trtype": trtype,
                     "rel": os.path.relpath(path, ROOT),
                 })
     tracks.sort(key=lambda t: (t["book"], t["test"], t["part"]))
@@ -84,50 +179,103 @@ PAGE_HEAD = """<!DOCTYPE html>
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
-<meta name="theme-color" content="#0b1220"/>
+<meta name="theme-color" content="#1e6de6"/>
 <title>Listening Player</title>
 <style>
-  :root{--bg:#0b1220;--card:#131c2e;--line:#243149;--ink:#eaf0fb;--ink2:#95a3bd;--accent:#3b82f6;--accent2:#22c55e;--warn:#f59e0b}
+  :root{
+    --bg:#f4f7fb;--card:#fff;--line:#e6eaf1;--ink:#111827;--ink2:#6b7280;
+    --blue:#1e6de6;--blue2:#3b82f6;--blued:#0f2f66;--bluebg:#eff6ff;
+    --green:#16a34a;--greenbg:#effdf4;--amber:#b45309;--amberbg:#fff7ed;
+    --shadow:0 1px 2px rgba(16,24,40,.04),0 1px 3px rgba(16,24,40,.06);
+  }
   *{box-sizing:border-box}html,body{margin:0;padding:0}
-  body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;padding-bottom:180px}
-  .wrap{max-width:640px;margin:0 auto;padding:18px 16px 24px}
-  h1{font-size:20px;margin:4px 0 2px;letter-spacing:-.01em}
-  .sub{color:var(--ink2);font-size:13px;margin:0 0 16px}
-  .grp{margin:18px 0 6px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);font-weight:700}
-  .trk{display:flex;align-items:center;gap:12px;padding:13px 12px;border:1px solid var(--line);background:var(--card);border-radius:12px;margin-bottom:8px;cursor:pointer;transition:.12s}
-  .trk:hover{border-color:var(--accent)}
-  .trk.active{border-color:var(--accent);box-shadow:0 0 0 2px rgba(59,130,246,.35);background:#16233c}
-  .trk .idx{width:30px;height:30px;flex:none;border-radius:8px;background:#1c2942;color:var(--ink2);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700}
-  .trk.active .idx{background:var(--accent);color:#fff}
-  .trk .meta{min-width:0;flex:1}
-  .trk .t{font-size:15px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .trk .d{font-size:12px;color:var(--ink2);margin-top:1px}
-  .badge{font-size:10px;font-weight:700;padding:2px 7px;border-radius:999px;flex:none}
-  .badge.off{background:rgba(34,197,94,.16);color:#4ade80}
-  .badge.on{background:rgba(245,158,11,.16);color:#fbbf24}
-  .now{width:22px;flex:none;text-align:center;color:var(--accent)}
+  body{background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;padding-bottom:196px}
+  .wrap{max-width:660px;margin:0 auto;padding:16px 16px 24px}
+  /* hero */
+  .hero{background:linear-gradient(135deg,#0f2f66,#1e6de6);color:#fff;border-radius:18px;
+    padding:22px 20px;box-shadow:0 10px 30px rgba(30,109,230,.25);margin-bottom:18px}
+  .hero h1{font-size:22px;margin:0 0 4px;letter-spacing:-.02em;font-weight:800}
+  .hero p{margin:0;font-size:13px;color:#dbeafe;line-height:1.5}
+  .hero .stats{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+  .chip{font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;
+    background:rgba(255,255,255,.16);color:#fff;backdrop-filter:blur(4px)}
+  /* group heading */
+  .grp{margin:20px 4px 8px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--ink2);font-weight:800}
+  /* track card */
+  .card{border:1px solid var(--line);background:var(--card);border-radius:14px;
+    margin-bottom:9px;box-shadow:var(--shadow);overflow:hidden;transition:.14s}
+  .card.active{border-color:var(--blue);box-shadow:0 0 0 3px rgba(30,109,230,.14),var(--shadow)}
+  .trk{display:flex;align-items:center;gap:12px;padding:13px 14px;cursor:pointer}
+  .card:hover{border-color:#c9d6ee}
+  .card.active .trk{background:var(--bluebg)}
+  .idx{width:34px;height:34px;flex:none;border-radius:10px;background:#eef2f8;color:var(--ink2);
+    display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800}
+  .card.active .idx{background:linear-gradient(135deg,#0f2f66,#1e6de6);color:#fff}
+  .meta{min-width:0;flex:1}
+  .meta .t{font-size:15px;font-weight:650;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .meta .d{font-size:12px;color:var(--ink2);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .badge{font-size:10px;font-weight:800;padding:3px 8px;border-radius:999px;flex:none;letter-spacing:.02em}
+  .badge.off{background:var(--greenbg);color:var(--green)}
+  .badge.on{background:var(--amberbg);color:var(--amber)}
+  /* equalizer (now playing) */
+  .eq{display:none;align-items:flex-end;gap:2px;height:16px;width:16px;flex:none}
+  .card.playing .eq{display:inline-flex}
+  .eq i{width:3px;background:var(--blue);border-radius:2px;animation:eq .9s ease-in-out infinite}
+  .eq i:nth-child(1){animation-delay:-.2s}.eq i:nth-child(2){animation-delay:-.5s}.eq i:nth-child(3){animation-delay:-.1s}
+  @keyframes eq{0%,100%{height:4px}50%{height:16px}}
+  /* script toggle + panel */
+  .scriptbtn{flex:none;display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:800;
+    color:var(--blue);background:var(--bluebg);border:1px solid #d3e2fb;border-radius:999px;
+    padding:5px 10px;cursor:pointer;transition:.12s}
+  .scriptbtn:hover{background:#e0edff}
+  .scriptbtn .cv{transition:transform .18s;font-size:9px}
+  .scriptbtn[aria-expanded="true"] .cv{transform:rotate(180deg)}
+  .panel{display:none;border-top:1px solid var(--line);background:#f8fafc;
+    padding:14px 16px;max-height:340px;overflow:auto;font-size:14px;line-height:1.7}
+  .panel.open{display:block}
+  .panel .cap{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink2);margin:0 0 8px}
+  .panel .ln{margin:0 0 9px}
+  .panel .ln b{color:var(--blued);font-weight:750;margin-right:4px}
+  .panel .sys{margin:0 0 9px;font-style:italic;color:var(--ink2);font-size:13px}
+  .panel mark{background:#fff3bf;color:#7a5b00;padding:0 3px;border-radius:3px;font-weight:700}
+  .empty{color:var(--ink2);padding:44px 0;text-align:center}
   /* bottom bar */
-  .bar{position:fixed;left:0;right:0;bottom:0;background:rgba(11,18,32,.96);backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom));z-index:50}
-  .bar .inner{max-width:640px;margin:0 auto}
-  .bar .title{font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .bar .st{font-size:12px;color:var(--ink2);margin-bottom:6px}
+  .bar{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.9);
+    backdrop-filter:saturate(1.4) blur(14px);border-top:1px solid var(--line);
+    padding:11px 16px calc(11px + env(safe-area-inset-bottom));z-index:50;
+    box-shadow:0 -6px 24px rgba(16,24,40,.06)}
+  .bar .inner{max-width:660px;margin:0 auto}
+  .bar .title{font-size:14px;font-weight:750;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .bar .st{font-size:12px;color:var(--ink2);margin-bottom:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .seekrow{display:flex;align-items:center;gap:10px}
   .time{font-size:11px;color:var(--ink2);font-variant-numeric:tabular-nums;min-width:38px;text-align:center}
-  input[type=range]{-webkit-appearance:none;appearance:none;height:6px;border-radius:4px;background:#26344e;flex:1;cursor:pointer}
-  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:#fff}
-  input[type=range]::-moz-range-thumb{width:16px;height:16px;border:none;border-radius:50%;background:#fff}
-  .ctrls{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:8px}
-  .cbtn{background:#1c2942;color:var(--ink);border:none;border-radius:10px;height:44px;min-width:44px;padding:0 14px;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center}
-  .cbtn:hover{background:#243350}
-  .cbtn.play{background:var(--accent);min-width:60px;font-size:20px}
-  .cbtn.small{font-size:12px;font-weight:700;color:var(--ink2)}
-  .empty{color:var(--ink2);padding:40px 0;text-align:center}
+  input[type=range]{-webkit-appearance:none;appearance:none;height:6px;border-radius:5px;
+    background:#e2e8f2;flex:1;cursor:pointer}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;
+    background:var(--blue);box-shadow:0 0 0 3px rgba(30,109,230,.18);border:2px solid #fff}
+  input[type=range]::-moz-range-thumb{width:15px;height:15px;border:2px solid #fff;border-radius:50%;background:var(--blue)}
+  .ctrls{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:9px}
+  .cbtn{background:#eef2f8;color:var(--ink);border:none;border-radius:11px;height:44px;min-width:44px;
+    padding:0 14px;font-size:15px;font-weight:600;cursor:pointer;display:flex;align-items:center;
+    justify-content:center;transition:.12s}
+  .cbtn:hover{background:#e2e8f2}
+  .cbtn.play{background:linear-gradient(135deg,#0f2f66,#1e6de6);color:#fff;min-width:62px;font-size:19px;
+    box-shadow:0 4px 12px rgba(30,109,230,.3)}
+  .cbtn.small{font-size:12px;font-weight:800;color:var(--ink2);background:transparent}
+  .cbtn.small:hover{background:#eef2f8}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <h1>🎧 Listening Player</h1>
-  <p class="sub">All listening tracks in one place — tap to play, plays continuously. <span class="badge off">offline</span> tracks work with no signal; <span class="badge on">online</span> need internet.</p>
+  <div class="hero">
+    <h1>🎧 Listening Player</h1>
+    <p>Every listening track in one place — tap to play, plays continuously. Tap <b>Script</b> to read along. <b>offline</b> tracks work with no signal; <b>online</b> need internet.</p>
+    <div class="stats" id="stats"></div>
+  </div>
   <div id="list"></div>
   <div id="empty" class="empty" style="display:none">No listening tracks found.</div>
 </div>
@@ -138,16 +286,16 @@ PAGE_HEAD = """<!DOCTYPE html>
     <div class="st" id="npSub">—</div>
     <div class="seekrow">
       <span class="time" id="cur">0:00</span>
-      <input type="range" id="seek" min="0" max="1000" value="0"/>
+      <input type="range" id="seek" min="0" max="1000" value="0" aria-label="Seek"/>
       <span class="time" id="dur">0:00</span>
     </div>
     <div class="ctrls">
-      <button class="cbtn small" id="rate">1×</button>
-      <button class="cbtn" id="prev">⏮</button>
-      <button class="cbtn" id="back">−15</button>
-      <button class="cbtn play" id="play">▶</button>
-      <button class="cbtn" id="fwd">+15</button>
-      <button class="cbtn" id="next">⏭</button>
+      <button class="cbtn small" id="rate" title="Playback speed">1×</button>
+      <button class="cbtn" id="prev" title="Previous" aria-label="Previous">⏮</button>
+      <button class="cbtn" id="back" title="Back 15s" aria-label="Back 15 seconds">−15</button>
+      <button class="cbtn play" id="play" aria-label="Play">▶</button>
+      <button class="cbtn" id="fwd" title="Forward 15s" aria-label="Forward 15 seconds">+15</button>
+      <button class="cbtn" id="next" title="Next" aria-label="Next">⏭</button>
     </div>
   </div>
 </div>
@@ -166,28 +314,55 @@ let cur=-1, audio=null, rates=[1,1.25,1.5,0.75], ri=0;
 
 function fmt(s){ if(!isFinite(s)||s<0)return '0:00'; s=Math.floor(s); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
 
+// header stats
+(function(){
+  const withTr=PLAYLIST.filter(t=>t.tr).length;
+  const st=document.getElementById('stats');
+  st.innerHTML=`<span class="chip">${PLAYLIST.length} tracks</span>`+
+    `<span class="chip">${withTr} with script</span>`;
+})();
+
 // build list grouped by book
 if(!PLAYLIST.length){ document.getElementById('empty').style.display='block'; }
 let lastGroup=null;
 PLAYLIST.forEach((tk,i)=>{
   if(tk.group!==lastGroup){ lastGroup=tk.group; const g=document.createElement('div'); g.className='grp'; g.textContent=tk.group; listEl.appendChild(g); }
-  const row=document.createElement('div'); row.className='trk'; row.id='row-'+i;
-  row.innerHTML=`<div class="idx">${i+1}</div>`+
-    `<div class="meta"><div class="t">${tk.label}</div><div class="d">${tk.media}</div></div>`+
-    `<span class="badge ${tk.offline?'off':'on'}">${tk.offline?'offline':'online'}</span>`+
-    `<span class="now" id="now-${i}"></span>`;
-  row.addEventListener('click',()=>selectTrack(i,true));
-  listEl.appendChild(row);
+  const card=document.createElement('div'); card.className='card'; card.id='card-'+i;
+  const scriptBtn = tk.tr ? `<button class="scriptbtn" aria-expanded="false" aria-label="Show script">📄 Script <span class="cv">▼</span></button>` : '';
+  card.innerHTML=
+    `<div class="trk">`+
+      `<div class="idx">${i+1}</div>`+
+      `<div class="eq" aria-hidden="true"><i></i><i></i><i></i></div>`+
+      `<div class="meta"><div class="t">${tk.label}</div><div class="d">${tk.media}</div></div>`+
+      scriptBtn+
+      `<span class="badge ${tk.offline?'off':'on'}">${tk.offline?'offline':'online'}</span>`+
+    `</div>`+
+    `<div class="panel" id="panel-${i}"></div>`;
+  card.querySelector('.trk').addEventListener('click',()=>selectTrack(i,true));
+  const sb=card.querySelector('.scriptbtn');
+  if(sb) sb.addEventListener('click',(e)=>{ e.stopPropagation(); togglePanel(i,sb); });
+  listEl.appendChild(card);
 });
+
+function togglePanel(i, btn){
+  const panel=document.getElementById('panel-'+i);
+  const open=panel.classList.toggle('open');
+  if(open && !panel.dataset.filled){
+    const tk=PLAYLIST[i];
+    const cap = tk.trtype==='snippets' ? 'Answer script — key lines' : 'Transcript';
+    panel.innerHTML=`<p class="cap">${cap}</p>`+tk.tr;
+    panel.dataset.filled='1';
+  }
+  btn.setAttribute('aria-expanded', open?'true':'false');
+}
 
 function el(i){ return document.getElementById(PLAYLIST[i].id); }
 
 function selectTrack(i, autoplay){
   if(i<0||i>=PLAYLIST.length) return;
   if(audio && cur!==i){ audio.pause(); }
-  document.querySelectorAll('.trk').forEach(r=>r.classList.remove('active'));
-  document.querySelectorAll('.now').forEach(n=>n.textContent='');
-  const row=document.getElementById('row-'+i); if(row) row.classList.add('active');
+  document.querySelectorAll('.card').forEach(r=>r.classList.remove('active','playing'));
+  const card=document.getElementById('card-'+i); if(card) card.classList.add('active');
   cur=i; const tk=PLAYLIST[i];
   audio=el(i); audio.playbackRate=rates[ri];
   npTitle.textContent=tk.label; npSub.textContent=tk.media;
@@ -204,8 +379,8 @@ function wire(a){
     wired.add(a);
     a.addEventListener('timeupdate',()=>{ if(a!==audio)return; if(a.duration) seek.value=String(Math.round(a.currentTime/a.duration*1000)); curEl.textContent=fmt(a.currentTime); durEl.textContent=fmt(a.duration); if(cur>=0) localStorage.setItem('lp_pos_'+cur, a.currentTime); });
     a.addEventListener('loadedmetadata',()=>{ if(a===audio){ durEl.textContent=fmt(a.duration); const p=parseFloat(localStorage.getItem('lp_pos_'+cur)||'0'); if(p>0&&p<a.duration-2) a.currentTime=p; } });
-    a.addEventListener('play',()=>{ if(a===audio){ playBtn.textContent='❚❚'; const n=document.getElementById('now-'+cur); if(n)n.textContent='▶'; } });
-    a.addEventListener('pause',()=>{ if(a===audio){ playBtn.textContent='▶'; const n=document.getElementById('now-'+cur); if(n)n.textContent=''; } });
+    a.addEventListener('play',()=>{ if(a===audio){ playBtn.textContent='❚❚'; const c=document.getElementById('card-'+cur); if(c)c.classList.add('playing'); } });
+    a.addEventListener('pause',()=>{ if(a===audio){ playBtn.textContent='▶'; const c=document.getElementById('card-'+cur); if(c)c.classList.remove('playing'); } });
     a.addEventListener('ended',()=>{ if(a===audio) selectTrack(cur+1, true); });
   }
 }
@@ -245,14 +420,18 @@ def main():
         for t in tracks
     )
     meta = [{"id": t["id"], "group": t["group"], "label": t["label"],
-             "media": t["media"], "offline": t["offline"]} for t in tracks]
+             "media": t["media"], "offline": t["offline"],
+             "tr": t["tr"], "trtype": t["trtype"]} for t in tracks]
+    playlist_json = json.dumps(meta, ensure_ascii=False).replace("</", "<\\/")
     page = (PAGE_HEAD.replace("__AUDIO_ELEMENTS__", audio_els)
-                     .replace("__PLAYLIST__", json.dumps(meta, ensure_ascii=False))
+                     .replace("__PLAYLIST__", playlist_json)
             + PAGE_TAIL)
     with open(OUT, "w", encoding="utf-8") as f:
         f.write(page)
     off = sum(1 for t in tracks if t["offline"])
-    print(f"Wrote {OUT}  ({len(tracks)} tracks: {off} offline, {len(tracks)-off} online, {len(page)/1e6:.1f} MB)")
+    tr = sum(1 for t in tracks if t["tr"])
+    print(f"Wrote {OUT}  ({len(tracks)} tracks: {off} offline, {len(tracks)-off} online, "
+          f"{tr} with script, {len(page)/1e6:.2f} MB)")
 
 
 if __name__ == "__main__":
