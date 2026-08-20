@@ -16,7 +16,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SKIP_DIR = {".git", ".claude", "__pycache__", "scripts"}
 # CLAUDE.md is an AI instruction file and index.html is this page itself — the user
 # doesn't need either listed in the browser.
-SKIP_FILE = {".DS_Store", "CLAUDE.md", "index.html", "progress.html", "vercel.json", "player.html"}
+SKIP_FILE = {".DS_Store", "CLAUDE.md", "index.html", "progress.html", "vercel.json",
+             "player.html", "future-prompts.md"}
 OUT = os.path.join(ROOT, "index.html")
 
 
@@ -80,7 +81,11 @@ PAGE = r'''<!DOCTYPE html>
   body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased}
   .wrap{max-width:720px;margin:0 auto;padding:22px 20px 90px}
   .hero{background:linear-gradient(135deg,#0f2f66,#1e6de6);color:#fff;border-radius:20px;
-    padding:24px 24px 26px;box-shadow:0 14px 36px rgba(30,109,230,.24);margin-bottom:20px}
+    padding:18px 24px 26px;box-shadow:0 14px 36px rgba(30,109,230,.24);margin-bottom:20px}
+  .nav{display:flex;gap:6px;margin:0 -4px 12px}
+  .nav a{font-size:13px;font-weight:600;color:#dbeafe;text-decoration:none;padding:7px 13px;border-radius:999px;transition:.12s}
+  .nav a:hover{background:rgba(255,255,255,.16);color:#fff}
+  .nav a.active{background:#fff;color:var(--blue)}
   .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#bfdbfe}
   h1{font-weight:800;font-size:29px;margin:8px 0 6px;letter-spacing:-.02em;color:#fff}
   .lede{color:#dbeafe;font-size:14.5px;margin:0}
@@ -111,6 +116,11 @@ PAGE = r'''<!DOCTYPE html>
 <body>
 <div class="wrap">
   <div class="hero">
+    <nav class="nav">
+      <a href="./index.html" class="active">Home</a>
+      <a href="./player.html">Player</a>
+      <a href="./progress.html">Progress</a>
+    </nav>
     <div class="eyebrow">📚 English Vault</div>
     <h1>Project files</h1>
     <p class="lede">Browse every folder and file. Click a folder to open it, a file to view it.</p>
