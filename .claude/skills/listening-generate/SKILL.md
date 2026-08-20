@@ -85,7 +85,7 @@ case-insensitive) to highlight green with a `Q#` tag after submit.
      --audio "T1S1.m4a,T1S2.m4a,T1S3.m4a,T1S4.m4a" \
      --title  "Cambridge 20 — Listening Test 1" \
      --header "Cambridge IELTS 20 — Listening Test 1" \
-     --badge  20 \
+     --badge  C20 \
      --out    "listening/undone/cambridge/cambridge-20/C20-l1.html" \
      [--map <scratch>/part2_map.png]
    ```

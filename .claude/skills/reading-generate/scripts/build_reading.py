@@ -20,7 +20,7 @@ ap.add_argument('--data', required=True, help='JS file defining const TEST, cons
 ap.add_argument('--out', required=True)
 ap.add_argument('--title', required=True, help='<title> text, e.g. "Cambridge 20 — Reading Test 1"')
 ap.add_argument('--header', required=True, help='Header line, e.g. "Cambridge IELTS 20 — Reading Test 1"')
-ap.add_argument('--badge', default='IR', help='Short badge text (e.g. 20)')
+ap.add_argument('--badge', default='IR', help='Short badge text (e.g. C20)')
 ap.add_argument('--template', default='templates/reading.html')
 a = ap.parse_args()
 

@@ -105,7 +105,7 @@ to highlight green with a `Q#` tag after submit.
      --data <scratch>/data.js \
      --title  "Cambridge 20 — Reading Test 1" \
      --header "Cambridge IELTS 20 — Reading Test 1" \
-     --badge  20 \
+     --badge  C20 \
      --out    "reading/undone/cambridge/cambridge-20/C20-r1.html"
    ```
    It verifies quotes, checks syntax, and writes the file. Fix any reported quote misses

@@ -12,7 +12,7 @@ Usage:
       --audio  "T1S1.m4a,T1S2.m4a,T1S3.m4a,T1S4.m4a" \
       --title  "Cambridge IELTS 20 — Listening Test 1" \
       --header "Cambridge IELTS 20 — Listening Test 1" \
-      --badge  20 \
+      --badge  C20 \
       --out    "listening/undone/cambridge/cambridge-20/C20-l1.html" \
       [--map scratch/part2_map.png]      # embedded where the data.js has __MAPIMG__
 
@@ -66,13 +66,15 @@ def main():
         sys.exit("ERROR: highlight quotes not found in transcript — trim to an exact substring")
     print(f"quotes verified: {sum(1 for v in qmap.values() if v)}")
 
-    # copy the 4 tracks into the shared /audio/cambridge-<badge>/ folder and reference them by
+    # copy the 4 tracks into the shared /audio/cambridge-<book>/ folder and reference them by
     # path (so tests + /player.html share one copy; no giant embedded files, no 100 MB limit)
     files = [f.strip() for f in a.audio.split(",")]
     if len(files) != 4: sys.exit("ERROR: --audio must list exactly 4 files (Part 1-4)")
-    tm = re.search(r"test[\s\-]*?(\d+)", os.path.basename(a.out), re.I)
+    base = os.path.basename(a.out)
+    tm = re.search(r"test[\s\-]*?(\d+)", base, re.I) or re.search(r"[\-\s]?[rl](\d+)", base, re.I)
     testno = tm.group(1) if tm else "x"
-    adir = os.path.join(REPO, "audio", f"cambridge-{a.badge}")
+    book = re.sub(r"\D", "", a.badge) or a.badge  # header badge may be "C20"; folder uses "20"
+    adir = os.path.join(REPO, "audio", f"cambridge-{book}")
     os.makedirs(adir, exist_ok=True)
     total = 0
     for i, f in enumerate(files):
@@ -81,8 +83,8 @@ def main():
         shutil.copyfile(f, os.path.join(adir, dest))
         tok = f"__AUDIO_{i}__"
         if tok not in src: sys.exit(f"ERROR: {tok} placeholder missing (data.js AUDIO array)")
-        src = src.replace(tok, f"/audio/cambridge-{a.badge}/{dest}")
-    print(f"audio -> /audio/cambridge-{a.badge}/ (4 tracks, {total/1e6:.1f} MB, referenced by path)")
+        src = src.replace(tok, f"/audio/cambridge-{book}/{dest}")
+    print(f"audio -> /audio/cambridge-{book}/ (4 tracks, {total/1e6:.1f} MB, referenced by path)")
 
     # id sanity
     ids = sorted(int(x) for x in re.findall(r"\bid:(\d+)", data))
