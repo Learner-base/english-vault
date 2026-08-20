@@ -24,6 +24,8 @@ OUT = os.path.join(ROOT, "index.html")
 def walk(d):
     kids = []
     for name in sorted(os.listdir(d)):
+        if name.startswith("."):  # dotfiles/dirs: .gitignore, .gitkeep, .DS_Store, .git, .claude…
+            continue
         if name in SKIP_DIR or name in SKIP_FILE or name.endswith(".pyc"):
             continue
         p = os.path.join(d, name)
@@ -52,7 +54,8 @@ def latest_added(n=5):
         top = rel.split("/")[0]
         if top in SKIP_DIR or name in SKIP_FILE or name.endswith(".pyc"):
             continue
-        if name == ".gitkeep":  # placeholder files — never surface in "Latest added"
+        # skip dotfiles anywhere in the path (.gitignore, .gitkeep, .DS_Store, .git/…)
+        if any(seg.startswith(".") for seg in rel.split("/")):
             continue
         if not os.path.exists(os.path.join(ROOT, rel)):
             continue
