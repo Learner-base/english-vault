@@ -267,6 +267,17 @@ PAGE_HEAD = """<!DOCTYPE html>
     box-shadow:0 4px 12px rgba(30,109,230,.3)}
   .cbtn.small{font-size:12px;font-weight:800;color:var(--ink2);background:transparent}
   .cbtn.small:hover{background:#eef2f8}
+  /* speed popover */
+  .rate-wrap{position:relative;display:inline-flex}
+  .rate-menu{position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#fff;
+    border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 32px rgba(2,6,23,.2);padding:5px;min-width:136px;z-index:60}
+  .rate-menu[hidden]{display:none}
+  .rate-menu .rl{font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);padding:5px 10px 3px}
+  .rate-opt{display:flex;justify-content:space-between;align-items:center;width:100%;gap:10px;background:none;border:none;
+    color:var(--ink);font-size:13px;font-weight:650;padding:8px 10px;border-radius:8px;cursor:pointer;text-align:left}
+  .rate-opt:hover{background:#f1f5f9}
+  .rate-opt.active{background:var(--bluebg);color:var(--blue)}
+  .rate-opt.active::after{content:'✓';font-weight:800}
 </style>
 </head>
 <body>
@@ -290,7 +301,17 @@ PAGE_HEAD = """<!DOCTYPE html>
       <span class="time" id="dur">0:00</span>
     </div>
     <div class="ctrls">
-      <button class="cbtn small" id="rate" title="Playback speed">1×</button>
+      <div class="rate-wrap">
+        <button class="cbtn small" id="rate" title="Playback speed" aria-haspopup="true" aria-expanded="false">1×</button>
+        <div class="rate-menu" id="rateMenu" role="menu" hidden>
+          <div class="rl">Speed</div>
+          <button class="rate-opt" data-rate="0.75" role="menuitemradio">0.75×</button>
+          <button class="rate-opt active" data-rate="1" role="menuitemradio">Normal</button>
+          <button class="rate-opt" data-rate="1.25" role="menuitemradio">1.25×</button>
+          <button class="rate-opt" data-rate="1.5" role="menuitemradio">1.5×</button>
+          <button class="rate-opt" data-rate="2" role="menuitemradio">2×</button>
+        </div>
+      </div>
       <button class="cbtn" id="prev" title="Previous" aria-label="Previous">⏮</button>
       <button class="cbtn" id="back" title="Back 15s" aria-label="Back 15 seconds">−15</button>
       <button class="cbtn play" id="play" aria-label="Play">▶</button>
@@ -310,7 +331,7 @@ const listEl=document.getElementById('list');
 const npTitle=document.getElementById('npTitle'), npSub=document.getElementById('npSub');
 const seek=document.getElementById('seek'), curEl=document.getElementById('cur'), durEl=document.getElementById('dur');
 const playBtn=document.getElementById('play'), rateBtn=document.getElementById('rate');
-let cur=-1, audio=null, rates=[1,1.25,1.5,0.75], ri=0;
+let cur=-1, audio=null, curRate=1;
 
 function fmt(s){ if(!isFinite(s)||s<0)return '0:00'; s=Math.floor(s); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
 
@@ -364,7 +385,7 @@ function selectTrack(i, autoplay){
   document.querySelectorAll('.card').forEach(r=>r.classList.remove('active','playing'));
   const card=document.getElementById('card-'+i); if(card) card.classList.add('active');
   cur=i; const tk=PLAYLIST[i];
-  audio=el(i); audio.playbackRate=rates[ri];
+  audio=el(i); audio.playbackRate=curRate;
   npTitle.textContent=tk.label; npSub.textContent=tk.media;
   wire(audio);
   updateMediaSession(tk);
@@ -391,7 +412,12 @@ document.getElementById('prev').addEventListener('click',()=>{ if(cur<0){selectT
 document.getElementById('fwd').addEventListener('click',()=>{ if(audio) audio.currentTime=Math.min(audio.duration||0,audio.currentTime+15); });
 document.getElementById('back').addEventListener('click',()=>{ if(audio) audio.currentTime=Math.max(0,audio.currentTime-15); });
 seek.addEventListener('input',()=>{ if(audio&&audio.duration) audio.currentTime=(+seek.value)/1000*audio.duration; });
-rateBtn.addEventListener('click',()=>{ ri=(ri+1)%rates.length; if(audio)audio.playbackRate=rates[ri]; rateBtn.textContent=rates[ri]+'×'; });
+const rateMenu=document.getElementById('rateMenu');
+const rateOpts=Array.prototype.slice.call(rateMenu.querySelectorAll('.rate-opt'));
+function openRate(o){ rateMenu.hidden=!o; rateBtn.setAttribute('aria-expanded', o?'true':'false'); }
+rateBtn.addEventListener('click',(e)=>{ e.stopPropagation(); openRate(rateMenu.hidden); });
+rateOpts.forEach(o=>o.addEventListener('click',(e)=>{ e.stopPropagation(); curRate=parseFloat(o.dataset.rate); if(audio)audio.playbackRate=curRate; rateBtn.textContent=curRate+'×'; rateOpts.forEach(x=>x.classList.toggle('active',x===o)); openRate(false); }));
+document.addEventListener('click',()=>openRate(false));
 
 function updateMediaSession(tk){
   if(!('mediaSession' in navigator)) return;
