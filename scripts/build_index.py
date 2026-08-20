@@ -68,20 +68,23 @@ PAGE = r'''<!DOCTYPE html>
 <title>English Vault — Files</title>
 <style>
   :root{
-    --paper:#FCFCFA;--card:#FFFFFF;--ink:#17170F;--ink-2:#57564C;--ink-3:#8A897E;
-    --line:#E4E3DC;--line-2:#EFEEE8;--soft:#F4F3EC;--focus:#2E5AAC;
-    --serif:Georgia,"Times New Roman",serif;
+    --bg:#f5f8fd;--card:#FFFFFF;--ink:#0f172a;--ink-2:#475569;--ink-3:#8a94a6;
+    --line:#e6eaf1;--line-2:#eef2f8;--soft:#eff4fb;
+    --blue:#1e6de6;--blue2:#3b82f6;--blued:#0f2f66;--bluebg:#eff6ff;
     --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
   }
   *{box-sizing:border-box}html,body{margin:0;padding:0}
-  body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:720px;margin:0 auto;padding:26px 20px 90px}
-  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
-  h1{font-family:var(--serif);font-weight:600;font-size:30px;margin:6px 0 4px;letter-spacing:-.01em}
-  .lede{color:var(--ink-2);font-size:15px;margin:0 0 20px}
-  .search{width:100%;font-size:14px;border:1px solid var(--line);border-radius:999px;padding:11px 16px;font-family:var(--sans);outline:none;margin-bottom:18px;background:var(--card)}
-  .search:focus{border-color:var(--ink)}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:720px;margin:0 auto;padding:22px 20px 90px}
+  .hero{background:linear-gradient(135deg,#0f2f66,#1e6de6);color:#fff;border-radius:20px;
+    padding:24px 24px 26px;box-shadow:0 14px 36px rgba(30,109,230,.24);margin-bottom:20px}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#bfdbfe}
+  h1{font-weight:800;font-size:29px;margin:8px 0 6px;letter-spacing:-.02em;color:#fff}
+  .lede{color:#dbeafe;font-size:14.5px;margin:0}
+  .search{width:100%;font-size:14px;border:1px solid var(--line);border-radius:999px;padding:11px 16px;font-family:var(--sans);outline:none;margin-bottom:16px;background:var(--card);transition:.12s}
+  .search:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(30,109,230,.14)}
+  #tree,.latest{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 12px;box-shadow:0 1px 3px rgba(16,24,40,.05)}
   ul{list-style:none;margin:0;padding:0}
   li{margin:0}
   .row{display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:8px;text-decoration:none;color:inherit;font-size:14.5px}
@@ -94,9 +97,10 @@ PAGE = r'''<!DOCTYPE html>
   a.row .n{color:var(--ink)}
   .count{font-family:var(--mono);font-size:12px;color:var(--ink-3);margin-top:14px}
   .hide{display:none!important}
-  .latest{margin-top:34px;padding-top:22px;border-top:2px solid var(--line)}
-  .latest h2{font-family:var(--serif);font-weight:600;font-size:18px;margin:0 0 2px}
-  .latest .sub{color:var(--ink-3);font-size:12.5px;margin:0 0 12px}
+  .dir>.row:hover .n{color:var(--blue)}
+  .latest{margin-top:16px}
+  .latest h2{font-weight:800;font-size:17px;margin:2px 2px 2px;letter-spacing:-.01em}
+  .latest .sub{color:var(--ink-3);font-size:12.5px;margin:0 2px 10px}
   .latest a.row{align-items:flex-start}
   .latest .meta{display:flex;flex-direction:column;min-width:0}
   .latest .dirp{font-family:var(--mono);font-size:11px;color:var(--ink-3);margin-top:1px}
@@ -104,9 +108,11 @@ PAGE = r'''<!DOCTYPE html>
 </head>
 <body>
 <div class="wrap">
-  <div class="eyebrow">English Vault</div>
-  <h1>Project files</h1>
-  <p class="lede">Browse every folder and file. Click a folder to open it, a file to view it.</p>
+  <div class="hero">
+    <div class="eyebrow">📚 English Vault</div>
+    <h1>Project files</h1>
+    <p class="lede">Browse every folder and file. Click a folder to open it, a file to view it.</p>
+  </div>
   <input class="search" id="q" type="text" placeholder="filter files…" autocomplete="off"/>
   <div id="tree"></div>
   <div class="count" id="count"></div>
