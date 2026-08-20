@@ -185,6 +185,7 @@ CURATED = [
     {"w": "category", "tags": []}, {"w": "calendar", "tags": []},
     {"w": "cemetery", "tags": ["sc"]}, {"w": "mischievous", "tags": ["sc"]},
     {"w": "pronunciation", "tags": ["sc"]}, {"w": "argument", "tags": []},
+    {"w": "satellite", "tags": ["double"], "def": "an object (or spacecraft) that orbits a planet — note the single 't', double 'l'."},
 ]
 
 
@@ -355,12 +356,23 @@ PAGE = r"""<!DOCTYPE html>
         </div>
       </div>
       <div>
-        <div class="lab" style="margin-bottom:8px">Session length</div>
-        <div class="switch" id="lenSwitch">
-          <button data-len="15" aria-pressed="true">15</button>
-          <button data-len="30">30</button>
-          <button data-len="50">50</button>
-          <button data-len="0">All</button>
+        <div class="lab" style="margin-bottom:8px">Word set</div>
+        <div class="switch" id="modeSwitch">
+          <button data-mode="groups" aria-pressed="true">Groups of 30</button>
+          <button data-mode="random">Random</button>
+        </div>
+        <div id="groupsWrap" style="margin-top:10px">
+          <div class="lab" style="margin-bottom:8px">Pick a group of 30</div>
+          <div class="switch" id="batchSwitch"></div>
+        </div>
+        <div id="randomWrap" style="margin-top:10px;display:none">
+          <div class="lab" style="margin-bottom:8px">How many random words (from all)</div>
+          <div class="switch" id="lenSwitch">
+            <button data-len="15" aria-pressed="true">15</button>
+            <button data-len="30">30</button>
+            <button data-len="50">50</button>
+            <button data-len="0">All</button>
+          </div>
         </div>
       </div>
       <div class="row">
@@ -423,7 +435,8 @@ let mastered = load(LS_MASTER);   // {word:true}
 let mistakes = load(LS_MISS);     // {word:count}
 
 // ---- setup state ----
-let src="all", focus="all", sessionLen=15;
+let src="all", focus="all", sessionLen=15, mode="groups", batchIndex=0;
+const GROUP=30;
 const TAG_LABELS={sc:"S / C",th:"TH",ph:"PH",ough:"-ough",silent:"silent letter",double:"double letter",british:"British",vowel:"tricky vowels"};
 function matchPool(){
   let p=WORDS.slice();
@@ -432,20 +445,54 @@ function matchPool(){
   if(focus!=="all") p=p.filter(w=>(w.tags||[]).includes(focus));
   return p;
 }
+// split the current pool into consecutive groups of GROUP words: [[start,end],…]
+function batchRanges(){
+  const n=matchPool().length, out=[];
+  for(let i=0;i<n;i+=GROUP) out.push([i, Math.min(i+GROUP, n)]);
+  return out;
+}
+function renderBatches(){
+  const ranges=batchRanges(), box=$("#batchSwitch");
+  if(batchIndex>=ranges.length) batchIndex=0;
+  box.innerHTML="";
+  if(!ranges.length){
+    box.innerHTML='<button aria-pressed="true" disabled>— no words —</button>';
+    return;
+  }
+  ranges.forEach(([s,e],k)=>{
+    const b=document.createElement("button");
+    b.dataset.batch=k; b.textContent=(s+1)+"–"+e;
+    if(k===batchIndex) b.setAttribute("aria-pressed","true");
+    box.appendChild(b);
+  });
+}
 function refreshStats(){
   $("#poolCount").textContent = matchPool().length;
   $("#masterCount").textContent = Object.keys(mastered).length;
   $("#missCount").textContent = Object.keys(mistakes).length;
+  renderBatches();
 }
 $("#srcSwitch").addEventListener("click", e=>{
   const b=e.target.closest("button"); if(!b) return;
   [...e.currentTarget.children].forEach(x=>x.setAttribute("aria-pressed", x===b));
-  src=b.dataset.src; refreshStats();
+  src=b.dataset.src; batchIndex=0; refreshStats();
 });
 $("#focusSwitch").addEventListener("click", e=>{
   const b=e.target.closest("button"); if(!b) return;
   [...e.currentTarget.children].forEach(x=>x.setAttribute("aria-pressed", x===b));
-  focus=b.dataset.tag; refreshStats();
+  focus=b.dataset.tag; batchIndex=0; refreshStats();
+});
+$("#modeSwitch").addEventListener("click", e=>{
+  const b=e.target.closest("button"); if(!b) return;
+  [...e.currentTarget.children].forEach(x=>x.setAttribute("aria-pressed", x===b));
+  mode=b.dataset.mode;
+  $("#groupsWrap").style.display = mode==="groups" ? "" : "none";
+  $("#randomWrap").style.display = mode==="random" ? "" : "none";
+});
+$("#batchSwitch").addEventListener("click", e=>{
+  const b=e.target.closest("button"); if(!b || b.disabled) return;
+  [...e.currentTarget.children].forEach(x=>x.setAttribute("aria-pressed", x===b));
+  batchIndex=+b.dataset.batch;
 });
 $("#lenSwitch").addEventListener("click", e=>{
   const b=e.target.closest("button"); if(!b) return;
@@ -476,13 +523,23 @@ if("speechSynthesis" in window) speechSynthesis.onvoiceschanged=()=>{};
 
 // ---- session ----
 let queue=[], pos=0, retrying=false, correctThisWord=0, wrongThisWord=0, doneWords=0;
+function shuffleInPlace(a){
+  for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; }
+  return a;
+}
 function buildQueue(){
-  let pool = matchPool();
-  if($("#shuffle").checked){
-    for(let i=pool.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [pool[i],pool[j]]=[pool[j],pool[i]]; }
+  const pool = matchPool();
+  if(mode==="groups"){
+    // exactly the chosen group of 30 (last group may be shorter); groups never overlap
+    const r=batchRanges()[batchIndex];
+    let words = r ? pool.slice(r[0], r[1]) : [];
+    if($("#shuffle").checked) shuffleInPlace(words);
+    return words;
   }
-  if(sessionLen>0) pool=pool.slice(0,sessionLen);
-  return pool;
+  // random: a chosen number of words drawn randomly from the whole (filtered) pool
+  let words = shuffleInPlace(pool.slice());
+  if(sessionLen>0) words = words.slice(0, sessionLen);
+  return words;
 }
 function startSession(){
   slow=$("#slow").checked;
