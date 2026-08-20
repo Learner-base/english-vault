@@ -51,6 +51,8 @@ def latest_added(n=5):
         top = rel.split("/")[0]
         if top in SKIP_DIR or name in SKIP_FILE or name.endswith(".pyc"):
             continue
+        if name == ".gitkeep":  # placeholder files — never surface in "Latest added"
+            continue
         if not os.path.exists(os.path.join(ROOT, rel)):
             continue
         seen.add(rel)
