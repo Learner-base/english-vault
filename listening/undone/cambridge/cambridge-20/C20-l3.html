@@ -745,8 +745,6 @@
       </div>
     </div>
     <div class="flex items-center gap-2">
-      <div id="timer" class="text-sm font-semibold text-gray-700 tabular-nums bg-gray-100 px-3 py-1 rounded">40:00</div>
-      <button id="timerBtn" class="text-sm px-3 py-1 rounded bg-gray-200 hover:bg-gray-300">Start</button>
       <button id="resetBtn" class="text-sm px-3 py-1 rounded bg-gray-200 hover:bg-gray-300">Reset</button>
     </div>
   </div>
@@ -1335,7 +1333,6 @@ function showCheckAnswersConfirmation(){
 }
 function submitTest(){
   if(testSubmitted){ showResults(lastCorrect,lastAnswered,lastResults,lastTimeSpent); return; }
-  stopTimer();
   let correct=0; const results=[];
   TEST.groups.forEach(g=>{
     if(g.type==='multi'){
@@ -1352,7 +1349,6 @@ function submitTest(){
   results.sort((a,b)=>a.question-b.question);
   testSubmitted=true; lastResults=results; lastCorrect=correct;
   lastAnswered=results.filter(r=>r.userAnswer && String(r.userAnswer).trim()!=='').length;
-  lastTimeSpent=2400-remaining;
   document.getElementById('submit-test-btn').textContent='Show answers';
   renderQuestions(currentPart); applyPassageAnswerHighlights(); updatePartIndicators();
   showResults(lastCorrect,lastAnswered,lastResults,lastTimeSpent);
@@ -1400,7 +1396,6 @@ function showResults(correct, answered, results, timeSpent){
   const bandScore=calculateIELTSScore(correct); const feedback=getModalBandFeedback(bandScore);
   const accuracy=answered>0?Math.round((correct/answered)*100):0;
   const ringRadius=54, ringCirc=2*Math.PI*ringRadius, ringOffset=ringCirc*(1-correct/40);
-  const timeMins=Math.floor(timeSpent/60), timeSecs=(timeSpent%60).toString().padStart(2,'0');
   const map={}; results.forEach(r=>map[String(r.question)]=r);
   const partStats=READING_PART_RANGES.map(range=>{ let c=0,a=0; for(let q=range.start;q<=range.end;q++){ const r=map[String(q)]; if(r&&r.userAnswer&&String(r.userAnswer).trim()!==''){ a++; if(r.isCorrect)c++; } } return {...range,correct:c,answered:a}; });
   let pillsHTML='', detailsHTML='';
@@ -1424,7 +1419,7 @@ function showResults(correct, answered, results, timeSpent){
   const overlay=document.createElement('div'); overlay.id='results-modal-overlay'; overlay.className='results-overlay';
   overlay.innerHTML=`<div class="results-card" role="dialog">
     <div class="results-header"><div><h2>Your Listening Results</h2>
-      <p>Filter by part or status · double-click a number to jump to it · Time: ${timeMins}:${timeSecs}</p></div>
+      <p>Filter by part or status · double-click a number to jump to it</p></div>
       <button type="button" class="results-close-btn" aria-label="Close">&times;</button></div>
     <div class="results-body">
       <div class="results-hero">
@@ -1460,16 +1455,9 @@ function showResults(correct, answered, results, timeSpent){
   if(bandScore>=7 || correct>=32) launchResultsConfetti();
 }
 
-/* ---------- timer ---------- */
-let timerInt=null, remaining=2400;
-function fmt(s){ const m=Math.floor(s/60), ss=s%60; return `${String(m).padStart(2,'0')}:${String(ss).padStart(2,'0')}`; }
-function stopTimer(){ if(timerInt){ clearInterval(timerInt); timerInt=null; document.getElementById('timerBtn').textContent='Start'; } }
-document.getElementById('timerBtn').addEventListener('click', e=>{
-  if(timerInt){ stopTimer(); }
-  else { e.target.textContent='Pause'; timerInt=setInterval(()=>{ if(remaining>0){ remaining--; document.getElementById('timer').textContent=fmt(remaining); if(remaining===0){ stopTimer(); if(!testSubmitted) submitTest(); } } },1000); }
-});
-function reset(){ for(const k in answers) delete answers[k]; testSubmitted=false; lastResults=null; remaining=2400;
-  document.getElementById('timer').textContent='40:00'; document.getElementById('submit-test-btn').textContent='Submit test'; stopTimer();
+/* ---------- timer removed — not needed for listening ---------- */
+function reset(){ for(const k in answers) delete answers[k]; testSubmitted=false; lastResults=null;
+  document.getElementById('submit-test-btn').textContent='Submit test';
   const o=document.getElementById('results-modal-overlay'); if(o) o.remove(); document.body.style.overflow='auto'; renderPart(currentPart); }
 
 /* ---------- audio player: 4 embedded tracks, auto-chain Part 1→4 ---------- */
