@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<meta name="theme-color" content="#1e6de6"/>
+<title>Translation Practice — English Vault</title>
+<style>
+  :root{
+    --bg:#f5f8fd;--card:#fff;--ink:#0f172a;--ink2:#475569;--ink3:#8a94a6;
+    --line:#e6eaf1;--line2:#eef2f8;--soft:#eff4fb;
+    --blue:#1e6de6;--blue2:#3b82f6;--blued:#0f2f66;--bluebg:#eff6ff;
+    --green:#16a34a;--greenbg:#effdf4;--amber:#b45309;--amberbg:#fff7ed;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}html,body{margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased;padding-bottom:60px}
+  .wrap{max-width:720px;margin:0 auto;padding:22px 20px}
+  .hero{background:linear-gradient(135deg,#0f2f66,#1e6de6);color:#fff;border-radius:20px;
+    padding:18px 24px 24px;box-shadow:0 14px 36px rgba(30,109,230,.24);margin-bottom:18px}
+  .nav{display:flex;gap:6px;margin:0 -4px 12px}
+  .nav a{font-size:13px;font-weight:600;color:#dbeafe;text-decoration:none;padding:7px 13px;border-radius:999px;transition:.12s}
+  .nav a:hover{background:rgba(255,255,255,.16);color:#fff}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#bfdbfe}
+  h1{font-weight:800;font-size:26px;margin:8px 0 6px;letter-spacing:-.02em;color:#fff}
+  .lede{color:#dbeafe;font-size:14px;margin:0}
+  .lab{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3);margin:0 2px 8px}
+  .switch{display:inline-flex;flex-wrap:wrap;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--card);gap:2px;margin-bottom:14px}
+  .switch button{border:none;background:none;border-radius:999px;padding:7px 13px;font-size:12.5px;font-weight:600;color:var(--ink2);cursor:pointer}
+  .switch button[aria-pressed="true"]{background:linear-gradient(135deg,#0f2f66,#1e6de6);color:#fff}
+  .switch button:disabled{opacity:.5}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 16px;margin-bottom:10px;box-shadow:0 1px 3px rgba(16,24,40,.05)}
+  .srcrow{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+  .badge{font-size:10px;font-weight:800;padding:3px 9px;border-radius:999px;letter-spacing:.02em}
+  .badge.reading{background:var(--bluebg);color:var(--blue)}
+  .badge.listening{background:var(--greenbg);color:var(--green)}
+  .src{font-family:var(--mono);font-size:11px;color:var(--ink3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .en{font-size:16px;line-height:1.6;color:var(--ink)}
+  .showbtn{margin-top:12px;display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;color:var(--blue);
+    background:var(--bluebg);border:1px solid #d3e2fb;border-radius:999px;padding:7px 13px;cursor:pointer;transition:.12s}
+  .showbtn:hover{background:#e0edff}
+  .uz{display:none;margin-top:12px;padding-top:12px;border-top:1px dashed var(--line);font-size:15.5px;line-height:1.6;color:var(--blued)}
+  .uz.open{display:block}
+  .uz .flag{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);display:block;margin-bottom:4px}
+  .empty{color:var(--ink2);padding:40px 4px;text-align:center}
+  .count{font-family:var(--mono);font-size:12px;color:var(--ink3);margin:6px 2px 16px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <nav class="nav">
+      <a href="../../index.html">Home</a>
+      <a href="../../player.html">Player</a>
+      <a href="../../progress.html">Progress</a>
+    </nav>
+    <div class="eyebrow">📖 English Vault · Translation</div>
+    <h1>Translation practice</h1>
+    <p class="lede">Difficult sentences from finished passages and listening scripts. Read the English, then reveal the Uzbek.</p>
+  </div>
+
+  <div class="lab">Source</div>
+  <div class="switch" id="typeSwitch">
+    <button data-type="all" aria-pressed="true">All</button>
+    <button data-type="reading">Reading</button>
+    <button data-type="listening">Listening</button>
+  </div>
+
+  <div class="lab">Group of 20</div>
+  <div class="switch" id="groupSwitch"></div>
+
+  <div class="count" id="count"></div>
+  <div id="list"></div>
+  <div id="empty" class="empty" style="display:none">No sentences yet — add some to vocab/translations.json.</div>
+</div>
+<script>
+const DATA = [{"en": "Between 1908 and 1924, Gwendoline and Margaret Davies amassed one of the largest collections of late-nineteenth and early-twentieth-century French paintings in Britain.", "uz": "1908-yildan 1924-yilgacha Gvendolin va Margaret Deyvis Britaniyadagi XIX asr oxiri va XX asr boshlariga oid frantsuz rasmlarining eng yirik to'plamlaridan birini yig'ishdi.", "src": "C21-r1 · The Davies Sisters", "type": "reading"}, {"en": "Their religious upbringing in rural Wales gave them a deep sense of social responsibility and they chose to use their inheritance for cultural and philanthropic purposes.", "uz": "Uels qishloqlarida diniy tarbiya olganliklari ularga chuqur ijtimoiy mas'uliyat tuyg'usini berdi va ular o'z merosini madaniy hamda xayriya maqsadlarida ishlatishni tanladilar.", "src": "C21-r1 · The Davies Sisters", "type": "reading"}, {"en": "While it was long assumed that these men were largely responsible for the nature of the sisters' collection, it has recently been accepted that Gwendoline and Margaret retained a far more active role in the process.", "uz": "Uzoq vaqt davomida bu erkaklar opa-singillar to'plamining mohiyati uchun asosan javobgar deb hisoblab kelingan bo'lsa-da, yaqinda Gvendolin va Margaret bu jarayonda ancha faolroq rol o'ynaganligi e'tirof etildi.", "src": "C21-r1 · The Davies Sisters", "type": "reading"}, {"en": "Quite simply, high quality Old Master works were, if not beyond their means, then beyond what they were willing to pay for them.", "uz": "Oddiy qilib aytganda, yuqori sifatli “Eski ustalar” asarlari ularning imkoniyatidan tashqarida bo'lmasa ham, ular to'lashga tayyor bo'lgan narxdan qimmatroq edi.", "src": "C21-r1 · The Davies Sisters", "type": "reading"}, {"en": "However, it was only a few years before their collecting took a new direction and they turned to the work of the French Impressionists.", "uz": "Biroq, bir necha yil o'tar-o'tmas ularning to'plash faoliyati yangi yo'nalish oldi va ular frantsuz impressionistlari ijodiga yuzlandilar.", "src": "C21-r1 · The Davies Sisters", "type": "reading"}, {"en": "Their initial response to the war effort was to finance the safe passage of artists from occupied Belgium to Wales, as a humanitarian act, but also with the hope of establishing a vibrant artists' community in the area.", "uz": "Urushga bo'lgan dastlabki munosabatlari — insonparvarlik ishi sifatida, shuningdek hududda jonli rassomlar jamoasini barpo etish umidida — bosib olingan Belgiyadan Uelsga rassomlarning xavfsiz ko'chib o'tishini moliyalashtirish bo'ldi.", "src": "C21-r1 · The Davies Sisters", "type": "reading"}, {"en": "It was tedious and distressing work, which would have a permanent effect on Gwendoline's health.", "uz": "Bu zerikarli va iztirobli ish bo'lib, keyinchalik Gvendolinning sog'lig'iga doimiy ta'sir ko'rsatgan.", "src": "C21-r1 · The Davies Sisters", "type": "reading"}, {"en": "Yet they didn't feel obliged to follow fashionable tastes and were free to pursue their own preferences.", "uz": "Shunga qaramay, ular urfdagi didlarga ergashishga o'zlarini majbur his qilishmadi va o'z xohishlariga amal qilishda erkin edilar.", "src": "C21-r1 · The Davies Sisters", "type": "reading"}, {"en": "By the early 1920s, Gwendoline felt increasingly uncomfortable buying art works when faced with the poverty and social upheaval created by the First World War.", "uz": "1920-yillarning boshlariga kelib, Birinchi jahon urushi keltirib chiqargan qashshoqlik va ijtimoiy larzalar oldida Gvendolin san'at asarlarini sotib olishdan tobora noqulaylik his qila boshladi.", "src": "C21-r1 · The Davies Sisters", "type": "reading"}, {"en": "The sisters collected French Impressionist paintings at a time when such art was routinely ignored by individuals and institutions alike.", "uz": "Opa-singillar frantsuz impressionizmi rasmlarini bunday san'at ham oddiy odamlar, ham muassasalar tomonidan odatda e'tiborsiz qoldirilgan bir paytda yig'ishdi.", "src": "C21-r1 · The Davies Sisters", "type": "reading"}, {"en": "There are usually about eight people but no more than ten, and everyone's always very friendly.", "uz": "Odatda sakkizga yaqin, lekin o'ndan ko'p bo'lmagan odam bo'ladi va hamma doim juda samimiy.", "src": "C21-l1 · Listening script", "type": "listening"}, {"en": "You learn about things like the weather, which is obviously really important.", "uz": "Siz ob-havo kabi narsalarni o'rganasiz, bu esa, shubhasiz, juda muhim.", "src": "C21-l1 · Listening script", "type": "listening"}];
+
+const GROUP=20;
+let type="all", groupIndex=0;
+const listEl=document.getElementById('list');
+const esc=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+
+function pool(){ return type==="all" ? DATA : DATA.filter(d=>d.type===type); }
+function ranges(){ const n=pool().length, out=[]; for(let i=0;i<n;i+=GROUP) out.push([i,Math.min(i+GROUP,n)]); return out; }
+
+function renderGroups(){
+  const rs=ranges(), box=document.getElementById('groupSwitch');
+  if(groupIndex>=rs.length) groupIndex=0;
+  box.innerHTML="";
+  if(!rs.length){ box.innerHTML='<button aria-pressed="true" disabled>—</button>'; return; }
+  rs.forEach(([s,e],k)=>{
+    const b=document.createElement('button'); b.dataset.g=k; b.textContent=(s+1)+"–"+e;
+    if(k===groupIndex) b.setAttribute('aria-pressed','true');
+    box.appendChild(b);
+  });
+}
+
+function render(){
+  const rs=ranges(); const r=rs[groupIndex];
+  const items = r ? pool().slice(r[0], r[1]) : [];
+  document.getElementById('count').textContent = pool().length + " sentence" + (pool().length===1?"":"s") + (rs.length>1 ? " · group "+(groupIndex+1)+"/"+rs.length : "");
+  document.getElementById('empty').style.display = pool().length ? "none" : "block";
+  listEl.innerHTML="";
+  items.forEach((d,i)=>{
+    const card=document.createElement('div'); card.className='card';
+    const t = d.type==="listening" ? "listening" : "reading";
+    card.innerHTML =
+      `<div class="srcrow"><span class="badge ${t}">${t}</span><span class="src">${esc(d.src||"")}</span></div>`+
+      `<div class="en">${esc(d.en)}</div>`+
+      (d.uz ? `<button class="showbtn">🇺🇿 Show translation</button>
+               <div class="uz"><span class="flag">Uzbek</span>${esc(d.uz)}</div>` : ``);
+    const btn=card.querySelector('.showbtn');
+    if(btn){ btn.addEventListener('click',()=>{
+      const uz=card.querySelector('.uz'); const open=uz.classList.toggle('open');
+      btn.textContent = open ? "🇺🇿 Hide translation" : "🇺🇿 Show translation";
+    }); }
+    listEl.appendChild(card);
+  });
+}
+
+document.getElementById('typeSwitch').addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  [...e.currentTarget.children].forEach(x=>x.setAttribute('aria-pressed', x===b));
+  type=b.dataset.type; groupIndex=0; renderGroups(); render();
+});
+document.getElementById('groupSwitch').addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b||b.disabled) return;
+  [...e.currentTarget.children].forEach(x=>x.setAttribute('aria-pressed', x===b));
+  groupIndex=+b.dataset.g; render();
+});
+
+renderGroups();
+render();
+</script>
+</body>
+</html>

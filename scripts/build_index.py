@@ -205,6 +205,12 @@ def main():
         build_player.main()
     except Exception as e:
         print(f"WARNING: build_player failed ({e})")
+    # keep the translation-practice page in sync with vocab/translations.json
+    try:
+        import build_translate
+        build_translate.main()
+    except Exception as e:
+        print(f"WARNING: build_translate failed ({e})")
 
 
 if __name__ == "__main__":

@@ -37,6 +37,9 @@ result, and a list of leftover references (or "none").
 
 - If it listed other references, update those files, then re-run `build_index.py` if you
   changed anything the index depends on.
+- **Grow the translation page**: a finished passage/test is the moment to add its difficult
+  sentences (+ Uzbek) to `vocab/translations.json` — see
+  [translate-practice](../translate-practice/SKILL.md).
 - **Commit** only with the user's go-ahead (the script never commits). One logical move
   per commit is fine; do not push unless asked. See [never-commit-without-approval] in
   the user's memory.
