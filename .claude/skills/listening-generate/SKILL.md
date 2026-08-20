@@ -28,7 +28,8 @@ the highlight quotes really occur in the transcript, checks the script parses, a
   answers that aren't in the text (they are still scored and shown in the results).
 
 ## Where files go
-- **Generated test → `listening/undone/cambridge/<book>/<Name> Listening.html`** (undone until done).
+- **Generated test → `listening/undone/cambridge/<book>/C{book}-l{test}.html`** (short name,
+  see [test-naming](../test-naming/SKILL.md); undone until done).
 - Scratch files (extracted text, `data.js`, rendered map images) → the session scratchpad, never the repo.
 - The base template stays at `templates/listening.html`; never copy a copyrighted transcript into it.
 
@@ -85,7 +86,7 @@ case-insensitive) to highlight green with a `Q#` tag after submit.
      --title  "Cambridge 20 — Listening Test 1" \
      --header "Cambridge IELTS 20 — Listening Test 1" \
      --badge  20 \
-     --out    "listening/undone/cambridge/cambridge-20/Cambridge 20 Test 1 Listening.html" \
+     --out    "listening/undone/cambridge/cambridge-20/C20-l1.html" \
      [--map <scratch>/part2_map.png]
    ```
    It verifies quotes, embeds audio, checks syntax, and writes the file. Fix any reported quote

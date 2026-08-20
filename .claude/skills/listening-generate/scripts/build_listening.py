@@ -13,7 +13,7 @@ Usage:
       --title  "Cambridge IELTS 20 — Listening Test 1" \
       --header "Cambridge IELTS 20 — Listening Test 1" \
       --badge  20 \
-      --out    "listening/undone/cambridge/cambridge-20/Cambridge 20 Test 1 Listening.html" \
+      --out    "listening/undone/cambridge/cambridge-20/C20-l1.html" \
       [--map scratch/part2_map.png]      # embedded where the data.js has __MAPIMG__
 
 The data.js must contain, between the DATA-START/DATA-END markers:

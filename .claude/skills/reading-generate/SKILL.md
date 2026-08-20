@@ -22,12 +22,14 @@ the passages, checks the script parses, and writes the final file.
   an existing HTML. The reading passages are the substance; reproduce them faithfully.
 - **The answer key** — the correct answers for all 40 questions (often a separate file).
   Do not invent answers; if the key is missing, ask for it.
-- **Naming** — book/test number for the title, header, badge and output path
-  (e.g. Cambridge 20, Test 1 → badge `20`, output `reading/undone/cambridge/cambridge-20/…`).
+- **Naming** — book/test number for the title, header and badge. The **output filename**
+  follows the [test-naming](../test-naming/SKILL.md) convention: `C{book}-r{test}.html`
+  (e.g. Cambridge 20, Test 1 → `C20-r1.html`), kept under `reading/undone/cambridge/<book>/`.
 
 ## Where files go
-- **Generated test → `reading/undone/cambridge/<book>/<Name> Reading.html`** (or the path the
-  user specifies). Undone until the user has done it; they move solved tests to `reading/done/…`.
+- **Generated test → `reading/undone/cambridge/<book>/C{book}-r{test}.html`** (short name,
+  see [test-naming](../test-naming/SKILL.md); or the path the user specifies). Undone until
+  the user has done it; they move solved tests to `reading/done/…`.
 - Scratch files (extracted text, `data.js`, quote lists) → the session scratchpad, never the repo.
 - The base template stays at `templates/reading.html`; never copy the copyrighted passage into it.
 
@@ -104,7 +106,7 @@ to highlight green with a `Q#` tag after submit.
      --title  "Cambridge 20 — Reading Test 1" \
      --header "Cambridge IELTS 20 — Reading Test 1" \
      --badge  20 \
-     --out    "reading/undone/cambridge/cambridge-20/Cambridge 20 Test 1 Reading.html"
+     --out    "reading/undone/cambridge/cambridge-20/C20-r1.html"
    ```
    It verifies quotes, checks syntax, and writes the file. Fix any reported quote misses
    (trim to an exact substring) or id-count warnings, then re-run.

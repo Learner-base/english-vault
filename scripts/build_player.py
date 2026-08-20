@@ -29,9 +29,11 @@ OUT = os.path.join(ROOT, "player.html")
 
 
 def parse_book_test(fname):
-    m = re.search(r"cambridge[\s\-]*?(\d+)", fname, re.I)
+    # short form "C20-l3.html" or legacy "Cambridge 20 Test 3 …"
+    m = re.search(r"(?:cambridge[\s\-]*|\bc)(\d+)", fname, re.I)
     book = int(m.group(1)) if m else 0
-    m = re.search(r"test[\s\-]*?(\d+)", fname, re.I)
+    m = (re.search(r"test[\s\-]*?(\d+)", fname, re.I)
+         or re.search(r"[\-\s][rl](\d+)", fname, re.I))
     test = int(m.group(1)) if m else 0
     return book, test
 

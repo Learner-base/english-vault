@@ -11,7 +11,7 @@ Usage:
     --title "Cambridge 20 — Reading Test 1" \
     --header "Cambridge IELTS 20 — Reading Test 1" \
     --badge 20 \
-    --out "reading/undone/cambridge/cambridge-20/Cambridge 20 Test 1 Reading.html"
+    --out "reading/undone/cambridge/cambridge-20/C20-r1.html"
 """
 import re, sys, json, subprocess, argparse, tempfile, os
 
