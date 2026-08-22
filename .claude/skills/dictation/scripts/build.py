@@ -242,86 +242,168 @@ PAGE = r"""<!DOCTYPE html>
 <title>Spelling Dictation — English Vault</title>
 <style>
   :root{
-    --paper:#FCFCFA; --card:#FFFFFF;
-    --ink:#17170F; --ink-2:#57564C; --ink-3:#8A897E;
-    --line:#E4E3DC; --line-2:#EFEEE8; --soft:#F4F3EC;
-    --focus:#2E5AAC; --ok:#1F5C3A; --bad:#8A2B1E; --red:#C0362C;
-    --ok-bg:#EAF4EE; --bad-bg:#FBECE9;
-    --r:14px;
+    color-scheme:light dark;
+    --paper:#FBFAF7; --card:#FFFFFF; --card-2:#F6F5F0;
+    --ink:#15150F; --ink-2:#55544A; --ink-3:#8B8A7E;
+    --line:#E5E4DC; --line-2:#EFEEE8; --soft:#F3F2EA;
+    --accent:#2E5AAC; --accent-soft:#E8EEFA;
+    --ok:#1B6B45; --ok-bg:#E7F4EC;
+    --red:#C0362C; --bad-bg:#FBEBE8;
+    --shadow:0 1px 2px rgba(20,20,10,.04), 0 8px 24px -12px rgba(20,20,10,.18);
+    --r:16px; --r-sm:11px;
     --serif:Georgia,"Iowan Old Style","Times New Roman",serif;
     --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
   }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --paper:#14140F; --card:#1C1C16; --card-2:#232219;
+      --ink:#F2F1EA; --ink-2:#B4B2A6; --ink-3:#84837A;
+      --line:#2E2D24; --line-2:#26251E; --soft:#232219;
+      --accent:#8CB2F5; --accent-soft:#1D2740;
+      --ok:#6FD39B; --ok-bg:#16281E;
+      --red:#F1897C; --bad-bg:#2C1A17;
+      --shadow:0 1px 2px rgba(0,0,0,.5), 0 10px 30px -14px rgba(0,0,0,.8);
+    }
+  }
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
-  body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:600px;margin:0 auto;padding:26px 20px 90px}
-  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
-  h1{font-family:var(--serif);font-weight:600;font-size:30px;line-height:1.12;margin:6px 0 4px;letter-spacing:-.01em}
-  .lede{color:var(--ink-2);font-size:15px;margin:0}
+  html{-webkit-text-size-adjust:100%}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.55;
+    -webkit-font-smoothing:antialiased;overflow-wrap:break-word}
+  .wrap{max-width:640px;margin:0 auto;
+    padding:clamp(18px,4vw,32px) clamp(14px,4vw,22px) calc(84px + env(safe-area-inset-bottom))}
+  button{font-family:inherit;cursor:pointer;color:inherit}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
+  .hide{display:none!important}
 
-  button{font-family:inherit;cursor:pointer}
-  .btn{border:1px solid var(--ink);background:var(--ink);color:var(--paper);border-radius:999px;padding:11px 18px;font-size:14px;font-weight:500;transition:opacity .15s,transform .06s}
-  .btn:hover{opacity:.88}.btn:active{transform:translateY(1px)}
-  .btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
-  .btn.ghost:hover{border-color:var(--ink)}
-  :focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+  /* ---------- header ---------- */
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--ink-3);display:flex;align-items:center;gap:8px}
+  .eyebrow::before{content:"";width:18px;height:1px;background:var(--ink-3)}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(26px,6.4vw,34px);line-height:1.1;
+    margin:10px 0 6px;letter-spacing:-.015em}
+  .lede{color:var(--ink-2);font-size:15px;margin:0;max-width:52ch}
 
-  .setup{margin-top:26px;display:grid;gap:18px}
+  /* ---------- buttons ---------- */
+  .btn{border:1px solid var(--ink);background:var(--ink);color:var(--paper);border-radius:999px;
+    padding:13px 22px;font-size:15px;font-weight:600;min-height:46px;
+    transition:opacity .15s,transform .06s,box-shadow .15s;box-shadow:var(--shadow)}
+  .btn:hover{opacity:.9}.btn:active{transform:translateY(1px)}
+  .btn.ghost{background:transparent;color:var(--ink);border-color:var(--line);box-shadow:none}
+  .btn.ghost:hover{border-color:var(--ink-2)}
+  .btn.wide{width:100%;justify-content:center}
+
+  /* ---------- setup ---------- */
+  .setup{margin-top:24px;display:grid;gap:14px}
+  .fieldset{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+    padding:16px 16px 18px;box-shadow:var(--shadow)}
+  .lab{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--ink-3);
+    text-transform:uppercase;display:block;margin-bottom:10px}
   .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-  .switch{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--card);gap:2px;flex-wrap:wrap}
-  .switch button{border:none;background:none;border-radius:999px;padding:7px 13px;font-size:12.5px;color:var(--ink-2)}
-  .switch button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
-  .lab{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--ink-3);text-transform:uppercase}
-  .stat-row{display:flex;gap:22px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;color:var(--ink-2);padding-top:16px;border-top:1px solid var(--line-2)}
-  .stat-row b{color:var(--ink)}
-  .reset-link{background:none;border:none;color:var(--ink-3);text-decoration:underline;font-family:var(--mono);font-size:12px;padding:0;margin-left:auto}
+  /* segmented control — scrolls sideways on a phone instead of wrapping into a wall */
+  .switch{display:flex;gap:4px;background:var(--soft);border:1px solid var(--line);
+    border-radius:999px;padding:4px;overflow-x:auto;scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;scroll-snap-type:x proximity}
+  .switch::-webkit-scrollbar{display:none}
+  .switch button{border:none;background:none;border-radius:999px;padding:9px 14px;font-size:13.5px;
+    color:var(--ink-2);white-space:nowrap;flex:0 0 auto;min-height:38px;scroll-snap-align:start;
+    transition:background .15s,color .15s}
+  .switch button:hover{color:var(--ink)}
+  .switch button[aria-pressed="true"]{background:var(--card);color:var(--ink);font-weight:650;
+    box-shadow:0 1px 2px rgba(20,20,10,.12)}
+  .switch button[disabled]{opacity:.5;cursor:default}
+  .toggle{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:12px;
+    letter-spacing:.04em;color:var(--ink-2);text-transform:uppercase;
+    background:var(--card);border:1px solid var(--line);border-radius:999px;padding:9px 15px;
+    min-height:42px;cursor:pointer}
+  .toggle input{accent-color:var(--accent);width:16px;height:16px;margin:0}
+  .stat-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;
+    font-family:var(--mono);font-size:12px;color:var(--ink-2)}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 13px}
+  .stat b{color:var(--ink);font-size:13px}
+  .reset-link{background:none;border:none;color:var(--ink-3);text-decoration:underline;
+    font-family:var(--mono);font-size:12px;padding:6px 2px;margin-left:auto}
 
-  /* quiz */
+  /* ---------- quiz ---------- */
   #quiz{display:none}
-  .top{display:flex;align-items:center;gap:12px;margin-bottom:14px}
-  .top .back{background:none;border:none;color:var(--ink-2);font-size:14px;padding:6px 2px}
+  .top{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+  .top .back{background:none;border:none;color:var(--ink-2);font-size:14px;padding:8px 4px;min-height:40px}
   .top .spacer{flex:1}
-  .counter{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
-  .progress{height:3px;background:var(--line-2);border-radius:2px;margin:4px 0 26px;overflow:hidden}
-  .progress i{display:block;height:100%;background:var(--ink);width:0;transition:width .3s}
+  .counter{font-family:var(--mono);font-size:12px;color:var(--ink-3);
+    background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+  .counter b{color:var(--ink)}
+  .progress{height:5px;background:var(--line-2);border-radius:999px;margin:0 0 20px;overflow:hidden}
+  .progress i{display:block;height:100%;border-radius:999px;
+    background:linear-gradient(90deg,var(--accent),var(--ink));width:0;transition:width .35s ease}
 
-  .panel{border:1px solid var(--line);border-radius:var(--r);background:var(--card);padding:34px 26px;text-align:center}
-  .panel .pos{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);min-height:14px}
-  .speak-big{margin:6px auto 4px;border:1px solid var(--line);background:var(--card);color:var(--ink);width:74px;height:74px;border-radius:50%;font-size:30px;display:grid;place-items:center;transition:border-color .15s,transform .06s}
-  .speak-big:hover{border-color:var(--ink)}.speak-big:active{transform:translateY(1px)}
-  .speak-big.playing{border-color:var(--ink);animation:pulse 1s ease infinite}
-  @keyframes pulse{50%{box-shadow:0 0 0 6px var(--soft)}}
-  .replay-hint{font-family:var(--mono);font-size:11px;color:var(--ink-3);margin:8px 0 22px;letter-spacing:.04em}
-  .replay-hint b{color:var(--ink-2)}
+  .panel{border:1px solid var(--line);border-radius:var(--r);background:var(--card);
+    padding:clamp(22px,5vw,34px) clamp(16px,4.5vw,28px);text-align:center;box-shadow:var(--shadow)}
+  .pos{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--ink-3);min-height:15px}
+  /* speak button with pulsing rings while the word is being read */
+  .speak-wrap{position:relative;width:92px;height:92px;margin:10px auto 6px;display:grid;place-items:center}
+  .speak-big{position:relative;z-index:2;border:1px solid var(--line);background:var(--card-2);
+    width:84px;height:84px;border-radius:50%;font-size:32px;display:grid;place-items:center;
+    transition:border-color .15s,transform .08s,background .15s}
+  .speak-big:hover{border-color:var(--accent);background:var(--accent-soft)}
+  .speak-big:active{transform:scale(.96)}
+  .speak-wrap::before,.speak-wrap::after{content:"";position:absolute;inset:4px;border-radius:50%;
+    border:1px solid var(--accent);opacity:0}
+  .speak-big.playing{border-color:var(--accent);background:var(--accent-soft)}
+  .speak-wrap:has(.playing)::before{animation:ring 1.4s ease-out infinite}
+  .speak-wrap:has(.playing)::after{animation:ring 1.4s ease-out .7s infinite}
+  @keyframes ring{0%{transform:scale(.9);opacity:.55}100%{transform:scale(1.35);opacity:0}}
+  .replay-hint{font-family:var(--mono);font-size:11px;color:var(--ink-3);margin:10px 0 22px;letter-spacing:.03em}
+  .replay-hint kbd{font-family:var(--mono);font-size:10.5px;color:var(--ink-2);background:var(--soft);
+    border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;padding:2px 6px}
+  .replay-hint .taponly{display:none}
+  @media (max-width:420px){ .replay-hint .kbonly{display:none} .replay-hint .taponly{display:inline} }
 
-  .answer{width:100%;font-family:var(--serif);font-size:30px;text-align:center;border:none;border-bottom:2px solid var(--line);background:transparent;color:var(--ink);padding:8px 4px;letter-spacing:.01em;outline:none;transition:border-color .15s}
-  .answer:focus{border-color:var(--ink)}
+  /* 17px keeps iOS Safari from zooming the page when the field is focused */
+  .answer{width:100%;font-family:var(--serif);font-size:clamp(24px,7vw,32px);text-align:center;
+    border:none;border-bottom:2px solid var(--line);background:transparent;color:var(--ink);
+    padding:10px 4px;letter-spacing:.02em;outline:none;transition:border-color .18s,color .18s;
+    min-height:56px}
+  .answer::placeholder{font-family:var(--sans);font-size:16px;color:var(--ink-3);letter-spacing:0}
+  .answer:focus{border-color:var(--accent)}
   .answer.ok{border-color:var(--ok);color:var(--ok)}
   .answer.bad{border-color:var(--red);color:var(--red)}
   .answer:disabled{opacity:1}
 
-  .verdict{min-height:58px;margin-top:16px}
-  .verdict .diff{font-family:var(--serif);font-size:26px;letter-spacing:.01em}
+  .verdict{min-height:62px;margin-top:16px}
+  .verdict .diff{font-family:var(--serif);font-size:clamp(20px,5.5vw,26px);letter-spacing:.02em;
+    word-break:break-word;background:var(--soft);border-radius:var(--r-sm);padding:10px 12px;display:inline-block}
   .verdict .diff .wrong{color:var(--red);text-decoration:line-through;text-decoration-thickness:1px}
   .verdict .diff .miss{color:var(--ok);border-bottom:2px solid var(--ok)}
-  .verdict .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px}
-  .verdict.good .msg{color:var(--ok);font-weight:600}
-  .verdict .retype{font-family:var(--mono);font-size:12px;color:var(--bad);margin-top:8px}
+  .verdict .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--ink-3);margin-bottom:8px;display:block}
+  .verdict.good .msg{color:var(--ok);font-weight:650;font-size:19px;
+    background:var(--ok-bg);border-radius:999px;padding:9px 18px;display:inline-block}
+  .verdict .retype{font-family:var(--mono);font-size:12.5px;color:var(--red);margin-top:10px}
 
-  .meaning{margin-top:18px;padding-top:16px;border-top:1px solid var(--line-2);text-align:left;font-size:14px;color:var(--ink-2)}
+  .meaning{margin-top:20px;padding-top:16px;border-top:1px solid var(--line-2);text-align:left;
+    font-size:15px;color:var(--ink-2)}
   .meaning .d{color:var(--ink)}
-  .meaning .uz{font-style:italic;margin-top:3px}
-  .meaning .ex{margin-top:8px;font-family:var(--serif);color:var(--ink-2)}
-  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
-  .chips .lbl{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);width:100%;margin-bottom:2px}
-  .chip{font-family:var(--mono);font-size:11px;letter-spacing:.03em;border:1px solid var(--line);border-radius:999px;padding:3px 9px;color:var(--ink-2);background:var(--soft)}
-  .cta{margin-top:22px;display:flex;gap:10px;justify-content:center}
+  .meaning .uz{font-style:italic;margin-top:4px}
+  .meaning .ex{margin-top:10px;font-family:var(--serif);color:var(--ink-2);
+    border-left:2px solid var(--line);padding-left:12px}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+  .chips .lbl{width:100%;margin-bottom:2px}
+  .chip{font-family:var(--mono);font-size:11px;border:1px solid var(--line);border-radius:999px;
+    padding:4px 10px;color:var(--ink-2);background:var(--soft)}
+  .cta{margin-top:24px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .cta .btn{min-width:160px}
 
-  .done{text-align:center;padding:50px 20px;display:none}
-  .done h2{font-family:var(--serif);font-size:26px;margin:0 0 8px}
-  .done p{color:var(--ink-2);margin:0 0 24px;font-family:var(--mono);font-size:13px}
-  .hide{display:none!important}
+  /* ---------- done ---------- */
+  .done{text-align:center;padding:46px 16px;display:none}
+  .done .mark{font-size:40px;line-height:1}
+  .done h2{font-family:var(--serif);font-size:clamp(23px,5.6vw,28px);margin:12px 0 8px}
+  .done p{color:var(--ink-2);margin:0 0 26px;font-family:var(--mono);font-size:13px}
+
+  @media (prefers-reduced-motion:reduce){
+    *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  }
 </style>
 </head>
 <body>
@@ -331,11 +413,12 @@ PAGE = r"""<!DOCTYPE html>
   <section id="setup">
     <div class="eyebrow">English Vault · Dictation</div>
     <h1>Spelling test — hard words</h1>
-    <p class="lede">Only the tricky ones: S vs C, TH, PH, silent letters, -ough, doubled letters and British spellings. Listen, type it, and retype any you miss. Pick a pattern below to drill just that trap.</p>
+    <p class="lede">Only the tricky ones: S vs C, TH, PH, silent letters, -ough, doubled letters and
+      British spellings. Listen, type it, retype any you miss.</p>
 
     <div class="setup">
-      <div>
-        <div class="lab" style="margin-bottom:8px">Focus on a spelling pattern</div>
+      <div class="fieldset">
+        <span class="lab">Focus on a spelling pattern</span>
         <div class="switch" id="focusSwitch">
           <button data-tag="all" aria-pressed="true">All hard</button>
           <button data-tag="sc">S / C</button>
@@ -347,26 +430,28 @@ PAGE = r"""<!DOCTYPE html>
           <button data-tag="british">British</button>
         </div>
       </div>
-      <div>
-        <div class="lab" style="margin-bottom:8px">Word source</div>
+
+      <div class="fieldset">
+        <span class="lab">Word source</span>
         <div class="switch" id="srcSwitch">
           <button data-src="all" aria-pressed="true">All words</button>
           <button data-src="learning">Learning only</button>
           <button data-src="mistakes">My mistakes</button>
         </div>
       </div>
-      <div>
-        <div class="lab" style="margin-bottom:8px">Word set</div>
+
+      <div class="fieldset">
+        <span class="lab">Word set</span>
         <div class="switch" id="modeSwitch">
           <button data-mode="groups" aria-pressed="true">Groups of 30</button>
           <button data-mode="random">Random</button>
         </div>
-        <div id="groupsWrap" style="margin-top:10px">
-          <div class="lab" style="margin-bottom:8px">Pick a group of 30</div>
+        <div id="groupsWrap" style="margin-top:14px">
+          <span class="lab">Pick a group of 30</span>
           <div class="switch" id="batchSwitch"></div>
         </div>
-        <div id="randomWrap" style="margin-top:10px;display:none">
-          <div class="lab" style="margin-bottom:8px">How many random words (from all)</div>
+        <div id="randomWrap" style="margin-top:14px;display:none">
+          <span class="lab">How many random words</span>
           <div class="switch" id="lenSwitch">
             <button data-len="15" aria-pressed="true">15</button>
             <button data-len="30">30</button>
@@ -375,16 +460,18 @@ PAGE = r"""<!DOCTYPE html>
           </div>
         </div>
       </div>
+
       <div class="row">
-        <label class="lab"><input type="checkbox" id="shuffle" checked style="vertical-align:-1px"> Shuffle</label>
-        <label class="lab"><input type="checkbox" id="slow" style="vertical-align:-1px"> Speak slowly</label>
+        <label class="toggle"><input type="checkbox" id="shuffle" checked> Shuffle</label>
+        <label class="toggle"><input type="checkbox" id="slow"> Speak slowly</label>
       </div>
-      <button class="btn" id="startBtn" style="justify-self:start">Start test →</button>
+
+      <button class="btn wide" id="startBtn">Start test →</button>
 
       <div class="stat-row">
-        <span>Pool: <b id="poolCount">0</b></span>
-        <span>Mastered: <b id="masterCount">0</b></span>
-        <span>Mistakes logged: <b id="missCount">0</b></span>
+        <span class="stat">Pool <b id="poolCount">0</b></span>
+        <span class="stat">Mastered <b id="masterCount">0</b></span>
+        <span class="stat">Mistakes <b id="missCount">0</b></span>
         <button class="reset-link" id="resetBtn">reset progress</button>
       </div>
     </div>
@@ -395,17 +482,21 @@ PAGE = r"""<!DOCTYPE html>
     <div class="top">
       <button class="back" id="backBtn">← End</button>
       <div class="spacer"></div>
-      <div class="counter"><span id="idx">1</span> / <span id="total">1</span></div>
+      <div class="counter"><b id="idx">1</b> / <span id="total">1</span></div>
     </div>
     <div class="progress"><i id="bar"></i></div>
 
     <div class="panel">
       <div class="pos" id="pos"></div>
-      <button class="speak-big" id="speakBtn" title="Play (Space / R)">🔊</button>
-      <div class="replay-hint"><b>Space</b> or <b>R</b> to replay · <b>Enter</b> to check</div>
+      <div class="speak-wrap">
+        <button class="speak-big" id="speakBtn" title="Play (Space / R)" aria-label="Play the word">🔊</button>
+      </div>
+      <div class="replay-hint"><span class="kbonly"><kbd>Space</kbd> or <kbd>R</kbd> to replay ·
+        <kbd>Enter</kbd> to check</span><span class="taponly">tap 🔊 to hear it again</span></div>
 
       <input class="answer" id="answer" type="text" autocomplete="off" autocapitalize="off"
-             autocorrect="off" spellcheck="false" placeholder="type what you hear" />
+             autocorrect="off" spellcheck="false" enterkeyhint="done" inputmode="text"
+             placeholder="type what you hear" />
 
       <div class="verdict" id="verdict"></div>
       <div class="meaning hide" id="meaning"></div>
@@ -416,6 +507,7 @@ PAGE = r"""<!DOCTYPE html>
 
   <!-- DONE -->
   <section id="doneScreen" class="done">
+    <div class="mark">✓</div>
     <h2 id="doneTitle">Session complete</h2>
     <p id="doneStats"></p>
     <button class="btn" id="againBtn">Back to start</button>
