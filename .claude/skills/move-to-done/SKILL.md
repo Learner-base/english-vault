@@ -22,7 +22,8 @@ keep every reference in sync.
 4. Rebuilds the main page with `dev/scripts/build_index.py` — which also regenerates
    `dev/player.html` — so the file browser links and the road player point at the new path.
 5. Greps the repo for any **other** place that still names the old path/filename
-   (docs, `dev/progress.html`, cross-links…) and prints them to fix by hand.
+   (docs, cross-links…) and prints them to fix by hand. `dev/progress.html` is
+   generated now, so it needs no hand-fixing — just rebuild.
 
 ## Usage
 

@@ -17,6 +17,12 @@ python3 dev/scripts/build_index.py
 as the final step, so the main page shows the new content. Skills that generate files
 must do this too (it is listed in their SKILL.md).
 
+That one command also regenerates `dev/player.html`, `dev/progress.html` and
+`generated/translate/translate.html` — **all four pages are generated, never
+hand-edit them.** `dev/progress.html` lists what you're studying newest-first and
+highlights the newest deck in each group, so it follows the newest vocab deck by
+itself.
+
 ## Repo layout
 The root holds only the study content — `generated/`, `listening/`, `reading/`,
 `vocab/`, `writing/` — so it stays free of distractions. Everything else lives in

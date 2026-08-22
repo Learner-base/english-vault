@@ -1,0 +1,163 @@
+#!/usr/bin/env python3
+"""Regenerate /progress.html — what I'm studying right now, newest first.
+
+The page used to be hand-written and went stale the moment a deck was generated
+or retired. It is now built from the file tree:
+
+  * **generated/vocab** — the decks still in `inprogress/`,
+  * **to review**       — the decks in `review/` (retired, words still in
+    vocab/need-to-review.json),
+  * **practice pages**  — dictation and translation.
+
+Inside every group the **most recently added file comes first** (git tells us
+when each file first appeared; anything not yet committed counts as newest), and
+that first item is highlighted with a `now` badge — so the deck you just made is
+always the one the page points at.
+
+Run it after adding or retiring anything:
+    python3 dev/scripts/build_progress.py
+It is also called at the end of dev/scripts/build_index.py.
+"""
+import os, subprocess, html
+
+# scripts/ lives in dev/, so the site root is two levels up.
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+OUT = os.path.join(ROOT, "dev", "progress.html")
+
+GROUPS = [
+    ("generated/vocab/inprogress", "generated/vocab/inprogress", "Still learning"),
+    ("generated/vocab/review", "generated/vocab/review", "To review"),
+    ("practice",               "practice pages",         "Drills"),
+]
+PRACTICE = ["generated/dictation/dictation.html", "generated/translate/translate.html"]
+
+
+def added_time(rel):
+    """When this file first appeared, as a unix timestamp.
+
+    Asked per file with --follow, because these files get moved around
+    (inprogress/ → done/, and the whole dev/ reorg). A plain
+    `git log --diff-filter=A --name-only` reports a moved file under its OLD
+    path, so every deck would look equally old and fall back to alphabetical
+    order — which silently put the wrong deck on top.
+
+    A file git has never seen is brand new: fall back to its mtime.
+    """
+    try:
+        out = subprocess.check_output(
+            ["git", "log", "--diff-filter=A", "--follow", "--format=%ct", "-1", "--", rel],
+            cwd=ROOT, text=True, stderr=subprocess.DEVNULL).strip()
+        if out:
+            return int(out.splitlines()[0])
+    except Exception:
+        pass
+    try:
+        return int(os.path.getmtime(os.path.join(ROOT, rel)))
+    except OSError:
+        return 0
+
+
+def newest_first(paths, rank):
+    """Newest first; ties (same commit) break alphabetically."""
+    return sorted(paths, key=lambda p: (-rank.get(p, 0), p))
+
+
+def ranks_for(paths):
+    return {p: added_time(p) for p in paths}
+
+
+def collect():
+    groups = []
+    for key, label, sub in GROUPS:
+        if key == "practice":
+            found = [p for p in PRACTICE if os.path.exists(os.path.join(ROOT, p))]
+        else:
+            d = os.path.join(ROOT, key)
+            found = ([f"{key}/{f}" for f in os.listdir(d)
+                      if f.endswith(".html") and not f.startswith(".")]
+                     if os.path.isdir(d) else [])
+        items = newest_first(found, ranks_for(found))
+        if items:
+            groups.append((label, sub, items))
+    return groups
+
+
+PAGE = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>English Vault — In progress</title>
+<style>
+  :root{
+    --bg:#f5f8fd;--card:#FFFFFF;--ink:#0f172a;--ink-2:#475569;--ink-3:#8a94a6;
+    --line:#e6eaf1;--line-2:#eef2f8;--soft:#eff4fb;
+    --blue:#1e6de6;--blue2:#3b82f6;--blued:#0f2f66;--bluebg:#eff6ff;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}html,body{margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:720px;margin:0 auto;padding:22px 20px 90px}
+  .hero{background:linear-gradient(135deg,#0f2f66,#1e6de6);color:#fff;border-radius:20px;
+    padding:24px 24px 26px;box-shadow:0 14px 36px rgba(30,109,230,.24);margin-bottom:18px}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#bfdbfe}
+  h1{font-weight:800;font-size:29px;margin:8px 0 6px;letter-spacing:-.02em;color:#fff}
+  .lede{color:#dbeafe;font-size:14.5px;margin:0}
+  .home{display:inline-block;font-size:13px;font-weight:600;color:var(--blue);text-decoration:none;margin-bottom:18px}
+  .home:hover{text-decoration:underline}
+  .group{margin:0 0 14px;background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:14px 16px;box-shadow:0 1px 3px rgba(16,24,40,.05)}
+  .group h2{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--ink-3);text-transform:uppercase;margin:0 0 8px;padding-bottom:8px;border-bottom:1px solid var(--line-2);display:flex;justify-content:space-between;gap:10px}
+  .group h2 .sub{font-family:var(--sans);letter-spacing:0;text-transform:none;color:var(--ink-3);font-weight:500}
+  ol{margin:0;padding-left:24px}
+  li{margin:0;padding:5px 0;font-size:14.5px}
+  li a{color:var(--ink);text-decoration:none}
+  li a:hover{color:var(--blue);text-decoration:underline}
+  li.feat{list-style:none;margin-left:-24px;padding-left:12px;background:var(--bluebg);border:1px solid #d3e2fb;border-left:3px solid var(--blue);border-radius:8px;padding-top:8px;padding-bottom:8px}
+  li.feat a{font-weight:700}
+  li.feat .tag{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:#dce9fc;padding:1px 7px;border-radius:999px;margin-left:8px;vertical-align:middle}
+  .count{font-family:var(--mono);font-size:12px;color:var(--ink-3);margin-top:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <div class="eyebrow">📈 English Vault</div>
+    <h1>In progress</h1>
+    <p class="lede">Things I'm currently working through — newest first, the latest one highlighted.</p>
+  </div>
+  <a class="home" href="./index.html">← All files</a>
+
+__GROUPS__
+  <div class="count">__COUNT__ items in progress</div>
+</div>
+</body>
+</html>
+"""
+
+
+def main():
+    groups, total = collect(), 0
+    out = []
+    for label, sub, items in groups:
+        total += len(items)
+        rows = []
+        for i, rel in enumerate(items):
+            name = html.escape(os.path.basename(rel))
+            href = html.escape("../" + rel, quote=True)
+            # the newest file in the group is the one to study now
+            cls = ' class="feat"' if i == 0 else ""
+            tag = '<span class="tag">now</span>' if i == 0 else ""
+            rows.append(f'      <li{cls}><a href="{href}">{name}</a>{tag}</li>')
+        out.append('  <div class="group">\n'
+                   f'    <h2>{html.escape(label)}<span class="sub">{html.escape(sub)}</span></h2>\n'
+                   "    <ol>\n" + "\n".join(rows) + "\n    </ol>\n  </div>\n")
+    page = PAGE.replace("__GROUPS__", "\n".join(out)).replace("__COUNT__", str(total))
+    with open(OUT, "w", encoding="utf-8") as f:
+        f.write(page)
+    print(f"Wrote {OUT}  ({total} items in {len(groups)} groups, newest first)")
+
+
+if __name__ == "__main__":
+    main()

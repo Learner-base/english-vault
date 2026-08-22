@@ -222,6 +222,12 @@ def main():
         build_translate.main()
     except Exception as e:
         print(f"WARNING: build_translate failed ({e})")
+    # keep the progress page pointing at the newest deck
+    try:
+        import build_progress
+        build_progress.main()
+    except Exception as e:
+        print(f"WARNING: build_progress failed ({e})")
 
 
 if __name__ == "__main__":

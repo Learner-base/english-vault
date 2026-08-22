@@ -9,8 +9,13 @@ python3 dev/scripts/build_index.py
 ```
 
 Regenerates **`dev/index.html`** (the file browser), **`dev/player.html`** (the road audio
-playlist) and **`generated/translate/translate.html`**. Run it after you add, rename,
-move or delete **any** file. Never hand-edit those three — they are generated.
+playlist), **`dev/progress.html`** (what you're studying now) and
+**`generated/translate/translate.html`**. Run it after you add, rename, move or delete
+**any** file. Never hand-edit those four — they are generated.
+
+`dev/progress.html` lists the in-progress decks, the review decks and the drill pages,
+**newest first**, and puts a `now` badge on the newest item of each group — so the deck
+you just built is always the one it points at.
 
 The browser lists only six top-level folders — `docs`, `generated`, `listening`,
 `reading`, `vocab`, `writing` — and what is inside them. Loose files at the repo root,
@@ -54,7 +59,7 @@ vocab/glossary.json        word help for the translate page (words with no card)
 vocab/for-dictation.md     words that must appear in the dictation deck
 vocab/translations.json    practice sentences + their chunk breakdowns
 
-dev/scripts/    the generators (build_index, build_player, build_translate)
+dev/scripts/    the generators (build_index, build_player, build_translate, build_progress)
 dev/templates/  the reading / listening / vocab page templates
 dev/docs/       this file + architecture.md
 ```
