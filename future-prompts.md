@@ -2,6 +2,10 @@
 
 ---
 
+add skill for these things also for automation
+
+---
+
 player is not working as expected, test that fully and fix all of the bugs
 
 ---
