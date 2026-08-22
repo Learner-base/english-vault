@@ -2,6 +2,3 @@
 
 ---
 
-move c20 r1 to done folder
-
----
