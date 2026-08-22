@@ -57,9 +57,48 @@ def build_html(tpl, deck, title, eyebrow, lede, key):
                "  .related .tag{font-family:var(--serif)}\n"
                "  .mnem .kw,.mnem .tr{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:5px}\n"
                "  .mnem .kw b,.mnem .tr b{color:var(--ink);text-transform:none;font-size:14px;letter-spacing:0}\n"
-               "  .mnem .story{font-family:var(--serif);font-style:italic;font-size:15px;line-height:1.55;margin:8px 0 0;padding-top:8px;border-top:1px dashed var(--line)}\n  ")
+               "  .mnem .story{font-family:var(--serif);font-style:italic;font-size:15px;line-height:1.55;margin:8px 0 0;padding-top:8px;border-top:1px dashed var(--line)}\n"
+               # the whole-phrase accordion sits apart from the rest: the word alone
+               # is only half the story when the passage highlighted a collocation
+               "  .acc.phrase{margin-top:14px;border-top:2px solid var(--line);border-radius:10px;background:var(--soft,#F4F3EC)}\n"
+               "  .acc.phrase summary{padding-left:11px;padding-right:11px;color:var(--ink-2)}\n"
+               "  .acc.phrase summary .whole{font-family:var(--serif);text-transform:none;letter-spacing:0;font-size:13.5px;font-style:italic;color:var(--ink-3);margin-left:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:46%}\n"
+               "  .acc.phrase > div{padding:0 11px 12px}\n"
+               "  .phr .en{font-family:var(--serif);font-size:17px;line-height:1.45;color:var(--ink)}\n"
+               "  .phr .en b{font-weight:700;background:linear-gradient(transparent 62%,#FBE7A2 62%);padding:0 1px}\n"
+               "  .phr .uz{font-size:15.5px;line-height:1.5;color:var(--ink-2);margin-top:9px;padding-top:9px;border-top:1px dashed var(--line)}\n"
+               "  .phr .uz .lab{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:4px}\n"
+               "  .phr .note{font-family:var(--mono);font-size:10.5px;color:var(--ink-3);margin-top:9px;letter-spacing:.03em}\n  ")
     tpl = rep(tpl, "  .acc{border-top:1px solid var(--line-2)}",
               "  " + css_add + ".acc{border-top:1px solid var(--line-2)}")
+
+    # The passage highlights a whole collocation ("vary quite a bit") but the card
+    # only translates the headword ("quite a bit"). Add a panel, set apart at the
+    # bottom, that translates the phrase as a unit — with the headword marked
+    # inside it, so you can see how the word sits in the phrase.
+    helper = (
+        'function phraseAcc(v){\n'
+        '  if(!v.form||!v.formUz) return "";\n'
+        '  const clean=String(v.form).replace(/\\s*\\([^)]*\\)\\s*/g," ").trim();\n'
+        '  if(!clean||clean.toLowerCase()===String(v.w).toLowerCase()) return "";\n'
+        '  const rx=s=>s.replace(/[.*+?^${}()|[\\]\\\\]/g,"\\\\$&");\n'
+        '  const words=String(v.w).trim().split(/\\s+/);\n'
+        '  let en=esc(clean), marked=false;\n'
+        '  const last=words[words.length-1].split("-")[0];\n'
+        '  const stem=(last.length>4&&/[ey]$/i.test(last))?last.slice(0,-1):last;\n'
+        '  for(const pat of [words.map(rx).join("\\\\s+")+"[a-z]*", rx(last)+"[a-z]*", rx(stem)+"[a-z]*"]){\n'
+        '    const re=new RegExp("\\\\b"+pat+"\\\\b","i");\n'
+        '    if(re.test(en)){ en=en.replace(re,m=>"<b>"+m+"</b>"); marked=true; break; }\n'
+        '  }\n'
+        '  const body=`<div class="phr"><div class="en">${en}</div>`+\n'
+        '    `<div class="uz"><span class="lab">butun ibora</span>${esc(v.formUz)}</div>`+\n'
+        '    (marked?`<div class="note">bold = the word on this card</div>`:"")+`</div>`;\n'
+        '  return `<details class="acc phrase"><summary>Whole phrase'
+        '<span class="whole">${esc(clean)}</span><span class="plus">+</span></summary>'
+        '<div class="body">${body}</div></details>`;\n'
+        '}\n'
+    )
+    tpl = rep(tpl, "function tags(a){", helper + "function tags(a){")
 
     old_front = ('front=`<div class="pos">${v.pos}</div><div class="word">${esc(v.w)}</div>'
                  '${v.ipa?`<div class="ipa">${esc(v.ipa)}</div>`:""}${speakBtn(v.w)}'
@@ -91,6 +130,10 @@ def build_html(tpl, deck, title, eyebrow, lede, key):
                   '<p class="story">${esc(v.mnem.story)}</p></div>`):""}\n'
                   '    ${acc("Example — from the passage",`<em>${esc(v.ex)}</em>`)}')
     tpl = rep(tpl, old_ex_acc, new_ex_acc)
+
+    tpl = rep(tpl,
+              '    ${acc("Antonyms",tags(v.ant))}\n  `;',
+              '    ${acc("Antonyms",tags(v.ant))}\n    ${phraseAcc(v)}\n  `;')
     return tpl
 
 

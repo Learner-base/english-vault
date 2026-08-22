@@ -80,7 +80,8 @@
         "Conservation Initiative",
         "take the initiative",
         "launch an initiative"
-      ]
+      ],
+      "formUz": "Tabiatni muhofaza qilish tashabbusi"
     },
     {
       "w": "form",
@@ -108,7 +109,8 @@
         "formed for (a purpose)",
         "form an opinion",
         "form a habit"
-      ]
+      ],
+      "formUz": "…uchun tuzilgan (tashkil etilgan)"
     },
     {
       "w": "recognition",
@@ -164,7 +166,8 @@
         "be consulted about",
         "consult a doctor",
         "in consultation with"
-      ]
+      ],
+      "formUz": "…haqida ular bilan maslahatlashilgan"
     },
     {
       "w": "pinpoint",
@@ -295,7 +298,8 @@
       "related": [
         "unpick this stuff",
         "unpick an argument"
-      ]
+      ],
+      "formUz": "bu masalani ip-igna qilib tahlil qilmoq"
     },
     {
       "w": "assess",
@@ -546,7 +550,8 @@
         "enormous herds",
         "a herd of cattle",
         "herd together"
-      ]
+      ],
+      "formUz": "ulkan podalar"
     },
     {
       "w": "regrettably",
@@ -597,7 +602,8 @@
       "related": [
         "confined to",
         "a confined space"
-      ]
+      ],
+      "formUz": "faqat …bilan cheklangan; …dan chiqmaydigan"
     },
     {
       "w": "wilderness",
@@ -949,7 +955,8 @@
       "related": [
         "on an industrial scale",
         "industrial-scale farming"
-      ]
+      ],
+      "formUz": "sanoat miqyosida"
     },
     {
       "w": "practitioner",
@@ -998,7 +1005,8 @@
         "epidemic levels",
         "reach epidemic levels",
         "a flu epidemic"
-      ]
+      ],
+      "formUz": "epidemiya darajasi (juda keng tarqalgan)"
     },
     {
       "w": "misguided",
@@ -1323,7 +1331,8 @@
       "related": [
         "an accolade reserved for",
         "receive an accolade"
-      ]
+      ],
+      "formUz": "faqat …ga beriladigan yuksak e'tirof"
     },
     {
       "w": "devastating",
@@ -1375,7 +1384,8 @@
       "related": [
         "relatively uplifting",
         "an uplifting story"
-      ]
+      ],
+      "formUz": "nisbatan ruhni ko'taradigan"
     },
     {
       "w": "calf",
@@ -1397,7 +1407,8 @@
       "related": [
         "saiga calves",
         "a herd of calves"
-      ]
+      ],
+      "formUz": "buzoqlar (yosh hayvon bolalari)"
     },
     {
       "w": "aerial census",
@@ -1495,7 +1506,8 @@
         "projections anticipate",
         "population projections",
         "anticipate = kutmoq"
-      ]
+      ],
+      "formUz": "prognozlar shuni kutmoqda"
     },
     {
       "w": "intersection",
@@ -1544,7 +1556,8 @@
       "related": [
         "potholed mud roads",
         "full of potholes"
-      ]
+      ],
+      "formUz": "o'ra-chuqur loy yo'llar"
     },
     {
       "w": "scandalous",
@@ -1620,7 +1633,8 @@
         "legacy of the colonial government",
         "a lasting legacy",
         "colonial legacy"
-      ]
+      ],
+      "formUz": "mustamlaka hukumatidan qolgan meros"
     },
     {
       "w": "cater",
@@ -1646,7 +1660,8 @@
         "cater for",
         "cater to demand",
         "a catering service"
-      ]
+      ],
+      "formUz": "…ning ehtiyojini qondirmoq; …ga xizmat ko'rsatmoq"
     },
     {
       "w": "periphery",
@@ -1696,7 +1711,8 @@
         "bus rapid transit (BRT)",
         "rapid transit",
         "public transit"
-      ]
+      ],
+      "formUz": "DART tezkor avtobus tizimi (BRT)"
     },
     {
       "w": "stoppage",
@@ -1892,7 +1908,8 @@
       "related": [
         "obsession with",
         "an unhealthy obsession"
-      ]
+      ],
+      "formUz": "…ga bo'lgan haddan tashqari qiziqish (o'ziga rom qilgan)"
     },
     {
       "w": "fare",
@@ -2420,7 +2437,8 @@
       "related": [
         "palaeoanthropological dogma",
         "religious dogma"
-      ]
+      ],
+      "formUz": "paleoantropologik aqida (so'roqsiz qabul qilingan qarash)"
     },
     {
       "w": "rudimentary",
@@ -2495,7 +2513,8 @@
         "firmly dated",
         "yet to be dated",
         "carbon dating"
-      ]
+      ],
+      "formUz": "aniq sanasi belgilangan"
     },
     {
       "w": "dispute",
@@ -2852,7 +2871,8 @@
         "several dozen",
         "dozens of",
         "a dozen eggs"
-      ]
+      ],
+      "formUz": "bir necha o'nlab"
     },
     {
       "w": "spear-throwing tool",
@@ -2921,7 +2941,8 @@
       "related": [
         "authoritarianism isn't inevitable",
         "authoritarian rule"
-      ]
+      ],
+      "formUz": "avtoritarizm … muqarrar emas"
     },
     {
       "w": "inevitable",
@@ -2971,7 +2992,8 @@
         "as opposed to",
         "opposed to the idea",
         "strongly opposed"
-      ]
+      ],
+      "formUz": "…dan farqli o'laroq; …ning aksicha"
     }
   ],
   "cambridge-21-reading-2-p1": [
@@ -3130,7 +3152,8 @@
       "mnem": {
         "kw": "Zo'r (great)",
         "story": "Ishlar juda qiyin bo'lsa ham (though), men baribir zo'r natija ko'rsatdim."
-      }
+      },
+      "formUz": "…ga qaramay; garchi …bo'lsa-da"
     },
     {
       "w": "twitch",
@@ -3712,7 +3735,8 @@
       "mnem": {
         "kw": "'regarding' → 'rega + ding'",
         "story": "Rega (nazorat) haqida ding (qo'ng'iroq) bo'ldi — 'regarding', ya'ni shu mavzu xususida gap ketdi."
-      }
+      },
+      "formUz": "maqsadga oid; maqsad borasida"
     },
     {
       "w": "perception",
@@ -3743,7 +3767,8 @@
       "mnem": {
         "kw": "'perception' → 'per + septr'",
         "story": "Sceptr (hassa) ushlagan podshoh haqidagi 'perception' — ya'ni xalqning tasavvuri hamma joyda tarqaldi."
-      }
+      },
+      "formUz": "ommaviy tasavvur (jamoatchilik qarashi)"
     },
     {
       "w": "outline",
@@ -3774,7 +3799,8 @@
       "mnem": {
         "kw": "'outline' → 'out + line' (tashqi chiziq)",
         "story": "Rassom avval faqat tashqi chiziqni (out-line) chizib, rasmni qisqacha 'outline' qildi."
-      }
+      },
+      "formUz": "ba'zi foydalarni qisqacha bayon qilib"
     },
     {
       "w": "breadth",
@@ -3805,7 +3831,8 @@
       "mnem": {
         "kw": "'breadth' → 'bread' (non)",
         "story": "Bir bo'lak non (bread) shunchalik keng yoyildiki, uning 'breadth' — kengligi butun stolni qopladi."
-      }
+      },
+      "formUz": "ta'sirning kengligi (qamrovi)"
     },
     {
       "w": "probable",
@@ -3837,7 +3864,8 @@
       "mnem": {
         "kw": "'probable' → 'proba + bel'",
         "story": "Har bir 'proba' (sinov) belini bukdi, chunki natija 'probable' — ehtimol muvaffaqiyatli edi."
-      }
+      },
+      "formUz": "ehtimoliy kelib chiqishi"
     },
     {
       "w": "weigh up",
@@ -3867,7 +3895,8 @@
       "mnem": {
         "kw": "'weigh' → 'vey' (tarozi 'vey' qildi)",
         "story": "Sotuvchi mevani tarozida 'weigh up' qildi — foyda-zararini o'ylab, taroziga soldi."
-      }
+      },
+      "formUz": "ijobiy va salbiy tomonlarini taroziga soladi"
     },
     {
       "w": "prejudice",
@@ -3930,7 +3959,8 @@
       "mnem": {
         "kw": "'proposal' → 'propo + sol' (taklif sol)",
         "story": "Muhandis yangi 'proposal' — taklifini stol ustiga sol(di), hamma ko'rib chiqsin dedi."
-      }
+      },
+      "formUz": "…ga oid takliflar"
     },
     {
       "w": "outward",
@@ -3962,7 +3992,8 @@
       "mnem": {
         "kw": "'outward' → 'out + ward' (tashqariga qarab)",
         "story": "Bemor tashqariga (out) qarab yotdi; uning 'outward' — tashqi holati tinch, ichi esa notinch edi."
-      }
+      },
+      "formUz": "tashqi xulq-atvor (ko'zga ko'rinadigan)"
     },
     {
       "w": "limb",
@@ -4018,7 +4049,8 @@
       "mnem": {
         "kw": "'sandstone' → 'sand + stone' (qum + tosh)",
         "story": "Cho'ldagi qum (sand) yillar davomida zichlashib, tosh (stone)ga — 'sandstone'ga aylandi."
-      }
+      },
+      "formUz": "katta qumtoshli plato"
     },
     {
       "w": "plateau",
@@ -4049,7 +4081,8 @@
       "mnem": {
         "kw": "'plateau' → 'plato' (Aflotun/plato)",
         "story": "Aflotun (Plato) baland 'plateau' — yassi tog'lik ustida turib, tekis yerga qarab dars berdi."
-      }
+      },
+      "formUz": "Mapungubve platosi"
     },
     {
       "w": "herd",
@@ -4108,7 +4141,8 @@
       "mnem": {
         "kw": "'surplus' → 'sur + plus' (ustiga plus)",
         "story": "Hosil rejadan ustiga (sur) plus bo'ldi — bu 'surplus', ya'ni ortiqchani bozorga chiqarishdi."
-      }
+      },
+      "formUz": "savdo qilish mumkin bo'lgan ortiqcha mahsulot"
     },
     {
       "w": "manure",
@@ -4134,7 +4168,8 @@
       "mnem": {
         "kw": "'manure' → 'ma + nur (yo'q)'",
         "story": "Bog'da nur (yorug') emas, go'ng — 'manure' hidi kelardi, lekin hosilga foydasi katta edi."
-      }
+      },
+      "formUz": "suyak va go'ng qatlamlari"
     },
     {
       "w": "weave",
@@ -4164,7 +4199,8 @@
       "mnem": {
         "kw": "'weave' → 'uy + iv (ip)'",
         "story": "Uyda ip (weave)dan buvi mato 'weave' qildi — iplarni ustma-ust o'tkazib to'qidi."
-      }
+      },
+      "formUz": "paxta yetishtirish va to'quvchilik"
     },
     {
       "w": "whorl",
@@ -4222,7 +4258,8 @@
       "mnem": {
         "kw": "'precious' → 'pres + shohes'",
         "story": "Shoh (shohes) presda (xazinada) 'precious' — qimmatbaho toshlarni qattiq saqlardi."
-      }
+      },
+      "formUz": "qimmatbaho materiallar"
     },
     {
       "w": "dwell",
@@ -4253,7 +4290,8 @@
       "mnem": {
         "kw": "'dwell' → 'dev + el'",
         "story": "Dev (ulkan) shu yerda el bo'lib 'dwell' qildi — ya'ni shu joyda yashab qoldi."
-      }
+      },
+      "formUz": "shoh va uning maslahatchilari yashagan"
     },
     {
       "w": "enclosure",
@@ -4282,7 +4320,8 @@
       "mnem": {
         "kw": "'enclosure' → 'in + closed' (ichi yopiq)",
         "story": "Ichi (in) yopiq (closed) hovli — 'enclosure' devor bilan har tomondan o'raldi."
-      }
+      },
+      "formUz": "tosh devor bilan o'ralgan maydon"
     },
     {
       "w": "palisade",
@@ -4309,7 +4348,8 @@
       "mnem": {
         "kw": "'palisade' → 'pol + sada'",
         "story": "Pol (bino) atrofiga sada (qoziqlar) qadab, 'palisade' — himoya to'sig'i qurishdi."
-      }
+      },
+      "formUz": "yog'och qoziqlardan qilingan devor (panjara)"
     },
     {
       "w": "posthole",
@@ -4335,7 +4375,8 @@
       "mnem": {
         "kw": "'posthole' → 'post + hole' (ustun + teshik)",
         "story": "Pochta (post) ustunini o'rnatish uchun 'posthole' — teshik qazishdi."
-      }
+      },
+      "formUz": "qoyada o'yilgan ustun uyalari"
     },
     {
       "w": "thatch",
@@ -4361,7 +4402,8 @@
       "mnem": {
         "kw": "'thatch' → 'to'sh + katch'",
         "story": "Tom ustiga to'sh(somon) katta qatlam qilib 'thatch' — somon yopma bostirishdi."
-      }
+      },
+      "formUz": "loy va somondan qurilgan uylar"
     },
     {
       "w": "settlement",
@@ -4389,7 +4431,8 @@
       "mnem": {
         "kw": "'settlement' → 'settle + ment' (joylashish)",
         "story": "Odamlar bir joyga settle bo'lib (joylashib), 'settlement' — qishloq qurishdi."
-      }
+      },
+      "formUz": "Babandyanalo nomi bilan tanilgan bu manzilgoh"
     },
     {
       "w": "predate",
@@ -4418,7 +4461,8 @@
       "mnem": {
         "kw": "'predate' → 'pre + date' (oldingi sana)",
         "story": "Bu qishloqning sanasi (date) tepalikdan oldin (pre) edi — u 'predate' qildi, ya'ni ilgariroq paydo bo'ldi."
-      }
+      },
+      "formUz": "tepalikdagi inshootlardan oldinroq paydo bo'lgan"
     },
     {
       "w": "hilltop",
@@ -4444,7 +4488,8 @@
       "mnem": {
         "kw": "'hilltop' → 'hill + top' (tepalik + ust)",
         "story": "Tepalik (hill) ustiga (top) chiqib, 'hilltop'dagi qasrni ko'rdilar."
-      }
+      },
+      "formUz": "tepalik ustidagi inshootlar"
     },
     {
       "w": "occupation",
@@ -4475,7 +4520,8 @@
       "mnem": {
         "kw": "'occupation' → 'ok + kupa + shen'",
         "story": "Ko'p (kupa) odam bir joyni band qilib 'occupation' — o'sha yerda yashab qoldi."
-      }
+      },
+      "formUz": "Tepalikda yashash 11-asrdan boshlangan"
     },
     {
       "w": "demarcate",
@@ -4504,7 +4550,8 @@
       "mnem": {
         "kw": "'demarcate' → 'de + marka' (marka qo'ymoq)",
         "story": "Yerga marka (belgi) qo'yib 'demarcate' — hududni aniq ajratib chegaraladilar."
-      }
+      },
+      "formUz": "chegarasi belgilangan hudud"
     },
     {
       "w": "socket",
@@ -4532,7 +4579,8 @@
       "mnem": {
         "kw": "'socket' → 'sok + et' (sok teshigi)",
         "story": "Zinapoyaning har pog'onasi devordagi 'socket' — uyaga xuddi sok naychasidek o'rnatilgan edi."
-      }
+      },
+      "formUz": "zinapoyalar uchun o'yilgan uyalar"
     },
     {
       "w": "grand",
@@ -4564,7 +4612,8 @@
       "mnem": {
         "kw": "'grand' → 'gra + katta'",
         "story": "Podshohning uyi 'grand' — shunchalik katta va hashamatliki, ko'zni qamashtirardi."
-      }
+      },
+      "formUz": "ba'zi hashamatliroq turar joylar"
     },
     {
       "w": "outskirts",
@@ -4594,7 +4643,8 @@
       "mnem": {
         "kw": "'outskirts' → 'out + skirt' (tashqi etak)",
         "story": "Shaharning tashqi etagida (out-skirt) — 'outskirts'da uylar siyrak joylashgan edi."
-      }
+      },
+      "formUz": "Babandyanalo chekkasi (atrofi)"
     },
     {
       "w": "carnivore",
@@ -4622,7 +4672,8 @@
       "mnem": {
         "kw": "'carnivore' → 'car + no + vor' (go'sht 'vor')",
         "story": "Yirtqich mashinaga (car) sakrab go'sht (vor!) yedi — u 'carnivore', ya'ni go'shtxo'r."
-      }
+      },
+      "formUz": "yirtqich hayvonlar qoldiqlari"
     },
     {
       "w": "ivory",
@@ -4677,7 +4728,8 @@
       "mnem": {
         "kw": "'splinter' → 'split + tikan'",
         "story": "Yog'och split (yorildi) va o'tkir tikan — 'splinter' barmoqqa sanchildi."
-      }
+      },
+      "formUz": "fil suyagi parchalari"
     },
     {
       "w": "tusk",
@@ -4701,7 +4753,8 @@
       "mnem": {
         "kw": "'tusk' → 'tush + k' (tush + tishlar)",
         "story": "Tushimda fil kelib, uzun 'tusk' — qoziq tishlarini ko'rsatdi."
-      }
+      },
+      "formUz": "fil suyagi tishlari (qoziq tishlar)"
     },
     {
       "w": "coastal",
@@ -4731,7 +4784,8 @@
       "mnem": {
         "kw": "'coastal' → 'coast + al' (qirg'oq)",
         "story": "Kema qirg'oq (coast) bo'ylab yurib, 'coastal' — sohilbo'yi shaharlariga tovar tashidi."
-      }
+      },
+      "formUz": "sohilbo'yi hududlari"
     },
     {
       "w": "merchant",
@@ -4759,7 +4813,8 @@
       "mnem": {
         "kw": "'merchant' → 'mer + shou' (bozor shousi)",
         "story": "Bozorda shou qilib mol sotgan odam 'merchant' — savdogar edi."
-      }
+      },
+      "formUz": "Hindistondan kelayotgan savdogarlar"
     },
     {
       "w": "benefit",
@@ -4789,7 +4844,8 @@
       "mnem": {
         "kw": "'benefit' → 'bene + fit' (yaxshi mos)",
         "story": "Savdo unga yaxshi (bene) mos (fit) keldi — Mapungubwe undan 'benefit', ya'ni foyda ko'rdi."
-      }
+      },
+      "formUz": "Mapungubve yana …dan ham foyda ko'rdi"
     },
     {
       "w": "authority",
@@ -4820,7 +4876,8 @@
       "mnem": {
         "kw": "'authority' → 'author + iti' (muallif)",
         "story": "Kitob muallifi (author) o'z sohasida to'liq 'authority' — obro' va hokimiyatga ega edi."
-      }
+      },
+      "formUz": "siyosiy hokimiyat"
     },
     {
       "w": "potter",
@@ -4847,7 +4904,8 @@
       "mnem": {
         "kw": "'potter' → 'pot + ter' (idish teradi)",
         "story": "Kulol loydan pot (idish) terib yasadi — u 'potter', ya'ni kulol edi."
-      }
+      },
+      "formUz": "professional kulollar"
     },
     {
       "w": "prosperity",
@@ -4877,7 +4935,8 @@
       "mnem": {
         "kw": "'prosperity' → 'pro + sport + iti'",
         "story": "Sport (pro) rivojlanib, shahar 'prosperity' — farovonlik va boylikka erishdi."
-      }
+      },
+      "formUz": "Mapungubve jamiyatining farovonligi"
     },
     {
       "w": "spherical",
@@ -4907,7 +4966,8 @@
       "mnem": {
         "kw": "'spherical' → 'sfera + kal'",
         "story": "Sfera (shar)dek dumaloq kosa — 'spherical' vaza xuddi to'pga o'xshardi."
-      }
+      },
+      "formUz": "sharsimon idishlar"
     },
     {
       "w": "vessel",
@@ -4936,7 +4996,8 @@
       "mnem": {
         "kw": "'vessel' → 've + sel' (suv seli)",
         "story": "Sel (suv) kelganda 'vessel' — idishga suv to'ldirib, ko'za qilib olishdi."
-      }
+      },
+      "formUz": "sharsimon idishlar"
     },
     {
       "w": "beaker",
@@ -4988,7 +5049,8 @@
       "mnem": {
         "kw": "'figurine' → 'figura + ina' (kichik figura)",
         "story": "Javonda kichik figura — 'figurine' echki haykalchasi chiroyli turardi."
-      }
+      },
+      "formUz": "echki haykalchalari"
     },
     {
       "w": "elongated",
@@ -5018,7 +5080,8 @@
       "mnem": {
         "kw": "'elongated' → 'long + ated' (uzaytirilgan)",
         "story": "Rassom odam gavdasini uzun (long) qilib 'elongated' — cho'zib chizdi."
-      }
+      },
+      "formUz": "cho'ziq tanalar"
     },
     {
       "w": "offering",
@@ -5045,7 +5108,8 @@
       "mnem": {
         "kw": "'offering' → 'offer + ing' (taqdim etish)",
         "story": "Ular ajdodlarga sovg'a offer qilib (taklif etib), 'offering' — nazr qo'yishdi."
-      }
+      },
+      "formUz": "ajdodlarga atalgan nazrlar (qurbonliklar)"
     },
     {
       "w": "ancestor",
@@ -5074,7 +5138,8 @@
       "mnem": {
         "kw": "'ancestor' → 'an + sesta + r'",
         "story": "Katta buvim (an-sesta) ajdodlarni sanab, har birini 'ancestor' — ota-bobo deb esladi."
-      }
+      },
+      "formUz": "ajdodlarga atalgan nazrlar (qurbonliklar)"
     },
     {
       "w": "precise",
@@ -5105,7 +5170,8 @@
       "mnem": {
         "kw": "'precise' → 'pres + says' (aniq ayting)",
         "story": "O'qituvchi 'pres!' (aniq) says (ayting) dedi — javob 'precise', ya'ni aniq bo'lishi kerak edi."
-      }
+      },
+      "formUz": "ularning aniq vazifasi ma'lum emas"
     },
     {
       "w": "rectangular",
@@ -5134,7 +5200,8 @@
       "mnem": {
         "kw": "'rectangular' → 'rekt + angle' (to'g'ri burchak)",
         "story": "Zargar oltinni to'g'ri burchakli (rect-angle) qilib 'rectangular' — to'rtburchak varaqqa keltirdi."
-      }
+      },
+      "formUz": "kichik to'rtburchak varaqlar"
     },
     {
       "w": "tack",
@@ -5162,7 +5229,8 @@
       "mnem": {
         "kw": "'tack' → 'taq' (taqilgan)",
         "story": "Yog'ochga oltin varaqni 'tack' — mayda mix bilan taq-taq qadab mahkamladilar."
-      }
+      },
+      "formUz": "kichik mixchalar, ular ham oltindan"
     },
     {
       "w": "sceptre",
@@ -5187,7 +5255,8 @@
       "mnem": {
         "kw": "'sceptre' → ' september' (sentabr hassasi)",
         "story": "Podshoh sentabrda (september) oltin 'sceptre' — hassasini ko'tarib, hokimiyatini ko'rsatdi."
-      }
+      },
+      "formUz": "hassa (hokimiyat tayog'i) bo'lgan bo'lishi mumkin"
     },
     {
       "w": "rhinoceros",
@@ -5212,7 +5281,8 @@
       "mnem": {
         "kw": "'rhinoceros' → 'rino + soros'",
         "story": "Katta 'rhinoceros' — karkidon burnidagi shox bilan sport zalidagi (soros) devorni teshdi."
-      }
+      },
+      "formUz": "karkidon haykalchasi"
     },
     {
       "w": "bead",
@@ -5240,7 +5310,8 @@
       "mnem": {
         "kw": "'bead' → 'bit + dona'",
         "story": "Ipga bitta-bitta (bit) dona 'bead' — munchoq terib, marjon yasashdi."
-      }
+      },
+      "formUz": "minglab mayda oltin munchoqlar"
     },
     {
       "w": "intrinsic",
@@ -5270,7 +5341,8 @@
       "mnem": {
         "kw": "'intrinsic' → 'in + trinsic (ichki)'",
         "story": "Oltinning qiymati ichida (in) edi — 'intrinsic', ya'ni tashqaridan emas, o'zidan kelib chiqardi."
-      }
+      },
+      "formUz": "o'zining ichki (asl) qiymati"
     },
     {
       "w": "shift",
@@ -5301,7 +5373,8 @@
       "mnem": {
         "kw": "'shift' → 'shift' (klaviatura Shift)",
         "story": "Klaviaturadagi Shift bosilib, savdo yo'llari 'shift' — shimolga siljidi."
-      }
+      },
+      "formUz": "Savdo yo'llari ham o'zgargan bo'lishi mumkin"
     },
     {
       "w": "hysteria",
@@ -5335,7 +5408,8 @@
       "mnem": {
         "kw": "'hysteria' → 'histeriya'",
         "story": "Bozorda 'histeriya' boshlandi — hamma bir vaqtda qichqirib, 'hysteria', ya'ni ommaviy vahimaga tushdi."
-      }
+      },
+      "formUz": "sun'iy intellekt kelajagi haqidagi vahima"
     },
     {
       "w": "cure",
@@ -5367,7 +5441,8 @@
       "mnem": {
         "kw": "'cure' → 'kur' (kurort)",
         "story": "Kurortga (cure) borgan bemor davolanib, kasalligini 'cure' — tuzatib qaytdi."
-      }
+      },
+      "formUz": "SI kasalliklarni davolashi mumkin"
     },
     {
       "w": "headline",
@@ -5395,7 +5470,8 @@
       "mnem": {
         "kw": "'headline' → 'head + line' (bosh qator)",
         "story": "Gazetaning bosh (head) qatorida (line) katta 'headline' — sarlavha ko'zga tashlanardi."
-      }
+      },
+      "formUz": "ommaviy axborot sarlavhalari"
     },
     {
       "w": "infiltrate",
@@ -5424,7 +5500,8 @@
       "mnem": {
         "kw": "'infiltrate' → 'in + filter' (filtrdan o'tib)",
         "story": "Suv filter (filtr)dan ichkariga (in) sizib kirdi — 'infiltrate', ya'ni sezdirmay kirib bordi."
-      }
+      },
+      "formUz": "SI jamiyatning har bir jabhasiga kirib bordi"
     },
     {
       "w": "emergence",
@@ -5454,7 +5531,8 @@
       "mnem": {
         "kw": "'emergence' → 'emergency + s'",
         "story": "Favqulodda (emergency) vaziyatda yangi fikr 'emergence' — birdan paydo bo'ldi."
-      }
+      },
+      "formUz": "bir xil fikrlash tarzining paydo bo'lishi"
     },
     {
       "w": "jeopardise",
@@ -5485,7 +5563,8 @@
       "mnem": {
         "kw": "'jeopardise' → 'jep + hardi' (jep xavf)",
         "story": "Xato qaror butun loyihani 'jeopardise' — jep (juda) xavf ostiga qo'ydi."
-      }
+      },
+      "formUz": "mashina intellektining qadrini xavf ostiga qo'yadi"
     },
     {
       "w": "disregard",
@@ -5516,7 +5595,8 @@
       "mnem": {
         "kw": "'disregard' → 'dis + regard' (e'tiborsiz)",
         "story": "U regard (e'tibor)ni dis (inkor) qildi — xavfsizlik qoidalarini 'disregard', ya'ni pisand qilmadi."
-      }
+      },
+      "formUz": "SI xavfsizligining muhim tamoyillarini mensimay"
     },
     {
       "w": "mere",
@@ -5548,7 +5628,8 @@
       "mnem": {
         "kw": "'mere' → 'mira' (mira xolos)",
         "story": "U 'mira' (atigi) bir tanga berdi — bu 'mere', ya'ni arzimas miqdor edi."
-      }
+      },
+      "formUz": "shunchaki rasmiyatchilik"
     },
     {
       "w": "evangelist",
@@ -5578,7 +5659,8 @@
       "mnem": {
         "kw": "'evangelist' → 'iven + gelist' (ivan gaplashdi)",
         "story": "Ivan (iven) shu qadar gapirdiki, 'evangelist' — g'oyaning otashin targ'ibotchisiga aylandi."
-      }
+      },
+      "formUz": "texnologiya targ'ibotchilarining og'zidan"
     },
     {
       "w": "policymaker",
@@ -5605,7 +5687,8 @@
       "mnem": {
         "kw": "'policymaker' → 'policy + maker' (siyosat yasovchi)",
         "story": "Hukumatda 'policymaker' — yangi qonun (policy) yasab (make), qarorlar chiqarardi."
-      }
+      },
+      "formUz": "hukumat amaldorlari va siyosat ishlab chiquvchilar"
     },
     {
       "w": "pendulum",
@@ -5630,7 +5713,8 @@
       "mnem": {
         "kw": "'pendulum' → 'pand + ulam'",
         "story": "Soat 'pendulum' — mayatnigi u yoqdan bu yoqqa tebranib, pand (nasihat) bergandek chiqillardi."
-      }
+      },
+      "formUz": "Mayatnik teskari tomonga og'di (kayfiyat keskin o'zgardi)"
     },
     {
       "w": "swing",
@@ -5661,7 +5745,8 @@
       "mnem": {
         "kw": "'swing' → 'swing (arg'imchoq)'",
         "story": "Bola arg'imchoqda (swing) tebranib, u yoqdan bu yoqqa 'swung' — silkindi."
-      }
+      },
+      "formUz": "Mayatnik teskari tomonga og'di (kayfiyat keskin o'zgardi)"
     },
     {
       "w": "dystopian",
@@ -5691,7 +5776,8 @@
       "mnem": {
         "kw": "'dystopian' → 'dis + top + yon' (yomon tomon)",
         "story": "Kino yomon (dis) tomonni (top) ko'rsatdi — 'dystopian', ya'ni dahshatli kelajak edi."
-      }
+      },
+      "formUz": "distopik (dahshatli kelajak haqidagi) tasavvur"
     },
     {
       "w": "saviour",
@@ -5720,7 +5806,8 @@
       "mnem": {
         "kw": "'saviour' → 'save + our' (bizni qutqar)",
         "story": "'Save our (bizni qutqar)!' deb qichqirishdi — va 'saviour', ya'ni najotkor yetib keldi."
-      }
+      },
+      "formUz": "algoritmik najotkorimiz keldi"
     },
     {
       "w": "pledge",
@@ -5750,7 +5837,8 @@
       "mnem": {
         "kw": "'pledge' → 'plej' (plyaj va'dasi)",
         "story": "U plyajda (plej) turib qattiq 'pledge' — va'da berdi: har kuni suzaman deb."
-      }
+      },
+      "formUz": "hukumatlar qo'llab-quvvatlashga va'da beradi"
     },
     {
       "w": "burgeoning",
@@ -5780,7 +5868,8 @@
       "mnem": {
         "kw": "'burgeoning' → 'burger + jonin'",
         "story": "Burger (burger) do'koni jonlanib, biznes 'burgeoning' — tez o'sib ketdi."
-      }
+      },
+      "formUz": "jadal o'sayotgan mashinali o'qitish sohasi"
     },
     {
       "w": "proclaim",
@@ -5810,7 +5899,8 @@
       "mnem": {
         "kw": "'proclaim' → 'pro + claim' (baland da'vo)",
         "story": "Siyosatchi minbarda baland ovozda da'vo (claim) qildi — 'proclaim', ya'ni baralla e'lon qildi."
-      }
+      },
+      "formUz": "siyosatchilar o'zgartiruvchi ta'sirni jar solib e'lon qiladi"
     },
     {
       "w": "promising",
@@ -5841,7 +5931,8 @@
       "mnem": {
         "kw": "'promising' → 'promise + ing' (va'da beruvchi)",
         "story": "Yosh o'yinchi shunday o'ynadiki, kelajakka va'da (promise) berardi — u 'promising', ya'ni istiqbolli edi."
-      }
+      },
+      "formUz": "SIning eng istiqbolli turlari"
     },
     {
       "w": "loosely",
@@ -5873,7 +5964,8 @@
       "mnem": {
         "kw": "'loosely' → 'lo'ppi + tez'",
         "story": "Arqon lo'ppi (bo'sh) bog'langan — 'loosely', ya'ni erkin, taxminan ushlab turardi."
-      }
+      },
+      "formUz": "inson miyasidan taxminan nusxa olib yaratilgan"
     },
     {
       "w": "instantaneously",
@@ -5903,7 +5995,8 @@
       "mnem": {
         "kw": "'instantaneously' → 'instant + kофе'",
         "story": "Instant kofe suvga solinishi bilan 'instantaneously' — bir zumda tayyor bo'ldi."
-      }
+      },
+      "formUz": "bir zumda qamrovliroq yoki adolatliroq"
     },
     {
       "w": "hypothetical",
@@ -5933,7 +6026,8 @@
       "mnem": {
         "kw": "'hypothetical' → 'gipo + tetik'",
         "story": "Olim 'gipotetik' holatni o'ylab, 'hypothetical' — faraziy vaziyatni muhokama qildi."
-      }
+      },
+      "formUz": "robotlar hokimiyatni egallashi haqidagi faraz"
     },
     {
       "w": "takeover",
@@ -5963,7 +6057,8 @@
       "mnem": {
         "kw": "'takeover' → 'take + over' (tortib olish)",
         "story": "Robotlar boshqaruvni tortib (take) oldi (over) — 'takeover', ya'ni nazoratni egalladi."
-      }
+      },
+      "formUz": "robotlar hokimiyatni egallashi haqidagi faraz"
     },
     {
       "w": "sensible",
@@ -5994,7 +6089,8 @@
       "mnem": {
         "kw": "'sensible' → 'sensor + bil'",
         "story": "Sensor (sezgich) bilan aql bilan ish qilgan odam 'sensible' — oqilona qaror qabul qildi."
-      }
+      },
+      "formUz": "aqlliroq va real yondashuv"
     },
     {
       "w": "contradict",
@@ -6026,7 +6122,8 @@
       "mnem": {
         "kw": "'contradict' → 'contra + dict' (qarshi aytmoq)",
         "story": "U qarshi (contra) gap aytdi (dict) — 'contradict', ya'ni birinchi fikrga zid keldi."
-      }
+      },
+      "formUz": "natijalar bu da'voga zid keladi"
     },
     {
       "w": "susceptible",
@@ -6056,7 +6153,8 @@
       "mnem": {
         "kw": "'susceptible' → 'sus + sept + ibl'",
         "story": "Kasal (sus) odam septyabrda 'susceptible' — shamollashga tez beriluvchan, zaif edi."
-      }
+      },
+      "formUz": "SI raqib hujumlariga o'ta beriluvchan (zaif)"
     },
     {
       "w": "adversarial",
@@ -6086,7 +6184,8 @@
       "mnem": {
         "kw": "'adversarial' → 'advers + serial'",
         "story": "Serialdagi (serial) yovuz qahramon 'adversarial' — dushmanona, qarama-qarshi rolni o'ynadi."
-      }
+      },
+      "formUz": "raqib hujumlari (modelni chalg'itish uchun qasddan qilingan)"
     },
     {
       "w": "malicious",
@@ -6117,7 +6216,8 @@
       "mnem": {
         "kw": "'malicious' → 'mal + lash'",
         "story": "Yomon (mal) odam boshqasini lash (yiqitmoqchi) bo'ldi — 'malicious', ya'ni yovuz niyatli edi."
-      }
+      },
+      "formUz": "yovuz niyatli SI"
     },
     {
       "w": "overlook",
@@ -6148,7 +6248,8 @@
       "mnem": {
         "kw": "'overlook' → 'over + look' (ustidan qarab)",
         "story": "Ko'zi narsaning ustidan (over) qarab (look) o'tdi — 'overlook', ya'ni sezmay chetlab o'tdi."
-      }
+      },
+      "formUz": "ko'pincha e'tibordan chetda qoladigan mavzu"
     },
     {
       "w": "distrust",
@@ -6179,7 +6280,8 @@
       "mnem": {
         "kw": "'distrust' → 'dis + trust' (ishonch yo'q)",
         "story": "Odamlar mashinaga trust (ishonch)ni dis (inkor) qildi — 'distrust', ya'ni ishonmadi."
-      }
+      },
+      "formUz": "ko'pchilikdagi ishonchsizlik"
     },
     {
       "w": "faith",
@@ -6211,7 +6313,8 @@
       "mnem": {
         "kw": "'faith' → 'fe + yes'",
         "story": "U 'yes (ha)!' deb 'faith' — chin ishonch bilan hammaga bosh irg'adi."
-      }
+      },
+      "formUz": "mashinaga ishonch bog'lash qiyin"
     },
     {
       "w": "abandon",
@@ -6245,7 +6348,8 @@
       "mnem": {
         "kw": "'abandon' → 'a + band (band emas)'",
         "story": "Loyiha endi band (kerak) emas edi — uni 'abandon', ya'ni tashlab, voz kechishdi."
-      }
+      },
+      "formUz": "SI dasturi to'xtatildi (tark etildi)"
     },
     {
       "w": "magnify",
@@ -6276,7 +6380,8 @@
       "mnem": {
         "kw": "'magnify' → 'magnit + fly'",
         "story": "Magnit (magni) pashshani (fly) katta qilib ko'rsatdi — 'magnify', ya'ni kattalashtirdi."
-      }
+      },
+      "formUz": "algoritm xolislik buzilishini kuchaytirdi"
     },
     {
       "w": "domain",
@@ -6305,7 +6410,8 @@
       "mnem": {
         "kw": "'domain' → 'dom + main'",
         "story": "Uy (dom) egasining asosiy (main) 'domain' — huquqiy sohasi va hududi shu edi."
-      }
+      },
+      "formUz": "huquq sohasi"
     },
     {
       "w": "assessment",
@@ -6334,7 +6440,8 @@
       "mnem": {
         "kw": "'assessment' → 'a + sesmyon'",
         "story": "Imtihonda 'sessiya' (sesmyon) — o'qituvchi har bir javobni 'assessment', ya'ni baholab chiqdi."
-      }
+      },
+      "formUz": "xavfni baholash ballari"
     },
     {
       "w": "discrimination",
@@ -6366,7 +6473,8 @@
       "mnem": {
         "kw": "'discrimination' → 'dis + krim + neyshn'",
         "story": "Millat (neyshn)ni jinoyat (krim) darajasida ajratish 'discrimination' — nohaq kamsitish edi."
-      }
+      },
+      "formUz": "tizimli irqiy kamsitish"
     },
     {
       "w": "sake",
@@ -6395,7 +6503,8 @@
       "mnem": {
         "kw": "'sake' → 'sabab + ke'",
         "story": "U shunchaki 'sake' — sabab (maqsad) uchun ishladi, foyda emas."
-      }
+      },
+      "formUz": "SI uchun (SI xotirjamligi yo'lida)"
     },
     {
       "w": "tier",
@@ -6424,7 +6533,8 @@
       "mnem": {
         "kw": "'tier' → 'tir' (o'q otish tiri)",
         "story": "Tirdagi (tier) nishonlar pog'ona-pog'ona — har biri boshqa 'tier', ya'ni darajada edi."
-      }
+      },
+      "formUz": "Opus darajasi chuqur mulohaza uchun yaratilgan"
     },
     {
       "w": "cautious",
@@ -6456,7 +6566,8 @@
       "mnem": {
         "kw": "'cautious' → 'ko'z + tush'",
         "story": "Ko'zi tushgan joyga ehtiyot bo'lib qadam tashladi — 'cautious', ya'ni hushyor edi."
-      }
+      },
+      "formUz": "texnik tafsilotlarda ehtiyotkorroq"
     },
     {
       "w": "excess",
@@ -6488,7 +6599,8 @@
       "mnem": {
         "kw": "'excess' → 'eks + ses'",
         "story": "Eski (eks) sesiya (ses)da ish haddan 'excess' — ortiqcha bo'lib ketdi."
-      }
+      },
+      "formUz": "haddan ortiq ma'lumot"
     },
     {
       "w": "thread",
@@ -6517,7 +6629,8 @@
       "mnem": {
         "kw": "'thread' → 'ip + red'",
         "story": "Qizil (red) ip (thread) suhbatni bir-biriga ulab, 'thread' — yagona oqim hosil qildi."
-      }
+      },
+      "formUz": "xatolarni asosiy oqimda tuzatishda davom etmoq"
     },
     {
       "w": "spot-check",
@@ -6547,7 +6660,8 @@
       "mnem": {
         "kw": "'spot-check' → 'spot + chek'",
         "story": "Inspektor bir nuqtani (spot) tanlab chek (check) qildi — 'spot-check', ya'ni tanlab tekshirdi."
-      }
+      },
+      "formUz": "tanlab tekshir, ko'r-ko'rona ishonma"
     },
     {
       "w": "fatigue",
@@ -6579,7 +6693,8 @@
       "mnem": {
         "kw": "'fatigue' → 'fat + tig' (semiz teg)",
         "story": "Kun bo'yi ishlagach, 'fatigue' — charchoq semiz yukdek yelkasiga tegdi."
-      }
+      },
+      "formUz": "charchoqdan kelib chiqadigan xatolar kamroq"
     },
     {
       "w": "deliberate",
@@ -6610,7 +6725,8 @@
       "mnem": {
         "kw": "'deliberate' → 'de + libe + rate'",
         "story": "U har bir 'rate' (bahо)ni o'ylab qo'ydi — 'deliberate', ya'ni ataylab va ongli qildi."
-      }
+      },
+      "formUz": "vazifani modelga biriktirish ataylab (o'ylab) qilingan"
     },
     {
       "w": "moonlit",
@@ -6640,7 +6756,8 @@
       "mnem": {
         "kw": "'moonlit' → 'moon + lit' (oy + yorug')",
         "story": "Oy (moon) yoritgan (lit) tomda 'moonlit' — oydin suhbat quyuqlashdi."
-      }
+      },
+      "formUz": "oy nurida suhbat"
     },
     {
       "w": "roaster",
@@ -6668,7 +6785,8 @@
       "mnem": {
         "kw": "'roaster' → 'ro'st + er' (rostdan qovuradi)",
         "story": "Oshpaz go'shtni rost (haqiqiy) olovda qovurdi — u 'roaster', ya'ni qovurgich edi."
-      }
+      },
+      "formUz": "o'zining qahva qovuruvchi ustaxonasi"
     },
     {
       "w": "low-spec",
@@ -6699,7 +6817,8 @@
       "mnem": {
         "kw": "'low-spec' → 'low + spec' (past ko'rsatkich)",
         "story": "Past (low) ko'rsatkichli (spec) noutbuk 'low-spec' — og'ir dasturni ko'tarolmadi."
-      }
+      },
+      "formUz": "quvvati past noutbuk"
     },
     {
       "w": "idle",
@@ -6732,7 +6851,8 @@
       "mnem": {
         "kw": "'idle' → 'ay + dial (bo'sh raqam)'",
         "story": "Telefon dial (raqam) terilmay, apparat 'idle' — bekor, ishsiz turaverdi."
-      }
+      },
+      "formUz": "mashinalar bekor turdi"
     },
     {
       "w": "pricey",
@@ -6763,7 +6883,8 @@
       "mnem": {
         "kw": "'pricey' → 'price + iy' (narxi baland)",
         "story": "Do'kondagi mol shunchalik 'pricey' — narxi (price) baland ediki, hamma hayron qoldi."
-      }
+      },
+      "formUz": "qimmatroq daraja (tarif)"
     },
     {
       "w": "respite",
@@ -6795,7 +6916,8 @@
       "mnem": {
         "kw": "'respite' → 'res + pit' (dam pit)",
         "story": "Og'ir ishdan so'ng u bir 'respite' — pit (dam) olib, nafas rostladi."
-      }
+      },
+      "formUz": "bosimdan bir oz nafas rostlash"
     }
   ],
   "cambridge-21-test-2-listening": [
@@ -6822,7 +6944,8 @@
       "mnem": {
         "kw": "'leaflet' → 'leaf + let' (kichik barg)",
         "story": "Pochtaga barg (leaf)dek kichik 'leaflet' — reklama varaqchasi tushdi."
-      }
+      },
+      "formUz": "ular haqidagi varaqa (buklet)"
     },
     {
       "w": "quite",
@@ -6851,7 +6974,8 @@
       "mnem": {
         "kw": "'quite' → 'kva + yt' (kvartira)",
         "story": "Kvartira (kva) 'quite' — ancha tez sotilib ketdi, shoshilish kerak edi."
-      }
+      },
+      "formUz": "ancha tez orada"
     },
     {
       "w": "sourdough",
@@ -6877,7 +7001,8 @@
       "mnem": {
         "kw": "'sourdough' → 'sour + do'",
         "story": "Xamir (dough) nordon (sour) bo'lib achidi — bu 'sourdough', ya'ni nordon non edi."
-      }
+      },
+      "formUz": "ular xamirturushsiz (achitqili) non yopishadi"
     },
     {
       "w": "wrinkle",
@@ -6906,7 +7031,8 @@
       "mnem": {
         "kw": "'wrinkle' → 'rink + il' (muz maydonchasi)",
         "story": "Muz (rink) ustida yiqilgan chol yuzida 'wrinkle' — ajinlar paydo bo'ldi."
-      }
+      },
+      "formUz": "ajinlar va burmalar"
     },
     {
       "w": "dye",
@@ -6934,7 +7060,8 @@
       "mnem": {
         "kw": "'dye' → 'day' (kunni bo'ya)",
         "story": "U kunni (day) rang-barang qildi — matoni 'dye' bilan bo'yab, chiroyli qildi."
-      }
+      },
+      "formUz": "maxsus bo'yoqlardan foydalanib"
     },
     {
       "w": "apron",
@@ -6958,7 +7085,8 @@
       "mnem": {
         "kw": "'apron' → 'ap + rono' (op, rang!)",
         "story": "'Op, rang tegdi!' — deyishmasin deb oshpaz 'apron' — fartuk taqib oldi."
-      }
+      },
+      "formUz": "fartuk olib kelmoq"
     },
     {
       "w": "stain",
@@ -6988,7 +7116,8 @@
       "mnem": {
         "kw": "'stain' → 'is + teyn' (is/dog')",
         "story": "Choy to'kilib matoga is (stain) — dog' tushdi, ketkazib bo'lmadi."
-      }
+      },
+      "formUz": "bo'yoq kiyimingizga dog' tushirishi mumkin"
     },
     {
       "w": "strenuous",
@@ -7016,7 +7145,8 @@
       "mnem": {
         "kw": "'strenuous' → 'stress + yu'us'",
         "story": "Baland cho'qqiga chiqish shunday stressli (stress) ediki, 'strenuous' — juda og'ir mashaqqat bo'ldi."
-      }
+      },
+      "formUz": "og'ir (kuch talab qiladigan) tepaliklarga chiqish yo'q"
     },
     {
       "w": "ferry",
@@ -7045,7 +7175,8 @@
       "mnem": {
         "kw": "'ferry' → 'fe + rio (daryo)'",
         "story": "Daryo (rio) ustida 'ferry' — parom har soatda odamlarni orolga tashib turardi."
-      }
+      },
+      "formUz": "orolga har soatda qatnaydigan paromlar"
     },
     {
       "w": "signpost",
@@ -7072,7 +7203,8 @@
       "mnem": {
         "kw": "'signpost' → 'sign + post' (belgi + ustun)",
         "story": "Ustunga (post) belgi (sign) qoqib, 'signpost' — yo'l ko'rsatkichini o'rnatishdi."
-      }
+      },
+      "formUz": "aniq yo'l ko'rsatkichlari"
     },
     {
       "w": "vanish",
@@ -7102,7 +7234,8 @@
       "mnem": {
         "kw": "'vanish' → 'van + ish' (mashina ishi)",
         "story": "Van (mashina) g'izillab o'tdi-yu, 'vanish' — ko'zdan g'oyib bo'ldi."
-      }
+      },
+      "formUz": "hozir yo'q bo'lib ketgan bozor shaharchasi"
     },
     {
       "w": "pile",
@@ -7130,7 +7263,8 @@
       "mnem": {
         "kw": "'pile' → 'payla' (paypoq uyumi)",
         "story": "Xonada paypoqlar (payla) 'pile' — bir uyum bo'lib g'aramlanib yotardi."
-      }
+      },
+      "formUz": "toshlar uyumi"
     },
     {
       "w": "set off",
@@ -7161,7 +7295,8 @@
       "mnem": {
         "kw": "'set off' → 'set + of' (o't set)",
         "story": "Sayohatchilar tongda o't (of) qo'yib, 'set off' — yo'lga chiqishdi."
-      }
+      },
+      "formUz": "Agar erta yo'lga chiqsangiz"
     },
     {
       "w": "lodge",
@@ -7188,7 +7323,8 @@
       "mnem": {
         "kw": "'lodge' → 'loj' (teatr lojasi)",
         "story": "Ovchilar o'rmondagi 'lodge' — kulbani teatr lojasidek qulay qilib jihozlashdi."
-      }
+      },
+      "formUz": "ov uyi (ovchilar uchun qo'nalg'a)"
     },
     {
       "w": "beyond",
@@ -7219,7 +7355,8 @@
       "mnem": {
         "kw": "'beyond' → 'bi + yon + d' (bir yon)",
         "story": "Devorning bir yonidan (yon) narida — 'beyond' — ko'rgazma zali joylashgan edi."
-      }
+      },
+      "formUz": "O'sha xonadan narida"
     },
     {
       "w": "shed",
@@ -7247,7 +7384,8 @@
       "mnem": {
         "kw": "'shed' → 'she + ed' (shod ombor)",
         "story": "Bog'da shod (shed) bo'lib, asboblarni 'shed' — kichik omborga joyladi."
-      }
+      },
+      "formUz": "Transport saroyi (mashinalar turadigan shiypon)"
     },
     {
       "w": "walkway",
@@ -7274,7 +7412,8 @@
       "mnem": {
         "kw": "'walkway' → 'walk + way' (yurish yo'li)",
         "story": "Yomg'irda ho'l bo'lmaslik uchun yurish (walk) yo'li (way) — 'walkway' usti yopiq qilingan edi."
-      }
+      },
+      "formUz": "usti yopiq yo'lak"
     },
     {
       "w": "contaminated",
@@ -7304,7 +7443,8 @@
       "mnem": {
         "kw": "'contaminated' → 'con + tomchi + ned'",
         "story": "Bir tomchi (tomchi) zahar suvni 'contaminated' — ifloslangan, xavfli qildi."
-      }
+      },
+      "formUz": "ifloslangan (zararlangan) oziq-ovqat"
     },
     {
       "w": "fraud",
@@ -7334,7 +7474,8 @@
       "mnem": {
         "kw": "'fraud' → 'firib + od'",
         "story": "Firibgar (firib) do'kon soxta yorliq yopishtirdi — bu 'fraud', ya'ni firibgarlik edi."
-      }
+      },
+      "formUz": "oziq-ovqat firibgarligi (mahsulotni soxtalashtirish)"
     },
     {
       "w": "supposed to",
@@ -7362,7 +7503,8 @@
       "mnem": {
         "kw": "'supposed' → 'sup + poz'",
         "story": "Ovqat (sup) kerakli joydan kelishi 'supposed to' — shart, ya'ni shunday bo'lishi kerak edi."
-      }
+      },
+      "formUz": "u bo'lishi kerak bo'lgan joy"
     },
     {
       "w": "quite a bit",
@@ -7392,7 +7534,8 @@
       "mnem": {
         "kw": "'quite a bit' → 'kva + bit' (bir bit)",
         "story": "Ishning 'bit'i (bo'lagi) emas, balki 'quite a bit' — ancha ko'p qismini bajarib qo'yishdi."
-      }
+      },
+      "formUz": "bu borada anchagina ish qilingan"
     },
     {
       "w": "overexploit",
@@ -7422,7 +7565,8 @@
       "mnem": {
         "kw": "'overexploit' → 'over + exploit' (ortiqcha ishlatish)",
         "story": "Baliqni haddan (over) ortiq tutib 'overexploit' qilishdi — zaxira tugab qoldi."
-      }
+      },
+      "formUz": "zaxiralarning haddan tashqari ko'p ovlanishi"
     },
     {
       "w": "specialist",
@@ -7453,7 +7597,8 @@
       "mnem": {
         "kw": "'specialist' → 'special + ist' (maxsus)",
         "story": "U faqat bitta maxsus (special) mavzuni bilardi — 'specialist', ya'ni tor sohaning bilimdoni edi."
-      }
+      },
+      "formUz": "balki haddan tashqari tor mutaxassislikka oid"
     },
     {
       "w": "make up your mind",
@@ -7484,7 +7629,8 @@
       "mnem": {
         "kw": "'make up mind' → 'meyk + aql'",
         "story": "U aqlini (mind) yig'ib, bir zumda 'make up your mind' — qat'iy qaror qildi."
-      }
+      },
+      "formUz": "tez qaror qabul qildik"
     },
     {
       "w": "handout",
@@ -7511,7 +7657,8 @@
       "mnem": {
         "kw": "'handout' → 'hand + out' (qo'lga berish)",
         "story": "O'qituvchi qog'ozni qo'lga (hand) tashqariga (out) uzatdi — 'handout', ya'ni tarqatma varaq berdi."
-      }
+      },
+      "formUz": "maslahatlar yozilgan tarqatma"
     },
     {
       "w": "guideline",
@@ -7538,7 +7685,8 @@
       "mnem": {
         "kw": "'guideline' → 'guide + line' (yo'lboshchi chiziq)",
         "story": "Yo'lboshchi (guide) yerga chiziq (line) tortdi — 'guideline', ya'ni ko'rsatma bo'ldi."
-      }
+      },
+      "formUz": "foydali yo'riqnoma (qo'llanma)"
     },
     {
       "w": "savoury",
@@ -7568,7 +7716,8 @@
       "mnem": {
         "kw": "'savoury' → 'sap + vori' (sho'r bor)",
         "story": "Taomda shakar emas, sho'r (sap) bor (vori) edi — 'savoury', ya'ni sho'r, ishtahali taom."
-      }
+      },
+      "formUz": "sho'r (shirin bo'lmagan) taomlarga yaxshi mos"
     },
     {
       "w": "start off",
@@ -7598,7 +7747,8 @@
       "mnem": {
         "kw": "'start off' → 'start + of' (start o't)",
         "story": "Poyga 'start!' o't (of) bilan boshlandi — ular 'start off', ya'ni oddiy retseptdan boshlab berishdi."
-      }
+      },
+      "formUz": "oddiy retseptdan boshladik"
     },
     {
       "w": "excessive",
@@ -7629,7 +7779,8 @@
       "mnem": {
         "kw": "'excessive' → 'eksiz + siv'",
         "story": "Turistlar cheksiz (eksiz) kelib, soni 'excessive' — haddan tashqari ko'payib ketdi."
-      }
+      },
+      "formUz": "haddan tashqari ko'p sayyohlar"
     },
     {
       "w": "basis",
@@ -7657,7 +7808,8 @@
       "mnem": {
         "kw": "'basis' → 'baza + is'",
         "story": "Har kungi ish bazasi (baza) — 'on a daily basis', ya'ni kundalik tartibda olib borildi."
-      }
+      },
+      "formUz": "har kuni; kundalik asosda"
     },
     {
       "w": "campaigner",
@@ -7684,7 +7836,8 @@
       "mnem": {
         "kw": "'campaigner' → 'kampaniya + er'",
         "story": "Kampaniya (campaign) qilib, tabiatni himoya qilgan odam 'campaigner' — faol edi."
-      }
+      },
+      "formUz": "ekologiya faollari"
     },
     {
       "w": "deter",
@@ -7715,7 +7868,8 @@
       "mnem": {
         "kw": "'deter' → 'de + ter' (terlab qaytdi)",
         "story": "Baland narx odamni terlatib (ter) 'deter' qildi — sotib olishdan qaytardi."
-      }
+      },
+      "formUz": "yetarlicha odamni qaytara olmaydi"
     },
     {
       "w": "theme park",
@@ -7741,7 +7895,8 @@
       "mnem": {
         "kw": "'theme park' → 'theme + park' (mavzu + bog')",
         "story": "Butun shahar bitta mavzu (theme) atrofidagi bog' (park) — 'theme park'ka aylanib qoldi."
-      }
+      },
+      "formUz": "attraksion parkiga o'xshab qolmoq"
     },
     {
       "w": "perception",
@@ -7771,7 +7926,8 @@
       "mnem": {
         "kw": "'perception' → 'per + septr'",
         "story": "Podshoh (septr) haqidagi 'perception' — odamlarning tasavvuri haqiqatdan uzoq edi."
-      }
+      },
+      "formUz": "yana bir qarash (tasavvur) shuki"
     },
     {
       "w": "appeal",
@@ -7802,7 +7958,8 @@
       "mnem": {
         "kw": "'appeal' → 'a + piyola'",
         "story": "Chiroyli piyola (a-peal) mijozlarga 'appeal' qildi — yoqib, ularni jalb qildi."
-      }
+      },
+      "formUz": "yosh xaridorlarni jalb qilmoq"
     },
     {
       "w": "dock",
@@ -7833,7 +7990,8 @@
       "mnem": {
         "kw": "'dock' → 'dok' (kema doki)",
         "story": "Kema 'dok'ka (dock) kelib, dvigatelini o'chirib 'docked' — langar tashlab to'xtadi."
-      }
+      },
+      "formUz": "portga langar tashlab turganda"
     },
     {
       "w": "contemporary",
@@ -7864,7 +8022,8 @@
       "mnem": {
         "kw": "'contemporary' → 'con + temp + rari'",
         "story": "Hozirgi zamon (temp — vaqt) uslubidagi bezak 'contemporary' — zamonaviy va yangi ko'rinardi."
-      }
+      },
+      "formUz": "bezak zamonaviy tuyuladi"
     },
     {
       "w": "radically",
@@ -7895,7 +8054,8 @@
       "mnem": {
         "kw": "'radically' → 'radio + kal'",
         "story": "Radio (radi) tizimini 'radically' — tubdan, ildizigacha o'zgartirib yangiladilar."
-      }
+      },
+      "formUz": "menyularini tubdan yangilamoq"
     },
     {
       "w": "suit",
@@ -7925,7 +8085,8 @@
       "mnem": {
         "kw": "'suit' → 'suv + t' (suvdek mos)",
         "story": "Yangi menyu mijozlarga suvdek (suit) 'suit' qildi — ta'biga to'g'ri, mos keldi."
-      }
+      },
+      "formUz": "ularning didiga mos menyular"
     },
     {
       "w": "sustainable",
@@ -7956,7 +8117,8 @@
       "mnem": {
         "kw": "'sustainable' → 'sust + able' (sekin, barqaror)",
         "story": "Kema sekin (sust), lekin 'sustainable' — uzoq va atrof-muhitga zararsiz suzardi."
-      }
+      },
+      "formUz": "tobora barqarorroq bo'lib bormoq"
     },
     {
       "w": "rely",
@@ -7986,7 +8148,8 @@
       "mnem": {
         "kw": "'rely' → 'rel + ay' (rels)",
         "story": "Poyezd relsga (rel) tayangandek, hamma internetга 'rely' — ishonib, tayanib qoldi."
-      }
+      },
+      "formUz": "ishonsa bo'ladigan (uzilmaydigan) wifi"
     },
     {
       "w": "retiree",
@@ -8015,7 +8178,8 @@
       "mnem": {
         "kw": "'retiree' → 'retire + i' (nafaqa)",
         "story": "Ishdan (retire) charchagan chol nafaqaga chiqib, 'retiree' — pensioner bo'ldi."
-      }
+      },
+      "formUz": "nafaqadagilarga mo'ljallangan"
     }
   ],
   "C20-r1": [
@@ -8042,7 +8206,8 @@
       "mnem": {
         "kw": "Referat (report)",
         "story": "Referatimda men uning tadqiqotiga havola (reference) berib o'tdim."
-      }
+      },
+      "formUz": "…ga havola; …ni eslatib o'tish"
     },
     {
       "w": "reintroduce",
@@ -8097,7 +8262,8 @@
       "mnem": {
         "kw": "Volan (rul)",
         "story": "Rulsiz (volan) mashina himoyasiz — har qanday to'qnashuvga zaif (vulnerable)."
-      }
+      },
+      "formUz": "…ga nisbatan himoyasiz; …dan zarar ko'rishi mumkin"
     },
     {
       "w": "prominent",
@@ -8125,7 +8291,8 @@
       "mnem": {
         "kw": "Pro + minora (minaret)",
         "story": "Minora (minaret) shahardagi eng ko'zga tashlanadigan (prominent) inshoot edi."
-      }
+      },
+      "formUz": "eng ko'zga tashlanadigan; eng mashhur"
     },
     {
       "w": "anxious",
@@ -8202,7 +8369,8 @@
       "mnem": {
         "kw": "Tenda (tent)",
         "story": "Uning har safar dam olishga borganda tent (tenda) tikishga moyilligi (tendency) bor edi."
-      }
+      },
+      "formUz": "…ga moyillik; …ga urinish odati"
     },
     {
       "w": "aftermath",
@@ -8227,7 +8395,8 @@
       "mnem": {
         "kw": "After + math (matematika)",
         "story": "Imtihondan keyin (after) yomon matematika (math) bahosining oqibatida (aftermath) u xafa bo'ldi."
-      }
+      },
+      "formUz": "voqeadan keyingi davrda; oqibatlar sharoitida"
     },
     {
       "w": "significant",
@@ -8303,7 +8472,8 @@
       "mnem": {
         "kw": "Vaza + kular",
         "story": "Vazadagi (vaza) suv poyaning naysimon tomir (vascular) tizimi orqali yuqoriga ko'tarildi."
-      }
+      },
+      "formUz": "o'tkazuvchi tomirlar tizimi (o'simlikda suv va oziq yo'llari)"
     },
     {
       "w": "wilt",
@@ -8331,7 +8501,8 @@
       "mnem": {
         "kw": "Volt (voltage)",
         "story": "Volt (volt) urgan gulday, barglar birdan so'lib (wilt) osilib qoldi."
-      }
+      },
+      "formUz": "so'lib, qurib qolmoq"
     },
     {
       "w": "die down",
@@ -8359,7 +8530,8 @@
       "mnem": {
         "kw": "Day (kun) + down",
         "story": "Kunduzgi (day) shovqin kechga borib asta-sekin pasaydi (died down)."
-      }
+      },
+      "formUz": "asta-sekin susayib, to'xtadi"
     },
     {
       "w": "destined",
@@ -8384,7 +8556,8 @@
       "mnem": {
         "kw": "Destinatsiya (destination)",
         "story": "Kemasozlikka mo'ljallangan (destined) yog'ochlar o'z manziliga (destination) suzib ketdi."
-      }
+      },
+      "formUz": "…ga mo'ljallangan yog'ochlar"
     },
     {
       "w": "intact",
@@ -8412,7 +8585,8 @@
       "mnem": {
         "kw": "In + takt (takt)",
         "story": "Musiqa taktlari (takt) buzilmasdan, butun (intact) holda oxirigacha yangradi."
-      }
+      },
+      "formUz": "shikastlanmagan po'stloq"
     },
     {
       "w": "virulent",
@@ -8440,7 +8614,8 @@
       "mnem": {
         "kw": "Virus + lenta",
         "story": "Virusli (virus) lenta shu qadar o'ta xavfli (virulent) ediki, butun bog'ni yo'q qildi."
-      }
+      },
+      "formUz": "o'ta xavfli (kuchli) shtamm"
     },
     {
       "w": "strain",
@@ -8492,7 +8667,8 @@
       "mnem": {
         "kw": "Hedge + row (qator)",
         "story": "Dala chetidagi butalar qatori (hedgerow) xuddi yashil devor kabi tizilib turardi."
-      }
+      },
+      "formUz": "past chetan butazorlar (dala chegarasidagi)"
     },
     {
       "w": "county",
@@ -8517,7 +8693,8 @@
       "mnem": {
         "kw": "Count (sanamoq)",
         "story": "Har bir viloyatdagi (county) daraxtni birma-bir sanab (count) chiqdik."
-      }
+      },
+      "formUz": "…kabi graflik(lar)"
     },
     {
       "w": "succumb",
@@ -8601,7 +8778,8 @@
       "mnem": {
         "kw": "Tol (willow) + rens",
         "story": "Tol (tol) daraxti sovuqqa chidamliligi (tolerance) bilan mashhur."
-      }
+      },
+      "formUz": "…ga chidamli; …ga bardosh bera oladigan"
     },
     {
       "w": "resistance",
@@ -8628,7 +8806,8 @@
       "mnem": {
         "kw": "Rezistor (resistor)",
         "story": "Elektr rezistori (resistor) tokka qarshilik qilganidek, bu daraxt kasallikka qarshilik (resistance) qildi."
-      }
+      },
+      "formUz": "…ga qarshi turadigan; …ga chidamli"
     },
     {
       "w": "down to luck",
@@ -8652,7 +8831,8 @@
       "mnem": {
         "kw": "Down + luck (omad)",
         "story": "Bu g'alaba faqat omadga (luck) bog'liq emas, dedi murabbiy."
-      }
+      },
+      "formUz": "butunlay omadga bog'liq"
     },
     {
       "w": "birch",
@@ -8675,7 +8855,8 @@
       "mnem": {
         "kw": "Bir (one) + ch",
         "story": "Bitta (bir) oq po'stli qayin (birch) o'rmon chetida yolg'iz turardi."
-      }
+      },
+      "formUz": "qayin o'rmonzorlari"
     },
     {
       "w": "ash",
@@ -8700,7 +8881,8 @@
       "mnem": {
         "kw": "Osh (pilaf)",
         "story": "Osh (osh) pishirilgan gulxandan qolgan kul (ash) tagida shumtol (ash) urug'i unib chiqdi."
-      }
+      },
+      "formUz": "shumtol o'rmonzorlari"
     },
     {
       "w": "hazel",
@@ -8723,7 +8905,8 @@
       "mnem": {
         "kw": "Gazel (gazelle)",
         "story": "Gazel (gazelle) findiq daraxti (hazel) barglarini bir zumda yeb ketdi."
-      }
+      },
+      "formUz": "findiq o'rmonzorlari"
     },
     {
       "w": "woodland",
@@ -8747,7 +8930,8 @@
       "mnem": {
         "kw": "Wood (yog'och) + land (yer)",
         "story": "Yog'ochli (wood) yer (land) — bu, albatta, o'rmonzor (woodland)."
-      }
+      },
+      "formUz": "findiq o'rmonzorlari"
     },
     {
       "w": "crate",
@@ -8772,7 +8956,8 @@
       "mnem": {
         "kw": "Kreyt (quti)",
         "story": "Do'kondagi mahsulotlar katta yog'och yashiklarga (crate) joylandi."
-      }
+      },
+      "formUz": "saqlash yashiklari"
     },
     {
       "w": "prospect",
@@ -8799,7 +8984,8 @@
       "mnem": {
         "kw": "Pro + spektakl",
         "story": "Kelajakdagi spektakl (spektakl) muvaffaqiyati istiqboli (prospect) hammani ruhlantirdi."
-      }
+      },
+      "formUz": "…ning biror istiqboli; …ehtimoli"
     },
     {
       "w": "slit",
@@ -8826,7 +9012,8 @@
       "mnem": {
         "kw": "Split (ajratmoq)",
         "story": "Po'stloqni bo'lib (split), kichik tirqish (slit) ochib, ichiga dori quyishdi."
-      }
+      },
+      "formUz": "kichik tirqish"
     },
     {
       "w": "whereas",
@@ -8905,7 +9092,8 @@
       "mnem": {
         "kw": "Social + Accept",
         "story": "Yangi g'oyani jamiyat qabul qilishi (social acceptance) uchun ancha vaqt kerak bo'ldi."
-      }
+      },
+      "formUz": "jamiyat tomonidan qabul qilinishi masalalari"
     },
     {
       "w": "acknowledge",
@@ -8983,7 +9171,8 @@
       "mnem": {
         "kw": "Horti (garden) + analog",
         "story": "Bog'bon (horticulture) yovvoyi gulning bog' analogini (analogue) ekib qo'ydi."
-      }
+      },
+      "formUz": "bog'dorchilikdagi o'xshash misol"
     },
     {
       "w": "wary",
@@ -9011,7 +9200,8 @@
       "mnem": {
         "kw": "Worry (xavotir)",
         "story": "Xavotirdan (worry) u begonalarga nisbatan ehtiyotkor (wary) bo'lib qoldi."
-      }
+      },
+      "formUz": "yanada ehtiyotkorroq"
     },
     {
       "w": "clone",
@@ -9036,7 +9226,8 @@
       "mnem": {
         "kw": "Klon",
         "story": "Olim o'simlikni klonlab (clone), unga aynan o'xshash yuzta nusxa yaratdi."
-      }
+      },
+      "formUz": "aslida (amalda) klonlash"
     },
     {
       "w": "weigh up",
@@ -9061,7 +9252,8 @@
       "mnem": {
         "kw": "Weigh (tarozi) + up",
         "story": "Qaror qabul qilishdan avval, u barcha ma'lumotni tarozida (weigh) tortib ko'rdi (weigh up)."
-      }
+      },
+      "formUz": "ma'lumotni puxta o'ylab ko'rmoq (tarozida o'lchagandek)"
     },
     {
       "w": "quite a bit",
@@ -9088,7 +9280,8 @@
       "mnem": {
         "kw": "Kvit + bit",
         "story": "U anchagina (quite a bit) ma'lumotni bitta (bit) kichik diskka sig'dirdi."
-      }
+      },
+      "formUz": "ancha farq qiladi; anchagina xilma-xil"
     },
     {
       "w": "hectic",
@@ -9144,7 +9337,8 @@
       "mnem": {
         "kw": "Per + sea (dengiz)",
         "story": "Dengizda (sea) suzayotib, u uzoqdan xavfni darrov sezib (perceive) qoldi."
-      }
+      },
+      "formUz": "idrok etilgan (his qilingan) tahdid"
     },
     {
       "w": "convey",
@@ -9169,7 +9363,8 @@
       "mnem": {
         "kw": "Konveyer (conveyor)",
         "story": "Konveyerda (conveyor) yurgan xatlar yomon xabarni yetkazib (convey) turardi."
-      }
+      },
+      "formUz": "yomon xabarni yetkazdi"
     },
     {
       "w": "adverse",
@@ -9197,7 +9392,8 @@
       "mnem": {
         "kw": "Ad (reklama) + verse (she'r)",
         "story": "Reklamadagi (ad) yomon she'r (verse) mahsulotga salbiy (adverse) ta'sir ko'rsatdi."
-      }
+      },
+      "formUz": "salbiy hodisalar; noxush voqealar"
     },
     {
       "w": "fraud",
@@ -9224,7 +9420,8 @@
       "mnem": {
         "kw": "Frod (Freud)",
         "story": "Soxta Freyd (Freud) nomidan pul yig'ib, u katta firibgarlik (fraud) qildi."
-      }
+      },
+      "formUz": "bank kartasi firibgarligi"
     },
     {
       "w": "quite",
@@ -9252,7 +9449,8 @@
       "mnem": {
         "kw": "Kvitansiya (receipt)",
         "story": "Kvitansiyada (receipt) ancha (quite) katta summa yozilgan edi."
-      }
+      },
+      "formUz": "ancha xushbin (optimistik)"
     },
     {
       "w": "quiet",
@@ -9312,7 +9510,8 @@
       "mnem": {
         "kw": "E + merge (birlashtirmoq)",
         "story": "Ikki daryo birlashib (merge), tumandan yangi orol paydo bo'ldi (emerge)."
-      }
+      },
+      "formUz": "bir qonuniyat (naqsh) yuzaga chiqdi"
     },
     {
       "w": "hyper-vigilant",
@@ -9339,7 +9538,8 @@
       "mnem": {
         "kw": "Hyper + Vigil",
         "story": "Ko'p kofe (hyper energiya) ichgan qorovul tun bo'yi o'ta hushyor (hyper-vigilant) turdi."
-      }
+      },
+      "formUz": "…ga nisbatan o'ta hushyor"
     },
     {
       "w": "alter",
@@ -9367,7 +9567,8 @@
       "mnem": {
         "kw": "Altar (mehrob)",
         "story": "Mehrob (altar) oldida turib, u qarorini butunlay o'zgartirdi (alter)."
-      }
+      },
+      "formUz": "e'tiqodlarini (qarashlarini) o'zgartirdi"
     },
     {
       "w": "in contrast",
@@ -9419,7 +9620,8 @@
       "mnem": {
         "kw": "Panel (devor paneli)",
         "story": "Devor panellari (panel) ortida o'tirgan hakamlar hay'ati (panel) nutqni baholadi."
-      }
+      },
+      "formUz": "hay'at tomonidan baholanadi"
     },
     {
       "w": "spike",
@@ -9449,7 +9651,8 @@
       "mnem": {
         "kw": "Spayk (it ismi)",
         "story": "It Spike (Spike) to'satdan sakraganida, yuragim ham u bilan keskin ko'tarildi (spike)."
-      }
+      },
+      "formUz": "darajalar keskin ko'tarildi"
     },
     {
       "w": "violence",
@@ -9477,7 +9680,8 @@
       "mnem": {
         "kw": "Viola (violin)",
         "story": "Skripka (violin) torini shu qadar qattiq tortdiki, bu deyarli zo'ravonlik (violence) edi."
-      }
+      },
+      "formUz": "kasallik va zo'ravonlik"
     },
     {
       "w": "hazard",
@@ -9504,7 +9708,8 @@
       "mnem": {
         "kw": "Hazor (ming)",
         "story": "Ming (hazor) xil xavf-xatar (hazard) qadimgi odamni har qadamda kutib turardi."
-      }
+      },
+      "formUz": "xavf-xatarlar haqida bilib olmoq"
     },
     {
       "w": "on high alert",
@@ -9532,7 +9737,8 @@
       "mnem": {
         "kw": "High (baland) + alert (signal)",
         "story": "Baland (high) ovozli signal (alert) yangraganda, butun shahar sergak (on high alert) turdi."
-      }
+      },
+      "formUz": "doimo to'liq hushyorlik holatida"
     },
     {
       "w": "in fact",
@@ -9581,7 +9787,8 @@
       "mnem": {
         "kw": "Klinika (clinic)",
         "story": "Klinikada (clinic) unga jiddiy klinik depressiya (clinical depression) tashxisi qo'yildi."
-      }
+      },
+      "formUz": "klinik depressiya va xavotir"
     },
     {
       "w": "anxiety",
@@ -9609,7 +9816,8 @@
       "mnem": {
         "kw": "Anketa (form)",
         "story": "Uzundan-uzoq anketa (anketa) to'ldirish undagi xavotirni (anxiety) yanada oshirdi."
-      }
+      },
+      "formUz": "depressiya va xavotir"
     },
     {
       "w": "tense up",
@@ -9689,7 +9897,8 @@
       "mnem": {
         "kw": "Pre + programma",
         "story": "Miyamizga oldindan dastur (programma) yozilgandek, bu tug'ma (pre-programmed) reaksiya o'z-o'zidan ishga tushdi."
-      }
+      },
+      "formUz": "oldindan dasturlangan reaksiya"
     },
     {
       "w": "famished",
@@ -9717,7 +9926,8 @@
       "mnem": {
         "kw": "Fermer (farmer)",
         "story": "Ovqatsiz qolgan fermer (farmer) kechga borib juda och (famished) bo'lib qoldi."
-      }
+      },
+      "formUz": "ochlikdan holsizlangan yirtqichlar"
     },
     {
       "w": "exaggerate",
@@ -9745,7 +9955,8 @@
       "mnem": {
         "kw": "Ekz + jirafa (giraffe)",
         "story": "U kichkina mushukni jirafadek (giraffe) ulkan qilib bo'rttirib (exaggerate) gapirdi."
-      }
+      },
+      "formUz": "mavjud xavfni bo'rttirib ko'rsatish"
     },
     {
       "w": "hold on",
@@ -9774,7 +9985,8 @@
       "mnem": {
         "kw": "Hold (ushlamoq) + on",
         "story": "Narx tushsa ham, aksiyalarni sotmay ushlab turish (holding on) eng to'g'ri qaror edi."
-      }
+      },
+      "formUz": "ushlab turish (sotmay saqlash) eng ma'quli"
     },
     {
       "w": "conscientious",
@@ -9802,7 +10014,8 @@
       "mnem": {
         "kw": "Konchi (miner)",
         "story": "Vijdonli (conscientious) konchi (miner) har bir vazifasini halol va mas'uliyat bilan bajardi."
-      }
+      },
+      "formUz": "vijdonli (mas'uliyatli) agentlar"
     },
     {
       "w": "agent of change",

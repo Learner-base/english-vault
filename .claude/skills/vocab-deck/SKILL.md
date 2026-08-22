@@ -58,10 +58,23 @@ HTML (flip / recall / cloze + sentence structures), and keep `learning.json` and
    `build.py` renders it as the first accordion ("Yodlash uchun — keyword") on the card
    back. If they decline, omit `mnem` entirely and the accordion never appears.
 
+## The whole-phrase panel
+
+When a card has `formUz`, the card back gains an extra accordion at the very bottom,
+set apart from the others: **Whole phrase**. It shows the collocation with the head
+word marked inside it, then the Uzbek for the phrase as a unit. The same panel
+appears in the passage-glossary popup, opened automatically when what you tapped in
+the passage was the phrase rather than the bare word.
+
 ## Card schema (`deck.json` → `vocab[]`)
 ```
 w        base word / lemma (unique across the deck; also the localStorage progress key)
 form     inflected form(s) or phrase from the passage, shown under the word (e.g. "posed by · poses")
+formUz   Uzbek for the WHOLE phrase in `form`, when `form` is a real collocation
+         rather than just an inflection — e.g. w "quite a bit", form "vary quite a
+         bit", formUz "ancha farq qiladi". The passage highlights the whole phrase,
+         so the card must translate the whole phrase, not only the head word.
+         Omit it when `form` is just the word inflected ("poses", "posed").
 pos      part of speech: noun / verb / adjective / adverb / phrase / preposition …
 ipa      "/…/"  British IPA
 forms    "pose · posed · posing"  (word family, middot-separated)
@@ -127,3 +140,23 @@ extra    one fresh example of your own
   `related` block; `build.py` patches them in every build. If the template's markup changes,
   `build.py` fails loudly with the missing string — update the patch strings then.
 - Scratch files (readable.txt, deck.json, etc.) belong in the session scratchpad, not the repo.
+
+## Maintaining pages that already exist
+
+A deck page is generated once and the deck JSON is not kept, and `C20-r1-vocabs.html`
+carries a hand-written passage glossary (the reading passage with every vocab word
+highlighted) that **no generator reproduces**. So those pages must never be rebuilt
+from the template — they are patched in place instead:
+
+```
+# copy changed card data (e.g. a new formUz) into a page's baked-in VOCAB array
+python3 .claude/skills/vocab-deck/scripts/sync_cards.py \
+        generated/vocab/inprogress/C20-r1-vocabs.html vocab/learning.json C20-r1
+
+# add newer template features to already-generated pages (idempotent)
+python3 .claude/skills/vocab-deck/scripts/upgrade_pages.py
+```
+
+Both are safe to re-run. `upgrade_pages.py` reads the CSS and the helper straight out
+of `build.py`, so it cannot drift from what new decks get; it refuses to run if
+`build.py` stops emitting them.

@@ -26,7 +26,8 @@
       "mnem": {
         "kw": "'as much' → 'os-much' (osh + much)",
         "story": "Osh shuncha ko'p bo'ldiki, 'as much as' 10 kishiga yetdi – 'gacha, shuncha ham' degani."
-      }
+      },
+      "formUz": "10% gacha; hatto 10 foizcha"
     },
     {
       "w": "produce",
@@ -55,7 +56,8 @@
       "mnem": {
         "kw": "'produce' → 'pro + dush' (professional dush)",
         "story": "Professional dehqon dushanba kuni bog'idan yig'gan barcha 'produce' (meva-sabzavot)ni bozorga chiqardi."
-      }
+      },
+      "formUz": "ferma mahsuloti"
     },
     {
       "w": "striking",
@@ -85,7 +87,8 @@
       "mnem": {
         "kw": "'striking' → 'strike' (futbolda zarba)",
         "story": "Messining 'striking' (hayratlanarli) zarbasi shu qadar ko'zga tashlanardiki, butun stadion o'rnidan turdi."
-      }
+      },
+      "formUz": "ko'zga tashlanadigan yangi zal"
     },
     {
       "w": "rooftop",
@@ -113,7 +116,8 @@
       "mnem": {
         "kw": "'rooftop' → 'ruf + top' (top = to'p)",
         "story": "Bolalar 'rooftop' (tom usti)da to'p o'ynashdi va to'p pastga tushib ketdi."
-      }
+      },
+      "formUz": "shahar tomidagi ferma"
     },
     {
       "w": "bear fruit",
@@ -143,7 +147,8 @@
       "mnem": {
         "kw": "'bear' → 'ayiq' (bear = ayiq)",
         "story": "Ayiq daraxtni silkitdi va daraxt nihoyat 'bear fruit' qildi – meva/samara berdi."
-      }
+      },
+      "formUz": "meva bera boshladi; natija bera boshladi"
     },
     {
       "w": "flavoured",
@@ -174,7 +179,8 @@
       "mnem": {
         "kw": "'flavoured' → 'flayver' (Lay's chips flavour)",
         "story": "Lay's chipsining 'intensely flavoured' ta'mi shunchalik kuchliki, bir dona yegach og'zing achishadi."
-      }
+      },
+      "formUz": "o'ta ta'mli; ta'mi to'yingan"
     },
     {
       "w": "resplendently",
@@ -204,7 +210,8 @@
       "mnem": {
         "kw": "'resplendent' → 're + splendid' (splendid = ajoyib)",
         "story": "Qirol 'resplendently' (yaltirab) kiyingan – splendid, ya'ni ko'zni qamashtiradigan darajada hashamatli."
-      }
+      },
+      "formUz": "yorqin, ko'zni qamashtiruvchi qizil"
     },
     {
       "w": "sprout",
@@ -235,7 +242,8 @@
       "mnem": {
         "kw": "'sprout' → 'sport' (sport)",
         "story": "Sport bilan shug'ullansang, kuching 'sprout' qiladi – nihol kabi tez o'sib chiqadi."
-      }
+      },
+      "formUz": "mo'l-ko'l unib chiqadi"
     },
     {
       "w": "abundant",
@@ -297,7 +305,8 @@
       "mnem": {
         "kw": "'peer' → 'pir' (pir – murshid)",
         "story": "Murid pir (peer)ning uyiga 'peer inside' qildi – sinchiklab ichkariga mo'raladi."
-      }
+      },
+      "formUz": "ichkariga sinchiklab qaramoq"
     },
     {
       "w": "hollow",
@@ -327,7 +336,8 @@
       "mnem": {
         "kw": "'hollow' → 'Halloween' (Halloween qovog'i)",
         "story": "Halloween qovog'ini kovaklab, 'hollow' – ichi bo'sh qilib fonus yasashdi."
-      }
+      },
+      "formUz": "butunlay ichi bo'sh"
     },
     {
       "w": "dozen",
@@ -358,7 +368,8 @@
       "mnem": {
         "kw": "'dozen' → 'do'zaxda son' (do'zax + son)",
         "story": "Do'zaxda gunohlarni sanaganda 'dozen' – har safar o'n ikkitadan, o'nlab qilib sanashardi."
-      }
+      },
+      "formUz": "o'nlab o'simliklar"
     },
     {
       "w": "dangle",
@@ -389,7 +400,8 @@
       "mnem": {
         "kw": "'dangle' → 'dang + gul' (dang qotgan gul)",
         "story": "Gul poyasi shipdan 'dangle' bo'lib – osilib, dang qotib tebranib turardi."
-      }
+      },
+      "formUz": "pastga osilib turgan"
     },
     {
       "w": "lettuce",
@@ -414,7 +426,8 @@
       "mnem": {
         "kw": "'lettuce' → 'let us' (keling)",
         "story": "'Let us' salat yeymiz! – deb do'stlar bir bosh 'lettuce'ni bo'lishib yeyishdi."
-      }
+      },
+      "formUz": "qator-qator salat barglari"
     },
     {
       "w": "aromatic",
@@ -445,7 +458,8 @@
       "mnem": {
         "kw": "'aromatic' → 'aroma' (aroma)",
         "story": "Choyxonadagi 'aromatic' o'tlarning aromasi shunchalik xushbo'yki, ko'chadan o'tganlar to'xtab qoladi."
-      }
+      },
+      "formUz": "xushbo'y o'tlar (ko'katlar)"
     },
     {
       "w": "basil",
@@ -547,7 +561,8 @@
       "mnem": {
         "kw": "'narrow' → 'na + arrow' (arrow = o'q)",
         "story": "O'q (arrow) shunchalik 'narrow' – tor yo'lakdan o'tdiki, devorlarga tegmadi."
-      }
+      },
+      "formUz": "tor, gorizontal patnislarda"
     },
     {
       "w": "tray",
@@ -572,7 +587,8 @@
       "mnem": {
         "kw": "'tray' → 'trey' (three – uch)",
         "story": "Ofitsiant uchta (three) choynakni bitta 'tray' – patnisga qo'yib olib keldi."
-      }
+      },
+      "formUz": "gorizontal (yotiq) patnislar"
     },
     {
       "w": "aubergine",
@@ -597,7 +613,8 @@
       "mnem": {
         "kw": "'aubergine' → 'o'ba + jin' (o'ba – tepalik, jin)",
         "story": "O'badagi jin qo'lida yaltiroq 'aubergine' – baqlajon ushlab olib qo'rqitib yurardi."
-      }
+      },
+      "formUz": "yaltiroq baqlajonlar"
     },
     {
       "w": "chard",
@@ -620,7 +637,8 @@
       "mnem": {
         "kw": "'chard' → 'chala + yer' → 'chard'",
         "story": "Rangli poyali 'chard' sabzavoti chala pishgan yerdayam yorqin bo'lib o'saverardi."
-      }
+      },
+      "formUz": "yorqin rangli mangoldlar"
     },
     {
       "w": "sustainable",
@@ -651,7 +669,8 @@
       "mnem": {
         "kw": "'sustainable' → 'sust + able' (sust = sekin)",
         "story": "Sekin (sust) ishlagani uchun bu tizim 'sustainable' – uzoq, barqaror ishlab, hech tugamasdi."
-      }
+      },
+      "formUz": "barqaror rivojlanish"
     },
     {
       "w": "somewhat",
@@ -686,7 +705,8 @@
       "mnem": {
         "kw": "'somewhat' → 'som + what' (som + nima)",
         "story": "— Necha som? — 'Somewhat' qimmatroq, ya'ni biroz ko'proq, dedi sotuvchi noaniq."
-      }
+      },
+      "formUz": "biroz kattaroq"
     },
     {
       "w": "punnet",
@@ -711,7 +731,8 @@
       "mnem": {
         "kw": "'punnet' → 'pun + savat' (pun ≈ puxta)",
         "story": "Puxta yasalgan 'punnet' savatchaga aynan bir kilo qulupnay sig'ardi."
-      }
+      },
+      "formUz": "qulupnay solingan kichik qutilar"
     },
     {
       "w": "constraint",
@@ -742,7 +763,8 @@
       "mnem": {
         "kw": "'constraint' → 'kon + straight' (straight = to'g'ri)",
         "story": "Qonun (kon) seni faqat 'straight' – to'g'ri yo'ldan yurishga majburlaydi: bu 'constraint', ya'ni cheklov."
-      }
+      },
+      "formUz": "amaliy cheklovlar"
     },
     {
       "w": "flourish",
@@ -774,7 +796,8 @@
       "mnem": {
         "kw": "'flourish' → 'flower + ish' (flower = gul)",
         "story": "Bu biznes xuddi 'flower' – gul kabi 'flourish' qildi, ya'ni gullab-yashnadi."
-      }
+      },
+      "formUz": "gullab-yashnayotgan konsalting firmasi"
     },
     {
       "w": "field",
@@ -805,7 +828,8 @@
       "mnem": {
         "kw": "'field' → 'dala' (field = dala)",
         "story": "Dala (field)dagi dehqon telefon jiringlaganda barcha 'enquiries' – savollarni birma-bir qabul qilib, 'field' qildi."
-      }
+      },
+      "formUz": "so'rovlarni qabul qilib, javob berish"
     },
     {
       "w": "enquiry",
@@ -836,7 +860,8 @@
       "mnem": {
         "kw": "'enquiry' → 'in + kvartira' (kvartira haqida)",
         "story": "Kvartira (kvartira ≈ kwiry) haqida shuncha 'enquiry' – so'rov keldiki, telefon jim bo'lmadi."
-      }
+      },
+      "formUz": "so'rovlarni qabul qilib, javob berish"
     },
     {
       "w": "substantial",
@@ -868,7 +893,8 @@
       "mnem": {
         "kw": "'substantial' → 'sub + stantsiya' (stantsiya)",
         "story": "Poyezd yer osti (sub) stantsiyasidan 'substantial' – juda uzoq va salmoqli yo'l bosib o'tdi."
-      }
+      },
+      "formUz": "uzoq (salmoqli) safarlar"
     },
     {
       "w": "wholesaler",
@@ -930,7 +956,8 @@
       "mnem": {
         "kw": "'solely' → 'sof + ol' (sof, yolg'iz)",
         "story": "U 'solely' – faqat sof suvga tayanib, boshqa hech narsasiz o'simlikni o'stirdi."
-      }
+      },
+      "formUz": "faqat …ga tayanadi"
     },
     {
       "w": "exhaust",
@@ -961,7 +988,8 @@
       "mnem": {
         "kw": "'exhaust' → 'eski + ust' (mashina eksguzi)",
         "story": "Mashina 'exhaust' (eksguzi) benzinni to'liq yoqib 'exhaust' qildi – tugatib, zaxirani holdan toydirdi."
-      }
+      },
+      "formUz": "hech qanday tuproq holdan toymaydi"
     },
     {
       "w": "yield",
@@ -989,7 +1017,8 @@
       "mnem": {
         "kw": "'yield' → 'yeld' (yer + hosil)",
         "story": "Yer (yeld ≈ yield) dehqonga har yili katta 'yield' – mo'l hosil berardi."
-      }
+      },
+      "formUz": "o'sha (bir xil) hosil"
     },
     {
       "w": "phenomenon",
@@ -1017,7 +1046,8 @@
       "mnem": {
         "kw": "'phenomenon' → 'fen + omon' (fen + omon)",
         "story": "Fen (soch quritgich) o'zi omon qolgani – kamdan-kam uchraydigan 'phenomenon' (hodisa) edi."
-      }
+      },
+      "formUz": "yangi hodisa"
     },
     {
       "w": "virtuous",
@@ -1047,7 +1077,8 @@
       "mnem": {
         "kw": "'virtuous' → 'virtues' (fazilatlar)",
         "story": "Fazilatli (virtues egasi) odam har doim 'virtuous' – ezgu ishlar qilib, atrofga yaxshilik tarqatardi."
-      }
+      },
+      "formUz": "“fazilatli” (ijobiy tomonga aylanuvchi) hisoblanadi"
     },
     {
       "w": "vicious",
@@ -1079,7 +1110,8 @@
       "mnem": {
         "kw": "'vicious' → 'vahshiy + us' ",
         "story": "Vahshiy (vicious) it 'vicious circle' – aylanib-aylanib egasini quvib, holdan toydirdi."
-      }
+      },
+      "formUz": "yovuz doira; berk halqa (bir yomonlik ikkinchisini keltirib chiqaradi)"
     },
     {
       "w": "fraction",
@@ -1110,7 +1142,8 @@
       "mnem": {
         "kw": "'fraction' → 'freksiya' (freksiya/parcha)",
         "story": "Butun tortdan faqat bir 'fraction' – juda kichik parcha qoldi, qolganini yeb bo'lishgan."
-      }
+      },
+      "formUz": "juda kichik ulush"
     },
     {
       "w": "grower",
@@ -1138,7 +1171,8 @@
       "mnem": {
         "kw": "'grower' → 'grow + er' (o'stiruvchi)",
         "story": "Eng mohir 'grower' – o'stiruvchi hatto toshdan ham gul undirardi."
-      }
+      },
+      "formUz": "organik mahsulot yetishtiruvchilar"
     },
     {
       "w": "root vegetable",
@@ -1197,7 +1231,8 @@
       "mnem": {
         "kw": "'at least' → 'et + list' (et ro'yxati)",
         "story": "— Nechta? — 'At least' beshta, ya'ni kamida beshta et 'list' (ro'yxat)da bor, dedi qassob."
-      }
+      },
+      "formUz": "hech bo'lmaganda hozircha emas"
     },
     {
       "w": "radish",
@@ -1277,7 +1312,8 @@
       "mnem": {
         "kw": "'cavity' → 'kavak + ити' (kovak)",
         "story": "Daraxt tanasidagi 'cavity' – kovakka qushlar uya qurib, ichini to'ldirib olishdi."
-      }
+      },
+      "formUz": "ko'p kovakli daraxtlar"
     },
     {
       "w": "hawthorn",
@@ -1301,7 +1337,8 @@
       "mnem": {
         "kw": "'hawthorn' → 'ho + thorn' (thorn = tikan)",
         "story": "'Ho, qara, tikan (thorn)!' – dedi bola 'hawthorn' do'lanasining shoxiga qo'li ilinib."
-      }
+      },
+      "formUz": "do'lana kabi turlar"
     },
     {
       "w": "timber",
@@ -1329,7 +1366,8 @@
       "mnem": {
         "kw": "'timber' → 'tim + bor' (tim = to'q; bor)",
         "story": "Daraxtchi 'timber!' deb baqirdi – yog'och qulayapti, to'q rangli tanasi bor kuchi bilan yerga urildi."
-      }
+      },
+      "formUz": "yog'och sifatida yuqori qiymat"
     },
     {
       "w": "stem",
@@ -1357,7 +1395,8 @@
       "mnem": {
         "kw": "'stem' → 'stakan' (stakan poyasi)",
         "story": "Gul stakanga tik turishi uchun uning 'stem' – poyasi stakan tubiga tayaldi."
-      }
+      },
+      "formUz": "o'sha tana (yoki poya)"
     },
     {
       "w": "trunk",
@@ -1386,7 +1425,8 @@
       "mnem": {
         "kw": "'trunk' → 'traktor' (traktor tortdi)",
         "story": "Traktor yo'g'on daraxt 'trunk' – tanasini arqon bilan bog'lab sudrab ketdi."
-      }
+      },
+      "formUz": "tana (yoki poya)"
     },
     {
       "w": "norm",
@@ -1417,7 +1457,8 @@
       "mnem": {
         "kw": "'norm' → 'norma' (norma)",
         "story": "Zavodda kunlik 'norm' – normani bajarish odatiy qoidaga aylangan edi."
-      }
+      },
+      "formUz": "odatiy hol … qilish edi"
     },
     {
       "w": "shade out",
@@ -1448,7 +1489,8 @@
       "mnem": {
         "kw": "'shade' → 'soya + it'",
         "story": "Katta daraxt soya (shade) solib, kichkina nihollarni 'shade out' qildi – yorug'liksiz bo'g'ib tashladi."
-      }
+      },
+      "formUz": "soya solib, kerakli qayta o'sishni bo'g'ib qo'yish"
     },
     {
       "w": "desirable",
@@ -1478,7 +1520,8 @@
       "mnem": {
         "kw": "'desirable' → 'dizayr + able' (desire = orzu)",
         "story": "Har bir bog'bon orzu (desire) qiladigan 'desirable' – maqbul nihollar shu yerda o'sardi."
-      }
+      },
+      "formUz": "maqbul (kerakli) qayta o'sish"
     },
     {
       "w": "regeneration",
@@ -1509,7 +1552,8 @@
       "mnem": {
         "kw": "'regeneration' → 're + generation' (yangi avlod)",
         "story": "O'rmonning yangi avlodi (generation) – 'regeneration' qaytadan unib, bo'sh joyni to'ldirdi."
-      }
+      },
+      "formUz": "maqbul (kerakli) qayta o'sish"
     },
     {
       "w": "invasive",
@@ -1540,7 +1584,8 @@
       "mnem": {
         "kw": "'invasive' → 'invaziya' (bosqin)",
         "story": "Begona o't bog'ga xuddi 'invasive' – bosqinchi (invaziya) kabi bostirib kirib, hamma yerni egalladi."
-      }
+      },
+      "formUz": "bosqinchi (tez tarqaluvchi) o'simliklar"
     },
     {
       "w": "foliage",
@@ -1568,7 +1613,8 @@
       "mnem": {
         "kw": "'foliage' → 'foliy + yozgi' (folga kabi barg)",
         "story": "Kuzda daraxtning 'foliage' – barglari folga (foliy) kabi oltinrang tovlanib turardi."
-      }
+      },
+      "formUz": "ko'proq barg chiqarmoq"
     },
     {
       "w": "crown",
@@ -1599,7 +1645,8 @@
       "mnem": {
         "kw": "'crown' → 'toj' (crown = toj)",
         "story": "Daraxtning eng tepasidagi 'crown' – shox-shabbasi xuddi yashil toj (crown) kabi boshida turardi."
-      }
+      },
+      "formUz": "kattaroq shox-shabba yoki uchlar"
     },
     {
       "w": "tailor",
@@ -1630,7 +1677,8 @@
       "mnem": {
         "kw": "'tailor' → 'tikuvchi' (tailor = darzi)",
         "story": "Darzi (tailor) kostyumni o'lchab tikkanidek, reja ham har fermerga 'tailored' – moslab bichildi."
-      }
+      },
+      "formUz": "…ga moslashtirilishi mumkin"
     },
     {
       "w": "salvage",
@@ -1661,7 +1709,8 @@
       "mnem": {
         "kw": "'salvage' → 'sal + vaj' (sal saqla)",
         "story": "Yong'indan keyin dehqon sal bo'lsayam yaroqli yog'ochni 'salvage' qildi – qutqarib oldi."
-      }
+      },
+      "formUz": "qutqaruv kesimi (zararlangan daraxtlarni yaroqli ekan kesish)"
     },
     {
       "w": "pest",
@@ -1692,7 +1741,8 @@
       "mnem": {
         "kw": "'pest' → 'past' (past ketdi)",
         "story": "Zararkunanda 'pest' hosilni past darajaga tushirib, hammasini yeb bitirdi."
-      }
+      },
+      "formUz": "zararkunanda muammosi"
     },
     {
       "w": "pathogen",
@@ -1718,7 +1768,8 @@
       "mnem": {
         "kw": "'pathogen' → 'path + o'g'in' (kasallik yo'li)",
         "story": "Kasallik yo'li (path) orqali kelgan 'pathogen' butun o'rmonni og'ir xastalikka soldi."
-      }
+      },
+      "formUz": "zararkunandalar va kasallik qo'zg'atuvchilar"
     },
     {
       "w": "hemlock woolly adelgid",
@@ -1770,7 +1821,8 @@
       "mnem": {
         "kw": "'longhorned' → 'long + horn' (uzun shox)",
         "story": "Uzun shoxli (long horn) qo'ng'iz daraxt tanasini burg'udek teshib, ichini kemirib yubordi."
-      }
+      },
+      "formUz": "Osiyo uzun mo'ylovli qo'ng'izi"
     },
     {
       "w": "emerald ash borer",
@@ -1850,7 +1902,8 @@
       "mnem": {
         "kw": "'procedure' → 'protsedura' (protsedura)",
         "story": "Shifokor har bir 'procedure' – protsedurani aniq tartibda, bosqichma-bosqich bajardi."
-      }
+      },
+      "formUz": "kesish tartiblari"
     },
     {
       "w": "vigorous",
@@ -1882,7 +1935,8 @@
       "mnem": {
         "kw": "'vigorous' → 'vigor + kuch'",
         "story": "Kasallikdan omon qolgan 'vigorous' – baquvvat daraxt yana kuch (vigor) bilan o'sib ketdi."
-      }
+      },
+      "formUz": "baquvvat (sog'lom) daraxtlar"
     },
     {
       "w": "outbreak",
@@ -1913,7 +1967,8 @@
       "mnem": {
         "kw": "'outbreak' → 'out + break' (tashqariga yorib chiqish)",
         "story": "Kasallik to'satdan yorib (break) tashqariga (out) chiqdi – haqiqiy 'outbreak', ya'ni avj olish boshlandi."
-      }
+      },
+      "formUz": "avjidan omon qolmoq"
     },
     {
       "w": "thin",
@@ -1944,7 +1999,8 @@
       "mnem": {
         "kw": "'thin' → 'tin' (tinchit, siyrak)",
         "story": "O'rmonchi qalin o'rmonni 'thin' qildi – ba'zi daraxtlarni olib, siyraklashtirib tinchitdi."
-      }
+      },
+      "formUz": "bir necha marta siyraklashtirilgan"
     },
     {
       "w": "seedling",
@@ -1974,7 +2030,8 @@
       "mnem": {
         "kw": "'seedling' → 'seed + ling' (urug'cha)",
         "story": "Bir donagina urug' (seed) unib, kichkina 'seedling' – nihol bo'lib bosh ko'tardi."
-      }
+      },
+      "formUz": "boshqa niholar"
     },
     {
       "w": "two-tier",
@@ -2004,7 +2061,8 @@
       "mnem": {
         "kw": "'tier' → 'tir' (o'q otish tiri – qavat-qavat)",
         "story": "O'rmon 'two-tier' – ikki qavatli tir (nishon) kabi: past va baland daraxtlar ikki yarusda turardi."
-      }
+      },
+      "formUz": "ikki qavatli o'rmon"
     },
     {
       "w": "retention",
@@ -2035,7 +2093,8 @@
       "mnem": {
         "kw": "'retention' → 're + tension' (qayta tortib ushlash)",
         "story": "Arqonni qayta tortib (tension) ushlab qolgani – 'retention', ya'ni saqlab qolish edi."
-      }
+      },
+      "formUz": "…ning bir qismini saqlab qolish"
     },
     {
       "w": "classify",
@@ -2065,7 +2124,8 @@
       "mnem": {
         "kw": "'classify' → 'klass + ify' (sinflarga ajratish)",
         "story": "O'qituvchi bolalarni 'classify' qildi – bo'y-bastiga qarab har xil klasslarga (sinflarga) ajratdi."
-      }
+      },
+      "formUz": "…deb tasniflagan bo'lardi"
     },
     {
       "w": "woodpecker",
@@ -2090,7 +2150,8 @@
       "mnem": {
         "kw": "'woodpecker' → 'wood + pecker' (yog'och cho'qiydigan)",
         "story": "Qizilishton yog'ochni (wood) cho'qib-cho'qib (peck) 'woodpecker' nomini oldi – ichidagi hasharotni terib yedi."
-      }
+      },
+      "formUz": "qizilishton kabi yirtqichlar"
     },
     {
       "w": "resilience",
@@ -2121,7 +2182,8 @@
       "mnem": {
         "kw": "'resilience' → 're + silliq + ans' (qayta silliqlanish)",
         "story": "O'rmon zarbadan keyin qaytadan silliqlanib, o'ziga keldi – bu uning 'resilience' – chidamliligi edi."
-      }
+      },
+      "formUz": "salomatlik va chidamlilik"
     },
     {
       "w": "structural diversity",
@@ -2151,7 +2213,8 @@
       "mnem": {
         "kw": "'diversity' → 'diversiya + xillik'",
         "story": "O'rmondagi turli bo'y va yoshdagi daraxtlar 'structural diversity' – rang-barang tuzilishni hosil qildi."
-      }
+      },
+      "formUz": "uning tuzilmaviy xilma-xilligini oshiradi"
     }
   ]
 }
