@@ -41,28 +41,46 @@ vocab/need-to-review.json  cards from finished decks
 vocab/known.md             every word you've ever carded (never pruned)
 ```
 
-## Hooks that save time
+## Hooks — automation you don't have to remember
 
-Hooks live in `.claude/settings.json` and run **automatically** — no need to remember
-them. The useful one here rebuilds the index whenever a file changes:
+Hooks live in `.claude/settings.json` and fire on their own. To add one, just tell
+Claude *"add a hook that …"* — it edits the file for you.
+
+**What you already have**
+
+| Setting | Effect |
+|---|---|
+| `permissions.ask` on `git commit` / `git push` | Claude must ask you before either |
+| `PostToolUse` → `.claude/hooks/structured-change-reminder.py` | when a build script or template is edited, reminds Claude to check the matching `SKILL.md` |
+
+**Worth adding**
+
+Auto-rebuild the index after every file change, so you can never forget it:
 
 ```json
-{
-  "hooks": {
-    "PostToolUse": [
-      {
-        "matcher": "Write|Edit",
-        "hooks": [
-          { "type": "command",
-            "command": "python3 \"$CLAUDE_PROJECT_DIR/scripts/build_index.py\" >/dev/null" }
-        ]
-      }
-    ]
-  }
-}
+"PostToolUse": [
+  { "matcher": "Edit|Write",
+    "hooks": [{ "type": "command",
+      "command": "python3 \"$CLAUDE_PROJECT_DIR/scripts/build_index.py\" >/dev/null" }] }
+]
 ```
 
-Other handy events: `Stop` (run something when Claude finishes a turn — e.g. a
-`say done` notification), `UserPromptSubmit` (inject context into every prompt),
-`PreToolUse` (block a tool before it runs). Ask Claude to "add a hook that …" and it
-will edit `settings.json` for you.
+A "turn finished" sound, so you can look away while a long test generates:
+
+```json
+"Stop": [
+  { "hooks": [{ "type": "command", "command": "afplay /System/Library/Sounds/Glass.aiff" }] }
+]
+```
+
+**The events**: `PostToolUse` (after a tool runs) · `PreToolUse` (before — can block it) ·
+`Stop` (Claude finished answering) · `UserPromptSubmit` (add context to every message).
+
+## Habits that save the most time
+
+1. Describe the goal, not the steps — "I finished C20-r1" beats explaining the move.
+2. Batch: give a passage **and** its unknown words in one message; the deck, the JSON
+   updates and the index rebuild all happen in one pass.
+3. Never edit `index.html` / `player.html` / `translate.html` by hand — the next rebuild
+   overwrites them.
+4. Drop future ideas in `future-prompts.md`; it's your queue, not part of the site.
