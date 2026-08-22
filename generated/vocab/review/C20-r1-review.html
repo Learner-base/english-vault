@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cambridge 20 Reading 1 — Review — Vocabulary & Structures</title>
+<style>
+  :root{
+    --paper:#FCFCFA; --card:#FFFFFF;
+    --ink:#17170F; --ink-2:#57564C; --ink-3:#8A897E;
+    --line:#E4E3DC; --line-2:#EFEEE8; --soft:#F4F3EC;
+    --focus:#2E5AAC; --ok:#1F5C3A; --bad:#8A2B1E; --red:#C0362C;
+    --r:14px;
+    --serif:Georgia,"Iowan Old Style","Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:680px;margin:0 auto;padding:26px 20px 90px}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+  h1{font-family:var(--serif);font-weight:600;font-size:30px;line-height:1.12;margin:6px 0 4px;letter-spacing:-.01em}
+  .lede{color:var(--ink-2);font-size:15px;margin:0}
+
+  button{font-family:inherit;cursor:pointer}
+  .btn{border:1px solid var(--ink);background:var(--ink);color:var(--paper);border-radius:999px;padding:11px 18px;font-size:14px;font-weight:500;transition:opacity .15s ease,transform .06s ease}
+  .btn:hover{opacity:.88}.btn:active{transform:translateY(1px)}
+  .btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+  .btn.ghost:hover{border-color:var(--ink)}
+  :focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+
+  .modes{display:grid;gap:14px;margin-top:26px}
+  .mode-card{border:1px solid var(--line);border-radius:var(--r);background:var(--card);padding:20px;text-align:left;width:100%;color:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:border-color .15s ease,transform .06s ease}
+  .mode-card:hover{border-color:var(--ink)}.mode-card:active{transform:translateY(1px)}
+  .mode-card h2{font-family:var(--serif);font-weight:600;font-size:20px;margin:0 0 3px}
+  .mode-card p{margin:0;font-size:13px;color:var(--ink-2)}
+  .mode-card .arrow{font-size:22px;opacity:.45}
+  .mode-card .count{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
+
+  .stats{display:flex;gap:22px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line-2);font-family:var(--mono);font-size:12px;color:var(--ink-2);flex-wrap:wrap;align-items:center}
+  .stats b{color:var(--ink);font-weight:600}
+  .reset-link{background:none;border:none;color:var(--ink-3);text-decoration:underline;font-family:var(--mono);font-size:12px;padding:0;margin-left:auto}
+
+  .top{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+  .top .back{background:none;border:none;color:var(--ink-2);font-size:14px;padding:6px 2px}
+  .top .spacer{flex:1}
+  .switch{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--card);gap:2px}
+  .switch button{border:none;background:none;border-radius:999px;padding:6px 12px;font-size:12.5px;color:var(--ink-2)}
+  .switch button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+
+  .sizebar{margin:2px 0 14px}
+  .sizelab{font-family:var(--mono);font-size:12px;color:var(--ink-2);display:block;margin-bottom:9px;letter-spacing:.02em}
+  input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:3px;background:var(--line-2);border-radius:2px;outline:none;margin:0;cursor:pointer}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:18px;height:18px;border-radius:50%;background:var(--ink);cursor:pointer;border:2px solid var(--paper);box-shadow:0 0 0 1px var(--ink)}
+  input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--ink);cursor:pointer;border:2px solid var(--paper)}
+  .progress{height:3px;background:var(--line-2);border-radius:2px;margin:16px 0 6px;overflow:hidden}
+  .progress i{display:block;height:100%;background:var(--ink);width:0;transition:width .3s ease}
+  .counter{font-family:var(--mono);font-size:12px;color:var(--ink-3);text-align:center;margin-bottom:12px}
+
+  .stage{perspective:1600px}
+  .card{position:relative;min-height:300px;transform-style:preserve-3d;transition:transform .5s cubic-bezier(.4,.1,.2,1),height .28s ease}
+  .card.flipped{transform:rotateY(180deg)}
+  .face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:1px solid var(--line);border-radius:var(--r);background:var(--card);overflow:hidden}
+  .inner{padding:30px 26px}
+  .face.front{cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+  .face.front .inner{width:100%;display:flex;flex-direction:column;align-items:center}
+  .face.back{transform:rotateY(180deg)}
+
+  .front .pos{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:14px}
+  .front .word{font-family:var(--serif);font-size:40px;font-weight:600;letter-spacing:-.01em;line-height:1.06}
+  .front .ipa{font-family:var(--mono);color:var(--ink-2);font-size:14px;margin-top:10px}
+  .front .prompt{font-family:var(--serif);font-size:23px;font-weight:600;line-height:1.32;max-width:34ch}
+  .front .hint{font-family:var(--mono);font-size:11px;color:var(--ink-3);margin-top:22px;letter-spacing:.05em}
+  .speak{margin-top:18px;border:1px solid var(--line);background:var(--card);color:var(--ink);width:42px;height:42px;border-radius:50%;font-size:16px;display:grid;place-items:center}
+  .speak:hover{border-color:var(--ink)}
+
+  .cloze{font-size:18px;line-height:1.75;max-width:100%}
+  .cloze .gap{display:inline-block;min-width:96px;border-bottom:2px solid var(--ink);margin:0 3px;text-align:center;font-weight:600}
+  .cloze .gap.g-ok{color:var(--ok);border-color:var(--ok)}
+  .cloze .gap.g-bad{color:var(--bad);border-color:var(--bad)}
+  .opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:26px;width:100%;max-width:420px}
+  .opt{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:12px;font-size:15px;font-family:var(--serif)}
+  .opt:hover:not(:disabled){border-color:var(--ink)}
+  .opt:disabled{cursor:default}
+  .opt.correct{border-color:var(--ok);background:#EEF5EF;color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:#F7ECEA;color:var(--bad)}
+
+  .back .headline{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:2px}
+  .back .headline .w{font-family:var(--serif);font-size:22px;font-weight:600}
+  .back .headline .p{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+  .flipbtn{margin-left:auto;border:1px solid var(--line);background:var(--card);color:var(--ink-2);border-radius:999px;padding:5px 12px;font-size:12px;font-family:var(--mono)}
+  .flipbtn:hover{border-color:var(--ink);color:var(--ink)}
+  .saybtn{border:1px solid var(--line);background:var(--card);color:var(--ink-2);border-radius:999px;padding:5px 11px;font-size:12px;font-family:var(--mono)}
+  .saybtn:hover{border-color:var(--ink);color:var(--ink)}
+  .meaning{font-family:var(--serif);font-size:21px;font-weight:600;line-height:1.34;margin:12px 0 6px}
+  .uztrans{font-size:15.5px;line-height:1.4;margin:2px 0 12px;color:var(--ink)}
+  .uztrans .lab{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-right:6px}
+  .senses{font-size:13.5px;color:var(--ink-2);margin:0 0 14px}
+  .senses .lab{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-right:6px}
+  .forms{font-family:var(--mono);font-size:12px;color:var(--ink-3);margin:0 0 12px}
+  .pattern{font-family:var(--mono);font-size:13.5px;line-height:1.6;color:var(--ink);background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:13px;margin:12px 0 14px;white-space:pre-wrap}
+
+  .front .form-front{font-family:var(--serif);font-style:italic;font-size:16.5px;color:var(--ink-2);margin-top:9px;line-height:1.3;max-width:30ch}
+  .front .hintbtn{margin-top:12px;border:1px dashed var(--line);background:transparent;color:var(--ink-3);border-radius:999px;padding:6px 14px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+  .front .hintbtn:hover{border-color:var(--ink-2);color:var(--ink-2)}
+  .related{font-size:13.5px;color:var(--ink-2);margin:2px 0 14px}
+  .related .lab{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:7px}
+  .related .tag{font-family:var(--serif)}
+  .mnem .kw,.mnem .tr{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:5px}
+  .mnem .kw b,.mnem .tr b{color:var(--ink);text-transform:none;font-size:14px;letter-spacing:0}
+  .mnem .story{font-family:var(--serif);font-style:italic;font-size:15px;line-height:1.55;margin:8px 0 0;padding-top:8px;border-top:1px dashed var(--line)}
+  .acc.phrase{margin-top:14px;border-top:2px solid var(--line);border-radius:10px;background:var(--soft,#F4F3EC)}
+  .acc.phrase summary{padding-left:11px;padding-right:11px;color:var(--ink-2)}
+  .acc.phrase summary .whole{font-family:var(--serif);text-transform:none;letter-spacing:0;font-size:13.5px;font-style:italic;color:var(--ink-3);margin-left:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:46%}
+  .acc.phrase > div{padding:0 11px 12px}
+  .phr .en{font-family:var(--serif);font-size:17px;line-height:1.45;color:var(--ink)}
+  .phr .en b{font-weight:700;background:linear-gradient(transparent 62%,#FBE7A2 62%);padding:0 1px}
+  .phr .uz{font-size:15.5px;line-height:1.5;color:var(--ink-2);margin-top:9px;padding-top:9px;border-top:1px dashed var(--line)}
+  .phr .uz .lab{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:4px}
+  .phr .note{font-family:var(--mono);font-size:10.5px;color:var(--ink-3);margin-top:9px;letter-spacing:.03em}
+  .front .ex-front{font-family:var(--serif);font-size:15.5px;line-height:1.5;color:var(--ink-2);margin-top:10px;max-width:34ch;text-align:center}
+  .front .ex-front .exgap{color:var(--ink-3);letter-spacing:.08em}
+  .acc{border-top:1px solid var(--line-2)}
+  .acc summary{list-style:none;cursor:pointer;padding:11px 0;display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-2)}
+  .acc summary::-webkit-details-marker{display:none}
+  .acc summary .plus{margin-left:auto;color:var(--ink-3);font-size:15px;transition:transform .2s}
+  .acc[open] summary .plus{transform:rotate(45deg)}
+  .acc .body{padding:0 0 14px;font-size:14.5px;line-height:1.6}
+  .acc .body em{color:var(--ink-2)}
+  .tag{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:3px 10px;font-size:12.5px;margin:3px 5px 3px 0}
+  .mark{text-decoration:underline;text-decoration-color:var(--red);text-decoration-thickness:2px;text-underline-offset:3px}
+
+  .rate{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+  .rate button{border-radius:999px;padding:14px;font-size:14px;font-weight:500;border:1px solid var(--ink)}
+  .rate .learning{background:var(--card);color:var(--ink)}
+  .rate .learning:hover{background:#faf6ef}
+  .rate .learnt{background:var(--ink);color:var(--paper)}
+  .nextwrap{margin-top:18px;text-align:center}
+  .tap-hint{text-align:center;font-family:var(--mono);font-size:11px;color:var(--ink-3);margin-top:14px;letter-spacing:.04em}
+
+  .panel{border:1px solid var(--line);border-radius:var(--r);background:var(--card);padding:28px 24px;text-align:center}
+  .panel .big{font-family:var(--serif);font-size:52px;font-weight:600;line-height:1;margin:14px 0 4px}
+  .panel p{color:var(--ink-2);margin:6px 0}
+  .panel .row{display:flex;gap:26px;justify-content:center;margin:22px 0 4px;font-family:var(--mono);font-size:13px}
+  .panel .row div span{display:block;font-family:var(--serif);font-size:30px;color:var(--ink);font-weight:600}
+  .wordlist{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin:16px 0 6px}
+  .actions{display:flex;gap:10px;justify-content:center;margin-top:24px;flex-wrap:wrap}
+
+  .hidden{display:none !important}
+  footer{margin-top:40px;font-family:var(--mono);font-size:11px;color:var(--ink-3);text-align:center}
+  @media (max-width:520px){h1{font-size:26px}.front .word{font-size:34px}.opts{max-width:100%}}
+  @media (prefers-reduced-motion:reduce){.card{transition:height .2s ease}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <section id="home">
+    <div class="eyebrow">Review · Cambridge 20 Reading 1</div>
+    <h1>Words & Structures</h1>
+    <p class="lede">Words you have already studied in this set. Two hints on the front: the collocation, then the example sentence with the word blanked out.</p>
+    <div class="modes">
+      <button class="mode-card" data-open="vocab">
+        <div><h2>Vocabulary</h2><p>Words — contextual meaning, definition, synonyms &amp; antonyms</p></div>
+        <div style="text-align:right"><div class="count" id="vocabCount">—</div><div class="arrow">→</div></div>
+      </button>
+      <button class="mode-card" data-open="struct">
+        <div><h2>Structures</h2><p>Sentence structures used in the passage, with examples</p></div>
+        <div style="text-align:right"><div class="count" id="structCount">—</div><div class="arrow">→</div></div>
+      </button>
+    </div>
+    <div class="stats">
+      <span>Learnt <b id="hLearnt">0</b></span>
+      <span>Learning <b id="hLearning">0</b></span>
+      <span>New <b id="hNew">0</b></span>
+      <button class="reset-link" id="resetBtn">reset progress</button>
+    </div>
+  </section>
+
+  <section id="study" class="hidden">
+    <div class="sizebar">
+      <label class="sizelab" id="sizeLabel"></label>
+      <input type="range" id="sizeSlider" min="1" max="1" value="1" aria-label="How many to study" />
+    </div>
+    <div class="top">
+      <button class="back" id="studyBack">← Home</button>
+      <span class="spacer"></span>
+      <div class="switch" id="modeSwitch">
+        <button data-m="flip" aria-pressed="true">Flip</button>
+        <button data-m="recall">Recall</button>
+        <button data-m="cloze">Cloze</button>
+      </div>
+    </div>
+    <div class="progress"><i id="bar"></i></div>
+    <div class="counter" id="counter"></div>
+    <div class="stage">
+      <div class="card" id="card">
+        <div class="face front" id="front"><div class="inner"></div></div>
+        <div class="face back" id="back"><div class="inner"></div></div>
+      </div>
+    </div>
+    <div id="rate" class="rate hidden">
+      <button class="learning" id="btnLearning">Still learning</button>
+      <button class="learnt" id="btnLearnt">Learnt</button>
+    </div>
+    <div id="nextwrap" class="nextwrap hidden"><button class="btn" id="btnNext">Next →</button></div>
+    <div class="tap-hint" id="tapHint">Tap the card, or press Space</div>
+  </section>
+
+  <section id="summary" class="hidden">
+    <div class="panel">
+      <div class="eyebrow" id="sumEyebrow">Deck complete</div>
+      <div class="big" id="sumBig">0%</div>
+      <p id="sumSub"></p>
+      <div class="row">
+        <div>Learnt<span id="sumLearnt">0</span></div>
+        <div>Learning<span id="sumLearning">0</span></div>
+      </div>
+      <div id="reviewBlock">
+        <p style="margin-top:20px">Would you learn these words again?</p>
+        <div class="wordlist" id="sumWords"></div>
+      </div>
+      <div class="actions">
+        <button class="btn" id="reviewBtn">Review learning words</button>
+        <button class="btn ghost" id="restartBtn">Start over</button>
+        <button class="btn ghost" id="homeBtn">Home</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>Space — flip · 1 — learning · 2 — learnt · 3 — hear word · → next</footer>
+</div>
+
+<script>
+/* ============================ DATA ============================ */
+const VOCAB = [{"w": "reference", "form": "reference to", "pos": "noun", "ipa": "/ˈrefrəns/", "forms": "refer · reference · references", "def": "a mention of something.", "uz": "havola; eslatib o'tish; ishora", "senses": [], "ex": "reference to the research problems that arise from there being only a few surviving large elms.", "syn": ["mention", "allusion"], "ant": [], "related": ["make reference to", "reference to", "cross-reference"], "mnem": {"kw": "Referat (report)", "story": "Referatimda men uning tadqiqotiga havola (reference) berib o'tdim."}, "formUz": "…ga havola; …ni eslatib o'tish"}, {"w": "reintroduce", "form": "reintroduced · reintroducing", "pos": "verb", "ipa": "/ˌriːɪntrəˈdjuːs/", "forms": "reintroduce · reintroduced · reintroduction", "def": "to bring something back to a place where it used to exist.", "uz": "qayta kiritmoq; qaytadan olib kirmoq", "senses": [], "ex": "there's now hope the elm may be reintroduced to the countryside of central and southern England.", "syn": ["bring back", "restore"], "ant": ["remove", "eradicate"], "related": ["reintroduce a species", "widespread reintroduction"], "mnem": {"kw": "Re + Introduce (tanishtirmoq)", "story": "O'rmonchilar yo'qolgan qayrag'ochni tabiatga qayta tanishtirib (reintroduce), qaytadan ekishdi."}}, {"w": "vulnerable", "form": "vulnerable to", "pos": "adjective", "ipa": "/ˈvʌlnərəbl/", "forms": "vulnerable · vulnerability", "def": "weak and easily harmed or attacked.", "uz": "himoyasiz; zaif; xavf ostida", "senses": [], "ex": "which leaves the unattended eggs and chicks particularly vulnerable to predators.", "syn": ["defenceless", "exposed", "at risk"], "ant": ["protected", "safe"], "related": ["vulnerable to predators", "particularly vulnerable"], "mnem": {"kw": "Volan (rul)", "story": "Rulsiz (volan) mashina himoyasiz — har qanday to'qnashuvga zaif (vulnerable)."}, "formUz": "…ga nisbatan himoyasiz; …dan zarar ko'rishi mumkin"}, {"w": "prominent", "form": "most prominent", "pos": "adjective", "ipa": "/ˈprɒmɪnənt/", "forms": "prominent · prominence · prominently", "def": "important and easily noticed; standing out.", "uz": "ko'zga tashlanadigan; yirik; taniqli", "senses": [], "ex": "elm ... was in many instances the most prominent tree in the landscape.", "syn": ["conspicuous", "notable", "dominant"], "ant": ["inconspicuous", "obscure"], "related": ["prominent tree", "prominent role"], "mnem": {"kw": "Pro + minora (minaret)", "story": "Minora (minaret) shahardagi eng ko'zga tashlanadigan (prominent) inshoot edi."}, "formUz": "eng ko'zga tashlanadigan; eng mashhur"}, {"w": "anxious", "form": "anxious", "pos": "adjective", "ipa": "/ˈæŋkʃəs/", "forms": "anxious · anxiously · anxiety", "def": "worried and nervous.", "uz": "xavotirli; tashvishli", "senses": [], "ex": "Some of the most important decisions of our lives occur while we're feeling stressed and anxious.", "syn": ["worried", "nervous", "uneasy"], "ant": ["calm", "relaxed"], "related": ["feel anxious", "anxious about"], "mnem": {"kw": "Anjir (fig)", "story": "Anjir (fig) daraxtiga chiqishdan oldin u shoxi sinib ketmasmikan deb juda xavotirli (anxious) edi."}}, {"w": "precautions", "form": "precautions", "pos": "noun", "ipa": "/prɪˈkɔːʃnz/", "forms": "precaution · precautions · precautionary", "def": "actions taken in advance to prevent harm or danger.", "uz": "ehtiyot choralari", "senses": [], "ex": "Stress created by social media posts can lead us to take unnecessary precautions.", "syn": ["safeguards", "safety measures"], "ant": [], "related": ["take precautions", "unnecessary precautions"], "mnem": {"kw": "Pri + kassa (cash)", "story": "Kassadagi (cash) pul o'g'irlanmasin deb, biz oldindan ehtiyot choralarini (precautions) ko'rdik."}}, {"w": "tendency", "form": "tendency to", "pos": "noun", "ipa": "/ˈtendənsi/", "forms": "tend · tendency · tendencies", "def": "a usual way of behaving; a natural inclination to do something.", "uz": "moyillik; tamoyil", "senses": [], "ex": "Our tendency to be affected by other people's moods can be used in a positive way.", "syn": ["inclination", "propensity", "habit"], "ant": [], "related": ["a tendency to", "have a tendency"], "mnem": {"kw": "Tenda (tent)", "story": "Uning har safar dam olishga borganda tent (tenda) tikishga moyilligi (tendency) bor edi."}, "formUz": "…ga moyillik; …ga urinish odati"}, {"w": "aftermath", "form": "in the aftermath", "pos": "noun", "ipa": "/ˈɑːftəmæθ/", "forms": "aftermath", "def": "the period and effects that follow a bad event.", "uz": "oqibat; ofatdan keyingi davr", "senses": [], "ex": "In the aftermath, the elm, once so dominant in the British landscape, was largely forgotten.", "syn": ["consequences", "wake", "fallout"], "ant": [], "related": ["in the aftermath of", "the aftermath of the disease"], "mnem": {"kw": "After + math (matematika)", "story": "Imtihondan keyin (after) yomon matematika (math) bahosining oqibatida (aftermath) u xafa bo'ldi."}, "formUz": "voqeadan keyingi davrda; oqibatlar sharoitida"}, {"w": "significant", "form": "significant", "pos": "adjective", "ipa": "/sɪɡˈnɪfɪkənt/", "forms": "significant · significance · significantly", "def": "large or important enough to have an effect or to matter.", "uz": "muhim; sezilarli; salmoqli", "senses": [], "ex": "They were significant, large trees … then they were gone.", "syn": ["important", "considerable", "notable"], "ant": ["insignificant", "minor"], "related": ["significant impact", "significant difference"], "mnem": {"kw": "Signal + kant", "story": "Signal (signal) shu qadar muhim (significant) ediki, uni sezmay o'tib bo'lmasdi."}}, {"w": "fungus", "form": "fungus", "pos": "noun", "ipa": "/ˈfʌŋɡəs/", "forms": "fungus · fungi · fungal", "def": "an organism like mould or a mushroom, some of which cause disease.", "uz": "zamburug'", "senses": [], "ex": "The disease is caused by a fungus that blocks the elms' vascular system.", "syn": ["mould", "mildew"], "ant": [], "related": ["a deadly fungus", "fungal disease"], "mnem": {"kw": "Qo'ziqorin (mushroom)", "story": "Nam devorda o'sgan qo'ziqorinsimon zamburug' (fungus) daraxtni ichidan bo'g'ib qo'ydi."}}, {"w": "vascular", "form": "vascular system", "pos": "adjective", "ipa": "/ˈvæskjələ/", "forms": "vascular", "def": "relating to the tubes that carry water and food in a plant (or blood in animals).", "uz": "o'tkazuvchi tomirlarga oid; vaskulyar", "senses": [], "ex": "a fungus that blocks the elms' vascular (water, nutrient and food transport) system, causing branches to wilt and die.", "syn": ["conducting", "tubular"], "ant": [], "related": ["vascular system", "vascular tissue"], "mnem": {"kw": "Vaza + kular", "story": "Vazadagi (vaza) suv poyaning naysimon tomir (vascular) tizimi orqali yuqoriga ko'tarildi."}, "formUz": "o'tkazuvchi tomirlar tizimi (o'simlikda suv va oziq yo'llari)"}, {"w": "wilt", "form": "wilt and die", "pos": "verb", "ipa": "/wɪlt/", "forms": "wilt · wilted · wilting", "def": "(of a plant) to droop and become weak, usually from lack of water.", "uz": "so'lmoq; quramoq", "senses": [], "ex": "a fungus that blocks the elms' vascular system, causing branches to wilt and die.", "syn": ["droop", "sag", "shrivel"], "ant": ["flourish", "thrive"], "related": ["branches wilt", "the flowers wilted"], "mnem": {"kw": "Volt (voltage)", "story": "Volt (volt) urgan gulday, barglar birdan so'lib (wilt) osilib qoldi."}, "formUz": "so'lib, qurib qolmoq"}, {"w": "die down", "form": "gradually died down", "pos": "phrase", "ipa": "/daɪ daʊn/", "forms": "die down · died down", "def": "to slowly become less strong and then stop.", "uz": "asta-sekin susaymoq; tinchimoq", "senses": [], "ex": "A first epidemic, which occurred in the 1920s, gradually died down.", "syn": ["subside", "fade", "ease off"], "ant": ["intensify", "flare up"], "related": ["gradually died down", "the noise died down"], "mnem": {"kw": "Day (kun) + down", "story": "Kunduzgi (day) shovqin kechga borib asta-sekin pasaydi (died down)."}, "formUz": "asta-sekin susayib, to'xtadi"}, {"w": "destined", "form": "logs destined for", "pos": "adjective", "ipa": "/ˈdestɪnd/", "forms": "destine · destined · destination", "def": "intended for, or heading towards, a particular purpose or place.", "uz": "mo'ljallangan; nasib etgan", "senses": [], "ex": "The wood came in the form of logs destined for boat building.", "syn": ["intended", "bound for", "meant for"], "ant": [], "related": ["destined for", "logs destined for boat building"], "mnem": {"kw": "Destinatsiya (destination)", "story": "Kemasozlikka mo'ljallangan (destined) yog'ochlar o'z manziliga (destination) suzib ketdi."}, "formUz": "…ga mo'ljallangan yog'ochlar"}, {"w": "intact", "form": "intact bark", "pos": "adjective", "ipa": "/ɪnˈtækt/", "forms": "intact", "def": "complete and not damaged.", "uz": "shikastlanmagan; butun", "senses": [], "ex": "its intact bark was perfect for the elm bark beetles that spread the deadly fungus.", "syn": ["undamaged", "whole", "unbroken"], "ant": ["damaged", "broken"], "related": ["intact bark", "remain intact"], "mnem": {"kw": "In + takt (takt)", "story": "Musiqa taktlari (takt) buzilmasdan, butun (intact) holda oxirigacha yangradi."}, "formUz": "shikastlanmagan po'stloq"}, {"w": "virulent", "form": "virulent strain", "pos": "adjective", "ipa": "/ˈvɪrələnt/", "forms": "virulent · virulence", "def": "(of a disease) extremely harmful and fast-spreading.", "uz": "o'ta xavfli; kuchli (kasallik)", "senses": [], "ex": "the beetles carried a much more virulent strain that destroyed the vast majority of British elms.", "syn": ["deadly", "aggressive", "potent"], "ant": ["mild", "harmless"], "related": ["virulent strain", "virulent disease"], "mnem": {"kw": "Virus + lenta", "story": "Virusli (virus) lenta shu qadar o'ta xavfli (virulent) ediki, butun bog'ni yo'q qildi."}, "formUz": "o'ta xavfli (kuchli) shtamm"}, {"w": "strain", "form": "virulent strain · hybrid strains", "pos": "noun", "ipa": "/streɪn/", "forms": "strain · strains", "def": "a particular type or variety of a disease, plant or animal.", "uz": "nav; tur; shtamm", "senses": ["kuchlanish, tarang holat; mushakni cho'zib shikastlamoq"], "ex": "a much more virulent strain that destroyed the vast majority of British elms.", "syn": ["variety", "type", "breed"], "ant": [], "related": ["virulent strain", "hybrid strains", "resistant strains"], "mnem": {"kw": "Strike + rain", "story": "Yomg'irda (rain) paydo bo'lgan kasallikning yangi navi (strain) hosilga zarba (strike) berdi."}}, {"w": "hedgerow", "form": "low hedgerows", "pos": "noun", "ipa": "/ˈhedʒrəʊ/", "forms": "hedge · hedgerow · hedgerows", "def": "a line of bushes or small trees along the edge of a field.", "uz": "chetan (dala chetidagi butalar qatori)", "senses": [], "ex": "elms still exist in the southern English countryside but mostly only in low hedgerows between fields.", "syn": ["hedge", "row of bushes"], "ant": [], "related": ["low hedgerows", "hedgerows between fields"], "mnem": {"kw": "Hedge + row (qator)", "story": "Dala chetidagi butalar qatori (hedgerow) xuddi yashil devor kabi tizilib turardi."}, "formUz": "past chetan butazorlar (dala chegarasidagi)"}, {"w": "county", "form": "counties such as", "pos": "noun", "ipa": "/ˈkaʊnti/", "forms": "county · counties", "def": "a region or administrative area of a country, like a province.", "uz": "graflik; viloyat (Britaniyada)", "senses": [], "ex": "mature specimens have been identified, in counties such as Cambridgeshire, that are hundreds of years old.", "syn": ["region", "district", "shire"], "ant": [], "related": ["counties such as", "rural county"], "mnem": {"kw": "Count (sanamoq)", "story": "Har bir viloyatdagi (county) daraxtni birma-bir sanab (count) chiqdik."}, "formUz": "…kabi graflik(lar)"}, {"w": "succumb", "form": "succumbed", "pos": "verb", "ipa": "/səˈkʌm/", "forms": "succumb · succumbed · succumbing", "def": "to stop resisting and be defeated, killed or destroyed by something.", "uz": "yengilmoq; taslim bo'lmoq; nobud bo'lmoq", "senses": [], "ex": "work out why they stood tall when millions of others succumbed.", "syn": ["yield", "give in", "fall victim"], "ant": ["resist", "withstand", "survive"], "related": ["succumb to disease", "millions succumbed"], "mnem": {"kw": "Suv + kam", "story": "Suvi kam (suv-kam) qolgan o'simliklar kasallikka bardosh berolmay nobud bo'ldi (succumb)."}}, {"w": "avoidance", "form": "avoidance", "pos": "noun", "ipa": "/əˈvɔɪdəns/", "forms": "avoid · avoidance", "def": "the act of keeping away from or preventing something.", "uz": "chetlanish; qochish", "senses": [], "ex": "'What are the reasons for their survival?' asks Russell. 'Avoidance, tolerance, resistance?'", "syn": ["evasion", "prevention"], "ant": ["confrontation"], "related": ["tax avoidance", "avoidance of risk"], "mnem": {"kw": "A + void (bo'shliq)", "story": "Yo'ldagi bo'shliqdan (void) chetlanib (avoidance), chuqurga tushib ketmadik."}}, {"w": "tolerance", "form": "tolerant of", "pos": "noun", "ipa": "/ˈtɒlərəns/", "forms": "tolerate · tolerant · tolerance", "def": "the ability to endure something harmful without being damaged.", "uz": "chidamlilik; bardoshlilik", "senses": ["boshqalarga toqat qilish, bag'rikenglik"], "ex": "Any prospect of the elm returning relies heavily on trees being either resistant to, or tolerant of, the disease.", "syn": ["endurance", "resilience"], "ant": ["intolerance", "sensitivity"], "related": ["tolerance of the disease", "tolerant of"], "mnem": {"kw": "Tol (willow) + rens", "story": "Tol (tol) daraxti sovuqqa chidamliligi (tolerance) bilan mashhur."}, "formUz": "…ga chidamli; …ga bardosh bera oladigan"}, {"w": "resistance", "form": "resistant to", "pos": "noun", "ipa": "/rɪˈzɪstəns/", "forms": "resist · resistant · resistance", "def": "the ability not to be harmed or affected by something.", "uz": "qarshilik; chidamlilik (kasallikka)", "senses": [], "ex": "trees being either resistant to, or tolerant of, the disease.", "syn": ["immunity", "imperviousness"], "ant": ["susceptibility", "vulnerability"], "related": ["resistant to disease", "develop resistance"], "mnem": {"kw": "Rezistor (resistor)", "story": "Elektr rezistori (resistor) tokka qarshilik qilganidek, bu daraxt kasallikka qarshilik (resistance) qildi."}, "formUz": "…ga qarshi turadigan; …ga chidamli"}, {"w": "down to luck", "form": "entirely down to luck", "pos": "phrase", "ipa": "/daʊn tə lʌk/", "forms": "down to (something)", "def": "caused only by good fortune, not by skill or reason.", "uz": "faqat omadga bog'liq", "senses": [], "ex": "I don't see how it can be entirely down to luck.", "syn": ["a matter of luck", "by chance"], "ant": [], "related": ["entirely down to luck", "it's down to you"], "mnem": {"kw": "Down + luck (omad)", "story": "Bu g'alaba faqat omadga (luck) bog'liq emas, dedi murabbiy."}, "formUz": "butunlay omadga bog'liq"}, {"w": "birch", "form": "birch woodlands", "pos": "noun", "ipa": "/bɜːtʃ/", "forms": "birch · birches", "def": "a tree with smooth, often white bark and thin branches.", "uz": "qayin", "senses": [], "ex": "it became a key component of birch, ash and hazel woodlands.", "syn": ["silver birch"], "ant": [], "related": ["birch woodland", "silver birch"], "mnem": {"kw": "Bir (one) + ch", "story": "Bitta (bir) oq po'stli qayin (birch) o'rmon chetida yolg'iz turardi."}, "formUz": "qayin o'rmonzorlari"}, {"w": "ash", "form": "ash woodlands", "pos": "noun", "ipa": "/æʃ/", "forms": "ash · ashes", "def": "a tall tree with grey bark and hard pale wood.", "uz": "shumtol (daraxt)", "senses": ["kul — yong'indan qolgan kukun"], "ex": "it became a key component of birch, ash and hazel woodlands.", "syn": ["ash tree"], "ant": [], "related": ["ash woodland", "birch, ash and hazel"], "mnem": {"kw": "Osh (pilaf)", "story": "Osh (osh) pishirilgan gulxandan qolgan kul (ash) tagida shumtol (ash) urug'i unib chiqdi."}, "formUz": "shumtol o'rmonzorlari"}, {"w": "hazel", "form": "hazel woodlands", "pos": "noun", "ipa": "/ˈheɪzl/", "forms": "hazel · hazels", "def": "a small tree that produces hazelnuts.", "uz": "findiq daraxti", "senses": [], "ex": "it became a key component of birch, ash and hazel woodlands.", "syn": ["hazel tree"], "ant": [], "related": ["hazel woodland", "hazelnut"], "mnem": {"kw": "Gazel (gazelle)", "story": "Gazel (gazelle) findiq daraxti (hazel) barglarini bir zumda yeb ketdi."}, "formUz": "findiq o'rmonzorlari"}, {"w": "woodland", "form": "hazel woodlands", "pos": "noun", "ipa": "/ˈwʊdlənd/", "forms": "wood · woodland · woodlands", "def": "land covered with trees; a wood or forest.", "uz": "o'rmonzor", "senses": [], "ex": "it became a key component of birch, ash and hazel woodlands.", "syn": ["forest", "wood"], "ant": [], "related": ["mixed woodland", "ancient woodland"], "mnem": {"kw": "Wood (yog'och) + land (yer)", "story": "Yog'ochli (wood) yer (land) — bu, albatta, o'rmonzor (woodland)."}, "formUz": "findiq o'rmonzorlari"}, {"w": "crate", "form": "storage crates", "pos": "noun", "ipa": "/kreɪt/", "forms": "crate · crates", "def": "a large wooden or plastic box used for transport or storage.", "uz": "yashik; yog'och quti", "senses": [], "ex": "its wood was used for items such as storage crates and flooring.", "syn": ["box", "container", "case"], "ant": [], "related": ["storage crates", "wooden crate"], "mnem": {"kw": "Kreyt (quti)", "story": "Do'kondagi mahsulotlar katta yog'och yashiklarga (crate) joylandi."}, "formUz": "saqlash yashiklari"}, {"w": "prospect", "form": "any prospect of", "pos": "noun", "ipa": "/ˈprɒspekt/", "forms": "prospect · prospective · prospects", "def": "the possibility or likelihood of something happening in the future.", "uz": "istiqbol; imkoniyat; ehtimol", "senses": ["keng manzara; kelajakdagi imkoniyatlar"], "ex": "Any prospect of the elm returning relies heavily on trees being either resistant to, or tolerant of, the disease.", "syn": ["possibility", "likelihood", "outlook"], "ant": [], "related": ["the prospect of", "future prospects"], "mnem": {"kw": "Pro + spektakl", "story": "Kelajakdagi spektakl (spektakl) muvaffaqiyati istiqboli (prospect) hammani ruhlantirdi."}, "formUz": "…ning biror istiqboli; …ehtimoli"}, {"w": "slit", "form": "a small slit", "pos": "noun", "ipa": "/slɪt/", "forms": "slit · slits", "def": "a long, narrow cut or opening.", "uz": "tirqish; ingichka kesik", "senses": ["fe'l: ingichka qilib kesmoq"], "ex": "to see if they can withstand the fungus by cutting a small slit on the bark and injecting a tiny amount of the pathogen.", "syn": ["cut", "incision", "slot"], "ant": [], "related": ["a small slit", "cut a slit"], "mnem": {"kw": "Split (ajratmoq)", "story": "Po'stloqni bo'lib (split), kichik tirqish (slit) ochib, ichiga dori quyishdi."}, "formUz": "kichik tirqish"}, {"w": "whereas", "form": "whereas", "pos": "conjunction", "ipa": "/weərˈæz/", "forms": "whereas", "def": "used to contrast two different facts (while / in comparison).", "uz": "holbuki; -sa esa; aksincha", "senses": [], "ex": "trees that are resistant show no symptoms, whereas those that are susceptible show leaf loss and may even have died completely.", "syn": ["while", "in contrast", "but"], "ant": [], "related": ["A ..., whereas B ...", "whereas in fact"], "mnem": {"kw": "Where (qayer) + as", "story": "Sen qayerda (where) dam olyapsan, holbuki (whereas) men bu yerda ishlayapman."}}, {"w": "susceptible", "form": "susceptible", "pos": "adjective", "ipa": "/səˈseptəbl/", "forms": "susceptible · susceptibility", "def": "easily harmed, influenced or affected by something.", "uz": "moyil; ta'sirga beriluvchan; chidamsiz", "senses": [], "ex": "those that are susceptible show leaf loss and may even have died completely.", "syn": ["vulnerable", "prone", "liable"], "ant": ["resistant", "immune"], "related": ["susceptible to disease", "highly susceptible"], "mnem": {"kw": "Sust + septik", "story": "Sust (sus) immunitetli odam infeksiyaga (septic) tez beriluvchan (susceptible) bo'ladi."}}, {"w": "social acceptance", "form": "questions of social acceptance", "pos": "phrase", "ipa": "/ˈsəʊʃl əkˈseptəns/", "forms": "accept · acceptance", "def": "approval of something by society or people in general.", "uz": "jamiyat tomonidan qabul qilinishi", "senses": [], "ex": "All of this raises questions of social acceptance, acknowledges Russell.", "syn": ["public approval", "social approval"], "ant": ["rejection"], "related": ["raises questions of social acceptance", "gain social acceptance"], "mnem": {"kw": "Social + Accept", "story": "Yangi g'oyani jamiyat qabul qilishi (social acceptance) uchun ancha vaqt kerak bo'ldi."}, "formUz": "jamiyat tomonidan qabul qilinishi masalalari"}, {"w": "acknowledge", "form": "acknowledges", "pos": "verb", "ipa": "/əkˈnɒlɪdʒ/", "forms": "acknowledge · acknowledged · acknowledgement", "def": "to accept or admit that something is true.", "uz": "tan olmoq; e'tirof etmoq", "senses": [], "ex": "All of this raises questions of social acceptance, acknowledges Russell.", "syn": ["admit", "accept", "recognise"], "ant": ["deny"], "related": ["acknowledge a problem", "widely acknowledged"], "mnem": {"kw": "Ek + knowledge (bilim)", "story": "Bilimini (knowledge) oshirgach, u nihoyat xatosini tan oldi (acknowledge)."}}, {"w": "on the face of it", "form": "on the face of it", "pos": "phrase", "ipa": "/ɒn ðə feɪs əv ɪt/", "forms": "face value", "def": "judging only by how it first appears (though the truth may differ).", "uz": "ilk qarashda; tashqi ko'rinishidan", "senses": [], "ex": "'On the face of it, it seems like a good idea,' says Elliot.", "syn": ["at first glance", "seemingly", "superficially"], "ant": [], "related": ["on the face of it, ...", "at face value"], "mnem": {"kw": "Face (yuz)", "story": "Ilk qarashda (on the face of it) uning yuzi (face) samimiy ko'rinardi, aslida esa unday emasdi."}}, {"w": "horticultural analogue", "form": "a horticultural analogue", "pos": "phrase", "ipa": "/ˌhɔːtɪˈkʌltʃərəl ˈænəlɒɡ/", "forms": "analogue · analogous", "def": "a cultivated plant that is genetically similar to a wild or existing species.", "uz": "bog'dorchilikdagi o'xshash (nav)", "senses": ["izoh: mavjud turga genetik jihatdan o'xshash madaniy o'simlik"], "ex": "You're replacing a native species with a horticultural analogue.", "syn": ["cultivated equivalent", "horticultural counterpart"], "ant": [], "related": ["horticultural analogue", "genetic analogue"], "mnem": {"kw": "Horti (garden) + analog", "story": "Bog'bon (horticulture) yovvoyi gulning bog' analogini (analogue) ekib qo'ydi."}, "formUz": "bog'dorchilikdagi o'xshash misol"}, {"w": "wary", "form": "more wary", "pos": "adjective", "ipa": "/ˈweəri/", "forms": "wary · warily · wariness", "def": "careful and cautious because of possible danger or problems.", "uz": "ehtiyotkor; hushyor", "senses": [], "ex": "Others are more wary. 'On the face of it, it seems like a good idea,' says Elliot.", "syn": ["cautious", "careful", "guarded"], "ant": ["careless", "trusting"], "related": ["wary of", "more wary"], "mnem": {"kw": "Worry (xavotir)", "story": "Xavotirdan (worry) u begonalarga nisbatan ehtiyotkor (wary) bo'lib qoldi."}, "formUz": "yanada ehtiyotkorroq"}, {"w": "clone", "form": "effectively cloning", "pos": "verb", "ipa": "/kləʊn/", "forms": "clone · cloned · cloning", "def": "to make an exact genetic copy of a living thing.", "uz": "klonlash; aynan nusxa ko'chirish", "senses": [], "ex": "'You're replacing a native species with a horticultural analogue. You're effectively cloning.'", "syn": ["copy", "replicate", "duplicate"], "ant": [], "related": ["effectively cloning", "clone a plant"], "mnem": {"kw": "Klon", "story": "Olim o'simlikni klonlab (clone), unga aynan o'xshash yuzta nusxa yaratdi."}, "formUz": "aslida (amalda) klonlash"}, {"w": "weigh up", "form": "weigh up information", "pos": "phrase", "ipa": "/weɪ ʌp/", "forms": "weigh · weigh up · weighed up", "def": "to consider something carefully before making a decision.", "uz": "puxta o'ylab ko'rmoq; taroziga solmoq", "senses": [], "ex": "we are all sometimes required to weigh up information under stressful conditions.", "syn": ["assess", "consider", "evaluate"], "ant": [], "related": ["weigh up the options", "weigh up information"], "mnem": {"kw": "Weigh (tarozi) + up", "story": "Qaror qabul qilishdan avval, u barcha ma'lumotni tarozida (weigh) tortib ko'rdi (weigh up)."}, "formUz": "ma'lumotni puxta o'ylab ko'rmoq (tarozida o'lchagandek)"}, {"w": "quite a bit", "form": "vary quite a bit", "pos": "phrase", "ipa": "/kwaɪt ə bɪt/", "forms": "quite a bit · quite a lot", "def": "a fairly large amount; quite a lot.", "uz": "ancha; anchagina", "senses": [], "ex": "Firefighters' workdays vary quite a bit.", "syn": ["a good deal", "considerably", "a lot"], "ant": ["hardly at all"], "related": ["quite a bit of", "vary quite a bit"], "mnem": {"kw": "Kvit + bit", "story": "U anchagina (quite a bit) ma'lumotni bitta (bit) kichik diskka sig'dirdi."}, "formUz": "ancha farq qiladi; anchagina xilma-xil"}, {"w": "hectic", "form": "hectic", "pos": "adjective", "ipa": "/ˈhektɪk/", "forms": "hectic · hectically", "def": "very busy and full of fast, sometimes chaotic activity.", "uz": "sershovqin va band; g'ala-g'ovur", "senses": [], "ex": "Other days can be hectic, with numerous life-threatening incidents to attend to.", "syn": ["frantic", "busy", "chaotic"], "ant": ["calm", "relaxed"], "related": ["a hectic day", "hectic schedule"], "mnem": {"kw": "Tik (TikTok)", "story": "TikTok (tik) uchun video suratga olayotgan blogerning kuni juda band va shovqinli (hectic) o'tdi."}}, {"w": "perceive", "form": "perceived threat", "pos": "verb", "ipa": "/pəˈsiːv/", "forms": "perceive · perceived · perception", "def": "to notice, see or understand something in a particular way.", "uz": "idrok etmoq; sezmoq; his qilmoq", "senses": [], "ex": "We found that perceived threat acted as a trigger for a stress reaction.", "syn": ["notice", "sense", "interpret"], "ant": ["ignore", "overlook"], "related": ["perceived threat", "widely perceived as"], "mnem": {"kw": "Per + sea (dengiz)", "story": "Dengizda (sea) suzayotib, u uzoqdan xavfni darrov sezib (perceive) qoldi."}, "formUz": "idrok etilgan (his qilingan) tahdid"}, {"w": "convey", "form": "conveyed bad news", "pos": "verb", "ipa": "/kənˈveɪ/", "forms": "convey · conveyed · conveyor", "def": "to communicate or express information or feelings.", "uz": "yetkazmoq; ifodalamoq", "senses": [], "ex": "made the task of processing information easier for the firefighters – but only as long as it conveyed bad news.", "syn": ["communicate", "express", "transmit"], "ant": [], "related": ["convey a message", "conveyed bad news"], "mnem": {"kw": "Konveyer (conveyor)", "story": "Konveyerda (conveyor) yurgan xatlar yomon xabarni yetkazib (convey) turardi."}, "formUz": "yomon xabarni yetkazdi"}, {"w": "adverse", "form": "adverse events", "pos": "adjective", "ipa": "/ˈædvɜːs/", "forms": "adverse · adversely · adversity", "def": "harmful, unfavourable or negative.", "uz": "salbiy; noqulay; zararli", "senses": [], "ex": "estimate their likelihood of experiencing 40 different adverse events in their life.", "syn": ["unfavourable", "negative", "harmful"], "ant": ["favourable", "beneficial"], "related": ["adverse events", "adverse effects"], "mnem": {"kw": "Ad (reklama) + verse (she'r)", "story": "Reklamadagi (ad) yomon she'r (verse) mahsulotga salbiy (adverse) ta'sir ko'rsatdi."}, "formUz": "salbiy hodisalar; noxush voqealar"}, {"w": "fraud", "form": "card fraud", "pos": "noun", "ipa": "/frɔːd/", "forms": "fraud · fraudulent · fraudster", "def": "the crime of deceiving people to get money illegally.", "uz": "firibgarlik; aldov", "senses": [], "ex": "such as being involved in an accident or becoming a victim of card fraud.", "syn": ["deception", "scam", "swindle"], "ant": ["honesty"], "related": ["card fraud", "commit fraud"], "mnem": {"kw": "Frod (Freud)", "story": "Soxta Freyd (Freud) nomidan pul yig'ib, u katta firibgarlik (fraud) qildi."}, "formUz": "bank kartasi firibgarligi"}, {"w": "quite", "form": "quite optimistic", "pos": "adverb", "ipa": "/kwaɪt/", "forms": "quite", "def": "fairly; to a moderate degree (with some words: completely).", "uz": "ancha; birmuncha; tamoman", "senses": ["kuchli sifat bilan: butunlay, mutlaqo (quite right)"], "ex": "People are normally quite optimistic – they will ignore bad news and embrace the good.", "syn": ["fairly", "rather", "pretty"], "ant": [], "related": ["quite optimistic", "quite a bit", "not quite"], "mnem": {"kw": "Kvitansiya (receipt)", "story": "Kvitansiyada (receipt) ancha (quite) katta summa yozilgan edi."}, "formUz": "ancha xushbin (optimistik)"}, {"w": "quiet", "form": "quiet", "pos": "adjective", "ipa": "/ˈkwaɪət/", "forms": "quiet · quietly · quietness", "def": "the absence of noise; calm and silent.", "uz": "jimlik; jim, tinch, sokin", "senses": ["diqqat: 'quite' bilan adashtirmang — boshqa so'z va boshqa talaffuz. Jimlik = quiet/silence."], "ex": "After the storm had passed, a deep quiet settled over the forest.", "syn": ["silent", "calm", "still", "silence"], "ant": ["noisy", "loud"], "related": ["keep quiet", "peace and quiet", "the quiet of the night"], "mnem": {"kw": "Kvartira (flat)", "story": "Bo'sh kvartirada (flat) shunday jimlik (quiet) ediki, hatto soat chiqillashi eshitilardi."}}, {"w": "emerge", "form": "a pattern emerged", "pos": "verb", "ipa": "/ɪˈmɜːdʒ/", "forms": "emerge · emerged · emergence", "def": "to appear or come into view; to become known.", "uz": "paydo bo'lmoq; yuzaga chiqmoq", "senses": [], "ex": "but when they were under stress, a different pattern emerged.", "syn": ["appear", "arise", "surface"], "ant": ["disappear", "vanish"], "related": ["a pattern emerged", "emerge from"], "mnem": {"kw": "E + merge (birlashtirmoq)", "story": "Ikki daryo birlashib (merge), tumandan yangi orol paydo bo'ldi (emerge)."}, "formUz": "bir qonuniyat (naqsh) yuzaga chiqdi"}, {"w": "hyper-vigilant", "form": "hyper-vigilant to", "pos": "adjective", "ipa": "/ˌhaɪpə ˈvɪdʒɪlənt/", "forms": "vigilant · vigilance · hyper-vigilant", "def": "extremely watchful and alert for danger.", "uz": "o'ta hushyor; haddan tashqari sergak", "senses": [], "ex": "they became hyper-vigilant to bad news, even when it had nothing to do with their job.", "syn": ["over-alert", "extremely watchful"], "ant": ["careless", "oblivious"], "related": ["hyper-vigilant to threats", "stay vigilant"], "mnem": {"kw": "Hyper + Vigil", "story": "Ko'p kofe (hyper energiya) ichgan qorovul tun bo'yi o'ta hushyor (hyper-vigilant) turdi."}, "formUz": "…ga nisbatan o'ta hushyor"}, {"w": "alter", "form": "altered their beliefs", "pos": "verb", "ipa": "/ˈɔːltə/", "forms": "alter · altered · alteration", "def": "to change something, usually slightly.", "uz": "o'zgartirmoq", "senses": [], "ex": "they became hyper-vigilant to bad news ... and altered their beliefs in response.", "syn": ["change", "modify", "adjust"], "ant": ["keep", "preserve"], "related": ["alter beliefs", "significantly altered"], "mnem": {"kw": "Altar (mehrob)", "story": "Mehrob (altar) oldida turib, u qarorini butunlay o'zgartirdi (alter)."}, "formUz": "e'tiqodlarini (qarashlarini) o'zgartirdi"}, {"w": "in contrast", "form": "in contrast", "pos": "phrase", "ipa": "/ɪn ˈkɒntrɑːst/", "forms": "contrast · in contrast", "def": "used to show a clear difference between two things.", "uz": "farqli o'laroq; aksincha", "senses": [], "ex": "In contrast, stress didn't change how they responded to good news.", "syn": ["by contrast", "conversely", "on the other hand"], "ant": [], "related": ["in contrast to", "in contrast, ..."], "mnem": {"kw": "Kontrast (contrast)", "story": "Rasmdagi qora-oq kontrasti (contrast) kabi, ularning fikri farqli o'laroq (in contrast) qarama-qarshi edi."}}, {"w": "panel", "form": "judged by a panel", "pos": "noun", "ipa": "/ˈpænl/", "forms": "panel · panellist · panels", "def": "a small group of people chosen to judge or discuss something.", "uz": "hay'at; komissiya; hakamlar", "senses": ["yassi taxta yoki qism, masalan quyosh paneli"], "ex": "a surprise public speech, which would be judged by a panel, recorded and posted online.", "syn": ["committee", "board", "jury"], "ant": [], "related": ["judged by a panel", "expert panel"], "mnem": {"kw": "Panel (devor paneli)", "story": "Devor panellari (panel) ortida o'tirgan hakamlar hay'ati (panel) nutqni baholadi."}, "formUz": "hay'at tomonidan baholanadi"}, {"w": "spike", "form": "levels spiked", "pos": "verb", "ipa": "/spaɪk/", "forms": "spike · spiked · spiking", "def": "to increase sharply and suddenly.", "uz": "keskin ko'tarilmoq; sakramoq", "senses": ["ot: o'tkir uch, mix"], "ex": "their cortisol levels spiked, their heart rates went up.", "syn": ["surge", "shoot up", "jump"], "ant": ["drop", "plunge"], "related": ["levels spiked", "a spike in prices"], "mnem": {"kw": "Spayk (it ismi)", "story": "It Spike (Spike) to'satdan sakraganida, yuragim ham u bilan keskin ko'tarildi (spike)."}, "formUz": "darajalar keskin ko'tarildi"}, {"w": "violence", "form": "disease and violence", "pos": "noun", "ipa": "/ˈvaɪələns/", "forms": "violent · violence · violently", "def": "behaviour that uses physical force to hurt or damage.", "uz": "zo'ravonlik", "senses": [], "ex": "processing unrelated, yet alarming, information about rates of disease and violence.", "syn": ["brutality", "force", "aggression"], "ant": ["peace", "gentleness"], "related": ["rates of violence", "act of violence"], "mnem": {"kw": "Viola (violin)", "story": "Skripka (violin) torini shu qadar qattiq tortdiki, bu deyarli zo'ravonlik (violence) edi."}, "formUz": "kasallik va zo'ravonlik"}, {"w": "hazard", "form": "learn about hazards", "pos": "noun", "ipa": "/ˈhæzəd/", "forms": "hazard · hazardous · hazards", "def": "a possible source of danger or harm.", "uz": "xavf; xatar", "senses": [], "ex": "they would have benefited from an increased ability to learn about hazards.", "syn": ["danger", "risk", "threat"], "ant": ["safety"], "related": ["learn about hazards", "health hazard"], "mnem": {"kw": "Hazor (ming)", "story": "Ming (hazor) xil xavf-xatar (hazard) qadimgi odamni har qadamda kutib turardi."}, "formUz": "xavf-xatarlar haqida bilib olmoq"}, {"w": "on high alert", "form": "on high alert constantly", "pos": "phrase", "ipa": "/ɒn haɪ əˈlɜːt/", "forms": "alert · on alert", "def": "in a state of being fully ready for possible danger.", "uz": "to'liq hushyorlik holatida; sergaklikda", "senses": [], "ex": "In a safe environment, however, it would have been wasteful to be on high alert constantly.", "syn": ["fully alert", "on guard", "vigilant"], "ant": ["relaxed", "off guard"], "related": ["on high alert", "stay on alert"], "mnem": {"kw": "High (baland) + alert (signal)", "story": "Baland (high) ovozli signal (alert) yangraganda, butun shahar sergak (on high alert) turdi."}, "formUz": "doimo to'liq hushyorlik holatida"}, {"w": "in fact", "form": "in fact", "pos": "phrase", "ipa": "/ɪn fækt/", "forms": "in fact · as a matter of fact", "def": "used to add true or surprising information, or to emphasise reality.", "uz": "aslida; haqiqatan ham", "senses": [], "ex": "In fact, people with clinical depression and anxiety seem unable to switch away from a state in which they absorb all the negative messages.", "syn": ["actually", "in reality", "indeed"], "ant": [], "related": ["in fact, ...", "as a matter of fact"], "mnem": {"kw": "In + fakt (dalil)", "story": "Aslida (in fact), barcha dalillar (fact) uning haq ekanini ko'rsatdi."}}, {"w": "clinical depression", "form": "clinical depression and anxiety", "pos": "phrase", "ipa": "/ˈklɪnɪkl dɪˈpreʃn/", "forms": "clinical · depression", "def": "a serious, medically diagnosed form of depression.", "uz": "klinik depressiya (tibbiy tashxis)", "senses": [], "ex": "people with clinical depression and anxiety seem unable to switch away from a state in which they absorb all the negative messages.", "syn": ["major depression", "medical depression"], "ant": [], "related": ["clinical depression and anxiety", "diagnosed with depression"], "mnem": {"kw": "Klinika (clinic)", "story": "Klinikada (clinic) unga jiddiy klinik depressiya (clinical depression) tashxisi qo'yildi."}, "formUz": "klinik depressiya va xavotir"}, {"w": "anxiety", "form": "depression and anxiety", "pos": "noun", "ipa": "/æŋˈzaɪəti/", "forms": "anxious · anxiety · anxieties", "def": "a feeling of strong worry or nervousness.", "uz": "xavotir; bezovtalik; tashvish", "senses": [], "ex": "people with clinical depression and anxiety seem unable to switch away from a state in which they absorb all the negative messages.", "syn": ["worry", "nervousness", "unease"], "ant": ["calm", "ease"], "related": ["depression and anxiety", "feelings of anxiety"], "mnem": {"kw": "Anketa (form)", "story": "Uzundan-uzoq anketa (anketa) to'ldirish undagi xavotirni (anxiety) yanada oshirdi."}, "formUz": "depressiya va xavotir"}, {"w": "tense up", "form": "tense up", "pos": "phrase", "ipa": "/tens ʌp/", "forms": "tense · tensed up · tensing up", "def": "to become stiff and unable to relax, usually from stress or fear.", "uz": "tarang tortmoq; qotib qolmoq (asabdan)", "senses": [], "ex": "If a co-worker is stressed, we are more likely to tense up and feel stressed ourselves.", "syn": ["stiffen", "tighten up"], "ant": ["relax", "loosen up"], "related": ["tense up", "muscles tense up"], "mnem": {"kw": "Tennis + up", "story": "Tennis (tennis) finalida u shu qadar tarang tortdiki (tense up), raketkani qattiq siqib oldi."}}, {"w": "in some ways", "form": "in some ways", "pos": "phrase", "ipa": "/ɪn sʌm weɪz/", "forms": "in some ways · in many ways", "def": "to a certain extent; in some respects but not all.", "uz": "ba'zi jihatdan; qaysidir ma'noda", "senses": [], "ex": "In some ways, many of us now live as if we are in danger.", "syn": ["to some extent", "in certain respects", "partly"], "ant": [], "related": ["in some ways ...", "in many ways"], "mnem": {"kw": "Some (biroz) + way (yo'l)", "story": "Ba'zi jihatdan (in some ways), tanlagan yo'lim (way) biroz (some) xavfli edi."}}, {"w": "pre-programmed", "form": "a pre-programmed reaction", "pos": "adjective", "ipa": "/ˌpriː ˈprəʊɡræmd/", "forms": "programme · programmed · pre-programmed", "def": "set in advance to behave in a fixed, automatic way; built-in.", "uz": "oldindan dasturlangan; tug'ma o'rnatilgan", "senses": [], "ex": "a pre-programmed physiological reaction, which evolution has equipped us with to help us avoid famished predators, is now being triggered by an online post.", "syn": ["hard-wired", "built-in", "automatic"], "ant": ["learned", "acquired"], "related": ["pre-programmed reaction", "hard-wired response"], "mnem": {"kw": "Pre + programma", "story": "Miyamizga oldindan dastur (programma) yozilgandek, bu tug'ma (pre-programmed) reaksiya o'z-o'zidan ishga tushdi."}, "formUz": "oldindan dasturlangan reaksiya"}, {"w": "famished", "form": "famished predators", "pos": "adjective", "ipa": "/ˈfæmɪʃt/", "forms": "famish · famished · famine", "def": "extremely hungry; starving.", "uz": "ochlikdan holsizlangan; juda och", "senses": [], "ex": "evolution has equipped us with to help us avoid famished predators.", "syn": ["starving", "ravenous", "very hungry"], "ant": ["full", "satisfied"], "related": ["famished predators", "absolutely famished"], "mnem": {"kw": "Fermer (farmer)", "story": "Ovqatsiz qolgan fermer (farmer) kechga borib juda och (famished) bo'lib qoldi."}, "formUz": "ochlikdan holsizlangan yirtqichlar"}, {"w": "exaggerate", "form": "exaggerating existing danger", "pos": "verb", "ipa": "/ɪɡˈzædʒəreɪt/", "forms": "exaggerate · exaggerated · exaggeration", "def": "to make something seem larger, worse or more important than it really is.", "uz": "bo'rttirmoq; oshirib yubormoq", "senses": [], "ex": "But that has the effect of exaggerating existing danger.", "syn": ["overstate", "overdo", "blow up"], "ant": ["understate", "downplay"], "related": ["exaggerate the danger", "wildly exaggerated"], "mnem": {"kw": "Ekz + jirafa (giraffe)", "story": "U kichkina mushukni jirafadek (giraffe) ulkan qilib bo'rttirib (exaggerate) gapirdi."}, "formUz": "mavjud xavfni bo'rttirib ko'rsatish"}, {"w": "hold on", "form": "holding on is best", "pos": "phrase", "ipa": "/həʊld ɒn/", "forms": "hold on · held on · holding on", "def": "to keep something and not sell or give it up; to wait.", "uz": "ushlab turmoq; sotmay saqlamoq; kutib turmoq", "senses": [], "ex": "stocks are sold, even when holding on is the best thing to do.", "syn": ["keep", "retain", "hang on", "wait"], "ant": ["sell", "let go"], "related": ["holding on is best", "hold on to shares"], "mnem": {"kw": "Hold (ushlamoq) + on", "story": "Narx tushsa ham, aksiyalarni sotmay ushlab turish (holding on) eng to'g'ri qaror edi."}, "formUz": "ushlab turish (sotmay saqlash) eng ma'quli"}, {"w": "conscientious", "form": "conscientious agents", "pos": "adjective", "ipa": "/ˌkɒnʃiˈenʃəs/", "forms": "conscience · conscientious · conscientiously", "def": "careful, responsible and taking your duties seriously.", "uz": "vijdonli; mas'uliyatli; halol", "senses": [], "ex": "help us frame our messages more effectively and become conscientious agents of change.", "syn": ["diligent", "responsible", "dutiful"], "ant": ["careless", "negligent"], "related": ["conscientious worker", "conscientious agents of change"], "mnem": {"kw": "Konchi (miner)", "story": "Vijdonli (conscientious) konchi (miner) har bir vazifasini halol va mas'uliyat bilan bajardi."}, "formUz": "vijdonli (mas'uliyatli) agentlar"}, {"w": "agent of change", "form": "agents of change", "pos": "phrase", "ipa": "/ˈeɪdʒənt əv tʃeɪndʒ/", "forms": "agent · agents of change", "def": "a person or thing that actively causes or drives change.", "uz": "o'zgarish tashabbuskori; o'zgartiruvchi kuch", "senses": [], "ex": "help us ... become conscientious agents of change.", "syn": ["change-maker", "catalyst", "driver of change"], "ant": [], "related": ["conscientious agents of change", "become an agent of change"], "mnem": {"kw": "Agent", "story": "Maxfiy agent (agent) kabi, u jamiyatda o'zgarish tashabbuskori (agent of change) bo'ldi."}}];
+
+const STRUCTURES = [];
+
+/* ============================ STATE ============================ */
+const S = {mode:"vocab", present:"flip", pool:[], size:0, deck:[], i:0, flipped:false, reviewing:false, answered:false};
+const store = (()=>{ try{localStorage.setItem("_t","1");localStorage.removeItem("_t");return localStorage;}catch(e){const m={};return{getItem:k=>m[k]??null,setItem:(k,v)=>m[k]=v,removeItem:k=>{delete m[k]}};}})();
+const KEY="review_C20_r1_v1";
+let STATUS = (()=>{ try{return JSON.parse(store.getItem(KEY))||{};}catch(e){return {};} })();
+function saveStatus(){ store.setItem(KEY, JSON.stringify(STATUS)); }
+
+/* ============================ HELPERS ============================ */
+const $=s=>document.querySelector(s);
+const cardEl=$("#card"), frontEl=$("#front"), backEl=$("#back");
+const frontInner=frontEl.querySelector(".inner"), backInner=backEl.querySelector(".inner");
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function speak(t){try{if(!("speechSynthesis"in window))return;speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang="en-US";u.rate=.92;speechSynthesis.speak(u);}catch(e){}}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+function acc(label,html){return `<details class="acc"><summary>${label}<span class="plus">+</span></summary><div class="body">${html}</div></details>`;}
+function phraseAcc(v){
+  if(!v.form||!v.formUz) return "";
+  const clean=String(v.form).replace(/\s*\([^)]*\)\s*/g," ").trim();
+  if(!clean||clean.toLowerCase()===String(v.w).toLowerCase()) return "";
+  const rx=s=>s.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
+  const words=String(v.w).trim().split(/\s+/);
+  let en=esc(clean), marked=false;
+  const last=words[words.length-1].split("-")[0];
+  const stem=(last.length>4&&/[ey]$/i.test(last))?last.slice(0,-1):last;
+  for(const pat of [words.map(rx).join("\\s+")+"[a-z]*", rx(last)+"[a-z]*", rx(stem)+"[a-z]*"]){
+    const re=new RegExp("\\b"+pat+"\\b","i");
+    if(re.test(en)){ en=en.replace(re,m=>"<b>"+m+"</b>"); marked=true; break; }
+  }
+  const body=`<div class="phr"><div class="en">${en}</div>`+
+    `<div class="uz"><span class="lab">butun ibora</span>${esc(v.formUz)}</div>`+
+    (marked?`<div class="note">bold = the word on this card</div>`:"")+`</div>`;
+  return `<details class="acc phrase"><summary>Whole phrase<span class="whole">${esc(clean)}</span><span class="plus">+</span></summary><div class="body">${body}</div></details>`;
+}
+function tags(a){return a&&a.length?a.map(x=>`<span class="tag">${esc(x)}</span>`).join(""):`<em>—</em>`;}
+function highlightEx(ex,marks){let h=esc(ex);(marks||[]).forEach(m=>{const em=esc(m);h=h.split(em).join('<span class="mark">'+em+'</span>');});return h;}
+function speakBtn(w){return `<button class="speak" onclick="event.stopPropagation();speak('${w.replace(/'/g,"\\'")}')" aria-label="pronounce">▶</button>`;}
+function sayBtn(w){return `<button class="saybtn" onclick="event.stopPropagation();speak('${w.replace(/'/g,"\\'")}')" aria-label="pronounce">▶ Say</button>`;}
+function maskEx(v){
+  if(!v.ex) return "";
+  const GAP='<span class="exgap">\u2014\u2014\u2014</span>';
+  const rx=s=>s.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
+  const words=String(v.w).trim().split(/\s+/);
+  let h=esc(v.ex);
+  // multi-word entry: blank the whole phrase, allowing inflection on the last word
+  if(words.length>1){
+    const pat="\\b"+words.map(rx).join("\\s+")+"[a-z]*\\b";
+    const re=new RegExp(pat,"ig");
+    if(re.test(h)) return h.replace(new RegExp(pat,"ig"),GAP);
+  }
+  // single word (or phrase not found verbatim): blank the head word + its inflections
+  const base=words[words.length>1?words.length-1:0].split("-")[0];
+  let re=new RegExp("\\b"+rx(base)+"[a-z]*\\b","ig");
+  if(!re.test(h)&&base.length>4&&/[ey]$/i.test(base)){
+    // stem match, so dangle/dangling, enquiry/enquiries, cavity/cavities all blank out
+    re=new RegExp("\\b"+rx(base.slice(0,-1))+"[a-z]*\\b","ig");
+  }
+  re.lastIndex=0;
+  return h.replace(re,GAP);
+}
+function speakCurrent(){const it=S.deck[S.i];if(!it)return;speak(S.mode==="struct"?it.name:it.w);}
+const flipBtn = `<button class="flipbtn" onclick="event.stopPropagation();flipToFront()">↩&nbsp;Flip</button>`;
+
+/* ============================ CARD SIZING ============================ */
+function fitCard(){
+  requestAnimationFrame(()=>{
+    const face=S.flipped?backEl:frontEl;
+    const inner=face.querySelector(".inner");
+    if(!inner)return;
+    const contentH=Math.ceil(inner.getBoundingClientRect().height);
+    const cardTop=cardEl.getBoundingClientRect().top;
+    const reserve=150; // space for buttons + hint below the card
+    const avail=Math.max(240, window.innerHeight-cardTop-reserve);
+    const minH=S.flipped?240:300;
+    const target=Math.max(contentH,minH);
+    if(target<=avail){ cardEl.style.height=target+"px"; face.style.overflowY="hidden"; }
+    else { cardEl.style.height=avail+"px"; face.style.overflowY="auto"; }
+    (S.flipped?frontEl:backEl).style.overflowY="hidden";
+  });
+}
+window.addEventListener("resize",()=>{ if(!$("#study").classList.contains("hidden")) fitCard(); });
+
+/* ============================ HOME ============================ */
+function refreshHome(){
+  $("#vocabCount").textContent=VOCAB.length+" words";
+  $("#structCount").textContent=STRUCTURES.length+" patterns";
+  const v=Object.values(STATUS);
+  const learnt=v.filter(x=>x==="learnt").length, learning=v.filter(x=>x==="learning").length;
+  $("#hLearnt").textContent=learnt; $("#hLearning").textContent=learning;
+  $("#hNew").textContent=VOCAB.length-learnt-learning;
+}
+function show(id){["home","study","summary"].forEach(x=>$("#"+x).classList.toggle("hidden",x!==id));window.scrollTo(0,0);}
+document.querySelectorAll("[data-open]").forEach(b=>b.addEventListener("click",()=>{S.mode=b.dataset.open;startDeck(S.mode==="vocab"?VOCAB:STRUCTURES,false);}));
+$("#resetBtn").addEventListener("click",()=>{if(confirm("Reset all progress?")){STATUS={};saveStatus();refreshHome();}});
+
+/* ============================ STUDY ============================ */
+function startDeck(pool,reviewing){
+  S.pool=pool; S.flipped=false; S.reviewing=reviewing;
+  const isStruct=(S.mode==="struct");
+  $("#modeSwitch").style.visibility=isStruct?"hidden":"visible";
+  if(isStruct)S.present="flip";
+  document.querySelectorAll("#modeSwitch button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.m===S.present));
+  sizeSlider.min=1; sizeSlider.max=pool.length; sizeSlider.value=pool.length; S.size=pool.length;
+  updateSizeLabel(); buildDeck();
+  show("study"); render();
+}
+document.querySelectorAll("#modeSwitch button").forEach(b=>b.addEventListener("click",()=>{
+  S.present=b.dataset.m;
+  document.querySelectorAll("#modeSwitch button").forEach(x=>x.setAttribute("aria-pressed",x===b));
+  render();
+}));
+$("#studyBack").addEventListener("click",()=>{show("home");refreshHome();});
+const sizeSlider=$("#sizeSlider"), sizeLabel=$("#sizeLabel");
+function studyNoun(){return S.mode==="struct"?"Patterns":"Words";}
+function updateSizeLabel(){const n=+sizeSlider.value,total=S.pool.length;sizeLabel.textContent=`${studyNoun()}: ${n} / ${total} · ${Math.round(n/total*100)}%`;}
+function buildDeck(){S.deck=shuffle(S.pool).slice(0,S.size);S.i=0;}
+sizeSlider.addEventListener("input",updateSizeLabel);
+sizeSlider.addEventListener("change",()=>{S.size=+sizeSlider.value;buildDeck();render();});
+
+cardEl.addEventListener("click",()=>{
+  if(S.flipped) return;
+  if(S.mode==="vocab" && S.present==="cloze") return;
+  flipToBack();
+});
+window.flipToBack=function(){
+  S.flipped=true;
+  cardEl.classList.add("flipped");
+  $("#tapHint").classList.add("hidden");
+  $("#rate").classList.toggle("hidden", S.mode!=="vocab");
+  $("#nextwrap").classList.toggle("hidden", S.mode!=="struct");
+  fitCard();
+};
+window.flipToFront=function(){
+  S.flipped=false;
+  cardEl.classList.remove("flipped");
+  $("#rate").classList.add("hidden");
+  $("#nextwrap").classList.add("hidden");
+  $("#tapHint").classList.remove("hidden");
+  fitCard();
+};
+
+function render(){
+  const total=S.deck.length;
+  $("#bar").style.width=(S.i/total*100)+"%";
+  $("#counter").textContent=`${S.i+1} / ${total}`;
+  S.answered=false;
+  const item=S.deck[S.i];
+  if(S.mode==="struct") renderStructure(item); else renderVocab(item);
+  // reset to front
+  S.flipped=false; cardEl.classList.remove("flipped");
+  $("#rate").classList.add("hidden"); $("#nextwrap").classList.add("hidden"); $("#tapHint").classList.remove("hidden");
+  backEl.querySelectorAll("details").forEach(d=>d.addEventListener("toggle",fitCard));
+  fitCard();
+}
+
+function renderVocab(v){
+  let front="";
+  if(S.present==="flip"){
+    front=`<div class="pos">${v.pos}</div><div class="word">${esc(v.w)}</div>${v.form&&v.form!==v.w?`<button class="hintbtn" onclick="event.stopPropagation();this.classList.add('hidden');this.nextElementSibling.classList.remove('hidden');fitCard()">Show hint</button><div class="form-front hidden">${esc(v.form)}</div>`:""}${v.ex?`<button class=\"hintbtn\" onclick=\"event.stopPropagation();this.classList.add('hidden');this.nextElementSibling.classList.remove('hidden');fitCard()\">Show example</button><div class=\"ex-front hidden\">${maskEx(v)}</div>`:""}${v.ipa?`<div class="ipa">${esc(v.ipa)}</div>`:""}${speakBtn(v.w)}<div class="hint">tap to reveal the meaning</div>`;
+  } else if(S.present==="recall"){
+    front=`<div class="pos">definition → word (${v.pos})</div><div class="prompt">${esc(v.def)}</div><div class="hint">recall the English word, then tap</div>`;
+  } else {
+    front=`<div class="pos">choose the missing word</div><div class="cloze">${clozeSentence(v)}</div><div class="opts">${optionButtons(v)}</div>`;
+  }
+  frontInner.innerHTML=front;
+  backInner.innerHTML=`
+    <div class="headline"><span class="w">${esc(v.w)}</span><span class="p">${v.pos}</span>${sayBtn(v.w)}${flipBtn}</div>
+    <div class="meaning">${esc(v.def)}</div>
+    ${v.uz?`<p class="uztrans"><span class="lab">o'zbekcha</span>${esc(v.uz)}</p>`:""}
+    ${v.senses&&v.senses.length?`<p class="senses"><span class="lab">also means</span>${v.senses.map(esc).join("; ")}</p>`:""}
+    ${v.related&&v.related.length?`<p class="related"><span class="lab">related expressions</span>${tags(v.related)}</p>`:""}
+    <p class="forms">${esc(v.forms)}</p>
+    ${v.mnem?acc("Yodlash uchun \u2014 keyword",`<div class="mnem"><span class="kw">Keyword: <b>${esc(v.mnem.kw)}</b></span>${v.uz?`<span class="tr">Tarjima: <b>${esc(v.uz)}</b></span>`:""}<p class="story">${esc(v.mnem.story)}</p></div>`):""}
+    ${acc("Example — from the passage",`<em>${esc(v.ex)}</em>`)}
+    ${acc("Synonyms — in this context",tags(v.syn))}
+    ${acc("Antonyms",tags(v.ant))}
+    ${phraseAcc(v)}
+  `;
+}
+
+function clozeSentence(v){
+  const base=v.w.split(/[ -]/)[0];
+  const re=new RegExp("\\b"+base.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+"[a-z]*\\b","i");
+  if(re.test(v.ex)) return esc(v.ex).replace(re,'<span class="gap"></span>');
+  return esc(v.ex)+' <span class="gap"></span>';
+}
+function optionButtons(v){
+  const same=VOCAB.filter(x=>x.pos===v.pos && x.w!==v.w);
+  let pool=shuffle(same).slice(0,3);
+  if(pool.length<3){const rest=shuffle(VOCAB.filter(x=>x.w!==v.w && !pool.includes(x)));pool=pool.concat(rest.slice(0,3-pool.length));}
+  const opts=shuffle(pool.map(x=>x.w).concat(v.w));
+  return opts.map(w=>`<button class="opt" data-word="${esc(w)}" onclick="event.stopPropagation();selectOption(this)">${esc(w)}</button>`).join("");
+}
+window.selectOption=function(btn){
+  if(S.answered)return; S.answered=true;
+  const v=S.deck[S.i], chosen=btn.dataset.word;
+  document.querySelectorAll(".opt").forEach(b=>{
+    b.disabled=true;
+    if(b.dataset.word===v.w)b.classList.add("correct");
+    else if(b===btn)b.classList.add("wrong");
+  });
+  const gap=document.querySelector(".gap");
+  if(gap){gap.textContent=v.w;gap.classList.add(chosen===v.w?"g-ok":"g-bad");}
+  setTimeout(flipToBack,850);
+};
+
+function renderStructure(st){
+  frontInner.innerHTML=`<div class="pos">Structure</div><div class="word" style="font-size:26px;line-height:1.2">${esc(st.name)}</div><div class="hint">tap to open</div>`;
+  backInner.innerHTML=`
+    <div class="headline"><span class="w">${esc(st.name)}</span>${flipBtn}</div>
+    <div class="pattern">${esc(st.pattern)}</div>
+    <div class="meaning" style="font-size:16px">When to use it</div>
+    <p style="margin:6px 0 8px;font-size:14.5px;line-height:1.6">${esc(st.use)}</p>
+    ${acc("Example — from the passage",`<em>${highlightEx(st.ex,st.mark)}</em>`)}
+    ${acc("Another example",esc(st.extra))}
+  `;
+}
+
+/* rating / next */
+function rate(status){STATUS[S.deck[S.i].w]=status;saveStatus();next();}
+$("#btnLearning").addEventListener("click",()=>rate("learning"));
+$("#btnLearnt").addEventListener("click",()=>rate("learnt"));
+$("#btnNext").addEventListener("click",next);
+function next(){ if(S.i<S.deck.length-1){S.i++;render();} else finishDeck(); }
+
+/* summary */
+function finishDeck(){
+  if(S.mode==="struct"){show("home");refreshHome();return;}
+  const trained=S.deck;
+  const learningWords=trained.filter(v=>STATUS[v.w]==="learning");
+  const learntCount=trained.filter(v=>STATUS[v.w]==="learnt").length;
+  const pct=trained.length?Math.round(learntCount/trained.length*100):0;
+  $("#sumEyebrow").textContent=S.reviewing?"Review complete":"Deck complete";
+  $("#sumBig").textContent=pct+"%";
+  $("#sumSub").textContent=`You knew ${learntCount} of ${trained.length} words this round.`;
+  $("#sumLearnt").textContent=learntCount;
+  $("#sumLearning").textContent=learningWords.length;
+  const rb=$("#reviewBlock"), rbtn=$("#reviewBtn");
+  if(learningWords.length){
+    rb.classList.remove("hidden"); rbtn.classList.remove("hidden");
+    $("#sumWords").innerHTML=learningWords.map(v=>`<span class="tag">${esc(v.w)}</span>`).join("");
+    rbtn.textContent=`Review learning words (${learningWords.length})`;
+    rbtn.onclick=()=>{S.mode="vocab";startDeck(learningWords,true);};
+  } else {
+    rb.innerHTML='<p style="margin-top:20px">All words learnt. Great work.</p>';
+    rbtn.classList.add("hidden");
+  }
+  show("summary");
+}
+$("#restartBtn").addEventListener("click",()=>{S.mode="vocab";startDeck(VOCAB,false);});
+$("#homeBtn").addEventListener("click",()=>{show("home");refreshHome();});
+
+/* keyboard */
+document.addEventListener("keydown",e=>{
+  if($("#study").classList.contains("hidden"))return;
+  if(e.target&&e.target.tagName==="INPUT")return;
+  if(e.code==="Space"){e.preventDefault(); S.flipped?flipToFront():flipToBack();}
+  else if(e.key==="ArrowRight"){e.preventDefault();next();}
+  else if(e.key==="3"){e.preventDefault();speakCurrent();}
+  else if(S.flipped&&S.mode==="vocab"&&e.key==="1"){rate("learning");}
+  else if(S.flipped&&S.mode==="vocab"&&e.key==="2"){rate("learnt");}
+});
+
+refreshHome();
+</script>
+</body>
+</html>

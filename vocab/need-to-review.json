@@ -2216,5 +2216,1866 @@
       },
       "formUz": "uning tuzilmaviy xilma-xilligini oshiradi"
     }
+  ],
+  "C20-r1": [
+    {
+      "w": "reference",
+      "form": "reference to",
+      "pos": "noun",
+      "ipa": "/ˈrefrəns/",
+      "forms": "refer · reference · references",
+      "def": "a mention of something.",
+      "uz": "havola; eslatib o'tish; ishora",
+      "senses": [],
+      "ex": "reference to the research problems that arise from there being only a few surviving large elms.",
+      "syn": [
+        "mention",
+        "allusion"
+      ],
+      "ant": [],
+      "related": [
+        "make reference to",
+        "reference to",
+        "cross-reference"
+      ],
+      "mnem": {
+        "kw": "Referat (report)",
+        "story": "Referatimda men uning tadqiqotiga havola (reference) berib o'tdim."
+      },
+      "formUz": "…ga havola; …ni eslatib o'tish"
+    },
+    {
+      "w": "reintroduce",
+      "form": "reintroduced · reintroducing",
+      "pos": "verb",
+      "ipa": "/ˌriːɪntrəˈdjuːs/",
+      "forms": "reintroduce · reintroduced · reintroduction",
+      "def": "to bring something back to a place where it used to exist.",
+      "uz": "qayta kiritmoq; qaytadan olib kirmoq",
+      "senses": [],
+      "ex": "there's now hope the elm may be reintroduced to the countryside of central and southern England.",
+      "syn": [
+        "bring back",
+        "restore"
+      ],
+      "ant": [
+        "remove",
+        "eradicate"
+      ],
+      "related": [
+        "reintroduce a species",
+        "widespread reintroduction"
+      ],
+      "mnem": {
+        "kw": "Re + Introduce (tanishtirmoq)",
+        "story": "O'rmonchilar yo'qolgan qayrag'ochni tabiatga qayta tanishtirib (reintroduce), qaytadan ekishdi."
+      }
+    },
+    {
+      "w": "vulnerable",
+      "form": "vulnerable to",
+      "pos": "adjective",
+      "ipa": "/ˈvʌlnərəbl/",
+      "forms": "vulnerable · vulnerability",
+      "def": "weak and easily harmed or attacked.",
+      "uz": "himoyasiz; zaif; xavf ostida",
+      "senses": [],
+      "ex": "which leaves the unattended eggs and chicks particularly vulnerable to predators.",
+      "syn": [
+        "defenceless",
+        "exposed",
+        "at risk"
+      ],
+      "ant": [
+        "protected",
+        "safe"
+      ],
+      "related": [
+        "vulnerable to predators",
+        "particularly vulnerable"
+      ],
+      "mnem": {
+        "kw": "Volan (rul)",
+        "story": "Rulsiz (volan) mashina himoyasiz — har qanday to'qnashuvga zaif (vulnerable)."
+      },
+      "formUz": "…ga nisbatan himoyasiz; …dan zarar ko'rishi mumkin"
+    },
+    {
+      "w": "prominent",
+      "form": "most prominent",
+      "pos": "adjective",
+      "ipa": "/ˈprɒmɪnənt/",
+      "forms": "prominent · prominence · prominently",
+      "def": "important and easily noticed; standing out.",
+      "uz": "ko'zga tashlanadigan; yirik; taniqli",
+      "senses": [],
+      "ex": "elm ... was in many instances the most prominent tree in the landscape.",
+      "syn": [
+        "conspicuous",
+        "notable",
+        "dominant"
+      ],
+      "ant": [
+        "inconspicuous",
+        "obscure"
+      ],
+      "related": [
+        "prominent tree",
+        "prominent role"
+      ],
+      "mnem": {
+        "kw": "Pro + minora (minaret)",
+        "story": "Minora (minaret) shahardagi eng ko'zga tashlanadigan (prominent) inshoot edi."
+      },
+      "formUz": "eng ko'zga tashlanadigan; eng mashhur"
+    },
+    {
+      "w": "anxious",
+      "form": "anxious",
+      "pos": "adjective",
+      "ipa": "/ˈæŋkʃəs/",
+      "forms": "anxious · anxiously · anxiety",
+      "def": "worried and nervous.",
+      "uz": "xavotirli; tashvishli",
+      "senses": [],
+      "ex": "Some of the most important decisions of our lives occur while we're feeling stressed and anxious.",
+      "syn": [
+        "worried",
+        "nervous",
+        "uneasy"
+      ],
+      "ant": [
+        "calm",
+        "relaxed"
+      ],
+      "related": [
+        "feel anxious",
+        "anxious about"
+      ],
+      "mnem": {
+        "kw": "Anjir (fig)",
+        "story": "Anjir (fig) daraxtiga chiqishdan oldin u shoxi sinib ketmasmikan deb juda xavotirli (anxious) edi."
+      }
+    },
+    {
+      "w": "precautions",
+      "form": "precautions",
+      "pos": "noun",
+      "ipa": "/prɪˈkɔːʃnz/",
+      "forms": "precaution · precautions · precautionary",
+      "def": "actions taken in advance to prevent harm or danger.",
+      "uz": "ehtiyot choralari",
+      "senses": [],
+      "ex": "Stress created by social media posts can lead us to take unnecessary precautions.",
+      "syn": [
+        "safeguards",
+        "safety measures"
+      ],
+      "ant": [],
+      "related": [
+        "take precautions",
+        "unnecessary precautions"
+      ],
+      "mnem": {
+        "kw": "Pri + kassa (cash)",
+        "story": "Kassadagi (cash) pul o'g'irlanmasin deb, biz oldindan ehtiyot choralarini (precautions) ko'rdik."
+      }
+    },
+    {
+      "w": "tendency",
+      "form": "tendency to",
+      "pos": "noun",
+      "ipa": "/ˈtendənsi/",
+      "forms": "tend · tendency · tendencies",
+      "def": "a usual way of behaving; a natural inclination to do something.",
+      "uz": "moyillik; tamoyil",
+      "senses": [],
+      "ex": "Our tendency to be affected by other people's moods can be used in a positive way.",
+      "syn": [
+        "inclination",
+        "propensity",
+        "habit"
+      ],
+      "ant": [],
+      "related": [
+        "a tendency to",
+        "have a tendency"
+      ],
+      "mnem": {
+        "kw": "Tenda (tent)",
+        "story": "Uning har safar dam olishga borganda tent (tenda) tikishga moyilligi (tendency) bor edi."
+      },
+      "formUz": "…ga moyillik; …ga urinish odati"
+    },
+    {
+      "w": "aftermath",
+      "form": "in the aftermath",
+      "pos": "noun",
+      "ipa": "/ˈɑːftəmæθ/",
+      "forms": "aftermath",
+      "def": "the period and effects that follow a bad event.",
+      "uz": "oqibat; ofatdan keyingi davr",
+      "senses": [],
+      "ex": "In the aftermath, the elm, once so dominant in the British landscape, was largely forgotten.",
+      "syn": [
+        "consequences",
+        "wake",
+        "fallout"
+      ],
+      "ant": [],
+      "related": [
+        "in the aftermath of",
+        "the aftermath of the disease"
+      ],
+      "mnem": {
+        "kw": "After + math (matematika)",
+        "story": "Imtihondan keyin (after) yomon matematika (math) bahosining oqibatida (aftermath) u xafa bo'ldi."
+      },
+      "formUz": "voqeadan keyingi davrda; oqibatlar sharoitida"
+    },
+    {
+      "w": "significant",
+      "form": "significant",
+      "pos": "adjective",
+      "ipa": "/sɪɡˈnɪfɪkənt/",
+      "forms": "significant · significance · significantly",
+      "def": "large or important enough to have an effect or to matter.",
+      "uz": "muhim; sezilarli; salmoqli",
+      "senses": [],
+      "ex": "They were significant, large trees … then they were gone.",
+      "syn": [
+        "important",
+        "considerable",
+        "notable"
+      ],
+      "ant": [
+        "insignificant",
+        "minor"
+      ],
+      "related": [
+        "significant impact",
+        "significant difference"
+      ],
+      "mnem": {
+        "kw": "Signal + kant",
+        "story": "Signal (signal) shu qadar muhim (significant) ediki, uni sezmay o'tib bo'lmasdi."
+      }
+    },
+    {
+      "w": "fungus",
+      "form": "fungus",
+      "pos": "noun",
+      "ipa": "/ˈfʌŋɡəs/",
+      "forms": "fungus · fungi · fungal",
+      "def": "an organism like mould or a mushroom, some of which cause disease.",
+      "uz": "zamburug'",
+      "senses": [],
+      "ex": "The disease is caused by a fungus that blocks the elms' vascular system.",
+      "syn": [
+        "mould",
+        "mildew"
+      ],
+      "ant": [],
+      "related": [
+        "a deadly fungus",
+        "fungal disease"
+      ],
+      "mnem": {
+        "kw": "Qo'ziqorin (mushroom)",
+        "story": "Nam devorda o'sgan qo'ziqorinsimon zamburug' (fungus) daraxtni ichidan bo'g'ib qo'ydi."
+      }
+    },
+    {
+      "w": "vascular",
+      "form": "vascular system",
+      "pos": "adjective",
+      "ipa": "/ˈvæskjələ/",
+      "forms": "vascular",
+      "def": "relating to the tubes that carry water and food in a plant (or blood in animals).",
+      "uz": "o'tkazuvchi tomirlarga oid; vaskulyar",
+      "senses": [],
+      "ex": "a fungus that blocks the elms' vascular (water, nutrient and food transport) system, causing branches to wilt and die.",
+      "syn": [
+        "conducting",
+        "tubular"
+      ],
+      "ant": [],
+      "related": [
+        "vascular system",
+        "vascular tissue"
+      ],
+      "mnem": {
+        "kw": "Vaza + kular",
+        "story": "Vazadagi (vaza) suv poyaning naysimon tomir (vascular) tizimi orqali yuqoriga ko'tarildi."
+      },
+      "formUz": "o'tkazuvchi tomirlar tizimi (o'simlikda suv va oziq yo'llari)"
+    },
+    {
+      "w": "wilt",
+      "form": "wilt and die",
+      "pos": "verb",
+      "ipa": "/wɪlt/",
+      "forms": "wilt · wilted · wilting",
+      "def": "(of a plant) to droop and become weak, usually from lack of water.",
+      "uz": "so'lmoq; quramoq",
+      "senses": [],
+      "ex": "a fungus that blocks the elms' vascular system, causing branches to wilt and die.",
+      "syn": [
+        "droop",
+        "sag",
+        "shrivel"
+      ],
+      "ant": [
+        "flourish",
+        "thrive"
+      ],
+      "related": [
+        "branches wilt",
+        "the flowers wilted"
+      ],
+      "mnem": {
+        "kw": "Volt (voltage)",
+        "story": "Volt (volt) urgan gulday, barglar birdan so'lib (wilt) osilib qoldi."
+      },
+      "formUz": "so'lib, qurib qolmoq"
+    },
+    {
+      "w": "die down",
+      "form": "gradually died down",
+      "pos": "phrase",
+      "ipa": "/daɪ daʊn/",
+      "forms": "die down · died down",
+      "def": "to slowly become less strong and then stop.",
+      "uz": "asta-sekin susaymoq; tinchimoq",
+      "senses": [],
+      "ex": "A first epidemic, which occurred in the 1920s, gradually died down.",
+      "syn": [
+        "subside",
+        "fade",
+        "ease off"
+      ],
+      "ant": [
+        "intensify",
+        "flare up"
+      ],
+      "related": [
+        "gradually died down",
+        "the noise died down"
+      ],
+      "mnem": {
+        "kw": "Day (kun) + down",
+        "story": "Kunduzgi (day) shovqin kechga borib asta-sekin pasaydi (died down)."
+      },
+      "formUz": "asta-sekin susayib, to'xtadi"
+    },
+    {
+      "w": "destined",
+      "form": "logs destined for",
+      "pos": "adjective",
+      "ipa": "/ˈdestɪnd/",
+      "forms": "destine · destined · destination",
+      "def": "intended for, or heading towards, a particular purpose or place.",
+      "uz": "mo'ljallangan; nasib etgan",
+      "senses": [],
+      "ex": "The wood came in the form of logs destined for boat building.",
+      "syn": [
+        "intended",
+        "bound for",
+        "meant for"
+      ],
+      "ant": [],
+      "related": [
+        "destined for",
+        "logs destined for boat building"
+      ],
+      "mnem": {
+        "kw": "Destinatsiya (destination)",
+        "story": "Kemasozlikka mo'ljallangan (destined) yog'ochlar o'z manziliga (destination) suzib ketdi."
+      },
+      "formUz": "…ga mo'ljallangan yog'ochlar"
+    },
+    {
+      "w": "intact",
+      "form": "intact bark",
+      "pos": "adjective",
+      "ipa": "/ɪnˈtækt/",
+      "forms": "intact",
+      "def": "complete and not damaged.",
+      "uz": "shikastlanmagan; butun",
+      "senses": [],
+      "ex": "its intact bark was perfect for the elm bark beetles that spread the deadly fungus.",
+      "syn": [
+        "undamaged",
+        "whole",
+        "unbroken"
+      ],
+      "ant": [
+        "damaged",
+        "broken"
+      ],
+      "related": [
+        "intact bark",
+        "remain intact"
+      ],
+      "mnem": {
+        "kw": "In + takt (takt)",
+        "story": "Musiqa taktlari (takt) buzilmasdan, butun (intact) holda oxirigacha yangradi."
+      },
+      "formUz": "shikastlanmagan po'stloq"
+    },
+    {
+      "w": "virulent",
+      "form": "virulent strain",
+      "pos": "adjective",
+      "ipa": "/ˈvɪrələnt/",
+      "forms": "virulent · virulence",
+      "def": "(of a disease) extremely harmful and fast-spreading.",
+      "uz": "o'ta xavfli; kuchli (kasallik)",
+      "senses": [],
+      "ex": "the beetles carried a much more virulent strain that destroyed the vast majority of British elms.",
+      "syn": [
+        "deadly",
+        "aggressive",
+        "potent"
+      ],
+      "ant": [
+        "mild",
+        "harmless"
+      ],
+      "related": [
+        "virulent strain",
+        "virulent disease"
+      ],
+      "mnem": {
+        "kw": "Virus + lenta",
+        "story": "Virusli (virus) lenta shu qadar o'ta xavfli (virulent) ediki, butun bog'ni yo'q qildi."
+      },
+      "formUz": "o'ta xavfli (kuchli) shtamm"
+    },
+    {
+      "w": "strain",
+      "form": "virulent strain · hybrid strains",
+      "pos": "noun",
+      "ipa": "/streɪn/",
+      "forms": "strain · strains",
+      "def": "a particular type or variety of a disease, plant or animal.",
+      "uz": "nav; tur; shtamm",
+      "senses": [
+        "kuchlanish, tarang holat; mushakni cho'zib shikastlamoq"
+      ],
+      "ex": "a much more virulent strain that destroyed the vast majority of British elms.",
+      "syn": [
+        "variety",
+        "type",
+        "breed"
+      ],
+      "ant": [],
+      "related": [
+        "virulent strain",
+        "hybrid strains",
+        "resistant strains"
+      ],
+      "mnem": {
+        "kw": "Strike + rain",
+        "story": "Yomg'irda (rain) paydo bo'lgan kasallikning yangi navi (strain) hosilga zarba (strike) berdi."
+      }
+    },
+    {
+      "w": "hedgerow",
+      "form": "low hedgerows",
+      "pos": "noun",
+      "ipa": "/ˈhedʒrəʊ/",
+      "forms": "hedge · hedgerow · hedgerows",
+      "def": "a line of bushes or small trees along the edge of a field.",
+      "uz": "chetan (dala chetidagi butalar qatori)",
+      "senses": [],
+      "ex": "elms still exist in the southern English countryside but mostly only in low hedgerows between fields.",
+      "syn": [
+        "hedge",
+        "row of bushes"
+      ],
+      "ant": [],
+      "related": [
+        "low hedgerows",
+        "hedgerows between fields"
+      ],
+      "mnem": {
+        "kw": "Hedge + row (qator)",
+        "story": "Dala chetidagi butalar qatori (hedgerow) xuddi yashil devor kabi tizilib turardi."
+      },
+      "formUz": "past chetan butazorlar (dala chegarasidagi)"
+    },
+    {
+      "w": "county",
+      "form": "counties such as",
+      "pos": "noun",
+      "ipa": "/ˈkaʊnti/",
+      "forms": "county · counties",
+      "def": "a region or administrative area of a country, like a province.",
+      "uz": "graflik; viloyat (Britaniyada)",
+      "senses": [],
+      "ex": "mature specimens have been identified, in counties such as Cambridgeshire, that are hundreds of years old.",
+      "syn": [
+        "region",
+        "district",
+        "shire"
+      ],
+      "ant": [],
+      "related": [
+        "counties such as",
+        "rural county"
+      ],
+      "mnem": {
+        "kw": "Count (sanamoq)",
+        "story": "Har bir viloyatdagi (county) daraxtni birma-bir sanab (count) chiqdik."
+      },
+      "formUz": "…kabi graflik(lar)"
+    },
+    {
+      "w": "succumb",
+      "form": "succumbed",
+      "pos": "verb",
+      "ipa": "/səˈkʌm/",
+      "forms": "succumb · succumbed · succumbing",
+      "def": "to stop resisting and be defeated, killed or destroyed by something.",
+      "uz": "yengilmoq; taslim bo'lmoq; nobud bo'lmoq",
+      "senses": [],
+      "ex": "work out why they stood tall when millions of others succumbed.",
+      "syn": [
+        "yield",
+        "give in",
+        "fall victim"
+      ],
+      "ant": [
+        "resist",
+        "withstand",
+        "survive"
+      ],
+      "related": [
+        "succumb to disease",
+        "millions succumbed"
+      ],
+      "mnem": {
+        "kw": "Suv + kam",
+        "story": "Suvi kam (suv-kam) qolgan o'simliklar kasallikka bardosh berolmay nobud bo'ldi (succumb)."
+      }
+    },
+    {
+      "w": "avoidance",
+      "form": "avoidance",
+      "pos": "noun",
+      "ipa": "/əˈvɔɪdəns/",
+      "forms": "avoid · avoidance",
+      "def": "the act of keeping away from or preventing something.",
+      "uz": "chetlanish; qochish",
+      "senses": [],
+      "ex": "'What are the reasons for their survival?' asks Russell. 'Avoidance, tolerance, resistance?'",
+      "syn": [
+        "evasion",
+        "prevention"
+      ],
+      "ant": [
+        "confrontation"
+      ],
+      "related": [
+        "tax avoidance",
+        "avoidance of risk"
+      ],
+      "mnem": {
+        "kw": "A + void (bo'shliq)",
+        "story": "Yo'ldagi bo'shliqdan (void) chetlanib (avoidance), chuqurga tushib ketmadik."
+      }
+    },
+    {
+      "w": "tolerance",
+      "form": "tolerant of",
+      "pos": "noun",
+      "ipa": "/ˈtɒlərəns/",
+      "forms": "tolerate · tolerant · tolerance",
+      "def": "the ability to endure something harmful without being damaged.",
+      "uz": "chidamlilik; bardoshlilik",
+      "senses": [
+        "boshqalarga toqat qilish, bag'rikenglik"
+      ],
+      "ex": "Any prospect of the elm returning relies heavily on trees being either resistant to, or tolerant of, the disease.",
+      "syn": [
+        "endurance",
+        "resilience"
+      ],
+      "ant": [
+        "intolerance",
+        "sensitivity"
+      ],
+      "related": [
+        "tolerance of the disease",
+        "tolerant of"
+      ],
+      "mnem": {
+        "kw": "Tol (willow) + rens",
+        "story": "Tol (tol) daraxti sovuqqa chidamliligi (tolerance) bilan mashhur."
+      },
+      "formUz": "…ga chidamli; …ga bardosh bera oladigan"
+    },
+    {
+      "w": "resistance",
+      "form": "resistant to",
+      "pos": "noun",
+      "ipa": "/rɪˈzɪstəns/",
+      "forms": "resist · resistant · resistance",
+      "def": "the ability not to be harmed or affected by something.",
+      "uz": "qarshilik; chidamlilik (kasallikka)",
+      "senses": [],
+      "ex": "trees being either resistant to, or tolerant of, the disease.",
+      "syn": [
+        "immunity",
+        "imperviousness"
+      ],
+      "ant": [
+        "susceptibility",
+        "vulnerability"
+      ],
+      "related": [
+        "resistant to disease",
+        "develop resistance"
+      ],
+      "mnem": {
+        "kw": "Rezistor (resistor)",
+        "story": "Elektr rezistori (resistor) tokka qarshilik qilganidek, bu daraxt kasallikka qarshilik (resistance) qildi."
+      },
+      "formUz": "…ga qarshi turadigan; …ga chidamli"
+    },
+    {
+      "w": "down to luck",
+      "form": "entirely down to luck",
+      "pos": "phrase",
+      "ipa": "/daʊn tə lʌk/",
+      "forms": "down to (something)",
+      "def": "caused only by good fortune, not by skill or reason.",
+      "uz": "faqat omadga bog'liq",
+      "senses": [],
+      "ex": "I don't see how it can be entirely down to luck.",
+      "syn": [
+        "a matter of luck",
+        "by chance"
+      ],
+      "ant": [],
+      "related": [
+        "entirely down to luck",
+        "it's down to you"
+      ],
+      "mnem": {
+        "kw": "Down + luck (omad)",
+        "story": "Bu g'alaba faqat omadga (luck) bog'liq emas, dedi murabbiy."
+      },
+      "formUz": "butunlay omadga bog'liq"
+    },
+    {
+      "w": "birch",
+      "form": "birch woodlands",
+      "pos": "noun",
+      "ipa": "/bɜːtʃ/",
+      "forms": "birch · birches",
+      "def": "a tree with smooth, often white bark and thin branches.",
+      "uz": "qayin",
+      "senses": [],
+      "ex": "it became a key component of birch, ash and hazel woodlands.",
+      "syn": [
+        "silver birch"
+      ],
+      "ant": [],
+      "related": [
+        "birch woodland",
+        "silver birch"
+      ],
+      "mnem": {
+        "kw": "Bir (one) + ch",
+        "story": "Bitta (bir) oq po'stli qayin (birch) o'rmon chetida yolg'iz turardi."
+      },
+      "formUz": "qayin o'rmonzorlari"
+    },
+    {
+      "w": "ash",
+      "form": "ash woodlands",
+      "pos": "noun",
+      "ipa": "/æʃ/",
+      "forms": "ash · ashes",
+      "def": "a tall tree with grey bark and hard pale wood.",
+      "uz": "shumtol (daraxt)",
+      "senses": [
+        "kul — yong'indan qolgan kukun"
+      ],
+      "ex": "it became a key component of birch, ash and hazel woodlands.",
+      "syn": [
+        "ash tree"
+      ],
+      "ant": [],
+      "related": [
+        "ash woodland",
+        "birch, ash and hazel"
+      ],
+      "mnem": {
+        "kw": "Osh (pilaf)",
+        "story": "Osh (osh) pishirilgan gulxandan qolgan kul (ash) tagida shumtol (ash) urug'i unib chiqdi."
+      },
+      "formUz": "shumtol o'rmonzorlari"
+    },
+    {
+      "w": "hazel",
+      "form": "hazel woodlands",
+      "pos": "noun",
+      "ipa": "/ˈheɪzl/",
+      "forms": "hazel · hazels",
+      "def": "a small tree that produces hazelnuts.",
+      "uz": "findiq daraxti",
+      "senses": [],
+      "ex": "it became a key component of birch, ash and hazel woodlands.",
+      "syn": [
+        "hazel tree"
+      ],
+      "ant": [],
+      "related": [
+        "hazel woodland",
+        "hazelnut"
+      ],
+      "mnem": {
+        "kw": "Gazel (gazelle)",
+        "story": "Gazel (gazelle) findiq daraxti (hazel) barglarini bir zumda yeb ketdi."
+      },
+      "formUz": "findiq o'rmonzorlari"
+    },
+    {
+      "w": "woodland",
+      "form": "hazel woodlands",
+      "pos": "noun",
+      "ipa": "/ˈwʊdlənd/",
+      "forms": "wood · woodland · woodlands",
+      "def": "land covered with trees; a wood or forest.",
+      "uz": "o'rmonzor",
+      "senses": [],
+      "ex": "it became a key component of birch, ash and hazel woodlands.",
+      "syn": [
+        "forest",
+        "wood"
+      ],
+      "ant": [],
+      "related": [
+        "mixed woodland",
+        "ancient woodland"
+      ],
+      "mnem": {
+        "kw": "Wood (yog'och) + land (yer)",
+        "story": "Yog'ochli (wood) yer (land) — bu, albatta, o'rmonzor (woodland)."
+      },
+      "formUz": "findiq o'rmonzorlari"
+    },
+    {
+      "w": "crate",
+      "form": "storage crates",
+      "pos": "noun",
+      "ipa": "/kreɪt/",
+      "forms": "crate · crates",
+      "def": "a large wooden or plastic box used for transport or storage.",
+      "uz": "yashik; yog'och quti",
+      "senses": [],
+      "ex": "its wood was used for items such as storage crates and flooring.",
+      "syn": [
+        "box",
+        "container",
+        "case"
+      ],
+      "ant": [],
+      "related": [
+        "storage crates",
+        "wooden crate"
+      ],
+      "mnem": {
+        "kw": "Kreyt (quti)",
+        "story": "Do'kondagi mahsulotlar katta yog'och yashiklarga (crate) joylandi."
+      },
+      "formUz": "saqlash yashiklari"
+    },
+    {
+      "w": "prospect",
+      "form": "any prospect of",
+      "pos": "noun",
+      "ipa": "/ˈprɒspekt/",
+      "forms": "prospect · prospective · prospects",
+      "def": "the possibility or likelihood of something happening in the future.",
+      "uz": "istiqbol; imkoniyat; ehtimol",
+      "senses": [
+        "keng manzara; kelajakdagi imkoniyatlar"
+      ],
+      "ex": "Any prospect of the elm returning relies heavily on trees being either resistant to, or tolerant of, the disease.",
+      "syn": [
+        "possibility",
+        "likelihood",
+        "outlook"
+      ],
+      "ant": [],
+      "related": [
+        "the prospect of",
+        "future prospects"
+      ],
+      "mnem": {
+        "kw": "Pro + spektakl",
+        "story": "Kelajakdagi spektakl (spektakl) muvaffaqiyati istiqboli (prospect) hammani ruhlantirdi."
+      },
+      "formUz": "…ning biror istiqboli; …ehtimoli"
+    },
+    {
+      "w": "slit",
+      "form": "a small slit",
+      "pos": "noun",
+      "ipa": "/slɪt/",
+      "forms": "slit · slits",
+      "def": "a long, narrow cut or opening.",
+      "uz": "tirqish; ingichka kesik",
+      "senses": [
+        "fe'l: ingichka qilib kesmoq"
+      ],
+      "ex": "to see if they can withstand the fungus by cutting a small slit on the bark and injecting a tiny amount of the pathogen.",
+      "syn": [
+        "cut",
+        "incision",
+        "slot"
+      ],
+      "ant": [],
+      "related": [
+        "a small slit",
+        "cut a slit"
+      ],
+      "mnem": {
+        "kw": "Split (ajratmoq)",
+        "story": "Po'stloqni bo'lib (split), kichik tirqish (slit) ochib, ichiga dori quyishdi."
+      },
+      "formUz": "kichik tirqish"
+    },
+    {
+      "w": "whereas",
+      "form": "whereas",
+      "pos": "conjunction",
+      "ipa": "/weərˈæz/",
+      "forms": "whereas",
+      "def": "used to contrast two different facts (while / in comparison).",
+      "uz": "holbuki; -sa esa; aksincha",
+      "senses": [],
+      "ex": "trees that are resistant show no symptoms, whereas those that are susceptible show leaf loss and may even have died completely.",
+      "syn": [
+        "while",
+        "in contrast",
+        "but"
+      ],
+      "ant": [],
+      "related": [
+        "A ..., whereas B ...",
+        "whereas in fact"
+      ],
+      "mnem": {
+        "kw": "Where (qayer) + as",
+        "story": "Sen qayerda (where) dam olyapsan, holbuki (whereas) men bu yerda ishlayapman."
+      }
+    },
+    {
+      "w": "susceptible",
+      "form": "susceptible",
+      "pos": "adjective",
+      "ipa": "/səˈseptəbl/",
+      "forms": "susceptible · susceptibility",
+      "def": "easily harmed, influenced or affected by something.",
+      "uz": "moyil; ta'sirga beriluvchan; chidamsiz",
+      "senses": [],
+      "ex": "those that are susceptible show leaf loss and may even have died completely.",
+      "syn": [
+        "vulnerable",
+        "prone",
+        "liable"
+      ],
+      "ant": [
+        "resistant",
+        "immune"
+      ],
+      "related": [
+        "susceptible to disease",
+        "highly susceptible"
+      ],
+      "mnem": {
+        "kw": "Sust + septik",
+        "story": "Sust (sus) immunitetli odam infeksiyaga (septic) tez beriluvchan (susceptible) bo'ladi."
+      }
+    },
+    {
+      "w": "social acceptance",
+      "form": "questions of social acceptance",
+      "pos": "phrase",
+      "ipa": "/ˈsəʊʃl əkˈseptəns/",
+      "forms": "accept · acceptance",
+      "def": "approval of something by society or people in general.",
+      "uz": "jamiyat tomonidan qabul qilinishi",
+      "senses": [],
+      "ex": "All of this raises questions of social acceptance, acknowledges Russell.",
+      "syn": [
+        "public approval",
+        "social approval"
+      ],
+      "ant": [
+        "rejection"
+      ],
+      "related": [
+        "raises questions of social acceptance",
+        "gain social acceptance"
+      ],
+      "mnem": {
+        "kw": "Social + Accept",
+        "story": "Yangi g'oyani jamiyat qabul qilishi (social acceptance) uchun ancha vaqt kerak bo'ldi."
+      },
+      "formUz": "jamiyat tomonidan qabul qilinishi masalalari"
+    },
+    {
+      "w": "acknowledge",
+      "form": "acknowledges",
+      "pos": "verb",
+      "ipa": "/əkˈnɒlɪdʒ/",
+      "forms": "acknowledge · acknowledged · acknowledgement",
+      "def": "to accept or admit that something is true.",
+      "uz": "tan olmoq; e'tirof etmoq",
+      "senses": [],
+      "ex": "All of this raises questions of social acceptance, acknowledges Russell.",
+      "syn": [
+        "admit",
+        "accept",
+        "recognise"
+      ],
+      "ant": [
+        "deny"
+      ],
+      "related": [
+        "acknowledge a problem",
+        "widely acknowledged"
+      ],
+      "mnem": {
+        "kw": "Ek + knowledge (bilim)",
+        "story": "Bilimini (knowledge) oshirgach, u nihoyat xatosini tan oldi (acknowledge)."
+      }
+    },
+    {
+      "w": "on the face of it",
+      "form": "on the face of it",
+      "pos": "phrase",
+      "ipa": "/ɒn ðə feɪs əv ɪt/",
+      "forms": "face value",
+      "def": "judging only by how it first appears (though the truth may differ).",
+      "uz": "ilk qarashda; tashqi ko'rinishidan",
+      "senses": [],
+      "ex": "'On the face of it, it seems like a good idea,' says Elliot.",
+      "syn": [
+        "at first glance",
+        "seemingly",
+        "superficially"
+      ],
+      "ant": [],
+      "related": [
+        "on the face of it, ...",
+        "at face value"
+      ],
+      "mnem": {
+        "kw": "Face (yuz)",
+        "story": "Ilk qarashda (on the face of it) uning yuzi (face) samimiy ko'rinardi, aslida esa unday emasdi."
+      }
+    },
+    {
+      "w": "horticultural analogue",
+      "form": "a horticultural analogue",
+      "pos": "phrase",
+      "ipa": "/ˌhɔːtɪˈkʌltʃərəl ˈænəlɒɡ/",
+      "forms": "analogue · analogous",
+      "def": "a cultivated plant that is genetically similar to a wild or existing species.",
+      "uz": "bog'dorchilikdagi o'xshash (nav)",
+      "senses": [
+        "izoh: mavjud turga genetik jihatdan o'xshash madaniy o'simlik"
+      ],
+      "ex": "You're replacing a native species with a horticultural analogue.",
+      "syn": [
+        "cultivated equivalent",
+        "horticultural counterpart"
+      ],
+      "ant": [],
+      "related": [
+        "horticultural analogue",
+        "genetic analogue"
+      ],
+      "mnem": {
+        "kw": "Horti (garden) + analog",
+        "story": "Bog'bon (horticulture) yovvoyi gulning bog' analogini (analogue) ekib qo'ydi."
+      },
+      "formUz": "bog'dorchilikdagi o'xshash misol"
+    },
+    {
+      "w": "wary",
+      "form": "more wary",
+      "pos": "adjective",
+      "ipa": "/ˈweəri/",
+      "forms": "wary · warily · wariness",
+      "def": "careful and cautious because of possible danger or problems.",
+      "uz": "ehtiyotkor; hushyor",
+      "senses": [],
+      "ex": "Others are more wary. 'On the face of it, it seems like a good idea,' says Elliot.",
+      "syn": [
+        "cautious",
+        "careful",
+        "guarded"
+      ],
+      "ant": [
+        "careless",
+        "trusting"
+      ],
+      "related": [
+        "wary of",
+        "more wary"
+      ],
+      "mnem": {
+        "kw": "Worry (xavotir)",
+        "story": "Xavotirdan (worry) u begonalarga nisbatan ehtiyotkor (wary) bo'lib qoldi."
+      },
+      "formUz": "yanada ehtiyotkorroq"
+    },
+    {
+      "w": "clone",
+      "form": "effectively cloning",
+      "pos": "verb",
+      "ipa": "/kləʊn/",
+      "forms": "clone · cloned · cloning",
+      "def": "to make an exact genetic copy of a living thing.",
+      "uz": "klonlash; aynan nusxa ko'chirish",
+      "senses": [],
+      "ex": "'You're replacing a native species with a horticultural analogue. You're effectively cloning.'",
+      "syn": [
+        "copy",
+        "replicate",
+        "duplicate"
+      ],
+      "ant": [],
+      "related": [
+        "effectively cloning",
+        "clone a plant"
+      ],
+      "mnem": {
+        "kw": "Klon",
+        "story": "Olim o'simlikni klonlab (clone), unga aynan o'xshash yuzta nusxa yaratdi."
+      },
+      "formUz": "aslida (amalda) klonlash"
+    },
+    {
+      "w": "weigh up",
+      "form": "weigh up information",
+      "pos": "phrase",
+      "ipa": "/weɪ ʌp/",
+      "forms": "weigh · weigh up · weighed up",
+      "def": "to consider something carefully before making a decision.",
+      "uz": "puxta o'ylab ko'rmoq; taroziga solmoq",
+      "senses": [],
+      "ex": "we are all sometimes required to weigh up information under stressful conditions.",
+      "syn": [
+        "assess",
+        "consider",
+        "evaluate"
+      ],
+      "ant": [],
+      "related": [
+        "weigh up the options",
+        "weigh up information"
+      ],
+      "mnem": {
+        "kw": "Weigh (tarozi) + up",
+        "story": "Qaror qabul qilishdan avval, u barcha ma'lumotni tarozida (weigh) tortib ko'rdi (weigh up)."
+      },
+      "formUz": "ma'lumotni puxta o'ylab ko'rmoq (tarozida o'lchagandek)"
+    },
+    {
+      "w": "quite a bit",
+      "form": "vary quite a bit",
+      "pos": "phrase",
+      "ipa": "/kwaɪt ə bɪt/",
+      "forms": "quite a bit · quite a lot",
+      "def": "a fairly large amount; quite a lot.",
+      "uz": "ancha; anchagina",
+      "senses": [],
+      "ex": "Firefighters' workdays vary quite a bit.",
+      "syn": [
+        "a good deal",
+        "considerably",
+        "a lot"
+      ],
+      "ant": [
+        "hardly at all"
+      ],
+      "related": [
+        "quite a bit of",
+        "vary quite a bit"
+      ],
+      "mnem": {
+        "kw": "Kvit + bit",
+        "story": "U anchagina (quite a bit) ma'lumotni bitta (bit) kichik diskka sig'dirdi."
+      },
+      "formUz": "ancha farq qiladi; anchagina xilma-xil"
+    },
+    {
+      "w": "hectic",
+      "form": "hectic",
+      "pos": "adjective",
+      "ipa": "/ˈhektɪk/",
+      "forms": "hectic · hectically",
+      "def": "very busy and full of fast, sometimes chaotic activity.",
+      "uz": "sershovqin va band; g'ala-g'ovur",
+      "senses": [],
+      "ex": "Other days can be hectic, with numerous life-threatening incidents to attend to.",
+      "syn": [
+        "frantic",
+        "busy",
+        "chaotic"
+      ],
+      "ant": [
+        "calm",
+        "relaxed"
+      ],
+      "related": [
+        "a hectic day",
+        "hectic schedule"
+      ],
+      "mnem": {
+        "kw": "Tik (TikTok)",
+        "story": "TikTok (tik) uchun video suratga olayotgan blogerning kuni juda band va shovqinli (hectic) o'tdi."
+      }
+    },
+    {
+      "w": "perceive",
+      "form": "perceived threat",
+      "pos": "verb",
+      "ipa": "/pəˈsiːv/",
+      "forms": "perceive · perceived · perception",
+      "def": "to notice, see or understand something in a particular way.",
+      "uz": "idrok etmoq; sezmoq; his qilmoq",
+      "senses": [],
+      "ex": "We found that perceived threat acted as a trigger for a stress reaction.",
+      "syn": [
+        "notice",
+        "sense",
+        "interpret"
+      ],
+      "ant": [
+        "ignore",
+        "overlook"
+      ],
+      "related": [
+        "perceived threat",
+        "widely perceived as"
+      ],
+      "mnem": {
+        "kw": "Per + sea (dengiz)",
+        "story": "Dengizda (sea) suzayotib, u uzoqdan xavfni darrov sezib (perceive) qoldi."
+      },
+      "formUz": "idrok etilgan (his qilingan) tahdid"
+    },
+    {
+      "w": "convey",
+      "form": "conveyed bad news",
+      "pos": "verb",
+      "ipa": "/kənˈveɪ/",
+      "forms": "convey · conveyed · conveyor",
+      "def": "to communicate or express information or feelings.",
+      "uz": "yetkazmoq; ifodalamoq",
+      "senses": [],
+      "ex": "made the task of processing information easier for the firefighters – but only as long as it conveyed bad news.",
+      "syn": [
+        "communicate",
+        "express",
+        "transmit"
+      ],
+      "ant": [],
+      "related": [
+        "convey a message",
+        "conveyed bad news"
+      ],
+      "mnem": {
+        "kw": "Konveyer (conveyor)",
+        "story": "Konveyerda (conveyor) yurgan xatlar yomon xabarni yetkazib (convey) turardi."
+      },
+      "formUz": "yomon xabarni yetkazdi"
+    },
+    {
+      "w": "adverse",
+      "form": "adverse events",
+      "pos": "adjective",
+      "ipa": "/ˈædvɜːs/",
+      "forms": "adverse · adversely · adversity",
+      "def": "harmful, unfavourable or negative.",
+      "uz": "salbiy; noqulay; zararli",
+      "senses": [],
+      "ex": "estimate their likelihood of experiencing 40 different adverse events in their life.",
+      "syn": [
+        "unfavourable",
+        "negative",
+        "harmful"
+      ],
+      "ant": [
+        "favourable",
+        "beneficial"
+      ],
+      "related": [
+        "adverse events",
+        "adverse effects"
+      ],
+      "mnem": {
+        "kw": "Ad (reklama) + verse (she'r)",
+        "story": "Reklamadagi (ad) yomon she'r (verse) mahsulotga salbiy (adverse) ta'sir ko'rsatdi."
+      },
+      "formUz": "salbiy hodisalar; noxush voqealar"
+    },
+    {
+      "w": "fraud",
+      "form": "card fraud",
+      "pos": "noun",
+      "ipa": "/frɔːd/",
+      "forms": "fraud · fraudulent · fraudster",
+      "def": "the crime of deceiving people to get money illegally.",
+      "uz": "firibgarlik; aldov",
+      "senses": [],
+      "ex": "such as being involved in an accident or becoming a victim of card fraud.",
+      "syn": [
+        "deception",
+        "scam",
+        "swindle"
+      ],
+      "ant": [
+        "honesty"
+      ],
+      "related": [
+        "card fraud",
+        "commit fraud"
+      ],
+      "mnem": {
+        "kw": "Frod (Freud)",
+        "story": "Soxta Freyd (Freud) nomidan pul yig'ib, u katta firibgarlik (fraud) qildi."
+      },
+      "formUz": "bank kartasi firibgarligi"
+    },
+    {
+      "w": "quite",
+      "form": "quite optimistic",
+      "pos": "adverb",
+      "ipa": "/kwaɪt/",
+      "forms": "quite",
+      "def": "fairly; to a moderate degree (with some words: completely).",
+      "uz": "ancha; birmuncha; tamoman",
+      "senses": [
+        "kuchli sifat bilan: butunlay, mutlaqo (quite right)"
+      ],
+      "ex": "People are normally quite optimistic – they will ignore bad news and embrace the good.",
+      "syn": [
+        "fairly",
+        "rather",
+        "pretty"
+      ],
+      "ant": [],
+      "related": [
+        "quite optimistic",
+        "quite a bit",
+        "not quite"
+      ],
+      "mnem": {
+        "kw": "Kvitansiya (receipt)",
+        "story": "Kvitansiyada (receipt) ancha (quite) katta summa yozilgan edi."
+      },
+      "formUz": "ancha xushbin (optimistik)"
+    },
+    {
+      "w": "quiet",
+      "form": "quiet",
+      "pos": "adjective",
+      "ipa": "/ˈkwaɪət/",
+      "forms": "quiet · quietly · quietness",
+      "def": "the absence of noise; calm and silent.",
+      "uz": "jimlik; jim, tinch, sokin",
+      "senses": [
+        "diqqat: 'quite' bilan adashtirmang — boshqa so'z va boshqa talaffuz. Jimlik = quiet/silence."
+      ],
+      "ex": "After the storm had passed, a deep quiet settled over the forest.",
+      "syn": [
+        "silent",
+        "calm",
+        "still",
+        "silence"
+      ],
+      "ant": [
+        "noisy",
+        "loud"
+      ],
+      "related": [
+        "keep quiet",
+        "peace and quiet",
+        "the quiet of the night"
+      ],
+      "mnem": {
+        "kw": "Kvartira (flat)",
+        "story": "Bo'sh kvartirada (flat) shunday jimlik (quiet) ediki, hatto soat chiqillashi eshitilardi."
+      }
+    },
+    {
+      "w": "emerge",
+      "form": "a pattern emerged",
+      "pos": "verb",
+      "ipa": "/ɪˈmɜːdʒ/",
+      "forms": "emerge · emerged · emergence",
+      "def": "to appear or come into view; to become known.",
+      "uz": "paydo bo'lmoq; yuzaga chiqmoq",
+      "senses": [],
+      "ex": "but when they were under stress, a different pattern emerged.",
+      "syn": [
+        "appear",
+        "arise",
+        "surface"
+      ],
+      "ant": [
+        "disappear",
+        "vanish"
+      ],
+      "related": [
+        "a pattern emerged",
+        "emerge from"
+      ],
+      "mnem": {
+        "kw": "E + merge (birlashtirmoq)",
+        "story": "Ikki daryo birlashib (merge), tumandan yangi orol paydo bo'ldi (emerge)."
+      },
+      "formUz": "bir qonuniyat (naqsh) yuzaga chiqdi"
+    },
+    {
+      "w": "hyper-vigilant",
+      "form": "hyper-vigilant to",
+      "pos": "adjective",
+      "ipa": "/ˌhaɪpə ˈvɪdʒɪlənt/",
+      "forms": "vigilant · vigilance · hyper-vigilant",
+      "def": "extremely watchful and alert for danger.",
+      "uz": "o'ta hushyor; haddan tashqari sergak",
+      "senses": [],
+      "ex": "they became hyper-vigilant to bad news, even when it had nothing to do with their job.",
+      "syn": [
+        "over-alert",
+        "extremely watchful"
+      ],
+      "ant": [
+        "careless",
+        "oblivious"
+      ],
+      "related": [
+        "hyper-vigilant to threats",
+        "stay vigilant"
+      ],
+      "mnem": {
+        "kw": "Hyper + Vigil",
+        "story": "Ko'p kofe (hyper energiya) ichgan qorovul tun bo'yi o'ta hushyor (hyper-vigilant) turdi."
+      },
+      "formUz": "…ga nisbatan o'ta hushyor"
+    },
+    {
+      "w": "alter",
+      "form": "altered their beliefs",
+      "pos": "verb",
+      "ipa": "/ˈɔːltə/",
+      "forms": "alter · altered · alteration",
+      "def": "to change something, usually slightly.",
+      "uz": "o'zgartirmoq",
+      "senses": [],
+      "ex": "they became hyper-vigilant to bad news ... and altered their beliefs in response.",
+      "syn": [
+        "change",
+        "modify",
+        "adjust"
+      ],
+      "ant": [
+        "keep",
+        "preserve"
+      ],
+      "related": [
+        "alter beliefs",
+        "significantly altered"
+      ],
+      "mnem": {
+        "kw": "Altar (mehrob)",
+        "story": "Mehrob (altar) oldida turib, u qarorini butunlay o'zgartirdi (alter)."
+      },
+      "formUz": "e'tiqodlarini (qarashlarini) o'zgartirdi"
+    },
+    {
+      "w": "in contrast",
+      "form": "in contrast",
+      "pos": "phrase",
+      "ipa": "/ɪn ˈkɒntrɑːst/",
+      "forms": "contrast · in contrast",
+      "def": "used to show a clear difference between two things.",
+      "uz": "farqli o'laroq; aksincha",
+      "senses": [],
+      "ex": "In contrast, stress didn't change how they responded to good news.",
+      "syn": [
+        "by contrast",
+        "conversely",
+        "on the other hand"
+      ],
+      "ant": [],
+      "related": [
+        "in contrast to",
+        "in contrast, ..."
+      ],
+      "mnem": {
+        "kw": "Kontrast (contrast)",
+        "story": "Rasmdagi qora-oq kontrasti (contrast) kabi, ularning fikri farqli o'laroq (in contrast) qarama-qarshi edi."
+      }
+    },
+    {
+      "w": "panel",
+      "form": "judged by a panel",
+      "pos": "noun",
+      "ipa": "/ˈpænl/",
+      "forms": "panel · panellist · panels",
+      "def": "a small group of people chosen to judge or discuss something.",
+      "uz": "hay'at; komissiya; hakamlar",
+      "senses": [
+        "yassi taxta yoki qism, masalan quyosh paneli"
+      ],
+      "ex": "a surprise public speech, which would be judged by a panel, recorded and posted online.",
+      "syn": [
+        "committee",
+        "board",
+        "jury"
+      ],
+      "ant": [],
+      "related": [
+        "judged by a panel",
+        "expert panel"
+      ],
+      "mnem": {
+        "kw": "Panel (devor paneli)",
+        "story": "Devor panellari (panel) ortida o'tirgan hakamlar hay'ati (panel) nutqni baholadi."
+      },
+      "formUz": "hay'at tomonidan baholanadi"
+    },
+    {
+      "w": "spike",
+      "form": "levels spiked",
+      "pos": "verb",
+      "ipa": "/spaɪk/",
+      "forms": "spike · spiked · spiking",
+      "def": "to increase sharply and suddenly.",
+      "uz": "keskin ko'tarilmoq; sakramoq",
+      "senses": [
+        "ot: o'tkir uch, mix"
+      ],
+      "ex": "their cortisol levels spiked, their heart rates went up.",
+      "syn": [
+        "surge",
+        "shoot up",
+        "jump"
+      ],
+      "ant": [
+        "drop",
+        "plunge"
+      ],
+      "related": [
+        "levels spiked",
+        "a spike in prices"
+      ],
+      "mnem": {
+        "kw": "Spayk (it ismi)",
+        "story": "It Spike (Spike) to'satdan sakraganida, yuragim ham u bilan keskin ko'tarildi (spike)."
+      },
+      "formUz": "darajalar keskin ko'tarildi"
+    },
+    {
+      "w": "violence",
+      "form": "disease and violence",
+      "pos": "noun",
+      "ipa": "/ˈvaɪələns/",
+      "forms": "violent · violence · violently",
+      "def": "behaviour that uses physical force to hurt or damage.",
+      "uz": "zo'ravonlik",
+      "senses": [],
+      "ex": "processing unrelated, yet alarming, information about rates of disease and violence.",
+      "syn": [
+        "brutality",
+        "force",
+        "aggression"
+      ],
+      "ant": [
+        "peace",
+        "gentleness"
+      ],
+      "related": [
+        "rates of violence",
+        "act of violence"
+      ],
+      "mnem": {
+        "kw": "Viola (violin)",
+        "story": "Skripka (violin) torini shu qadar qattiq tortdiki, bu deyarli zo'ravonlik (violence) edi."
+      },
+      "formUz": "kasallik va zo'ravonlik"
+    },
+    {
+      "w": "hazard",
+      "form": "learn about hazards",
+      "pos": "noun",
+      "ipa": "/ˈhæzəd/",
+      "forms": "hazard · hazardous · hazards",
+      "def": "a possible source of danger or harm.",
+      "uz": "xavf; xatar",
+      "senses": [],
+      "ex": "they would have benefited from an increased ability to learn about hazards.",
+      "syn": [
+        "danger",
+        "risk",
+        "threat"
+      ],
+      "ant": [
+        "safety"
+      ],
+      "related": [
+        "learn about hazards",
+        "health hazard"
+      ],
+      "mnem": {
+        "kw": "Hazor (ming)",
+        "story": "Ming (hazor) xil xavf-xatar (hazard) qadimgi odamni har qadamda kutib turardi."
+      },
+      "formUz": "xavf-xatarlar haqida bilib olmoq"
+    },
+    {
+      "w": "on high alert",
+      "form": "on high alert constantly",
+      "pos": "phrase",
+      "ipa": "/ɒn haɪ əˈlɜːt/",
+      "forms": "alert · on alert",
+      "def": "in a state of being fully ready for possible danger.",
+      "uz": "to'liq hushyorlik holatida; sergaklikda",
+      "senses": [],
+      "ex": "In a safe environment, however, it would have been wasteful to be on high alert constantly.",
+      "syn": [
+        "fully alert",
+        "on guard",
+        "vigilant"
+      ],
+      "ant": [
+        "relaxed",
+        "off guard"
+      ],
+      "related": [
+        "on high alert",
+        "stay on alert"
+      ],
+      "mnem": {
+        "kw": "High (baland) + alert (signal)",
+        "story": "Baland (high) ovozli signal (alert) yangraganda, butun shahar sergak (on high alert) turdi."
+      },
+      "formUz": "doimo to'liq hushyorlik holatida"
+    },
+    {
+      "w": "in fact",
+      "form": "in fact",
+      "pos": "phrase",
+      "ipa": "/ɪn fækt/",
+      "forms": "in fact · as a matter of fact",
+      "def": "used to add true or surprising information, or to emphasise reality.",
+      "uz": "aslida; haqiqatan ham",
+      "senses": [],
+      "ex": "In fact, people with clinical depression and anxiety seem unable to switch away from a state in which they absorb all the negative messages.",
+      "syn": [
+        "actually",
+        "in reality",
+        "indeed"
+      ],
+      "ant": [],
+      "related": [
+        "in fact, ...",
+        "as a matter of fact"
+      ],
+      "mnem": {
+        "kw": "In + fakt (dalil)",
+        "story": "Aslida (in fact), barcha dalillar (fact) uning haq ekanini ko'rsatdi."
+      }
+    },
+    {
+      "w": "clinical depression",
+      "form": "clinical depression and anxiety",
+      "pos": "phrase",
+      "ipa": "/ˈklɪnɪkl dɪˈpreʃn/",
+      "forms": "clinical · depression",
+      "def": "a serious, medically diagnosed form of depression.",
+      "uz": "klinik depressiya (tibbiy tashxis)",
+      "senses": [],
+      "ex": "people with clinical depression and anxiety seem unable to switch away from a state in which they absorb all the negative messages.",
+      "syn": [
+        "major depression",
+        "medical depression"
+      ],
+      "ant": [],
+      "related": [
+        "clinical depression and anxiety",
+        "diagnosed with depression"
+      ],
+      "mnem": {
+        "kw": "Klinika (clinic)",
+        "story": "Klinikada (clinic) unga jiddiy klinik depressiya (clinical depression) tashxisi qo'yildi."
+      },
+      "formUz": "klinik depressiya va xavotir"
+    },
+    {
+      "w": "anxiety",
+      "form": "depression and anxiety",
+      "pos": "noun",
+      "ipa": "/æŋˈzaɪəti/",
+      "forms": "anxious · anxiety · anxieties",
+      "def": "a feeling of strong worry or nervousness.",
+      "uz": "xavotir; bezovtalik; tashvish",
+      "senses": [],
+      "ex": "people with clinical depression and anxiety seem unable to switch away from a state in which they absorb all the negative messages.",
+      "syn": [
+        "worry",
+        "nervousness",
+        "unease"
+      ],
+      "ant": [
+        "calm",
+        "ease"
+      ],
+      "related": [
+        "depression and anxiety",
+        "feelings of anxiety"
+      ],
+      "mnem": {
+        "kw": "Anketa (form)",
+        "story": "Uzundan-uzoq anketa (anketa) to'ldirish undagi xavotirni (anxiety) yanada oshirdi."
+      },
+      "formUz": "depressiya va xavotir"
+    },
+    {
+      "w": "tense up",
+      "form": "tense up",
+      "pos": "phrase",
+      "ipa": "/tens ʌp/",
+      "forms": "tense · tensed up · tensing up",
+      "def": "to become stiff and unable to relax, usually from stress or fear.",
+      "uz": "tarang tortmoq; qotib qolmoq (asabdan)",
+      "senses": [],
+      "ex": "If a co-worker is stressed, we are more likely to tense up and feel stressed ourselves.",
+      "syn": [
+        "stiffen",
+        "tighten up"
+      ],
+      "ant": [
+        "relax",
+        "loosen up"
+      ],
+      "related": [
+        "tense up",
+        "muscles tense up"
+      ],
+      "mnem": {
+        "kw": "Tennis + up",
+        "story": "Tennis (tennis) finalida u shu qadar tarang tortdiki (tense up), raketkani qattiq siqib oldi."
+      }
+    },
+    {
+      "w": "in some ways",
+      "form": "in some ways",
+      "pos": "phrase",
+      "ipa": "/ɪn sʌm weɪz/",
+      "forms": "in some ways · in many ways",
+      "def": "to a certain extent; in some respects but not all.",
+      "uz": "ba'zi jihatdan; qaysidir ma'noda",
+      "senses": [],
+      "ex": "In some ways, many of us now live as if we are in danger.",
+      "syn": [
+        "to some extent",
+        "in certain respects",
+        "partly"
+      ],
+      "ant": [],
+      "related": [
+        "in some ways ...",
+        "in many ways"
+      ],
+      "mnem": {
+        "kw": "Some (biroz) + way (yo'l)",
+        "story": "Ba'zi jihatdan (in some ways), tanlagan yo'lim (way) biroz (some) xavfli edi."
+      }
+    },
+    {
+      "w": "pre-programmed",
+      "form": "a pre-programmed reaction",
+      "pos": "adjective",
+      "ipa": "/ˌpriː ˈprəʊɡræmd/",
+      "forms": "programme · programmed · pre-programmed",
+      "def": "set in advance to behave in a fixed, automatic way; built-in.",
+      "uz": "oldindan dasturlangan; tug'ma o'rnatilgan",
+      "senses": [],
+      "ex": "a pre-programmed physiological reaction, which evolution has equipped us with to help us avoid famished predators, is now being triggered by an online post.",
+      "syn": [
+        "hard-wired",
+        "built-in",
+        "automatic"
+      ],
+      "ant": [
+        "learned",
+        "acquired"
+      ],
+      "related": [
+        "pre-programmed reaction",
+        "hard-wired response"
+      ],
+      "mnem": {
+        "kw": "Pre + programma",
+        "story": "Miyamizga oldindan dastur (programma) yozilgandek, bu tug'ma (pre-programmed) reaksiya o'z-o'zidan ishga tushdi."
+      },
+      "formUz": "oldindan dasturlangan reaksiya"
+    },
+    {
+      "w": "famished",
+      "form": "famished predators",
+      "pos": "adjective",
+      "ipa": "/ˈfæmɪʃt/",
+      "forms": "famish · famished · famine",
+      "def": "extremely hungry; starving.",
+      "uz": "ochlikdan holsizlangan; juda och",
+      "senses": [],
+      "ex": "evolution has equipped us with to help us avoid famished predators.",
+      "syn": [
+        "starving",
+        "ravenous",
+        "very hungry"
+      ],
+      "ant": [
+        "full",
+        "satisfied"
+      ],
+      "related": [
+        "famished predators",
+        "absolutely famished"
+      ],
+      "mnem": {
+        "kw": "Fermer (farmer)",
+        "story": "Ovqatsiz qolgan fermer (farmer) kechga borib juda och (famished) bo'lib qoldi."
+      },
+      "formUz": "ochlikdan holsizlangan yirtqichlar"
+    },
+    {
+      "w": "exaggerate",
+      "form": "exaggerating existing danger",
+      "pos": "verb",
+      "ipa": "/ɪɡˈzædʒəreɪt/",
+      "forms": "exaggerate · exaggerated · exaggeration",
+      "def": "to make something seem larger, worse or more important than it really is.",
+      "uz": "bo'rttirmoq; oshirib yubormoq",
+      "senses": [],
+      "ex": "But that has the effect of exaggerating existing danger.",
+      "syn": [
+        "overstate",
+        "overdo",
+        "blow up"
+      ],
+      "ant": [
+        "understate",
+        "downplay"
+      ],
+      "related": [
+        "exaggerate the danger",
+        "wildly exaggerated"
+      ],
+      "mnem": {
+        "kw": "Ekz + jirafa (giraffe)",
+        "story": "U kichkina mushukni jirafadek (giraffe) ulkan qilib bo'rttirib (exaggerate) gapirdi."
+      },
+      "formUz": "mavjud xavfni bo'rttirib ko'rsatish"
+    },
+    {
+      "w": "hold on",
+      "form": "holding on is best",
+      "pos": "phrase",
+      "ipa": "/həʊld ɒn/",
+      "forms": "hold on · held on · holding on",
+      "def": "to keep something and not sell or give it up; to wait.",
+      "uz": "ushlab turmoq; sotmay saqlamoq; kutib turmoq",
+      "senses": [],
+      "ex": "stocks are sold, even when holding on is the best thing to do.",
+      "syn": [
+        "keep",
+        "retain",
+        "hang on",
+        "wait"
+      ],
+      "ant": [
+        "sell",
+        "let go"
+      ],
+      "related": [
+        "holding on is best",
+        "hold on to shares"
+      ],
+      "mnem": {
+        "kw": "Hold (ushlamoq) + on",
+        "story": "Narx tushsa ham, aksiyalarni sotmay ushlab turish (holding on) eng to'g'ri qaror edi."
+      },
+      "formUz": "ushlab turish (sotmay saqlash) eng ma'quli"
+    },
+    {
+      "w": "conscientious",
+      "form": "conscientious agents",
+      "pos": "adjective",
+      "ipa": "/ˌkɒnʃiˈenʃəs/",
+      "forms": "conscience · conscientious · conscientiously",
+      "def": "careful, responsible and taking your duties seriously.",
+      "uz": "vijdonli; mas'uliyatli; halol",
+      "senses": [],
+      "ex": "help us frame our messages more effectively and become conscientious agents of change.",
+      "syn": [
+        "diligent",
+        "responsible",
+        "dutiful"
+      ],
+      "ant": [
+        "careless",
+        "negligent"
+      ],
+      "related": [
+        "conscientious worker",
+        "conscientious agents of change"
+      ],
+      "mnem": {
+        "kw": "Konchi (miner)",
+        "story": "Vijdonli (conscientious) konchi (miner) har bir vazifasini halol va mas'uliyat bilan bajardi."
+      },
+      "formUz": "vijdonli (mas'uliyatli) agentlar"
+    },
+    {
+      "w": "agent of change",
+      "form": "agents of change",
+      "pos": "phrase",
+      "ipa": "/ˈeɪdʒənt əv tʃeɪndʒ/",
+      "forms": "agent · agents of change",
+      "def": "a person or thing that actively causes or drives change.",
+      "uz": "o'zgarish tashabbuskori; o'zgartiruvchi kuch",
+      "senses": [],
+      "ex": "help us ... become conscientious agents of change.",
+      "syn": [
+        "change-maker",
+        "catalyst",
+        "driver of change"
+      ],
+      "ant": [],
+      "related": [
+        "conscientious agents of change",
+        "become an agent of change"
+      ],
+      "mnem": {
+        "kw": "Agent",
+        "story": "Maxfiy agent (agent) kabi, u jamiyatda o'zgarish tashabbuskori (agent of change) bo'ldi."
+      }
+    }
   ]
 }
