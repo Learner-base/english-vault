@@ -285,7 +285,10 @@ def build_pool(known, learning, curated, requested=(), req_meta=None):
         if " " in w:  # phrases can't be dictated letter-perfect
             continue
         tags = sorted(tag_word(w) | v.pop("_ct", set()), key=lambda x: TAG_ORDER.index(x) if x in TAG_ORDER else 99)
-        if w not in requested and is_easy(w, tags):
+        # words you are actively learning (and words you asked for by name) are
+        # never dropped — a new card must always show up in the dictation
+        if v["src"] not in ("learning", "requested") and w not in requested \
+                and is_easy(w, tags):
             continue
         v["tags"] = tags
         pool.append(v)

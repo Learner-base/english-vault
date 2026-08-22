@@ -5,8 +5,3 @@
 move c20 r1 to done folder
 
 ---
-
-
-  always add new learnt vocabs to dictation
-
----

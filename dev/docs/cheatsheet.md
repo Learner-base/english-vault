@@ -9,9 +9,13 @@ python3 dev/scripts/build_index.py
 ```
 
 Regenerates **`dev/index.html`** (the file browser), **`dev/player.html`** (the road audio
-playlist), **`dev/progress.html`** (what you're studying now) and
-**`generated/translate/translate.html`**. Run it after you add, rename, move or delete
-**any** file. Never hand-edit those four — they are generated.
+playlist), **`dev/progress.html`** (what you're studying now),
+**`generated/translate/translate.html`** and **`generated/dictation/dictation.html`**.
+Run it after you add, rename, move or delete **any** file — or after carding new words.
+Never hand-edit those five — they are generated.
+
+Because the dictation is rebuilt here too, **every new word you card is in the spelling
+drill straight away**; words you're still learning are never filtered out as "too easy".
 
 `dev/progress.html` lists the in-progress decks, the review decks and the drill pages,
 **newest first**, and puts a `now` badge on the newest item of each group — so the deck

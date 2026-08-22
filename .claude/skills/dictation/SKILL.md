@@ -54,12 +54,18 @@ and `#focusSwitch` buttons in the `PAGE` string must mirror them).
 python .claude/skills/dictation/scripts/build.py --repo-root . \
     --out generated/dictation/dictation.html
 ```
-Re-run it any time the vocab files change — the word pool is regenerated and re-embedded.
 Output goes to `generated/dictation/` (all generated artifacts live under `generated/`,
 never in `vocab/`).
 
-**Then refresh the main page** so the new/updated file shows in the main page `dev/index.html`
-file browser:
+**You rarely need to run this by hand.** `dev/scripts/build_index.py` runs it at the end
+of every rebuild, so a word carded today is drillable today — that is what keeps
+"always add new learnt vocabs to dictation" true without anyone remembering it.
+
+**Learning words are never filtered out.** The easy-word filter (`is_easy`) only applies
+to words that come from `known.md` alone. Anything with a card in `learning.json`, and
+anything named in `for-dictation.md`, is always in the deck however simple it looks.
+
+**Or just run the one command** — it rebuilds the dictation and the file browser together:
 ```
 python3 dev/scripts/build_index.py
 ```

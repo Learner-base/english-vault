@@ -10,7 +10,10 @@ sync:
 
     python3 scripts/build_index.py
 """
-import os, json, subprocess
+import os, sys, json, subprocess
+
+# importing the sibling builders must not litter dev/scripts/ with __pycache__
+sys.dont_write_bytecode = True
 
 # scripts/ now lives in dev/, so the site root is two levels up, not one.
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -222,6 +225,20 @@ def main():
         build_translate.main()
     except Exception as e:
         print(f"WARNING: build_translate failed ({e})")
+    # keep the dictation deck in sync with the vocab — a word carded today must
+    # be drillable today. The builder lives with its skill, so it is run as a
+    # subprocess rather than imported.
+    dict_build = os.path.join(ROOT, ".claude", "skills", "dictation", "scripts", "build.py")
+    if os.path.exists(dict_build):
+        try:
+            r = subprocess.run([sys.executable, dict_build, "--repo-root", ROOT,
+                                "--out", "generated/dictation/dictation.html"],
+                               cwd=ROOT, text=True, capture_output=True)
+            print((r.stdout or "").strip() or "WARNING: dictation build said nothing")
+            if r.returncode != 0:
+                print(f"WARNING: dictation build failed:\n{(r.stderr or '').strip()}")
+        except Exception as e:
+            print(f"WARNING: dictation build failed ({e})")
     # keep the progress page pointing at the newest deck
     try:
         import build_progress
