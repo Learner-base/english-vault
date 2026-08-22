@@ -1,6 +1,6 @@
 ---
 name: listening-generate
-description: Generate a Cambridge-style interactive IELTS Listening test as a single self-contained HTML (4 sections, 40 questions, embedded auto-chaining audio, submit-confirm modal, band-score results dashboard, and a full transcript shown on the right after submit with in-place answer-location highlights) from a user-provided source — the questions, an answer key, the section audio files, and the audioscript. Built from templates/listening.html so every generated test looks and behaves identically to the Cambridge 20 listening tests. Use when the user gives a listening test (PDF / text / images) plus its audio and answers and wants a clean, ad-free interactive study version.
+description: Generate a Cambridge-style interactive IELTS Listening test as a single self-contained HTML (4 sections, 40 questions, embedded auto-chaining audio, submit-confirm modal, band-score results dashboard, and a full transcript shown on the right after submit with in-place answer-location highlights) from a user-provided source — the questions, an answer key, the section audio files, and the audioscript. Built from dev/templates/listening.html so every generated test looks and behaves identically to the Cambridge 20 listening tests. Use when the user gives a listening test (PDF / text / images) plus its audio and answers and wants a clean, ad-free interactive study version.
 ---
 
 # Listening test generator
@@ -12,7 +12,7 @@ player + transcript pane on the right, a 40-minute timer, Submit → confirm mod
 an animated band-score results dashboard with a filterable per-question review, and — after
 submit — the full transcript with green answer-location highlights (`Q#` tags).
 
-Everything visual/behavioural lives in `templates/listening.html` (engine + CSS + body).
+Everything visual/behavioural lives in `dev/templates/listening.html` (engine + CSS + body).
 You only ever author **data**: the JS objects `TEST` (with `sections`, `groups`, `transcript`),
 `EXPL`, `answerHighlightQuotes`, and an `AUDIO` array of placeholders.
 `scripts/build_listening.py` splices them in, embeds the four audio tracks as base64, verifies
@@ -31,7 +31,7 @@ the highlight quotes really occur in the transcript, checks the script parses, a
 - **Generated test → `listening/undone/cambridge/<book>/C{book}-l{test}.html`** (short name,
   see [test-naming](../test-naming/SKILL.md); undone until done).
 - Scratch files (extracted text, `data.js`, rendered map images) → the session scratchpad, never the repo.
-- The base template stays at `templates/listening.html`; never copy a copyrighted transcript into it.
+- The base template stays at `dev/templates/listening.html`; never copy a copyrighted transcript into it.
 
 ## Fixed part ranges
 Part 1 = Q1–10, Part 2 = Q11–20, Part 3 = Q21–30, Part 4 = Q31–40 (the engine is fixed).
@@ -93,7 +93,7 @@ case-insensitive) to highlight green with a `Q#` tag after submit.
    misses (trim to an exact substring) or id-count warnings, then re-run.
 5. **Refresh the main page** so the new test appears in the root file browser:
    ```
-   python3 scripts/build_index.py
+   python3 dev/scripts/build_index.py
    ```
 6. **Verify** (no browser needed): the build already `node --check`ed the script; optionally
    simulate scoring in Node (perfect answers should give 40/40) and confirm ids = 1..40.
@@ -104,10 +104,10 @@ case-insensitive) to highlight green with a `Q#` tag after submit.
   `/audio/…`), so each test HTML stays small (~90 KB) and `/player.html` reuses the same files.
   The site is served from the repo root (Vercel), where `/audio/…` resolves correctly.
 - After building, `/player.html` picks up the new tracks automatically on the next
-  `python3 scripts/build_index.py` (see the `player-update` skill).
+  `python3 dev/scripts/build_index.py` (see the `player-update` skill).
 - If the template's markup changes, `build_listening.py` fails loudly on a missing marker or
   placeholder — update the template or the script's patch targets together.
-- `templates/listening.html` ships with a short ORIGINAL placeholder sample (empty AUDIO) that
+- `dev/templates/listening.html` ships with a short ORIGINAL placeholder sample (empty AUDIO) that
   demonstrates every group type; open it directly to see the schema working. Never overwrite that
   sample with copyrighted transcript text.
 - The engine also accepts embedded `data:` audio URIs in the AUDIO array (older self-contained

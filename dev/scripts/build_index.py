@@ -12,7 +12,8 @@ sync:
 """
 import os, json, subprocess
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# scripts/ now lives in dev/, so the site root is two levels up, not one.
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 SKIP_DIR = {".git", ".claude", "__pycache__", "scripts"}
 # CLAUDE.md is an AI instruction file and index.html is this page itself — the user
 # doesn't need either listed in the browser.
@@ -21,7 +22,7 @@ SKIP_FILE = {".DS_Store", "CLAUDE.md", "index.html", "progress.html", "vercel.js
 # The page shows ONLY these top-level folders (and what is inside them). Everything
 # else at the repo root — loose .md notes, templates/, config — stays out of the
 # browser. Add a folder here if it should become visible.
-TOP_LEVEL = {"docs", "generated", "listening", "reading", "vocab", "writing"}
+TOP_LEVEL = {"generated", "listening", "reading", "vocab", "writing"}
 OUT = os.path.join(ROOT, "index.html")
 
 

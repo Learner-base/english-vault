@@ -24,7 +24,7 @@ older tests, embedded base64), and writes `/player.html`.
 
 It is wired into the main page build, so the simplest path is:
 ```
-python3 scripts/build_index.py      # rebuilds index.html AND player.html
+python3 dev/scripts/build_index.py      # rebuilds index.html AND player.html
 ```
 Or rebuild only the player:
 ```
@@ -33,7 +33,7 @@ python3 scripts/build_player.py
 
 ## Notes
 - **This is already automatic** for anyone who follows the repo rule of running
-  `scripts/build_index.py` after adding/moving files — `build_index` calls `build_player` at the
+  `dev/scripts/build_index.py` after adding/moving files — `build_index` calls `build_player` at the
   end. This skill is the manual/explicit path and the place that documents the player.
 - Tracks are grouped by book and ordered by book → test → part. Labels come from the filename
   (`Cambridge <book>`, `Test <n>`, and `Part <k>` for the four-section Cambridge 20 tests).

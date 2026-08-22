@@ -2,7 +2,7 @@
 """Assemble a Cambridge-style interactive IELTS Listening test HTML from a data.js.
 
 Splices the three data objects (TEST / EXPL / answerHighlightQuotes) plus an AUDIO
-array into templates/listening.html, embeds the section audio as base64 data: URIs,
+array into dev/templates/listening.html, embeds the section audio as base64 data: URIs,
 optionally embeds a map/diagram image, verifies every highlight quote occurs in the
 transcript, runs `node --check`, and writes the final self-contained file.
 

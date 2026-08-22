@@ -70,7 +70,7 @@ ANCHOR = '${v.ipa?`<div class="ipa">${esc(v.ipa)}</div>`:""}${speakBtn(v.w)}'
 
 
 def build(cards, set_name, title, eyebrow, lede):
-    tpl = open(os.path.join(ROOT, "templates/vocab.html"), encoding="utf-8").read()
+    tpl = open(os.path.join(ROOT, "dev/templates/vocab.html"), encoding="utf-8").read()
     html = _vb.build_html(tpl, {"vocab": cards, "structures": []},
                           title, eyebrow, lede, "review_%s_v1" % re.sub(r"\W+", "_", set_name))
     # second hint: button + masked example, right after hint 1 on the flip front

@@ -19,7 +19,7 @@ keep every reference in sync.
 2. **Creates the `done/` folder** (and any missing parents) if it doesn't exist yet.
 3. Moves the file with `git mv` (preserves history; falls back to a plain move if the
    file isn't tracked).
-4. Rebuilds the main page with `scripts/build_index.py` — which also regenerates
+4. Rebuilds the main page with `dev/scripts/build_index.py` — which also regenerates
    `player.html` — so the file browser links and the road player point at the new path.
 5. Greps the repo for any **other** place that still names the old path/filename
    (docs, `progress.html`, cross-links…) and prints them to fix by hand.

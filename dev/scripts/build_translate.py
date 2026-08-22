@@ -20,7 +20,8 @@ Usage:
 """
 import os, re, json, html
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# scripts/ now lives in dev/, so the site root is two levels up, not one.
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 STORE = os.path.join(ROOT, "vocab", "translations.json")
 OUT = os.path.join(ROOT, "generated", "translate", "translate.html")
 

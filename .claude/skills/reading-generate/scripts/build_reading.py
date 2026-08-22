@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Assemble a Cambridge-20-style interactive reading test from templates/reading.html.
+"""Assemble a Cambridge-20-style interactive reading test from dev/templates/reading.html.
 
 Injects a data block (const TEST / const EXPL / const answerHighlightQuotes) into the
 template, sets the title/header/badge, VERIFIES every answerHighlightQuotes value is an
@@ -21,7 +21,7 @@ ap.add_argument('--out', required=True)
 ap.add_argument('--title', required=True, help='<title> text, e.g. "Cambridge 20 — Reading Test 1"')
 ap.add_argument('--header', required=True, help='Header line, e.g. "Cambridge IELTS 20 — Reading Test 1"')
 ap.add_argument('--badge', default='IR', help='Short badge text (e.g. C20)')
-ap.add_argument('--template', default='templates/reading.html')
+ap.add_argument('--template', default='dev/templates/reading.html')
 a = ap.parse_args()
 
 tpl = open(a.template).read()
@@ -30,7 +30,7 @@ data = open(a.data).read().strip()
 START = '/* ==== DATA-START ==== */'
 END = '/* ==== DATA-END ==== */'
 if START not in tpl or END not in tpl:
-    sys.exit('Template is missing DATA-START/DATA-END markers — did templates/reading.html change?')
+    sys.exit('Template is missing DATA-START/DATA-END markers — did dev/templates/reading.html change?')
 i = tpl.index(START); j = tpl.index(END) + len(END)
 out = tpl[:i] + START + "\n" + data + "\n" + END + tpl[j:]
 

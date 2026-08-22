@@ -5,7 +5,7 @@ Short version of the day-to-day commands. Full layout: [architecture.md](archite
 ## The one command you must not forget
 
 ```
-python3 scripts/build_index.py
+python3 dev/scripts/build_index.py
 ```
 
 Regenerates **`index.html`** (the file browser), **`player.html`** (the road audio
@@ -14,8 +14,8 @@ move or delete **any** file. Never hand-edit those three — they are generated.
 
 The browser lists only six top-level folders — `docs`, `generated`, `listening`,
 `reading`, `vocab`, `writing` — and what is inside them. Loose files at the repo root,
-`templates/`, and every dotfile (`.gitkeep`, `.gitignore`, …) stay hidden. To make
-another folder visible, add it to `TOP_LEVEL` in `scripts/build_index.py`.
+`dev/templates/`, and every dotfile (`.gitkeep`, `.gitignore`, …) stay hidden. To make
+another folder visible, add it to `TOP_LEVEL` in `dev/scripts/build_index.py`.
 
 ## Skills (say it in plain words, Claude picks the skill)
 
@@ -37,6 +37,11 @@ everything else leaves the changes for you to review.
 
 ## Where things live
 
+The repo root holds only what you study with — the five folders above plus
+`index.html`, `progress.html` and `player.html`. Everything else (docs, templates,
+build scripts, notes) lives in **`dev/`**, out of the way. URLs are unaffected:
+`domain.com/`, `domain.com/progress.html` and every test link work exactly as before.
+
 ```
 reading/  listening/       undone/ … → done/ …      source tests
 generated/reading|listening|vocab|dictation|translate   study HTML
@@ -45,6 +50,10 @@ generated/vocab/review/    review pages, auto-built from need-to-review.json
 vocab/learning.json        cards you're still learning
 vocab/need-to-review.json  cards from finished decks (drives the review pages)
 vocab/known.md             every word you've ever carded (never pruned)
+
+dev/scripts/    the generators (build_index, build_player, build_translate)
+dev/templates/  the reading / listening / vocab page templates
+dev/docs/       this file + architecture.md
 ```
 
 ## Hooks — automation you don't have to remember
@@ -67,7 +76,7 @@ Auto-rebuild the index after every file change, so you can never forget it:
 "PostToolUse": [
   { "matcher": "Edit|Write",
     "hooks": [{ "type": "command",
-      "command": "python3 \"$CLAUDE_PROJECT_DIR/scripts/build_index.py\" >/dev/null" }] }
+      "command": "python3 \"$CLAUDE_PROJECT_DIR/dev/scripts/build_index.py\" >/dev/null" }] }
 ]
 ```
 

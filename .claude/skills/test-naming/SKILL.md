@@ -53,5 +53,5 @@ This convention governs the **filename only**. Inside the page, the human-readab
 `<title>`, header, and badge still spell things out (e.g. "Cambridge IELTS 20 — Reading
 Test 1", badge `C20`). See the header-badge convention in the generate skills.
 
-After creating or renaming any file, run `python3 scripts/build_index.py` so the main
+After creating or renaming any file, run `python3 dev/scripts/build_index.py` so the main
 page and the road player pick up the new name.

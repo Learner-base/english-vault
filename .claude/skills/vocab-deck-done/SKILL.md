@@ -22,7 +22,7 @@ and, for each:
    merging (and de-duplicating by `w`) if the key is already there.
 4. **Regenerates the review deck** `generated/vocab/review/<set>-review.html`
    (`scripts/build_review.py`) — see below.
-5. Rebuilds `index.html` via `scripts/build_index.py`.
+5. Rebuilds `index.html` via `dev/scripts/build_index.py`.
 6. **Commits** the result — staging only the paths it touches
    (`generated/vocab/`, the two vocab JSONs, `index.html`, `player.html`,
    `generated/translate/`), so unrelated work in progress stays uncommitted.
@@ -46,7 +46,7 @@ Pass several decks at once.
 
 `scripts/build_review.py` builds one page per set in `generated/vocab/review/` from
 `vocab/need-to-review.json`. It is the normal vocab deck (built from
-`templates/vocab.html`, same flip / recall / cloze modes) with **two hints** on the
+`dev/templates/vocab.html`, same flip / recall / cloze modes) with **two hints** on the
 card front:
 
 1. **Show hint** — the collocation the word appeared in ("a striking new hall").

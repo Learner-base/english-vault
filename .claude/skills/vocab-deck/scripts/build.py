@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Assemble a vocab study deck HTML from templates/vocab.html and update the
+"""Assemble a vocab study deck HTML from dev/templates/vocab.html and update the
 project's learning.json and known.md.
 
-The base template (templates/vocab.html) has NO `form` line on the card front and
+The base template (dev/templates/vocab.html) has NO `form` line on the card front and
 NO "related expressions" block. This script injects the deck data AND patches the
 render code + CSS to add those two features, so a plain template stays reusable.
 
@@ -170,7 +170,7 @@ def main():
     a = ap.parse_args()
 
     root = a.repo_root
-    tpl = open(os.path.join(root, "templates/vocab.html")).read()
+    tpl = open(os.path.join(root, "dev/templates/vocab.html")).read()
     deck = json.load(open(a.deck))
     ws = [x["w"] for x in deck["vocab"]]
     dupes = sorted({w for w in ws if ws.count(w) > 1})

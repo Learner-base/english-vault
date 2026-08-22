@@ -1,6 +1,6 @@
 ---
 name: reading-generate
-description: Generate a Cambridge-style interactive IELTS Academic Reading test as a single self-contained HTML (3 passages, 40 questions, timer, submit-confirm modal, band-score results dashboard, in-passage answer-location highlights, bottom question navigator) from a user-provided source — passages + questions + an answer key. Built from templates/reading.html so every generated test looks and behaves identically. Use when the user gives a reading test (PDF / text / images / existing HTML) plus its answers and wants a clean, ad-free interactive study version.
+description: Generate a Cambridge-style interactive IELTS Academic Reading test as a single self-contained HTML (3 passages, 40 questions, timer, submit-confirm modal, band-score results dashboard, in-passage answer-location highlights, bottom question navigator) from a user-provided source — passages + questions + an answer key. Built from dev/templates/reading.html so every generated test looks and behaves identically. Use when the user gives a reading test (PDF / text / images / existing HTML) plus its answers and wants a clean, ad-free interactive study version.
 ---
 
 # Reading test generator
@@ -12,7 +12,7 @@ Submit → confirm modal → check-once, animated band-score results dashboard w
 filterable per-question review, green answer-location highlights inside the passage
 after submit, and a bottom passage/question navigator.
 
-Everything visual/behavioural lives in `templates/reading.html` (engine + CSS + body).
+Everything visual/behavioural lives in `dev/templates/reading.html` (engine + CSS + body).
 You only ever author **data**: three JS objects — `TEST`, `EXPL`, `answerHighlightQuotes`.
 `scripts/build_reading.py` injects them, verifies the highlight quotes really occur in
 the passages, checks the script parses, and writes the final file.
@@ -31,7 +31,7 @@ the passages, checks the script parses, and writes the final file.
   see [test-naming](../test-naming/SKILL.md); or the path the user specifies). Undone until
   the user has done it; they move solved tests to `reading/done/…`.
 - Scratch files (extracted text, `data.js`, quote lists) → the session scratchpad, never the repo.
-- The base template stays at `templates/reading.html`; never copy the copyrighted passage into it.
+- The base template stays at `dev/templates/reading.html`; never copy the copyrighted passage into it.
 
 ## Data schema — the three objects in `data.js`
 
@@ -112,7 +112,7 @@ to highlight green with a `Q#` tag after submit.
    (trim to an exact substring) or id-count warnings, then re-run.
 4. **Refresh the main page** so the new test appears in the root file browser:
    ```
-   python3 scripts/build_index.py
+   python3 dev/scripts/build_index.py
    ```
 5. **Verify** (no browser needed): the script parses (the build already `node --check`ed it);
    optionally spot-check that `ids` = 1..40 and the answer key lines up.
@@ -122,6 +122,6 @@ to highlight green with a `Q#` tag after submit.
 ## Notes
 - If the template's markup changes, `build_reading.py` fails loudly on the missing marker or
   header string — update the template or the script's patch targets together.
-- `templates/reading.html` ships with a short ORIGINAL placeholder sample that demonstrates
+- `dev/templates/reading.html` ships with a short ORIGINAL placeholder sample that demonstrates
   every group type; open it directly to see the schema working. Never overwrite that sample
   with copyrighted passage text.

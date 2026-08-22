@@ -20,7 +20,7 @@ passages and listening scripts) and, on demand, their **Uzbek translation**.
   `generated/translate/translate.html`: a light blue-gradient page with a
   Reading / Listening filter, a **group-of-20** picker, and a per-sentence
   **Show translation** toggle. It is called automatically from
-  `scripts/build_index.py`, so the page updates on every rebuild.
+  `dev/scripts/build_index.py`, so the page updates on every rebuild.
 
 ## Add sentences when a passage/test is finished
 
@@ -37,7 +37,7 @@ The page should **grow each time a passage moves to done** (see
    Keep existing entries — the store is cumulative and deduped by sentence.
 5. Rebuild:
    ```
-   python3 scripts/build_index.py
+   python3 dev/scripts/build_index.py
    ```
 6. **Commit** with the user's go-ahead; do not push unless asked.
 

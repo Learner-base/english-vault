@@ -23,7 +23,8 @@ It is also called automatically at the end of scripts/build_index.py.
 """
 import os, re, json, html
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# scripts/ now lives in dev/, so the site root is two levels up, not one.
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 LISTEN_DIR = os.path.join(ROOT, "listening")
 OUT = os.path.join(ROOT, "player.html")
 

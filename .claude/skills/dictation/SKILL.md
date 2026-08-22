@@ -52,7 +52,7 @@ never in `vocab/`).
 **Then refresh the main page** so the new/updated file shows in the root `index.html`
 file browser:
 ```
-python3 scripts/build_index.py
+python3 dev/scripts/build_index.py
 ```
 
 ## What the page does (features)

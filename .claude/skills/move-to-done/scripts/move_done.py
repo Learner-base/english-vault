@@ -8,7 +8,7 @@ For each given file under `.../undone/...`, it:
   * computes the destination by swapping `/undone/` -> `/done/`,
   * creates the destination folder if it doesn't exist,
   * moves the file with `git mv` (falls back to os.rename if untracked),
-  * refreshes the main page + player (scripts/build_index.py, which also rebuilds
+  * refreshes the main page + player (dev/scripts/build_index.py, which also rebuilds
     player.html),
   * greps the repo for any other place that still references the old path/name and
     prints them so you can update those by hand.
@@ -66,7 +66,7 @@ def main():
         sys.exit("Nothing moved.")
 
     # rebuild main page (also rebuilds player.html)
-    r = sh("python3", "scripts/build_index.py")
+    r = sh("python3", "dev/scripts/build_index.py")
     print(r.stdout.strip() or r.stderr.strip())
 
     # flag other references to the moved files (besides generated pages)

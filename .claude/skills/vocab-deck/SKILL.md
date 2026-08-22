@@ -1,6 +1,6 @@
 ---
 name: vocab-deck
-description: Generate an IELTS vocabulary study deck (interactive HTML flashcards) into generated/vocab/ from a reading-test HTML plus a user-pasted list of unknown words, then update vocab/learning.json and vocab/known.md. Use when the user shares a reading passage file and a list of unknown vocab/phrases and wants a vocab learning HTML built from templates/vocab.html.
+description: Generate an IELTS vocabulary study deck (interactive HTML flashcards) into generated/vocab/ from a reading-test HTML plus a user-pasted list of unknown words, then update vocab/learning.json and vocab/known.md. Use when the user shares a reading passage file and a list of unknown vocab/phrases and wants a vocab learning HTML built from dev/templates/vocab.html.
 ---
 
 # Vocab deck generator
@@ -112,7 +112,7 @@ extra    one fresh example of your own
    This writes the HTML to `generated/vocab/`, keys `learning.json` by `<set>`, merges the run's words into `known.md` (a single flat, deduplicated, alphabetically-sorted word list — no per-set headings, no prose, words only), and removes from `general-unknown.md` any bullet whose word now has a card in this deck.
 5. **Refresh the main page** so the new deck appears in the root `index.html` file browser:
    ```
-   python3 scripts/build_index.py
+   python3 dev/scripts/build_index.py
    ```
 6. **Verify** (no browser needed): the script's `<script>` must parse.
    ```
@@ -123,7 +123,7 @@ extra    one fresh example of your own
 7. **Report**: counts, the three files touched, and note words that weren't in the passage.
 
 ## Notes
-- The base `templates/vocab.html` intentionally lacks the front-`form` line and the
+- The base `dev/templates/vocab.html` intentionally lacks the front-`form` line and the
   `related` block; `build.py` patches them in every build. If the template's markup changes,
   `build.py` fails loudly with the missing string — update the patch strings then.
 - Scratch files (readable.txt, deck.json, etc.) belong in the session scratchpad, not the repo.
