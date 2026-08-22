@@ -14,11 +14,19 @@ when each file first appeared; anything not yet committed counts as newest), and
 that first item is highlighted with a `now` badge — so the deck you just made is
 always the one the page points at.
 
+**Pinning beats recency.** Files named in `vocab/studying-now.md` are held at the
+top of their group with the badge, however many newer files appear afterwards.
+That list is the answer to "this is what I'm on right now"; without it the badge
+would move to whatever was generated last.
+
 Run it after adding or retiring anything:
     python3 dev/scripts/build_progress.py
+    python3 dev/scripts/build_progress.py --pin C20-r1-vocabs.html
+    python3 dev/scripts/build_progress.py --unpin C20-r1-vocabs.html
+    python3 dev/scripts/build_progress.py --list
 It is also called at the end of dev/scripts/build_index.py.
 """
-import os, subprocess, html
+import os, sys, subprocess, html
 
 # scripts/ lives in dev/, so the site root is two levels up.
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -30,6 +38,59 @@ GROUPS = [
     ("practice",               "practice pages",         "Drills"),
 ]
 PRACTICE = ["generated/dictation/dictation.html", "generated/translate/translate.html"]
+PINS = os.path.join(ROOT, "vocab", "studying-now.md")
+
+
+def load_pins():
+    """Bare file names pinned to the top of their group, in listed order."""
+    if not os.path.exists(PINS):
+        return []
+    out = []
+    for line in open(PINS, encoding="utf-8"):
+        t = line.strip()
+        if not t or t.startswith("#"):
+            continue
+        if t.startswith("- ") or t.startswith("* "):
+            t = t[2:].strip()
+        elif "/" not in t and not t.endswith(".html"):
+            continue          # prose in the file's header, not a file name
+        if t.endswith(".html"):
+            out.append(os.path.basename(t))
+    return out
+
+
+def save_pins(names):
+    """Rewrite the list, keeping whatever header prose the file already has."""
+    header = []
+    if os.path.exists(PINS):
+        for line in open(PINS, encoding="utf-8"):
+            t = line.strip()
+            if t.startswith(("- ", "* ")) and t.endswith(".html"):
+                continue
+            header.append(line.rstrip("\n"))
+        while header and not header[-1].strip():
+            header.pop()
+    else:
+        header = ["# Studying now", "",
+                  "Files pinned to the top of progress.html, with the `now` badge.",
+                  "One file name per line."]
+    body = "\n".join(header) + "\n\n" + "".join(f"- {n}\n" for n in names)
+    with open(PINS, "w", encoding="utf-8") as f:
+        f.write(body)
+
+
+def pin(name, on=True):
+    """Add or remove one file. Returns True when the list actually changed."""
+    name = os.path.basename(name.strip())
+    names = load_pins()
+    if on and name not in names:
+        names.append(name)
+    elif not on and name in names:
+        names.remove(name)
+    else:
+        return False
+    save_pins(names)
+    return True
 
 
 def added_time(rel):
@@ -57,9 +118,15 @@ def added_time(rel):
         return 0
 
 
-def newest_first(paths, rank):
-    """Newest first; ties (same commit) break alphabetically."""
-    return sorted(paths, key=lambda p: (-rank.get(p, 0), p))
+def newest_first(paths, rank, pins=()):
+    """Pinned files first (in the order listed), then newest, then alphabetical."""
+    pins = list(pins)
+
+    def key(p):
+        n = os.path.basename(p)
+        return (0, pins.index(n)) if n in pins else (1, 0), -rank.get(p, 0), p
+
+    return sorted(paths, key=key)
 
 
 def ranks_for(paths):
@@ -67,6 +134,7 @@ def ranks_for(paths):
 
 
 def collect():
+    pins = load_pins()
     groups = []
     for key, label, sub in GROUPS:
         if key == "practice":
@@ -76,7 +144,7 @@ def collect():
             found = ([f"{key}/{f}" for f in os.listdir(d)
                       if f.endswith(".html") and not f.startswith(".")]
                      if os.path.isdir(d) else [])
-        items = newest_first(found, ranks_for(found))
+        items = newest_first(found, ranks_for(found), pins)
         if items:
             groups.append((label, sub, items))
     return groups
@@ -138,6 +206,24 @@ __GROUPS__
 
 
 def main():
+    args = sys.argv[1:]
+    if args and args[0] in ("--pin", "--unpin"):
+        if len(args) < 2:
+            print(f"usage: build_progress.py {args[0]} <file.html>")
+            return
+        on = args[0] == "--pin"
+        for name in args[1:]:
+            changed = pin(name, on)
+            verb = "pinned" if on else "unpinned"
+            print(f"{verb}: {os.path.basename(name)}"
+                  + ("" if changed else "  (already there — no change)"))
+        # fall through and regenerate, so the page is right straight away
+    elif args and args[0] == "--list":
+        names = load_pins()
+        print("\n".join(f"- {n}" for n in names) if names else "(nothing pinned)")
+        return
+
+    pins = load_pins()
     groups, total = collect(), 0
     out = []
     for label, sub, items in groups:
@@ -146,9 +232,12 @@ def main():
         for i, rel in enumerate(items):
             name = html.escape(os.path.basename(rel))
             href = html.escape("../" + rel, quote=True)
-            # the newest file in the group is the one to study now
-            cls = ' class="feat"' if i == 0 else ""
-            tag = '<span class="tag">now</span>' if i == 0 else ""
+            # pinned files lead their group; otherwise the newest one does
+            pinned = os.path.basename(rel) in pins
+            lead = pinned or i == 0
+            cls = ' class="feat"' if lead else ""
+            label_ = "pinned" if pinned else "now"
+            tag = f'<span class="tag">{label_}</span>' if lead else ""
             rows.append(f'      <li{cls}><a href="{href}">{name}</a>{tag}</li>')
         out.append('  <div class="group">\n'
                    f'    <h2>{html.escape(label)}<span class="sub">{html.escape(sub)}</span></h2>\n'
@@ -156,7 +245,10 @@ def main():
     page = PAGE.replace("__GROUPS__", "\n".join(out)).replace("__COUNT__", str(total))
     with open(OUT, "w", encoding="utf-8") as f:
         f.write(page)
-    print(f"Wrote {OUT}  ({total} items in {len(groups)} groups, newest first)")
+    npin = sum(1 for _, _, items in groups
+               for r in items if os.path.basename(r) in pins)
+    print(f"Wrote {OUT}  ({total} items in {len(groups)} groups, "
+          f"{npin} pinned, then newest first)")
 
 
 if __name__ == "__main__":

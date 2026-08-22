@@ -22,7 +22,7 @@ That one command also regenerates `dev/player.html`, `dev/progress.html`,
 **all five pages are generated, never hand-edit them.** Rebuilding the dictation
 there is what keeps newly carded words in the spelling drill automatically. `dev/progress.html` lists what you're studying newest-first and
 highlights the newest deck in each group, so it follows the newest vocab deck by
-itself.
+itself; anything listed in `vocab/studying-now.md` is pinned above that.
 
 ## Repo layout
 The root holds only the study content — `generated/`, `listening/`, `reading/`,

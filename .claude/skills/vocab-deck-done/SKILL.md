@@ -22,10 +22,15 @@ and, for each:
    merging (and de-duplicating by `w`) if the key is already there.
 4. **Regenerates the review deck** `generated/vocab/review/<set>-review.html`
    (`scripts/build_review.py`) — see below.
-5. Rebuilds `dev/index.html` via `dev/scripts/build_index.py`.
-6. **Commits** the result — staging only the paths it touches
-   (`generated/vocab/`, the two vocab JSONs, `dev/index.html`, `dev/player.html`,
-   `generated/translate/`), so unrelated work in progress stays uncommitted.
+5. **Unpins the deck** from `vocab/studying-now.md` (see
+   [studying-now](../studying-now/SKILL.md)) — a finished deck should not still be
+   advertised on the progress page as the thing you're studying.
+6. Rebuilds `dev/index.html` via `dev/scripts/build_index.py`.
+7. **Commits** the result — staging only the paths it touches
+   (`generated/vocab/`, the two vocab JSONs, `vocab/studying-now.md`,
+   `dev/index.html`, `dev/player.html`, `dev/progress.html`,
+   `generated/translate/`, `generated/dictation/`), so unrelated work in progress
+   stays uncommitted.
    It never pushes.
 
 Each step is skipped harmlessly if it's already been done, so re-running is safe.

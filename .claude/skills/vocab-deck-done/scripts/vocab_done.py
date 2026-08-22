@@ -89,7 +89,16 @@ def move_cards(set_name):
 
 PATHS = ["generated/vocab", "vocab/learning.json", "vocab/need-to-review.json",
          "dev/index.html", "dev/player.html", "dev/progress.html",
-         "generated/translate", "generated/dictation"]
+         "generated/translate", "generated/dictation", "vocab/studying-now.md"]
+
+
+def unpin(set_names):
+    """Drop each retired deck from vocab/studying-now.md (see the studying-now skill)."""
+    prog = os.path.join(ROOT, "dev/scripts/build_progress.py")
+    if not os.path.exists(prog):
+        return
+    names = [f"{n}-vocabs.html" for n in set_names]
+    subprocess.call([sys.executable, prog, "--unpin"] + names, cwd=ROOT)
 
 
 def commit(set_names, moved):
@@ -139,6 +148,9 @@ def main():
                                            "build_review.py")], cwd=ROOT)
         if rc != 0:
             return rc
+        # a deck you have finished should not still be advertised on the
+        # progress page as the thing you are studying
+        unpin(set_names)
 
     if not a.no_index:
         rc = subprocess.call([sys.executable, os.path.join(ROOT, "dev/scripts/build_index.py")],

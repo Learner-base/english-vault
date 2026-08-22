@@ -19,7 +19,15 @@ drill straight away**; words you're still learning are never filtered out as "to
 
 `dev/progress.html` lists the in-progress decks, the review decks and the drill pages,
 **newest first**, and puts a `now` badge on the newest item of each group — so the deck
-you just built is always the one it points at.
+you just built is always the one it points at. To hold one file at the top whatever
+gets generated later, pin it:
+
+```
+python3 dev/scripts/build_progress.py --pin C20-r1-vocabs.html    # --unpin, --list
+```
+
+Pins live in `vocab/studying-now.md` and are dropped automatically when you retire
+the deck.
 
 The browser lists only six top-level folders — `docs`, `generated`, `listening`,
 `reading`, `vocab`, `writing` — and what is inside them. Loose files at the repo root,
@@ -38,6 +46,7 @@ another folder visible, add it to `TOP_LEVEL` in `dev/scripts/build_index.py`.
 | "make me a dictation" | `dictation` | spelling quiz from your vocab + `vocab/for-dictation.md` |
 | "how do I remember this word?" | `keyword-mnemonics` | Uzbek sound-alike + absurd story |
 | "add these hard sentences" | `translate-practice` | EN → Uzbek practice page |
+| "I'm studying this one now" | `studying-now` | pins it to the top of the progress page |
 | "what should this file be called?" | `test-naming` | the short-name convention |
 
 Each skill's own `SKILL.md` lives in `.claude/skills/<name>/`, and every generator ends
@@ -61,6 +70,7 @@ vocab/need-to-review.json  cards from finished decks (drives the review pages)
 vocab/known.md             every word you've ever carded (never pruned)
 vocab/glossary.json        word help for the translate page (words with no card)
 vocab/for-dictation.md     words that must appear in the dictation deck
+vocab/studying-now.md      files pinned to the top of progress.html
 vocab/translations.json    practice sentences + their chunk breakdowns
 
 dev/scripts/    the generators (build_index, build_player, build_translate, build_progress)
