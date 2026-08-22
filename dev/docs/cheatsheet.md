@@ -27,7 +27,7 @@ python3 dev/scripts/build_progress.py --pin C20-r1-vocabs.html    # --unpin, --l
 ```
 
 Pins live in `vocab/studying-now.md` and are dropped automatically when you retire
-the deck.
+the deck. The drills group is never auto-highlighted — only pin it if you want it.
 
 The browser lists only six top-level folders — `docs`, `generated`, `listening`,
 `reading`, `vocab`, `writing` — and what is inside them. Loose files at the repo root,

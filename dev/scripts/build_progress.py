@@ -32,10 +32,14 @@ import os, sys, subprocess, html
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 OUT = os.path.join(ROOT, "dev", "progress.html")
 
+# (folder, heading, sub-heading, auto-badge?)
+# auto-badge means "if nothing here is pinned, highlight the newest one". The
+# drills are always-available tools rather than something you work through, so
+# they are only highlighted when you pin one yourself.
 GROUPS = [
-    ("generated/vocab/inprogress", "generated/vocab/inprogress", "Still learning"),
-    ("generated/vocab/review", "generated/vocab/review", "To review"),
-    ("practice",               "practice pages",         "Drills"),
+    ("generated/vocab/inprogress", "generated/vocab/inprogress", "Still learning", True),
+    ("generated/vocab/review", "generated/vocab/review", "To review", True),
+    ("practice",               "practice pages",         "Drills", False),
 ]
 PRACTICE = ["generated/dictation/dictation.html", "generated/translate/translate.html"]
 PINS = os.path.join(ROOT, "vocab", "studying-now.md")
@@ -136,7 +140,7 @@ def ranks_for(paths):
 def collect():
     pins = load_pins()
     groups = []
-    for key, label, sub in GROUPS:
+    for key, label, sub, auto in GROUPS:
         if key == "practice":
             found = [p for p in PRACTICE if os.path.exists(os.path.join(ROOT, p))]
         else:
@@ -146,7 +150,7 @@ def collect():
                      if os.path.isdir(d) else [])
         items = newest_first(found, ranks_for(found), pins)
         if items:
-            groups.append((label, sub, items))
+            groups.append((label, sub, items, auto))
     return groups
 
 
@@ -178,14 +182,22 @@ PAGE = """<!DOCTYPE html>
     padding:14px 16px;box-shadow:0 1px 3px rgba(16,24,40,.05)}
   .group h2{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--ink-3);text-transform:uppercase;margin:0 0 8px;padding-bottom:8px;border-bottom:1px solid var(--line-2);display:flex;justify-content:space-between;gap:10px}
   .group h2 .sub{font-family:var(--sans);letter-spacing:0;text-transform:none;color:var(--ink-3);font-weight:500}
-  ol{margin:0;padding-left:24px}
-  li{margin:0;padding:5px 0;font-size:14.5px}
-  li a{color:var(--ink);text-decoration:none}
+  /* numbers are drawn with a counter, not the list marker: the highlighted row
+     is a padded box, and a real marker sits outside it and gets lost */
+  ol{margin:0;padding-left:0;list-style:none;counter-reset:item}
+  li{counter-increment:item;margin:0;padding:5px 4px;font-size:14.5px;
+    display:flex;align-items:baseline;gap:9px}
+  li::before{content:counter(item) ".";flex:none;min-width:19px;text-align:right;
+    font-family:var(--mono);font-size:12px;color:var(--ink-3)}
+  li a{color:var(--ink);text-decoration:none;min-width:0;overflow-wrap:anywhere}
   li a:hover{color:var(--blue);text-decoration:underline}
-  li.feat{list-style:none;margin-left:-24px;padding-left:12px;background:var(--bluebg);border:1px solid #d3e2fb;border-left:3px solid var(--blue);border-radius:8px;padding-top:8px;padding-bottom:8px}
+  li.feat{padding:8px 10px;background:var(--bluebg);border:1px solid #d3e2fb;
+    border-left:3px solid var(--blue);border-radius:8px}
+  li.feat::before{color:var(--blue);font-weight:700}
   li.feat a{font-weight:700}
-  li.feat .tag{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:#dce9fc;padding:1px 7px;border-radius:999px;margin-left:8px;vertical-align:middle}
+  li.feat .tag{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:#dce9fc;padding:1px 7px;border-radius:999px;margin-left:auto;flex:none;align-self:center}
   .count{font-family:var(--mono);font-size:12px;color:var(--ink-3);margin-top:8px}
+  .count b{color:var(--blue)}
 </style>
 </head>
 <body>
@@ -198,7 +210,7 @@ PAGE = """<!DOCTYPE html>
   <a class="home" href="./index.html">← All files</a>
 
 __GROUPS__
-  <div class="count">__COUNT__ items in progress</div>
+  <div class="count">__COUNT__</div>
 </div>
 </body>
 </html>
@@ -226,15 +238,18 @@ def main():
     pins = load_pins()
     groups, total = collect(), 0
     out = []
-    for label, sub, items in groups:
+    for label, sub, items, auto in groups:
         total += len(items)
+        # once something here is pinned, the newest-file badge would just be noise
+        group_pinned = any(os.path.basename(r) in pins for r in items)
         rows = []
         for i, rel in enumerate(items):
             name = html.escape(os.path.basename(rel))
             href = html.escape("../" + rel, quote=True)
-            # pinned files lead their group; otherwise the newest one does
+            # a pinned file always leads its group; otherwise the newest one
+            # does, but only in the groups that ask for an automatic badge
             pinned = os.path.basename(rel) in pins
-            lead = pinned or i == 0
+            lead = pinned or (auto and i == 0 and not group_pinned)
             cls = ' class="feat"' if lead else ""
             label_ = "pinned" if pinned else "now"
             tag = f'<span class="tag">{label_}</span>' if lead else ""
@@ -242,10 +257,14 @@ def main():
         out.append('  <div class="group">\n'
                    f'    <h2>{html.escape(label)}<span class="sub">{html.escape(sub)}</span></h2>\n'
                    "    <ol>\n" + "\n".join(rows) + "\n    </ol>\n  </div>\n")
-    page = PAGE.replace("__GROUPS__", "\n".join(out)).replace("__COUNT__", str(total))
+    nlead = sum(r.count('class="feat"') for r in out)
+    count = f"{total} items in progress"
+    if nlead:
+        count += f" · <b>{nlead}</b> highlighted"
+    page = PAGE.replace("__GROUPS__", "\n".join(out)).replace("__COUNT__", count)
     with open(OUT, "w", encoding="utf-8") as f:
         f.write(page)
-    npin = sum(1 for _, _, items in groups
+    npin = sum(1 for _, _, items, _a in groups
                for r in items if os.path.basename(r) in pins)
     print(f"Wrote {OUT}  ({total} items in {len(groups)} groups, "
           f"{npin} pinned, then newest first)")

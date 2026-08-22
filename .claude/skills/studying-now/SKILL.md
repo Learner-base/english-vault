@@ -47,8 +47,23 @@ picks it up.
 - A pinned file that no longer exists is simply not shown; the line stays in the
   list, harmless, until you remove it.
 
+## Which groups get an automatic badge
+
+| Group | Highlighted when nothing is pinned |
+|---|---|
+| Still learning (`generated/vocab/inprogress`) | yes — the newest deck |
+| To review (`generated/vocab/review`) | yes — the newest review deck |
+| Drills (dictation, translation) | **no** — they're always-available tools, not
+  something you work through, so they're only highlighted if you pin one |
+
+Pinning anything in a group replaces that group's automatic badge, so there is
+never both a `pinned` and a `now` highlight competing in the same list.
+
 ## Notes
 
 - Pinning only reorders and badges. It never hides anything: unpinned files still
   appear underneath, newest first.
+- Every row keeps its number, highlighted or not — the numbers are drawn with a CSS
+  counter rather than the list marker, which a padded highlight box would swallow.
+- The footer counts them: `8 items in progress · 2 highlighted`.
 - `dev/progress.html` is generated — never hand-edit it.
