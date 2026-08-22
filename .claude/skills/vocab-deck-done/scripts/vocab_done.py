@@ -5,8 +5,9 @@ For each deck given (an HTML path under generated/vocab/, or a bare set name):
 
 1. git mv the deck HTML from generated/vocab/inprogress/ -> generated/vocab/done/
 2. move that set's cards from vocab/learning.json -> vocab/need-to-review.json
-3. rebuild index.html (scripts/build_index.py)
-4. commit the result (pass --no-commit to skip; it never pushes)
+3. regenerate the review deck in generated/vocab/review/ (build_review.py)
+4. rebuild index.html (scripts/build_index.py)
+5. commit the result (pass --no-commit to skip; it never pushes)
 
 Set name = deck filename without the trailing "-vocabs.html"; it is the key used
 in learning.json.
@@ -130,6 +131,13 @@ def main():
         moved += cards
         did_move |= cards > 0
         set_names.append(set_name)
+
+    if did_move:
+        rc = subprocess.call([sys.executable,
+                              os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                           "build_review.py")], cwd=ROOT)
+        if rc != 0:
+            return rc
 
     if not a.no_index:
         rc = subprocess.call([sys.executable, os.path.join(ROOT, "scripts/build_index.py")],

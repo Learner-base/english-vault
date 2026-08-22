@@ -20,7 +20,7 @@ move or delete **any** file. Never hand-edit those three — they are generated.
 | "make a listening test from these audios + script" | `listening-generate` | 4-section listening HTML with audio |
 | "build a vocab deck from this passage + these words" | `vocab-deck` | flashcard HTML + `learning.json` + `known.md` |
 | "I finished this test" | `move-to-done` | `undone/` → `done/` + rebuild |
-| "I finished this vocab deck" | `vocab-deck-done` | deck → `done/`, words → `need-to-review.json`, rebuild **+ commit** |
+| "I finished this vocab deck" | `vocab-deck-done` | deck → `done/`, words → `need-to-review.json`, **review page**, rebuild **+ commit** |
 | "make me a dictation" | `dictation` | spelling quiz from your vocab |
 | "how do I remember this word?" | `keyword-mnemonics` | Uzbek sound-alike + absurd story |
 | "add these hard sentences" | `translate-practice` | EN → Uzbek practice page |
@@ -36,8 +36,9 @@ everything else leaves the changes for you to review.
 reading/  listening/       undone/ … → done/ …      source tests
 generated/reading|listening|vocab|dictation|translate   study HTML
 generated/vocab/inprogress/ → generated/vocab/done/     vocab decks
+generated/vocab/review/    review pages, auto-built from need-to-review.json
 vocab/learning.json        cards you're still learning
-vocab/need-to-review.json  cards from finished decks
+vocab/need-to-review.json  cards from finished decks (drives the review pages)
 vocab/known.md             every word you've ever carded (never pruned)
 ```
 

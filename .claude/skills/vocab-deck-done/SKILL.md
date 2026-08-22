@@ -20,8 +20,10 @@ and, for each:
    (creates `done/` if missing; plain move if the file isn't tracked).
 3. Moves that key's cards from `vocab/learning.json` into `vocab/need-to-review.json`,
    merging (and de-duplicating by `w`) if the key is already there.
-4. Rebuilds `index.html` via `scripts/build_index.py`.
-5. **Commits** the result — staging only the paths it touches
+4. **Regenerates the review deck** `generated/vocab/review/<set>-review.html`
+   (`scripts/build_review.py`) — see below.
+5. Rebuilds `index.html` via `scripts/build_index.py`.
+6. **Commits** the result — staging only the paths it touches
    (`generated/vocab/`, the two vocab JSONs, `index.html`, `player.html`,
    `generated/translate/`), so unrelated work in progress stays uncommitted.
    It never pushes.
@@ -39,6 +41,29 @@ Pass several decks at once.
 
 - `--no-commit` — leave everything in the working tree instead of committing.
 - `--no-index` — skip the rebuild (only when batching and rebuilding yourself).
+
+## The review deck
+
+`scripts/build_review.py` builds one page per set in `generated/vocab/review/` from
+`vocab/need-to-review.json`. It is the normal vocab deck (built from
+`templates/vocab.html`, same flip / recall / cloze modes) with **two hints** on the
+card front:
+
+1. **Show hint** — the collocation the word appeared in ("a striking new hall").
+2. **Show example** — the full example sentence with the word blanked out (`———`),
+   so it points at the word without giving it away.
+
+The blanking handles multi-word entries ("as much as" is blanked as one phrase) and
+inflections (`dangle` blanks `dangling`, `cavity` blanks `cavities`).
+
+Run it on its own to rebuild every review page, or name sets to rebuild:
+
+```
+python3 .claude/skills/vocab-deck-done/scripts/build_review.py            # all
+python3 .claude/skills/vocab-deck-done/scripts/build_review.py C20-r1     # one set
+```
+
+It also deletes review pages whose set is no longer in `need-to-review.json`.
 
 ## Notes
 
