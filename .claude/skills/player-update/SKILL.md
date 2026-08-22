@@ -41,5 +41,5 @@ python3 scripts/build_player.py
   To add offline audio for a book that currently streams from a URL (e.g. Cambridge 21),
   generate those tests with the `listening-generate` skill (it copies the tracks into
   `/audio/cambridge-<n>/`) and re-run the build; the player picks them up as offline automatically.
-- `player.html` is intentionally excluded from the `index.html` file browser (it is an app page,
-  like `index.html`/`progress.html`); reach it directly at `/player.html`.
+- `dev/player.html` is intentionally excluded from the `dev/index.html` file browser (it is an app page,
+  like `dev/index.html`/`dev/progress.html`); reach it directly at `/player.html`.

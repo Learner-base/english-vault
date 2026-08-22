@@ -49,7 +49,7 @@ Re-run it any time the vocab files change — the word pool is regenerated and r
 Output goes to `generated/dictation/` (all generated artifacts live under `generated/`,
 never in `vocab/`).
 
-**Then refresh the main page** so the new/updated file shows in the root `index.html`
+**Then refresh the main page** so the new/updated file shows in the main page `dev/index.html`
 file browser:
 ```
 python3 dev/scripts/build_index.py

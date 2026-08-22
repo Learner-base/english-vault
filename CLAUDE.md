@@ -4,7 +4,7 @@ An IELTS/English self-study vault of standalone HTML tools. See `dev/docs/archit
 for the full layout and the source → generate → study idea.
 
 ## Always keep the main page in sync
-`index.html` (repo root) is the site's main page: a file browser of the whole project.
+`dev/index.html` is the site's main page: a file browser of the whole project.
 It is **generated** from the current file tree by `dev/scripts/build_index.py`.
 
 **Whenever you create, rename, move, or delete any file or folder** (a generated study
@@ -19,7 +19,11 @@ must do this too (it is listed in their SKILL.md).
 
 ## Repo layout
 The root holds only the study content — `generated/`, `listening/`, `reading/`,
-`vocab/`, `writing/` and the three pages `index.html`, `progress.html`, `player.html`
-— so it stays free of distractions. Everything else lives in **`dev/`**:
-`dev/scripts/` (generators), `dev/templates/` (page templates), `dev/docs/`, and loose
-notes. Site URLs are unchanged: `index.html` is still served at the domain root.
+`vocab/`, `writing/` — so it stays free of distractions. Everything else lives in
+**`dev/`**: the three pages (`index.html`, `progress.html`, `player.html`),
+`dev/scripts/` (generators), `dev/templates/`, `dev/docs/` and loose notes.
+`vercel.json` and `CLAUDE.md` must stay at the root (Vercel and Claude Code read them
+there).
+
+Site URLs are unchanged — `vercel.json` rewrites `/`, `/index.html`, `/player.html`
+and `/progress.html` to their `dev/` copies. Locally, open `dev/index.html`.

@@ -1,4 +1,22 @@
 {
   "buildCommand": null,
-  "outputDirectory": "."
+  "outputDirectory": ".",
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/dev/index.html"
+    },
+    {
+      "source": "/index.html",
+      "destination": "/dev/index.html"
+    },
+    {
+      "source": "/player.html",
+      "destination": "/dev/player.html"
+    },
+    {
+      "source": "/progress.html",
+      "destination": "/dev/progress.html"
+    }
+  ]
 }

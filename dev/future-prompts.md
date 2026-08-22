@@ -29,3 +29,9 @@ from progress folder make
   update necessary skills and commands for that
 
   ---
+
+  always add new learnt vocabs to dictation
+
+  ---
+
+  

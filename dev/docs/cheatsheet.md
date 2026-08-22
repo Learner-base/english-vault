@@ -8,7 +8,7 @@ Short version of the day-to-day commands. Full layout: [architecture.md](archite
 python3 dev/scripts/build_index.py
 ```
 
-Regenerates **`index.html`** (the file browser), **`player.html`** (the road audio
+Regenerates **`dev/index.html`** (the file browser), **`dev/player.html`** (the road audio
 playlist) and **`generated/translate/translate.html`**. Run it after you add, rename,
 move or delete **any** file. Never hand-edit those three — they are generated.
 
@@ -37,10 +37,10 @@ everything else leaves the changes for you to review.
 
 ## Where things live
 
-The repo root holds only what you study with — the five folders above plus
-`index.html`, `progress.html` and `player.html`. Everything else (docs, templates,
-build scripts, notes) lives in **`dev/`**, out of the way. URLs are unaffected:
-`domain.com/`, `domain.com/progress.html` and every test link work exactly as before.
+The repo root holds only what you study with — the five folders above. Everything else
+lives in **`dev/`**: the three pages, the build scripts, the templates, the docs and
+loose notes. Online nothing changes — `vercel.json` rewrites `domain.com/` and
+`domain.com/progress.html` to the `dev/` copies. Offline, open `dev/index.html`.
 
 ```
 reading/  listening/       undone/ … → done/ …      source tests
@@ -96,6 +96,6 @@ A "turn finished" sound, so you can look away while a long test generates:
 1. Describe the goal, not the steps — "I finished C20-r1" beats explaining the move.
 2. Batch: give a passage **and** its unknown words in one message; the deck, the JSON
    updates and the index rebuild all happen in one pass.
-3. Never edit `index.html` / `player.html` / `translate.html` by hand — the next rebuild
+3. Never edit `dev/index.html` / `dev/player.html` / `translate.html` by hand — the next rebuild
    overwrites them.
 4. Drop future ideas in `future-prompts.md`; it's your queue, not part of the site.

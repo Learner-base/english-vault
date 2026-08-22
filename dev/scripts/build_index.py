@@ -23,7 +23,8 @@ SKIP_FILE = {".DS_Store", "CLAUDE.md", "index.html", "progress.html", "vercel.js
 # else at the repo root — loose .md notes, templates/, config — stays out of the
 # browser. Add a folder here if it should become visible.
 TOP_LEVEL = {"generated", "listening", "reading", "vocab", "writing"}
-OUT = os.path.join(ROOT, "index.html")
+# The pages live in dev/; Vercel rewrites serve them at the domain root.
+OUT = os.path.join(ROOT, "dev", "index.html")
 
 
 def walk(d, top=False):
@@ -158,7 +159,7 @@ function node(item){
   } else {
     fileCount++;
     const a=document.createElement("a");
-    a.className="row"; a.href="./"+item.p.split("/").map(encodeURIComponent).join("/");
+    a.className="row"; a.href="../"+item.p.split("/").map(encodeURIComponent).join("/");
     a.dataset.path=item.p.toLowerCase();
     a.innerHTML=`<span class="tw"></span><span class="ic">📄</span><span class="n">${item.n}</span>`;
     li.appendChild(a);
@@ -177,7 +178,7 @@ if(LATEST.length){
   LATEST.forEach(f=>{
     const li=document.createElement("li");
     const a=document.createElement("a");
-    a.className="row"; a.href="./"+f.p.split("/").map(encodeURIComponent).join("/");
+    a.className="row"; a.href="../"+f.p.split("/").map(encodeURIComponent).join("/");
     a.innerHTML=`<span class="ic">📄</span><span class="meta"><span class="n">${f.n}</span><span class="dirp">${f.d}</span></span>`;
     li.appendChild(a); ul.appendChild(li);
   });

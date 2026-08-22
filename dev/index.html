@@ -83,7 +83,7 @@ function node(item){
   } else {
     fileCount++;
     const a=document.createElement("a");
-    a.className="row"; a.href="./"+item.p.split("/").map(encodeURIComponent).join("/");
+    a.className="row"; a.href="../"+item.p.split("/").map(encodeURIComponent).join("/");
     a.dataset.path=item.p.toLowerCase();
     a.innerHTML=`<span class="tw"></span><span class="ic">📄</span><span class="n">${item.n}</span>`;
     li.appendChild(a);
@@ -102,7 +102,7 @@ if(LATEST.length){
   LATEST.forEach(f=>{
     const li=document.createElement("li");
     const a=document.createElement("a");
-    a.className="row"; a.href="./"+f.p.split("/").map(encodeURIComponent).join("/");
+    a.className="row"; a.href="../"+f.p.split("/").map(encodeURIComponent).join("/");
     a.innerHTML=`<span class="ic">📄</span><span class="meta"><span class="n">${f.n}</span><span class="dirp">${f.d}</span></span>`;
     li.appendChild(a); ul.appendChild(li);
   });

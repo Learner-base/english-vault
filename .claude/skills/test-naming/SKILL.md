@@ -6,7 +6,7 @@ description: The canonical short-file-name convention for generated test HTML in
 # Test file-naming convention
 
 Generated test files use **short, lowercase, hyphenated** names — never the long
-"Cambridge 20 Test 1 Reading.html" form. Short names keep `index.html` scannable and
+"Cambridge 20 Test 1 Reading.html" form. Short names keep `dev/index.html` scannable and
 URLs clean.
 
 ## Format

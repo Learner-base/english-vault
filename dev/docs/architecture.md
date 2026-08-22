@@ -15,8 +15,8 @@ building a perfect platform.
 > A watcher relocates stray generated `.html` files into `generated/`. Always write
 > generated output directly to `generated/…` so nothing gets moved or duplicated.
 
-## Main page (`index.html`)
-`index.html` at the repo root is the site's landing page: a self-contained, searchable
+## Main page (`dev/index.html`)
+`dev/index.html` at the repo root is the site's landing page: a self-contained, searchable
 **file browser** of the whole project (everything except `.claude/` and `.git/`) — click a
 folder to expand it, a file to open it. It is **generated**, not hand-edited, by
 `dev/scripts/build_index.py`, which embeds the current file tree.
@@ -46,7 +46,7 @@ folder to expand it, a file to open it. It is **generated**, not hand-edited, by
 - **listening/**, **writing/** — source material for those skills (same source → generate →
   study idea; generated output belongs under `generated/`).
 - **docs/** — documentation. `architecture.md` — this file.
-- **scripts/** — project-level scripts. `build_index.py` regenerates the root `index.html`.
+- **scripts/** — project-level scripts. `build_index.py` regenerates the main page `dev/index.html`.
 - **.claude/skills/** — project skills (see below).
 
 ## Skills

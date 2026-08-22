@@ -88,7 +88,7 @@ def move_cards(set_name):
 
 
 PATHS = ["generated/vocab", "vocab/learning.json", "vocab/need-to-review.json",
-         "index.html", "player.html", "generated/translate"]
+         "dev/index.html", "dev/player.html", "generated/translate"]
 
 
 def commit(set_names, moved):

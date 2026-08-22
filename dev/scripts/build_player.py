@@ -26,7 +26,8 @@ import os, re, json, html
 # scripts/ now lives in dev/, so the site root is two levels up, not one.
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 LISTEN_DIR = os.path.join(ROOT, "listening")
-OUT = os.path.join(ROOT, "player.html")
+# The player lives in dev/; Vercel rewrites serve it at /player.html.
+OUT = os.path.join(ROOT, "dev", "player.html")
 
 
 def parse_book_test(fname):
@@ -171,6 +172,10 @@ def collect():
                     "src": src, "offline": offline, "tr": tr, "trtype": trtype,
                     "rel": os.path.relpath(path, ROOT),
                 })
+    for t in tracks:
+        # page sits in dev/, so a repo-relative audio path needs one level up
+        if not t["src"].startswith(("http", "data:", "/")):
+            t["src"] = "../" + t["src"]
     tracks.sort(key=lambda t: (t["book"], t["test"], t["part"]))
     for i, t in enumerate(tracks):
         t["id"] = f"t{i}"

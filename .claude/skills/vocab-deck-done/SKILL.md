@@ -22,9 +22,9 @@ and, for each:
    merging (and de-duplicating by `w`) if the key is already there.
 4. **Regenerates the review deck** `generated/vocab/review/<set>-review.html`
    (`scripts/build_review.py`) — see below.
-5. Rebuilds `index.html` via `dev/scripts/build_index.py`.
+5. Rebuilds `dev/index.html` via `dev/scripts/build_index.py`.
 6. **Commits** the result — staging only the paths it touches
-   (`generated/vocab/`, the two vocab JSONs, `index.html`, `player.html`,
+   (`generated/vocab/`, the two vocab JSONs, `dev/index.html`, `dev/player.html`,
    `generated/translate/`), so unrelated work in progress stays uncommitted.
    It never pushes.
 
@@ -72,7 +72,7 @@ It also deletes review pages whose set is no longer in `need-to-review.json`.
 - The [dictation](../dictation/SKILL.md) deck builds from `known.md` + `learning.json`,
   so retired words keep their spelling practice via `known.md` but lose their rich
   meaning/example lines. That's intended.
-- `index.html` and `player.html` are generated — never hand-edit them.
+- `dev/index.html` and `dev/player.html` are generated — never hand-edit them.
 - **Committing is pre-approved for this skill only** — the user explicitly asked it to
   commit, so you don't need to ask again when running it. Everywhere else the standing
   rule still holds: never commit without the user's go-ahead. The script never pushes.
