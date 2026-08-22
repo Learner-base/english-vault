@@ -19,6 +19,15 @@ test", or "read it and I type it" drill over the vocabulary they've collected.
 - `vocab/known.md` — flat word list (the big pool).
 - `vocab/learning.json` — rich cards; their base word `w` plus `def`/`uz`/`ex` become a
   meaning **hint shown after** the user answers (only for learning-set words).
+- `vocab/for-dictation.md` — the **must-include list**. Anything named here is kept even
+  if the easy-word filter would normally drop it. Two kinds of line:
+  - a plain comma/space separated list of words, and
+  - `- all words in <deck>-vocabs.html` — pulls every word of that deck by set name from
+    `learning.json` and `need-to-review.json` (so a retired deck keeps its meanings, as
+    `src:"review"`).
+
+  Multi-word entries are reported and skipped — a phrase can't be dictated letter-perfect.
+  Just add a line to that file and re-run the build; nothing else to edit.
 
 The script reads both, dedupes, drops multi-word phrases (hard to dictate letter-perfect),
 sorts, and embeds the result.
@@ -60,6 +69,8 @@ python3 dev/scripts/build_index.py
 - **Focus on a spelling pattern**: All hard / S·C / TH / PH / -ough / Silent / Double /
   British — filters the pool to words carrying that tag (combines with the source filter).
 - **Sources**: All words / Learning-only / My mistakes (words previously misspelled).
+  (Each word carries `src`: `learning`, `known`, `curated`, `review` — from a retired
+  deck — or `requested` — named in `for-dictation.md` with no card anywhere.)
 - **Session length**: 15 / 30 / 50 / All, optional shuffle. The pool counter updates live
   to show how many words match the current focus + source.
 - **On correct**: green ✓, mark word mastered, show meaning hint + "Why it's tricky" chips

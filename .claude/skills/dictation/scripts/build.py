@@ -33,13 +33,19 @@ def load_known(path):
     return words
 
 
-def load_learning(path):
-    """vocab/learning.json → {word: {def,uz,ex,pos}} keyed by base word `w`."""
+def load_learning(path, only_set=None):
+    """A vocab store (learning.json / need-to-review.json) → {word: {def,uz,ex,pos}}.
+
+    `only_set` limits the read to one set key, which is how "all words in
+    <deck>-vocabs.html" in for-dictation.md is resolved.
+    """
     if not os.path.exists(path):
         return {}
     data = json.load(open(path, encoding="utf-8"))
     meta = {}
-    for cards in data.values():
+    for key, cards in data.items():
+        if only_set and key != only_set:
+            continue
         for c in cards:
             w = str(c.get("w", "")).strip().lower()
             if not w or not re.fullmatch(r"[a-z][a-z'’ -]*", w):
@@ -51,6 +57,49 @@ def load_learning(path):
                 "pos": c.get("pos", ""),
             }
     return meta
+
+
+REQUEST_FILE = os.path.join("vocab", "for-dictation.md")
+
+
+def load_requested(root):
+    """Words the user asked for by hand, from vocab/for-dictation.md.
+
+    Two kinds of line:
+      * a plain comma/space separated list of words, and
+      * `- all words in <deck>-vocabs.html` — every word of that deck, looked up
+        by set name in learning.json and need-to-review.json.
+
+    These words are always kept, even if the easy-word filter would drop them.
+    """
+    path = os.path.join(root, REQUEST_FILE)
+    if not os.path.exists(path):
+        return set(), {}
+    words, meta = set(), {}
+    for line in open(path, encoding="utf-8"):
+        s = line.strip().lstrip("-").strip()
+        if not s or s.startswith("#"):
+            continue
+        m = re.match(r"all words in\s+(\S+?)(?:-vocabs)?\.html\s*$", s, re.I)
+        if m:
+            set_name = os.path.basename(m.group(1))
+            found = False
+            for store in ("learning.json", "need-to-review.json"):
+                got = load_learning(os.path.join(root, "vocab", store), only_set=set_name)
+                if got:
+                    found = True
+                    for w, mm in got.items():
+                        words.add(w)
+                        meta.setdefault(w, mm)
+            if not found:
+                print(f"  NOTE: for-dictation.md asks for '{set_name}' but no vocab "
+                      f"store has that set — skipped")
+            continue
+        for tok in re.split(r"[,\s]+", s):
+            w = tok.strip().lower()
+            if re.fullmatch(r"[a-z][a-z'\u2019-]*[a-z]", w):
+                words.add(w)
+    return words, meta
 
 
 # ---------------------------------------------------------------------------
@@ -202,12 +251,22 @@ def is_easy(w, tags):
     return False
 
 
-def build_pool(known, learning, curated):
-    """Merge sources, tag by spelling difficulty, drop easy words, sort."""
+def build_pool(known, learning, curated, requested=(), req_meta=None):
+    """Merge sources, tag by spelling difficulty, drop easy words, sort.
+
+    Words in `requested` (vocab/for-dictation.md) survive the easy filter — the
+    user asked for them by name.
+    """
+    requested = set(requested)
     seen = {}
+    for w, m in (req_meta or {}).items():
+        seen[w] = {"w": w, "src": "review", **m}
     # learning first so their metadata wins
     for w, m in learning.items():
         seen[w] = {"w": w, "src": "learning", **m}
+    for w in requested:
+        seen.setdefault(w, {"w": w, "src": "requested", "def": "", "uz": "",
+                            "ex": "", "pos": ""})
     for w in known:
         seen.setdefault(w, {"w": w, "src": "known", "def": "", "uz": "", "ex": "", "pos": ""})
     # curated: may introduce words absent from the vocab, and carries forced tags
@@ -226,7 +285,7 @@ def build_pool(known, learning, curated):
         if " " in w:  # phrases can't be dictated letter-perfect
             continue
         tags = sorted(tag_word(w) | v.pop("_ct", set()), key=lambda x: TAG_ORDER.index(x) if x in TAG_ORDER else 99)
-        if is_easy(w, tags):
+        if w not in requested and is_easy(w, tags):
             continue
         v["tags"] = tags
         pool.append(v)
@@ -787,7 +846,8 @@ def main():
     root = a.repo_root
     known = load_known(os.path.join(root, "vocab", "known.md"))
     learning = load_learning(os.path.join(root, "vocab", "learning.json"))
-    pool = build_pool(known, learning, CURATED)
+    requested, req_meta = load_requested(root)
+    pool = build_pool(known, learning, CURATED, requested, req_meta)
 
     payload = json.dumps(pool, ensure_ascii=False)
     page = PAGE.replace("/*__WORDS__*/[]", payload)
@@ -798,9 +858,15 @@ def main():
         f.write(page)
 
     n_cur = sum(1 for w in pool if w["src"] == "curated")
+    kept = sum(1 for w in pool if w["w"] in requested)
+    phrases = sorted(w for w in requested if " " in w)   # can't be dictated letter-perfect
     by_tag = {t: sum(1 for w in pool if t in w["tags"]) for t in TAG_ORDER}
     print(f"Wrote {out}")
-    print(f"  {len(pool)} hard words  ({n_cur} curated classics added)")
+    print(f"  {len(pool)} hard words  ({n_cur} curated classics added, "
+          f"{kept}/{len(requested) - len(phrases)} single words from vocab/for-dictation.md)")
+    if phrases:
+        print(f"  skipped {len(phrases)} multi-word entries (a phrase can't be "
+              f"dictated letter-perfect): " + ", ".join(phrases))
     print("  by pattern: " + ", ".join(f"{t}={by_tag[t]}" for t in TAG_ORDER))
 
 

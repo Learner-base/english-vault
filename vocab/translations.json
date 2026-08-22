@@ -396,5 +396,73 @@
         "uz": "shubhasiz, juda muhim"
       }
     ]
+  },
+  {
+    "en": "So, a neural switch that automatically increases or decreases our ability to process warnings in response to changes in our environment could have been useful.",
+    "uz": "Shunday qilib, atrof-muhitimizdagi o'zgarishlarga javoban ogohlantirishlarni qayta ishlash qobiliyatimizni avtomatik ravishda oshiradigan yoki pasaytiradigan asabiy kalit foydali bo'lgan bo'lishi mumkin edi.",
+    "src": "C20-r1 · How stress affects our judgement",
+    "type": "reading",
+    "structure": "The subject is only “a neural switch” — everything between it and “could have been” describes that switch. Cut the middle out and the sentence is just “a switch … could have been useful”. “could have been” is a guess about the past, not the present.",
+    "chunks": [
+      {
+        "en": "So,",
+        "role": "Link",
+        "uz": "Shunday qilib,"
+      },
+      {
+        "en": "a neural switch",
+        "role": "Subject",
+        "uz": "asabiy (neyral) kalit"
+      },
+      {
+        "en": "that automatically increases or decreases our ability to process warnings",
+        "role": "Relative clause — which switch",
+        "uz": "ogohlantirishlarni qayta ishlash qobiliyatimizni avtomatik ravishda oshiradigan yoki pasaytiradigan"
+      },
+      {
+        "en": "in response to changes in our environment",
+        "role": "In-response-to phrase — when it switches",
+        "uz": "atrof-muhitimizdagi o'zgarishlarga javoban"
+      },
+      {
+        "en": "could have been useful.",
+        "role": "Verb — a guess about the past",
+        "uz": "foydali bo'lgan bo'lishi mumkin edi"
+      }
+    ]
+  },
+  {
+    "en": "In other words, a pre-programmed physiological reaction, which evolution has equipped us with to help us avoid famished predators, is now being triggered by an online post.",
+    "uz": "Boshqacha aytganda, evolyutsiya bizni och yirtqichlardan qochishimizga yordam berish uchun bergan oldindan dasturlangan fiziologik reaksiya endilikda onlayn post tomonidan qo'zg'atilmoqda.",
+    "src": "C20-r1 · How stress affects our judgement",
+    "type": "reading",
+    "structure": "The subject and its verb are pushed far apart by the commas. Take the which-clause out and it reads “a reaction … is now being triggered by an online post”. Note “equipped us with” — the preposition stays behind at the end of its clause.",
+    "chunks": [
+      {
+        "en": "In other words,",
+        "role": "Discourse marker — restating the idea",
+        "uz": "Boshqacha aytganda,"
+      },
+      {
+        "en": "a pre-programmed physiological reaction,",
+        "role": "Subject",
+        "uz": "oldindan dasturlangan fiziologik reaksiya"
+      },
+      {
+        "en": "which evolution has equipped us with to help us avoid famished predators,",
+        "role": "Relative clause — inserted description",
+        "uz": "evolyutsiya bizni och yirtqichlardan qochishimizga yordam berish uchun bergan"
+      },
+      {
+        "en": "is now being triggered",
+        "role": "Verb — present continuous passive",
+        "uz": "hozir qo'zg'atilmoqda"
+      },
+      {
+        "en": "by an online post.",
+        "role": "Agent — by what",
+        "uz": "onlayn post tomonidan"
+      }
+    ]
   }
 ]

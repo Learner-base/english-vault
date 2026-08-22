@@ -26,7 +26,7 @@ another folder visible, add it to `TOP_LEVEL` in `dev/scripts/build_index.py`.
 | "build a vocab deck from this passage + these words" | `vocab-deck` | flashcard HTML + `learning.json` + `known.md` |
 | "I finished this test" | `move-to-done` | `undone/` → `done/` + rebuild |
 | "I finished this vocab deck" | `vocab-deck-done` | deck → `done/`, words → `need-to-review.json`, **review page**, rebuild **+ commit** |
-| "make me a dictation" | `dictation` | spelling quiz from your vocab |
+| "make me a dictation" | `dictation` | spelling quiz from your vocab + `vocab/for-dictation.md` |
 | "how do I remember this word?" | `keyword-mnemonics` | Uzbek sound-alike + absurd story |
 | "add these hard sentences" | `translate-practice` | EN → Uzbek practice page |
 | "what should this file be called?" | `test-naming` | the short-name convention |
@@ -51,6 +51,7 @@ vocab/learning.json        cards you're still learning
 vocab/need-to-review.json  cards from finished decks (drives the review pages)
 vocab/known.md             every word you've ever carded (never pruned)
 vocab/glossary.json        word help for the translate page (words with no card)
+vocab/for-dictation.md     words that must appear in the dictation deck
 vocab/translations.json    practice sentences + their chunk breakdowns
 
 dev/scripts/    the generators (build_index, build_player, build_translate)
