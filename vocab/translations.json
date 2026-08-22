@@ -3,72 +3,398 @@
     "en": "Between 1908 and 1924, Gwendoline and Margaret Davies amassed one of the largest collections of late-nineteenth and early-twentieth-century French paintings in Britain.",
     "uz": "1908-yildan 1924-yilgacha Gvendolin va Margaret Deyvis Britaniyadagi XIX asr oxiri va XX asr boshlariga oid frantsuz rasmlarining eng yirik to'plamlaridan birini yig'ishdi.",
     "src": "C21-r1 · The Davies Sisters",
-    "type": "reading"
+    "type": "reading",
+    "structure": "Time phrase + Subject + Verb + Object. The long “of …” string only says which collection — strip it out and the frame is simply “they amassed one of the largest collections”.",
+    "chunks": [
+      {
+        "en": "Between 1908 and 1924,",
+        "role": "Time",
+        "uz": "1908-yildan 1924-yilgacha"
+      },
+      {
+        "en": "Gwendoline and Margaret Davies",
+        "role": "Subject",
+        "uz": "Gvendolin va Margaret Deyvis"
+      },
+      {
+        "en": "amassed",
+        "role": "Verb",
+        "uz": "yig'ishdi, to'plashdi"
+      },
+      {
+        "en": "one of the largest collections",
+        "role": "Object",
+        "uz": "eng yirik to'plamlardan birini"
+      },
+      {
+        "en": "of late-nineteenth and early-twentieth-century French paintings",
+        "role": "Of-phrase — which collection",
+        "uz": "XIX asr oxiri va XX asr boshlariga oid frantsuz rasmlarining"
+      },
+      {
+        "en": "in Britain.",
+        "role": "Place",
+        "uz": "Britaniyada"
+      }
+    ]
   },
   {
     "en": "Their religious upbringing in rural Wales gave them a deep sense of social responsibility and they chose to use their inheritance for cultural and philanthropic purposes.",
     "uz": "Uels qishloqlarida diniy tarbiya olganliklari ularga chuqur ijtimoiy mas'uliyat tuyg'usini berdi va ular o'z merosini madaniy hamda xayriya maqsadlarida ishlatishni tanladilar.",
     "src": "C21-r1 · The Davies Sisters",
-    "type": "reading"
+    "type": "reading",
+    "structure": "Two clauses joined by “and”. In the first, the subject is a thing, not a person (“upbringing gave them…”) — Uzbek turns it into “olgan tarbiyalari ularga … berdi”.",
+    "chunks": [
+      {
+        "en": "Their religious upbringing in rural Wales",
+        "role": "Subject",
+        "uz": "Uels qishloqlaridagi diniy tarbiyalari"
+      },
+      {
+        "en": "gave",
+        "role": "Verb",
+        "uz": "berdi"
+      },
+      {
+        "en": "them",
+        "role": "Indirect object",
+        "uz": "ularga"
+      },
+      {
+        "en": "a deep sense of social responsibility",
+        "role": "Direct object",
+        "uz": "chuqur ijtimoiy mas'uliyat tuyg'usini"
+      },
+      {
+        "en": "and they chose to use their inheritance",
+        "role": "Clause 2 — subject + verb + object",
+        "uz": "va ular merosini ishlatishni tanladilar"
+      },
+      {
+        "en": "for cultural and philanthropic purposes.",
+        "role": "Purpose",
+        "uz": "madaniy va xayriya maqsadlarida"
+      }
+    ]
   },
   {
     "en": "While it was long assumed that these men were largely responsible for the nature of the sisters' collection, it has recently been accepted that Gwendoline and Margaret retained a far more active role in the process.",
     "uz": "Uzoq vaqt davomida bu erkaklar opa-singillar to'plamining mohiyati uchun asosan javobgar deb hisoblab kelingan bo'lsa-da, yaqinda Gvendolin va Margaret bu jarayonda ancha faolroq rol o'ynaganligi e'tirof etildi.",
     "src": "C21-r1 · The Davies Sisters",
-    "type": "reading"
+    "type": "reading",
+    "structure": "Two “it + passive + that” frames. “It” is a dummy — the real subject is each that-clause. Read it as “people long assumed X … but it is now accepted that Y”.",
+    "chunks": [
+      {
+        "en": "While",
+        "role": "Contrast link",
+        "uz": "… bo'lsa-da"
+      },
+      {
+        "en": "it was long assumed that",
+        "role": "Impersonal frame",
+        "uz": "uzoq vaqt shunday deb hisoblab kelingan"
+      },
+      {
+        "en": "these men were largely responsible for the nature of the sisters' collection,",
+        "role": "That-clause 1 — the old view",
+        "uz": "bu erkaklar opa-singillar to'plamining mohiyati uchun asosan javobgar edi"
+      },
+      {
+        "en": "it has recently been accepted that",
+        "role": "Main frame — the new view",
+        "uz": "yaqinda shu e'tirof etildi"
+      },
+      {
+        "en": "Gwendoline and Margaret retained a far more active role",
+        "role": "That-clause 2",
+        "uz": "Gvendolin va Margaret ancha faolroq rolni saqlab qolgan"
+      },
+      {
+        "en": "in the process.",
+        "role": "Place phrase",
+        "uz": "bu jarayonda"
+      }
+    ]
   },
   {
     "en": "Quite simply, high quality Old Master works were, if not beyond their means, then beyond what they were willing to pay for them.",
     "uz": "Oddiy qilib aytganda, yuqori sifatli “Eski ustalar” asarlari ularning imkoniyatidan tashqarida bo'lmasa ham, ular to'lashga tayyor bo'lgan narxdan qimmatroq edi.",
     "src": "C21-r1 · The Davies Sisters",
-    "type": "reading"
+    "type": "reading",
+    "structure": "The frame is “X was, if not A, then B” — “maybe not A, but certainly B”. Both A and B start with “beyond”, so the comparison is about price.",
+    "chunks": [
+      {
+        "en": "Quite simply,",
+        "role": "Discourse marker",
+        "uz": "Oddiy qilib aytganda,"
+      },
+      {
+        "en": "high quality Old Master works",
+        "role": "Subject",
+        "uz": "yuqori sifatli “Eski ustalar” asarlari"
+      },
+      {
+        "en": "were,",
+        "role": "Verb",
+        "uz": "edi"
+      },
+      {
+        "en": "if not beyond their means,",
+        "role": "Concession — “maybe not A”",
+        "uz": "ularning imkoniyatidan tashqarida bo'lmasa ham"
+      },
+      {
+        "en": "then beyond what they were willing to pay for them.",
+        "role": "Complement — “but certainly B”",
+        "uz": "ular to'lashga tayyor bo'lgan narxdan qimmat edi"
+      }
+    ]
   },
   {
     "en": "However, it was only a few years before their collecting took a new direction and they turned to the work of the French Impressionists.",
     "uz": "Biroq, bir necha yil o'tar-o'tmas ularning to'plash faoliyati yangi yo'nalish oldi va ular frantsuz impressionistlari ijodiga yuzlandilar.",
     "src": "C21-r1 · The Davies Sisters",
-    "type": "reading"
+    "type": "reading",
+    "structure": "“It was only a few years before X” = “only a few years later, X happened” — the “it” says nothing, the time span does.",
+    "chunks": [
+      {
+        "en": "However,",
+        "role": "Link",
+        "uz": "Biroq,"
+      },
+      {
+        "en": "it was only a few years before",
+        "role": "Time frame — “only a few years later”",
+        "uz": "bor-yo'g'i bir necha yil o'tgach"
+      },
+      {
+        "en": "their collecting took a new direction",
+        "role": "Clause 1",
+        "uz": "ularning to'plash faoliyati yangi yo'nalish oldi"
+      },
+      {
+        "en": "and they turned to the work of the French Impressionists.",
+        "role": "Clause 2",
+        "uz": "va ular frantsuz impressionistlari ijodiga yuzlandilar"
+      }
+    ]
   },
   {
     "en": "Their initial response to the war effort was to finance the safe passage of artists from occupied Belgium to Wales, as a humanitarian act, but also with the hope of establishing a vibrant artists' community in the area.",
     "uz": "Urushga bo'lgan dastlabki munosabatlari — insonparvarlik ishi sifatida, shuningdek hududda jonli rassomlar jamoasini barpo etish umidida — bosib olingan Belgiyadan Uelsga rassomlarning xavfsiz ko'chib o'tishini moliyalashtirish bo'ldi.",
     "src": "C21-r1 · The Davies Sisters",
-    "type": "reading"
+    "type": "reading",
+    "structure": "“Their response was to finance …” — subject + be + to-infinitive. Everything after it is one long purpose tail: “as …, but also with the hope of …”.",
+    "chunks": [
+      {
+        "en": "Their initial response to the war effort",
+        "role": "Subject",
+        "uz": "urush harakatiga bo'lgan dastlabki munosabatlari"
+      },
+      {
+        "en": "was",
+        "role": "Verb",
+        "uz": "edi"
+      },
+      {
+        "en": "to finance the safe passage of artists",
+        "role": "Complement — to-infinitive",
+        "uz": "rassomlarning xavfsiz ko'chishini moliyalashtirish"
+      },
+      {
+        "en": "from occupied Belgium to Wales,",
+        "role": "From → to phrase",
+        "uz": "bosib olingan Belgiyadan Uelsga"
+      },
+      {
+        "en": "as a humanitarian act,",
+        "role": "Adverbial — in what capacity",
+        "uz": "insonparvarlik ishi sifatida"
+      },
+      {
+        "en": "but also with the hope of establishing a vibrant artists' community in the area.",
+        "role": "Second purpose",
+        "uz": "shuningdek hududda jonli rassomlar jamoasini barpo etish umidida"
+      }
+    ]
   },
   {
     "en": "It was tedious and distressing work, which would have a permanent effect on Gwendoline's health.",
     "uz": "Bu zerikarli va iztirobli ish bo'lib, keyinchalik Gvendolinning sog'lig'iga doimiy ta'sir ko'rsatgan.",
     "src": "C21-r1 · The Davies Sisters",
-    "type": "reading"
+    "type": "reading",
+    "structure": "A main clause plus a non-defining “which” clause. “Which” points back to the whole work, and “would” here is the past-in-the-future: it went on to have that effect.",
+    "chunks": [
+      {
+        "en": "It was tedious and distressing work,",
+        "role": "Main clause",
+        "uz": "Bu zerikarli va iztirobli ish edi"
+      },
+      {
+        "en": "which",
+        "role": "Relative pronoun — = that work",
+        "uz": "u (ya'ni o'sha ish)"
+      },
+      {
+        "en": "would have a permanent effect",
+        "role": "Verb + object — past-in-the-future",
+        "uz": "keyinchalik doimiy ta'sir ko'rsatdi"
+      },
+      {
+        "en": "on Gwendoline's health.",
+        "role": "On-phrase — affected what",
+        "uz": "Gvendolinning sog'lig'iga"
+      }
+    ]
   },
   {
     "en": "Yet they didn't feel obliged to follow fashionable tastes and were free to pursue their own preferences.",
     "uz": "Shunga qaramay, ular urfdagi didlarga ergashishga o'zlarini majbur his qilishmadi va o'z xohishlariga amal qilishda erkin edilar.",
     "src": "C21-r1 · The Davies Sisters",
-    "type": "reading"
+    "type": "reading",
+    "structure": "Two predicates share one subject: “they didn't feel obliged … and (they) were free …”. “Yet” marks the contrast with the previous sentence.",
+    "chunks": [
+      {
+        "en": "Yet",
+        "role": "Contrast link",
+        "uz": "Shunga qaramay,"
+      },
+      {
+        "en": "they didn't feel obliged to follow fashionable tastes",
+        "role": "Clause 1",
+        "uz": "ular urfdagi didlarga ergashishga majbur his qilishmadi"
+      },
+      {
+        "en": "and",
+        "role": "Link",
+        "uz": "va"
+      },
+      {
+        "en": "were free to pursue their own preferences.",
+        "role": "Clause 2 — same subject",
+        "uz": "o'z xohishlariga amal qilishda erkin edilar"
+      }
+    ]
   },
   {
     "en": "By the early 1920s, Gwendoline felt increasingly uncomfortable buying art works when faced with the poverty and social upheaval created by the First World War.",
     "uz": "1920-yillarning boshlariga kelib, Birinchi jahon urushi keltirib chiqargan qashshoqlik va ijtimoiy larzalar oldida Gvendolin san'at asarlarini sotib olishdan tobora noqulaylik his qila boshladi.",
     "src": "C21-r1 · The Davies Sisters",
-    "type": "reading"
+    "type": "reading",
+    "structure": "“Felt uncomfortable buying” — feel + adjective + -ing. The tail is a reduced clause: “when (she was) faced with … (that was) created by …”.",
+    "chunks": [
+      {
+        "en": "By the early 1920s,",
+        "role": "Time",
+        "uz": "1920-yillar boshiga kelib"
+      },
+      {
+        "en": "Gwendoline",
+        "role": "Subject",
+        "uz": "Gvendolin"
+      },
+      {
+        "en": "felt increasingly uncomfortable",
+        "role": "Verb + complement",
+        "uz": "tobora noqulaylik his qila boshladi"
+      },
+      {
+        "en": "buying art works",
+        "role": "-ing complement — uncomfortable about what",
+        "uz": "san'at asarlarini sotib olishdan"
+      },
+      {
+        "en": "when faced with the poverty and social upheaval",
+        "role": "Reduced clause — “when she was faced with”",
+        "uz": "qashshoqlik va ijtimoiy larzalar bilan yuzma-yuz kelganda"
+      },
+      {
+        "en": "created by the First World War.",
+        "role": "Reduced relative — “that had been created by”",
+        "uz": "Birinchi jahon urushi keltirib chiqargan"
+      }
+    ]
   },
   {
     "en": "The sisters collected French Impressionist paintings at a time when such art was routinely ignored by individuals and institutions alike.",
     "uz": "Opa-singillar frantsuz impressionizmi rasmlarini bunday san'at ham oddiy odamlar, ham muassasalar tomonidan odatda e'tiborsiz qoldirilgan bir paytda yig'ishdi.",
     "src": "C21-r1 · The Davies Sisters",
-    "type": "reading"
+    "type": "reading",
+    "structure": "“At a time when …” opens a whole background clause, and that clause is passive: the art was ignored (by whom is said at the end).",
+    "chunks": [
+      {
+        "en": "The sisters",
+        "role": "Subject",
+        "uz": "Opa-singillar"
+      },
+      {
+        "en": "collected French Impressionist paintings",
+        "role": "Verb + object",
+        "uz": "frantsuz impressionizmi rasmlarini yig'ishdi"
+      },
+      {
+        "en": "at a time when",
+        "role": "Time frame — “in an era in which”",
+        "uz": "shunday bir paytda-ki"
+      },
+      {
+        "en": "such art was routinely ignored",
+        "role": "Passive clause",
+        "uz": "bunday san'at odatda e'tiborsiz qoldirilardi"
+      },
+      {
+        "en": "by individuals and institutions alike.",
+        "role": "Agent — by whom",
+        "uz": "ham oddiy odamlar, ham muassasalar tomonidan barobar"
+      }
+    ]
   },
   {
     "en": "There are usually about eight people but no more than ten, and everyone's always very friendly.",
     "uz": "Odatda sakkizga yaqin, lekin o'ndan ko'p bo'lmagan odam bo'ladi va hamma doim juda samimiy.",
     "src": "C21-l1 · Listening script",
-    "type": "listening"
+    "type": "listening",
+    "structure": "“There are …” states existence, not location. “no more than ten” caps the number, and “everyone's” = “everyone is”.",
+    "chunks": [
+      {
+        "en": "There are usually about eight people",
+        "role": "There-is frame — how many",
+        "uz": "Odatda sakkizga yaqin odam bo'ladi"
+      },
+      {
+        "en": "but no more than ten,",
+        "role": "Upper limit",
+        "uz": "lekin o'ndan ko'p emas"
+      },
+      {
+        "en": "and everyone's always very friendly.",
+        "role": "Clause 2 — everyone's = everyone is",
+        "uz": "va hamma doim juda samimiy"
+      }
+    ]
   },
   {
     "en": "You learn about things like the weather, which is obviously really important.",
     "uz": "Siz ob-havo kabi narsalarni o'rganasiz, bu esa, shubhasiz, juda muhim.",
     "src": "C21-l1 · Listening script",
-    "type": "listening"
+    "type": "listening",
+    "structure": "The “which” does not refer to “the weather” but to the whole idea of learning about it — a comment on the previous clause.",
+    "chunks": [
+      {
+        "en": "You learn about things like the weather,",
+        "role": "Main clause",
+        "uz": "Siz ob-havo kabi narsalarni o'rganasiz"
+      },
+      {
+        "en": "which",
+        "role": "Relative pronoun — = that whole fact",
+        "uz": "bu esa"
+      },
+      {
+        "en": "is obviously really important.",
+        "role": "Comment",
+        "uz": "shubhasiz, juda muhim"
+      }
+    ]
   }
 ]

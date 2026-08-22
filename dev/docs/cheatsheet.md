@@ -50,6 +50,8 @@ generated/vocab/review/    review pages, auto-built from need-to-review.json
 vocab/learning.json        cards you're still learning
 vocab/need-to-review.json  cards from finished decks (drives the review pages)
 vocab/known.md             every word you've ever carded (never pruned)
+vocab/glossary.json        word help for the translate page (words with no card)
+vocab/translations.json    practice sentences + their chunk breakdowns
 
 dev/scripts/    the generators (build_index, build_player, build_translate)
 dev/templates/  the reading / listening / vocab page templates
