@@ -2,10 +2,6 @@
 
 ---
 
-player is not working as expected, test that fully and fix all of the bugs
-
----
-
 move c20 r1 to done folder
 
 ---
@@ -28,10 +24,9 @@ from progress folder make
 
   update necessary skills and commands for that
 
-  ---
+---
+
 
   always add new learnt vocabs to dictation
 
-  ---
-
-  
+---

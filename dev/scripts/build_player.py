@@ -228,6 +228,9 @@ PAGE_HEAD = """<!DOCTYPE html>
   .badge{font-size:10px;font-weight:800;padding:3px 8px;border-radius:999px;flex:none;letter-spacing:.02em}
   .badge.off{background:var(--greenbg);color:var(--green)}
   .badge.on{background:var(--amberbg);color:var(--amber)}
+  .badge.bad{background:#fef2f2;color:#b91c1c}
+  .card.dead .meta .t,.card.dead .idx{opacity:.55}
+  .bar .st.err{color:#b91c1c;font-weight:650}
   /* equalizer (now playing) */
   .eq{display:none;align-items:flex-end;gap:2px;height:16px;width:16px;flex:none}
   .card.playing .eq{display:inline-flex}
@@ -339,9 +342,14 @@ const listEl=document.getElementById('list');
 const npTitle=document.getElementById('npTitle'), npSub=document.getElementById('npSub');
 const seek=document.getElementById('seek'), curEl=document.getElementById('cur'), durEl=document.getElementById('dur');
 const playBtn=document.getElementById('play'), rateBtn=document.getElementById('rate');
-let cur=-1, audio=null, curRate=1;
+let cur=-1, audio=null, curRate=1, seeking=false, autoChain=0;
+const dead=new Set();
 
 function fmt(s){ if(!isFinite(s)||s<0)return '0:00'; s=Math.floor(s); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
+// resume positions are keyed by the track's name, not its index — adding a new
+// test shifts every index, which used to restore the wrong position.
+function posKey(i){ return 'lp_pos::'+PLAYLIST[i].key; }
+function savedPos(i){ const v=parseFloat(localStorage.getItem(posKey(i))||'0'); return isFinite(v)&&v>0?v:0; }
 
 // header stats
 (function(){
@@ -364,10 +372,14 @@ PLAYLIST.forEach((tk,i)=>{
       `<div class="eq" aria-hidden="true"><i></i><i></i><i></i></div>`+
       `<div class="meta"><div class="t">${tk.label}</div><div class="d">${tk.media}</div></div>`+
       scriptBtn+
-      `<span class="badge ${tk.offline?'off':'on'}">${tk.offline?'offline':'online'}</span>`+
+      `<span class="badge ${tk.offline?'off':'on'}" id="badge-${i}">${tk.offline?'offline':'online'}</span>`+
     `</div>`+
     `<div class="panel" id="panel-${i}"></div>`;
-  card.querySelector('.trk').addEventListener('click',()=>selectTrack(i,true));
+  card.querySelector('.trk').addEventListener('click',()=>{
+    // tapping the track that is already playing pauses it, instead of doing nothing
+    if(i===cur && audio){ autoChain=0; if(audio.paused) audio.play().catch(()=>{}); else audio.pause(); return; }
+    selectTrack(i,true);
+  });
   const sb=card.querySelector('.scriptbtn');
   if(sb) sb.addEventListener('click',(e)=>{ e.stopPropagation(); togglePanel(i,sb); });
   listEl.appendChild(card);
@@ -387,58 +399,143 @@ function togglePanel(i, btn){
 
 function el(i){ return document.getElementById(PLAYLIST[i].id); }
 
+function markDead(i){
+  dead.add(i);
+  const c=document.getElementById('card-'+i); if(c) c.classList.add('dead');
+  const b=document.getElementById('badge-'+i);
+  if(b){ b.className='badge bad'; b.textContent='unavailable'; }
+}
+
+function showErr(msg){ npSub.textContent=msg; npSub.classList.add('err'); }
+function clearErr(tk){ npSub.textContent=tk.media; npSub.classList.remove('err'); }
+
 function selectTrack(i, autoplay){
-  if(i<0||i>=PLAYLIST.length) return;
-  if(audio && cur!==i){ audio.pause(); }
+  if(i<0||i>=PLAYLIST.length){ // walked off the end of the playlist — stop cleanly
+    if(audio) audio.pause();
+    return;
+  }
+  if(audio && cur!==i) audio.pause();
   document.querySelectorAll('.card').forEach(r=>r.classList.remove('active','playing'));
   const card=document.getElementById('card-'+i); if(card) card.classList.add('active');
   cur=i; const tk=PLAYLIST[i];
-  audio=el(i); audio.playbackRate=curRate;
-  npTitle.textContent=tk.label; npSub.textContent=tk.media;
+  audio=el(i);
+  // the element is preload="none" so nothing downloads until a track is chosen;
+  // once chosen we want its duration even while paused
+  if(audio.preload!=='metadata'){ audio.preload='metadata'; audio.load(); }
+  audio.playbackRate=curRate;
+  npTitle.textContent=tk.label;
+  clearErr(tk);
+  if(dead.has(i)) showErr('Audio unavailable — the source link is dead.');
   wire(audio);
   updateMediaSession(tk);
   localStorage.setItem('lp_last', i);
-  if(autoplay) audio.play().catch(()=>{});
-  else { curEl.textContent=fmt(audio.currentTime||0); durEl.textContent=fmt(audio.duration||0); }
+  // show the stored position right away, before any metadata arrives
+  const p=savedPos(i);
+  curEl.textContent=fmt(audio.currentTime||p);
+  durEl.textContent=fmt(audio.duration||0);
+  seek.value=(audio.duration?String(Math.round((audio.currentTime||p)/audio.duration*1000)):'0');
+  if(autoplay) audio.play().catch(()=>{ playBtn.textContent='▶'; });
 }
 
 let wired=new WeakSet();
 function wire(a){
-  if(!wired.has(a)){
-    wired.add(a);
-    a.addEventListener('timeupdate',()=>{ if(a!==audio)return; if(a.duration) seek.value=String(Math.round(a.currentTime/a.duration*1000)); curEl.textContent=fmt(a.currentTime); durEl.textContent=fmt(a.duration); if(cur>=0) localStorage.setItem('lp_pos_'+cur, a.currentTime); });
-    a.addEventListener('loadedmetadata',()=>{ if(a===audio){ durEl.textContent=fmt(a.duration); const p=parseFloat(localStorage.getItem('lp_pos_'+cur)||'0'); if(p>0&&p<a.duration-2) a.currentTime=p; } });
-    a.addEventListener('play',()=>{ if(a===audio){ playBtn.textContent='❚❚'; const c=document.getElementById('card-'+cur); if(c)c.classList.add('playing'); } });
-    a.addEventListener('pause',()=>{ if(a===audio){ playBtn.textContent='▶'; const c=document.getElementById('card-'+cur); if(c)c.classList.remove('playing'); } });
-    a.addEventListener('ended',()=>{ if(a===audio) selectTrack(cur+1, true); });
-  }
+  if(wired.has(a)) return;
+  wired.add(a);
+  a.addEventListener('timeupdate',()=>{
+    if(a!==audio) return;
+    if(!seeking && a.duration) seek.value=String(Math.round(a.currentTime/a.duration*1000));
+    if(!seeking) curEl.textContent=fmt(a.currentTime);
+    durEl.textContent=fmt(a.duration);
+    if(cur>=0) localStorage.setItem(posKey(cur), a.currentTime);
+  });
+  a.addEventListener('loadedmetadata',()=>{
+    if(a!==audio) return;
+    a.playbackRate=curRate;          // some browsers reset the rate on load
+    durEl.textContent=fmt(a.duration);
+    const p=savedPos(cur);
+    if(p>0 && p<a.duration-2) a.currentTime=p;
+    syncPosition(a);
+  });
+  a.addEventListener('play',()=>{ if(a===audio){ playBtn.textContent='❚❚'; const c=document.getElementById('card-'+cur); if(c)c.classList.add('playing'); syncPosition(a); } });
+  a.addEventListener('pause',()=>{ if(a===audio){ playBtn.textContent='▶'; const c=document.getElementById('card-'+cur); if(c)c.classList.remove('playing'); } });
+  a.addEventListener('ratechange',()=>{ if(a===audio) syncPosition(a); });
+  a.addEventListener('ended',()=>{
+    if(a!==audio) return;
+    localStorage.removeItem(posKey(cur));   // a finished track restarts from 0
+    autoChain=0;
+    selectTrack(cur+1, true);
+  });
+  a.addEventListener('error',()=>{
+    if(a!==audio) return;
+    const i=cur;
+    markDead(i);
+    playBtn.textContent='▶';
+    showErr('Audio unavailable — the source link is dead.');
+    // during continuous play, hop over dead tracks instead of stalling —
+    // but never run away through the whole playlist
+    if(autoChain>0 && autoChain<6 && i+1<PLAYLIST.length){ autoChain++; selectTrack(i+1,true); }
+  });
 }
 
-playBtn.addEventListener('click',()=>{ if(cur<0){ selectTrack(0,true); return; } if(audio.paused) audio.play().catch(()=>{}); else audio.pause(); });
-document.getElementById('next').addEventListener('click',()=>selectTrack(cur<0?0:cur+1,true));
-document.getElementById('prev').addEventListener('click',()=>{ if(cur<0){selectTrack(0,true);return;} if(audio.currentTime>3){audio.currentTime=0;} else selectTrack(cur-1,true); });
-document.getElementById('fwd').addEventListener('click',()=>{ if(audio) audio.currentTime=Math.min(audio.duration||0,audio.currentTime+15); });
+playBtn.addEventListener('click',()=>{ autoChain=1; if(cur<0){ selectTrack(0,true); return; } if(audio.paused) audio.play().catch(()=>{ playBtn.textContent='▶'; }); else audio.pause(); });
+document.getElementById('next').addEventListener('click',()=>{ autoChain=1; selectTrack(cur<0?0:cur+1,true); });
+document.getElementById('prev').addEventListener('click',()=>{ autoChain=1; if(cur<0){selectTrack(0,true);return;} if(audio.currentTime>3){audio.currentTime=0;} else selectTrack(cur-1,true); });
+document.getElementById('fwd').addEventListener('click',()=>{ if(audio&&audio.duration) audio.currentTime=Math.min(audio.duration,audio.currentTime+15); });
 document.getElementById('back').addEventListener('click',()=>{ if(audio) audio.currentTime=Math.max(0,audio.currentTime-15); });
-seek.addEventListener('input',()=>{ if(audio&&audio.duration) audio.currentTime=(+seek.value)/1000*audio.duration; });
+// while a finger is on the slider, timeupdate must not fight the drag
+seek.addEventListener('pointerdown',()=>{ seeking=true; });
+seek.addEventListener('input',()=>{ if(audio&&audio.duration) curEl.textContent=fmt((+seek.value)/1000*audio.duration); });
+function commitSeek(){ if(audio&&audio.duration) audio.currentTime=(+seek.value)/1000*audio.duration; seeking=false; }
+seek.addEventListener('change',commitSeek);
+seek.addEventListener('pointerup',commitSeek);
+seek.addEventListener('pointercancel',()=>{ seeking=false; });
+
 const rateMenu=document.getElementById('rateMenu');
 const rateOpts=Array.prototype.slice.call(rateMenu.querySelectorAll('.rate-opt'));
 function openRate(o){ rateMenu.hidden=!o; rateBtn.setAttribute('aria-expanded', o?'true':'false'); }
+function applyRate(r){
+  curRate=r; if(audio) audio.playbackRate=r;
+  rateBtn.textContent=r+'×';
+  rateOpts.forEach(x=>x.classList.toggle('active', parseFloat(x.dataset.rate)===r));
+  localStorage.setItem('lp_rate', String(r));
+}
 rateBtn.addEventListener('click',(e)=>{ e.stopPropagation(); openRate(rateMenu.hidden); });
-rateOpts.forEach(o=>o.addEventListener('click',(e)=>{ e.stopPropagation(); curRate=parseFloat(o.dataset.rate); if(audio)audio.playbackRate=curRate; rateBtn.textContent=curRate+'×'; rateOpts.forEach(x=>x.classList.toggle('active',x===o)); openRate(false); }));
+rateOpts.forEach(o=>o.addEventListener('click',(e)=>{ e.stopPropagation(); applyRate(parseFloat(o.dataset.rate)); openRate(false); }));
 document.addEventListener('click',()=>openRate(false));
+
+// keyboard: space plays/pauses, arrows nudge 15s
+document.addEventListener('keydown',(e)=>{
+  const t=e.target;
+  // e.target can be the document itself when nothing is focused
+  if(t&&t.closest&&t.closest('input,textarea,button,[contenteditable]')) return;
+  if(e.code==='Space'){ e.preventDefault(); playBtn.click(); }
+  else if(e.code==='ArrowLeft'){ e.preventDefault(); document.getElementById('back').click(); }
+  else if(e.code==='ArrowRight'){ e.preventDefault(); document.getElementById('fwd').click(); }
+});
+
+function syncPosition(a){
+  // without this the lock-screen / car scrubber stays frozen at 0:00
+  if(!('mediaSession' in navigator) || !navigator.mediaSession.setPositionState) return;
+  if(!isFinite(a.duration)||a.duration<=0) return;
+  try{ navigator.mediaSession.setPositionState({duration:a.duration, playbackRate:a.playbackRate||1, position:Math.min(a.currentTime,a.duration)}); }catch(_){}
+}
 
 function updateMediaSession(tk){
   if(!('mediaSession' in navigator)) return;
   navigator.mediaSession.metadata=new MediaMetadata({title:tk.label, artist:tk.media, album:'Listening Player'});
-  navigator.mediaSession.setActionHandler('play',()=>audio&&audio.play());
-  navigator.mediaSession.setActionHandler('pause',()=>audio&&audio.pause());
-  navigator.mediaSession.setActionHandler('previoustrack',()=>selectTrack(cur-1,true));
-  navigator.mediaSession.setActionHandler('nexttrack',()=>selectTrack(cur+1,true));
-  navigator.mediaSession.setActionHandler('seekbackward',()=>{ if(audio)audio.currentTime=Math.max(0,audio.currentTime-15); });
-  navigator.mediaSession.setActionHandler('seekforward',()=>{ if(audio)audio.currentTime=Math.min(audio.duration||0,audio.currentTime+15); });
+  const set=(k,fn)=>{ try{ navigator.mediaSession.setActionHandler(k,fn); }catch(_){} };
+  set('play',()=>audio&&audio.play());
+  set('pause',()=>audio&&audio.pause());
+  set('previoustrack',()=>selectTrack(cur-1,true));
+  set('nexttrack',()=>selectTrack(cur+1,true));
+  set('seekbackward',(d)=>{ if(audio) audio.currentTime=Math.max(0,audio.currentTime-((d&&d.seekOffset)||15)); });
+  set('seekforward',(d)=>{ if(audio&&audio.duration) audio.currentTime=Math.min(audio.duration,audio.currentTime+((d&&d.seekOffset)||15)); });
+  set('seekto',(d)=>{ if(audio&&d&&typeof d.seekTime==='number') audio.currentTime=d.seekTime; });
 }
 
-// restore last selection (paused)
+// restore speed, then the last selection (paused)
+const savedRate=parseFloat(localStorage.getItem('lp_rate')||'1');
+if([0.75,1,1.25,1.5,2].indexOf(savedRate)>=0) applyRate(savedRate);
 const last=parseInt(localStorage.getItem('lp_last')||'-1',10);
 if(last>=0 && last<PLAYLIST.length) selectTrack(last,false);
 </script>
@@ -453,7 +550,8 @@ def main():
         f'<audio id="{t["id"]}" preload="none" src="{html.escape(t["src"], quote=True)}"></audio>'
         for t in tracks
     )
-    meta = [{"id": t["id"], "group": t["group"], "label": t["label"],
+    meta = [{"id": t["id"], "key": f'{t["group"]}|{t["label"]}',
+             "group": t["group"], "label": t["label"],
              "media": t["media"], "offline": t["offline"],
              "tr": t["tr"], "trtype": t["trtype"]} for t in tracks]
     playlist_json = json.dumps(meta, ensure_ascii=False).replace("</", "<\\/")
