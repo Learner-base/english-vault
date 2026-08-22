@@ -21,6 +21,10 @@ and, for each:
 3. Moves that key's cards from `vocab/learning.json` into `vocab/need-to-review.json`,
    merging (and de-duplicating by `w`) if the key is already there.
 4. Rebuilds `index.html` via `scripts/build_index.py`.
+5. **Commits** the result — staging only the paths it touches
+   (`generated/vocab/`, the two vocab JSONs, `index.html`, `player.html`,
+   `generated/translate/`), so unrelated work in progress stays uncommitted.
+   It never pushes.
 
 Each step is skipped harmlessly if it's already been done, so re-running is safe.
 
@@ -31,8 +35,10 @@ python3 .claude/skills/vocab-deck-done/scripts/vocab_done.py cambridge-18-test-1
 python3 .claude/skills/vocab-deck-done/scripts/vocab_done.py generated/vocab/inprogress/C20-r1-vocabs.html
 ```
 
-Pass several decks at once. `--no-index` skips the rebuild (use it only if you're
-batching and will rebuild yourself).
+Pass several decks at once.
+
+- `--no-commit` — leave everything in the working tree instead of committing.
+- `--no-index` — skip the rebuild (only when batching and rebuilding yourself).
 
 ## Notes
 
@@ -42,4 +48,6 @@ batching and will rebuild yourself).
   so retired words keep their spelling practice via `known.md` but lose their rich
   meaning/example lines. That's intended.
 - `index.html` and `player.html` are generated — never hand-edit them.
-- **Commit only with the user's go-ahead**; the script never commits.
+- **Committing is pre-approved for this skill only** — the user explicitly asked it to
+  commit, so you don't need to ask again when running it. Everywhere else the standing
+  rule still holds: never commit without the user's go-ahead. The script never pushes.

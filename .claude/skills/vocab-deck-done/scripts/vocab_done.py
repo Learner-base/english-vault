@@ -6,6 +6,7 @@ For each deck given (an HTML path under generated/vocab/, or a bare set name):
 1. git mv the deck HTML from generated/vocab/inprogress/ -> generated/vocab/done/
 2. move that set's cards from vocab/learning.json -> vocab/need-to-review.json
 3. rebuild index.html (scripts/build_index.py)
+4. commit the result (pass --no-commit to skip; it never pushes)
 
 Set name = deck filename without the trailing "-vocabs.html"; it is the key used
 in learning.json.
@@ -59,12 +60,13 @@ def resolve(target):
 def move_html(src, set_name):
     if src is None:
         print("  html: already in done/ (or not found) — skipped")
-        return
+        return False
     os.makedirs(DONE, exist_ok=True)
     dst = os.path.join(DONE, os.path.basename(src))
     if subprocess.call(["git", "mv", src, dst], cwd=ROOT) != 0:
         os.replace(src, dst)
     print("  html: %s -> %s" % (os.path.relpath(src, ROOT), os.path.relpath(dst, ROOT)))
+    return True
 
 
 def move_cards(set_name):
@@ -84,6 +86,30 @@ def move_cards(set_name):
     return len(cards)
 
 
+PATHS = ["generated/vocab", "vocab/learning.json", "vocab/need-to-review.json",
+         "index.html", "player.html", "generated/translate"]
+
+
+def commit(set_names, moved):
+    """Stage only what this script touches and commit. Never pushes."""
+    subprocess.call(["git", "add", "--"] + PATHS, cwd=ROOT)
+    staged = subprocess.call(["git", "diff", "--cached", "--quiet"], cwd=ROOT)
+    if staged == 0:
+        print("commit: nothing changed — skipped")
+        return 0
+    names = ", ".join(set_names)
+    title = "chore(vocab): retire %s to done" % names
+    if len(title) > 72:
+        title = "chore(vocab): retire %d vocab deck(s) to done" % len(set_names)
+    body = ("Move the deck HTML to generated/vocab/done/ and %d card(s) from\n"
+            "vocab/learning.json into vocab/need-to-review.json, then rebuild\n"
+            "index.html.\n\nDecks: %s\n" % (moved, names))
+    msg = "%s\n\n%s" % (title, body)
+    rc = subprocess.call(["git", "commit", "-q", "-m", msg], cwd=ROOT)
+    print("commit: %s" % (title if rc == 0 else "FAILED (rc=%d)" % rc))
+    return rc
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -91,18 +117,33 @@ def main():
                     help="deck HTML path or bare set name (e.g. C20-r1)")
     ap.add_argument("--no-index", action="store_true",
                     help="skip the index.html rebuild")
+    ap.add_argument("--no-commit", action="store_true",
+                    help="leave the changes uncommitted in the working tree")
     a = ap.parse_args()
 
+    set_names, moved, did_move = [], 0, False
     for target in a.decks:
         set_name, src = resolve(target)
         print("%s:" % set_name)
-        move_html(src, set_name)
-        move_cards(set_name)
+        did_move |= move_html(src, set_name)
+        cards = move_cards(set_name)
+        moved += cards
+        did_move |= cards > 0
+        set_names.append(set_name)
 
-    if a.no_index:
+    if not a.no_index:
+        rc = subprocess.call([sys.executable, os.path.join(ROOT, "scripts/build_index.py")],
+                             cwd=ROOT)
+        if rc != 0:
+            return rc
+
+    if a.no_commit:
+        print("commit: skipped (--no-commit)")
         return 0
-    return subprocess.call([sys.executable, os.path.join(ROOT, "scripts/build_index.py")],
-                           cwd=ROOT)
+    if not did_move:
+        print("commit: nothing was retired — skipped")
+        return 0
+    return commit(set_names, moved)
 
 
 if __name__ == "__main__":

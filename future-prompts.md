@@ -2,7 +2,7 @@
 
 ---
 
-add skill for these things also for automation
+now make html for review words, but add second hint for them that is show example sentance. and it must be auto generated after vocab file moved to done and vocabs added to review json file. and place those review vocabs html in generated/vocab/review folder
 
 ---
 

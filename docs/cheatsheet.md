@@ -20,14 +20,15 @@ move or delete **any** file. Never hand-edit those three — they are generated.
 | "make a listening test from these audios + script" | `listening-generate` | 4-section listening HTML with audio |
 | "build a vocab deck from this passage + these words" | `vocab-deck` | flashcard HTML + `learning.json` + `known.md` |
 | "I finished this test" | `move-to-done` | `undone/` → `done/` + rebuild |
-| "I finished this vocab deck" | `vocab-deck-done` | deck → `done/`, words → `need-to-review.json` + rebuild |
+| "I finished this vocab deck" | `vocab-deck-done` | deck → `done/`, words → `need-to-review.json`, rebuild **+ commit** |
 | "make me a dictation" | `dictation` | spelling quiz from your vocab |
 | "how do I remember this word?" | `keyword-mnemonics` | Uzbek sound-alike + absurd story |
 | "add these hard sentences" | `translate-practice` | EN → Uzbek practice page |
 | "what should this file be called?" | `test-naming` | the short-name convention |
 
 Each skill's own `SKILL.md` lives in `.claude/skills/<name>/`, and every generator ends
-by rebuilding the index for you.
+by rebuilding the index for you. Only `vocab-deck-done` commits (never pushes) —
+everything else leaves the changes for you to review.
 
 ## Where things live
 
