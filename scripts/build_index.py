@@ -18,10 +18,14 @@ SKIP_DIR = {".git", ".claude", "__pycache__", "scripts"}
 # doesn't need either listed in the browser.
 SKIP_FILE = {".DS_Store", "CLAUDE.md", "index.html", "progress.html", "vercel.json",
              "player.html", "future-prompts.md"}
+# The page shows ONLY these top-level folders (and what is inside them). Everything
+# else at the repo root — loose .md notes, templates/, config — stays out of the
+# browser. Add a folder here if it should become visible.
+TOP_LEVEL = {"docs", "generated", "listening", "reading", "vocab", "writing"}
 OUT = os.path.join(ROOT, "index.html")
 
 
-def walk(d):
+def walk(d, top=False):
     kids = []
     for name in sorted(os.listdir(d)):
         if name.startswith("."):  # dotfiles/dirs: .gitignore, .gitkeep, .DS_Store, .git, .claude…
@@ -29,6 +33,8 @@ def walk(d):
         if name in SKIP_DIR or name in SKIP_FILE or name.endswith(".pyc"):
             continue
         p = os.path.join(d, name)
+        if top and (name not in TOP_LEVEL or not os.path.isdir(p)):
+            continue  # root level: only the allowed folders, never loose files
         rel = os.path.relpath(p, ROOT)
         if os.path.isdir(p):
             kids.append({"n": name, "t": "d", "c": walk(p)})
@@ -52,7 +58,7 @@ def latest_added(n=5):
             continue
         name = os.path.basename(rel)
         top = rel.split("/")[0]
-        if top in SKIP_DIR or name in SKIP_FILE or name.endswith(".pyc"):
+        if top not in TOP_LEVEL or name in SKIP_FILE or name.endswith(".pyc"):
             continue
         # skip dotfiles anywhere in the path (.gitignore, .gitkeep, .DS_Store, .git/…)
         if any(seg.startswith(".") for seg in rel.split("/")):
@@ -196,7 +202,7 @@ q.addEventListener("input",()=>{
 
 
 def main():
-    tree = json.dumps(walk(ROOT), ensure_ascii=False)
+    tree = json.dumps(walk(ROOT, top=True), ensure_ascii=False)
     latest = json.dumps(latest_added(5), ensure_ascii=False)
     html = PAGE.replace("__TREE__", tree).replace("__LATEST__", latest)
     with open(OUT, "w", encoding="utf-8") as f:

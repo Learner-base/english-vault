@@ -12,6 +12,11 @@ Regenerates **`index.html`** (the file browser), **`player.html`** (the road aud
 playlist) and **`generated/translate/translate.html`**. Run it after you add, rename,
 move or delete **any** file. Never hand-edit those three — they are generated.
 
+The browser lists only six top-level folders — `docs`, `generated`, `listening`,
+`reading`, `vocab`, `writing` — and what is inside them. Loose files at the repo root,
+`templates/`, and every dotfile (`.gitkeep`, `.gitignore`, …) stay hidden. To make
+another folder visible, add it to `TOP_LEVEL` in `scripts/build_index.py`.
+
 ## Skills (say it in plain words, Claude picks the skill)
 
 | Say this | Skill | What happens |
