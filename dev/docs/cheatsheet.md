@@ -10,9 +10,10 @@ python3 dev/scripts/build_index.py
 
 Regenerates **`dev/index.html`** (the file browser), **`dev/player.html`** (the road audio
 playlist), **`dev/progress.html`** (what you're studying now),
-**`generated/translate/translate.html`** and **`generated/dictation/dictation.html`**.
+**`generated/translate/translate.html`**, **`generated/dictation/dictation.html`**
+and **`generated/paraphrase/paraphrase.html`**.
 Run it after you add, rename, move or delete **any** file — or after carding new words.
-Never hand-edit those five — they are generated.
+Never hand-edit those six — they are generated.
 
 Because the dictation is rebuilt here too, **every new word you card is in the spelling
 drill straight away**; words you're still learning are never filtered out as "too easy".
@@ -34,6 +35,19 @@ The browser lists only six top-level folders — `docs`, `generated`, `listening
 `dev/templates/`, and every dotfile (`.gitkeep`, `.gitignore`, …) stay hidden. To make
 another folder visible, add it to `TOP_LEVEL` in `dev/scripts/build_index.py`.
 
+## Full screen button
+
+Every listening and reading test has a **Full screen** button at the right-hand end of
+its header, and so do `dev/templates/reading.html` / `listening.html`, so newly
+generated tests get it for free. If a hand-made test ever lacks one:
+
+```
+python3 dev/scripts/add_fullscreen.py            # every test + both templates
+python3 dev/scripts/add_fullscreen.py path.html  # just one
+```
+
+It is idempotent — files that already have the button are left untouched.
+
 ## Skills (say it in plain words, Claude picks the skill)
 
 | Say this | Skill | What happens |
@@ -46,6 +60,7 @@ another folder visible, add it to `TOP_LEVEL` in `dev/scripts/build_index.py`.
 | "make me a dictation" | `dictation` | spelling quiz from your vocab + `vocab/for-dictation.md` |
 | "how do I remember this word?" | `keyword-mnemonics` | Uzbek sound-alike + absurd story |
 | "add these hard sentences" | `translate-practice` | EN → Uzbek practice page |
+| "save the synonyms this test used" | `paraphrase-bank` | question wording ↔ passage wording + practice page |
 | "I'm studying this one now" | `studying-now` | pins it to the top of the progress page |
 | "what should this file be called?" | `test-naming` | the short-name convention |
 
@@ -72,8 +87,11 @@ vocab/glossary.json        word help for the translate page (words with no card)
 vocab/for-dictation.md     words that must appear in the dictation deck
 vocab/studying-now.md      files pinned to the top of progress.html
 vocab/translations.json    practice sentences + their chunk breakdowns
+vocab/paraphrases.json     question wording <-> passage wording, per test
 
-dev/scripts/    the generators (build_index, build_player, build_translate, build_progress)
+dev/scripts/    the generators (build_index, build_player, build_translate,
+                build_progress, build_paraphrase)
+                plus add_fullscreen.py (header full-screen button for the tests)
 dev/templates/  the reading / listening / vocab page templates
 dev/docs/       this file + architecture.md
 ```

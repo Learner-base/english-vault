@@ -82,6 +82,13 @@ def main():
                 print(r.stdout.strip())
     if not hits:
         print("  none — index.html + player.html already updated.")
+    # a finished test is the moment to collect its paraphrase pairs
+    r = sh("python3", ".claude/skills/paraphrase-bank/scripts/paraphrase.py", "check")
+    tail = [l for l in (r.stdout or "").splitlines() if l.startswith("finished tests with no pairs")]
+    if tail:
+        print("\nParaphrase bank: " + tail[0])
+        print("  collect them with the paraphrase-bank skill (harvest -> add).")
+
     print("\nReview, then commit with the user's go-ahead (do not push unless asked).")
 
 

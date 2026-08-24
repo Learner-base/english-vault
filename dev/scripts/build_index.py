@@ -225,6 +225,12 @@ def main():
         build_translate.main()
     except Exception as e:
         print(f"WARNING: build_translate failed ({e})")
+    # keep the paraphrase practice page in sync with vocab/paraphrases.json
+    try:
+        import build_paraphrase
+        build_paraphrase.main()
+    except Exception as e:
+        print(f"WARNING: build_paraphrase failed ({e})")
     # keep the dictation deck in sync with the vocab — a word carded today must
     # be drillable today. The builder lives with its skill, so it is run as a
     # subprocess rather than imported.

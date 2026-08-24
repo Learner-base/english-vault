@@ -41,7 +41,8 @@ GROUPS = [
     ("generated/vocab/review", "generated/vocab/review", "To review", True),
     ("practice",               "practice pages",         "Drills", False),
 ]
-PRACTICE = ["generated/dictation/dictation.html", "generated/translate/translate.html"]
+PRACTICE = ["generated/dictation/dictation.html", "generated/translate/translate.html",
+            "generated/paraphrase/paraphrase.html"]
 PINS = os.path.join(ROOT, "vocab", "studying-now.md")
 
 

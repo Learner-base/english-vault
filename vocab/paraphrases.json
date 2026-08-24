@@ -1,0 +1,221 @@
+{
+ "C20-r1": [
+  {
+   "q": "inability to fly",
+   "p": "flightless",
+   "qno": "1",
+   "qtext": "There are other parrots that share the kākāpō's inability to fly.",
+   "ptext": "It is the world's only flightless parrot."
+  },
+  {
+   "q": "produce chicks",
+   "p": "breed",
+   "qno": "2",
+   "qtext": "Adult kākāpō produce chicks every year.",
+   "ptext": "They breed, but only in years when food is plentiful."
+  },
+  {
+   "q": "bring food back to nesting females",
+   "p": "play no part in incubation or chick-rearing",
+   "qno": "3",
+   "qtext": "Adult male kākāpō bring food back to nesting females.",
+   "ptext": "Males play no part in incubation or chick-rearing – females alone incubate eggs and feed the chicks."
+  },
+  {
+   "q": "were at risk from feral cats",
+   "p": "predation by feral cats led to a rapid decline",
+   "qno": "5",
+   "qtext": "Kākāpō were transferred from Rakiura Island to other locations because they were at risk from feral cats.",
+   "ptext": "predation by feral cats on Rakiura Island led to a rapid decline"
+  },
+  {
+   "q": "were transferred to other locations",
+   "p": "was evacuated to three island sanctuaries",
+   "qno": "5",
+   "qtext": "Kākāpō were transferred from Rakiura Island to other locations because they were at risk from feral cats.",
+   "ptext": "the surviving population was evacuated to three island sanctuaries"
+  },
+  {
+   "q": "caring for struggling young birds",
+   "p": "rescuing and hand-raising any failing chicks",
+   "qno": "6",
+   "qtext": "One Recovery Plan initiative that helped increase the kākāpō population size was caring for struggling young birds.",
+   "ptext": "The Recovery Plan involved rescuing and hand-raising any failing chicks."
+  },
+  {
+   "q": "various parts of a tree",
+   "p": "the leaves, roots and bark of trees",
+   "qno": "7",
+   "qtext": "Diet consists of fern fronds, various parts of a tree and bulbs",
+   "ptext": "the leaves, roots and bark of trees as well as bulbs, and fern fronds"
+  },
+  {
+   "q": "Nests are created in",
+   "p": "eggs are laid in",
+   "qno": "8",
+   "qtext": "Nests are created in soil where eggs are laid.",
+   "ptext": "The 1–4 eggs are laid in soil."
+  },
+  {
+   "q": "used to make clothes",
+   "p": "used its feathers to make soft cloaks",
+   "qno": "9",
+   "qtext": "The feathers of the kākāpō were used to make clothes.",
+   "ptext": "They ate its meat and used its feathers to make soft cloaks."
+  },
+  {
+   "q": "an animal which they introduced",
+   "p": "introduced species such as deer",
+   "qno": "10",
+   "qtext": "Deer were an animal which they introduced that ate the kākāpō's food sources.",
+   "ptext": "introduced species such as deer depleted the remaining forests of food"
+  },
+  {
+   "q": "ate the kākāpō's food sources",
+   "p": "depleted the remaining forests of food",
+   "qno": "10",
+   "qtext": "Deer were an animal which they introduced that ate the kākāpō's food sources.",
+   "ptext": "introduced species such as deer depleted the remaining forests of food"
+  },
+  {
+   "q": "A definite sighting was reported",
+   "p": "it was confirmed females were also present",
+   "qno": "11",
+   "qtext": "A definite sighting of female kākāpō on Rakiura Island was reported in the year 1980",
+   "ptext": "in 1980 it was confirmed females were also present"
+  },
+  {
+   "q": "an increase in funding",
+   "p": "a higher amount of funding",
+   "qno": "12",
+   "qtext": "The Recovery Plan included an increase in funding",
+   "ptext": "together with a higher amount of funding"
+  },
+  {
+   "q": "maintain the involvement of",
+   "p": "continue to be fully engaged",
+   "qno": "13",
+   "qtext": "A current goal of the Recovery Plan is to maintain the involvement of stakeholders in kākāpō protection.",
+   "ptext": "ensure stakeholders continue to be fully engaged"
+  },
+  {
+   "q": "only a few surviving large elms",
+   "p": "the number of these mature survivors is relatively small",
+   "qno": "14",
+   "qtext": "reference to the research problems that arise from there being only a few surviving large elms",
+   "ptext": "opportunities are limited as the number of these mature survivors is relatively small"
+  },
+  {
+   "q": "a difference of opinion",
+   "p": "disagree about",
+   "qno": "15",
+   "qtext": "details of a difference of opinion about the value of reintroducing elms to Britain",
+   "ptext": "Russell and Elliot disagree about the value of reintroducing elms."
+  },
+  {
+   "q": "was brought into Britain",
+   "p": "was triggered by shipments of elm from Canada",
+   "qno": "16",
+   "qtext": "reference to how Dutch elm disease was brought into Britain",
+   "ptext": "the second epidemic was triggered by shipments of elm from Canada"
+  },
+  {
+   "q": "conditions that have enabled a location to escape the disease",
+   "p": "strong sea winds make it hard for the beetle to attack",
+   "qno": "17",
+   "qtext": "a description of the conditions that have enabled a location in Britain to escape Dutch elm disease",
+   "ptext": "Brighton's strong sea winds make it hard for the beetle to attack."
+  },
+  {
+   "q": "the stage at which young elms become vulnerable",
+   "p": "it becomes a perfect size for beetles",
+   "qno": "18",
+   "qtext": "reference to the stage at which young elms become vulnerable to Dutch elm disease",
+   "ptext": "once the trunk reaches 10–15 centimetres it becomes a perfect size for beetles"
+  },
+  {
+   "q": "the damage rapidly becomes visible",
+   "p": "The effects are very quick — those that are susceptible show leaf loss",
+   "qno": "19",
+   "qtext": "If a tree gets infected with Dutch elm disease, the damage rapidly becomes visible.",
+   "ptext": "The effects are very quick... those that are susceptible show leaf loss."
+  },
+  {
+   "q": "It may be better to wait and see",
+   "p": "give nature time to recover",
+   "qno": "20",
+   "qtext": "It may be better to wait and see if the mature elms that have survived continue to flourish.",
+   "ptext": "give nature time to recover ... over time, you might get resistance"
+  },
+  {
+   "q": "There must be an explanation",
+   "p": "I don't see how it can be entirely down to luck",
+   "qno": "21",
+   "qtext": "There must be an explanation for the survival of some mature elms.",
+   "ptext": "I don't see how it can be entirely down to luck."
+  },
+  {
+   "q": "are not very far away",
+   "p": "right on our doorstep",
+   "qno": "22",
+   "qtext": "We need to be aware that insects carrying Dutch elm disease are not very far away.",
+   "ptext": "The beetles can just march in... the threat is right on our doorstep."
+  },
+  {
+   "q": "evidence of how prominent the tree once was",
+   "p": "old photographs",
+   "qno": "23",
+   "qtext": "You understand the effect Dutch elm disease has had when you see evidence of how prominent the tree once was.",
+   "ptext": "you realise the impact when you see old photographs of how prominent elms were"
+  },
+  {
+   "q": "the only tree that was more popular than elm",
+   "p": "elm ran a close second to oak",
+   "qno": "24",
+   "qtext": "the only tree that was more popular in Britain than elm was oak",
+   "ptext": "elm ran a close second to oak as the hardwood tree of choice"
+  },
+  {
+   "q": "wood for boxes",
+   "p": "storage crates",
+   "qno": "25",
+   "qtext": "it was grown to provide wood for boxes and flooring",
+   "ptext": "its wood was used for items such as storage crates and flooring"
+  },
+  {
+   "q": "took little notice of bad news",
+   "p": "they will ignore bad news",
+   "qno": "31",
+   "qtext": "At times when they were relaxed, the firefighters usually took little notice of bad news.",
+   "ptext": "When relaxed, they will ignore bad news."
+  },
+  {
+   "q": "became more sensitive to bad news",
+   "p": "became hyper-vigilant to bad news",
+   "qno": "32",
+   "qtext": "The researchers noted that when the firefighters were stressed, they became more sensitive to bad news.",
+   "ptext": "they became hyper-vigilant to bad news... and altered their beliefs"
+  },
+  {
+   "q": "reflects the nature of the posts in our feeds",
+   "p": "if we observe negative posts, we will in turn create more negative posts",
+   "qno": "36",
+   "qtext": "The tone of the content we post on social media tends to reflect the nature of the posts in our feeds.",
+   "ptext": "If we observe negative posts... we will in turn create more negative posts."
+  },
+  {
+   "q": "take unnecessary precautions",
+   "p": "trips are cancelled, even if the disaster took place across the globe",
+   "qno": "39",
+   "qtext": "Stress created by social media posts can lead us to take unnecessary precautions.",
+   "ptext": "trips are cancelled, even if the disaster took place across the globe"
+  },
+  {
+   "q": "our tendency to be affected by other people's moods",
+   "p": "positive emotions, such as hope, are contagious",
+   "qno": "40",
+   "qtext": "Our tendency to be affected by other people's moods can be used in a positive way.",
+   "ptext": "positive emotions, such as hope, are contagious too, and are powerful in inducing people to act"
+  }
+ ]
+}

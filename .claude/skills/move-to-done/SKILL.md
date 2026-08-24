@@ -41,6 +41,9 @@ result, and a list of leftover references (or "none").
 - **Grow the translation page**: a finished passage/test is the moment to add its difficult
   sentences (+ Uzbek) to `vocab/translations.json` — see
   [translate-practice](../translate-practice/SKILL.md).
+- **Collect the paraphrases**: a finished test is also the moment to save the wording
+  swaps its questions used — see [paraphrase-bank](../paraphrase-bank/SKILL.md) and run
+  its `check` to see whether this test is still at zero pairs.
 - **Commit** only with the user's go-ahead (the script never commits). One logical move
   per commit is fine; do not push unless asked. See [never-commit-without-approval] in
   the user's memory.
