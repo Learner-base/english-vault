@@ -1,0 +1,57 @@
+{
+  "_note": "Central reference for every listening test's audio track links. One array of records; each record is grouped by provider -> book -> test and holds the full, streamable track URLs (same links used inside the test HTML). Filter with records.filter(r => r.book === 'cambridge-20'). Keep this in sync with the AUDIO array inside each test HTML when a source changes.",
+  "records": [
+    {
+      "provider": "cambridge",
+      "book": "cambridge-20",
+      "test": 1,
+      "file": "listening/undone/cambridge/cambridge-20/C20-l1.html",
+      "item": "https://archive.org/details/t-1-s-2_202608",
+      "tracks": [
+        "https://archive.org/download/t-1-s-2_202608/T1S1.m4a",
+        "https://archive.org/download/t-1-s-2_202608/T1S2.m4a",
+        "https://archive.org/download/t-1-s-2_202608/T1S3.m4a",
+        "https://archive.org/download/t-1-s-2_202608/T1S4.m4a"
+      ]
+    },
+    {
+      "provider": "cambridge",
+      "book": "cambridge-20",
+      "test": 2,
+      "file": "listening/undone/cambridge/cambridge-20/C20-l2.html",
+      "item": "https://archive.org/details/t-2-s-4_202608",
+      "tracks": [
+        "https://archive.org/download/t-2-s-4_202608/T2S1.m4a",
+        "https://archive.org/download/t-2-s-4_202608/T2S2.m4a",
+        "https://archive.org/download/t-2-s-4_202608/T2S3.m4a",
+        "https://archive.org/download/t-2-s-4_202608/T2S4.m4a"
+      ]
+    },
+    {
+      "provider": "cambridge",
+      "book": "cambridge-20",
+      "test": 3,
+      "file": "listening/undone/cambridge/cambridge-20/C20-l3.html",
+      "item": "https://archive.org/details/t-3-s-4",
+      "tracks": [
+        "https://archive.org/download/t-3-s-4/T3S1.m4a",
+        "https://archive.org/download/t-3-s-4/T3S2.m4a",
+        "https://archive.org/download/t-3-s-4/T3S3.m4a",
+        "https://archive.org/download/t-3-s-4/T3S4.m4a"
+      ]
+    },
+    {
+      "provider": "cambridge",
+      "book": "cambridge-20",
+      "test": 4,
+      "file": "listening/undone/cambridge/cambridge-20/C20-l4.html",
+      "item": "https://archive.org/details/t-4-s-2",
+      "tracks": [
+        "https://archive.org/download/t-4-s-2/T4S1.m4a",
+        "https://archive.org/download/t-4-s-2/T4S2.m4a",
+        "https://archive.org/download/t-4-s-2/T4S3.m4a",
+        "https://archive.org/download/t-4-s-2/T4S4.m4a"
+      ]
+    }
+  ]
+}
