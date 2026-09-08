@@ -4,3 +4,5 @@ word => sentance that this word used.
 
 ---
 
+- verbose => Simple but more verbose
+- 
