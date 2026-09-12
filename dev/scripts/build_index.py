@@ -225,6 +225,12 @@ def main():
         build_translate.main()
     except Exception as e:
         print(f"WARNING: build_translate failed ({e})")
+    # keep the all-vocabulary browser in sync with every deck's cards
+    try:
+        import build_all_vocab
+        build_all_vocab.main()
+    except Exception as e:
+        print(f"WARNING: build_all_vocab failed ({e})")
     # keep the paraphrase practice page in sync with vocab/paraphrases.json
     try:
         import build_paraphrase
