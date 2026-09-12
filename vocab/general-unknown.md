@@ -11,4 +11,4 @@ bullet is removed from this file automatically.
 <!-- empty — everything collected so far has been carded.
      Latest batch: JS reading notes + The Mentalist S1E1 "Pilot"
      (transcript: https://thementalist.fandom.com/wiki/Pilot/Transcript)
-     -> generated/vocab/inprogress/general-unknown-vocabs.html -->
+     -> generated/vocab/inprogress/mentalist-s1e1-vocabs.html -->

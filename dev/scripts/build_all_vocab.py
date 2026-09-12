@@ -26,7 +26,7 @@ def load(name):
 
 
 # keys whose auto-label would read badly
-LABELS = {"general-unknown": "General · found everywhere"}
+LABELS = {"mentalist-s1e1": "The Mentalist · S1E1"}
 
 
 def deck_label(key):

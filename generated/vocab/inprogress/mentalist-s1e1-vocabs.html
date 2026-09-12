@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>General Unknown Words — The Mentalist S1E1 & JS reading — Vocabulary & Structures</title>
+<title>The Mentalist S1E1 “Pilot” — Vocabulary & Structures</title>
 <style>
   :root{
     --paper:#FCFCFA; --card:#FFFFFF;
@@ -155,9 +155,9 @@
 <div class="wrap">
 
   <section id="home">
-    <div class="eyebrow">Collected from everywhere · The Mentalist "Pilot" + JS notes</div>
+    <div class="eyebrow">The Mentalist · Season 1, Episode 1 “Pilot”</div>
     <h1>Words & Structures</h1>
-    <p class="lede">114 words and phrases you collected by hand — the JavaScript reading notes and the first episode of The Mentalist — with meanings, Uzbek, mnemonics and sentence patterns.</p>
+    <p class="lede">114 words and phrases collected by hand from The Mentalist S1E1 “Pilot” (plus a few from your JavaScript reading notes) — meanings, Uzbek, mnemonics and sentence patterns.</p>
     <div class="modes">
       <button class="mode-card" data-open="vocab">
         <div><h2>Vocabulary</h2><p>Words — contextual meaning, definition, synonyms &amp; antonyms</p></div>
@@ -239,7 +239,7 @@ const STRUCTURES = [{"name": "Why don't you + base verb?", "pattern": "Why don't
 /* ============================ STATE ============================ */
 const S = {mode:"vocab", present:"flip", pool:[], size:0, deck:[], i:0, flipped:false, reviewing:false, answered:false};
 const store = (()=>{ try{localStorage.setItem("_t","1");localStorage.removeItem("_t");return localStorage;}catch(e){const m={};return{getItem:k=>m[k]??null,setItem:(k,v)=>m[k]=v,removeItem:k=>{delete m[k]}};}})();
-const KEY="study_general_unknown_v1";
+const KEY="study_mentalist_s1e1_v1";
 let STATUS = (()=>{ try{return JSON.parse(store.getItem(KEY))||{};}catch(e){return {};} })();
 function saveStatus(){ store.setItem(KEY, JSON.stringify(STATUS)); }
 
