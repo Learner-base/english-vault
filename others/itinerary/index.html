@@ -1,0 +1,848 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tour Itinerary Builder</title>
+<!-- Built by Muxsinjon Maxsudovich · Software Engineer · Tashkent, Uzbekistan · https://muxsinjon.uz -->
+<meta name="description" content="Free tour itinerary builder: write your programme, prices and dates, preview an A4 layout live and save it as a PDF.">
+<meta name="keywords" content="tour itinerary, itinerary builder, travel itinerary PDF, tour planner, travel agency tool, Uzbekistan, Silk Road">
+<meta name="author" content="Muxsinjon Maxsudovich">
+<meta name="creator" content="Muxsinjon Maxsudovich">
+<meta name="publisher" content="Muxsinjon Maxsudovich">
+<meta name="copyright" content="Muxsinjon Maxsudovich">
+<meta name="application-name" content="Tour Itinerary Builder">
+<meta name="generator" content="muxsinjon.uz">
+<meta name="theme-color" content="#1b1d21">
+<meta name="robots" content="index, follow">
+<meta name="twitter:site" content="@mxsnjon">
+<meta name="twitter:creator" content="@mxsnjon">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tour Itinerary Builder">
+<meta property="og:description" content="Build a tour itinerary, preview the A4 layout live and save it as a PDF.">
+<meta property="article:author" content="https://muxsinjon.uz">
+<link rel="author" href="https://muxsinjon.uz">
+<link rel="me" href="https://muxsinjon.uz">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Tour Itinerary Builder",
+  "description": "Build a tour itinerary, preview the A4 layout live and save it as a PDF.",
+  "applicationCategory": "TravelApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "author": { "@id": "https://muxsinjon.uz/#person" },
+  "creator": { "@id": "https://muxsinjon.uz/#person" },
+  "publisher": { "@id": "https://muxsinjon.uz/#person" },
+  "copyrightHolder": { "@id": "https://muxsinjon.uz/#person" },
+  "isBasedOn": "https://muxsinjon.uz"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://muxsinjon.uz/#person",
+  "name": "Muxsinjon Maxsudovich",
+  "alternateName": "muxsinjon",
+  "jobTitle": "Software Engineer",
+  "url": "https://muxsinjon.uz",
+  "address": { "@type": "PostalAddress", "addressLocality": "Tashkent", "addressCountry": "UZ" },
+  "knowsAbout": ["JavaScript", "TypeScript", "Web development"],
+  "sameAs": [
+    "https://muxsinjon.uz",
+    "https://github.com/muxsin",
+    "https://www.linkedin.com/in/muxsinjon",
+    "https://x.com/mxsnjon",
+    "https://t.me/muxsinjohn",
+    "https://g.dev/muxsinjon"
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   EDITOR UI
+   ========================================================= */
+:root{
+  --bg:#f5f5f2; --card:#fff; --line:#e6e4de; --text:#1b1d21; --muted:#7a7d85;
+  --pri:#1b1d21; --pri-2:#33363d; --soft:#f1f0ec; --danger:#c2372a; --radius:14px;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--text);font:14px/1.55 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+button,input,textarea{font:inherit;color:inherit}
+svg{width:16px;height:16px;flex:none}
+
+.bar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar-in{max-width:1080px;margin:0 auto;padding:14px 22px;display:flex;align-items:center;gap:10px}
+.bar h1{font-size:15px;margin:0;font-weight:600;flex:1;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar h1 span{color:var(--muted);font-weight:500}
+
+.btn{border:1px solid var(--line);background:#fff;border-radius:10px;padding:9px 14px;cursor:pointer;font-weight:500;display:inline-flex;align-items:center;gap:7px;transition:background .15s,border-color .15s,transform .15s}
+.btn:hover{border-color:#cfccc4;background:#fafaf8}
+.btn:active{transform:translateY(1px)}
+.btn:disabled{opacity:.35;cursor:default}
+.btn.primary{background:var(--pri);border-color:var(--pri);color:#fff}
+.btn.primary:hover{background:var(--pri-2)}
+.btn.ghost{border-color:transparent;background:transparent;color:var(--muted)}
+.btn.ghost:hover{background:var(--soft);color:var(--text)}
+.btn.dashed{border-style:dashed;color:var(--text);background:transparent;width:100%;justify-content:center}
+.btn.dashed:hover{background:#fff}
+.icon{width:30px;height:30px;padding:0;justify-content:center;border-color:transparent;background:transparent;color:var(--muted)}
+.icon:hover{background:var(--soft);color:var(--text)}
+.icon.del:hover{background:#fbecea;color:var(--danger)}
+button:focus-visible{outline:3px solid rgba(27,29,33,.18);outline-offset:2px}
+
+main{max-width:1080px;margin:0 auto;padding:28px 22px 64px}
+.label{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:32px 2px 12px}
+.label:first-child{margin-top:4px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.field label{display:block;font-size:12px;color:var(--muted);margin-bottom:5px;font-weight:500}
+.inp{width:100%;min-height:38px;border:1px solid var(--line);border-radius:9px;padding:9px 11px;background:#fff;outline:none;transition:.15s}
+.inp:hover{border-color:#d3d0c8}
+.inp:focus{border-color:#1b1d21;box-shadow:0 0 0 3px rgba(27,29,33,.08)}
+textarea.inp{resize:vertical;min-height:64px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid2 .full{grid-column:1/-1}
+.hint{font-size:11.5px;color:var(--muted);margin-top:4px}
+
+.logo-row{display:flex;align-items:center;gap:12px}
+.logo-box{width:56px;height:38px;border:1px dashed var(--line);border-radius:9px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#fafaf8;color:var(--muted);font-size:11px}
+.logo-box img{max-width:100%;max-height:100%;object-fit:contain}
+.file-btn{position:relative;overflow:hidden}
+.file-btn input{position:absolute;inset:0;opacity:0;cursor:pointer}
+
+.sec{margin-bottom:12px;padding:0;overflow:hidden}
+.sec-h{display:flex;align-items:center;gap:8px;padding:10px 12px;background:#fbfbf9;border-bottom:1px solid var(--line)}
+.sec-h .inp{font-weight:600;border-color:transparent;background:transparent;padding:6px 8px;min-height:36px}
+.sec-h .inp:hover{border-color:var(--line);background:#fff}
+.sec-h .inp:focus{background:#fff}
+.sec-sum{font-weight:600;white-space:nowrap;font-size:13px;padding:0 6px}
+.items{padding:14px 16px 16px}
+.row{display:grid;grid-template-columns:minmax(0,1fr) 116px 108px 30px;gap:10px;align-items:center;margin-bottom:8px}
+.row-head{font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;padding:0 2px}
+.price{position:relative}
+.price span{position:absolute;right:10px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none}
+.price .inp{padding-right:28px;text-align:right}
+
+.total-card{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.seg{display:inline-flex;background:var(--soft);border-radius:10px;padding:3px}
+.seg button{border:0;background:transparent;padding:6px 12px;border-radius:8px;cursor:pointer;font-weight:500;color:var(--muted)}
+.seg button.on{background:#fff;color:var(--text);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.calc{color:var(--muted);font-size:13px}
+.calc b{color:var(--text)}
+.total-card .price{width:140px}
+.cur{width:70px;text-align:center}
+
+.style-card{display:flex;flex-wrap:wrap;gap:22px 34px;align-items:center}
+.sw-wrap{display:flex;gap:10px;align-items:center}
+.sw{width:30px;height:30px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px var(--line);cursor:pointer;padding:0}
+.sw.on{box-shadow:0 0 0 2px var(--text)}
+.tg{display:flex;align-items:center;gap:9px;cursor:pointer;user-select:none;font-size:13.5px}
+.tg input{width:16px;height:16px;accent-color:#1b1d21;margin:0}
+
+.stage-wrap{background:#e9e7e1;border-radius:16px;padding:28px 18px;border:1px solid var(--line);overflow:hidden}
+.stage{margin:0 auto;position:relative}
+.stage-meta{display:flex;justify-content:space-between;color:var(--muted);font-size:12px;margin-top:10px}
+
+.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(20px);background:#1b1d21;color:#fff;padding:10px 16px;border-radius:10px;font-size:13px;opacity:0;transition:.25s;pointer-events:none;z-index:50;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.toast.show{opacity:1;transform:translateX(-50%)}
+
+@media (max-width:640px){
+  .bar-in{padding:10px 12px;gap:6px}.bar h1{font-size:14px}.bar .hide-sm{display:none}
+  main{padding:18px 12px 42px}
+  .card{padding:13px}
+  .grid2{grid-template-columns:1fr}
+  .sec-h{gap:4px;padding:8px}.sec-h .inp{min-width:0;padding:6px}
+  .sec-sum{font-size:12px;padding:0 2px}
+  .items{padding:12px}
+  .row-head{display:none}
+  .row{grid-template-columns:minmax(0,1fr) 92px 30px;gap:7px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+  .row .desc{grid-column:1/-1}
+  .row .price{grid-column:2;grid-row:2}
+  .row .del{grid-column:3;grid-row:2}
+  .stage-wrap{padding:14px 8px}
+  .total-card .field{margin-left:0!important;width:100%}
+}
+
+/* Text editor laid out like the PDF */
+.lbl-hint{text-transform:none;letter-spacing:0;font-weight:500;color:#a3a5ab;margin-left:6px}
+.mirror{padding:0;overflow:hidden}
+.zone{padding:16px 18px 6px;border-top:1px solid var(--line)}
+.zone:first-child{border-top:0}
+.z-head{background:#f8f5ee}
+.zt{font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.zrow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.zrow3{grid-template-columns:repeat(3,1fr)}
+.zr{max-width:260px;justify-self:end;width:100%}
+.zmeta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;border-top:1px solid #e6dfd1;padding-top:12px;margin-top:2px}
+.zmeta .tf{margin-bottom:6px}
+.tf{margin-bottom:10px;min-width:0}
+.tf label{display:block;font-size:11.5px;color:var(--muted);margin-bottom:4px;font-weight:500}
+.tf-in{position:relative}
+.tf-in .inp{padding-right:38px}
+.eye{position:absolute;right:4px;top:50%;transform:translateY(-50%);width:30px;height:30px;border:0;background:transparent;border-radius:7px;color:var(--muted);cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
+.eye:hover{background:var(--soft);color:var(--text)}
+.tf.off .inp{opacity:.45;text-decoration:line-through}
+.tf.off .eye{color:var(--danger)}
+.inp.big{font-family:Fraunces,Georgia,serif;font-size:19px}
+.inp.sm{font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.ct-head{display:grid;grid-template-columns:120px 1fr;gap:8px;font-size:11.5px;color:var(--muted);font-weight:500;margin-bottom:4px}
+.ct-row{display:grid;grid-template-columns:120px 1fr;gap:8px}
+.ct-row .tf{margin-bottom:6px}
+select.inp{appearance:auto;cursor:pointer}
+.flash{animation:flash 1.4s ease-out}
+@keyframes flash{0%,45%{border-color:#0f6e74;box-shadow:0 0 0 4px rgba(15,110,116,.22)}}
+#page [data-jump]{cursor:pointer;border-radius:3px}
+#page [data-jump]:hover{outline:1.5px dashed var(--acc);outline-offset:3px}
+@media (max-width:760px){
+  .zrow,.zrow3{grid-template-columns:1fr}.zr{max-width:none}
+  .zmeta{grid-template-columns:1fr 1fr}
+  .ct-head,.ct-row{grid-template-columns:96px 1fr}
+}
+@media print{#page [data-jump]{outline:none!important}}
+
+/* =========================================================
+   PDF DOCUMENT
+   ========================================================= */
+#page{
+  --acc:#0f6e74; --acc-soft:#e6f1f0; --sand:#f6f2ea; --ink:#17202a; --mut:#6e7179; --hair:#e8e2d6; --gold:#b08a45;
+  width:794px;min-height:1123px;background:#fff;color:var(--ink);transform-origin:top left;
+  display:flex;flex-direction:column;position:relative;overflow:hidden;
+  box-shadow:0 14px 40px rgba(20,20,20,.14);
+  font:13.5px/1.5 Inter,system-ui,sans-serif;font-variant-numeric:tabular-nums;
+}
+.serif{font-family:Fraunces,Georgia,'Times New Roman',serif}
+
+/* Header */
+.ph{background:var(--sand);padding:36px 56px 26px;position:relative;overflow:hidden}
+.ph-orn{position:absolute;right:-40px;top:-40px;width:330px;height:330px;color:var(--acc);opacity:.16;
+  -webkit-mask-image:radial-gradient(circle at 72% 28%,#000 22%,transparent 68%);mask-image:radial-gradient(circle at 72% 28%,#000 22%,transparent 68%)}
+.ph-top{position:relative;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.ph-brand{display:flex;align-items:center;gap:12px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600}
+.ph-brand img{max-height:36px;max-width:150px;object-fit:contain}
+.ph-doc{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mut);text-align:right;line-height:1.7}
+.ph-kicker{position:relative;margin-top:30px;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);font-weight:600;display:flex;align-items:center;gap:10px}
+.ph-kicker:before{content:"";width:22px;height:1px;background:var(--acc)}
+.ph-title{position:relative;font-size:42px;line-height:1.06;font-weight:500;letter-spacing:-.015em;margin:12px 0 0;max-width:560px}
+.ph-meta{position:relative;display:flex;margin-top:24px;border-top:1px solid var(--hair)}
+.ph-meta > div{flex:1;padding:13px 14px 0 0;min-width:0}
+.ph-meta > div + div{padding-left:16px;border-left:1px solid var(--hair)}
+.ph-meta small{display:block;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--mut);margin-bottom:3px}
+.ph-meta b{font-weight:600;font-size:13.5px;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* Route */
+.route{display:flex;align-items:center;padding:17px 56px;border-bottom:1px solid var(--hair)}
+.stop{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:600;letter-spacing:.04em;white-space:nowrap}
+.stop i{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--acc);background:#fff;flex:none}
+.stop.end i{background:var(--acc)}
+.leg{flex:1;min-width:14px;height:1px;margin:0 12px;background:repeating-linear-gradient(90deg,var(--acc) 0 4px,transparent 4px 8px);opacity:.55}
+
+/* Body */
+.pb{padding:22px 56px 0}
+.pb-label{font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--mut);font-weight:600;margin-bottom:4px}
+.blk{display:grid;grid-template-columns:148px minmax(0,1fr);gap:26px;padding:14px 0;border-top:1px solid var(--hair);break-inside:avoid;page-break-inside:avoid}
+.blk.first{border-top:0}
+.blk.plain{grid-template-columns:minmax(0,1fr)}
+.blk-n{font-size:10.5px;color:var(--acc);font-weight:600;letter-spacing:.14em}
+.blk-city{font-size:23px;font-weight:500;line-height:1.12;margin-top:5px;letter-spacing:-.01em;word-break:break-word}
+.blk-sub{font-size:11px;color:var(--mut);margin-top:7px}
+.ln{display:grid;grid-template-columns:minmax(0,1fr) auto 74px;gap:14px;align-items:center;padding:6px 0}
+.ln.np{grid-template-columns:minmax(0,1fr) auto}
+.ln + .ln{border-top:1px dashed var(--hair)}
+.ln .ds{font-size:13.5px}
+.chip{justify-self:end;font-size:10.5px;font-weight:600;color:var(--acc);background:var(--acc-soft);border-radius:999px;padding:3px 10px;white-space:nowrap;letter-spacing:.02em}
+.amt{text-align:right;font-weight:600;white-space:nowrap}
+.sub{display:flex;justify-content:flex-end;gap:14px;font-size:11px;color:var(--mut);padding-top:9px;margin-top:4px;border-top:1px solid var(--hair)}
+.sub b{color:var(--ink);font-weight:600}
+
+/* Total + note */
+.tot{margin:20px 56px 0;background:var(--acc);color:#fff;border-radius:12px;padding:22px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;position:relative;overflow:hidden;break-inside:avoid;page-break-inside:avoid}
+.tot-orn{position:absolute;right:-30px;top:-50%;width:200px;height:200px;color:#fff;opacity:.1}
+.tot small{display:block;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;opacity:.75;font-weight:600}
+.tot .tl{font-size:12.5px;opacity:.85;margin-top:4px}
+.tot b{position:relative;font-size:36px;font-weight:500;letter-spacing:-.01em;line-height:1;white-space:nowrap}
+.nt{margin:16px 56px 0;padding:14px 18px;background:var(--sand);border-left:2px solid var(--gold);border-radius:0 8px 8px 0;font-size:12px;color:#454850;white-space:pre-wrap;break-inside:avoid;page-break-inside:avoid}
+.nt small{display:block;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:4px;white-space:normal}
+
+/* Footer */
+.pf{margin-top:auto;padding:26px 56px 28px;break-inside:avoid;page-break-inside:avoid}
+.pf-div{display:flex;align-items:center;gap:14px;color:var(--gold);margin-bottom:18px}
+.pf-div:before,.pf-div:after{content:"";flex:1;height:1px;background:var(--hair)}
+.pf-div svg{width:14px;height:14px}
+.pf-in{display:flex;justify-content:space-between;align-items:flex-end;gap:24px}
+.pf-close{font-size:15px;font-style:italic;color:var(--ink);max-width:380px;line-height:1.35}
+.pf-ag{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mut);margin-top:6px;font-weight:600}
+.pf-ct{font-size:11px;color:var(--mut);text-align:right;line-height:1.75}
+.pf-ct span{color:var(--ink);font-weight:500}
+
+.pb-guide{position:absolute;left:0;right:0;border-top:1px dashed #9aa3b3;pointer-events:none;z-index:5}
+.pb-guide span{position:absolute;right:8px;top:-18px;font-size:10px;color:#5b6577;background:#fff;padding:0 4px}
+
+/* =========================================================
+   PRINT → PDF
+   ========================================================= */
+@media print{
+  @page{size:A4;margin:14mm 0 12mm}
+  @page :first{margin-top:0}
+  html,body{background:#fff}
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+  .bar,#editor,#previewBlock > .label,.stage-meta,.pb-guide,.toast{display:none!important}
+  main{padding:0;max-width:none}
+  .stage-wrap{padding:0;border:0;background:none;border-radius:0}
+  .stage{width:auto!important;height:auto!important}
+  #page{transform:none!important;box-shadow:none;width:210mm;min-height:282mm;overflow:visible}
+}
+</style>
+</head>
+<body>
+
+<div class="bar"><div class="bar-in">
+  <h1>Itinerary <span>· Builder</span></h1>
+  <button class="btn ghost" data-action="reset" title="Reset to original" aria-label="Reset">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg><span class="hide-sm">Reset</span></button>
+  <button class="btn primary" data-action="download">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>Download PDF</button>
+</div></div>
+
+<main id="app">
+  <div id="editor"></div>
+
+  <div id="previewBlock">
+    <div class="label">Preview — exactly as the PDF</div>
+    <div class="stage-wrap">
+      <div class="stage" id="stage"><div id="page"></div></div>
+    </div>
+    <div class="stage-meta"><span>A4 · 210 × 297 mm</span><span id="pageCount">1 page</span></div>
+  </div>
+</main>
+<div class="toast" id="toast"></div>
+
+<script>
+const KEY = 'tour-itinerary-v4';
+
+const DEFAULT = {
+  logo: '',
+  /* ---- every text on the PDF ---- */
+  brand: 'Your Travel Agency',
+  docLabel: 'Travel itinerary',
+  docDate: '',                       // empty = today
+  kicker: 'Uzbekistan',
+  title: 'Silk Road Journey through Uzbekistan',
+  m1Label: 'Prepared for',  m1: '',
+  m2Label: 'Travel dates',  m2: '',  // empty = auto from line dates
+  m3Label: 'Duration',      m3: '',  // empty = auto
+  m4Label: 'Destinations',  m4: '',  // empty = auto
+  hub: 'Tashkent',
+  progLabel: 'Programme',
+  subLabel: 'subtotal',
+  chipFormat: 'wd',
+  totLabel: 'Total price',
+  totSub: '',                        // empty = auto
+  noteLabel: 'Notes',
+  note: '',
+  closing: 'We look forward to welcoming you to Uzbekistan.',
+  footAgency: 'Your Travel Agency',
+  c1Label: 'Tel',       c1: '',
+  c2Label: 'Email',     c2: '',
+  c3Label: 'Web',       c3: '',
+  c4Label: 'Messenger', c4: '',
+  hide: {},
+  /* ---- style & numbers ---- */
+  accent: 'turquoise',
+  showLinePrices: true,
+  showSubtotals: false,
+  currency: '$',
+  totalMode: 'manual',
+  manualTotal: '450',
+  sections: [
+    { name: '', items: [
+      { desc: 'Airport transfer to Tashkent airport', date: '', price: '20' } ] },
+    { name: 'Khiva', items: [
+      { desc: 'Pick up from airport to hotel (transfer)', date: '', price: '25' },
+      { desc: 'In Khiva city tour', date: '25.10.26', price: '100' },
+      { desc: 'Transport from Khiva to Bukhara', date: '26.10.26', price: '100' } ] },
+    { name: 'Bukhara', items: [
+      { desc: 'In Bukhara city tour', date: '27.10.26', price: '100' },
+      { desc: 'Transport from Bukhara to Samarkand', date: '28.10.26', price: '100' } ] },
+    { name: 'Samarkand', items: [
+      { desc: 'In Samarkand city tour', date: '29.10.26', price: '100' },
+      { desc: 'Transport from Samarkand to Tashkent', date: '', price: '150' },
+      { desc: 'Drop off: from Hotel in Tashkent to Airport', date: '', price: '20' } ] }
+  ]
+};
+
+const ACCENTS = {
+  turquoise:  { c:'#0f6e74', s:'#e6f1f0', name:'Samarkand turquoise' },
+  lapis:      { c:'#24408c', s:'#e9edf7', name:'Lapis blue' },
+  terracotta: { c:'#a2472e', s:'#f6ebe6', name:'Terracotta' },
+  ink:        { c:'#1f2228', s:'#efeee9', name:'Ink' }
+};
+
+const clone = o => JSON.parse(JSON.stringify(o));
+const $ = s => document.querySelector(s);
+let state = load();
+
+function load(){
+  let s = null;
+  try { s = JSON.parse(localStorage.getItem(KEY) || 'null'); } catch(e){}
+  if (!s){
+    // migrate data from earlier versions of the builder
+    let o = null;
+    try { o = JSON.parse(localStorage.getItem('tour-itinerary-v3') || localStorage.getItem('tour-itinerary-v2') || 'null'); } catch(e){}
+    if (o){
+      s = {};
+      ['logo','title','hub','note','closing','accent','showLinePrices','showSubtotals','currency','totalMode','manualTotal','sections']
+        .forEach(k => { if (o[k] !== undefined) s[k] = o[k]; });
+      if (o.agency !== undefined){ s.brand = o.agency; s.footAgency = o.agency; }
+      if (o.guest) s.m1 = o.guest;
+      if (o.datesOverride) s.m2 = o.datesOverride;
+      if (o.durationOverride) s.m3 = o.durationOverride;
+      if (o.phone) s.c1 = o.phone;
+      if (o.email) s.c2 = o.email;
+      if (o.web) s.c3 = o.web;
+      if (o.telegram) s.c4 = o.telegram;
+    }
+  }
+  const st = Object.assign(clone(DEFAULT), s || {});
+  st.hide = st.hide || {};
+  return st;
+}
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){ toast('Could not save (storage full?)'); } }
+
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const num = v => {
+  let s = String(v).trim();
+  if (/^[^,]*,\d{1,2}$/.test(s)) s = s.replace(/\./g, '').replace(',', '.');   // 1.234,50 → 1234.50
+  const n = parseFloat(s.replace(/[^\d.\-]/g,''));
+  return isNaN(n) ? 0 : n;
+};
+const PREFIX = ['$','€','£','¥','₽'];
+const money = n => {
+  const v = Number(n).toLocaleString('en-US', { maximumFractionDigits: 2 });
+  const c = String(state.currency || '').trim();
+  if (!c) return esc(v);
+  return esc(PREFIX.includes(c) ? c + v : v + ' ' + c);
+};
+const secSum = s => s.items.reduce((a, i) => a + num(i.price), 0);
+const autoTotal = () => state.sections.reduce((a, s) => a + secSum(s), 0);
+const total = () => state.totalMode === 'manual' ? num(state.manualTotal) : autoTotal();
+
+/* ---------- dates ---------- */
+const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const WD  = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+/* accepts 25.10.26 · 25/10/2026 · 2026-10-25 · 25 Oct 2026 */
+function pdate(s){
+  s = String(s || '').trim();
+  let m, d, mo, y;
+  if ((m = s.match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/))){ y = +m[1]; mo = +m[2]; d = +m[3]; }
+  else if ((m = s.match(/^(\d{1,2})[.\/-](\d{1,2})[.\/-](\d{2}|\d{4})$/))){ d = +m[1]; mo = +m[2]; y = +m[3]; }
+  else if ((m = s.match(/^(\d{1,2})\s+([A-Za-z]{3})[A-Za-z]*\.?,?\s+(\d{2}|\d{4})$/))){
+    d = +m[1]; y = +m[3]; mo = MON.findIndex(x => x.toLowerCase() === m[2].toLowerCase()) + 1;
+  } else return null;
+  if (!mo) return null;
+  if (y < 100) y += 2000;
+  const t = new Date(y, mo-1, d);
+  return t.getMonth() === mo-1 && t.getDate() === d ? t : null;
+}
+function span(dates){
+  if (!dates.length) return null;
+  const t = dates.map(d => d.getTime());
+  return { a: new Date(Math.min(...t)), b: new Date(Math.max(...t)) };
+}
+function rangeText(r, withYear = true){
+  if (!r) return '';
+  const {a, b} = r, y = withYear ? ' ' + b.getFullYear() : '';
+  if (a.getTime() === b.getTime()) return `${a.getDate()} ${MON[a.getMonth()]}${y}`;
+  if (a.getFullYear() !== b.getFullYear())
+    return `${a.getDate()} ${MON[a.getMonth()]} ${a.getFullYear()} – ${b.getDate()} ${MON[b.getMonth()]} ${b.getFullYear()}`;
+  if (a.getMonth() === b.getMonth()) return `${a.getDate()} – ${b.getDate()} ${MON[b.getMonth()]}${y}`;
+  return `${a.getDate()} ${MON[a.getMonth()]} – ${b.getDate()} ${MON[b.getMonth()]}${y}`;
+}
+function chipText(raw){
+  if (state.chipFormat === 'raw') return raw.trim();
+  const d = pdate(raw); if (!d) return raw.trim();
+  return state.chipFormat === 'dm' ? `${d.getDate()} ${MON[d.getMonth()]}` : `${WD[d.getDay()]} · ${d.getDate()} ${MON[d.getMonth()]}`;
+}
+const allDates = () => state.sections.flatMap(s => s.items.map(i => pdate(i.date)).filter(Boolean));
+
+/* ---------- automatic values (used when a field is left empty) ---------- */
+const AUTO = {
+  docDate: () => { const t = new Date(); return `${t.getDate()} ${MON[t.getMonth()]} ${t.getFullYear()}`; },
+  m2: () => rangeText(span(allDates())),
+  m3: () => { const r = span(allDates()); if (!r) return ''; const d = Math.round((r.b - r.a) / 864e5) + 1; return d + (d === 1 ? ' day' : ' days'); },
+  m4: () => { const n = state.sections.filter(s => s.name.trim()).length; return n ? n + (n === 1 ? ' city' : ' cities') : ''; },
+  totSub: () => [raw('m4'), raw('m3')].filter(Boolean).join(' · ')
+};
+/* raw = typed value or auto value; val = same, but '' when hidden with the eye */
+function raw(k){ const v = String(state[k] ?? '').trim(); return v || (AUTO[k] ? AUTO[k]() : ''); }
+function val(k){ return state.hide[k] ? '' : raw(k); }
+
+/* ---------- icons ---------- */
+const I = {
+  up:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m18 15-6-6-6 6"/></svg>',
+  down:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>',
+  x:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>',
+  trash:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/></svg>',
+  plus:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>',
+  eye:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>',
+  eyeOff:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3l18 18"/><path d="M10.6 5.1A10.4 10.4 0 0 1 12 5c6.5 0 10 7 10 7a17 17 0 0 1-3.2 4.1M6.6 6.6C3.8 8.4 2 12 2 12s3.5 7 10 7c1.8 0 3.4-.5 4.8-1.3"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg>'
+};
+const ORN = (id, cls) => `<svg class="${cls}" viewBox="0 0 240 240" aria-hidden="true"><defs><pattern id="${id}" width="40" height="40" patternUnits="userSpaceOnUse"><g fill="none" stroke="currentColor" stroke-width="1"><rect x="10" y="10" width="20" height="20"/><rect x="10" y="10" width="20" height="20" transform="rotate(45 20 20)"/><circle cx="20" cy="20" r="3.5"/><path d="M0 20h6M34 20h6M20 0v6M20 34v6"/></g></pattern></defs><rect width="240" height="240" fill="url(#${id})"/></svg>`;
+const STAR = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.6 4.7 4.8-1.8-1.8 4.8 4.9 2.8-4.9 2.8 1.8 4.8-4.8-1.8L12 22.5l-2.6-4.7-4.8 1.8 1.8-4.8L1.5 12l4.9-2.8-1.8-4.8 4.8 1.8z"/></svg>';
+
+/* ---------- editor ---------- */
+const autoPh = k => 'Auto: ' + (AUTO[k]() || '—');
+function tf(k, label, o = {}){
+  const off = !!state.hide[k];
+  const ph = AUTO[k] ? autoPh(k) : (o.ph || '');
+  return `<div class="tf ${off ? 'off' : ''} ${o.cls || ''}">
+    ${label ? `<label>${label}</label>` : ''}
+    <div class="tf-in"><input class="inp ${o.inp || ''}" data-bind="${k}" value="${esc(state[k])}" placeholder="${esc(ph)}">
+    <button class="eye" data-action="hide" data-k="${k}" title="${off ? 'Hidden — click to show on PDF' : 'Shown — click to hide from PDF'}">${off ? I.eyeOff : I.eye}</button></div>
+  </div>`;
+}
+
+function renderEditor(){
+  const cur = esc(state.currency);
+  let h = `<div class="label">PDF texts <span class="lbl-hint">in the same order as the page · click any text in the preview to jump to it · eye icon shows / hides it</span></div>
+  <div class="card mirror">
+    <div class="zone z-head">
+      <div class="zt">Header</div>
+      <div class="zrow">
+        <div>
+          <div class="tf"><label>Logo (optional)</label>
+            <div class="logo-row">
+              <div class="logo-box">${state.logo ? `<img src="${state.logo}" alt="">` : 'None'}</div>
+              <label class="btn file-btn" style="margin:0">Upload<input type="file" accept="image/*" id="logoInput"></label>
+              ${state.logo ? `<button class="btn ghost" data-action="rm-logo">Remove</button>` : ''}
+            </div></div>
+          ${tf('brand', 'Agency name — top left', { inp:'sm' })}
+        </div>
+        <div class="zr">
+          ${tf('docLabel', 'Document label — top right', { inp:'sm' })}
+          ${tf('docDate', 'Date under it (empty = today)', { inp:'sm' })}
+        </div>
+      </div>
+      ${tf('kicker', 'Small line above the title', { inp:'sm', cls:'' })}
+      ${tf('title', 'Tour title', { inp:'big' })}
+      <div class="zmeta">
+        ${[1,2,3,4].map(i => `<div>${tf('m'+i+'Label', 'Column ' + i + ' — label', { inp:'sm' })}${tf('m'+i, 'Value', { ph: i===1 ? 'e.g. Mr. & Mrs. Schmidt' : '' })}</div>`).join('')}
+      </div>
+    </div>
+
+    <div class="zone">
+      <div class="zt">Route line</div>
+      <div class="zrow">${tf('hub', 'Start & end city', { ph:'Tashkent' })}
+        <div class="hint" style="align-self:center">The stops in between are your city names from the itinerary below.</div></div>
+    </div>
+
+    <div class="zone">
+      <div class="zt">Programme</div>
+      <div class="zrow zrow3">
+        ${tf('progLabel', 'Section label', { inp:'sm' })}
+        ${tf('subLabel', 'Word after city in subtotal')}
+        <div class="tf"><label>Date labels</label>
+          <select class="inp" data-bind="chipFormat">
+            <option value="wd" ${state.chipFormat==='wd'?'selected':''}>Sun · 25 Oct</option>
+            <option value="dm" ${state.chipFormat==='dm'?'selected':''}>25 Oct</option>
+            <option value="raw" ${state.chipFormat==='raw'?'selected':''}>Exactly as typed</option>
+          </select></div>
+      </div>
+    </div>
+
+    <div class="zone">
+      <div class="zt">Total &amp; notes</div>
+      <div class="zrow zrow3">
+        ${tf('totLabel', 'Total label', { inp:'sm' })}
+        ${tf('totSub', 'Line under total label')}
+        ${tf('noteLabel', 'Notes label', { inp:'sm' })}
+      </div>
+    </div>
+
+    <div class="zone">
+      <div class="zt">Footer</div>
+      <div class="zrow">
+        <div>
+          ${tf('closing', 'Closing line', { ph:'We look forward to welcoming you…' })}
+          ${tf('footAgency', 'Agency name — bottom left', { inp:'sm' })}
+        </div>
+        <div>
+          <div class="ct-head"><span>Label</span><span>Contact — bottom right</span></div>
+          ${[['c1','+998 90 000 00 00'],['c2','hello@agency.uz'],['c3','agency.uz'],['c4','@agency']].map(([k,ph]) =>
+            `<div class="ct-row">${tf(k+'Label', '')}${tf(k, '', { ph })}</div>`).join('')}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="label">Itinerary</div>`;
+
+  state.sections.forEach((s, si) => {
+    h += `<div class="card sec">
+      <div class="sec-h">
+        <input class="inp" data-sec="${si}" value="${esc(s.name)}" placeholder="City (leave empty for no title)">
+        <span class="sec-sum" id="ss${si}">${money(secSum(s))}</span>
+        <button class="btn icon" data-action="up" data-s="${si}" title="Move up" ${si===0?'disabled':''}>${I.up}</button>
+        <button class="btn icon" data-action="down" data-s="${si}" title="Move down" ${si===state.sections.length-1?'disabled':''}>${I.down}</button>
+        <button class="btn icon del" data-action="del-sec" data-s="${si}" title="Delete block">${I.trash}</button>
+      </div>
+      <div class="items">
+        <div class="row row-head"><span>Service</span><span>Date</span><span style="text-align:right">Price</span><span></span></div>
+        ${s.items.map((it, ii) => `
+        <div class="row">
+          <input class="inp desc" data-s="${si}" data-i="${ii}" data-f="desc" value="${esc(it.desc)}" placeholder="Service">
+          <input class="inp" data-s="${si}" data-i="${ii}" data-f="date" value="${esc(it.date)}" placeholder="dd.mm.yy" title="25.10.26 · 2026-10-25 · 25 Oct 2026">
+          <div class="price"><input class="inp" inputmode="decimal" data-s="${si}" data-i="${ii}" data-f="price" value="${esc(it.price)}" placeholder="0"><span>${cur}</span></div>
+          <button class="btn icon del" data-action="del-item" data-s="${si}" data-i="${ii}" title="Remove">${I.x}</button>
+        </div>`).join('')}
+        <button class="btn dashed" data-action="add-item" data-s="${si}">${I.plus}Add line</button>
+      </div>
+    </div>`;
+  });
+
+  h += `<button class="btn dashed" data-action="add-sec" style="padding:12px">${I.plus}Add city</button>
+
+  <div class="label">Total</div>
+  <div class="card total-card">
+    <div class="seg">
+      <button data-action="mode" data-m="auto" class="${state.totalMode==='auto'?'on':''}">Auto sum</button>
+      <button data-action="mode" data-m="manual" class="${state.totalMode==='manual'?'on':''}">Custom</button>
+    </div>
+    ${state.totalMode==='manual'
+      ? `<div class="price"><input class="inp" inputmode="decimal" data-bind="manualTotal" value="${esc(state.manualTotal)}"><span>${cur}</span></div>` : ''}
+    <div class="calc">Sum of lines: <b id="autoSum">${money(autoTotal())}</b></div>
+    <div class="field" style="margin-left:auto;display:flex;align-items:center;gap:8px">
+      <label style="margin:0">Currency</label><input class="inp cur" data-bind="currency" value="${cur}">
+    </div>
+  </div>
+
+  <div class="label">Note</div>
+  <div class="card"><div class="field"><label>Shown below the total (optional) — e.g. what's included, payment terms</label>
+    <textarea class="inp" data-bind="note" rows="2">${esc(state.note)}</textarea></div></div>
+
+  <div class="label">Style</div>
+  <div class="card style-card">
+    <div class="sw-wrap">${Object.entries(ACCENTS).map(([k,a]) =>
+      `<button class="sw ${state.accent===k?'on':''}" data-action="accent" data-k="${k}" title="${a.name}" style="background:${a.c}"></button>`).join('')}</div>
+    <label class="tg"><input type="checkbox" data-bind="showLinePrices" ${state.showLinePrices?'checked':''}>Show price on each line</label>
+    <label class="tg"><input type="checkbox" data-bind="showSubtotals" ${state.showSubtotals?'checked':''}>Show city subtotals</label>
+  </div>`;
+
+  $('#editor').innerHTML = h;
+}
+
+/* ---------- PDF preview ---------- */
+const J  = sel => ` data-jump="${esc(sel)}"`;
+const JB = k => J(`[data-bind="${k}"]`);
+
+function renderPreview(){
+  const p = $('#page');
+  const A = ACCENTS[state.accent] || ACCENTS.turquoise;
+  p.style.setProperty('--acc', A.c);
+  p.style.setProperty('--acc-soft', A.s);
+
+  const brand = val('brand'), docL = val('docLabel'), docD = val('docDate');
+  const kicker = val('kicker'), title = val('title');
+
+  const meta = [1,2,3,4].map(i => ({ i, l: val('m'+i+'Label'), v: val('m'+i) })).filter(m => m.v);
+
+  let h = `<header class="ph">
+    ${ORN('ornH','ph-orn')}
+    <div class="ph-top">
+      <div class="ph-brand">${state.logo ? `<img src="${state.logo}" alt=""${J('#logoInput')}>` : ''}${brand ? `<span${JB('brand')}>${esc(brand)}</span>` : ''}</div>
+      <div class="ph-doc">${docL ? `<span${JB('docLabel')}>${esc(docL)}</span>` : ''}${docL && docD ? '<br>' : ''}${docD ? `<span${JB('docDate')}>${esc(docD)}</span>` : ''}</div>
+    </div>
+    ${kicker ? `<div class="ph-kicker"><span${JB('kicker')}>${esc(kicker)}</span></div>` : ''}
+    ${title ? `<h1 class="ph-title serif"${JB('title')}>${esc(title)}</h1>` : ''}
+    ${meta.length ? `<div class="ph-meta">${meta.map(m =>
+      `<div>${m.l ? `<small${JB('m'+m.i+'Label')}>${esc(m.l)}</small>` : ''}<b${JB('m'+m.i)}>${esc(m.v)}</b></div>`).join('')}</div>` : ''}
+  </header>`;
+
+  // route
+  const hub = val('hub');
+  let stops = state.sections.map((s, si) => ({ name: s.name.trim(), jump: `[data-sec="${si}"]` })).filter(s => s.name);
+  if (hub) stops = [{ name: hub, jump: '[data-bind="hub"]' }, ...stops, { name: hub, jump: '[data-bind="hub"]' }];
+  stops = stops.filter((c, i) => i === 0 || c.name.toLowerCase() !== stops[i-1].name.toLowerCase());
+  if (stops.length > 1){
+    h += `<div class="route">${stops.map((c, i) =>
+      `${i ? '<span class="leg"></span>' : ''}<span class="stop ${i===0||i===stops.length-1?'end':''}"${J(c.jump)}><i></i>${esc(c.name)}</span>`).join('')}</div>`;
+  }
+
+  // programme
+  const progL = val('progLabel'), subL = val('subLabel');
+  h += `<section class="pb">${progL ? `<div class="pb-label"><span${JB('progLabel')}>${esc(progL)}</span></div>` : ''}`;
+  let n = 0, first = true;
+  const showP = !!state.showLinePrices;
+  state.sections.forEach((s, si) => {
+    const items = s.items.map((it, ii) => ({ it, ii })).filter(({it}) => it.desc.trim() || it.date.trim() || String(it.price).trim());
+    const hasName = !!s.name.trim();
+    if (!items.length && !hasName) return;
+    if (hasName) n++;
+    const sd = rangeText(span(items.map(({it}) => pdate(it.date)).filter(Boolean)), false);
+    const q = (ii, f) => J(`[data-s="${si}"][data-i="${ii}"][data-f="${f}"]`);
+    const lines = items.map(({it, ii}) => `<div class="ln ${showP?'':'np'}">
+        <span class="ds"${q(ii,'desc')}>${esc(it.desc)}</span>
+        <span>${it.date.trim() ? `<span class="chip"${q(ii,'date')}>${esc(chipText(it.date))}</span>` : ''}</span>
+        ${showP ? `<span class="amt"${q(ii,'price')}>${String(it.price).trim() !== '' ? money(num(it.price)) : ''}</span>` : ''}
+      </div>`).join('');
+    const sub = state.showSubtotals && hasName
+      ? `<div class="sub"><span${JB('subLabel')}>${esc([s.name.trim(), subL].filter(Boolean).join(' '))}</span> <b>${money(secSum(s))}</b></div>` : '';
+    h += `<div class="blk ${hasName?'':'plain'} ${first?'first':''}">
+      ${hasName ? `<div><div class="blk-n">${String(n).padStart(2,'0')}</div><div class="blk-city serif"${J(`[data-sec="${si}"]`)}>${esc(s.name)}</div>${sd ? `<div class="blk-sub">${sd}</div>` : ''}</div>` : ''}
+      <div>${lines}${sub}</div>
+    </div>`;
+    first = false;
+  });
+  h += `</section>`;
+
+  // total
+  const totL = val('totLabel'), totS = val('totSub');
+  h += `<div class="tot">${ORN('ornT','tot-orn')}
+      <div style="position:relative">${totL ? `<small${JB('totLabel')}>${esc(totL)}</small>` : ''}${totS ? `<div class="tl"${JB('totSub')}>${esc(totS)}</div>` : ''}</div>
+      <b class="serif"${J(state.totalMode === 'manual' ? '[data-bind="manualTotal"]' : '.total-card')}>${money(total())}</b>
+    </div>`;
+
+  // note
+  const noteL = val('noteLabel');
+  if (state.note.trim()) h += `<div class="nt">${noteL ? `<small${JB('noteLabel')}>${esc(noteL)}</small>` : ''}<span${JB('note')}>${esc(state.note)}</span></div>`;
+
+  // footer
+  const closing = val('closing'), footA = val('footAgency');
+  const ct = [1,2,3,4].map(i => ({ i, l: val('c'+i+'Label'), v: val('c'+i) })).filter(c => c.v);
+  h += `<footer class="pf">
+    <div class="pf-div">${STAR}</div>
+    <div class="pf-in">
+      <div>${closing ? `<div class="pf-close serif"${JB('closing')}>${esc(closing)}</div>` : ''}${footA ? `<div class="pf-ag"${JB('footAgency')}>${esc(footA)}</div>` : ''}</div>
+      ${ct.length ? `<div class="pf-ct">${ct.map(c =>
+        `${c.l ? `<small style="font-size:inherit"${JB('c'+c.i+'Label')}>${esc(c.l)}</small> ` : ''}<span${JB('c'+c.i)}>${esc(c.v)}</span>`).join('<br>')}</div>` : ''}
+    </div>
+  </footer>`;
+
+  p.innerHTML = h;
+  fitPreview();
+}
+
+function fitPreview(){
+  const stage = $('#stage'), p = $('#page');
+  p.querySelectorAll('.pb-guide').forEach(g => g.remove());
+  const avail = stage.parentElement.clientWidth - 36;
+  const s = Math.min(1, avail / 794);
+  p.style.transform = `scale(${s})`;
+  const ht = p.offsetHeight, pages = Math.max(1, Math.ceil((ht - 2) / 1123));
+  for (let k = 1; k < pages; k++){
+    const g = document.createElement('div');
+    g.className = 'pb-guide'; g.style.top = (1123*k) + 'px';
+    g.innerHTML = `<span>≈ Page ${k+1}</span>`; p.appendChild(g);
+  }
+  stage.style.width = (794*s) + 'px';
+  stage.style.height = (ht*s) + 'px';
+  $('#pageCount').textContent = pages + (pages > 1 ? ' pages' : ' page');
+}
+
+function refreshTotals(){
+  state.sections.forEach((s, si) => { const e = document.getElementById('ss'+si); if (e) e.innerHTML = money(secSum(s)); });
+  const a = $('#autoSum'); if (a) a.innerHTML = money(autoTotal());
+}
+function refreshAutoPlaceholders(){
+  Object.keys(AUTO).forEach(k => { const i = ed.querySelector(`[data-bind="${k}"]`); if (i) i.placeholder = autoPh(k); });
+}
+
+/* click a text in the preview → jump to its field */
+function jump(sel){
+  const el = document.querySelector(sel); if (!el) return;
+  el.scrollIntoView({ behavior:'smooth', block:'center' });
+  el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash');
+  if (el.matches('input:not([type=file]),textarea,select'))
+    setTimeout(() => { el.focus({ preventScroll:true }); if (el.select) el.select(); }, 380);
+}
+$('#page').addEventListener('click', e => { const t = e.target.closest('[data-jump]'); if (t) jump(t.dataset.jump); });
+
+/* ---------- events ---------- */
+const ed = $('#editor');
+ed.addEventListener('input', e => {
+  const t = e.target, d = t.dataset;
+  if (t.type === 'file') return;
+  if (d.bind) state[d.bind] = t.type === 'checkbox' ? t.checked : t.value;
+  else if (d.sec !== undefined) state.sections[+d.sec].name = t.value;
+  else if (d.f) state.sections[+d.s].items[+d.i][d.f] = t.value;
+  if (d.bind === 'currency') ed.querySelectorAll('.price span').forEach(sp => sp.textContent = state.currency);
+  refreshAutoPlaceholders(); refreshTotals(); renderPreview(); save();
+});
+
+ed.addEventListener('change', e => {
+  if (e.target.id !== 'logoInput') return;
+  const f = e.target.files && e.target.files[0]; if (!f) return;
+  if (f.size > 1.5 * 1024 * 1024){ toast('Logo is too large — please use an image under 1.5 MB'); return; }
+  const r = new FileReader();
+  r.onload = () => { state.logo = r.result; rebuild(); };
+  r.readAsDataURL(f);
+});
+
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-action]'); if (!b) return;
+  const a = b.dataset.action, si = +b.dataset.s, ii = +b.dataset.i, S = state.sections;
+  switch (a){
+    case 'add-item': {
+      S[si].items.push({ desc:'', date:'', price:'' }); rebuild();
+      const all = ed.querySelectorAll(`[data-s="${si}"][data-f="desc"]`); all[all.length-1].focus();
+      return; }
+    case 'del-item': S[si].items.splice(ii, 1); break;
+    case 'add-sec': {
+      S.push({ name:'New city', items:[{ desc:'', date:'', price:'' }] }); rebuild();
+      const ins = ed.querySelectorAll('[data-sec]'); ins[ins.length-1].select();
+      return; }
+    case 'del-sec':
+      if (!confirm(`Delete “${S[si].name || 'this block'}”?`)) return;
+      S.splice(si, 1); break;
+    case 'up': if (si > 0) [S[si-1], S[si]] = [S[si], S[si-1]]; break;
+    case 'down': if (si < S.length-1) [S[si+1], S[si]] = [S[si], S[si+1]]; break;
+    case 'mode': state.totalMode = b.dataset.m; break;
+    case 'accent': state.accent = b.dataset.k; break;
+    case 'hide': state.hide[b.dataset.k] = !state.hide[b.dataset.k]; break;
+    case 'rm-logo': state.logo = ''; break;
+    case 'reset': {
+      if (!confirm('Reset the itinerary lines and total to the original list? All PDF texts, logo and contacts are kept.')) return;
+      const fresh = clone(DEFAULT);
+      state.sections = fresh.sections; state.totalMode = fresh.totalMode; state.manualTotal = fresh.manualTotal;
+      break; }
+    case 'download': downloadPDF(); return;
+  }
+  rebuild();
+});
+
+function rebuild(){ renderEditor(); renderPreview(); save(); }
+
+function toast(msg){
+  const t = $('#toast'); t.textContent = msg; t.classList.add('show');
+  clearTimeout(toast._t); toast._t = setTimeout(() => t.classList.remove('show'), 2600);
+}
+
+function downloadPDF(){
+  /* Native print-to-PDF: crisp vector text, real fonts, proper A4 pages. */
+  const button = document.querySelector('[data-action="download"]');
+  const oldTitle = document.title;
+  const safe = s => String(s || '').replace(/[\\/:*?"<>|]+/g, '').trim();
+  document.title = ['Itinerary', safe(state.m1) || safe(state.title)].filter(Boolean).join(' – ');
+  if (button) button.disabled = true;
+  const restore = () => { document.title = oldTitle; if (button) button.disabled = false; };
+  window.addEventListener('afterprint', restore, { once: true });
+  toast('Choose “Save as PDF” as the destination');
+  const go = () => requestAnimationFrame(() => requestAnimationFrame(() => {
+    try { window.print(); setTimeout(restore, 1500); }
+    catch (err) { console.error(err); restore(); toast('Could not open the print dialog.'); }
+  }));
+  (document.fonts ? document.fonts.ready : Promise.resolve()).then(go);
+}
+
+window.addEventListener('resize', fitPreview);
+renderEditor(); renderPreview();
+if (document.fonts) document.fonts.ready.then(fitPreview);
+
+</script>
+</body>
+</html>
