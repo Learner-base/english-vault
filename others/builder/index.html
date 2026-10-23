@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tour Itinerary Builder — Uzbekistan</title>
+<meta name="description" content="Fully editable tour itinerary builder for Uzbekistan. Add locations, lines, dates and prices, calculate totals automatically and export a clean A4 PDF.">
+<meta name="keywords" content="tour itinerary builder, travel itinerary, Uzbekistan tour, itinerary PDF, travel agency tool, Tashkent, Samarkand, Bukhara, Khiva">
+<meta name="author" content="Muxsinjon Maxsudovich">
+<meta name="creator" content="Muxsinjon Maxsudovich">
+<meta name="publisher" content="Muxsinjon Maxsudovich">
+<meta name="copyright" content="© Muxsinjon Maxsudovich">
+<meta name="application-name" content="Tour Itinerary Builder">
+<meta name="generator" content="Handcrafted by Muxsinjon Maxsudovich — https://muxsinjon.uz">
+<meta name="theme-color" content="#174d5a">
+<meta name="color-scheme" content="light">
+<meta name="format-detection" content="telephone=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tour Itinerary Builder — Uzbekistan">
+<meta property="og:description" content="Fully editable tour itinerary builder: edit locations, prices and dates, auto-calculate totals, export to PDF.">
+<meta property="og:site_name" content="Tour Itinerary Builder">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Tour Itinerary Builder — Uzbekistan">
+<meta name="twitter:description" content="Fully editable tour itinerary builder: edit locations, prices and dates, auto-calculate totals, export to PDF.">
+<meta name="twitter:creator" content="@mxsnjon">
+<link rel="author" href="https://muxsinjon.uz">
+<link rel="me" href="https://muxsinjon.uz">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Tour Itinerary Builder",
+  "description": "Fully editable tour itinerary builder for Uzbekistan with automatic totals and A4 PDF export.",
+  "applicationCategory": "TravelApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "en",
+  "isAccessibleForFree": true,
+  "author": { "@id": "https://muxsinjon.uz/#person" },
+  "creator": { "@id": "https://muxsinjon.uz/#person" },
+  "publisher": { "@id": "https://muxsinjon.uz/#person" },
+  "copyrightHolder": { "@id": "https://muxsinjon.uz/#person" },
+  "copyrightYear": 2026
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://muxsinjon.uz/#person",
+  "name": "Muxsinjon Maxsudovich",
+  "alternateName": "muxsinjon",
+  "jobTitle": "Software Engineer",
+  "email": "mailto:jamoauchun@gmail.com",
+  "url": "https://muxsinjon.uz",
+  "address": { "@type": "PostalAddress", "addressLocality": "Tashkent", "addressCountry": "UZ" },
+  "knowsAbout": ["JavaScript", "TypeScript", "Web development"],
+  "sameAs": [
+    "https://muxsinjon.uz",
+    "https://github.com/muxsin",
+    "https://www.linkedin.com/in/muxsinjon",
+    "https://x.com/mxsnjon",
+    "https://t.me/muxsinjohn",
+    "https://g.dev/muxsinjon"
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f3f6fb; --card:#fff; --line:#e2e8f2; --text:#0f1b2d; --muted:#64748b;
+  --blue:#1d4ed8; --blue-2:#2563eb; --blue-soft:#eaf1ff; --danger:#dc2626;
+  --radius:12px;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--text);font:14px/1.5 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+button,input,textarea{font:inherit;color:inherit}
+
+.bar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar-in{max-width:1000px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:10px}
+.bar h1{font-size:15px;margin:0;font-weight:600;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar h1 span{color:var(--muted);font-weight:500}
+
+.btn{border:1px solid var(--line);background:#fff;border-radius:9px;padding:8px 13px;cursor:pointer;font-weight:500;display:inline-flex;align-items:center;gap:6px;transition:.15s}
+.btn:hover{border-color:#c7d3e6;background:#f8fafd}
+.btn:disabled{opacity:.35;cursor:default}
+.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}
+.btn.primary:hover{background:var(--blue-2)}
+.btn.ghost{border-color:transparent;background:transparent;color:var(--muted)}
+.btn.ghost:hover{background:var(--blue-soft);color:var(--blue)}
+.btn.dashed{border-style:dashed;color:var(--blue);background:transparent;width:100%;justify-content:center}
+.btn.dashed:hover{background:var(--blue-soft)}
+.icon{width:30px;height:30px;padding:0;justify-content:center;border-color:transparent;background:transparent;color:var(--muted)}
+.icon:hover{background:#f1f4f9;color:var(--text)}
+.icon.del:hover{background:#fdecec;color:var(--danger)}
+svg{width:16px;height:16px;flex:none}
+
+main{max-width:1000px;margin:0 auto;padding:20px 16px 60px}
+.label{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:26px 2px 10px}
+.label:first-child{margin-top:4px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+.field label{display:block;font-size:12px;color:var(--muted);margin-bottom:5px;font-weight:500}
+.inp{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:#fff;outline:none;transition:.15s}
+.inp:hover{border-color:#cdd8ea}
+.inp:focus{border-color:var(--blue-2);box-shadow:0 0 0 3px rgba(37,99,235,.14)}
+textarea.inp{resize:vertical;min-height:64px}
+
+.sec{margin-bottom:12px;padding:0;overflow:hidden}
+.sec-h{display:flex;align-items:center;gap:8px;padding:10px 10px 10px 12px;background:#fafcff;border-bottom:1px solid var(--line)}
+.sec-h .inp{font-weight:600;border-color:transparent;background:transparent;padding:6px 8px}
+.sec-h .inp:hover{border-color:var(--line);background:#fff}
+.sec-h .inp:focus{background:#fff}
+.sec-sum{font-weight:600;color:var(--blue);white-space:nowrap;font-size:13px;padding:0 6px}
+.items{padding:10px 14px 14px}
+.row{display:grid;grid-template-columns:1fr 116px 108px 30px;gap:8px;align-items:center;margin-bottom:8px}
+.row-head{font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+.price{position:relative}
+.price span{position:absolute;right:10px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none}
+.price .inp{padding-right:24px;text-align:right}
+
+.total-card{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.seg{display:inline-flex;background:#f1f4f9;border-radius:9px;padding:3px}
+.seg button{border:0;background:transparent;padding:6px 12px;border-radius:7px;cursor:pointer;font-weight:500;color:var(--muted)}
+.seg button.on{background:#fff;color:var(--blue);box-shadow:0 1px 2px rgba(15,27,45,.1)}
+.calc{color:var(--muted);font-size:13px}
+.calc b{color:var(--text)}
+.total-card .price{width:140px}
+.cur{width:70px;text-align:center}
+
+.stage-wrap{background:#e4eaf3;border-radius:var(--radius);padding:24px 16px;border:1px solid var(--line)}
+.stage{margin:0 auto;position:relative}
+.stage-meta{display:flex;justify-content:space-between;color:var(--muted);font-size:12px;margin-top:10px}
+
+#page{
+  width:794px;min-height:1123px;background:#fff;color:#0f1b2d;transform-origin:top left;
+  padding:64px 64px 56px;display:flex;flex-direction:column;position:relative;
+  box-shadow:0 10px 30px rgba(15,27,45,.12);font-family:Inter,system-ui,sans-serif;font-size:14px;line-height:1.5;
+}
+.p-sec{border:1px solid #d6e0f0;border-radius:10px;padding:6px 18px;margin-bottom:16px;break-inside:avoid}
+.p-sec h2{font-size:16px;font-weight:700;color:#1d4ed8;margin:8px 0 2px;padding-bottom:8px;border-bottom:1px solid #e6ecf6}
+.p-row{display:grid;grid-template-columns:1fr auto 80px;gap:18px;padding:10px 0;border-bottom:1px solid #eef2f8;align-items:baseline}
+.p-row:last-child{border-bottom:0}
+.p-row .d{color:#64748b;font-size:12.5px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.p-row .pr{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}
+.p-total{margin-top:14px;display:flex;justify-content:flex-end;padding:0 19px}
+.p-total b{font-size:24px;font-weight:700;color:#1d4ed8;font-variant-numeric:tabular-nums}
+.p-note{margin-top:24px;font-size:12.5px;color:#475569;white-space:pre-wrap}
+.pb-guide{position:absolute;left:0;right:0;border-top:1px dashed #93b4f5;pointer-events:none}
+.pb-guide span{position:absolute;right:8px;top:-18px;font-size:10px;color:#2563eb;background:#fff;padding:0 4px}
+
+.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(20px);background:#0f1b2d;color:#fff;padding:10px 16px;border-radius:9px;font-size:13px;opacity:0;transition:.25s;pointer-events:none;z-index:50}
+.toast.show{opacity:1;transform:translateX(-50%)}
+
+@media (max-width:640px){
+  .row{grid-template-columns:1fr 100px 30px}
+  .row .desc{grid-column:1/-1}
+  .row-head{display:none}
+  .row{padding-bottom:10px;border-bottom:1px solid var(--line)}
+  .bar .hide-sm{display:none}
+}
+
+/* Refined, minimal interface */
+:root{--bg:#f6f8fc;--card:#fff;--line:#e7ebf2;--text:#172033;--muted:#738096;--blue:#315ce8;--blue-2:#244bd0;--blue-soft:#eef2ff;--radius:14px}
+body{font-size:14px;line-height:1.55}
+.bar{background:rgba(255,255,255,.9);border-bottom-color:#e8edf5}
+.bar-in{max-width:1080px;padding:14px 22px;gap:10px}
+.bar h1{font-size:15px;letter-spacing:-.02em}
+main{max-width:1080px;padding:28px 22px 64px}
+.label{margin:30px 2px 12px;font-size:11px;letter-spacing:.1em}
+.card{border-color:#e8edf4;border-radius:14px;padding:18px;box-shadow:0 2px 8px rgba(22,34,58,.025)}
+.btn{border-radius:10px;padding:9px 13px;transition:background .16s,border-color .16s,transform .16s}
+.btn:active{transform:translateY(1px)}
+.btn.primary{box-shadow:0 2px 5px rgba(49,92,232,.18)}
+.inp{border-color:#e3e8f0;border-radius:9px;padding:9px 11px;min-height:38px}
+.sec{padding:0;box-shadow:0 2px 10px rgba(22,34,58,.025)}
+.sec-h{padding:11px 12px;background:#fbfcff}
+.sec-h .inp{min-height:36px}
+.items{padding:14px 16px 16px}
+.row{grid-template-columns:minmax(0,1fr) 116px 108px 30px;gap:10px}
+.row-head{padding:0 2px 2px}
+.total-card{gap:14px}
+.seg{background:#f0f3f9}
+.stage-wrap{padding:28px 18px;background:#edf1f7;border-color:#e5eaf2;border-radius:16px;overflow:hidden}
+#page{box-shadow:0 12px 34px rgba(22,34,58,.13);border-radius:2px}
+.p-sec{border-color:#e1e7f1;border-radius:9px;padding:6px 16px;margin-bottom:14px}
+.p-sec h2{color:#315ce8}
+.toast{box-shadow:0 8px 24px rgba(15,27,45,.18)}
+button:focus-visible{outline:3px solid rgba(49,92,232,.28);outline-offset:2px}
+@media(max-width:640px){
+  .bar-in{padding:10px 12px;gap:6px}.bar h1{font-size:14px}
+  main{padding:18px 12px 42px}
+  .card{padding:13px}.sec-h{gap:4px;padding:8px}
+  .sec-h .inp{min-width:0;padding:6px}
+  .sec-sum{font-size:12px;padding:0 2px}
+  .items{padding:12px}
+  .row{grid-template-columns:minmax(0,1fr) 88px 30px;gap:7px}
+  .row .desc{grid-column:1/-1}
+  .row .price{grid-column:2;grid-row:2}
+  .row .del{grid-column:3;grid-row:2}
+  .stage-wrap{padding:14px 8px}
+  .total-card .field{margin-left:0!important;width:100%}
+}
+
+@media print{
+  @page{size:A4;margin:0}
+  body{background:#fff}
+  .bar,main > :not(#previewBlock),#previewBlock > :not(.stage-wrap),.stage-meta,.pb-guide,.toast{display:none!important}
+  main{padding:0;max-width:none}
+  .stage-wrap{padding:0;border:0;background:none}
+  .stage{width:auto!important;height:auto!important}
+  #page{transform:none!important;box-shadow:none;min-height:297mm;width:210mm}
+}
+
+/* Premium itinerary redesign */
+:root{
+  --bg:#f3f5f7;--card:#fff;--line:#e3e7eb;--text:#172536;--muted:#697989;
+  --blue:#174d5a;--blue-2:#103e49;--blue-soft:#e8f1f1;--danger:#b54747;--radius:16px;
+}
+body{background:#f3f5f7;color:#172536;font-family:Inter,Arial,sans-serif}
+.bar{background:rgba(255,255,255,.94);border-bottom:1px solid #e1e6e9}
+.bar-in{max-width:1180px;padding:14px 24px}
+.bar h1{font-size:15px;letter-spacing:-.02em}
+.bar h1 span{color:#7c8995}
+.btn{border-radius:10px;min-height:38px}
+.btn.primary{background:#174d5a;border-color:#174d5a;box-shadow:0 5px 14px rgba(23,77,90,.15)}
+.btn.primary:hover{background:#103e49}
+main{max-width:1180px;padding:28px 24px 64px}
+.label{font-size:11px;letter-spacing:.13em;color:#7a8792;margin:28px 2px 12px}
+.card{border:1px solid #e4e9ec;border-radius:15px;box-shadow:0 5px 18px rgba(28,46,58,.035)}
+.sec-h{background:#fbfcfc;border-bottom:1px solid #edf0f2}
+.sec-sum{color:#174d5a}
+.inp:focus{border-color:#4b7c83;box-shadow:0 0 0 3px rgba(23,77,90,.12)}
+.btn.dashed{color:#174d5a}
+.btn.dashed:hover{background:#e8f1f1}
+.stage-wrap{background:#e8ecee;border:1px solid #dfe5e7;border-radius:18px;padding:28px 18px;overflow:hidden}
+#page{
+  width:794px;min-height:1123px;background:#fff;color:#172536;
+  padding:56px 58px 42px;display:flex;flex-direction:column;position:relative;
+  box-shadow:0 18px 46px rgba(25,43,54,.15);border-radius:3px;
+  font-family:Inter,Arial,sans-serif;font-size:13px;line-height:1.55;
+}
+.p-cover{position:relative;padding:0 0 28px;border-bottom:1px solid #e6ebed;margin-bottom:25px}
+.p-kicker{display:flex;align-items:center;gap:9px;color:#54717a;font-size:9px;font-weight:700;letter-spacing:.19em;text-transform:uppercase}
+.p-mark{display:inline-block;width:23px;height:3px;background:#bd9a5b;border-radius:2px}
+.p-title{font-family:Georgia,'Times New Roman',serif;font-size:34px;line-height:1.12;font-weight:500;letter-spacing:-.035em;color:#173b45;margin:18px 0 10px}
+.p-subtitle{font-size:11.5px;color:#71808a;max-width:420px;line-height:1.7}
+.p-route{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin-top:20px}
+.p-route-chip{font-size:9px;font-weight:600;color:#315963;background:#eef4f4;border:1px solid #e0ebeb;padding:5px 9px;border-radius:20px}
+.p-route-sep{color:#b49a6d;font-size:11px}
+.p-sec{border:1px solid #e5eaec;border-radius:10px;padding:5px 15px 7px;margin-bottom:12px;break-inside:avoid;page-break-inside:avoid}
+.p-sec h2{font-family:Georgia,'Times New Roman',serif;font-size:17px;font-weight:500;color:#174d5a;margin:7px 0 3px;padding:2px 0 9px;border-bottom:1px solid #e8edef}
+.p-sec h2 .p-sec-num{display:inline-flex;align-items:center;justify-content:center;vertical-align:2px;width:22px;height:22px;margin-right:8px;border-radius:50%;background:#edf4f3;color:#477079;font:700 9px Inter,Arial,sans-serif;letter-spacing:0}
+.p-row{display:grid;grid-template-columns:minmax(0,1fr) 78px 82px;gap:12px;padding:10px 0;border-bottom:1px solid #f0f2f3;align-items:start}
+.p-row:last-child{border-bottom:0}
+.p-row .desc{color:#273844;font-size:11.5px;line-height:1.55;overflow-wrap:anywhere}
+.p-row .d{color:#788792;font-size:10px;font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right;padding-top:1px}
+.p-row .pr{font-weight:650;color:#1c3f48;font-size:11px;font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}
+.p-total{margin-top:10px;display:flex;justify-content:flex-end;padding:0}
+.p-total-box{display:flex;align-items:center;justify-content:space-between;gap:28px;min-width:250px;padding:15px 18px;border-radius:10px;background:#173f49;color:#fff;break-inside:avoid}
+.p-total-label{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#c5d8d9;font-weight:700}
+.p-total-caption{font-size:9px;color:#c5d8d9;margin-top:3px}
+.p-total b{font-family:Georgia,'Times New Roman',serif;font-size:24px;font-weight:500;color:#fff;font-variant-numeric:tabular-nums;white-space:nowrap}
+.p-note{margin-top:18px;font-size:11px;color:#5e6e78;white-space:pre-wrap;border-left:2px solid #bd9a5b;padding:5px 0 5px 12px;break-inside:avoid}
+.p-footer{margin-top:auto;padding-top:26px;display:flex;justify-content:space-between;gap:18px;align-items:center;color:#8a969e;font-size:8px;letter-spacing:.035em}
+.p-footer-brand{font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#54717a}
+.p-footer-line{height:1px;flex:1;background:#e8edef}
+.pb-guide{border-top:1px dashed #a8bfc2}
+.pb-guide span{color:#477079}
+.stage-meta{max-width:794px;margin:12px auto 0;color:#7b8992}
+.toast{background:#173f49}
+@media(max-width:640px){
+  .bar-in{padding:10px 12px}main{padding:18px 12px 42px}
+  .stage-wrap{padding:14px 8px}
+  .row{grid-template-columns:minmax(0,1fr) 88px 30px;gap:7px}
+}
+@media print{
+  @page{size:A4;margin:0}
+  html,body{margin:0!important;padding:0!important;background:#fff!important}
+  .bar,main > :not(#previewBlock),#previewBlock > :not(.stage-wrap),.stage-meta,.pb-guide,.toast{display:none!important}
+  main{padding:0!important;max-width:none!important;margin:0!important}
+  .stage-wrap{padding:0!important;border:0!important;background:none!important;border-radius:0!important;overflow:visible!important}
+  .stage{width:auto!important;height:auto!important;margin:0!important}
+  #page{transform:none!important;box-shadow:none!important;border-radius:0!important;width:210mm!important;min-height:297mm!important;padding:15mm 15mm 12mm!important}
+  .p-sec{break-inside:avoid;page-break-inside:avoid}
+  .p-total-box,.p-note{break-inside:avoid;page-break-inside:avoid}
+}
+
+</style>
+</head>
+<body>
+
+<div class="bar"><div class="bar-in">
+  <h1>Itinerary <span>· Builder</span></h1>
+  <button class="btn ghost hide-sm" data-action="reset" title="Reset to original">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>Reset</button>
+  <button class="btn primary" data-action="download">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>Download PDF</button>
+</div></div>
+
+<main id="app">
+  <div id="editor"></div>
+
+  <div id="previewBlock">
+    <div class="label">Preview — exactly as the PDF</div>
+    <div class="stage-wrap">
+      <div class="stage" id="stage"><div id="page"></div></div>
+    </div>
+    <div class="stage-meta"><span>A4 · 210 × 297 mm</span><span id="pageCount">1 page</span></div>
+  </div>
+</main>
+<div class="toast" id="toast"></div>
+
+<script>
+const KEY = 'tour-itinerary-v2';
+const DEFAULT = {
+  currency: '$',
+  totalMode: 'auto',
+  manualTotal: '',
+  note: '',
+  document: {
+    agencyName: 'UZBEKISTAN · PRIVATE TRAVEL',
+    eyebrow: 'PRIVATE TOUR ITINERARY',
+    titleLine1: 'Your journey',
+    titleLine2: 'through Uzbekistan',
+    subtitle: 'A thoughtfully arranged journey through historic cities, remarkable architecture, and the spirit of the Silk Road.',
+    totalLabel: 'TOTAL INVESTMENT',
+    totalCaption: 'Your itinerary, thoughtfully planned',
+    footerBrand: 'UZBEKISTAN · PRIVATE TRAVEL',
+    footerMessage: 'We look forward to welcoming you to Uzbekistan.',
+    footerRight: 'Prepared with care for your journey'
+  },
+  sections: [
+    { name: '', items: [
+      { desc: 'Airport transfer to Tashkent airport', date: '', price: '20' } ] },
+    { name: 'Khiva', items: [
+      { desc: 'Pick up from airport to hotel (transfer)', date: '', price: '25' },
+      { desc: 'In Khiva city tour', date: '25.10.26', price: '100' },
+      { desc: 'Transport from Khiva to Bukhara', date: '26.10.26', price: '100' } ] },
+    { name: 'Bukhara', items: [
+      { desc: 'In Bukhara city tour', date: '27.10.26', price: '100' },
+      { desc: 'Transport from Bukhara to Samarkand', date: '28.10.26', price: '100' } ] },
+    { name: 'Samarkand', items: [
+      { desc: 'In Samarkand city tour', date: '29.10.26', price: '100' },
+      { desc: 'Transport from Samarkand to Tashkent', date: '', price: '150' },
+      { desc: 'Drop off: from Hotel in Tashkent to Airport', date: '', price: '20' } ] }
+  ]
+};
+
+const clone = o => JSON.parse(JSON.stringify(o));
+let state = load() || clone(DEFAULT);
+state = migrateState(state);
+function migrateState(s){
+  const base = clone(DEFAULT);
+  if (!s || typeof s !== 'object') return base;
+  const merged = {...base, ...s};
+  merged.document = {...base.document, ...(s.document || {})};
+  merged.currency = String(merged.currency ?? base.currency);
+  merged.totalMode = merged.totalMode === 'manual' ? 'manual' : 'auto';
+  merged.manualTotal = String(merged.manualTotal ?? '');
+  merged.note = String(merged.note ?? '');
+  if (!Array.isArray(merged.sections)) merged.sections = clone(base.sections);
+  merged.sections = merged.sections.filter(x => x && typeof x === 'object').map(x => ({
+    name: String(x.name ?? ''),
+    items: (Array.isArray(x.items) ? x.items : []).filter(i => i && typeof i === 'object')
+      .map(i => ({ desc: String(i.desc ?? ''), date: String(i.date ?? ''), price: String(i.price ?? '') }))
+  }));
+  return merged;
+}
+function load(){ try{ const s = localStorage.getItem(KEY); return s ? JSON.parse(s) : null; }catch(e){ return null; } }
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){} }
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const num = v => { const n = parseFloat(String(v).replace(/[^\d.\-]/g,'')); return isNaN(n) ? 0 : n; };
+const fmtText = n => Number(n).toLocaleString('en-US', { maximumFractionDigits: 2 }) + state.currency;
+const fmt = n => esc(fmtText(n));
+const secSum = s => s.items.reduce((a, i) => a + num(i.price), 0);
+const autoTotal = () => state.sections.reduce((a, s) => a + secSum(s), 0);
+const total = () => state.totalMode === 'manual' ? num(state.manualTotal) : autoTotal();
+
+const I = {
+  up:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m18 15-6-6-6 6"/></svg>',
+  down:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>',
+  x:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>',
+  trash:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/></svg>',
+  plus:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>'
+};
+
+/* ---------- editor ---------- */
+function renderEditor(){
+  const cur = esc(state.currency);
+  let h = `<div class="label">Itinerary</div>`;
+
+  state.sections.forEach((s, si) => {
+    h += `<div class="card sec">
+      <div class="sec-h">
+        <input class="inp" data-sec="${si}" value="${esc(s.name)}" placeholder="Location (leave empty for no title)">
+        <span class="sec-sum" id="ss${si}">${fmt(secSum(s))}</span>
+        <button class="btn icon" data-action="up" data-s="${si}" title="Move up" ${si===0?'disabled':''}>${I.up}</button>
+        <button class="btn icon" data-action="down" data-s="${si}" title="Move down" ${si===state.sections.length-1?'disabled':''}>${I.down}</button>
+        <button class="btn icon del" data-action="del-sec" data-s="${si}" title="Delete location">${I.trash}</button>
+      </div>
+      <div class="items">
+        <div class="row row-head"><span>Text</span><span>Date</span><span style="text-align:right">Price</span><span></span></div>
+        ${s.items.map((it, ii) => `
+        <div class="row">
+          <input class="inp desc" data-s="${si}" data-i="${ii}" data-f="desc" value="${esc(it.desc)}" placeholder="Text">
+          <input class="inp" data-s="${si}" data-i="${ii}" data-f="date" value="${esc(it.date)}" placeholder="dd.mm.yy">
+          <div class="price"><input class="inp" inputmode="decimal" data-s="${si}" data-i="${ii}" data-f="price" value="${esc(it.price)}" placeholder="0"><span>${cur}</span></div>
+          <button class="btn icon del" data-action="del-item" data-s="${si}" data-i="${ii}" title="Remove">${I.x}</button>
+        </div>`).join('')}
+        <button class="btn dashed" data-action="add-item" data-s="${si}">${I.plus}Add line</button>
+      </div>
+    </div>`;
+  });
+
+  h += `<button class="btn dashed" data-action="add-sec" style="padding:12px">${I.plus}Add location</button>
+
+  <div class="label">Total</div>
+  <div class="card total-card">
+    <div class="seg">
+      <button data-action="mode" data-m="auto" class="${state.totalMode==='auto'?'on':''}">Auto sum</button>
+      <button data-action="mode" data-m="manual" class="${state.totalMode==='manual'?'on':''}">Custom</button>
+    </div>
+    ${state.totalMode==='manual'
+      ? `<div class="price"><input class="inp" inputmode="decimal" data-bind="manualTotal" value="${esc(state.manualTotal)}"><span>${cur}</span></div>`
+      : ''}
+    <div class="calc">Sum of lines: <b id="autoSum">${fmt(autoTotal())}</b></div>
+    <div class="field" style="margin-left:auto;display:flex;align-items:center;gap:8px">
+      <label style="margin:0">Currency</label><input class="inp cur" data-bind="currency" value="${cur}">
+    </div>
+  </div>
+
+  <div class="label">Document text</div>
+  <div class="card">
+    <div class="field" style="margin-bottom:14px"><label>Agency name</label><input class="inp" data-doc="agencyName" value="${esc(state.document.agencyName)}"></div>
+    <div class="field" style="margin-bottom:14px"><label>Top label</label><input class="inp" data-doc="eyebrow" value="${esc(state.document.eyebrow)}"></div>
+    <div class="row" style="grid-template-columns:1fr 1fr">
+      <div class="field"><label>Title — line 1</label><input class="inp" data-doc="titleLine1" value="${esc(state.document.titleLine1)}"></div>
+      <div class="field"><label>Title — line 2</label><input class="inp" data-doc="titleLine2" value="${esc(state.document.titleLine2)}"></div>
+    </div>
+    <div class="field" style="margin:14px 0"><label>Introduction / subtitle</label><textarea class="inp" data-doc="subtitle" rows="2">${esc(state.document.subtitle)}</textarea></div>
+    <div class="row" style="grid-template-columns:1fr 1fr">
+      <div class="field"><label>Total heading</label><input class="inp" data-doc="totalLabel" value="${esc(state.document.totalLabel)}"></div>
+      <div class="field"><label>Total supporting text</label><input class="inp" data-doc="totalCaption" value="${esc(state.document.totalCaption)}"></div>
+    </div>
+    <div class="field" style="margin:14px 0"><label>Footer agency name</label><input class="inp" data-doc="footerBrand" value="${esc(state.document.footerBrand)}"></div>
+    <div class="field" style="margin-bottom:14px"><label>Footer welcome message</label><input class="inp" data-doc="footerMessage" value="${esc(state.document.footerMessage)}"></div>
+    <div class="field"><label>Footer supporting text</label><input class="inp" data-doc="footerRight" value="${esc(state.document.footerRight)}"></div>
+  </div>
+
+  <div class="label">Note</div>
+  <div class="card"><div class="field"><label>Shown below the total (optional)</label>
+    <textarea class="inp" data-bind="note" rows="2">${esc(state.note)}</textarea></div></div>`;
+
+  document.getElementById('editor').innerHTML = h;
+}
+
+/* ---------- preview ---------- */
+function renderPreview(){
+  const p = document.getElementById('page');
+  const namedSections = state.sections.filter(s => s.name.trim());
+  const route = namedSections.map(s => s.name.trim());
+  const D = state.document;
+  const kicker = [D.agencyName, D.eyebrow].filter(t => t.trim());
+  const titleLines = [D.titleLine1, D.titleLine2].filter(t => t.trim());
+  let h = `
+    <div class="p-cover">
+      ${kicker.length ? `<div class="p-kicker"><span class="p-mark"></span> ${kicker.map(esc).join(' <span style="color:#a0adb3;letter-spacing:.08em">/</span> ')}</div>` : ''}
+      ${titleLines.length ? `<div class="p-title">${titleLines.map(esc).join('<br>')}</div>` : ''}
+      ${state.document.subtitle.trim() ? `<div class="p-subtitle">${esc(state.document.subtitle)}</div>` : ''}
+      ${route.length ? `<div class="p-route">${route.map((name, i) => `${i ? '<span class="p-route-sep">→</span>' : ''}<span class="p-route-chip">${esc(name)}</span>`).join('')}</div>` : ''}
+    </div>`;
+  let sectionNo = 0;
+  state.sections.forEach(s => {
+    const hasName = s.name.trim();
+    if (hasName) sectionNo++;
+    h += `<div class="p-sec">
+      ${hasName ? `<h2><span class="p-sec-num">${String(sectionNo).padStart(2,'0')}</span>${esc(s.name)}</h2>` : ''}
+      ${s.items.map(it => `<div class="p-row"><span class="desc">${esc(it.desc)}</span><span class="d">${it.date ? esc(it.date) : ''}</span><span class="pr">${it.price !== '' ? fmt(num(it.price)) : ''}</span></div>`).join('')}
+    </div>`;
+  });
+  h += `<div class="p-total"><div class="p-total-box">
+      <div>${D.totalLabel.trim() ? `<div class="p-total-label">${esc(D.totalLabel)}</div>` : ''}${D.totalCaption.trim() ? `<div class="p-total-caption">${esc(D.totalCaption)}</div>` : ''}</div>
+      <b>${fmt(total())}</b>
+    </div></div>
+    ${state.note.trim() ? `<div class="p-note">${esc(state.note)}</div>` : ''}
+    <div class="p-footer"><span class="p-footer-brand">${esc(D.footerBrand)}</span><span class="p-footer-line"></span>${D.footerMessage.trim() ? `<span>${esc(D.footerMessage)}</span>` : ''}${D.footerRight.trim() ? `<span>${esc(D.footerRight)}</span>` : ''}</div>`;
+  p.innerHTML = h;
+  fitPreview();
+}
+
+function fitPreview(){
+  const stage = document.getElementById('stage'), p = document.getElementById('page');
+  p.querySelectorAll('.pb-guide').forEach(g => g.remove());
+  const wrap = stage.parentElement, cs = getComputedStyle(wrap);
+  const avail = wrap.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+  const s = Math.min(1, avail / 794);
+  p.style.transform = `scale(${s})`;
+  const ht = p.offsetHeight, pages = Math.max(1, Math.ceil((ht - 2) / 1123));
+  for (let k = 1; k < pages; k++){
+    const g = document.createElement('div');
+    g.className = 'pb-guide'; g.style.top = (1123*k) + 'px';
+    g.innerHTML = `<span>Page ${k+1}</span>`; p.appendChild(g);
+  }
+  stage.style.width = (794*s) + 'px';
+  stage.style.height = (ht*s) + 'px';
+  document.getElementById('pageCount').textContent = pages + (pages > 1 ? ' pages' : ' page');
+}
+
+function refreshTotals(){
+  state.sections.forEach((s, si) => { const e = document.getElementById('ss'+si); if (e) e.textContent = fmtText(secSum(s)); });
+  const a = document.getElementById('autoSum'); if (a) a.textContent = fmtText(autoTotal());
+}
+
+/* ---------- events ---------- */
+const ed = document.getElementById('editor');
+ed.addEventListener('input', e => {
+  const t = e.target, d = t.dataset;
+  if (d.bind) state[d.bind] = t.value;
+  else if (d.doc) state.document[d.doc] = t.value;
+  else if (d.sec !== undefined) state.sections[+d.sec].name = t.value;
+  else if (d.f) state.sections[+d.s].items[+d.i][d.f] = t.value;
+  if (d.bind === 'currency'){
+    ed.querySelectorAll('.price span').forEach(sp => sp.textContent = state.currency);
+  }
+  refreshTotals(); renderPreview(); save();
+});
+
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-action]'); if (!b) return;
+  const a = b.dataset.action, si = +b.dataset.s, ii = +b.dataset.i, S = state.sections;
+  switch (a){
+    case 'add-item': {
+      S[si].items.push({ desc:'', date:'', price:'' }); rebuild();
+      const all = ed.querySelectorAll(`[data-s="${si}"][data-f="desc"]`); all[all.length-1].focus();
+      return; }
+    case 'del-item': S[si].items.splice(ii, 1); break;
+    case 'add-sec': {
+      S.push({ name:'New location', items:[{ desc:'', date:'', price:'' }] }); rebuild();
+      const ins = ed.querySelectorAll('[data-sec]'); ins[ins.length-1].select();
+      return; }
+    case 'del-sec':
+      if (!confirm(`Delete “${S[si].name || 'this block'}”?`)) return;
+      S.splice(si, 1); break;
+    case 'up': if (si > 0) [S[si-1], S[si]] = [S[si], S[si-1]]; break;
+    case 'down': if (si < S.length-1) [S[si+1], S[si]] = [S[si], S[si+1]]; break;
+    case 'mode':
+      if (b.dataset.m === 'manual' && state.totalMode !== 'manual' && !state.manualTotal.trim()) state.manualTotal = String(autoTotal());
+      state.totalMode = b.dataset.m; break;
+    case 'reset':
+      if (!confirm('Reset everything to the original list?')) return;
+      state = clone(DEFAULT); break;
+    case 'print': window.print(); return;
+    case 'download': downloadPDF(); return;
+  }
+  rebuild();
+});
+
+function rebuild(){ renderEditor(); renderPreview(); save(); }
+
+function toast(msg){
+  const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show');
+  clearTimeout(toast._t); toast._t = setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+function downloadPDF(){
+  /*
+    Use the browser's native print-to-PDF pipeline for exports. It uses the
+    same print stylesheet as the working Print button and avoids html2canvas
+    cropping the left side of the itinerary on some screen sizes/browsers.
+    Browsers require the user to confirm Save as PDF in the print dialog.
+  */
+  const button = document.querySelector('[data-action="download"]');
+  const oldTitle = document.title;
+  const D = state.document;
+  const name = [D.titleLine1, D.titleLine2].filter(t => t.trim()).join(' ').replace(/[\\/:*?"<>|]+/g, ' ').replace(/\s+/g, ' ').trim();
+  document.title = name || 'Tour Itinerary';
+  if (button) { button.disabled = true; button.setAttribute('aria-busy', 'true'); }
+
+  const restore = () => {
+    document.title = oldTitle;
+    if (button) { button.disabled = false; button.removeAttribute('aria-busy'); }
+    window.removeEventListener('afterprint', restore);
+  };
+  window.addEventListener('afterprint', restore, { once: true });
+
+  // Allow the browser to apply @media print before opening the dialog.
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      try {
+        window.print();
+        // Some browsers don't fire afterprint if the dialog is cancelled.
+        setTimeout(restore, 1500);
+      } catch (err) {
+        console.error('PDF export failed:', err);
+        restore();
+        toast('Could not open PDF dialog. Please use Print.');
+      }
+    });
+  });
+}
+
+window.addEventListener('resize', fitPreview);
+renderEditor(); renderPreview();
+if (document.fonts) document.fonts.ready.then(fitPreview);
+</script>
+</body>
+</html>
