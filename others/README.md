@@ -1,3 +1,6 @@
 # others
 
-Standalone tools: `itinerary/` and `builder/` (tour itinerary builders).
+Standalone tools:
+
+- `itinerary/` - tour itinerary builder
+- `builder/` - fully editable itinerary builder
