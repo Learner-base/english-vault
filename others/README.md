@@ -4,3 +4,5 @@ Standalone tools:
 
 - `itinerary/` - tour itinerary builder
 - `builder/` - fully editable itinerary builder
+
+Deployed on Vercel from `main`.
